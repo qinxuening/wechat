@@ -5,9 +5,7 @@
  *@date: 2018年9月19日 下午11:13:08
  */
 namespace app\admin\controller;
-
 use app\common\controller\baseAdmin;
-
 
 class Admin extends baseAdmin {
     
