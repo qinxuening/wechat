@@ -9,6 +9,8 @@ use app\common\controller\baseAdmin;
 
 class Admin extends baseAdmin {
     
+    
+    
     public function index() {
         return json(['code' =>1, 'status' => 'success', 'info' => '后台测试'.json_encode($this->noNeedLogin)]);
     }
