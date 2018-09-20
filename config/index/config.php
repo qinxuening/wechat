@@ -5,7 +5,7 @@
 * @date: 2018年9月20日 下午2:48:56
 */
 return [
-    'default_return_type'    => 'json',
+    'default_return_type'    => 'html',
     
     'site' => '小程序开发',
 

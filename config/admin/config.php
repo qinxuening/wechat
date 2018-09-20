@@ -10,5 +10,5 @@
 // +----------------------------------------------------------------------
 
 return [
-    'default_return_type'    => 'json',
+    'default_return_type'    => 'html',
 ];
