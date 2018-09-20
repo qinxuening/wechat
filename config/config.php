@@ -141,7 +141,12 @@ return [
     ],
 
     // 视图输出字符串内容替换
-    'view_replace_str'       => [],
+    'view_replace_str'       => [
+        '__PUBLIC__'=> SCRIPT_DIR . '/public',          //前端网页css,img,js所在文件
+        '__STATIC__'=> SCRIPT_DIR . '/public/static',   //后台程序css,img,js所在文件
+        '__COMMON__'=> SCRIPT_DIR . '/public/common',   //前后共有css,img,js所在文件
+        '__APP__'   => SCRIPT_DIR . '/'                 //定义首页
+    ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
