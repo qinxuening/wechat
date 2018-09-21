@@ -1,6 +1,18 @@
 {extend name="layout/default" /}
 {block name="content"}
-<table class="layui-hide" id="rule" lay-filter="rule"></table>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <table class="layui-hide" id="rule" lay-filter="rule"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 <!--状态-->
 <script type="text/html" id="switchStatus">
@@ -18,13 +30,17 @@
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
-
 {/block}
 
 {block name="script"}
 <script>
-    layui.use(['table','element'], function(){
-        var element = layui.element
+    layui.config({
+        base: "__STATIC__/" //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index','table','element'], function(){
+        var admin = layui.admin
+            ,element = layui.element
             ,table = layui.table
             ,form = layui.form;
 
@@ -79,5 +95,6 @@
 
     });
 </script>
+</body>
 </html>
 {/block}
