@@ -1,0 +1,24 @@
+{include file="common/meta" /}
+<body class="layui-layout-body">
+<div id="lay_app" class="">
+    <!--layadmin-side-shrink-->
+    <div class="layui-layout layui-layout-admin">
+        {include file="common/header" /}
+        {include file="common/menu" /}
+
+        {include file="common/tabs" /}
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            {block name="content"}
+
+            {/block}
+        </div>
+
+        {include file="common/footer" /}
+    </div>
+</div>
+<script src="__STATIC__/layui/layui.js"></script>
+{block name="script"}
+{include file="common/script" /}
+{/block}

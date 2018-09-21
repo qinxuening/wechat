@@ -1,0 +1,83 @@
+{extend name="layout/default" /}
+{block name="content"}
+<table class="layui-hide" id="rule" lay-filter="rule"></table>
+
+<!--状态-->
+<script type="text/html" id="switchStatus">
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="激活|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
+</script>
+
+<!--状态-->
+<script type="text/html" id="switchIsmenu">
+    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
+</script>
+
+<!--操作-->
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="view">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+{/block}
+
+{block name="script"}
+<script>
+    layui.use(['table','element'], function(){
+        var element = layui.element
+            ,table = layui.table
+            ,form = layui.form;
+
+        table.render({
+            elem: '#rule'
+            ,height: 400
+            ,url:"{:url('Admin/auth.rule/getRule')}"
+            ,cols: [[
+                {type:'checkbox', fixed: 'left'}
+                ,{field:'id', title: 'ID', sort: true}
+                ,{field:'title', title: '规则名称'}
+                ,{field:'icon', title: '图标', sort: true}
+                ,{field:'ismenu', title: '是否为菜单', sort: true,templet: '#switchIsmenu'}
+                ,{field:'status', title: '状态',templet: '#switchStatus'}
+                ,{field:'name', title: '规则', minWidth: 150}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
+            ]]
+            ,page: {
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                ,first: false //不显示首页
+                ,last: false //不显示尾页
+
+            }
+        });
+
+        //监听性别操作
+        form.on('switch(ruleStatus)', function(obj){
+//            console.log(obj);
+            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+        });
+
+        //监听行工具事件
+        table.on('tool(rule)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    obj.del();
+                    layer.close(index);
+                });
+            } else if(obj.event === 'edit'){
+                layer.prompt({
+                    formType: 2
+                    ,value: data.title
+                }, function(value, index){
+                    obj.update({
+                        title: value
+                    });
+                    layer.close(index);
+                });
+            }
+        });
+
+    });
+</script>
+</html>
+{/block}
