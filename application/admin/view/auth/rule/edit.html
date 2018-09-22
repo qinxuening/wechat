@@ -4,24 +4,17 @@
 <div class="layui-container lay_top">
     <div class="layui-row layui-col-space30">
         <div class="layui-col-xs12">
-        <form class="layui-form" action="" lay-filter="example">
+        <form class="layui-form" action="" lay-filter="rule">
             <div class="layui-form-item">
-                <label class="layui-form-label">输入框</label>
+                <label class="layui-form-label">菜单</label>
                 <div class="layui-input-block">
-                    <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                    <input type="checkbox" name="ismenu" lay-skin="switch" lay-text="是|否" {$list['ismenu'] == 1? 'checked' : ''}>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">密码框</label>
+                <label class="layui-form-label">父级</label>
                 <div class="layui-input-block">
-                    <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">选择框</label>
-                <div class="layui-input-block">
-                    <select name="interest" lay-filter="aihao">
+                    <select name="pid" lay-filter="pid">
                         <option value=""></option>
                         <option value="0">写作</option>
                         <option value="1">阅读</option>
@@ -31,34 +24,40 @@
                     </select>
                 </div>
             </div>
-
             <div class="layui-form-item">
-                <label class="layui-form-label">复选框</label>
+                <label class="layui-form-label">名称</label>
                 <div class="layui-input-block">
-                    <input type="checkbox" name="like[write]" title="写作">
-                    <input type="checkbox" name="like[read]" title="阅读">
-                    <input type="checkbox" name="like[daze]" title="发呆">
+                    <input type="text" name="name" lay-verify="name" autocomplete="off" value="{$list['name']}" placeholder="规则名称" class="layui-input">
                 </div>
             </div>
-
             <div class="layui-form-item">
-                <label class="layui-form-label">开关</label>
+                <label class="layui-form-label">标题</label>
                 <div class="layui-input-block">
-                    <input type="checkbox" name="close" lay-skin="switch" lay-text="ON|OFF">
+                    <input type="title" name="title" placeholder="标题" value="{$list['title']}" autocomplete="off" class="layui-input">
                 </div>
             </div>
-
             <div class="layui-form-item">
-                <label class="layui-form-label">单选框</label>
+                <label class="layui-form-label">权重</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="sex" value="男" title="男" checked="">
-                    <input type="radio" name="sex" value="女" title="女">
+                    <input type="weigh" name="weigh" placeholder="权重" value="{$list['weigh']}" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">文本域</label>
+                <label class="layui-form-label">规则条件</label>
                 <div class="layui-input-block">
-                    <textarea placeholder="请输入内容" class="layui-textarea" name="desc"></textarea>
+                    <textarea placeholder="规则条件" class="layui-textarea" name="condition" rows="3">{$list['condition']}</textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">状态</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="备注" class="layui-textarea" name="remark">{$list['remark']}</textarea>
                 </div>
             </div>
 
@@ -82,17 +81,6 @@
     }).use(['index','form','element'], function(){
         var admin = layui.admin
             ,form = layui.form
-
-        //表单初始赋值
-        form.val('example', {
-            "username": "贤心" // "name": "value"
-            ,"password": "123456"
-            ,"interest": 1
-            ,"like[write]": true //复选框选中状态
-            ,"close": true //开关状态
-            ,"sex": "女"
-            ,"desc": "我爱 layui"
-        })
     });
 </script>
 </body>
