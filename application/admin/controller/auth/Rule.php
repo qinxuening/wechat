@@ -33,10 +33,20 @@ class Rule extends baseAdmin{
         return json(['code' => 0, 'count' => $count, 'data' => $this->rulelist,'msg' => '获取成功']);
     }
     
-    public function ruleDetail() {
+    public function view() {
+         $id = intval(input('id'));
+         $list = Db::name('auth_rule')->where(['id' => $id])->find();
+         $this->assign('list', $list);
          return $this->view->fetch();
     }
     
+    
+    public function edit() {
+        $id = intval(input('id'));
+        $list = Db::name('auth_rule')->where(['id' => $id])->find();
+        $this->assign('list', $list);
+        return $this->view->fetch();
+    }
     
     
 }

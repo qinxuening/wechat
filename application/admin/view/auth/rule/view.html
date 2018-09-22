@@ -1,0 +1,35 @@
+{extend name="layout/default" /}
+{block name="content"}
+<table class="layui-table" lay-even="" lay-skin="nob">
+    <colgroup>
+        <col width="30%">
+        <col>
+    </colgroup>
+    <thead>
+    <!--<tr>-->
+        <!--<th>人物</th>-->
+        <!--<th>民族</th>-->
+        <!--<th>出场时间</th>-->
+        <!--<th>格言</th>-->
+    <!--</tr>-->
+    </thead>
+    <tbody>
+    <tr>
+        <td>规则名称</td>
+        <td>{$list['title']}</td>
+    </tr>
+    <tr>
+        <td>是否为菜单</td>
+        <td>{$list['ismenu']}</td>
+    </tr>
+    <tr>
+        <td>状态</td>
+        <td>{$list['status']}</td>
+    </tr>
+    <tr>
+        <td>规则</td>
+        <td>{$list['name']}</td>
+    </tr>
+    </tbody>
+</table>
+{/block}

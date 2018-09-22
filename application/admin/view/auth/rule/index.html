@@ -83,11 +83,25 @@
                     obj.del();
                     layer.close(index);
                 });
-            } else if(obj.event === 'edit'){
-                var url = "{:url('admin/auth.rule/ruleDetail','',false)}/id/" + data.id;
+            } else if(obj.event === 'view'){
+                var url = "{:url('admin/auth.rule/view','',false)}/id/" + data.id;
                 layer.open({
                     type: 2,
-                    title: "详情",
+                    title: "查看",
+                    shadeClose: true,
+                    shade: 0.3,
+                    maxmin: true,
+                    moveOut: true,
+                    area: ["80%", "80%"],
+                    content: url,
+                    skin: 'layui-layer-we',
+                    btn:['关闭']
+                });
+            } else if(obj.event === 'edit') {
+                var url = "{:url('admin/auth.rule/edit','',false)}/id/" + data.id;
+                layer.open({
+                    type: 2,
+                    title: "查看",
                     shadeClose: true,
                     shade: 0.3,
                     maxmin: true,
