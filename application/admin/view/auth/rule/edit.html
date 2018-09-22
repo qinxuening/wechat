@@ -14,14 +14,15 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">父级</label>
                 <div class="layui-input-block">
-                    <select name="pid" lay-filter="pid">
-                        <option value=""></option>
-                        <option value="0">写作</option>
-                        <option value="1">阅读</option>
-                        <option value="2">游戏</option>
-                        <option value="3">音乐</option>
-                        <option value="4">旅行</option>
-                    </select>
+                    <!--<select name="pid" lay-filter="pid">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="0">写作</option>-->
+                        <!--<option value="1">阅读</option>-->
+                        <!--<option value="2">游戏</option>-->
+                        <!--<option value="3">音乐</option>-->
+                        <!--<option value="4">旅行</option>-->
+                    <!--</select>-->
+                    {:build_select('rule[pid]', $ruledata, $list['pid'], ['class'=>'form-control', 'required'=>''])}
                 </div>
             </div>
             <div class="layui-form-item">

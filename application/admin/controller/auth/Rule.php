@@ -8,12 +8,31 @@ namespace app\admin\controller\auth;
 
 use app\common\controller\baseAdmin;
 use think\Db;
+use we\Tree;
 
 class Rule extends baseAdmin{
     protected $rulelist;
     
     public function _initialize(){
         parent::_initialize();
+        // 必须将结果集转换为数组
+        $ruleList = Db::name('auth_rule')->order('weigh', 'desc')->select();
+        foreach ($ruleList as $k => &$v)
+        {
+            $v['title'] = __($v['title']);
+            $v['remark'] = __($v['remark']);
+        }
+        unset($v);
+        Tree::instance()->init($ruleList);
+        $this->rulelist = Tree::instance()->getTreeList(Tree::instance()->getTreeArray(0), 'title');
+        $ruledata = [0 => __('None')];
+        foreach ($this->rulelist as $k => &$v)
+        {
+            if (!$v['ismenu'])
+                continue;
+            $ruledata[$v['id']] = $v['title'];
+        }
+        $this->view->assign('ruledata', $ruledata);
     }
     
     /**
