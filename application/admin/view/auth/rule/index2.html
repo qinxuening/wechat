@@ -9,9 +9,9 @@
                     <table class="layui-hide" id="rule" lay-filter="rule"></table>
                 </div>
             </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <!--状态-->
@@ -35,17 +35,14 @@
 {block name="script"}
 <script>
     layui.config({
-        base: "__STATIC__/", //静态资源所在路径
-        skin: 'layui-layer-we'
+        base: "__STATIC__/" //静态资源所在路径
     }).extend({
         index: 'lib/index' //主入口模块
     }).use(['index','table','element'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
-            ,layer = layui.layer
             ,form = layui.form;
-
 
         table.render({
             elem: '#rule'
@@ -84,27 +81,15 @@
                     layer.close(index);
                 });
             } else if(obj.event === 'edit'){
-                layer.open({
-                    type: 2,
-                    title: "详情",
-                    shadeClose: true,
-                    shade: 0.3,
-                    maxmin: true,
-                    moveOut: true,
-                    area: ["80%", "80%"],
-                    content: '',
-                    skin: 'layui-layer-we',
-                    btn:['关闭']
+                layer.prompt({
+                    formType: 2
+                    ,value: data.title
+                }, function(value, index){
+                    obj.update({
+                        title: value
+                    });
+                    layer.close(index);
                 });
-//                layer.prompt({
-//                    formType: 2
-//                    ,value: data.title
-//                }, function(value, index){
-//                    obj.update({
-//                        title: value
-//                    });
-//                    layer.close(index);
-//                });
             }
         });
 

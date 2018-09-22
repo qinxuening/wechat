@@ -1354,3 +1354,20 @@ html {
         overflow: auto
     }
 }
+
+body .layui-layer-we .layui-layer-title {
+    background: #2c3e50 !important;
+    color: #fff !important;
+    border: none
+}
+body .layui-layer-we .layui-layer-setwin a{
+    color:#ffffff !important;
+}
+body .layui-layer-we .layui-layer-btn a {
+    background: #2c3e50;
+    border-color: #2c3e50
+}
+
+body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
+    background: #2c3e50
+}
