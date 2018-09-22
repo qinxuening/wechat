@@ -84,6 +84,7 @@
                     layer.close(index);
                 });
             } else if(obj.event === 'edit'){
+                var url = "{:url('admin/auth.rule/ruleDetail','',false)}/id/" + data.id;
                 layer.open({
                     type: 2,
                     title: "详情",
@@ -92,19 +93,10 @@
                     maxmin: true,
                     moveOut: true,
                     area: ["80%", "80%"],
-                    content: '',
+                    content: url,
                     skin: 'layui-layer-we',
                     btn:['关闭']
                 });
-//                layer.prompt({
-//                    formType: 2
-//                    ,value: data.title
-//                }, function(value, index){
-//                    obj.update({
-//                        title: value
-//                    });
-//                    layer.close(index);
-//                });
             }
         });
 
