@@ -14,14 +14,20 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">名称</label>
                 <div class="layui-input-block">
-                    <input type="text" name="name" lay-verify="name" autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
+                    <input type="text" name="name" lay-verify="name"  autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+                <label class="layui-form-label">开关-开</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" title="开关">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">权限</label>
                 <div class="layui-input-block">
-                    <input type="checkbox"  id="checkall" lay-skin="primary" title="{:__('Check all')}" checked="">
-                    <input type="checkbox"  id="expandall" lay-skin="primary" title="{:__('Expand all')}">
+                    <input type="checkbox"  id="checkall" lay-skin="primary"  lay-filter="checkall" title="{:__('Check all')}">
+                    <input type="checkbox"  id="expandall" lay-skin="primary" lay-filter="expandall" title="{:__('Expand all')}">
                     <div id="LAY-auth-tree-index"></div>
                 </div>
 
@@ -56,12 +62,21 @@
         ,authtree: 'authtree',
 //        ,jstree: 'jstree/dist/jstree'
 //    .link("__STATIC__/modules/jstree/dist/themes/default/style.css")
-    }).use(['jquery','index','form','element','authtree'], function(){
+    }).use(['jquery','index','form','element','layer','authtree'], function(){
         var admin = layui.admin
             ,$ = layui.$ //重点处
             ,form = layui.form
             ,table = layui.table
+            ,layer = layui.layer
             ,authtree = layui.authtree;
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
         //监听提交
         form.on('submit(formRule)', function(data){
             var formData = JSON.stringify(data.field)
@@ -73,7 +88,6 @@
                 "async":true,
                 "type":'post',
                 "success":function(data){
-                    $("#treeview").jstree();
                     layer.msg(data.info);
                     //当你在iframe页面关闭自身时
                     var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
@@ -89,6 +103,7 @@
         });
         var id = "{$row['id']}";
         var pid = "{$row['pid']}";
+
         // 初始化
         $.ajax({
             url: "{:url('admin/auth.group/roletree')}",
@@ -105,21 +120,21 @@
                 });
 
                 // PS:使用 form.on() 会引起了事件冒泡延迟的BUG，需要 setTimeout()，并且无法监听全选/全不选
-                form.on('checkbox(lay-check-auth)', function(data){
-                    // 注意这里：需要等待事件冒泡完成，不然获取叶子节点不准确。
-                    setTimeout(function(){
-                        console.log('监听 form 触发事件数据', data);
-                        // 获取选中的叶子节点
-                        var leaf = authtree.getLeaf('#LAY-auth-tree-index');
-                        console.log('leaf', leaf);
-                        // 获取最新选中
-                        var lastChecked = authtree.getLastChecked('#LAY-auth-tree-index');
-                        console.log('lastChecked', lastChecked);
-                        // 获取最新取消
-                        var lastNotChecked = authtree.getLastNotChecked('#LAY-auth-tree-index');
-                        console.log('lastNotChecked', lastNotChecked);
-                    }, 100);
-                });
+//                form.on('checkbox(lay-check-auth)', function(data){
+//                    // 注意这里：需要等待事件冒泡完成，不然获取叶子节点不准确。
+//                    setTimeout(function(){
+//                        console.log('监听 form 触发事件数据', data);
+//                        // 获取选中的叶子节点
+//                        var leaf = authtree.getLeaf('#LAY-auth-tree-index');
+//                        console.log('leaf', leaf);
+//                        // 获取最新选中
+//                        var lastChecked = authtree.getLastChecked('#LAY-auth-tree-index');
+//                        console.log('lastChecked', lastChecked);
+//                        // 获取最新取消
+//                        var lastNotChecked = authtree.getLastNotChecked('#LAY-auth-tree-index');
+//                        console.log('lastNotChecked', lastNotChecked);
+//                    }, 100);
+//                });
                 // 使用 authtree.on() 不会有冒泡延迟
                 authtree.on('change(lay-check-auth)', function(data) {
                     console.log('监听 authtree 触发事件数据', data);
@@ -141,12 +156,30 @@
                     // 获取最新取消
                     var lastNotChecked = authtree.getLastNotChecked('#LAY-auth-tree-index');
                     console.log('lastNotChecked', lastNotChecked);
+
                 });
                 authtree.on('deptChange(lay-check-auth)', function(data) {
                     console.log('监听到显示层数改变',data);
                 });
+                form.on('checkbox(checkall)', function(data){
+                    if(data.elem.checked) {
+                        authtree.checkAll("#LAY-auth-tree-index");
+                    } else {
+                        authtree.uncheckAll("#LAY-auth-tree-index");
+                    }
+                });
+
+                form.on('checkbox(expandall)', function(data){
+                    if(data.elem.checked) {
+                        authtree.showAll("#LAY-auth-tree-index");
+                    } else {
+                        authtree.closeAll("#LAY-auth-tree-index");
+                    }
+                });
             }
         });
+
+
     });
 </script>
 </body>

@@ -37,15 +37,20 @@ class  Category{
 	 * @param number $pid
 	 * @return multitype:
 	 */
-	static public function unlimiteForLayer ($cate, $name = 'child', $pid = 0 , $parentid = 'pid') {
+	static public function unlimiteForLayer ($cate, $name = 'child',$checkedArr = [],$checked = false, $pid = 0 , $parentid = 'pid') {
 		$arr = array();
 		foreach ($cate as $v) {
+		    if($checkedArr && $checked) {
+		        if(in_array($v['id'], $checkedArr)) {
+		            $v['checked'] = true;
+		        }
+		    }
 			//echo $v['parentid'];
 			if($v[$parentid] == $pid) {
 				//寻找所有$v['parentid'] == 每个$pid的情况
 				//每个pid都循环一遍
-				if(self::unlimiteForLayer($cate, $name, $v['id'])) {
-				    $v[$name] = self::unlimiteForLayer($cate, $name, $v['id']);
+				if(self::unlimiteForLayer($cate, $name, $checkedArr, $checked, $v['id'])) {
+				    $v[$name] = self::unlimiteForLayer($cate, $name, $checkedArr, $checked, $v['id']);
 				}
 				$arr[] = $v;
 			}

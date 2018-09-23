@@ -265,24 +265,24 @@ class Group extends baseAdmin{
                     }
                 }
             }
-    
+
             foreach ($parentRuleList as $key => $value) {
                 $arr[$key]['id'] = $value['id'];
                 $arr[$key]['pid'] = $value['pid'];
                 $arr[$key]['name'] = $value['title'];
                 $arr[$key]['value'] = $value['id'];
-                $arr[$key]['checked'] = 'true';
             }
             //当前所有正常规则列表
             Tree::instance()->init($parentRuleList);
-            $arr_ = Category::unlimiteForLayer($arr,'list');
+
             //读取当前角色下规则ID集合
             $adminRuleIds = $this->auth->getRuleIds();
+          
             //是否是超级管理员
             $superadmin = $this->auth->isSuperAdmin();
             //当前拥有的规则ID集合
             $currentRuleIds = $id ? explode(',', $currentGroupModel->rules) : [];
-    
+            $arr_ = Category::unlimiteForLayer($arr,'list',$currentRuleIds,true);
             if (!$id || !in_array($pid, Tree::instance()->getChildrenIds($id, TRUE)))
             {
                 $parentRuleList = Tree::instance()->getTreeList(Tree::instance()->getTreeArray(0), 'name');
@@ -305,29 +305,8 @@ class Group extends baseAdmin{
                     $state = array('selected' => in_array($v['id'], $currentRuleIds) && !in_array($v['id'], $hasChildrens));
                     $nodeList[] = array('id' => $v['id'], 'parent' => $v['pid'] ? $v['pid'] : '#', 'text' => __($v['title']), 'type' => 'menu', 'state' => $state);
                 }
-//                 $this->success('', null, $nodeList);
-                $data = '{
-  "code": 0,
-  "msg": "获取成功",
-  "data": {
-    "trees":[
-    	{"name": "用户管理", "value": "xsgl", "checked": true},
-    	{"name": "用户组管理", "value": "sbgl", "checked": true, "list": [
-    		{"name": "角色管理", "value": "sbgl-sbsjlb-1", "checked": true, "list":[
-    			{"name": "添加角色", "value": "sbgl-sbsjlb-dj-1", "checked": true},
-    			{"name": "角色列表", "value": "sbgl-sbsjlb-yl-1", "checked": false}
-    		]},
-        {"name": "管理员管理", "value": "sbgl-sbsjlb-2", "checked": true, "list":[
-          {"name": "添加管理员", "value": "sbgl-sbsjlb-dj-2", "checked": true},
-          {"name": "管理员列表", "value": "sbgl-sbsjlb-yl-2", "checked": false},
-          {"name": "管理员管理", "value": "sbgl-sbsjlb-3", "checked": true}
-        ]}
-      ]}
-    ]
-  }
-}';             
+//                 $this->success('', null, $nodeList);          
                 return json(['code' => 0, 'msg' => '获取成功', 'data' => ['trees' => $arr_]]);
-                return json_decode($data,true);
             }
             else
             {
