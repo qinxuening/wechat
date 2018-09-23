@@ -1,0 +1,90 @@
+{extend name="layout/default" /}
+{block name="content"}
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <table class="layui-hide" id="group" lay-filter="group"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--状态-->
+<script type="text/html" id="switchStatus">
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
+</script>
+
+<!--状态-->
+<script type="text/html" id="switchIsmenu">
+    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
+</script>
+
+<!--操作-->
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">编辑</a>
+</script>
+{/block}
+
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index','table','element'], function(){
+        var admin = layui.admin
+            ,element = layui.element
+            ,table = layui.table
+            ,layer = layui.layer
+            ,form = layui.form;
+
+
+        table.render({
+            elem: '#group'
+            ,url:"{:url('Admin/auth.group/index')}"
+            ,cols: [[
+                {type:'checkbox', fixed: 'left'}
+                ,{field:'name', title: '角色名称', sort: true}
+                ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
+                ,{field:'createtime', title: '操作时间', minWidth: 150}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
+            ]]
+        });
+
+        //监听性别操作
+        form.on('switch(ruleStatus)', function(obj){
+//            console.log(obj);
+            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+        });
+
+        //监听行工具事件
+        table.on('tool(group)', function(obj){
+            var data = obj.data;
+             if(obj.event === 'edit') {
+                var url = "{:url('admin/auth.rule/edit','',false)}/id/" + data.id;
+                layer.open({
+                    type: 2,
+                    title: "编辑",
+                    shadeClose: true,
+                    shade: 0.3,
+                    maxmin: true,
+                    moveOut: true,
+                    area: ["80%", "80%"],
+                    content: url,
+                    skin: 'layui-layer-we',
+                    btn:['关闭'],
+                });
+            }
+        });
+
+    });
+</script>
+</body>
+</html>
+{/block}
