@@ -8,6 +8,7 @@
 namespace app\common\controller;
 use app\admin\library\Auth;
 use think\Controller;
+use think\Lang;
 
 class baseAdmin extends Controller{
     protected $noNeedLogin = [];
@@ -38,8 +39,14 @@ class baseAdmin extends Controller{
         $this->view->config = array_merge($this->view->config ? $this->view->config : [], is_array($name) ? $name : [$name => $value]);
     }
     
-    
-    
+    /**
+     * 加载语言文件
+     * @param string $name
+     */
+    protected function loadlang($name)
+    {
+        Lang::load(APP_PATH . $this->request->module() . '/lang/' . Lang::detect() . '/' . str_replace('.', '/', $name) . '.php');
+    }
     
     
     
