@@ -26,9 +26,9 @@
 
 <!--操作-->
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="view">查看</a>
-    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-xs layui-btn-normal layui-btn-radius" lay-event="view">查看</a>
+    <a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs layui-btn-radius" lay-event="del">删除</a>
 </script>
 {/block}
 
@@ -49,15 +49,15 @@
 
         table.render({
             elem: '#rule'
-            ,height: 400
+            ,height: 500
             ,url:"{:url('Admin/auth.rule/getRule')}"
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'id', title: 'ID', sort: true}
                 ,{field:'title', title: '规则名称'}
-                ,{field:'icon', title: '图标', sort: true}
+                ,{field:'icon', title: '图标'}
                 ,{field:'ismenu', title: '是否为菜单', sort: true,templet: '#switchIsmenu'}
-                ,{field:'status', title: '状态',templet: '#switchStatus'}
+                ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
                 ,{field:'name', title: '规则', minWidth: 150}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
             ]]
@@ -109,7 +109,7 @@
                     area: ["80%", "80%"],
                     content: url,
                     skin: 'layui-layer-we',
-                    btn:['关闭']
+                    btn:['关闭'],
                 });
             }
         });

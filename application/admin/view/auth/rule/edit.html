@@ -9,20 +9,13 @@
                 <label class="layui-form-label">菜单</label>
                 <div class="layui-input-block">
                     <input type="checkbox" name="ismenu" lay-skin="switch" lay-text="是|否" {$list['ismenu'] == 1? 'checked' : ''}>
+                    <input type="hidden" name="id" value="{$list['id']}">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">父级</label>
                 <div class="layui-input-block">
-                    <!--<select name="pid" lay-filter="pid">-->
-                        <!--<option value=""></option>-->
-                        <!--<option value="0">写作</option>-->
-                        <!--<option value="1">阅读</option>-->
-                        <!--<option value="2">游戏</option>-->
-                        <!--<option value="3">音乐</option>-->
-                        <!--<option value="4">旅行</option>-->
-                    <!--</select>-->
-                    {:build_select('rule[pid]', $ruledata, $list['pid'], ['class'=>'form-control', 'required'=>''])}
+                    {:build_select('pid', $ruledata, $list['pid'], ['class'=>'form-control', 'required'=>''])}
                 </div>
             </div>
             <div class="layui-form-item">
@@ -64,7 +57,8 @@
 
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                    <button class="layui-btn" lay-submit="" lay-filter="formRule">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
         </form>
@@ -81,7 +75,34 @@
         index: 'lib/index' //主入口模块
     }).use(['index','form','element'], function(){
         var admin = layui.admin
+            ,$ = layui.$ //重点处
             ,form = layui.form
+            ,table = layui.table
+        console.log(layer.title);
+        //监听提交
+        form.on('submit(formRule)', function(data){
+            var formData = JSON.stringify(data.field)
+//            layer.msg(formData);
+            $.ajax({
+                "url":"{:url('admin/auth.rule/edit')}",
+                "cache":false,
+                "data":data.field,
+                "async":true,
+                "type":'post',
+                "success":function(data){
+                    layer.msg(data.info);
+                    //当你在iframe页面关闭自身时
+                    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                    parent.layer.close(index); //再执行关闭
+                    //执行重载
+                    table.reload();
+                },
+                "error":function (data) {
+                    layer.msg(data.info);
+                }
+            });
+            return false;
+        });
     });
 </script>
 </body>

@@ -43,7 +43,7 @@ class Rule extends baseAdmin{
         return $this->view->fetch();
     }
     
-    public function getRule($page = 0, $limit = 12) {
+    public function getRule($page = 0, $limit = 10) {
         $this->rulelist = Db::name('auth_rule')
             ->order('weigh', 'desc')
             ->page($page,$limit)
@@ -62,10 +62,42 @@ class Rule extends baseAdmin{
     
     public function edit() {
         $id = intval(input('id'));
+        if(request()->isAjax()){
+            $id = input('id');
+            $data = input('');
+            $data['status'] = $data['status'] == 'on' ? '1' : 0;
+            $data['ismenu'] = $data['ismenu'] == 'on' ? '1' : 0;
+            if($id){
+                Db::name('auth_rule')->where(['id' => $id])->update($data);
+                return json(['code' => 1, 'status' => 'success', 'info' => '操作成功']);
+            } else {
+                return json(['code' => -1, 'status' => 'error', 'info' => '非法操作']);
+            }
+        }
         $list = Db::name('auth_rule')->where(['id' => $id])->find();
         $this->assign('list', $list);
         return $this->view->fetch();
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }
