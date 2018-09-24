@@ -39,7 +39,8 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','element'], function(){
+        ,we: 'we',
+    }).use(['index','table','element','we'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table

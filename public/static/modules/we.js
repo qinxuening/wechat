@@ -46,16 +46,15 @@ layui.define(['jquery', 'layer'], function(exports){
             //发送Ajax请求
             ajax: function (options, success, error) {
                 options = typeof options === 'string' ? {url: options} : options;
-                var index = Layer.load();
+                var index = layer.load();
                 // return console.log(options);
                 //jQuery.extend() 函数用于将一个或多个对象的内容合并到目标对象
                 options = $.extend({
                     type: "POST",
                     dataType: "json",
                     success: function (ret) {
-                        Layer.close(index);
+                        layer.close(index);
                         ret = we.events.onAjaxResponse(ret);
-
                         if (ret.code === 1) {
                             we.events.onAjaxSuccess(ret, success);
                         } else {
@@ -63,7 +62,7 @@ layui.define(['jquery', 'layer'], function(exports){
                         }
                     },
                     error: function (xhr) {
-                        Layer.close(index);
+                        layer.close(index);
                         var ret = {code: xhr.status, msg: xhr.statusText, data: null};
                         we.events.onAjaxError(ret, error);
                     }
@@ -89,16 +88,16 @@ layui.define(['jquery', 'layer'], function(exports){
                     area: area,
                     content: url,
                     skin: 'layui-layer-we',
-                    zIndex: Layer.zIndex,
+                    zIndex: layer.zIndex,
                     success: function (layero, index) {
                         var that = this;
                         //存储callback事件
                         $(layero).data("callback", that.callback);
                         //$(layero).removeClass("layui-layer-border");
-                        Layer.setTop(layero);
-                        var frame = Layer.getChildFrame('html', index);
+                        layer.setTop(layero);
+                        var frame = layer.getChildFrame('html', index);
                         var layerfooter = frame.find(".layer-footer");
-                        Fast.api.layerfooter(layero, index, that);
+                        we.api.layerfooter(layero, index, that);
 
                         //绑定事件
                         if (layerfooter.size() > 0) {
@@ -142,7 +141,7 @@ layui.define(['jquery', 'layer'], function(exports){
                 }
             },
             layerfooter: function (layero, index, that) {
-                var frame = Layer.getChildFrame('html', index);
+                var frame = layer.getChildFrame('html', index);
                 var layerfooter = frame.find(".layer-footer");
                 if (layerfooter.size() > 0) {
                     $(".layui-layer-footer", layero).remove();
@@ -178,7 +177,7 @@ layui.define(['jquery', 'layer'], function(exports){
                 if (type) {
                     callback = options;
                 }
-                return Layer.msg('操作完成', $.extend({
+                return layer.msg('操作完成', $.extend({
                     offset: 0, icon: 1
                 }, type ? {} : options), callback);
             },
@@ -215,5 +214,5 @@ layui.define(['jquery', 'layer'], function(exports){
         }
     };
     we.init();
-    exports('authtree', we);
+    exports('we', we);
 });
