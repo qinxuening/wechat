@@ -43,10 +43,10 @@
     }).use(['index','table','element','we'], function(){
         var admin = layui.admin
             ,element = layui.element
+            ,$ = layui.$ //重点处
             ,table = layui.table
             ,layer = layui.layer
-            ,form = layui.form;
-
+            ,we = layui.we;
 
         table.render({
             elem: '#group'
@@ -61,29 +61,25 @@
             ]]
         });
 
-        //监听性别操作
-        form.on('switch(ruleStatus)', function(obj){
-//            console.log(obj);
-            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
-        });
 
         //监听行工具事件
         table.on('tool(group)', function(obj){
             var data = obj.data;
              if(obj.event === 'edit') {
                 var url = "{:url('admin/auth.group/edit','',false)}/ids/" + data.id;
-                layer.open({
-                    type: 2,
-                    title: "编辑",
-                    shadeClose: true,
-                    shade: 0.3,
-                    maxmin: true,
-                    moveOut: true,
-                    area: ["80%", "80%"],
-                    content: url,
-                    skin: 'layui-layer-we',
-                    btn:['关闭'],
-                });
+                we.api.open(url,'编辑');
+//                layer.open({
+//                    type: 2,
+//                    title: "编辑",
+//                    shadeClose: true,
+//                    shade: 0.3,
+//                    maxmin: true,
+//                    moveOut: true,
+//                    area: ["80%", "80%"],
+//                    content: url,
+//                    skin: 'layui-layer-we',
+//                    btn:['关闭'],
+//                });
             }
         });
 

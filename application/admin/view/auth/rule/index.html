@@ -39,7 +39,7 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','element'], function(){
+    }).use(['index','table','element','form','authtree'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
@@ -95,7 +95,7 @@
                     area: ["80%", "80%"],
                     content: url,
                     skin: 'layui-layer-we',
-                    btn:['关闭']
+//                    btn:['关闭']
                 });
             } else if(obj.event === 'edit') {
                 var url = "{:url('admin/auth.rule/edit','',false)}/id/" + data.id;
@@ -109,7 +109,7 @@
                     area: ["80%", "80%"],
                     content: url,
                     skin: 'layui-layer-we',
-                    btn:['关闭'],
+//                    btn:['关闭'],
                 });
             }
         });
