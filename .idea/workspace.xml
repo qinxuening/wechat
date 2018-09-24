@@ -28,10 +28,10 @@
       <file leaf-file-name="edit.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="175" column="41" lean-forward="false" selection-start-line="175" selection-start-column="41" selection-end-line="175" selection-end-column="41" />
+            <state relative-caret-position="244">
+              <caret line="82" column="32" lean-forward="false" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="32" />
               <folding>
-                <element signature="e#6046#7136#0" expanded="false" />
+                <element signature="e#5544#6634#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -40,8 +40,8 @@
       <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-197">
-              <caret line="80" column="25" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="25" />
+            <state relative-caret-position="289">
+              <caret line="95" column="32" lean-forward="false" selection-start-line="95" selection-start-column="27" selection-end-line="95" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -60,12 +60,10 @@
       <file leaf-file-name="authtree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/authtree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="202" column="16" lean-forward="false" selection-start-line="202" selection-start-column="8" selection-end-line="202" selection-end-column="16" />
+            <state relative-caret-position="-257">
+              <caret line="116" column="44" lean-forward="false" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="44" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#1009#3166#0" expanded="false" />
-                <element signature="e#3219#4263#0" expanded="false" />
                 <element signature="e#4364#4959#0" expanded="false" />
                 <element signature="e#5020#5501#0" expanded="false" />
                 <element signature="e#5544#5749#0" expanded="false" />
@@ -121,8 +119,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="18" column="157" lean-forward="false" selection-start-line="18" selection-start-column="121" selection-end-line="18" selection-end-column="157" />
+            <state relative-caret-position="235">
+              <caret line="86" column="64" lean-forward="true" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -131,8 +129,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-278">
-              <caret line="51" column="23" lean-forward="false" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+            <state relative-caret-position="424">
+              <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -166,8 +164,9 @@
       <find>checkall</find>
       <find>jstree</find>
       <find>formRule</find>
-      <find>switchTest</find>
       <find>lay-check-auth</find>
+      <find>auth-child</find>
+      <find>switchTest</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -615,18 +614,18 @@
       <option name="presentableId" value="Default" />
       <updated>1537540854004</updated>
       <workItem from="1537540858600" duration="8025000" />
-      <workItem from="1537600833264" duration="41324000" />
+      <workItem from="1537600833264" duration="47405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49349000" />
+    <option name="totallyTimeSpent" value="55430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12976022" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21368124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -652,7 +651,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1068,36 +1067,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-278">
-          <caret line="51" column="23" lean-forward="false" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="18" column="157" lean-forward="false" selection-start-line="18" selection-start-column="121" selection-end-line="18" selection-end-column="157" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-197">
-          <caret line="80" column="25" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="25" />
+        <state relative-caret-position="424">
+          <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/authtree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="202" column="16" lean-forward="false" selection-start-line="202" selection-start-column="8" selection-end-line="202" selection-end-column="16" />
+        <state relative-caret-position="-257">
+          <caret line="116" column="44" lean-forward="false" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="44" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#1009#3166#0" expanded="false" />
-            <element signature="e#3219#4263#0" expanded="false" />
             <element signature="e#4364#4959#0" expanded="false" />
             <element signature="e#5020#5501#0" expanded="false" />
             <element signature="e#5544#5749#0" expanded="false" />
@@ -1129,12 +1110,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="86" column="64" lean-forward="true" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="95" column="32" lean-forward="false" selection-start-line="95" selection-start-column="27" selection-end-line="95" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="175" column="41" lean-forward="false" selection-start-line="175" selection-start-column="41" selection-end-line="175" selection-end-column="41" />
+        <state relative-caret-position="244">
+          <caret line="82" column="32" lean-forward="false" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="32" />
           <folding>
-            <element signature="e#6046#7136#0" expanded="false" />
+            <element signature="e#5544#6634#0" expanded="false" />
           </folding>
         </state>
       </provider>

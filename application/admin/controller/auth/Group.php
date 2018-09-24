@@ -130,9 +130,11 @@ class Group extends baseAdmin{
         $row = $this->model->get(['id' => $ids]);
         if (!$row)
             $this->error(__('No Results were found'));
-        if ($this->request->isPost())
+        if ($this->request->isAjax())
         {
-            $params = $this->request->post("row/a", [], 'strip_tags');
+            $params = $this->request->post("", [], 'strip_tags');
+            $params['status'] = $params['status'] == 'on' ? 1 : 0;
+            unset($params['authids']);
             // 父节点不能是它自身的子节点
             if (!in_array($params['pid'], $this->childrenGroupIds))
             {
