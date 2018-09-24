@@ -134,7 +134,10 @@ class Group extends baseAdmin{
         {
             $params = $this->request->post("", [], 'strip_tags');
             $params['status'] = $params['status'] == 'on' ? 1 : 0;
+            $params['rules'] = implode(',', $params['authids']);
             unset($params['authids']);
+            unset($params['ids']);
+//             print_r($params);die();
             // 父节点不能是它自身的子节点
             if (!in_array($params['pid'], $this->childrenGroupIds))
             {
