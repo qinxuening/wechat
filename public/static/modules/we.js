@@ -2,8 +2,8 @@
  * Created by qinxuening on 2018/9/24.
  */
 layui.define(['jquery', 'layer'], function(exports){
-    $ = layui.jquery;
-    layer = layui.layer;
+    var $ = layui.jquery
+    ,layer = layui.layer;
     var we = {
         events: {
             //请求成功的回调
@@ -90,47 +90,12 @@ layui.define(['jquery', 'layer'], function(exports){
                     // content: [url,'no'],
                     scrollbar:false,
                     moveOut:false,
-                    // btn:['关闭'],
                     skin: 'layui-layer-we',
                     zIndex: layer.zIndex,
                     success: function (layero, index) {
                         var that = this;
-                        //存储callback事件
-                        $(layero).data("callback", that.callback);
-                        //$(layero).removeClass("layui-layer-border");
-                        layer.setTop(layero);
-                        var frame = layer.getChildFrame('html', index);
-                        var layerfooter = frame.find(".layer-footer");
-                        // we.api.layerfooter(layero, index, that);
-
-                        //绑定事件
-                        if (layerfooter.size() > 0) {
-                            // 监听窗口内的元素及属性变化
-                            // Firefox和Chrome早期版本中带有前缀
-                            var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver
-                            // 选择目标节点
-                            var target = layerfooter[0];
-                            // 创建观察者对象
-                            var observer = new MutationObserver(function (mutations) {
-                                we.api.layerfooter(layero, index, that);
-                                mutations.forEach(function (mutation) {
-                                });
-                            });
-                            // 配置观察选项:
-                            var config = {attributes: true, childList: true, characterData: true, subtree: true}
-                            // 传入目标节点和观察选项
-                            observer.observe(target, config);
-                            // 随后,你还可以停止观察
-                            // observer.disconnect();
-                        }
-
                     }
                 }, options ? options : {});
-                if ($(window).width() < 480 || (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream && top.$(".tab-pane.active").size() > 0)) {
-                    options.area = [top.$(".tab-pane.active").width() + "px", top.$(".tab-pane.active").height() + "px"];
-                    options.offset = [top.$(".tab-pane.active").scrollTop() + "px", "0px"];
-                }
-                // return console.log(options);
                 return layer.open(options);
             },
             //关闭窗口并回传数据
@@ -145,38 +110,7 @@ layui.define(['jquery', 'layer'], function(exports){
                 }
                 console.log('关闭layer');
             },
-            layerfooter: function (layero, index, that) {
-                var frame = layer.getChildFrame('html', index);
-                var layerfooter = frame.find(".layer-footer");
-                if (layerfooter.size() > 0) {
-                    $(".layui-layer-footer", layero).remove();
-                    var footer = $("<div />").addClass('layui-layer-btn layui-layer-footer');
-                    footer.html(layerfooter.html());
-                    if ($(".row", footer).size() === 0) {
-                        $(">", footer).wrapAll("<div class='row'></div>");
-                    }
-                    footer.insertAfter(layero.find('.layui-layer-content'));
-                    //绑定事件
-                    footer.on("click", ".btn", function () {
-                        if ($(this).hasClass("disabled") || $(this).parent().hasClass("disabled")) {
-                            return;
-                        }
-                        $(".btn:eq(" + $(this).index() + ")", layerfooter).trigger("click");
-                    });
 
-                    var titHeight = layero.find('.layui-layer-title').outerHeight() || 0;
-                    var btnHeight = layero.find('.layui-layer-btn').outerHeight() || 0;
-                    //重设iframe高度
-                    $("iframe", layero).height(layero.height() - titHeight - btnHeight);
-                }
-                //修复iOS下弹出窗口的高度和iOS下iframe无法滚动的BUG
-                if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
-                    var titHeight = layero.find('.layui-layer-title').outerHeight() || 0;
-                    var btnHeight = layero.find('.layui-layer-btn').outerHeight() || 0;
-                    $("iframe", layero).parent().css("height", layero.height() - titHeight - btnHeight);
-                    $("iframe", layero).css("height", "100%");
-                }
-            },
             success: function (options, callback) {
                 var type = typeof options === 'function';
                 if (type) {
@@ -198,7 +132,6 @@ layui.define(['jquery', 'layer'], function(exports){
             layer: layer
         },
         init: function () {
-            // 对相对地址进行处理
             layer.config({
                 skin: 'layui-layer-fast'
             });

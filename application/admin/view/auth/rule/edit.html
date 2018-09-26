@@ -75,10 +75,9 @@
         index: 'lib/index' //主入口模块
     }).use(['jquery','index','form','element'], function(){
         var admin = layui.admin
-            ,$ = layui.$ //重点处
+            ,$ = layui.$
             ,form = layui.form
             ,table = layui.table
-        console.log(layer.title);
         //监听提交
         form.on('submit(formRule)', function(data){
             var formData = JSON.stringify(data.field)
