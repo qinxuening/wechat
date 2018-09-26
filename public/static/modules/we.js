@@ -143,6 +143,7 @@ layui.define(['jquery', 'layer'], function(exports){
                 if (typeof callback === 'function') {
                     callback.call(undefined, data);
                 }
+                console.log('关闭layer');
             },
             layerfooter: function (layero, index, that) {
                 var frame = layer.getChildFrame('html', index);

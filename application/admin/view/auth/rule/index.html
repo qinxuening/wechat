@@ -6,7 +6,7 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-body">
-                    <table class="layui-hide" id="rule" lay-filter="rule"></table>
+                    <table class="layui-hide" id="rule" lay-filter="rule"  lay-data="{id: 'testReload'}"></table>
                 </div>
             </div>
         </div>
@@ -52,6 +52,7 @@
             elem: '#rule'
             ,height: 500
             ,url:"{:url('Admin/auth.rule/getRule')}"
+            ,id: 'testReload'
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'id', title: 'ID', sort: true}

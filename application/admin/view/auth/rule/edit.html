@@ -39,7 +39,7 @@
             <div class="layui-form-item layui-form-text">
                 <label class="layui-form-label">规则条件</label>
                 <div class="layui-input-block">
-                    <textarea placeholder="规则条件" lay-verify="required|phone|number" class="layui-textarea" name="condition" rows="3">{$list['condition']}</textarea>
+                    <textarea placeholder="规则条件" class="layui-textarea" name="condition" rows="3">{$list['condition']}</textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -73,7 +73,7 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','form','element'], function(){
+    }).use(['jquery','index','form','element'], function(){
         var admin = layui.admin
             ,$ = layui.$ //重点处
             ,form = layui.form
@@ -94,8 +94,12 @@
                     //当你在iframe页面关闭自身时
                     var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
                     parent.layer.close(index); //再执行关闭
+                    console.log('关闭layer');
+//                    window.parent.location.reload();
+//                    parent.table.reload('testReload', {});
+                    parent.layui.table.reload('testReload');
                     //执行重载
-                    table.reload();
+//                    location.reload();
                 },
                 "error":function (data) {
                     layer.msg(data.info);
