@@ -78,17 +78,19 @@
 //                    moveOut: true,
 //                    area: ["80%", "80%"],
 //                    content: url,
+//                    scrollbar:true,
+//                    moveOut:false,
 //                    skin: 'layui-layer-we',
 //                    btn:['关闭'],
 //                });
             }
         });
 
-        form.on('submit(formRule)', function(data){
+
+        /*form.on('submit(formRule)', function(data){
             var frame = layer.getChildFrame('html');
             frame.find("[type=submit]").removeClass('disabled');
             var name = frame.find("input[name=name]").val();
-//            var authids = frame.find("input[name=authids[]]").val();
             var layerfooter = frame.find(".layer-footer");
             var formdata = frame.find("form").serializeArray();
 
@@ -100,8 +102,6 @@
 
             var ids = frame.find("input[name=ids]").val();
             var url = "{:url('admin/auth.group/edit','',false)}/ids/" + ids;
-//            formdata.rules = authids.join(',');
-//            return console.log(formdata);
             $.ajax({
                 "url":"{:url('admin/auth.group/edit','',false)}/ids/" + ids,
                 "cache":false,
@@ -112,10 +112,6 @@
                     layer.msg(data.info);
                     layer.closeAll();
                     table.reload('testReload', {});
-                    //当你在iframe页面关闭自身时
-//                    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
-//                    parent.layer.close(index); //再执行关闭
-                    //执行重载
                 },
                 "error":function (data) {
                     layer.msg(data.info);
@@ -123,7 +119,9 @@
             });
             return false;
 
-        });
+        });*/
+
+
     });
 </script>
 </body>

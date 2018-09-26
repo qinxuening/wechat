@@ -15,7 +15,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">名称</label>
                 <div class="layui-input-block">
-                    <input type="text" name="name" lay-verify="name"  autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
+                    <input type="text" name="name"  lay-verify="required|phone|number" autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -39,10 +39,11 @@
                     <!--<button type="reset" class="layui-btn layui-btn-primary">重置</button>-->
                 <!--</div>-->
             <!--</div>-->
-            <div class="layui-form-item hidden layer-footer">
-                <div class="layui-input-block">
-                    <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn btn-success layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
-                    <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm btn-embossed">{:__('Reset')}</button>
+            <!--hidden layer-footer-->
+            <div class="layui-form-item footer-form">
+                <div class="footer">
+                    <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                    <button type="reset" class="layui-btn layui-btn-primary btn-embossed">{:__('Reset')}</button>
                 </div>
             </div>
         </form>

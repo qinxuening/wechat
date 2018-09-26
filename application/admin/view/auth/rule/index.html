@@ -39,11 +39,12 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','element','form','authtree'], function(){
+    }).use(['index','table','element','form','authtree','we'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
             ,layer = layui.layer
+            ,we = layui.we
             ,form = layui.form;
 
 
@@ -85,6 +86,7 @@
                 });
             } else if(obj.event === 'view'){
                 var url = "{:url('admin/auth.rule/view','',false)}/id/" + data.id;
+                we.api.open(url,'编辑');
                 layer.open({
                     type: 2,
                     title: "查看",

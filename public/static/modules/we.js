@@ -76,7 +76,7 @@ layui.define(['jquery', 'layer'], function(exports){
                 if (windowSize != null) {
                     var area = windowSize;
                 } else {
-                    var area = [$(window).width() > 800 ? '800px' : '95%', $(window).height() > 600 ? '600px' : '95%'];
+                    var area = ['80%' , '80%'];
                 }
                 options = $.extend({
                     type: 2,
@@ -86,7 +86,11 @@ layui.define(['jquery', 'layer'], function(exports){
                     maxmin: true,
                     moveOut: true,
                     area: area,
-                    content: url,
+                    content: [url],
+                    // content: [url,'no'],
+                    scrollbar:false,
+                    moveOut:false,
+                    // btn:['关闭'],
                     skin: 'layui-layer-we',
                     zIndex: layer.zIndex,
                     success: function (layero, index) {
@@ -97,7 +101,7 @@ layui.define(['jquery', 'layer'], function(exports){
                         layer.setTop(layero);
                         var frame = layer.getChildFrame('html', index);
                         var layerfooter = frame.find(".layer-footer");
-                        we.api.layerfooter(layero, index, that);
+                        // we.api.layerfooter(layero, index, that);
 
                         //绑定事件
                         if (layerfooter.size() > 0) {

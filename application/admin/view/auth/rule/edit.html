@@ -39,7 +39,7 @@
             <div class="layui-form-item layui-form-text">
                 <label class="layui-form-label">规则条件</label>
                 <div class="layui-input-block">
-                    <textarea placeholder="规则条件" class="layui-textarea" name="condition" rows="3">{$list['condition']}</textarea>
+                    <textarea placeholder="规则条件" lay-verify="required|phone|number" class="layui-textarea" name="condition" rows="3">{$list['condition']}</textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -55,10 +55,10 @@
                 </div>
             </div>
 
-            <div class="layui-form-item">
-                <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit="" lay-filter="formRule">立即提交</button>
-                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            <div class="layui-form-item footer-form">
+                <div class="footer">
+                    <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                    <button type="reset" class="layui-btn layui-btn-primary btn-embossed">{:__('Reset')}</button>
                 </div>
             </div>
         </form>
