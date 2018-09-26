@@ -6,7 +6,7 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-body">
-                    <table class="layui-hide" id="rule" lay-filter="rule"  lay-data="{id: 'testReload'}"></table>
+                    <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="testReload1"></table>
                 </div>
             </div>
         </div>
@@ -47,12 +47,11 @@
             ,we = layui.we
             ,form = layui.form;
 
-
         table.render({
             elem: '#rule'
             ,height: 500
             ,url:"{:url('Admin/auth.rule/getRule')}"
-            ,id: 'testReload'
+            ,id : 'testReload1'
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'id', title: 'ID', sort: true}
@@ -88,32 +87,9 @@
             } else if(obj.event === 'view'){
                 var url = "{:url('admin/auth.rule/view','',false)}/id/" + data.id;
                 we.api.open(url,'编辑');
-                layer.open({
-                    type: 2,
-                    title: "查看",
-                    shadeClose: true,
-                    shade: 0.3,
-                    maxmin: true,
-                    moveOut: true,
-                    area: ["80%", "80%"],
-                    content: url,
-                    skin: 'layui-layer-we',
-//                    btn:['关闭']
-                });
             } else if(obj.event === 'edit') {
                 var url = "{:url('admin/auth.rule/edit','',false)}/id/" + data.id;
-                layer.open({
-                    type: 2,
-                    title: "编辑",
-                    shadeClose: true,
-                    shade: 0.3,
-                    maxmin: true,
-                    moveOut: true,
-                    area: ["80%", "80%"],
-                    content: url,
-                    skin: 'layui-layer-we',
-//                    btn:['关闭'],
-                });
+                we.api.open(url,'查看');
             }
         });
 

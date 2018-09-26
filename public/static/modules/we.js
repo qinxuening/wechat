@@ -15,7 +15,14 @@ layui.define(['jquery', 'layer'], function(exports){
                     if (result === false)
                         return;
                 }
-                layer.msg(msg);
+
+                var index = parent.layer.getFrameIndex(window.name);
+                // console.log(parent.layui.table.render);
+                console.log(parent.$("#rule").attr('table-reload-id'));
+                var tablereloadid = parent.$("#rule").attr('table-reload-id'); //获取重加载table
+                parent.layer.close(index);
+                console.log('关闭layer');
+                parent.layui.table.reload(tablereloadid);
             },
 
             //请求错误的回调
@@ -47,15 +54,14 @@ layui.define(['jquery', 'layer'], function(exports){
             ajax: function (options, success, error) {
                 options = typeof options === 'string' ? {url: options} : options;
                 var index = layer.load();
-                // return console.log(options);
-                //jQuery.extend() 函数用于将一个或多个对象的内容合并到目标对象
                 options = $.extend({
                     type: "POST",
                     dataType: "json",
                     success: function (ret) {
                         layer.close(index);
                         ret = we.events.onAjaxResponse(ret);
-                        if (ret.code === 1) {
+                        console.log(ret);
+                        if (ret.status === 'success') {
                             we.events.onAjaxSuccess(ret, success);
                         } else {
                             we.events.onAjaxError(ret, error);
@@ -67,6 +73,9 @@ layui.define(['jquery', 'layer'], function(exports){
                         we.events.onAjaxError(ret, error);
                     }
                 }, options);
+
+                // return console.log(options);
+
                 $.ajax(options);
             },
 

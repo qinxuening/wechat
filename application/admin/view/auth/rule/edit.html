@@ -73,17 +73,21 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['jquery','index','form','element'], function(){
+    }).use(['jquery','index','form','element','we'], function(){
         var admin = layui.admin
             ,$ = layui.$
             ,form = layui.form
             ,table = layui.table
+            ,we = layui.we;
         //监听提交
         form.on('submit(formRule)', function(data){
-            var formData = JSON.stringify(data.field)
+            var formData = JSON.stringify(data.field);
+            var ids = "{$row['id']}";
 //            layer.msg(formData);
+            we.api.ajax({"url":"{:url('admin/auth.rule/edit','',false)}","data":data.field});
+            return false;
             $.ajax({
-                "url":"{:url('admin/auth.rule/edit')}",
+                "url":"{:url('admin/auth.rule/edit','',false)}",
                 "cache":false,
                 "data":data.field,
                 "async":true,

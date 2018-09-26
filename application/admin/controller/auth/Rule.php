@@ -69,9 +69,9 @@ class Rule extends baseAdmin{
             $data['ismenu'] = $data['ismenu'] == 'on' ? '1' : 0;
             if($id){
                 Db::name('auth_rule')->where(['id' => $id])->update($data);
-                return json(['code' => 1, 'status' => 'success', 'info' => '操作成功']);
+                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
             } else {
-                return json(['code' => -1, 'status' => 'error', 'info' => '非法操作']);
+                return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
             }
         }
         $list = Db::name('auth_rule')->where(['id' => $id])->find();
