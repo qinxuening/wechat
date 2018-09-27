@@ -9,7 +9,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">父级</label>
                 <div class="layui-input-block">
-                    {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid']])}
+                    {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid'],'lay-filter'=>"character"])}
                 </div>
             </div>
             <div class="layui-form-item">
@@ -160,6 +160,42 @@
             }
         });
 
+        form.on('select(character)', function(data){
+            console.log(data.elem);
+            console.log(data.value); //得到被选中的值
+            console.log(data.othis.data("pid"));
+        });
+
+        //变更级别后需要重建节点树
+        $(document).on("change", "select[name='row[pid]']", function () {
+            var pid = $(this).data("pid");
+            var id = $(this).data("id");
+            if ($(this).val() == id) {
+                $("option[value='" + pid + "']", this).prop("selected", true).change();
+                Backend.api.toastr.error(__('Can not change the parent to self'));
+                return false;
+            }
+            $.ajax({
+                url: "auth/group/roletree",
+                type: 'post',
+                dataType: 'json',
+                data: {id: id, pid: $(this).val()},
+                success: function (ret) {
+                    if (ret.hasOwnProperty("code")) {
+                        var data = ret.hasOwnProperty("data") && ret.data != "" ? ret.data : "";
+                        if (ret.code === 1) {
+                            //销毁已有的节点树
+                            $("#treeview").jstree("destroy");
+                            Controller.api.rendertree(data);
+                        } else {
+                            Backend.api.toastr.error(ret.data);
+                        }
+                    }
+                }, error: function (e) {
+                    Backend.api.toastr.error(e.message);
+                }
+            });
+        });
 
     });
 </script>
