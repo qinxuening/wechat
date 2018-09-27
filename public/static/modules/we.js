@@ -7,7 +7,7 @@ layui.define(['jquery', 'layer'], function(exports){
     var we = {
         events: {
             //请求成功的回调
-            onAjaxSuccess: function (ret, onAjaxSuccess) {
+            onAjaxSuccess: function (ret, options,onAjaxSuccess) {
                 var data = typeof ret.data !== 'undefined' ? ret.data : null;
                 var msg = typeof ret.msg !== 'undefined' && ret.msg ? ret.msg : '操作完成';
                 if (typeof onAjaxSuccess === 'function') {
@@ -18,15 +18,22 @@ layui.define(['jquery', 'layer'], function(exports){
 
                 var index = parent.layer.getFrameIndex(window.name);
                 // console.log(parent.layui.table.render);
-                console.log(parent.$("#rule").attr('table-reload-id'));
-                var tablereloadid = parent.$("#rule").attr('table-reload-id'); //获取重加载table
+                // console.log(parent.$("#rule").attr('table-reload-id'));
+                // window.parent.location.reload();
+                // var tablereloadid = parent.$("#rule").attr('table-reload-id'); //获取重加载table
+                var tablereloadid = options.tableid; //重载table的id
+
                 parent.layer.close(index);
-                console.log('关闭layer');
-                parent.layui.table.reload(tablereloadid);
+                console.log(tablereloadid);
+
+                if(tablereloadid) {
+                    parent.layui.table.reload(tablereloadid);
+                }
+
             },
 
             //请求错误的回调
-            onAjaxError: function (ret, onAjaxError) {
+            onAjaxError: function (ret, options,onAjaxError) {
                 var data = typeof ret.data !== 'undefined' ? ret.data : null;
                 if (typeof onAjaxError === 'function') {
                     var result = onAjaxError.call(this, data, ret);
@@ -62,9 +69,9 @@ layui.define(['jquery', 'layer'], function(exports){
                         ret = we.events.onAjaxResponse(ret);
                         console.log(ret);
                         if (ret.status === 'success') {
-                            we.events.onAjaxSuccess(ret, success);
+                            we.events.onAjaxSuccess(ret, options,success);
                         } else {
-                            we.events.onAjaxError(ret, error);
+                            we.events.onAjaxError(ret, options,error);
                         }
                     },
                     error: function (xhr) {

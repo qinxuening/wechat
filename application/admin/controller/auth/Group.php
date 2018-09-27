@@ -163,10 +163,9 @@ class Group extends baseAdmin{
             if ($params)
             {
                 $row->save($params);
-                $this->success();
+                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
             }
-            $this->error();
-            return;
+            return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
         }
 
         $this->view->assign("row", $row);
