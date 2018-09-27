@@ -1395,3 +1395,6 @@ body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
 .footer-form{
     margin-top: 60px;
 }
+.layui-btn-view{
+    background-color: #18bc9c;
+}

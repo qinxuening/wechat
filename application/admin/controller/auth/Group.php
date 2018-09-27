@@ -91,8 +91,11 @@ class Group extends baseAdmin{
     {
         if ($this->request->isPost())
         {
-            $params = $this->request->post("row/a", [], 'strip_tags');
-            $params['rules'] = explode(',', $params['rules']);
+            $params = $this->request->post("", [], 'strip_tags');
+            $params['status'] = $params['status'] == 'on' ? 1 : 0;
+            $params['rules'] = implode(',', $params['authids']);
+            unset($params['authids']);
+            unset($params['ids']);
             if (!in_array($params['pid'], $this->childrenGroupIds))
             {
                 $this->error(__('The parent group can not be its own child'));
@@ -115,11 +118,13 @@ class Group extends baseAdmin{
             if ($params)
             {
                 $this->model->create($params);
-                $this->success();
+//                 $this->success();
+                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
             }
-            $this->error();
+//             $this->error();
+            return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
         }
-        return $this->view->fetch();
+        return $this->view->fetch('edit');
     }
     
     /**

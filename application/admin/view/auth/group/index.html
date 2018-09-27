@@ -14,6 +14,14 @@
 </div>
 </div>
 
+<!--工具栏-->
+<script type="text/html" id="toolbar">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i> 添加角色</button>
+    </div>
+</script>
+<!--工具栏-->
+
 <!--状态-->
 <script type="text/html" id="switchStatus">
     <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
@@ -52,6 +60,7 @@
         table.render({
             elem: '#group'
             ,skin:'line'
+            ,toolbar: '#toolbar'
             ,url:"{:url('Admin/auth.group/index')}"
             ,id: 'tableReload'
             ,cols: [[
@@ -72,6 +81,18 @@
             }
         });
 
+        //头工具栏事件
+        table.on('toolbar(group)', function(obj){
+            var url = "{:url('admin/auth.group/add','',false)}";
+            we.api.open(url,'添加角色');
+//            var checkStatus = table.checkStatus(obj.config.id);
+//            switch(obj.event){
+//                case 'add':
+//                    var data = checkStatus.data;
+//                    layer.alert(JSON.stringify(data));
+//                    break;
+//            };
+        });
 
         /*form.on('submit(formRule)', function(data){
             var frame = layer.getChildFrame('html');

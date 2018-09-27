@@ -83,24 +83,6 @@
         form.on('submit(formRule)', function(data){
             var formData = JSON.stringify(data.field);
             we.api.ajax({"url":"{:url('admin/auth.rule/edit','',false)}","data":data.field,'tableid':'tableReload'});
-//            $.ajax({
-//                "url":"{:url('admin/auth.rule/edit','',false)}",
-//                "cache":false,
-//                "data":data.field,
-//                "async":true,
-//                "type":'post',
-//                "success":function(data){
-//                    layer.msg(data.info);
-//                    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
-//                    parent.layer.close(index); //再执行关闭
-//                    console.log('关闭layer');
-//                    parent.layui.table.reload('testReload');
-//                },
-//                "error":function (data) {
-//                    layer.msg(data.info);
-//                }
-//            });
-
         });
     });
 </script>

@@ -81,24 +81,6 @@
             var url = "{:url('admin/auth.group/edit','',false)}/ids/" + ids;
             formData['rules'] = authids.join(',');
             we.api.ajax({"url":url,"data":formData,'tableid':'tableReload'});
-//            $.ajax({
-//                "url":"{:url('admin/auth.group/edit','',false)}/ids/" + ids,
-//                "cache":false,
-//                "data":formData,
-//                "async":true,
-//                "type":'post',
-//                "success":function(data){
-//                    layer.msg(data.info);
-//                    //当你在iframe页面关闭自身时
-//                    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
-//                    parent.layer.close(index); //再执行关闭
-//                    //执行重载
-//                },
-//                "error":function (data) {
-//                    layer.msg(data.info);
-//                }
-//            });
-//            return false;
         });
         var id = "{$row['id']}";
         var pid = "{$row['pid']}";
