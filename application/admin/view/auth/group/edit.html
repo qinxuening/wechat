@@ -9,7 +9,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">父级</label>
                 <div class="layui-input-block">
-                    {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid'],'lay-filter'=>"character"])}
+                    {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid'],'lay-filter'=>"character"],$row['id'])}
                 </div>
             </div>
             <div class="layui-form-item">
@@ -170,7 +170,6 @@
 
             if (data.value == id) {
                 $("option[value='" + pid + "']", this).prop("selected", true).change();
-                form.render('select');
                 layer.msg('父组别不能是它的子组别');
                 return false;
             }

@@ -470,7 +470,7 @@ class FormBuilder
      * @param  array   $options
      * @return string
      */
-    public function select($name, $list = array(), $selected = null, $options = array())
+    public function select($name, $list = array(), $selected = null, $options = array(),$disabled_id = "")
     {
         // When building a select box the "value" attribute is really the selected one
         // so we will use that when checking the model or session for a value which
@@ -489,7 +489,7 @@ class FormBuilder
 
         foreach ($list as $value => $display)
         {
-            $html[] = $this->getSelectOption($display, $value, $selected);
+            $html[] = $this->getSelectOption($display, $value, $selected,$disabled_id);
         }
 
         // Once we have all of this HTML, we can join this into a single element after
@@ -564,14 +564,14 @@ class FormBuilder
      * @param  string  $selected
      * @return string
      */
-    public function getSelectOption($display, $value, $selected)
+    public function getSelectOption($display, $value, $selected,$disabled_id)
     {
         if (is_array($display))
         {
-            return $this->optionGroup($display, $value, $selected);
+            return $this->optionGroup($display, $value, $selected,$disabled_id);
         }
 
-        return $this->option($display, $value, $selected);
+        return $this->option($display, $value, $selected,$disabled_id);
     }
 
     /**
@@ -582,13 +582,13 @@ class FormBuilder
      * @param  string  $selected
      * @return string
      */
-    protected function optionGroup($list, $label, $selected)
+    protected function optionGroup($list, $label, $selected,$disabled_id)
     {
         $html = array();
 
         foreach ($list as $value => $display)
         {
-            $html[] = $this->option($display, $value, $selected);
+            $html[] = $this->option($display, $value, $selected,$disabled_id);
         }
 
         return '<optgroup label="' . $this->escape($label) . '">' . implode('', $html) . '</optgroup>';
@@ -602,11 +602,11 @@ class FormBuilder
      * @param  string  $selected
      * @return string
      */
-    protected function option($display, $value, $selected)
+    protected function option($display, $value, $selected,$disabled_id)
     {
         $selected = $this->getSelectedValue($value, $selected);
-
-        $options = array('value' => $this->escape($value), 'selected' => $selected);
+        $disabled = $this->getDisabledValue($value, $disabled_id);
+        $options = array('value' => $this->escape($value), 'selected' => $selected,'disabled' => $disabled);
 
         return '<option' . $this->attributes($options) . '>' . $this->escape($display) . '</option>';
     }
@@ -628,6 +628,20 @@ class FormBuilder
         return ((string) $value == (string) $selected) ? 'selected' : null;
     }
 
+    /**
+     * Determine if the value is disabled
+     * @param unknown $value
+     * @param unknown $disabled
+     * @return Ambigous <string, NULL>
+     */
+    protected function getDisabledValue($value, $disabled) {
+        if(is_array($disabled)){
+            return in_array($value, $disabled) ? 'disabled' : null;
+        }
+        
+        return ((string) $value == (string) $disabled) ? 'selected' : null;
+    }
+    
     /**
      * Create a checkbox input field.
      *

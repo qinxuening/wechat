@@ -19,11 +19,11 @@ if (!function_exists('build_select')) {
      * @param mixed $attr
      * @return string
      */
-    function build_select($name, $options, $selected = [], $attr = [])
+    function build_select($name, $options, $selected = [], $attr = [], $disabled_id = "")
     {
         $options = is_array($options) ? $options : explode(',', $options);
         $selected = is_array($selected) ? $selected : explode(',', $selected);
-        return Form::select($name, $options, $selected, $attr);
+        return Form::select($name, $options, $selected, $attr, $disabled_id);
     }
 }
 
