@@ -9,7 +9,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">父级</label>
                 <div class="layui-input-block">
-                    {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid'],'lay-filter'=>"character"],$row['id'])}
+                    {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid'],'lay-filter'=>"character"],$row['id'], $groupList)}
                 </div>
             </div>
             <div class="layui-form-item">

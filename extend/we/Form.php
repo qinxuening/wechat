@@ -8,6 +8,7 @@ namespace we;
 
 
 use ArrayAccess;
+use app\admin\library\Category;
 
 /**
  * 表单元素生成
@@ -470,7 +471,7 @@ class FormBuilder
      * @param  array   $options
      * @return string
      */
-    public function select($name, $list = array(), $selected = null, $options = array(),$disabled_id = "")
+    public function select($name, $list = array(), $selected = null, $options = array(),$disabled_id = "",$table = "")
     {
         // When building a select box the "value" attribute is really the selected one
         // so we will use that when checking the model or session for a value which
@@ -478,6 +479,11 @@ class FormBuilder
         $selected = $this->getValueAttribute($name, $selected);
 
         $options['id'] = $this->getIdAttribute($name, $options);
+        
+        if($disabled_id && $table) {
+            $childIds = Category::getChildsId($table, $disabled_id);
+            $childIds = array_merge($childIds,[$disabled_id]);
+        }
 
         if (!isset($options['name']))
             $options['name'] = $name;
@@ -489,7 +495,7 @@ class FormBuilder
 
         foreach ($list as $value => $display)
         {
-            $html[] = $this->getSelectOption($display, $value, $selected,$disabled_id);
+            $html[] = $this->getSelectOption($display, $value, $selected,$childIds);
         }
 
         // Once we have all of this HTML, we can join this into a single element after

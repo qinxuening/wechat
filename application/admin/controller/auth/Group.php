@@ -28,7 +28,7 @@ class Group extends baseAdmin{
         $this->childrenGroupIds = $this->auth->getChildrenGroupIds(true);
     
         $groupList = collection(AuthGroup::where('id', 'in', $this->childrenGroupIds)->select())->toArray();
-
+//         print_r($this->childrenGroupIds);
         Tree::instance()->init($groupList);
         $result = [];
         if ($this->auth->isSuperAdmin())
@@ -53,6 +53,8 @@ class Group extends baseAdmin{
         $this->groupdata = $groupName;
 //         print_r($this->groupdata);
         $this->assignconfig("admin", ['id' => $this->auth->id, 'group_ids' => $this->auth->getGroupIds()]);
+        
+        $this->view->assign('groupList', $groupList);
         $this->view->assign('groupdata', $this->groupdata);
     }
     
@@ -283,6 +285,7 @@ class Group extends baseAdmin{
                 $arr[$key]['name'] = $value['title'];
                 $arr[$key]['value'] = $value['id'];
             }
+
             //当前所有正常规则列表
             Tree::instance()->init($parentRuleList);
 
