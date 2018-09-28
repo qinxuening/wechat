@@ -142,21 +142,29 @@
                 authtree.on('deptChange(lay-check-auth)', function(data) {
                     console.log('监听到显示层数改变',data);
                 });
-                form.on('checkbox(checkall)', function(data){
-                    if(data.elem.checked) {
-                        authtree.checkAll("#LAY-auth-tree-index");
-                    } else {
-                        authtree.uncheckAll("#LAY-auth-tree-index");
-                    }
-                });
 
-                form.on('checkbox(expandall)', function(data){
-                    if(data.elem.checked) {
-                        authtree.showAll("#LAY-auth-tree-index");
-                    } else {
-                        authtree.closeAll("#LAY-auth-tree-index");
-                    }
-                });
+            }
+        });
+
+        /**
+         * 全选
+         * */
+        form.on('checkbox(checkall)', function(data){
+            if(data.elem.checked) {
+                authtree.checkAll("#LAY-auth-tree-index");
+            } else {
+                authtree.uncheckAll("#LAY-auth-tree-index");
+            }
+        });
+
+        /**
+         * 全部展开
+         * */
+        form.on('checkbox(expandall)', function(data){
+            if(data.elem.checked) {
+                authtree.showAll("#LAY-auth-tree-index");
+            } else {
+                authtree.closeAll("#LAY-auth-tree-index");
             }
         });
 
@@ -167,45 +175,32 @@
             console.log(data.elem);
             console.log(data.value); //得到被选中的值
             console.log(data.othis.data("pid"));
-
-            if (data.value == id) {
-                $("option[value='" + pid + "']", this).prop("selected", true).change();
-                layer.msg('父组别不能是它的子组别');
-                return false;
-            }
-
-        });
-
-        //变更级别后需要重建节点树
-        $(document).on("change", "select[name='row[pid]']", function () {
-            var pid = $(this).data("pid");
-            var id = $(this).data("id");
-            if ($(this).val() == id) {
-                $("option[value='" + pid + "']", this).prop("selected", true).change();
-                Backend.api.toastr.error(__('Can not change the parent to self'));
-                return false;
-            }
             $.ajax({
-                url: "auth/group/roletree",
+                url: "{:url('admin/auth.group/roletree')}",
                 type: 'post',
                 dataType: 'json',
-                data: {id: id, pid: $(this).val()},
+                async:true,
+                data: {id: id, pid: data.value},
                 success: function (ret) {
-                    if (ret.hasOwnProperty("code")) {
-                        var data = ret.hasOwnProperty("data") && ret.data != "" ? ret.data : "";
-                        if (ret.code === 1) {
-                            //销毁已有的节点树
-                            $("#treeview").jstree("destroy");
-                            Controller.api.rendertree(data);
-                        } else {
-                            Backend.api.toastr.error(ret.data);
-                        }
+                    if (ret.code == 1) {
+                        $("#LAY-auth-tree-index").html('');
+                        //销毁已有的节点树
+                        authtree.render('#LAY-auth-tree-index', ret.data.trees, {
+                            inputname: 'authids[]',
+                            layfilter: 'lay-check-auth',
+                            // openall: true,
+                            autowidth: true,
+                        });
+                    } else {
+                        layer.tips(ret.data);
                     }
                 }, error: function (e) {
-                    Backend.api.toastr.error(e.message);
+                    layer.tips(e.message);
                 }
             });
+
         });
+
 
     });
 </script>

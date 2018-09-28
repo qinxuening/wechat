@@ -51,6 +51,7 @@ class Group extends baseAdmin{
         }
 
         $this->groupdata = $groupName;
+//         print_r($this->groupdata);
         $this->assignconfig("admin", ['id' => $this->auth->id, 'group_ids' => $this->auth->getGroupIds()]);
         $this->view->assign('groupdata', $this->groupdata);
     }
@@ -247,6 +248,7 @@ class Group extends baseAdmin{
         $model = model('AuthGroup');
         $id = $this->request->post("id");
         $pid = $this->request->post("pid");
+
         $parentGroupModel = $model->get($pid);
         $currentGroupModel = NULL;
         if ($id)
@@ -315,7 +317,7 @@ class Group extends baseAdmin{
                     $nodeList[] = array('id' => $v['id'], 'parent' => $v['pid'] ? $v['pid'] : '#', 'text' => __($v['title']), 'type' => 'menu', 'state' => $state);
                 }
 //                 $this->success('', null, $nodeList);          
-                return json(['code' => 0, 'msg' => '获取成功', 'data' => ['trees' => $arr_]]);
+                return json(['code' =>1, 'msg' => '获取成功', 'data' => ['trees' => $arr_]]);
             }
             else
             {

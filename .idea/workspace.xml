@@ -18,11 +18,9 @@
       <file leaf-file-name="edit.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="11" column="215" lean-forward="false" selection-start-line="11" selection-start-column="215" selection-end-line="11" selection-end-column="215" />
-              <folding>
-                <marker date="1538138165549" expanded="false" signature="5643:6733" ph="{...}" />
-              </folding>
+            <state relative-caret-position="298">
+              <caret line="192" column="27" lean-forward="false" selection-start-line="192" selection-start-column="27" selection-end-line="192" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -42,7 +40,7 @@
       <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2295">
+            <state relative-caret-position="370">
               <caret line="85" column="11" lean-forward="false" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
               <folding />
             </state>
@@ -62,7 +60,7 @@
       <file leaf-file-name="authtree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/authtree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
+            <state relative-caret-position="972">
               <caret line="357" column="0" lean-forward="false" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="29" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -166,7 +164,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>layui-layer-molv</find>
-      <find>LAY-auth-tree-index</find>
       <find>checkall</find>
       <find>jstree</find>
       <find>lay-check-auth</find>
@@ -182,6 +179,7 @@
       <find>success</find>
       <find>toolbar</find>
       <find>character</find>
+      <find>LAY-auth-tree-index</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -375,6 +373,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -617,13 +637,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125132000" />
+    <option name="totallyTimeSpent" value="130283000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11142454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09943583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -939,55 +959,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/authtree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="357" column="0" lean-forward="false" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#4364#4959#0" expanded="false" />
-            <element signature="e#5020#5501#0" expanded="false" />
-            <element signature="e#5544#5749#0" expanded="false" />
-            <element signature="e#5784#6067#0" expanded="false" />
-            <element signature="e#6105#6383#0" expanded="false" />
-            <element signature="e#6421#6471#0" expanded="false" />
-            <element signature="e#6510#6542#0" expanded="false" />
-            <element signature="e#6588#6687#0" expanded="false" />
-            <element signature="e#6738#6975#0" expanded="false" />
-            <element signature="e#7030#7273#0" expanded="false" />
-            <element signature="e#7325#7869#0" expanded="false" />
-            <element signature="e#7920#8049#0" expanded="false" />
-            <element signature="e#8085#8151#0" expanded="false" />
-            <element signature="e#8199#8556#0" expanded="false" />
-            <element signature="e#8605#8965#0" expanded="false" />
-            <element signature="e#9005#9256#0" expanded="false" />
-            <element signature="e#9295#9486#0" expanded="false" />
-            <element signature="e#9543#9591#0" expanded="false" />
-            <element signature="e#9686#9919#0" expanded="false" />
-            <element signature="e#9963#10137#0" expanded="false" />
-            <element signature="e#10197#10248#0" expanded="false" />
-            <element signature="e#10346#10591#0" expanded="false" />
-            <element signature="e#10636#10841#0" expanded="false" />
-            <marker date="1537968080116" expanded="true" signature="3718:3733" ph="..." />
-            <marker date="1537968080116" expanded="true" signature="3835:3845" ph="..." />
-            <marker date="1537968080116" expanded="true" signature="3847:3855" ph="..." />
-            <marker date="1537968080116" expanded="true" signature="4173:4191" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="85" column="11" lean-forward="false" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1033,13 +1008,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/authtree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="357" column="0" lean-forward="false" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#4364#4959#0" expanded="false" />
+            <element signature="e#5020#5501#0" expanded="false" />
+            <element signature="e#5544#5749#0" expanded="false" />
+            <element signature="e#5784#6067#0" expanded="false" />
+            <element signature="e#6105#6383#0" expanded="false" />
+            <element signature="e#6421#6471#0" expanded="false" />
+            <element signature="e#6510#6542#0" expanded="false" />
+            <element signature="e#6588#6687#0" expanded="false" />
+            <element signature="e#6738#6975#0" expanded="false" />
+            <element signature="e#7030#7273#0" expanded="false" />
+            <element signature="e#7325#7869#0" expanded="false" />
+            <element signature="e#7920#8049#0" expanded="false" />
+            <element signature="e#8085#8151#0" expanded="false" />
+            <element signature="e#8199#8556#0" expanded="false" />
+            <element signature="e#8605#8965#0" expanded="false" />
+            <element signature="e#9005#9256#0" expanded="false" />
+            <element signature="e#9295#9486#0" expanded="false" />
+            <element signature="e#9543#9591#0" expanded="false" />
+            <element signature="e#9686#9919#0" expanded="false" />
+            <element signature="e#9963#10137#0" expanded="false" />
+            <element signature="e#10197#10248#0" expanded="false" />
+            <element signature="e#10346#10591#0" expanded="false" />
+            <element signature="e#10636#10841#0" expanded="false" />
+            <marker date="1537968080116" expanded="true" signature="3718:3733" ph="..." />
+            <marker date="1537968080116" expanded="true" signature="3835:3845" ph="..." />
+            <marker date="1537968080116" expanded="true" signature="3847:3855" ph="..." />
+            <marker date="1537968080116" expanded="true" signature="4173:4191" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="85" column="11" lean-forward="false" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="11" column="215" lean-forward="false" selection-start-line="11" selection-start-column="215" selection-end-line="11" selection-end-column="215" />
-          <folding>
-            <marker date="1538138165549" expanded="false" signature="5643:6733" ph="{...}" />
-          </folding>
+        <state relative-caret-position="298">
+          <caret line="192" column="27" lean-forward="false" selection-start-line="192" selection-start-column="27" selection-end-line="192" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
