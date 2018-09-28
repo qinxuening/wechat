@@ -83,7 +83,7 @@
             we.api.ajax({"url":url,"data":formData,'tableid':'tableReload'});
         });
         var id = "{$row['id']}";
-        var pid = "{$row['pid']}";
+        var pid = "{$row['pid']}" ? "{$row['pid']}" : 1;
 
         // 初始化
         $.ajax({
