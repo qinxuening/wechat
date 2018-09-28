@@ -160,10 +160,21 @@
             }
         });
 
+        /**
+         * 监听select选择
+         */
         form.on('select(character)', function(data){
             console.log(data.elem);
             console.log(data.value); //得到被选中的值
             console.log(data.othis.data("pid"));
+
+            if (data.value == id) {
+                $("option[value='" + pid + "']", this).prop("selected", true).change();
+                form.render('select');
+                layer.msg('父组别不能是它的子组别');
+                return false;
+            }
+
         });
 
         //变更级别后需要重建节点树
