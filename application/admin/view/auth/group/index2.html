@@ -6,6 +6,9 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-body">
+                    <div class="layui-btn-group demoTable">
+                        <button class="layui-btn" data-type="addGroup"><i class="layui-icon layui-icon-add-1"></i> 添加角色</button>
+                    </div>
                     <table class="layui-hide" id="group"  lay-filter="group" table-reload-id="tableReload"></table>
                 </div>
             </div>
@@ -14,11 +17,11 @@
 </div>
 </div>
 <!--工具栏-->
-<script type="text/html" id="toolbar">
-    <div class="layui-btn-container">
-        <button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i> 添加角色</button>
-    </div>
-</script>
+<!--<script type="text/html" id="toolbar">-->
+    <!--<div class="layui-btn-container">-->
+        <!--<button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i> 添加角色</button>-->
+    <!--</div>-->
+<!--</script>-->
 <!--工具栏-->
 
 <!--状态-->
@@ -59,10 +62,9 @@
         table.render({
             elem: '#group'
             ,skin:'line'
-            ,toolbar: '#toolbar'
+//            ,toolbar: '#toolbar'
             ,url:"{:url('Admin/auth.group/index')}"
             ,id: 'tableReload'
-            ,defaultToolbar: []//'filter', 'print', 'exports'
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'name', title: '角色名称', sort: true}
@@ -83,10 +85,8 @@
 
         //头工具栏事件
         table.on('toolbar(group)', function(obj){
-            if(obj.event == 'add') {
-                var url = "{:url('admin/auth.group/add','',false)}";
-                we.api.open(url, '添加角色');
-            }
+            var url = "{:url('admin/auth.group/add','',false)}";
+            we.api.open(url,'添加角色');
 //            var checkStatus = table.checkStatus(obj.config.id);
 //            switch(obj.event){
 //                case 'add':
@@ -94,6 +94,20 @@
 //                    layer.alert(JSON.stringify(data));
 //                    break;
 //            };
+        });
+
+        var $ = layui.$, active = {
+            addGroup: function(){ //获取选中数据
+                var checkStatus = table.checkStatus('group')
+                    ,data = checkStatus.data;
+                layer.alert(JSON.stringify(checkStatus));
+            }
+        };
+
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
         });
 
         /*form.on('submit(formRule)', function(data){

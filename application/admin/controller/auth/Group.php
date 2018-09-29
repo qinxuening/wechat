@@ -136,8 +136,8 @@ class Group extends baseAdmin{
     public function edit($ids = NULL)
     {
         $row = $this->model->get(['id' => $ids]);
-        if (!$row)
-            $this->error(__('No Results were found'));
+//         if (!$row)
+//             $this->error(__('No Results were found'));
         if ($this->request->isAjax())
         {
             $params = $this->request->post("", [], 'strip_tags');
@@ -170,7 +170,11 @@ class Group extends baseAdmin{
             $params['rules'] = implode(',', $rules);
             if ($params)
             {
-                $row->save($params);
+                if($ids) {    
+                    $row->save($params);
+                } else {
+                    $this->model->create($params);
+                }
                 return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
             }
             return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
