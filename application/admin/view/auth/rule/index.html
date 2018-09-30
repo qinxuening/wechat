@@ -14,6 +14,17 @@
 </div>
 </div>
 
+<!--头工具栏-->
+<script type="text/html" id="toolbar">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加</button>
+        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del"><i class="layui-icon layui-icon-edit"></i>删除</button>
+        <button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-file"></i>导出</button>
+        <button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-upload"></i>导入</button>
+    </div>
+</script>
+<!--头工具栏-->
+
 <!--状态-->
 <script type="text/html" id="switchStatus">
     <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="激活|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
@@ -52,6 +63,7 @@
             ,height: 500
             ,url:"{:url('Admin/auth.rule/getRule')}"
             ,id : 'tableReload'
+            ,toolbar : '#toolbar'
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'id', title: 'ID', sort: true}
@@ -93,6 +105,26 @@
             }
         });
 
+        //头工具栏事件
+        table.on('toolbar(rule)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'add':
+                    var data = checkStatus.data;
+                    layer.alert(JSON.stringify(data));
+                    break;
+                case 'del':
+                    var data = checkStatus.data;
+                    layer.msg('选中了：'+ data.length + ' 个');
+                    break;
+                case 'export':
+                    layer.msg(checkStatus.isAll ? '全选': '未全选');
+                    break;
+                case 'import':
+                    layer.msg(checkStatus.isAll ? '全选': '未全选');
+                    break;
+            };
+        });
     });
 </script>
 </body>

@@ -52,9 +52,6 @@
 </div>
 {/block}
 {block name="script"}
-<!--<script src="__STATIC__/modules/jquery-1.7.2.min.js"></script>-->
-<!--<script src="__STATIC__/modules/jstree/dist/jstree.js"></script>-->
-
 <script>
     layui.config({
         base: "__STATIC__/", //静态资源所在路径
@@ -121,22 +118,22 @@
                     console.log('监听 authtree 触发事件数据', data);
                     // 获取所有节点
                     var all = authtree.getAll('#LAY-auth-tree-index');
-                    console.log('all', all);
+//                    console.log('all', all);
                     // 获取所有已选中节点
                     var checked = authtree.getChecked('#LAY-auth-tree-index');
-                    console.log('checked', checked);
+//                    console.log('checked', checked);
                     // 获取所有未选中节点
                     var notchecked = authtree.getNotChecked('#LAY-auth-tree-index');
-                    console.log('notchecked', notchecked);
+//                    console.log('notchecked', notchecked);
                     // 获取选中的叶子节点
                     var leaf = authtree.getLeaf('#LAY-auth-tree-index');
-                    console.log('leaf', leaf);
+//                    console.log('leaf', leaf);
                     // 获取最新选中
                     var lastChecked = authtree.getLastChecked('#LAY-auth-tree-index');
-                    console.log('lastChecked', lastChecked);
+//                    console.log('lastChecked', lastChecked);
                     // 获取最新取消
                     var lastNotChecked = authtree.getLastNotChecked('#LAY-auth-tree-index');
-                    console.log('lastNotChecked', lastNotChecked);
+//                    console.log('lastNotChecked', lastNotChecked);
 
                 });
                 authtree.on('deptChange(lay-check-auth)', function(data) {
@@ -172,9 +169,9 @@
          * 监听select选择
          */
         form.on('select(character)', function(data){
-            console.log(data.elem);
-            console.log(data.value); //得到被选中的值
-            console.log(data.othis.data("pid"));
+//            console.log(data.elem);
+//            console.log(data.value); //得到被选中的值
+//            console.log(data.othis.data("pid"));
             $.ajax({
                 url: "{:url('admin/auth.group/roletree')}",
                 type: 'post',
