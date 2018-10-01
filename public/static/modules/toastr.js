@@ -14,25 +14,25 @@ layui.define(['jquery'], function(exports){
     };
 
     // var toastr = {
-    //     clear:  obj.clear,
-    //     remove:  obj.remove,
-    //     error:  obj.error,
-    //     getContainer: obj.getContainer,
-    //     info:  obj.info,
+    //     clear:  obj2.clear,
+    //     remove:  obj2.remove,
+    //     error:  obj2.error,
+    //     getContainer: obj2.getContainer,
+    //     info:  obj2.info,
     //     options: {},
-    //     subscribe:  obj.subscribe,
-    //     success:  obj.success,
+    //     subscribe:  obj2.subscribe,
+    //     success:  obj2.success,
     //     version: '2.1.4',
-    //     warning:  obj.warning
+    //     warning:  obj2.warning
     // };
 
     var previousToast;
-    obj = {
+    obj2 = {
          options: {},
          error:function(message, title, optionsOverride) {
-            return obj.notify({
+            return obj2.notify({
                 type: toastType.error,
-                iconClass:  obj.getOptions().iconClasses.error,
+                iconClass:  obj2.getOptions().iconClasses.error,
                 message: message,
                 optionsOverride: optionsOverride,
                 title: title
@@ -40,21 +40,21 @@ layui.define(['jquery'], function(exports){
         },
 
         getContainer: function (options, create) {
-            if (!options) { options =  obj.getOptions(); }
+            if (!options) { options =  obj2.getOptions(); }
             $container = $('#' + options.containerId);
             if ($container.length) {
                 return $container;
             }
             if (create) {
-                $container =  obj.createContainer(options);
+                $container =  obj2.createContainer(options);
             }
             return $container;
         },
 
         info:function (message, title, optionsOverride) {
-            return  obj.notify({
+            return  obj2.notify({
                 type: toastType.info,
-                iconClass:  obj.getOptions().iconClasses.info,
+                iconClass:  obj2.getOptions().iconClasses.info,
                 message: message,
                 optionsOverride: optionsOverride,
                 title: title
@@ -66,9 +66,9 @@ layui.define(['jquery'], function(exports){
         },
 
         success:function(message, title, optionsOverride) {
-            return  obj.notify({
+            return  obj2.notify({
                 type: toastType.success,
-                iconClass:  obj.getOptions().iconClasses.success,
+                iconClass:  obj2.getOptions().iconClasses.success,
                 message: message,
                 optionsOverride: optionsOverride,
                 title: title
@@ -76,9 +76,9 @@ layui.define(['jquery'], function(exports){
         },
 
         warning:function (message, title, optionsOverride) {
-            return  obj.notify({
+            return  obj2.notify({
                 type: toastType.warning,
-                iconClass: obj.getOptions().iconClasses.warning,
+                iconClass: obj2.getOptions().iconClasses.warning,
                 message: message,
                 optionsOverride: optionsOverride,
                 title: title
@@ -86,18 +86,18 @@ layui.define(['jquery'], function(exports){
         },
 
         clear:function ($toastElement, clearOptions) {
-            var options =  obj.getOptions();
-            if (!$container) {  obj.getContainer(options); }
-            if (! obj.clearToast($toastElement, options, clearOptions)) {
-                obj.clearContainer(options);
+            var options =  obj2.getOptions();
+            if (!$container) {  obj2.getContainer(options); }
+            if (! obj2.clearToast($toastElement, options, clearOptions)) {
+                obj2.clearContainer(options);
             }
         },
 
         remove:function ($toastElement) {
-            var options =  obj.getOptions();
-            if (!$container) {  obj.getContainer(options); }
+            var options =  obj2.getOptions();
+            if (!$container) {  obj2.getContainer(options); }
             if ($toastElement && $(':focus', $toastElement).length === 0) {
-                obj.removeToast($toastElement);
+                obj2.removeToast($toastElement);
                 return;
             }
             if ($container.children().length) {
@@ -110,7 +110,7 @@ layui.define(['jquery'], function(exports){
         clearContainer: function  (options) {
             var toastsToClear = $container.children();
             for (var i = toastsToClear.length - 1; i >= 0; i--) {
-                obj.clearToast($(toastsToClear[i]), options);
+                obj2.clearToast($(toastsToClear[i]), options);
             }
         },
 
@@ -120,7 +120,7 @@ layui.define(['jquery'], function(exports){
                 $toastElement[options.hideMethod]({
                     duration: options.hideDuration,
                     easing: options.hideEasing,
-                    complete: function () {  obj.removeToast($toastElement); }
+                    complete: function () {  obj2.removeToast($toastElement); }
                 });
                 return true;
             }
@@ -186,7 +186,7 @@ layui.define(['jquery'], function(exports){
         },
 
         notify:function (map) {
-            var options =  obj.getOptions();
+            var options =  obj2.getOptions();
             var iconClass = map.iconClass || options.iconClass;
 
             if (typeof (map.optionsOverride) !== 'undefined') {
@@ -198,7 +198,7 @@ layui.define(['jquery'], function(exports){
 
             toastId++;
 
-            $container =  obj.getContainer(options, true);
+            $container =  obj2.getContainer(options, true);
 
             var intervalId = null;
             var $toastElement = $('<div/>');
@@ -225,7 +225,7 @@ layui.define(['jquery'], function(exports){
 
             handleEvents();
 
-            obj.publish(response);
+            obj2.publish(response);
 
             if (options.debug && console) {
                 console.log(response);
@@ -400,14 +400,14 @@ layui.define(['jquery'], function(exports){
                     duration: duration,
                     easing: easing,
                     complete: function () {
-                        obj.removeToast($toastElement);
+                        obj2.removeToast($toastElement);
                         clearTimeout(intervalId);
                         if (options.onHidden && response.state !== 'hidden') {
                             options.onHidden();
                         }
                         response.state = 'hidden';
                         response.endTime = new Date();
-                        obj.publish(response);
+                        obj2.publish(response);
                     }
                 });
             }
@@ -435,11 +435,11 @@ layui.define(['jquery'], function(exports){
         },
 
         getOptions:function () {
-            return $.extend({},  obj.getDefaults(), obj.options);
+            return $.extend({},  obj2.getDefaults(), obj2.options);
         },
 
         removeToast:function ($toastElement) {
-            if (!$container) { $container =  obj.getContainer(); }
+            if (!$container) { $container =  obj2.getContainer(); }
             if ($toastElement.is(':visible')) {
                 return;
             }
@@ -451,5 +451,5 @@ layui.define(['jquery'], function(exports){
             }
         }
     };
-    exports('toastr', obj);
+    exports('toastr', obj2);
 })
