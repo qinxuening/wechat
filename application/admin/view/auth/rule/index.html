@@ -37,9 +37,9 @@
 
 <!--操作-->
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs layui-btn-view layui-btn-radius" lay-event="view">查看</a>
-    <a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs layui-btn-radius" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 {/block}
 
@@ -56,7 +56,8 @@
             ,table = layui.table
             ,layer = layui.layer
             ,we = layui.we
-            ,form = layui.form;
+            ,form = layui.form
+            ,toastr = layui.toastr;
 
         table.render({
             elem: '#rule'
@@ -92,7 +93,11 @@
         table.on('tool(rule)', function(obj){
             var data = obj.data;
             if(obj.event === 'del'){
-                layer.confirm('真的删除行么', function(index){
+                layer.confirm('真的删除行么',{
+                    skin: 'layui-layer-we',
+                    title:'温馨提示',
+                }, function(index){
+                    we.api.ajax({"url":"{:url('admin/auth.rule/del')}","data":{'ids':data.id},'tableid':'tableReload'});
                     obj.del();
                     layer.close(index);
                 });

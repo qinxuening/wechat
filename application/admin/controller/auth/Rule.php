@@ -9,6 +9,7 @@ namespace app\admin\controller\auth;
 use app\common\controller\baseAdmin;
 use think\Db;
 use we\Tree;
+use think\Cache;
 
 class Rule extends baseAdmin{
     protected $rulelist;
@@ -79,7 +80,32 @@ class Rule extends baseAdmin{
         return $this->view->fetch();
     }
     
-    
+
+    /**
+     * 删除
+     */
+    public function del($ids = "")
+    {
+         return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
+        if ($ids)
+        {
+            $delIds = [];
+            foreach (explode(',', $ids) as $k => $v)
+            {
+                $delIds = array_merge($delIds, Tree::instance()->getChildrenIds($v, TRUE));
+            }
+            $delIds = array_unique($delIds);
+            $count = Db::name('auth_rule')->where('id', 'in', $delIds)->delete();
+            if ($count)
+            {
+                Cache::rm('__menu__');
+               return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功']);
+            } else {
+                return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
+            }
+        }
+         return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
+    }
     
     
     

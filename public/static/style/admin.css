@@ -1398,3 +1398,21 @@ body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
 .layui-btn-view{
     background-color: #18bc9c;
 }
+.layui-btn-danger{
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.layui-btn-danger:hover{
+    ckground-color: #c9302c;
+    border-color: #ac2925;
+}
+body .layui-layer-we .layui-layer-btn .layui-layer-btn1{
+    color: #ffffff !important;
+}
+body .layui-layer-we .layui-layer-btn0{
+    background-color: #18bc9c !important;
+    border-color: #18bc9c !important;
+}
+body .layui-layer-we .layui-layer-setwin{
+    color: #ffffff !important;
+}
