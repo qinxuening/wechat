@@ -64,6 +64,7 @@
             ,height: 500
             ,url:"{:url('Admin/auth.rule/getRule')}"
             ,id : 'tableReload'
+            ,skin:'line'
             ,toolbar : '#toolbar'
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
@@ -97,7 +98,7 @@
                     skin: 'layui-layer-we',
                     title:'温馨提示',
                 }, function(index){
-                    we.api.ajax({"url":"{:url('admin/auth.rule/del')}","data":{'ids':data.id},'tableid':'tableReload'});
+                    we.api.ajax({"url":"{:url('admin/auth.rule/del')}","data":{'ids':data.id},'tableid':'tableReload','action':'del'});
                     obj.del();
                     layer.close(index);
                 });

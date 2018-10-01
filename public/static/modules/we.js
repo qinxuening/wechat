@@ -31,27 +31,23 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     if (result === false)
                         return;
                 }
-
-                // window.parent.location.reload();
-                // var index = parent.layer.getFrameIndex(window.name);
-                // layer.closeAll();
-
-                var index = parent.layer.getFrameIndex(window.name);
-                // console.log(parent.layui.table.render);
-                // console.log(parent.$("#rule").attr('table-reload-id'));
-
-                // var tablereloadid = parent.$("#rule").attr('table-reload-id'); //获取重加载table
-                // var tablereloadid = options.tableid; //重载table的id
-
-                parent.layer.close(index);
-                // console.log(tablereloadid);
-                location.reload();
-                window.parent.location.reload();
-                // if(tablereloadid) {
-                //     parent.layui.table.reload(tablereloadid);
-                // }
                 toastr.clear()
                 toastr.success(ret.msg);
+                var tablereloadid = options.tableid; //获取重加载table
+                if(options.action == 'del') {
+                    layer.closeAll();
+                    if(tablereloadid) {
+                        layui.table.reload(tablereloadid);
+                    }
+                } else {
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index);
+                    layer.closeAll();
+                    if(tablereloadid) {
+                        parent.layui.table.reload(tablereloadid);
+                    }
+                }
+
             },
 
             //请求错误的回调
