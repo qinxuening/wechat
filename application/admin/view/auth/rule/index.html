@@ -103,10 +103,10 @@
                 });
             } else if(obj.event === 'view'){
                 var url = "{:url('admin/auth.rule/view','',false)}/id/" + data.id;
-                we.api.open(url,'编辑');
+                we.api.open(url,'查看');
             } else if(obj.event === 'edit') {
                 var url = "{:url('admin/auth.rule/edit','',false)}/id/" + data.id;
-                we.api.open(url,'查看');
+                we.api.open(url,'编辑');
             }
         });
 

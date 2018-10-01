@@ -13,18 +13,18 @@ layui.define(['jquery'], function(exports){
         warning: 'warning'
     };
 
-    var toastr = {
-        clear:  obj.clear,
-        remove:  obj.remove,
-        error:  obj.error,
-        getContainer: obj.getContainer,
-        info:  obj.info,
-        options: {},
-        subscribe:  obj.subscribe,
-        success:  obj.success,
-        version: '2.1.4',
-        warning:  obj.warning
-    };
+    // var toastr = {
+    //     clear:  obj.clear,
+    //     remove:  obj.remove,
+    //     error:  obj.error,
+    //     getContainer: obj.getContainer,
+    //     info:  obj.info,
+    //     options: {},
+    //     subscribe:  obj.subscribe,
+    //     success:  obj.success,
+    //     version: '2.1.4',
+    //     warning:  obj.warning
+    // };
 
     var previousToast;
     obj = {

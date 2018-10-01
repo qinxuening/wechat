@@ -63,13 +63,16 @@ class Rule extends baseAdmin{
     
     public function edit() {
         $id = intval(input('id'));
-        if(request()->isAjax()){
-            $id = input('id');
+        if(request()->isPost()){
+//             print_r(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);die();
+            $id = input('post.id');
             $data = input('');
             $data['status'] = $data['status'] == 'on' ? '1' : 0;
             $data['ismenu'] = $data['ismenu'] == 'on' ? '1' : 0;
-            if($id){
-                Db::name('auth_rule')->where(['id' => $id])->update($data);
+//             print_r($data);die();
+            $result = Db::name('auth_rule')->where(['id' => $id])->update($data);
+            if(false !== $result){  
+
                 return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
             } else {
                 return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
@@ -86,7 +89,7 @@ class Rule extends baseAdmin{
      */
     public function del($ids = "")
     {
-         return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
+//          return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
         if ($ids)
         {
             $delIds = [];

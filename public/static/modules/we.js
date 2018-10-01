@@ -4,7 +4,7 @@
 layui.define(['jquery', 'layer','toastr'], function(exports){
     var $ = layui.jquery
         ,toastr = layui.toastr
-    ,layer = layui.layer;
+        ,layer = layui.layer;
 
     toastr.options=
     {
@@ -32,21 +32,26 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                         return;
                 }
 
+                // window.parent.location.reload();
+                // var index = parent.layer.getFrameIndex(window.name);
+                // layer.closeAll();
+
                 var index = parent.layer.getFrameIndex(window.name);
                 // console.log(parent.layui.table.render);
                 // console.log(parent.$("#rule").attr('table-reload-id'));
-                // window.parent.location.reload();
+
                 // var tablereloadid = parent.$("#rule").attr('table-reload-id'); //获取重加载table
-                var tablereloadid = options.tableid; //重载table的id
+                // var tablereloadid = options.tableid; //重载table的id
 
                 parent.layer.close(index);
-                console.log(tablereloadid);
-
-                if(tablereloadid) {
-                    parent.layui.table.reload(tablereloadid);
-                }
+                // console.log(tablereloadid);
+                location.reload();
+                window.parent.location.reload();
+                // if(tablereloadid) {
+                //     parent.layui.table.reload(tablereloadid);
+                // }
                 toastr.clear()
-                toastr.error(ret.msg);
+                toastr.success(ret.msg);
             },
 
             //请求错误的回调
@@ -78,11 +83,13 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
         api: {
             //发送Ajax请求
             ajax: function (options, success, error) {
+                console.log(options);
                 options = typeof options === 'string' ? {url: options} : options;
                 var index = layer.load();
                 options = $.extend({
                     type: "POST",
                     dataType: "json",
+                    async:false,
                     success: function (ret) {
                         layer.close(index);
                         ret = we.events.onAjaxResponse(ret);
@@ -101,8 +108,10 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 }, options);
 
                 // return console.log(options);
+                // setTimeout(function () {
+                    $.ajax(options);
+                // },200);
 
-                $.ajax(options);
             },
 
             //打开一个弹出窗口
@@ -129,6 +138,9 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     zIndex: layer.zIndex,
                     success: function (layero, index) {
                         var that = this;
+                    },
+                    end: function () {
+                        // location.reload();
                     }
                 }, options ? options : {});
                 return layer.open(options);
