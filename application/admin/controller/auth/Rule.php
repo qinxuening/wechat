@@ -69,10 +69,14 @@ class Rule extends baseAdmin{
             $data = input('');
             $data['status'] = $data['status'] == 'on' ? '1' : 0;
             $data['ismenu'] = $data['ismenu'] == 'on' ? '1' : 0;
-//             print_r($data);die();
-            $result = Db::name('auth_rule')->where(['id' => $id])->update($data);
+            if($id) {
+                $result = Db::name('auth_rule')->where(['id' => $id])->update($data);
+            } else {
+                unset($data['id']);
+                $result = Db::name('auth_rule')->where(['id' => $id])->insert($data);
+            }
+            
             if(false !== $result){  
-
                 return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
             } else {
                 return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
@@ -98,6 +102,7 @@ class Rule extends baseAdmin{
                 $delIds = array_merge($delIds, Tree::instance()->getChildrenIds($v, TRUE));
             }
             $delIds = array_unique($delIds);
+//             print_r($ids);die();
             $count = Db::name('auth_rule')->where('id', 'in', $delIds)->delete();
             if ($count)
             {

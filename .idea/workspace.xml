@@ -15,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="95" column="33" lean-forward="false" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+            <state relative-caret-position="189">
+              <caret line="85" column="56" lean-forward="true" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -38,8 +38,8 @@
       <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="82" column="51" lean-forward="false" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+            <state relative-caret-position="181">
+              <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -63,8 +63,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="100" column="116" lean-forward="false" selection-start-line="100" selection-start-column="105" selection-end-line="100" selection-end-column="116" />
+            <state relative-caret-position="-2006">
+              <caret line="41" column="73" lean-forward="true" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-162">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,22 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="toastr2.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/static/modules/toastr2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="44" />
-              <folding>
-                <marker date="1529121280000" expanded="true" signature="6716:6723" ph="×" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
+            <state relative-caret-position="721">
               <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
               <folding />
             </state>
@@ -119,7 +117,7 @@
       <file leaf-file-name="we.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3479">
+            <state relative-caret-position="3051">
               <caret line="137" column="38" lean-forward="false" selection-start-line="137" selection-start-column="38" selection-end-line="137" selection-end-column="38" />
               <folding />
             </state>
@@ -160,9 +158,9 @@
       <find>removeToast</find>
       <find>$container</find>
       <find>MOD_NANE</find>
+      <find>obj</find>
       <find>options</find>
       <find>LAY-auth-tree-index</find>
-      <find>obj</find>
       <find>publish</find>
     </findStrings>
   </component>
@@ -183,7 +181,6 @@
         <option value="$PROJECT_DIR$/public/static/layui/lay/modules/jquery.js" />
         <option value="$PROJECT_DIR$/public/static/layui/lay/modules/tree.js" />
         <option value="$PROJECT_DIR$/public/static/modules/jstree/dist/jstree.js" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/edit.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/group/index2.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/group/index.html" />
         <option value="$PROJECT_DIR$/public/static/style/admin.css" />
@@ -192,10 +189,11 @@
         <option value="$PROJECT_DIR$/application/admin/view/common/meta.html" />
         <option value="$PROJECT_DIR$/public/static/modules/authtree.js" />
         <option value="$PROJECT_DIR$/public/static/lib/index.js" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
         <option value="$PROJECT_DIR$/public/static/modules/we.js" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/group/edit.html" />
         <option value="$PROJECT_DIR$/public/static/modules/toastr.js" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/group/edit.html" />
       </list>
     </option>
   </component>
@@ -705,13 +703,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169460000" />
+    <option name="totallyTimeSpent" value="174564000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1473907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13681242" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -785,7 +783,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index2.html" />
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/view.html" />
     <entry file="file://$PROJECT_DIR$/application/admin/view/common/menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -1032,46 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="82" column="51" lean-forward="false" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="100" column="116" lean-forward="false" selection-start-line="100" selection-start-column="105" selection-end-line="100" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="95" column="33" lean-forward="false" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3479">
-          <caret line="137" column="38" lean-forward="false" selection-start-line="137" selection-start-column="38" selection-end-line="137" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/authtree.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -1081,6 +1038,32 @@
             <marker date="1537689603000" expanded="true" signature="3835:3845" ph="..." />
             <marker date="1537689603000" expanded="true" signature="3847:3855" ph="..." />
             <marker date="1537689603000" expanded="true" signature="4173:4191" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3051">
+          <caret line="137" column="38" lean-forward="false" selection-start-line="137" selection-start-column="38" selection-end-line="137" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="721">
+          <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/toastr2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding>
+            <marker date="1529121280000" expanded="true" signature="6716:6723" ph="×" />
           </folding>
         </state>
       </provider>
@@ -1095,13 +1078,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/toastr2.js">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="44" />
-          <folding>
-            <marker date="1529121280000" expanded="true" signature="6716:6723" ph="×" />
-          </folding>
+        <state relative-caret-position="-2006">
+          <caret line="41" column="73" lean-forward="true" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="85" column="56" lean-forward="true" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
