@@ -488,7 +488,14 @@ class Auth extends \we\Auth{
 
         $html = '';
         foreach ($arr_ as $k => $v){
-            $html .= "<li data-name='{$v['pinyin']}' class='layui-nav-item layui-nav-itemed'>";
+            if($k == 0) {
+                $expand = "layui-nav-itemed";
+                $active = "layui-this";
+            } else {
+                $expand = "";
+                $active = "";
+            }
+            $html .= "<li data-name='{$v['pinyin']}' class='layui-nav-item {$expand} $active'>";
             if(isset($v['child'])){
                 $html .= "<a href='javascript:;' lay-tips='{$v['title']}'>";
             } else {
@@ -504,11 +511,11 @@ class Auth extends \we\Auth{
                         $html .= "<a href='javascript:;' lay-tips='{$v1['title']}'>{$v1['title']}</a>";
                         $html .= '<dl class="layui-nav-child">';
                         foreach ($v1['child'] as $k2 => $v2) {
-                            $html .= "<dd data-name='{$v2['pinyin']}'><a lay-href='{$v2['url']}'>{$v2['title']}</a></dd>";
+                            $html .= "<dd data-name='{$v2['pinyin']}' class='{$active}'><a lay-href='{$v2['url']}'>{$v2['title']}</a></dd>";
                         }
                         $html .= '</dl></dd>';
                     }else {
-                        $html .= "<dd data-name='{$v1['pinyin']}'><a lay-href='{$v1['url']}'>{$v1['title']}</a></dd>";
+                        $html .= "<dd class='{$active}' data-name='{$v1['pinyin']}'><a lay-href='{$v1['url']}'>{$v1['title']}</a></dd>";
                     }
                 }
                 $html .= '</dl>';
