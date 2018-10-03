@@ -10,7 +10,25 @@ use app\common\controller\baseAdmin;
 class Index extends baseAdmin {
     
     public function index() {
-//         return json(['code' =>1, 'status' => 'success', 'info' => '后台测试'.json_encode($this->noNeedLogin)]);
+        //左侧菜单
+        $menulist = $this->auth->getSidebar([
+            'dashboard' => '',//hot
+            'addon'     => ['new', 'red', 'badge'],
+            'auth/rule' => '',//__('Menu')
+            'general'   => ['new', 'purple'],
+                ], $this->view->site['fixedpage']);
+
+        $action = $this->request->request('action');
+        if ($this->request->isPost())
+        {
+            if ($action == 'refreshmenu')
+            {
+                $this->success('', null, ['menulist' => $menulist]);
+            }
+        }
+//         dump($menulist);die();
+        $this->view->assign('menulist', $menulist);
+        $this->view->assign('title', __('Home'));
         return $this->view->fetch();
     }
     

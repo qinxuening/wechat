@@ -334,7 +334,7 @@ class Tree
     {
         $str = '';
         $childs = $this->getChild($myid);
-        //         print_r($childs);die();
+//         print_r($childs);die();
         if ($childs)
         {
             foreach ($childs as $value)
@@ -342,27 +342,27 @@ class Tree
                 $id = $value['id'];
                 unset($value['child']);
                 $selected = in_array($id, (is_array($selectedids) ? $selectedids : explode(',', $selectedids))) ? 'selected' : '';
-                //                 echo $selectedids;die();
+//                 echo $selectedids;die();
                 $disabled = in_array($id, (is_array($disabledids) ? $disabledids : explode(',', $disabledids))) ? 'disabled' : '';
                 $value = array_merge($value, array('selected' => $selected, 'disabled' => $disabled));
                 $value = array_combine(array_map(function($k) {
-                    return '@' . $k;
-                }, array_keys($value)), $value);
-                //                 print_r($value);die();
-                //                     print_r(array_flip(['@url', '@caret', '@class']));die();
+                            return '@' . $k;
+                        }, array_keys($value)), $value);
+//                 print_r($value);die();
+//                     print_r(array_flip(['@url', '@caret', '@class']));die();
                 $bakvalue = array_intersect_key($value, array_flip(['@url', '@caret', '@class']));#用于比较两个（或更多个）数组的键名 ，并返回交集
-                //                 print_r($bakvalue);
+//                 print_r($bakvalue);die();
                 $value = array_diff_key($value, $bakvalue); #函数用于比较两个（或更多个）数组的键名 ，并返回差集
-                //                 print_r($value);die();
+//                 print_r($value);die();
                 $nstr = strtr($itemtpl, $value);
-                //                 var_dump($nstr);die();
+//                 var_dump($nstr);die();
                 $value = array_merge($value, $bakvalue);
-                //                 print_r($value);die();
+//                 print_r($value);die();
                 $childdata = $this->getTreeMenu($id, $itemtpl, $selectedids, $disabledids, $wraptag, $wrapattr, $deeplevel + 1);
                 $childlist = $childdata ? "<{$wraptag} {$wrapattr}>" . $childdata . "</{$wraptag}>" : "";
-
+                
                 $childlist = strtr($childlist, array('@class' => $childdata ? 'last' : ''));
-                //                 print_r($childlist);die();
+//                 print_r($childlist);die();
                 $value = array(
                     '@childlist' => $childlist,
                     '@url'       => $childdata || !isset($value['@url']) ? "javascript:;" : url($value['@url']),
@@ -371,7 +371,7 @@ class Tree
                     '@badge'     => isset($value['@badge']) ? $value['@badge'] : '',
                     '@class'     => ($selected ? ' active' : '') . ($disabled ? ' disabled' : '') . ($childdata ? ' treeview' : ''),
                 );
-                //                 print_r($value);die();
+//                 print_r($value);die();
                 $str .= strtr($nstr, $value);
             }
         }

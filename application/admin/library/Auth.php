@@ -434,7 +434,6 @@ class Auth extends \we\Auth{
         $colorNums = count($colorArr);
         $badgeList = [];
         $module = request()->module();
-        //         print_r($params);
         // 生成菜单的badge
         foreach ($params as $k => $v)
         {
@@ -463,8 +462,6 @@ class Auth extends \we\Auth{
         // 读取管理员当前拥有的权限节点
         $userRule = $this->getRuleList();
     
-        //         print_r($userRule);
-    
         $select_id = 0;
         $pinyin = new \Overtrue\Pinyin\Pinyin('Overtrue\Pinyin\MemoryFileDictLoader');
     
@@ -485,7 +482,41 @@ class Auth extends \we\Auth{
             $v['pinyin'] = $pinyin->permalink($v['title'], '');#返回拼音
             $v['title'] = __($v['title']);
         }
-        //         print_r($ruleList);die();
+        
+        $arr_ = Category::unlimiteForLayer($ruleList,'child');
+
+        $html = '';
+        foreach ($arr_ as $k => $v){
+            $html .= "<li data-name='{$v['pinyin']}' class='layui-nav-item layui-nav-itemed'>";
+            if(isset($v['child'])){
+                $html .= "<a href='javascript:;' lay-tips='{$v['title']}'>";
+            } else {
+                $html .= "<a lay-href='{$v['lay-href']}' lay-tips='{$v['title']}'>";
+            }
+            $html .= "<i class='layui-icon {$v['icon']}'></i><cite>{$v['title']}</cite></a>";
+            
+            if(isset($v['child'])){
+                $html .= '<dl class="layui-nav-child">';
+                foreach ($v['child'] as $k1 => $v1) {
+                    if(isset($v1['child'])) {
+                        $html .= "<dd data-name='{$v1['title']}'>";
+                        $html .= "<a href='javascript:;' lay-tips='{$v1['title']}'>{$v1['title']}</a>";
+                        $html .= '<dl class="layui-nav-child">';
+                        foreach ($v1['child'] as $k2 => $v2) {
+                            $html .= "<dd data-name='{$v2['pinyin']}'><a lay-href='{$v2['url']}'>{$v2['title']}</a></dd>";
+                        }
+                        $html .= '</dl></dd>';
+                    }else {
+                        $html .= "<dd data-name='{$v1['pinyin']}'><a lay-href='{$v1['url']}'>{$v1['title']}</a></dd>";
+                    }
+                }
+                $html .= '</dl>';
+            }
+            $html .= '</li>';
+        }
+        
+        
+        return $html;
         // 构造菜单数据
         Tree::instance()->init($ruleList);
         #@clas: li.class="treeview"表示一级导航有下拉，,第一层ul.class="sidebar-menu",第二级ul.class="treeview-menu"
@@ -503,16 +534,16 @@ class Auth extends \we\Auth{
     
         $menu = Tree::instance()->getTreeMenu(0, '<li class="@class">
                                                     <a href="@url@addtabs" addtabs="@id" url="@url" py="@py" pinyin="@pinyin">
-                                                        <i class="@icon"></i>
-                                                        <span>@title</span>
+                                                        <i class="@icon"></i> 
+                                                        <span>@title</span> 
                                                         <span class="pull-right-container">@caret @badge</span>
                                                     </a> @childlist
                                                    </li>',
-                                                       $select_id,
-                                                       '',
-                                                       'ul',
-                                                       'class="treeview-menu"');
-    
+                                                $select_id, 
+                                                '', 
+                                                'ul', 
+                                                'class="treeview-menu"');
+                                                
         return $menu;
     }
     
