@@ -11,4 +11,5 @@
 
 return [
     'default_return_type'    => 'html',
+    'controller_auto_search' => 'true',
 ];

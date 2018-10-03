@@ -467,7 +467,7 @@ class Auth extends \we\Auth{
     
         // 必须将结果集转换为数组
         $ruleList = collection(\app\admin\model\AuthRule::where('status', '1')->where('ismenu', 1)->order('weigh', 'desc')->cache("__menu__")->select())->toArray();
-        //         print_r($ruleList);
+//         print_r($ruleList);die();
         foreach ($ruleList as $k => &$v)
         {
             if (!in_array($v['name'], $userRule))
@@ -482,8 +482,9 @@ class Auth extends \we\Auth{
             $v['pinyin'] = $pinyin->permalink($v['title'], '');#返回拼音
             $v['title'] = __($v['title']);
         }
-        
+//         print_r($ruleList);
         $arr_ = Category::unlimiteForLayer($ruleList,'child');
+
 
         $html = '';
         foreach ($arr_ as $k => $v){
