@@ -37,11 +37,12 @@
 </script>
 
 <!--操作-->
-<script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view">查看</a>
-    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-</script>
+{:build_actionbar()}
+<!--<script type="text/html" id="barDemo">-->
+    <!--<a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view">查看</a>-->
+    <!--<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
+    <!--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>-->
+<!--</script>-->
 {/block}
 
 {block name="script"}
@@ -77,7 +78,7 @@
                 ,{field:'email', title: '邮箱'}
                 ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
                 ,{field:'logintime', title: '最后登陆', minWidth: 150}
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
+                ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:220}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局

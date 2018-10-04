@@ -141,6 +141,13 @@ if (!function_exists('build_toolbar')) {
 
 
 if(!function_exists('build_actionbar')) {
+    /**
+     * 表格操作工具栏
+     * @param string $id
+     * @param string $btns
+     * @param unknown $attr
+     * @return string
+     */
     function build_actionbar($id = NULL, $btns = NULL, $attr = []) {
         $id = $id ? $id : 'actionbar';
         $auth = \app\admin\library\Auth::instance();
@@ -153,9 +160,9 @@ if(!function_exists('build_actionbar')) {
             $btns[$index] = 'del';
         }
         $btnAttr = [
-            'view' => ['layui-btn layui-btn-xs layui-btn-view', 'layui-icon layui-icon-file-b', '刷新'],
+            'view' => ['layui-btn layui-btn-xs layui-btn-view', 'layui-icon layui-icon-file-b', '查看'],
             'edit'     => ['layui-btn layui-btn-xs', 'layui-icon layui-icon-edit', '添加'],
-            'del'     => ['layui-btn layui-btn-danger layui-btn-x', 'layui-icon layui-icon-delete', '删除'],//btn-disabled disabled
+            'del'     => ['layui-btn layui-btn-danger layui-btn-xs', 'layui-icon layui-icon-delete', '删除'],//btn-disabled disabled
         ];
         $btnAttr = array_merge($btnAttr, $attr);
         $html = '';
