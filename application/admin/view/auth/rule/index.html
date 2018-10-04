@@ -15,14 +15,16 @@
 </div>
 
 <!--头工具栏-->
-<script type="text/html" id="toolbar">
-    <div class="layui-btn-container">
-        <button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加</button>
-        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del"><i class="layui-icon layui-icon-edit"></i>删除</button>
-        <button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-file"></i>导出</button>
-        <button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-upload"></i>导入</button>
-    </div>
-</script>
+{:build_toolbar()}
+<!--<script type="text/html" id="toolbar">-->
+    <!--<div class="layui-btn-container">-->
+        <!--<button class="layui-btn layui-btn-sm" lay-event="refresh"><i class="layui-icon layui-icon-refresh-3"></i>刷新</button>-->
+        <!--<button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加</button>-->
+        <!--<button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del"><i class="layui-icon layui-icon-edit"></i>删除</button>-->
+        <!--<button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-file"></i>导出</button>-->
+        <!--<button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-upload"></i>导入</button>-->
+    <!--</div>-->
+<!--</script>-->
 <!--头工具栏-->
 
 <!--状态-->
@@ -36,10 +38,10 @@
 </script>
 
 <!--操作-->
-<script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view">查看</a>
-    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+<script type="text/html" id="actionbar">
+    <a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view"><i class="layui-icon layui-icon-file-b"></i>查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" lay-tips="删除"><i class="layui-icon layui-icon-delete"></i>删除</a>
 </script>
 {/block}
 
@@ -75,7 +77,7 @@
                 ,{field:'ismenu', title: '是否为菜单', sort: true,templet: '#switchIsmenu'}
                 ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
                 ,{field:'name', title: '规则', minWidth: 150}
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
+                ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:200}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局

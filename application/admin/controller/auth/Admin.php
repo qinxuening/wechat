@@ -85,15 +85,8 @@ class Admin extends baseAdmin {
 
             foreach ($groups as $m => $n)
             {
-                $adminGroupName[$this->auth->id][$n['id']] = $n['name'];
+                $adminGroupName[$this->auth->id][$n['id']] = __($n['name']);
             }
-
-//             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
-//             $total = $this->model
-//                 ->where($where)
-//                 ->where('id', 'in', $this->childrenAdminIds)
-//                 ->order($sort, $order)
-//                 ->count();
     
             $list = Db::name('admin')
                 ->where('id', 'in', $this->childrenAdminIds)
@@ -101,18 +94,12 @@ class Admin extends baseAdmin {
                 ->page($page,$limit)
                 ->select();
             $count = Db::name('admin')->where('id', 'in', $this->childrenAdminIds)->count('*');
-//             $list = $this->model
-//                 ->where($where)
-//                 ->where('id', 'in', $this->childrenAdminIds)
-//                 ->field(['password', 'salt', 'token'], true)
-//                 ->order($sort, $order)
-//                 ->limit($offset, $limit)
-//                 ->select();
             foreach ($list as $k => &$v)
             {
                 $groups = isset($adminGroupName[$v['id']]) ? $adminGroupName[$v['id']] : [];
                 $v['groups'] = implode(',', array_keys($groups));
                 $v['groups_text'] = implode(',', array_values($groups));
+                $v['logintime'] = $v['logintime'] ? date('Y-m-d H:i:s', $v['logintime']) : '';
             }
             unset($v);
             return json(['code' => 0, 'count' => $count, 'data' => $list,'msg' => '获取成功']);

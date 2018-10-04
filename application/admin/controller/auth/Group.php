@@ -28,7 +28,7 @@ class Group extends baseAdmin{
         $this->childrenGroupIds = $this->auth->getChildrenGroupIds(true);
     
         $groupList = collection(AuthGroup::where('id', 'in', $this->childrenGroupIds)->select())->toArray();
-//         print_r($this->childrenGroupIds);
+
         Tree::instance()->init($groupList);
         $result = [];
         if ($this->auth->isSuperAdmin())
@@ -51,7 +51,7 @@ class Group extends baseAdmin{
         }
 
         $this->groupdata = $groupName;
-//         print_r($this->groupdata);
+
         $this->assignconfig("admin", ['id' => $this->auth->id, 'group_ids' => $this->auth->getGroupIds()]);
         
         $this->view->assign('groupList', $groupList);

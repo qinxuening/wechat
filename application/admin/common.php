@@ -103,11 +103,12 @@ if (!function_exists('build_toolbar')) {
      * @param array $attr 按钮属性值
      * @return string
      */
-    function build_toolbar($btns = NULL, $attr = [])
+    function build_toolbar($id = NULL, $btns = NULL, $attr = [])
     {
+        $id = $id ? $id : 'toolbar';
         $auth = \app\admin\library\Auth::instance();
         $controller = str_replace('.', '/', strtolower(think\Request::instance()->controller()));
-        $btns = $btns ? $btns : ['refresh', 'add', 'edit', 'del', 'import'];
+        $btns = $btns ? $btns : ['refresh', 'add', 'del','export', 'import'];
         $btns = is_array($btns) ? $btns : explode(',', $btns);
         $index = array_search('delete', $btns); //array_search() 函数在数组中搜索某个键值，并返回对应的键名
 
@@ -115,24 +116,60 @@ if (!function_exists('build_toolbar')) {
             $btns[$index] = 'del';
         }
         $btnAttr = [
-            'refresh' => ['javascript:;', 'btn btn-primary btn-refresh', 'fa fa-refresh', '', __('Refresh')],
-            'add'     => ['javascript:;', 'btn btn-success btn-add', 'fa fa-plus', __('Add'), __('Add')],
-            'edit'    => ['javascript:;', 'btn btn-success btn-edit btn-disabled disabled', 'fa fa-pencil', __('Edit'), __('Edit')],
-            'del'     => ['javascript:;', 'btn btn-danger btn-del', 'fa fa-trash', __('Delete'), __('Delete')],//btn-disabled disabled
-            'import'  => ['javascript:;', 'btn btn-danger btn-import', 'fa fa-upload', __('Import'), __('Import')],
+            'refresh' => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-refresh-3', '刷新'],
+            'add'     => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-add-1', '添加'],
+            'del'     => ['layui-btn layui-btn-sm layui-btn-danger', 'layui-icon layui-icon-delete', '删除'],//btn-disabled disabled
+            'export'  => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-file', '导出'],
+            'import'  => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-upload', '导入'],
         ];
         $btnAttr = array_merge($btnAttr, $attr);
-        $html = [];
+        $html = '';
+        $html .= "<script type='text/html' id='{$id}'><div class='layui-btn-container'>";
         foreach ($btns as $k => $v) {
             //如果未定义或没有权限
             if (!isset($btnAttr[$v]) || ($v !== 'refresh' && !$auth->check("{$controller}/{$v}"))) {
                 continue;
             }
-            list($href, $class, $icon, $text, $title) = $btnAttr[$v];
+            list($class, $icon, $text) = $btnAttr[$v];
             $extend = $v == 'import' ? 'id="btn-import-file" data-url="ajax/upload" data-mimetype="csv,xls,xlsx" data-multiple="false"' : '';
-            $html[] = '<a href="' . $href . '" class="' . $class . '" title="' . $title . '" ' . $extend . '><i class="' . $icon . '"></i> ' . $text . '</a>';
+            $html .= '<button class="' . $class . '" ' . $extend . ' lay-event ="'.$v.'"><i class="' . $icon . '"></i> ' . $text . '</button>';
         }
-        return implode(' ', $html);
+        $html .= '</div></script>';
+        return $html;
+    }
+}
+
+
+if(!function_exists('build_actionbar')) {
+    function build_actionbar($id = NULL, $btns = NULL, $attr = []) {
+        $id = $id ? $id : 'actionbar';
+        $auth = \app\admin\library\Auth::instance();
+        $controller = str_replace('.', '/', strtolower(think\Request::instance()->controller()));
+        $btns = $btns ? $btns : ['view', 'edit', 'del'];
+        $btns = is_array($btns) ? $btns : explode(',', $btns);
+        $index = array_search('delete', $btns); //array_search() 函数在数组中搜索某个键值，并返回对应的键名
+        
+        if ($index !== FALSE) {
+            $btns[$index] = 'del';
+        }
+        $btnAttr = [
+            'view' => ['layui-btn layui-btn-xs layui-btn-view', 'layui-icon layui-icon-file-b', '刷新'],
+            'edit'     => ['layui-btn layui-btn-xs', 'layui-icon layui-icon-edit', '添加'],
+            'del'     => ['layui-btn layui-btn-danger layui-btn-x', 'layui-icon layui-icon-delete', '删除'],//btn-disabled disabled
+        ];
+        $btnAttr = array_merge($btnAttr, $attr);
+        $html = '';
+        $html .= "<script type='text/html' id='{$id}'>";
+        foreach ($btns as $k => $v) {
+            //如果未定义或没有权限
+            if (!isset($btnAttr[$v]) || (!$auth->check("{$controller}/{$v}"))) {
+                continue;
+            }
+            list($class, $icon, $text) = $btnAttr[$v];
+            $html .= '<a class="' . $class . '" lay-event ="'.$v.'"><i class="' . $icon . '"></i> ' . $text . '</a>';
+        }
+        $html .= '</script>';
+        return $html;
     }
 }
 

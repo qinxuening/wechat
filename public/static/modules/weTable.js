@@ -57,6 +57,10 @@ layui.define(['jquery','we','toastr'], function(exports){
                table.on('toolbar('+weTable.defaults.table+')', function(obj){
                    var checkStatus = table.checkStatus(obj.config.id);
                    switch(obj.event){
+                       case 'refresh':
+                           console.log('refresh');
+                           table.reload(weTable.defaults.tableid)
+                           break;
                        case 'add':
 //                    var data = checkStatus.data;
 //                    layer.alert(JSON.stringify(data));
