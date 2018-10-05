@@ -115,10 +115,9 @@ class Admin extends baseAdmin {
         $rule_info = get_passwd_rule();
         if ($this->request->isPost())
         {
-            $params = $this->request->post("row");
+            $params = $this->request->post("");
             if ($params)
             {
-    
                 $adminValidate = \think\Loader::validate('Admin');
     
                 $adminValidate->rule([
@@ -137,6 +136,7 @@ class Admin extends baseAdmin {
                 $params['confirm_password'] = md5(md5($params['confirm_password']) . $params['salt']);
                 //                 $params['avatar'] = '/assets/img/avatar.png'; //设置新管理员默认头像。
                 //                 print_r($params);die();
+                $params['status'] = $params['status'] == 'on' ? '1' : 0;
                 $result = $this->model->allowField(true)->validate('Admin.add')->save($params);
                 //                 print_r($result);die();
                 if ($result === false)
@@ -146,7 +146,7 @@ class Admin extends baseAdmin {
                 $group = $this->request->post("group");
     
                 //过滤不允许的组别,避免越权
-                $group = array_intersect($this->childrenGroupIds, $group);
+                $group = array_intersect($this->childrenGroupIds, explode(',', $group));
                 $dataset = [];
                 foreach ($group as $value)
                 {
@@ -208,7 +208,7 @@ class Admin extends baseAdmin {
                 //                 if ($confirm_password && (md5(md5($confirm_password) . $row['salt'])!= $row['password'])) {
                 //                     $this->error(__('Password check error'));
                 //                 }
-    
+                $params['status'] = $params['status'] == 'on' ? '1' : 0;
                 $result = $row->allowField(true)->validate('Admin.edit')->save($params); //allowField过滤非数据表字段的数据
                 if ($result === false)
                 {
@@ -240,13 +240,13 @@ class Admin extends baseAdmin {
         }
 
         $grouplist = $this->auth->getGroups($row['id']);
-//         print_r($grouplist);die();
+
         $groupids = [];
         foreach ($grouplist as $k => $v)
         {
             $groupids[] = $v['id'];
         }
-
+//         print_r($groupids);die();
         $this->view->assign("list", $row);
         $this->view->assign('passwd_complexity_rule', $rule_info);
         $this->view->assign("groupids", $groupids);

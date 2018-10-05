@@ -1,0 +1,139 @@
+{extend name="layout/default" /}
+{block name="content"}
+<body>
+<div class="layui-container lay_top">
+    <div class="layui-row layui-col-space30">
+        <div class="layui-col-xs12">
+        <form class="layui-form" action="" lay-filter="rule">
+            <div class="layui-form-item">
+                <label class="layui-form-label">角色</label>
+                <div class="layui-input-block">
+                    {:build_select('group', $groupdata, $groupids, ['class'=>'form-control selectpicker', 'multiple'=>'', 'data-rule'=>'required', 'xm-select' => 'select'])}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">登录账号</label>
+                <div class="layui-input-block">
+                    <input type="text" name="username" lay-verify="username" autocomplete="off" value="{$list['username']}" placeholder="登录账号" class="layui-input">
+                    <input type="hidden" name="id" lay-verify="id" value="{$list['id']}">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">昵称</label>
+                <div class="layui-input-block">
+                    <input type="nickname" name="nickname" placeholder="昵称" value="{$list['nickname']}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-block">
+                    <input type="email" name="email" placeholder="邮箱" value="{$list['email']}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-block">
+                    <input type="password" name="password" placeholder="密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">确认密码</label>
+                <div class="layui-input-block">
+                    <input type="password" name="confirm_password" placeholder="确认密码"  autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">状态</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>
+                </div>
+            </div>
+
+            <div class="layui-form-item footer-form">
+                <div class="footer">
+                    <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                    <button type="reset" class="layui-btn layui-btn-primary btn-embossed">{:__('Reset')}</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        formSelects: 'formSelects-v4'
+    }).link(
+        '__STATIC__/style/formSelects-v4.css'
+    ).
+//    link(
+//        "__STATIC__/modules/jstree/dist/themes/default/style.css"
+//    ).
+    use(['jquery','index','form','element','we','formSelects'], function(){
+        var admin = layui.admin
+            ,$ = layui.$
+            ,form = layui.form
+            ,table = layui.table
+            ,formSelects = layui.formSelects
+            ,we = layui.we;
+        //监听提交
+        form.on('submit(formRule)', function(data){
+            var formData = JSON.stringify(data.field);
+            we.api.ajax({"url":"{:url('admin/auth.admin/add','',false)}","data":data.field,'tableid':'tableReload'});
+        });
+//        formSelects.config('select', {
+//            type: 'get',                //请求方式: post, get, put, delete...
+//            header: {},                 //自定义请求头
+//            data: {},                   //自定义除搜索内容外的其他数据
+//            searchUrl: '',              //搜索地址, 默认使用xm-select-search的值, 此参数优先级高
+//            searchName: 'keyword',      //自定义搜索内容的key值
+//            searchVal: '',              //自定义搜索内容, 搜素一次后失效, 优先级高于搜索框中的值
+//            keyName: 'name',            //自定义返回数据中name的key, 默认 name
+//            keyVal: 'value',            //自定义返回数据中value的key, 默认 value
+//            keySel: 'selected',         //自定义返回数据中selected的key, 默认 selected
+//            keyDis: 'disabled',         //自定义返回数据中disabled的key, 默认 disabled
+//            keyChildren: 'children',    //联动多选自定义children
+//            delay: 500,                 //搜索延迟时间, 默认停止输入500ms后开始搜索
+//            direction: 'auto',          //多选下拉方向, auto|up|down
+//            response: {
+//                statusCode: 0,          //成功状态码
+//                statusName: 'code',     //code key
+//                msgName: 'msg',         //msg key
+//                dataName: 'data'        //data key
+//            },
+//            success: function(id, url, searchVal, result){      //使用远程方式的success回调
+//                console.log(id);        //组件ID xm-select
+//                console.log(url);       //URL
+//                console.log(searchVal); //搜索的value
+//                console.log(result);    //返回的结果
+//            },
+//            error: function(id, url, searchVal, err){           //使用远程方式的error回调
+//                //同上
+//                console.log(err);   //err对象
+//            },
+//            beforeSuccess: function(id, url, searchVal, result){        //success之前的回调, 干嘛呢? 处理数据的, 如果后台不想修改数据, 你也不想修改源码, 那就用这种方式处理下数据结构吧
+//                console.log(id);        //组件ID xm-select
+//                console.log(url);       //URL
+//                console.log(searchVal); //搜索的value
+//                console.log(result);    //返回的结果
+//
+//                return result;  //必须return一个结果, 这个结果要符合对应的数据结构
+//            },
+//            beforeSearch: function(id, url, searchVal){         //搜索前调用此方法, return true将触发搜索, 否则不触发
+//                if(!searchVal){//如果搜索内容为空,就不触发搜索
+//                    return false;
+//                }
+//                return true;
+//            },
+//            clearInput: false,          //当有搜索内容时, 点击选项是否清空搜索内容, 默认不清空
+//        }, true);
+    });
+</script>
+</body>
+</html>
+{/block}

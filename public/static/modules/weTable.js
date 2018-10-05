@@ -56,6 +56,7 @@ layui.define(['jquery','we','toastr'], function(exports){
                //头工具栏事件
                table.on('toolbar('+weTable.defaults.table+')', function(obj){
                    var checkStatus = table.checkStatus(obj.config.id);
+                   console.log(obj.event);
                    switch(obj.event){
                        case 'refresh':
                            console.log('refresh');
@@ -65,6 +66,7 @@ layui.define(['jquery','we','toastr'], function(exports){
 //                    var data = checkStatus.data;
 //                    layer.alert(JSON.stringify(data));
                            var url = weTable.defaults.extend.add_url;
+                            console.log("----------"+url);
                            we.api.open(url,'添加');
                            break;
                        case 'del':
