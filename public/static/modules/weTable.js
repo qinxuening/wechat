@@ -64,7 +64,7 @@ layui.define(['jquery','we','toastr'], function(exports){
                        case 'add':
 //                    var data = checkStatus.data;
 //                    layer.alert(JSON.stringify(data));
-                           var url = weTable.defaults.extend.edit_url;
+                           var url = weTable.defaults.extend.add_url;
                            we.api.open(url,'添加');
                            break;
                        case 'del':

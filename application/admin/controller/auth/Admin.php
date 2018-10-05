@@ -115,7 +115,7 @@ class Admin extends baseAdmin {
         $rule_info = get_passwd_rule();
         if ($this->request->isPost())
         {
-            $params = $this->request->post("row/a");
+            $params = $this->request->post("row");
             if ($params)
             {
     
@@ -143,7 +143,7 @@ class Admin extends baseAdmin {
                 {
                     $this->error($this->model->getError());
                 }
-                $group = $this->request->post("group/a");
+                $group = $this->request->post("group");
     
                 //过滤不允许的组别,避免越权
                 $group = array_intersect($this->childrenGroupIds, $group);
@@ -153,9 +153,9 @@ class Admin extends baseAdmin {
                     $dataset[] = ['uid' => $this->model->id, 'group_id' => $value];
                 }
                 model('AuthGroupAccess')->saveAll($dataset);
-                $this->success();
+                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
             }
-            $this->error();
+            return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
         }
         $this->view->assign('passwd_complexity_rule', $rule_info);
         return $this->view->fetch();
