@@ -15,7 +15,7 @@
 </div>
 
 <!--头工具栏-->
-{:build_toolbar()}
+{:build_toolbar('toolbar',['refresh', 'add', 'del'])}
 <!--<script type="text/html" id="toolbar">-->
     <!--<div class="layui-btn-container">-->
         <!--<button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加</button>-->
@@ -37,7 +37,7 @@
 </script>
 
 <!--操作-->
-{:build_actionbar()}
+{:build_actionbar('actionbar',['edit', 'del'])}
 <!--<script type="text/html" id="barDemo">-->
     <!--<a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view">查看</a>-->
     <!--<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
@@ -101,10 +101,10 @@
             table : "rule",
             tableid : "tableReload",
             extend : {
-                "add_url": "{:url('admin/auth.rule/edit','',false)}",
-                "edit_url": "{:url('admin/auth.rule/edit','',false)}/id/",
-                "view_url": "{:url('admin/auth.rule/view','',false)}/id/",
-                "del_url": "{:url('admin/auth.rule/del','',false)}",
+                "add_url": "{:url('admin/auth.admin/edit','',false)}",
+                "edit_url": "{:url('admin/auth.admin/edit','',false)}/ids/",
+                "view_url": "{:url('admin/auth.admin/view','',false)}/ids",
+                "del_url": "{:url('admin/auth.admin/del','',false)}",
             }
         });
 

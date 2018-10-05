@@ -161,7 +161,7 @@ if(!function_exists('build_actionbar')) {
         }
         $btnAttr = [
             'view' => ['layui-btn layui-btn-xs layui-btn-view', 'layui-icon layui-icon-file-b', '查看'],
-            'edit'     => ['layui-btn layui-btn-xs', 'layui-icon layui-icon-edit', '添加'],
+            'edit'     => ['layui-btn layui-btn-xs', 'layui-icon layui-icon-edit', '编辑'],
             'del'     => ['layui-btn layui-btn-danger layui-btn-xs', 'layui-icon layui-icon-delete', '删除'],//btn-disabled disabled
         ];
         $btnAttr = array_merge($btnAttr, $attr);

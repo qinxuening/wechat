@@ -163,7 +163,7 @@ class Auth
      */
     public function getGroups($uid)
     {
-        $uid = 1;
+        $uid = $uid ? $uid : 1;
         static $groups = [];
         if (isset($groups[$uid]))
         {
@@ -177,14 +177,14 @@ class Auth
         ->where("aga.uid='{$uid}' and ag.status='1'")
         ->select();
          
-        //             $buidl_sql = Db::name($this->config['auth_group_access'])
-        //             ->alias('aga')
-        //             ->join('__' . strtoupper($this->config['auth_group']) . '__ ag', 'aga.group_id = ag.id', 'LEFT')
-        //             ->field('aga.uid,aga.group_id,ag.id,ag.pid,ag.name,ag.rules')
-        //             ->where("aga.uid='{$uid}' and ag.status='normal'")
-        //             ->buildSql();
+//                     $buidl_sql = Db::name($this->config['auth_group_access'])
+//                     ->alias('aga')
+//                     ->join('__' . strtoupper($this->config['auth_group']) . '__ ag', 'aga.group_id = ag.id', 'LEFT')
+//                     ->field('aga.uid,aga.group_id,ag.id,ag.pid,ag.name,ag.rules')
+//                     ->where("aga.uid='{$uid}' and ag.status='normal'")
+//                     ->buildSql();
 
-        //             echo $buidl_sql;
+//                     echo $buidl_sql;
         $groups[$uid] = $user_groups ?: [];
         return $groups[$uid];
     }

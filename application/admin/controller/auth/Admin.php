@@ -168,11 +168,13 @@ class Admin extends baseAdmin {
     {
         $row = $this->model->get(['id' => $ids]);
         $rule_info = get_passwd_rule();
-        if (!$row)
-            $this->error(__('No Results were found'));
+//         if (!$row)
+//             $this->error(__('No Results were found'));
         if ($this->request->isPost())
         {
-            $params = $this->request->post("row/a");
+            $params = $this->request->post("");
+            $row = $this->model->get(['id' => $params['id']]);
+//             print_r($params);exit();
             if ($params)
             {
                 $confirm_password = $params['password'];
@@ -216,11 +218,12 @@ class Admin extends baseAdmin {
                 // 先移除所有权限
                 model('AuthGroupAccess')->where('uid', $row->id)->delete();
     
-                $group = $this->request->post("group/a");
+                $group = $this->request->post("group");
+
                 //                 print_r($this->childrenGroupIds);die();
     
                 // 过滤不允许的组别,避免越权
-                $group = array_intersect($this->childrenGroupIds, $group); //函数用于比较两个（或更多个）数组的键值，并返回交集
+                $group = array_intersect($this->childrenGroupIds, explode(',', $group)); //函数用于比较两个（或更多个）数组的键值，并返回交集
     
                 //                 print_r($group);die();
     
@@ -231,17 +234,20 @@ class Admin extends baseAdmin {
                 }
                 //                 print_r($dataset);die();
                 model('AuthGroupAccess')->saveAll($dataset);
-                $this->success();
+                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
             }
-            $this->error();
+            return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
         }
+
         $grouplist = $this->auth->getGroups($row['id']);
+//         print_r($grouplist);die();
         $groupids = [];
         foreach ($grouplist as $k => $v)
         {
             $groupids[] = $v['id'];
         }
-        $this->view->assign("row", $row);
+
+        $this->view->assign("list", $row);
         $this->view->assign('passwd_complexity_rule', $rule_info);
         $this->view->assign("groupids", $groupids);
         return $this->view->fetch();
