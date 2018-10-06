@@ -277,11 +277,11 @@ class Admin extends baseAdmin {
                 {
                     $this->model->destroy($deleteIds);
                     model('AuthGroupAccess')->where('uid', 'in', $deleteIds)->delete();
-                    $this->success();
+                    return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功']);
                 }
             }
         }
-        $this->error();
+        return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
     }
     
     /**

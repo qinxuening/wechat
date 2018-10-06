@@ -4,7 +4,7 @@
 <div class="layui-container lay_top">
     <div class="layui-row layui-col-space30">
         <div class="layui-col-xs12">
-        <form class="layui-form" action="" lay-filter="rule">
+        <form class="layui-form" action="" lay-filter="rule" id="formRule">
             <div class="layui-form-item">
                 <label class="layui-form-label">菜单</label>
                 <div class="layui-input-block">
@@ -21,13 +21,13 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">规则</label>
                 <div class="layui-input-block">
-                    <input type="text" name="name" lay-verify="name" autocomplete="off" value="{$list['name']}" placeholder="规则名称" class="layui-input">
+                    <input type="text" name="name" autocomplete="off" value="{$list['name']}" placeholder="规则名称" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">标题</label>
                 <div class="layui-input-block">
-                    <input type="title" name="title" placeholder="标题" value="{$list['title']}" autocomplete="off" class="layui-input">
+                    <input type="title" name="title"  data-rule="required;email" placeholder="标题" value="{$list['title']}" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -79,16 +79,30 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['jquery','index','form','element','we'], function(){
+        ,validator:'jquery.validator'
+        ,zhCN:'zh-CN'
+    }).link(
+        '__STATIC__/style/jquery.validator.css'
+    ).use(['jquery','index','form','element','we','validator','zhCN'], function(){
         var admin = layui.admin
             ,$ = layui.$
             ,form = layui.form
             ,table = layui.table
+            ,validator = layui.validator
+            ,zhCN = layui.zhCN
             ,we = layui.we;
         //监听提交
         form.on('submit(formRule)', function(data){
-            var formData = JSON.stringify(data.field);
-            we.api.ajax({"url":"{:url('admin/auth.rule/edit','',false)}","data":data.field,'tableid':'tableReload'});
+            $('#formRule').validator({
+                fields: {
+                    title: "required",
+                },
+                valid: function(form){
+                    var formData = JSON.stringify(data.field);
+                    we.api.ajax({"url":"{:url('admin/auth.rule/edit','',false)}","data":data.field,'tableid':'tableReload'});
+                }
+            });
+
         });
     });
 </script>
