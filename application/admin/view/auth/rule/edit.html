@@ -21,7 +21,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">规则</label>
                 <div class="layui-input-block">
-                    <input type="text" name="name" autocomplete="off" value="{$list['name']}" placeholder="规则名称" class="layui-input">
+                    <input type="text" name="name"   data-rule="required;email;" autocomplete="off" value="{$list['name']}" placeholder="规则名称" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -94,8 +94,20 @@
         //监听提交
         form.on('submit(formRule)', function(data){
             $('#formRule').validator({
+                theme: "simple_right",
+                showOk: "",
+                validClass: "has-succes",
+                invalidClass: "has-error",
+                bindClassTo: ".layui-form-item",
+                stopOnError: true,
+                focusCleanup:false,
+//                timely:2,
+                display: function(elem){
+                    return $(elem).closest('.layui-form-item').children('label:eq(0)').text();
+                },
                 fields: {
                     title: "required",
+                    name:"required;email",
                 },
                 valid: function(form){
                     var formData = JSON.stringify(data.field);
