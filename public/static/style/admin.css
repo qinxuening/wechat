@@ -1434,3 +1434,14 @@ body .layui-layer-we .layui-layer-setwin{
     border-color: #e74c3c !important;
     box-shadow: none;
 }
+
+.layui-form-item.has-succes label {
+    color: #009688;
+}
+
+.layui-form-item.has-succes .layui-input-block input,
+.layui-form-item.has-succes .layui-input-block select,
+.layui-form-item.has-succes .layui-input-block textarea{
+    border-color: #009688;
+    box-shadow: none;
+}

@@ -79,11 +79,11 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-        ,validator:'jquery.validator'
-        ,zhCN:'zh-CN'
+//        ,validator:'jquery.validator'
+//        ,zhCN:'zh-CN'
     }).link(
         '__STATIC__/style/jquery.validator.css'
-    ).use(['jquery','index','form','element','we','validator','zhCN'], function(){
+    ).use(['jquery','index','form','element','validator','zhCN'], function(){
         var admin = layui.admin
             ,$ = layui.$
             ,form = layui.form
@@ -91,16 +91,19 @@
             ,validator = layui.validator
             ,zhCN = layui.zhCN
             ,we = layui.we;
+
+        Form.api.bindevent($("form[role=form]"));
         //监听提交
         form.on('submit(formRule)', function(data){
             $('#formRule').validator({
                 theme: "simple_right",
-                showOk: "",
+//                showOk: "ok",
                 validClass: "has-succes",
                 invalidClass: "has-error",
                 bindClassTo: ".layui-form-item",
-                stopOnError: true,
-                focusCleanup:false,
+                msgIcon:'<span class="n-icon"></span>',
+//                stopOnError: true,
+//                focusCleanup:false,
 //                timely:2,
                 display: function(elem){
                     return $(elem).closest('.layui-form-item').children('label:eq(0)').text();

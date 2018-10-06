@@ -36,7 +36,7 @@ requirejs.config({
         validator: 'path/to/nice-validator/local/en'
     },
     shim: {
-        validator: ['path/to/nice-validator/jquery.validator.js?css']
+        validator: ['path/to/nice-validator/validator.js?css']
     }
 });
 

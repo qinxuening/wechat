@@ -2081,8 +2081,8 @@ layui.define(["jquery"], function (exports) {
      * @static load
      * @param {String} str
      * @example
-        .load('local=zh-CN')        // load: local/zh-CN.js and jquery.validator.css
-        .load('local=zh-CN&css=')   // load: local/zh-CN.js
+        .load('local=zh-CN')        // load: local/zhCN.js and jquery.validator.css
+        .load('local=zh-CN&css=')   // load: local/zhCN.js
         .load('local&css')          // load: local/en.js (set <html lang="en">) and jquery.validator.css
         .load('local')              // dito
      */
