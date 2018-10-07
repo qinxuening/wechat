@@ -4,42 +4,42 @@
 <div class="layui-container lay_top">
     <div class="layui-row layui-col-space30">
         <div class="layui-col-xs12">
-        <form class="layui-form" action="" lay-filter="rule">
+        <form class="layui-form" action="{:url('admin/auth.admin/edit','',false)}" tableid="tableReload" method="post" id="formRule" lay-filter="rule">
             <div class="layui-form-item">
                 <label class="layui-form-label">角色</label>
                 <div class="layui-input-block">
-                    {:build_select('group', $groupdata, $groupids, ['class'=>'form-control selectpicker', 'multiple'=>'', 'data-rule'=>'required', 'xm-select' => 'select'])}
+                    {:build_select('group', $groupdata, $groupids, ['class'=>'form-control selectpicker', 'multiple'=>'', 'lay-verify'=>'required', 'xm-select' => 'select'])}
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">登录账号</label>
                 <div class="layui-input-block">
-                    <input type="text" name="username" lay-verify="username" autocomplete="off" value="{$list['username']}" placeholder="登录账号" class="layui-input">
+                    <input type="text" name="username" lay-verify="username" autocomplete="off" value="{$list['username']}" data-rule="required;username" placeholder="登录账号" class="layui-input">
                     <input type="hidden" name="id" lay-verify="id" value="{$list['id']}">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">昵称</label>
                 <div class="layui-input-block">
-                    <input type="nickname" name="nickname" placeholder="昵称" value="{$list['nickname']}" autocomplete="off" class="layui-input">
+                    <input type="nickname" name="nickname" placeholder="昵称" value="{$list['nickname']}" data-rule="required" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">邮箱</label>
                 <div class="layui-input-block">
-                    <input type="email" name="email" placeholder="邮箱" value="{$list['email']}" autocomplete="off" class="layui-input">
+                    <input type="email" name="email" placeholder="邮箱" value="{$list['email']}" autocomplete="off" data-rule="{required;email}" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">密码</label>
                 <div class="layui-input-block">
-                    <input type="password" name="password" placeholder="密码" autocomplete="off" class="layui-input">
+                    <input type="password" data-rule="passwdrule" data-rule-passwdrule="[/{$passwd_complexity_rule[0]}/, '{$passwd_complexity_rule[1]}']" name="password" placeholder="密码" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">确认密码</label>
                 <div class="layui-input-block">
-                    <input type="password" name="confirm_password" placeholder="确认密码"  autocomplete="off" class="layui-input">
+                    <input type="password" name="confirm_password" data-rule="{:__('Confirm password')}:match(password);" placeholder="确认密码"  autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -71,21 +71,24 @@
     }).link(
         '__STATIC__/style/formSelects-v4.css'
     ).
-//    link(
-//        "__STATIC__/modules/jstree/dist/themes/default/style.css"
-//    ).
-    use(['jquery','index','form','element','we','formSelects'], function(){
+    link(
+        " __STATIC__/style/jquery.validator.css"
+    ).
+    use(['jquery','index','formSelects','formValidator'], function(){
         var admin = layui.admin
             ,$ = layui.$
-            ,form = layui.form
             ,table = layui.table
             ,formSelects = layui.formSelects
-            ,we = layui.we;
+            ,formValidator = layui.formValidator;
         //监听提交
-        form.on('submit(formRule)', function(data){
-            var formData = JSON.stringify(data.field);
-            we.api.ajax({"url":"{:url('admin/auth.admin/edit','',false)}","data":data.field,'tableid':'tableReload'});
-        });
+        /**
+         * 绑定表单事件
+         */
+        formValidator.api.bindevent($("form#formRule"));
+//        form.on('submit(formRule)', function(data){
+//            var formData = JSON.stringify(data.field);
+//            we.api.ajax({"url":"{:url('admin/auth.admin/edit','',false)}","data":data.field,'tableid':'tableReload'});
+//        });
 //        formSelects.config('select', {
 //            type: 'get',                //请求方式: post, get, put, delete...
 //            header: {},                 //自定义请求头

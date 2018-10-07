@@ -495,7 +495,7 @@ class Auth extends \we\Auth{
                 $expand = "";
                 $active = "";
             }
-            $html .= "<li data-name='{$v['pinyin']}' class='layui-nav-item {$expand} $active'>";
+            $html .= "<li data-name='{$v['pinyin']}' class='layui-nav-item {$expand}'>";
             if(isset($v['child'])){
                 $html .= "<a href='javascript:;' lay-tips='{$v['title']}'>";
             } else {

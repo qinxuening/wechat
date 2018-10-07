@@ -41,6 +41,7 @@ class Rule extends baseAdmin{
      * @return string
      */
     public function index() {
+        //Dashboard/index
         return $this->view->fetch();
     }
     

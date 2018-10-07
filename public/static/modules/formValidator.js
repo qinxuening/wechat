@@ -21,7 +21,7 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                     invalidClass: 'has-error',
                     bindClassTo: '.layui-form-item',
                     msgClass: 'n-right',
-                    showOk: "",
+                    // showOk: "",
                     stopOnError: false,
                     display: function (elem) {
                         return $(elem).closest('.layui-form-item').children('label:eq(0)').text(); //display: 是可选的，用于替换错误消息中的{0}，一般为显示的字段名。
@@ -67,19 +67,19 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                                 }
                             }
                             //提示及关闭当前窗口
-                            var msg = ret.hasOwnProperty("msg") && ret.msg !== "" ? ret.msg :'操作完成';
+                            /*var msg = ret.hasOwnProperty("msg") && ret.msg !== "" ? ret.msg :'操作完成';
                             console.log(msg);
-                            parent.Toastr.success(msg);
                             var index = parent.Layer.getFrameIndex(window.name);
                             parent.Layer.close(index);
                             window.parent.location.reload();//刷新父页面
-                            return false;
+                            parent.Toastr.success(msg);*/
+                            return true;
                         }, function (data, ret) {
                             that.holdSubmit(false);
+                            submitBtn.removeClass("disabled");
                             if (false === $(this).triggerHandler("error.form", [data, ret])) {
                                 return false;
                             }
-                            submitBtn.removeClass("disabled");
                             if (typeof error === 'function') {
                                 if (false === error.call($(this), data, ret)) {
                                     return false;
@@ -109,6 +109,7 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                 type = type && (type === 'GET' || type === 'POST') ? type : 'GET';
                 var url = form.attr("action");
                 url = url ? url : location.href;
+                var tableid = form.attr("tableid");
                 // return console.log(url);
                 //修复当存在多选项元素时提交的BUG
                 var params = {};
@@ -137,6 +138,7 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                     async:false,
                     data: form.serialize() + (Object.keys(params).length > 0 ? '&' + $.param(params) : ''),
                     dataType: 'json',
+                    tableid:tableid,
                     complete: function (xhr) {
                         var token = xhr.getResponseHeader('__token__');
                         // console.log(form.serialize() + (Object.keys(params).length > 0 ? '&' + $.param(params) : ''));

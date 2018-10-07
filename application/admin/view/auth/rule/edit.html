@@ -4,7 +4,7 @@
 <div class="layui-container lay_top">
     <div class="layui-row layui-col-space30">
         <div class="layui-col-xs12">
-        <form class="layui-form" action="{:url('admin/auth.rule/edit','',false)}" method="post" lay-filter="rule" id="formRule">
+        <form class="layui-form" action="{:url('admin/auth.rule/edit','',false)}" tableid="tableReload" method="post" lay-filter="rule" id="formRule">
             <div class="layui-form-item">
                 <label class="layui-form-label">菜单</label>
                 <div class="layui-input-block">
@@ -39,7 +39,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">权重</label>
                 <div class="layui-input-block">
-                    <input type="weigh" name="weigh" data-rule="required" placeholder="权重" value="{$list['weigh']}" autocomplete="off" class="layui-input">
+                    <input type="weigh" name="weigh" data-rule="required;integer(+0)" placeholder="权重" value="{$list['weigh']}" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item layui-form-text">
@@ -83,11 +83,17 @@
 //        ,zhCN:'zh-CN'
     }).link(
         '__STATIC__/style/jquery.validator.css'
+    ).link(
+        " __STATIC__/style/jquery.validator.css"
     ).use(['jquery','index','formValidator'], function(){
         var admin = layui.admin
             ,$ = layui.$
             ,table = layui.table
             ,formValidator = layui.formValidator;
+
+            /**
+             * 绑定表单事件
+             */
             formValidator.api.bindevent($("form#formRule"));
         //监听提交
 //        form.on('submit(formRule)', function(data){
