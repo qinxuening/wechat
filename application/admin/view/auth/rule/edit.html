@@ -4,7 +4,7 @@
 <div class="layui-container lay_top">
     <div class="layui-row layui-col-space30">
         <div class="layui-col-xs12">
-        <form class="layui-form" action="" lay-filter="rule" id="formRule">
+        <form class="layui-form" action="{:url('admin/auth.rule/edit','',false)}" method="post" lay-filter="rule" id="formRule">
             <div class="layui-form-item">
                 <label class="layui-form-label">菜单</label>
                 <div class="layui-input-block">
@@ -21,13 +21,13 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">规则</label>
                 <div class="layui-input-block">
-                    <input type="text" name="name"   data-rule="required;email;" autocomplete="off" value="{$list['name']}" placeholder="规则名称" class="layui-input">
+                    <input type="text" name="name" data-rule="required;" autocomplete="off" value="{$list['name']}" placeholder="规则名称" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">标题</label>
                 <div class="layui-input-block">
-                    <input type="title" name="title"  data-rule="required;email" placeholder="标题" value="{$list['title']}" autocomplete="off" class="layui-input">
+                    <input type="title" name="title"  data-rule="required" placeholder="标题" value="{$list['title']}" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -39,7 +39,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">权重</label>
                 <div class="layui-input-block">
-                    <input type="weigh" name="weigh" placeholder="权重" value="{$list['weigh']}" autocomplete="off" class="layui-input">
+                    <input type="weigh" name="weigh" data-rule="required" placeholder="权重" value="{$list['weigh']}" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item layui-form-text">
@@ -83,42 +83,38 @@
 //        ,zhCN:'zh-CN'
     }).link(
         '__STATIC__/style/jquery.validator.css'
-    ).use(['jquery','index','form','element','validator','zhCN'], function(){
+    ).use(['jquery','index','formValidator'], function(){
         var admin = layui.admin
             ,$ = layui.$
-            ,form = layui.form
             ,table = layui.table
-            ,validator = layui.validator
-            ,zhCN = layui.zhCN
-            ,we = layui.we;
-
-        Form.api.bindevent($("form[role=form]"));
+            ,formValidator = layui.formValidator;
+            formValidator.api.bindevent($("form#formRule"));
         //监听提交
-        form.on('submit(formRule)', function(data){
-            $('#formRule').validator({
-                theme: "simple_right",
-//                showOk: "ok",
-                validClass: "has-succes",
-                invalidClass: "has-error",
-                bindClassTo: ".layui-form-item",
-                msgIcon:'<span class="n-icon"></span>',
-//                stopOnError: true,
-//                focusCleanup:false,
-//                timely:2,
-                display: function(elem){
-                    return $(elem).closest('.layui-form-item').children('label:eq(0)').text();
-                },
-                fields: {
-                    title: "required",
-                    name:"required;email",
-                },
-                valid: function(form){
-                    var formData = JSON.stringify(data.field);
-                    we.api.ajax({"url":"{:url('admin/auth.rule/edit','',false)}","data":data.field,'tableid':'tableReload'});
-                }
-            });
-
-        });
+//        form.on('submit(formRule)', function(data){
+//            $('#formRule').validator({
+//                theme: "simple_right",
+////                showOk: "ok",
+//                validClass: "has-succes",
+//                invalidClass: "has-error",
+//                bindClassTo: ".layui-form-item",
+//                msgIcon:'<span class="n-icon"></span>',
+////                stopOnError: true,
+////                focusCleanup:false,
+////                timely:2,
+//                display: function(elem){
+//                    return $(elem).closest('.layui-form-item').children('label:eq(0)').text();
+//                },
+//                fields: {
+//                    title: "required",
+//                    name:"required;email",
+//                },
+//                valid: function(form){
+//                    var formData = JSON.stringify(data.field);
+//                    we.api.ajax({"url":"{:url('admin/auth.rule/edit','',false)}","data":data.field,'tableid':'tableReload'});
+//                }
+//            });
+//
+//        });
     });
 </script>
 </body>

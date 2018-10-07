@@ -16,12 +16,13 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                     return;
                 //绑定表单事件
                 form.validator($.extend({
-                    validClass: 'has-success',
+                    theme: "simple_right",
+                    validClass: 'has-succes',
                     invalidClass: 'has-error',
-                    bindClassTo: '.form-group',
-                    formClass: 'n-default n-bootstrap',
+                    bindClassTo: '.layui-form-item',
                     msgClass: 'n-right',
-                    stopOnError: true,
+                    showOk: "",
+                    stopOnError: false,
                     display: function (elem) {
                         return $(elem).closest('.layui-form-item').children('label:eq(0)').text(); //display: 是可选的，用于替换错误消息中的{0}，一般为显示的字段名。
                     },
@@ -49,12 +50,13 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                         var that = this, submitBtn = $(".footer-form [type=submit]", form);
                         // return console.log(submitBtn);
                         // that.holdSubmit();
-                        $(".footer-form [type=submit]", form).addClass("disabled");
+                        $(".footer-form [type=submit]", form).addClass("layui-btn-disabled");
+                        // return ;
                         //验证通过提交表单
                         Form.api.submit($(ret), function (data, ret) {
                             // return console.log(ret);
                             that.holdSubmit(false); //防止表单重复提交的措施 After the form is submitted successfully, release hold.
-                            submitBtn.removeClass("disabled");
+                            submitBtn.removeClass("layui-btn-disabled");
                             if (false === $(this).triggerHandler("success.form", [data, ret])) {
                                 return false;
                             }
@@ -88,6 +90,7 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                 //移除提交按钮的disabled类
                 $(".footer-form [type=submit],.fixed-footer [type=submit],.normal-footer [type=submit]", form).removeClass("disabled");
             },
+            bindevent: function (form) {}
         },
         api: {
             submit: function (form, success, error, submit) {
@@ -99,15 +102,15 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                     }
                 }
                 var type = form.attr("method").toUpperCase(); //toUpperCase() 方法用于把字符串转换为大写
-
+                // return console.log(type);
                 type = type && (type === 'GET' || type === 'POST') ? type : 'GET';
-                url = form.attr("action");
+                var url = form.attr("action");
                 url = url ? url : location.href;
                 // return console.log(url);
                 //修复当存在多选项元素时提交的BUG
                 var params = {};
                 var multipleList = $("[name$='[]']", form);
-                // return console.log(multipleList.size());
+                // return console.log(multipleList);
                 if (multipleList.size() > 0) {
                     //serializeArray() 方法通过序列化表单值来创建对象数组（名称和值）
                     //map() 把每个元素通过函数传递到当前匹配集合中，生成包含返回值的新的 jQuery 对象
@@ -138,9 +141,6 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                         }
                     }
                 }, function (data, ret) {
-                    // parent.location.href = 'http://act.admin.com/admin/task/task?ref=addtabs';
-                    // $('.form-group', form).removeClass('has-feedback has-success has-error');
-
                     // console.log(ret); //操作成功返回结果集
                     if (data && typeof data === 'object') {
                         // console.log(data.token);
@@ -154,12 +154,6 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                             data.callback.call(form, data);
                         }
                     }
-                    // return console.log(ret,type);
-                    if(ret.data.redirect == 1 && ret.url) {
-                        // parent.location.href = ret.url;
-                        top.location = ret.url + '?ref=addtabs';
-                    }
-
                     if (typeof success === 'function') {
                         if (false === success.call(form, data, ret)) {
                             return false;
@@ -178,12 +172,14 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                 });
                 return false;
             },
+
             bindevent: function (form, success, error, submit) {
                 form = typeof form === 'object' ? form : $(form);
                 var events = Form.events;
                 events.bindevent(form);
+                events.validator(form, success, error, submit);
             },
         }
     }
-
+    exports('formValidator', Form);
 });
