@@ -15,13 +15,13 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">名称</label>
                 <div class="layui-input-block">
-                    <input type="text" name="name" autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
+                    <input type="text" name="name" lay-verify="required" autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">状态</label>
                 <div class="layui-input-block">
-                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>
+                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$row['status'] == 1? 'checked' : ''}>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -71,9 +71,9 @@
             ,we = layui.we
             ,authtree = layui.authtree;
 
+        var authids = authtree.getChecked('#LAY-auth-tree-index');
         //监听提交
         form.on('submit(formRule)', function(data){
-            var authids = authtree.getChecked('#LAY-auth-tree-index');
             var formData = data.field;
             var ids = "{$row['id']}";
             var url = "{:url('admin/auth.group/edit','',false)}/ids/" + ids;
