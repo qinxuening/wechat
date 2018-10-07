@@ -122,6 +122,21 @@ class Index extends baseAdmin {
     }
     
     /**
+     * 注册
+     * @return string
+     */
+    public function reg() {
+        return $this->view->fetch();
+    }
+    
+    /**
+     * 忘记密码
+     */
+    public function forget() {
+        return $this->view->fetch();
+    }
+    
+    /**
      * 注销登录
      */
     public function logout()
