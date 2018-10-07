@@ -57,6 +57,7 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                             // return console.log(ret);
                             that.holdSubmit(false); //防止表单重复提交的措施 After the form is submitted successfully, release hold.
                             submitBtn.removeClass("layui-btn-disabled");
+
                             if (false === $(this).triggerHandler("success.form", [data, ret])) {
                                 return false;
                             }
@@ -67,9 +68,11 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                             }
                             //提示及关闭当前窗口
                             var msg = ret.hasOwnProperty("msg") && ret.msg !== "" ? ret.msg :'操作完成';
+                            console.log(msg);
                             parent.Toastr.success(msg);
                             var index = parent.Layer.getFrameIndex(window.name);
                             parent.Layer.close(index);
+                            window.parent.location.reload();//刷新父页面
                             return false;
                         }, function (data, ret) {
                             that.holdSubmit(false);
@@ -131,6 +134,7 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                 we.api.ajax({
                     type: type,
                     url: url,
+                    async:false,
                     data: form.serialize() + (Object.keys(params).length > 0 ? '&' + $.param(params) : ''),
                     dataType: 'json',
                     complete: function (xhr) {
@@ -141,7 +145,9 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                         }
                     }
                 }, function (data, ret) {
-                    // console.log(ret); //操作成功返回结果集
+                    console.log("-------"+data);
+                    console.log("##########"+ret);
+                    // return console.log(ret); //操作成功返回结果集
                     if (data && typeof data === 'object') {
                         // console.log(data.token);
                         //刷新客户端token

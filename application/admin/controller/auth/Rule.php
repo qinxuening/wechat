@@ -46,7 +46,7 @@ class Rule extends baseAdmin{
     
     public function getRule($page = 0, $limit = 10) {
         $this->rulelist = Db::name('auth_rule')
-            ->order('weigh', 'desc')
+            ->order(['id'=>'desc','weigh'=>'desc'])
             ->page($page,$limit)
             ->select();
         $count = Db::name('auth_rule')->count('*');

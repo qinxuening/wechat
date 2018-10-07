@@ -27,6 +27,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 var data = typeof ret.data !== 'undefined' ? ret.data : null;
                 var msg = typeof ret.msg !== 'undefined' && ret.msg ? ret.msg : '操作完成';
                 if (typeof onAjaxSuccess === 'function') {
+                    console.log('执行步奏：成功1')
                     var result = onAjaxSuccess.call(this, data, ret);
                     if (result === false)
                         return;
@@ -47,7 +48,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                         parent.layui.table.reload(tablereloadid);
                     }
                 }
-
+                console.log('执行步奏：成功2')
             },
 
             //请求错误的回调
@@ -79,7 +80,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
         api: {
             //发送Ajax请求
             ajax: function (options, success, error) {
-                console.log(options);
+                // console.log(options);
                 options = typeof options === 'string' ? {url: options} : options;
                 var index = layer.load();
                 options = $.extend({
@@ -102,12 +103,8 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                         we.events.onAjaxError(ret, error);
                     }
                 }, options);
-
                 // return console.log(options);
-                // setTimeout(function () {
-                    $.ajax(options);
-                // },200);
-
+                $.ajax(options);
             },
 
             //打开一个弹出窗口
