@@ -13,6 +13,6 @@
         ajax: {url: layui.setter.base + "json/user/sms.js"}
     }), a.on("click", "#LAY-user-get-vercode", function () {
         s(this);
-        this.src = "https://www.oschina.net/action/user/captcha?t=" + (new Date).getTime()
+        // this.src = "https://www.oschina.net/action/user/captcha?t=" + (new Date).getTime()
     }), e("user", {})
 });
