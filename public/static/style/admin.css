@@ -1421,16 +1421,16 @@ body .layui-layer-we .layui-layer-setwin{
     color: #e74c3c;
 }
 
-.layui-form-item.has-error .layui-input-block input,
-.layui-form-item.has-error .layui-input-block select,
-.layui-form-item.has-error .layui-input-block textarea{
+.layui-form-item.has-error  input,
+.layui-form-item.has-error select,
+.layui-form-item.has-error  textarea{
     border-color: #e74c3c;
     box-shadow: none;
 }
 
-.layui-form-item.has-error .layui-input-block input:focus,
-.layui-form-item.has-error .layui-input-block select:focus,
-.layui-form-item.has-error .layui-input-block textarea:focus{
+.layui-form-item.has-error  input:focus,
+.layui-form-item.has-error select:focus,
+.layui-form-item.has-error textarea:focus{
     border-color: #e74c3c !important;
     box-shadow: none;
 }
@@ -1439,9 +1439,9 @@ body .layui-layer-we .layui-layer-setwin{
     color: #009688;
 }
 
-.layui-form-item.has-succes .layui-input-block input,
-.layui-form-item.has-succes .layui-input-block select,
-.layui-form-item.has-succes .layui-input-block textarea{
+.layui-form-item.has-succes  input,
+.layui-form-item.has-succes  select,
+.layui-form-item.has-succes  textarea{
     border-color: #009688;
     box-shadow: none;
 }

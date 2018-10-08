@@ -6,13 +6,19 @@
  */
 namespace app\admin\controller;
 use app\common\controller\baseAdmin;
-use think\Config;
 use think\Hook;
 use think\Validate;
 use think\Db;
 
 class Index extends baseAdmin {
+    protected $noNeedLogin = ['login'];
+    protected $noNeedRight = ['index', 'logout'];
+    protected $layout = '';
     
+    public function _initialize()
+    {
+        parent::_initialize();
+    }
     public function index() {
         //左侧菜单
         $menulist = $this->auth->getSidebar([
@@ -51,6 +57,7 @@ class Index extends baseAdmin {
         }
         if ($this->request->isPost())
         {
+            print_r($this->request->post(''));die();
             $username = $this->request->post('username');
             $password = $this->request->post('password');
             $keeplogin = $this->request->post('keeplogin');
