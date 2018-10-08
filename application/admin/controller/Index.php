@@ -57,7 +57,7 @@ class Index extends baseAdmin {
         }
         if ($this->request->isPost())
         {
-            print_r($this->request->post(''));die();
+//             print_r($this->request->post(''));die();
             $username = $this->request->post('username');
             $password = $this->request->post('password');
             $keeplogin = $this->request->post('keeplogin');
