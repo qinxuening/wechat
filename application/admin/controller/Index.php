@@ -11,7 +11,7 @@ use think\Validate;
 use think\Db;
 
 class Index extends baseAdmin {
-    protected $noNeedLogin = ['login'];
+    protected $noNeedLogin = ['login','reg','forget'];
     protected $noNeedRight = ['index', 'logout'];
     protected $layout = '';
     
