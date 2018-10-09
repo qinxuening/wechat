@@ -108,12 +108,6 @@ class Index extends baseAdmin {
             }
         }
     
-        $result = $this->auth->login('admin', '12345678', $keeplogin ? 86400 : 0);
-        if ($result === true)
-            {
-                $this->redirect('/');
-            }
-
         // 根据客户端的cookie,判断是否可以自动登录
         if ($this->auth->autologin())
         {
