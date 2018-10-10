@@ -78,7 +78,8 @@
         index: 'lib/index' //主入口模块
     }).link(
         " __STATIC__/style/jquery.validator.css"
-    ).use(['index', 'user','formValidator'], function(){
+    ).link("__STATIC__/style/toastr.css")
+    .use(['index', 'user','formValidator'], function(){
         var $ = layui.$
             ,setter = layui.setter
             ,admin = layui.admin

@@ -10,7 +10,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
     {
         "closeButton":false,//显示关闭按钮
         "debug":false,//启用debug
-        "positionClass":"toast-top-right",//弹出的位置
+        "positionClass":"toast-top-center",//弹出的位置
         "showDuration":"300",//显示的时间
         "hideDuration":"1000",//消失的时间
         "timeOut":"5000",//停留的时间
@@ -49,6 +49,9 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     }
                 }
                 console.log('执行步奏：成功2')
+                if(ret.data.url !== false) {
+                    window.location.href = ret.data.url;
+                }
             },
 
             //请求错误的回调
@@ -59,10 +62,13 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     if (result === false) {
                         return;
                     }
+                }else {
+                    toastr.clear()
+                    toastr.error(ret.msg);
                 }
-                console.log(ret);
-                toastr.clear()
-                toastr.error(ret.msg);
+                // cons
+                // ole.log(ret);
+
             },
             //服务器响应数据后
             onAjaxResponse: function (response) {
@@ -90,7 +96,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     success: function (ret) {
                         layer.close(index);
                         ret = we.events.onAjaxResponse(ret);
-                        console.log(ret);
+                        // console.log(ret);
                         if (ret.status === 'success') {
                             we.events.onAjaxSuccess(ret, options,success);
                         } else {

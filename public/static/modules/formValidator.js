@@ -2,10 +2,11 @@
  * Created by qinxuening on 2018/10/6.
  */
 layui.link( '__STATIC__/style/jquery.validator.css');
-layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
+layui.define(['jquery', 'form','we','validator','zhCN','toastr'], function(exports){
     var  validator = layui.validator
          ,zhCN = layui.zhCN
          ,$ = layui.$
+         ,toastr = layui.toastr
          ,form = layui.form
          ,we = layui.we;
 
@@ -66,6 +67,7 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                                     return false;
                                 }
                             }
+                            // return console.log(ret);
                             //提示及关闭当前窗口
                             /*var msg = ret.hasOwnProperty("msg") && ret.msg !== "" ? ret.msg :'操作完成';
                             console.log(msg);
@@ -73,6 +75,7 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                             parent.Layer.close(index);
                             window.parent.location.reload();//刷新父页面
                             parent.Toastr.success(msg);*/
+
                             return true;
                         }, function (data, ret) {
                             that.holdSubmit(false);
@@ -85,6 +88,9 @@ layui.define(['jquery', 'form','we','validator','zhCN'], function(exports){
                                     return false;
                                 }
                             }
+                            // console.log(ret);
+                            toastr.clear()
+                            toastr.error(ret.msg);
                         }, submit);
                         return false;
                     }

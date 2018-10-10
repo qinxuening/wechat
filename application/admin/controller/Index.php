@@ -47,7 +47,7 @@ class Index extends baseAdmin {
      */
     public function login()
     {
-        $url = $this->request->get('url', 'index/index');
+        $url = $this->request->get('url', 'index');
         $rule_info = get_passwd_rule();
         $login_captcha = Db::name('config')->where(['key' => 'login_captcha'])->column('value')[0];
     
@@ -84,8 +84,8 @@ class Index extends baseAdmin {
                 $rule['captcha'] = 'require|captcha';
                 $data['captcha'] = $this->request->post('captcha');
             }
-    
-    
+//             print_r($data);die();
+                
             $validate = new Validate($rule, $message, ['username' => __('Username'), 'password' => __('Password'), 'captcha' => __('Captcha')]);
     
             $result = $validate->check($data);
@@ -98,13 +98,15 @@ class Index extends baseAdmin {
             $result = $this->auth->login($username, $password, $keeplogin ? 86400 : 0);
             if ($result === true)
             {
-                $this->success(__('Login successful'), $url, ['url' => $url, 'id' => $this->auth->id, 'username' => $username, 'avatar' => $this->auth->avatar]);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Login successful'),'data' => ['url' => $url, 'id' => $this->auth->id, 'username' => $username, 'avatar' => $this->auth->avatar]]);
+//                 $this->success(__('Login successful'), $url, ['url' => $url, 'id' => $this->auth->id, 'username' => $username, 'avatar' => $this->auth->avatar]);
             }
             else
             {
                 $msg = $this->auth->getError();
                 $msg = $msg ? $msg : __('Username or password is incorrect');
-                $this->error($msg, $url, ['token' => $this->request->token()]);
+                return json(['code' => -1, 'status' => 'error', 'msg' => $msg]);
+//                 $this->error($msg, $url, ['token' => $this->request->token()]);
             }
         }
     
