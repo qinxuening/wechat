@@ -106,7 +106,7 @@
         var e = (layui.$, layui.table);
         e.render({
             elem: "#LAY-index-prograss",
-            url: layui.setter.base + "json/console/prograss.js",
+            url: "prograss",
             cols: [[{type: "checkbox", fixed: "left"}, {field: "prograss", title: "任务"}, {
                 field: "time",
                 title: "所需时间"
