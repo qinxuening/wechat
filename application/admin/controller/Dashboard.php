@@ -25,6 +25,9 @@ class Dashboard extends baseAdmin {
         return json(['code' => 0, 'data' => $data, 'count' => 100,'msg' => '']);
     }
     
+    public function console() {
+        return $this->view->fetch();
+    }
     
 }
 
