@@ -29,6 +29,13 @@ class Dashboard extends baseAdmin {
         return $this->view->fetch();
     }
     
+    public function line() {
+        return $this->view->fetch();
+    }
+    
+    public function bar() {
+       return $this->view->fetch();
+    }
 }
 
 
