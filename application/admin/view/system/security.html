@@ -13,9 +13,80 @@
                     </ul>
                     <div class="layui-tab-content">
                         <div class="layui-tab-item layui-show">
-                            用户秘密策略
+                            <form class="layui-form" action="" lay-filter="component-form-element">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">请选择用户秘密策略：</label>
+                                    <div class="layui-input-block">
+                                        {:build_radios('strategy', ['1'=>__('Password strategy1'), '2'=>__('Password strategy2'), '3'=>__('Password strategy3')],$Password_strategy_type['passwd_complexity'])}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit="" lay-filter="component-form-element">确实</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                    </div>
+                                </div>
+                                <!--<div class="layui-form-item footer-form">-->
+                                    <!--<div class="footer">-->
+                                        <!--<button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn btn-success btn-embossed disabled">{:__('OK')}</button>-->
+                                        <!--<button type="reset" class="layui-btn layui-btn-primary btn-embossed">{:__('Reset')}</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </form>
                         </div>
-                        <div class="layui-tab-item">防暴力破解</div>
+                        <div class="layui-tab-item">
+                            <form class="layui-form" action="" lay-filter="component-form-element">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">图形验证码验证：</label>
+                                    <div class="layui-input-block">
+                                        {:build_radios('login_captcha', ['1'=>__('on'),'0'=>__('off')],$login_captcha['login_captcha'])}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">密码错误次数限制：</label>
+                                        <div class="layui-input-inline">
+                                        {:build_radios('row[login_limit]', ['1'=>__('on'),'0'=>__('off')], $login_limit['login_limit'])}
+                                        </div>
+                                    </div>
+                                        {if condition="$login_limit['login_limit'] eq 1"}
+                                    <div class="layui-inline">
+                                         <label class="layui-form-label">用户登录密码错误</label>
+                                        <div class="layui-input-inline">
+                                          <input class="layui-input" style="width: 100px;text-align: center;" type="text" name="row[error_count]" value="{$login_limit['error_count']}"> 次，
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                         <label class="layui-form-label">冻结账号登录</label>
+                                        <div class="layui-input-inline">
+                                          <input class="layui-input" style="width: 100px;text-align: center;" type="text" name="row[login_time_limit]" value="{$login_limit['login_time_limit']}"> 分钟
+                                         </div>
+                                    </div>
+                                        {else /}
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">用户登录密码错误</label>
+                                        <div class="layui-input-inline">
+                                            <input class="layui-input" type="text" name="row[error_count]" value="3">
+                                        </div>
+                                        <div class="layui-form-mid">次，</div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">冻结账号登录</label>
+                                        <div class="layui-input-inline">
+                                        <input class="layui-input" type="text" name="row[login_time_limit]" value="10">
+                                        </div>
+                                        <div class="layui-form-mid">分钟</div>
+                                    </div>
+                                        {/if}
+                                    </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit="" lay-filter="component-form-element">确实</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -32,7 +103,8 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index'], function(){
+    }).use(['index','form'], function(){
+        var form = layui.form
     });
 </script>
 </body>

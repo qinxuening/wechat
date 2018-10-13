@@ -38,12 +38,13 @@ if (!function_exists('build_radios')) {
      */
     function build_radios($name, $list = [], $selected = null,$disabled = null)
     {
-        //         print_r($list);
+//                 print_r($list);
         $html = [];
         $selected = is_null($selected) ? key($list) : $selected; //key() 函数返回数组内部指针当前指向元素的键名
         $selected = is_array($selected) ? $selected : explode(',', $selected);
         foreach ($list as $k => $v) {
-            $html[] = sprintf(Form::label("{$name}-{$k}", "%s {$v}"), Form::radio($name, $k, in_array($k, $selected), ['id' => "{$name}-{$k}",$disabled]));
+//             $html[] = sprintf(Form::label("{$name}-{$k}", "%s {$v}"), Form::radio($name, $k, in_array($k, $selected), ['id' => "{$name}-{$k}",$disabled]));
+            $html[] = sprintf(Form::label("{$name}-{$k}", "%s"), Form::radio($name, $k, in_array($k, $selected), ['id' => "{$name}-{$k}",'title' => $v,$disabled]));
         }
         return '<div class="radio">' . implode(' ', $html) . '</div>';
     }

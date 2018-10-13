@@ -1445,3 +1445,12 @@ body .layui-layer-we .layui-layer-setwin{
     border-color: #009688;
     box-shadow: none;
 }
+.layui-form-label {
+  float: left;
+  display: block;
+  width: auto !important;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: right;
+  padding: 9px 15px;
+}

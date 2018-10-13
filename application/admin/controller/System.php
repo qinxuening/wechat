@@ -43,8 +43,7 @@ class System extends baseAdmin{
         
             return false;
         }
-        
-        $login_limit = get_config('login_limit');
+
         $login_limit = json_decode($login_limit['login_limit'],true);
         $this->view->assign('Password_strategy_type', get_config('passwd_complexity'));
         $this->view->assign('login_captcha', get_config('login_captcha'));
