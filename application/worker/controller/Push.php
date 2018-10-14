@@ -34,7 +34,7 @@ class Push{
         Gateway::bindUid($client_id, $this->uid);
         // 加入某个群组（可调用多次加入多个群组）
         Gateway::joinGroup($client_id, $this->group_id);
-        return Gateway::getAllUidList();;
+        return Gateway::getAllUidList();
     }
     
     
