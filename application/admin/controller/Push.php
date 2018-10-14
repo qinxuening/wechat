@@ -52,7 +52,23 @@ class Push extends baseAdmin{
         return $this->view->fetch();
     }
     
-    
+    /**
+     * 删除
+     */
+    public function del($ids = "")
+    {
+        if ($ids)
+        {
+            $count = Db::name('push')->where('id', 'in', explode(',', $ids))->delete();
+            if ($count)
+            {
+                return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功']);
+            } else {
+                return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
+            }
+        }
+        return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
+    }
     
     
     
