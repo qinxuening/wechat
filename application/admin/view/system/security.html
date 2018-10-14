@@ -13,7 +13,7 @@
                     </ul>
                     <div class="layui-tab-content">
                         <div class="layui-tab-item layui-show">
-                            <form class="layui-form" action="" lay-filter="component-form-element">
+                            <form class="layui-form" lay-filter="component-form-element" id="password_strategy"  method="POST" action="{:url('System/security',['type' => 1])}">
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">请选择用户秘密策略：</label>
                                     <div class="layui-input-block">
@@ -35,7 +35,7 @@
                             </form>
                         </div>
                         <div class="layui-tab-item">
-                            <form class="layui-form" action="" lay-filter="component-form-element">
+                            <form class="layui-form" id="crack" action="{:url('System/security',['type' => 2])}" method="post"  lay-filter="component-form-element" >
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">图形验证码验证：</label>
                                     <div class="layui-input-block">
@@ -46,34 +46,36 @@
                                     <div class="layui-inline">
                                         <label class="layui-form-label">密码错误次数限制：</label>
                                         <div class="layui-input-inline">
-                                        {:build_radios('row[login_limit]', ['1'=>__('on'),'0'=>__('off')], $login_limit['login_limit'])}
+                                        {:build_radios('login_limit', ['1'=>__('on'),'0'=>__('off')], $login_limit['login_limit'])}
                                         </div>
                                     </div>
                                         {if condition="$login_limit['login_limit'] eq 1"}
                                     <div class="layui-inline">
                                          <label class="layui-form-label">用户登录密码错误</label>
                                         <div class="layui-input-inline">
-                                          <input class="layui-input" style="width: 100px;text-align: center;" type="text" name="row[error_count]" value="{$login_limit['error_count']}"> 次，
+                                          <input class="layui-input" style="width: 100px;text-align: center;" type="text" name="error_count" value="{$login_limit['error_count']}">
                                         </div>
+                                        <div class="layui-form-mid">次，</div>
                                     </div>
                                     <div class="layui-inline">
                                          <label class="layui-form-label">冻结账号登录</label>
                                         <div class="layui-input-inline">
-                                          <input class="layui-input" style="width: 100px;text-align: center;" type="text" name="row[login_time_limit]" value="{$login_limit['login_time_limit']}"> 分钟
+                                          <input class="layui-input" style="width: 100px;text-align: center;" type="text" name="login_time_limit" value="{$login_limit['login_time_limit']}">
                                          </div>
+                                         <div class="layui-form-mid">分钟</div>
                                     </div>
                                         {else /}
                                     <div class="layui-inline">
                                         <label class="layui-form-label">用户登录密码错误</label>
                                         <div class="layui-input-inline">
-                                            <input class="layui-input" type="text" name="row[error_count]" value="3">
+                                            <input class="layui-input" type="text" name="error_count" value="3">
                                         </div>
                                         <div class="layui-form-mid">次，</div>
                                     </div>
                                     <div class="layui-inline">
                                         <label class="layui-form-label">冻结账号登录</label>
                                         <div class="layui-input-inline">
-                                        <input class="layui-input" type="text" name="row[login_time_limit]" value="10">
+                                        <input class="layui-input" type="text" name="login_time_limit" value="10">
                                         </div>
                                         <div class="layui-form-mid">分钟</div>
                                     </div>
@@ -103,8 +105,15 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','form'], function(){
+    }).use(['index','form','formValidator'], function(){
         var form = layui.form
+            ,formValidator = layui.formValidator;
+
+        /**
+         * 绑定表单事件
+         */
+        formValidator.api.bindevent($("form#password_strategy"));
+        formValidator.api.bindevent($("form#crack"));
     });
 </script>
 </body>

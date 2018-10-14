@@ -11,16 +11,16 @@ use think\Db;
 class System extends baseAdmin{
     public function security() {
         if ($this->request->isPost()){
-            $params = $this->request->post("row/a");
+            $params = $this->request->post("");
         
             $type = input('type');
             if($type == 1) {
                 $result = Db::name('config')->where(['key' => 'passwd_complexity'])->update(['value' => $params['strategy']]);
         
                 if(false !== $result) {
-                    $this->success();
+                   return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
                 } else {
-                    $this->error();
+                   return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
                 }
             } else {
                 $result1 = Db::name('config')->where(['key' => 'login_captcha'])->update(['value' => $params['login_captcha']]);
@@ -35,15 +35,15 @@ class System extends baseAdmin{
                 $result2 = Db::name('config')->where(['key' => 'login_limit'])->update(['value' => $arr]);
         
                 if(false !== $result1 && false !== $result2) {
-                    $this->success();
+                     return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
                 } else {
-                    $this->error();
+                    return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
                 }
             }
         
             return false;
         }
-
+        $login_limit = get_config('login_limit');
         $login_limit = json_decode($login_limit['login_limit'],true);
         $this->view->assign('Password_strategy_type', get_config('passwd_complexity'));
         $this->view->assign('login_captcha', get_config('login_captcha'));
