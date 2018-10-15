@@ -165,6 +165,7 @@ if(!function_exists('build_actionbar')) {
             'edit'     => ['layui-btn layui-btn-xs', 'layui-icon layui-icon-edit', '编辑'],
             'del'     => ['layui-btn layui-btn-danger layui-btn-xs', 'layui-icon layui-icon-delete', '删除'],//btn-disabled disabled
         ];
+
         $btnAttr = array_merge($btnAttr, $attr);
         $html = '';
         $html .= "<script type='text/html' id='{$id}'>";

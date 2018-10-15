@@ -52,7 +52,7 @@ class Push extends baseAdmin{
         // 设置GatewayWorker服务的Register服务ip和端口，请根据实际情况改成实际值
         Gateway::$registerAddress = '127.0.0.1:1238';
         // 向任意uid的网站页面发送数据
-        Gateway::sendToUid($this->uid, $message);
+//         Gateway::sendToUid($this->uid, $message);
         Gateway::sendToAll(json_encode(['code' => 1, 'msg' => '测试发送消息']));
         // 向任意群组的网站页面发送数据，如果开启，则会向页面发送两条一样的消息
         //Gateway::sendToGroup($group, $message);

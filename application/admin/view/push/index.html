@@ -29,7 +29,9 @@
 </script>
 
 <!--操作-->
-{:build_actionbar('actionbar',['edit', 'del'])}
+{:build_actionbar('actionbar',['edit','test', 'del'],[
+'test' => ['layui-btn layui-btn-xs', 'layui-icon layui-icon-circle', '发送测试']
+])}
 {/block}
 
 {block name="script"}
@@ -64,7 +66,7 @@
                 ,{field:'is_time_push', title: '是否定时推送',templet: '#switchPush', sort: true}
                 ,{field:'time_push', title: '定时推送时间'}
                 ,{field:'createtime', title: '创建时间', minWidth: 150}
-                ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:220}
+                ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:250}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
@@ -93,10 +95,17 @@
             }
         });
 
+//        table.on('tool('+weTable.defaults.table+')', function(obj){
+//            var data = obj.data;
+//            if(obj.event === 'test'){
+//                console.log('推送测试');
+//            }
+//        });
         /**
          * 绑定监听事件
          * */
         weTable.api.bindevent();
+
     });
 </script>
 </body>

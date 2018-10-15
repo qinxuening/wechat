@@ -95,6 +95,9 @@ layui.define(['jquery','we','toastr'], function(exports){
                            break;
                    };
                });
+           },
+           toolevent:function () {
+
            }
        }
 
