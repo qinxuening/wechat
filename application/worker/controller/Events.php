@@ -161,7 +161,7 @@ class Events
         $resData = [
             'type' => 'init',
             'client_id' => $client_id,
-            'msg' => 'connect is success00' . date('Y-m-d H:i:s', time()) // 初始化房间信息
+            'msg' => 'connect is success----' . date('Y-m-d H:i:s', time()) // 初始化房间信息
         ];
         
         Gateway::sendToClient($client_id, json_encode($resData));

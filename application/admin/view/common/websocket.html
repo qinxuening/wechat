@@ -1,0 +1,34 @@
+<script>
+    var server_ip = "{$_SERVER['SERVER_ADDR']}";
+    var socket;
+    var server_ip_arr =server_ip.split(":");
+    function socketInit(){
+        var host = "ws://"+server_ip_arr['0']+":8282/";
+        try{
+            socket = new WebSocket(host);
+            //发送数据
+            socket.onopen    = function(msg){
+                console.log("socket create success!");
+            };
+
+            //接收数据
+            socket.onmessage = function(msg){
+                console.log(msg.data);
+                var data = JSON.parse(msg.data);
+            };
+
+            //关闭
+            socket.onclose   = function(msg){
+                console.log("socket close Success");
+            }
+
+            //异常
+            socket.onerror   = function(msg){
+                console.log("socket Error!");
+            };
+        }catch(ex){
+            console.log(ex);
+        }
+    }
+    socketInit();
+</script>
