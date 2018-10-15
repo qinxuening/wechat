@@ -7,14 +7,16 @@
 namespace app\worker\controller;
 // use \GatewayWorker\Gateway;
 use \GatewayWorker\Lib\Gateway;
+use app\common\controller\baseAdmin;
 require_once __DIR__ . '/../../../extend/GatewayWorker/vendor/autoload.php';
 // Autoloader::setRootPath(__DIR__);
-class Push{
+class Push extends baseAdmin{
     protected $uid;
     protected $group_id;
     protected $username;
     
-    public function __construct(){
+    public function _initialize(){
+        parent::_initialize();
         $userinfo = session('admin');
         $this->uid = $userinfo['id'];
         $this->group_id = 1001;
