@@ -70,8 +70,12 @@ class Push extends baseAdmin{
         return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
     }
     
-    
-    
+    /**
+     * 推送发送
+     */
+    public function push() {
+        return json(['code' => 1, 'status' => 'success', 'msg' => '推送成功']);
+    }
     
     
     

@@ -43,14 +43,22 @@ layui.define(['jquery','we','toastr'], function(exports){
                            we.api.ajax({"url":url,"data":{'ids':data.id},'tableid':weTable.defaults.tableid,'action':'del'});
                            layer.close(index);
                        });
-
                    } else if(obj.event === 'view'){
                        var url = weTable.defaults.extend.view_url + data.id;
                        we.api.open(url,'查看');
                    } else if(obj.event === 'edit') {
+                       weTable.api.toolevent(obj);
                        var url = weTable.defaults.extend.edit_url + data.id;
                        we.api.open(url,'编辑');
+                   } else {
+                       var url = $(this).attr('lay-url');
+                       if(url) {
+                           we.api.ajax({"url":url,"data":{'ids':data.id}});
+                       } else {
+                           return toastr.error('操作异常');
+                       }
                    }
+
                });
 
                //头工具栏事件
@@ -96,8 +104,9 @@ layui.define(['jquery','we','toastr'], function(exports){
                    };
                });
            },
-           toolevent:function () {
-
+           toolevent:function (obj) {
+                // console.log(obj.data);
+               // return obj.data;
            }
        }
 
