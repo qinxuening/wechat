@@ -115,6 +115,10 @@ source /var/www/mars.sql;
 grant all privileges on *.* to 'root'@'%' identified by ’314233qxnQXN?’ with grant option;
 flush privileges;
 
+运行mysql时，提示Table ‘performance_schema.session_variables’ doesn’t exist
+mysql_upgrade -u root -p --force
+重启
+
 安装redis：
 yum install redis 
 

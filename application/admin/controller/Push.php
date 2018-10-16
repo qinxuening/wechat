@@ -7,8 +7,7 @@
 namespace app\admin\controller;
 use app\common\controller\baseAdmin;
 use think\Db;
-use \GatewayWorker\Lib\Gateway;
-require_once __DIR__ . '/../../../extend/GatewayWorker/vendor/autoload.php';
+use GatewayClient\Gateway;
 
 class Push extends baseAdmin{
 
@@ -85,7 +84,5 @@ class Push extends baseAdmin{
         return json(['code' => 1, 'status' => 'success', 'data'=>$result, 'msg' => '推送成功','url'=>'']);
     }
     
-    
-    
-    
+
 }

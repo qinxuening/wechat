@@ -98,7 +98,7 @@ class Index extends baseAdmin {
             $result = $this->auth->login($username, $password, $keeplogin ? 86400 : 0);
             if ($result === true)
             {
-                return json(['code' => 1, 'status' => 'success', 'msg' => __('Login successful'),'data' => ['url' => $url, 'id' => $this->auth->id, 'username' => $username, 'avatar' => $this->auth->avatar]]);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Login successful'),'url' => $url,'data' => [ 'id' => $this->auth->id, 'username' => $username, 'avatar' => $this->auth->avatar]]);
 //                 $this->success(__('Login successful'), $url, ['url' => $url, 'id' => $this->auth->id, 'username' => $username, 'avatar' => $this->auth->avatar]);
             }
             else
