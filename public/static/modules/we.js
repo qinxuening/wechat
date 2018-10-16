@@ -49,8 +49,9 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     }
                 }
                 console.log('执行步奏：成功2')
-                if(ret.data.url !== false) {
-                    window.location.href = ret.data.url;
+
+                if(ret.url != false && typeof ret.url !="undefined") {
+                    window.location.href = ret.url;
                 }
             },
 

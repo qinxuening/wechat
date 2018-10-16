@@ -28,7 +28,7 @@ layui.define(['jquery','we','toastr'], function(exports){
            init : function (defaults) {
                defaults = defaults ? defaults : {};
                $.extend(weTable.defaults,defaults);
-               console.log(weTable.defaults);
+               // console.log(weTable.defaults);
            },
            bindevent:function () {
                //监听行工具事件

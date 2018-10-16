@@ -7,6 +7,8 @@
 namespace app\admin\controller;
 use app\common\controller\baseAdmin;
 use think\Db;
+use \GatewayWorker\Lib\Gateway;
+require_once __DIR__ . '/../../../extend/GatewayWorker/vendor/autoload.php';
 
 class Push extends baseAdmin{
 
@@ -62,7 +64,7 @@ class Push extends baseAdmin{
             $count = Db::name('push')->where('id', 'in', explode(',', $ids))->delete();
             if ($count)
             {
-                return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功']);
+                return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功','url'=>'']);
             } else {
                 return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
             }
@@ -74,7 +76,13 @@ class Push extends baseAdmin{
      * 推送发送
      */
     public function push() {
-        return json(['code' => 1, 'status' => 'success', 'msg' => '推送成功']);
+        $list = Db::name('push')->field('id,title,content')->where(['id' => intval(input('ids'))])->find();
+        // 设置GatewayWorker服务的Register服务ip和端口，请根据实际情况改成实际值
+        Gateway::$registerAddress = '127.0.0.1:1238';
+        // 向任意uid的网站页面发送数据
+        //Gateway::sendToUid($this->uid, $message);
+        $result = Gateway::sendToAll(json_encode($list));
+        return json(['code' => 1, 'status' => 'success', 'data'=>$result, 'msg' => '推送成功','url'=>'']);
     }
     
     
