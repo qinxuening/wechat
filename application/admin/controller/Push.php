@@ -76,12 +76,14 @@ class Push extends baseAdmin{
      */
     public function push() {
         $list = Db::name('push')->field('id,title,content')->where(['id' => intval(input('ids'))])->find();
+        $list['time'] = date('Y-m-d H:i:s');
         // 设置GatewayWorker服务的Register服务ip和端口，请根据实际情况改成实际值
         Gateway::$registerAddress = '127.0.0.1:'.config('worker.register_port');
         // 向任意uid的网站页面发送数据
         //Gateway::sendToUid($this->uid, $message);
-        $result = Gateway::sendToAll(json_encode($list));
-        return json(['code' => 1, 'status' => 'success', 'data'=>$result, 'msg' => '推送成功','url'=>'']);
+//         $result = Gateway::sendToAll(json_encode($list));
+        $result = Gateway::sendToUid(session('admin')['id'], json_encode($list));
+        return json(['code' => 1, 'status' => 'success', 'data'=>Gateway::getAllUidList(), 'msg' => '推送成功','url'=>'']);
     }
     
 

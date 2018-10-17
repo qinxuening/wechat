@@ -188,7 +188,22 @@ class Auth
         $groups[$uid] = $user_groups ?: [];
         return $groups[$uid];
     }
-
+    
+    /**
+     * 获取用户所属组
+     * @return array
+     */
+    public function getGroupsIds($uid) {
+        $uid = $uid ? $uid : 1;
+        static $groupsIds;
+        if (isset($groupsIds))
+        {
+            return $groupsIds;
+        }
+        $groupsIds = Db::name($this->config['auth_group_access'])->where(['uid' => $uid])->column('group_id');
+        return $groupsIds;
+    }
+    
     /**
      * 获得权限规则列表
      * @param integer $uid 用户id

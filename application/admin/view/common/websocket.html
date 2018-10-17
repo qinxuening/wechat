@@ -1,6 +1,7 @@
 <script>
     var server_ip = "{$_SERVER['SERVER_ADDR']}";
     var register_port = "{:config('worker.gateway_port')}";
+    var user_info = '{:session("admin_info")}';
     register_port = register_port ? register_port : '8282';
     var socket;
     var server_ip_arr =server_ip.split(":");
@@ -14,15 +15,13 @@
 
             //连接成功时触发
             socket.onopen = function(){
-                var login_data = '{"type":"init"}';
-                socket.send(login_data );
+                socket.send(user_info);
                 console.log("socket create success!");
             };
 
             //接收数据
             socket.onmessage = function(msg){
                 console.log(msg.data);
-                var data = JSON.parse(msg.data);
             };
 
             //关闭

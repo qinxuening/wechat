@@ -11,6 +11,7 @@ use think\Controller;
 use think\Lang;
 use think\Hook;
 use think\Session;
+use think\Db;
 
 class baseAdmin extends Controller{
     /**
