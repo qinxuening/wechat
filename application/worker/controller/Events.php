@@ -177,9 +177,6 @@ class Events
      */
     public static function onMessage($client_id, $message)
     {
-        // 服务端console输出
-        // echo "msg : $message \r\n";
-        
         // 解析数据
         $resData = json_decode($message, true);
         $type = $resData['type'];
@@ -192,19 +189,19 @@ class Events
         $serverTime = date('Y-m-d H:i:s', time());
         
         switch ($type) {
-            case 'join': // 用户进入直播间
-                         // 将客户端加入到某一直播间
-                Gateway::joinGroup($client_id, $roomId);
+            case 'init': // 用户进入直播间 \将客户端加入到某一直播间
+                Gateway::bindUid($client_id, session('admin')['id']); // 将当前链接与uid绑定
+//                 Gateway::joinGroup($client_id, $roomId); // 加入特定组
                 $resData = [
                     'type' => 'join',
-                    'roomId' => $roomId,
+                    'roomId' => session('admin')['username'],
                     'userName' => $userName,
                     'msg' => "enters the Room", // 发送给客户端的消息，而不是聊天发送的内容
                     'joinTime' => $serverTime // 加入时间
                 ];
-                
+                GateWay::sendToAll(json_encode($resData));
                 // 广播给直播间内所有人，谁？什么时候？加入了那个房间？
-                Gateway::sendToGroup($roomId, json_encode($resData));
+//                 Gateway::sendToGroup($roomId, json_encode($resData));
                 break;
             case 'say': // 用户发表评论
                 $resData = [

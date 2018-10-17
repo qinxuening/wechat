@@ -94,8 +94,11 @@ class Index extends baseAdmin {
             {
                 $this->error($validate->getError(), $url, ['token' => $this->request->token()]);
             }
-    
-            $result = $this->auth->login($username, $password, $keeplogin ? 86400 : 0);
+            
+//             if($keeplogin) {
+                $result = $this->auth->login($username, $password, $keeplogin ? 86400 : 0);
+//             }
+
             if ($result === true)
             {
                 return json(['code' => 1, 'status' => 'success', 'msg' => __('Login successful'),'url' => $url,'data' => [ 'id' => $this->auth->id, 'username' => $username, 'avatar' => $this->auth->avatar]]);

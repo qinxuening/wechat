@@ -46,7 +46,7 @@ class Auth extends \we\Auth{
         //         print_r($admin);die();
         //         $adminModel = new Admin();
         $admin = Admin::where(['username' => $username])->find();
-        //         print_r($admin);die();
+        //->field('id,username,nickname,email,avatar,status,errcount')
         if (!$admin)
         {
             $this->setError('Username is incorrect');
@@ -63,7 +63,7 @@ class Auth extends \we\Auth{
             $this->setError('Please try again after 1 day');
             return false;
         }
-    
+
         $login_limit = Db::name('config')->where(['key' => 'login_limit'])->column('value')[0];
         $login_limit = json_decode($login_limit, true);
     
@@ -105,7 +105,11 @@ class Auth extends \we\Auth{
         $admin->logintime = time();
         $admin->token = Random::uuid();
         $admin->save();
-        Session::set("admin", $admin->toArray());
+        $admin_info = $admin->toArray();
+        unset($admin_info['password']);
+        unset($admin_info['salt']);
+        unset($admin_info['token']);
+        Session::set("admin", $admin_info);
         $this->keeplogin($keeptime);
         return true;
     }

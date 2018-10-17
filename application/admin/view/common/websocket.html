@@ -1,13 +1,21 @@
 <script>
     var server_ip = "{$_SERVER['SERVER_ADDR']}";
+    var register_port = "{:config('worker.gateway_port')}";
+    register_port = register_port ? register_port : '8282';
     var socket;
     var server_ip_arr =server_ip.split(":");
     function socketInit(){
-        var host = "ws://"+server_ip_arr['0']+":8282/";
+        var host = "ws://"+server_ip_arr['0']+":" + register_port;
         try{
             socket = new WebSocket(host);
-            //发送数据
-            socket.onopen    = function(msg){
+//            socket.onopen    = function(msg){
+//                console.log("socket create success!");
+//            };
+
+            //连接成功时触发
+            socket.onopen = function(){
+                var login_data = '{"type":"init"}';
+                socket.send(login_data );
                 console.log("socket create success!");
             };
 
