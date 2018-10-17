@@ -153,8 +153,8 @@ layui.define(['jquery', 'form','we','validator','zhCN','toastr'], function(expor
                         }
                     }
                 }, function (data, ret) {
-                    console.log("-------"+data);
-                    console.log("##########"+ret);
+                    // console.log("-------"+data);
+                    // console.log("##########"+ret);
                     // return console.log(ret); //操作成功返回结果集
                     if (data && typeof data === 'object') {
                         // console.log(data.token);

@@ -2,7 +2,7 @@
  * Created by qinxuening on 2018/9/24.
  */
 layui.define(['jquery', 'layer','toastr'], function(exports){
-    var $ = layui.jquery
+    var $ = layui.$
         ,toastr = layui.toastr
         ,layer = layui.layer;
 
@@ -27,7 +27,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 var data = typeof ret.data !== 'undefined' ? ret.data : null;
                 var msg = typeof ret.msg !== 'undefined' && ret.msg ? ret.msg : '操作完成';
                 if (typeof onAjaxSuccess === 'function') {
-                    console.log('执行步奏：成功1')
+                    console.log('执行步奏：成功1');
                     var result = onAjaxSuccess.call(this, data, ret);
                     if (result === false)
                         return;
@@ -35,17 +35,19 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 toastr.clear()
                 toastr.success(ret.msg);
                 var tablereloadid = options.tableid; //获取重加载table
-                if(options.action == 'del') {
-                    layer.closeAll();
-                    if(tablereloadid) {
-                        layui.table.reload(tablereloadid);
-                    }
-                } else {
-                    var index = parent.layer.getFrameIndex(window.name);
-                    parent.layer.close(index);
-                    layer.closeAll();
-                    if(tablereloadid) {
-                        parent.layui.table.reload(tablereloadid);
+                if (typeof tablereloadid != 'undefined') {
+                    if(options.action == 'del') {
+                        layer.closeAll();
+                        if(tablereloadid) {
+                            layui.table.reload(tablereloadid);
+                        }
+                    } else {
+                        var index = parent.layer.getFrameIndex(window.name);
+                        parent.layer.close(index);
+                        layer.closeAll();
+                        if(tablereloadid) {
+                            parent.layui.table.reload(tablereloadid);
+                        }
                     }
                 }
                 console.log('执行步奏：成功2')
