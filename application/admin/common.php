@@ -154,6 +154,10 @@ if(!function_exists('build_actionbar')) {
         $auth = \app\admin\library\Auth::instance();
         $controller = str_replace('.', '/', strtolower(think\Request::instance()->controller()));
         $btns = $btns ? $btns : ['view', 'edit', 'del'];
+        if($attr) {
+            $btns = array_merge($btns,array_keys($attr));
+        }
+//         print_r($btns);
         $btns = is_array($btns) ? $btns : explode(',', $btns);
         $index = array_search('delete', $btns); //array_search() 函数在数组中搜索某个键值，并返回对应的键名
         

@@ -82,7 +82,7 @@ class Push extends baseAdmin{
         // 向任意uid的网站页面发送数据
         //Gateway::sendToUid($this->uid, $message);
 //         $result = Gateway::sendToAll(json_encode($list));
-        $result = Gateway::sendToUid(session('admin')['id'], json_encode($list));
+        $result = Gateway::sendToUid(session('admin')['id'], json_encode($list)); // 发送给指定用户
         return json(['code' => 1, 'status' => 'success', 'data'=>Gateway::getAllUidList(), 'msg' => '推送成功','url'=>'']);
     }
     

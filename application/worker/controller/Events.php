@@ -152,6 +152,8 @@ class Events
             'client_id' => $client_id,
             'msg' => 'connect is close' . date('Y-m-d H:i:s', time()) // 初始化房间信息
         ];
+        unset($_SESSION['']);
+        session_destroy();
         GateWay::sendToAll(json_encode($resData));
     }
 
@@ -199,7 +201,7 @@ class Events
                 
                 foreach ($group_id as $k => $v) {
                     Gateway::joinGroup($client_id, $v); // 加入特定组
-                    Gateway::sendToGroup($v, json_encode($msg));// 广播给直播间内所有人，谁？什么时候？加入了那个房间？
+//                     Gateway::sendToGroup($v, json_encode($msg));// 广播给直播间内所有人，谁？什么时候？加入了那个房间？
                 }
 
                 break;
