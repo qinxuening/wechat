@@ -192,5 +192,5 @@ layui.define(function (exports) {
             self.printValue(self.startVal);
         }
     };
-    exports('CountUp', CountUp);
+    exports('countUp', CountUp);
 });
