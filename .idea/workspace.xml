@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eba9dd8d-246c-4fe0-aad3-6b066b9b38e6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/controller/Dashboard.php" afterPath="$PROJECT_DIR$/application/admin/controller/Dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/dashboard/detail.html" afterPath="$PROJECT_DIR$/application/admin/view/dashboard/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/static/modules/countUp.js" afterPath="$PROJECT_DIR$/public/static/modules/countUp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="348">
-              <caret line="270" column="0" lean-forward="true" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+              <caret line="270" column="0" lean-forward="false" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -897,7 +894,7 @@
     <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
-          <caret line="270" column="0" lean-forward="true" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+          <caret line="270" column="0" lean-forward="false" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
           <folding />
         </state>
       </provider>
