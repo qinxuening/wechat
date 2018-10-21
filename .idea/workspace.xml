@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eba9dd8d-246c-4fe0-aad3-6b066b9b38e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="eba9dd8d-246c-4fe0-aad3-6b066b9b38e6" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,33 +12,64 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/push/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zhCN.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/modules/zhCN.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-350">
-              <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="270" column="0" lean-forward="false" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+            <state relative-caret-position="729">
+              <caret line="27" column="66" lean-forward="false" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/system/security.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="88" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="68" column="26" lean-forward="false" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/profile/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="21" column="82" lean-forward="false" selection-start-line="21" selection-start-column="82" selection-end-line="21" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1107">
+              <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-200">
+              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -49,22 +78,8 @@
       <file leaf-file-name="sample.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/sample.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2403">
+            <state relative-caret-position="27">
               <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-              <folding>
-                <marker date="1539334756658" expanded="true" signature="5718:5733" ph="..." />
-                <marker date="1539334756658" expanded="true" signature="5799:5814" ph="..." />
-                <marker date="1539334756658" expanded="true" signature="5859:5874" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="countUp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/modules/countUp.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5238">
-              <caret line="194" column="20" lean-forward="false" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -73,21 +88,11 @@
       <file leaf-file-name="weTable.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/weTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
+            <state relative-caret-position="783">
               <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="32" />
               <folding>
                 <element signature="e#579#4427#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/modules/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="72" lean-forward="false" selection-start-line="0" selection-start-column="72" selection-end-line="0" selection-end-column="72" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -107,21 +112,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
               <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding>
-                <marker date="1538009569677" expanded="true" signature="3718:3733" ph="..." />
-                <marker date="1538009569677" expanded="true" signature="3835:3845" ph="..." />
-                <marker date="1538009569677" expanded="true" signature="3847:3855" ph="..." />
-                <marker date="1538009569677" expanded="true" signature="4173:4191" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="we.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4593">
-              <caret line="3" column="61" lean-forward="false" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -132,14 +122,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>非法操作</find>
       <find>removeToast</find>
       <find>$container</find>
       <find>MOD_NANE</find>
@@ -161,7 +150,6 @@
       <find>layer-footer</find>
       <find>LAY-user-login-username</find>
       <find>form</find>
-      <find>formRule</find>
       <find>版本信息</find>
       <find>set_save_index</find>
       <find>remark</find>
@@ -169,6 +157,8 @@
       <find>we.api.ajax({</find>
       <find>console</find>
       <find>readCount</find>
+      <find>,$ = layui.$</find>
+      <find>formRule</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/rule_detail.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index2.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/rule/view.html" />
         <option value="$PROJECT_DIR$/public/static/layui/lay/modules/jquery.js" />
@@ -193,7 +182,6 @@
         <option value="$PROJECT_DIR$/public/static/modules/we-table.js" />
         <option value="$PROJECT_DIR$/application/admin/view/common/menu.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/group/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/admin/index.html" />
         <option value="$PROJECT_DIR$/public/static/layui/lay/modules/form.js" />
         <option value="$PROJECT_DIR$/public/static/modules/zh-CN.js" />
@@ -201,7 +189,6 @@
         <option value="$PROJECT_DIR$/public/static/modules/jquery.validator.js" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/rule/edit.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/admin/add.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/admin/edit.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/group/edit.html" />
         <option value="$PROJECT_DIR$/application/admin/view/index/forget.html" />
         <option value="$PROJECT_DIR$/public/static/modules/user.js" />
@@ -214,7 +201,6 @@
         <option value="$PROJECT_DIR$/application/admin/view/dashboard/line.html" />
         <option value="$PROJECT_DIR$/public/static/modules/senior.js" />
         <option value="$PROJECT_DIR$/application/admin/view/dashboard/bar.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/system/security.html" />
         <option value="$PROJECT_DIR$/public/static/style/admin.css" />
         <option value="$PROJECT_DIR$/application/admin/view/push/edit.html" />
         <option value="$PROJECT_DIR$/application/admin/view/layout/default.html" />
@@ -228,6 +214,10 @@
         <option value="$PROJECT_DIR$/application/admin/view/push/index.html" />
         <option value="$PROJECT_DIR$/public/static/modules/countUp.js" />
         <option value="$PROJECT_DIR$/application/admin/view/dashboard/detail.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/system/security.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/admin/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/profile/index.html" />
       </list>
     </option>
   </component>
@@ -247,8 +237,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -268,124 +258,184 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="push" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="metismenu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="profile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -421,14 +471,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -464,6 +506,15 @@
       <option name="cucumberJsArguments" value="" />
       <option name="executablePath" />
       <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -511,17 +562,18 @@
       <workItem from="1539333696528" duration="1501000" />
       <workItem from="1539570059713" duration="17746000" />
       <workItem from="1539700237576" duration="1883000" />
+      <workItem from="1540106398265" duration="7336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="351650000" />
+    <option name="totallyTimeSpent" value="358986000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14635417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11071932" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -531,22 +583,16 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1897038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -558,7 +604,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/static/style/images/validator_simple.png" />
     <entry file="file://$PROJECT_DIR$/public/static/layui/lay/modules/form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -614,26 +659,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3221">
-          <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/bar.html" />
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2241">
-          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="86" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39150">
           <caret line="1450" column="25" lean-forward="false" selection-start-line="1450" selection-start-column="25" selection-end-line="1450" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,13 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="11" column="73" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/system/security.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="64" column="41" lean-forward="false" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -676,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,31 +776,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1607">
-          <caret line="100" column="27" lean-forward="false" selection-start-line="100" selection-start-column="27" selection-end-line="100" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/formValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="140" column="29" lean-forward="false" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/formValidator.js" />
     <entry file="file://$PROJECT_DIR$/application/admin/view/index/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
           <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-233">
           <caret line="140" column="29" lean-forward="false" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,7 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +818,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/zhCN.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-350">
+        <state relative-caret-position="189">
           <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           <folding />
         </state>
@@ -826,9 +826,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4593">
+        <state relative-caret-position="81">
           <caret line="3" column="61" lean-forward="false" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
-          <folding />
+          <folding>
+            <marker date="1540030165671" expanded="true" signature="1973:2209" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="1973:3304" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="1973:7612" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="2295:2789" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="2430:2615" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="2542:2597" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="2620:2717" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="2734:2774" ph="//..." />
+            <marker date="1540030165671" expanded="true" signature="2862:3294" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="2884:3152" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="3033:3134" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="3163:3252" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="3319:6937" ph="{&quot;layer&quot;: layer...}" />
+            <marker date="1540030165671" expanded="true" signature="3397:4565" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="3599:4459" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1540030165671" expanded="true" signature="3750:4184" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="3956:4058" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="4064:4162" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="4228:4441" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="4651:5710" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="4737:4799" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="4805:4872" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="4908:5626" ph="{&quot;title&quot;: title...}" />
+            <marker date="1540030165671" expanded="true" signature="5436:5500" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="5539:5608" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="5771:6194" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="6069:6140" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="6247:6549" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="6333:6392" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="6443:6501" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="6599:6901" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="6685:6744" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="6795:6853" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="6965:7606" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="6992:7048" ph="{&quot;skin&quot;: 'layui-layer-fast'...}" />
+            <marker date="1540030165671" expanded="true" signature="7119:7594" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="7158:7580" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="7214:7562" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="7314:7427" ph="{...}" />
+            <marker date="1540030165671" expanded="true" signature="7465:7540" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -852,18 +893,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding>
-            <marker date="1538009569677" expanded="true" signature="3718:3733" ph="..." />
-            <marker date="1538009569677" expanded="true" signature="3835:3845" ph="..." />
-            <marker date="1538009569677" expanded="true" signature="3847:3855" ph="..." />
-            <marker date="1538009569677" expanded="true" signature="4173:4191" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/weTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
+        <state relative-caret-position="783">
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="32" />
           <folding>
             <element signature="e#579#4427#0" expanded="false" />
@@ -871,30 +907,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/countUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5238">
-          <caret line="194" column="20" lean-forward="false" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/countUp.js" />
     <entry file="file://$PROJECT_DIR$/public/static/modules/sample.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2403">
+        <state relative-caret-position="27">
           <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-          <folding>
-            <marker date="1539334756658" expanded="true" signature="5718:5733" ph="..." />
-            <marker date="1539334756658" expanded="true" signature="5799:5814" ph="..." />
-            <marker date="1539334756658" expanded="true" signature="5859:5874" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="270" column="0" lean-forward="false" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+        <state relative-caret-position="729">
+          <caret line="27" column="66" lean-forward="false" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1107">
+          <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/system/security.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="88" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="68" column="26" lean-forward="false" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/profile/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="21" column="82" lean-forward="false" selection-start-line="21" selection-start-column="82" selection-end-line="21" selection-end-column="82" />
           <folding />
         </state>
       </provider>

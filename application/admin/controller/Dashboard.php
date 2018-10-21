@@ -11,9 +11,10 @@ use GatewayClient\Gateway;
 class Dashboard extends baseAdmin {
     
     public function detail() {
+        /*
         Gateway::$registerAddress = '127.0.0.1:'.config('worker.register_port');
         $clientCount = Gateway::getAllClientIdCount();
-        $getAllClientSessions = Gateway::getAllClientSessions();
+        $getAllClientSessions = Gateway::getAllClientSessions();*/
 //         print_r($getAllClientSessions);
 //         echo $clientCount;
         return $this->view->fetch();

@@ -11,7 +11,6 @@ use think\Controller;
 use think\Lang;
 use think\Hook;
 use think\Session;
-use think\Db;
 
 class baseAdmin extends Controller{
     /**
@@ -141,8 +140,10 @@ class baseAdmin extends Controller{
         $this->loadlang($controllername);
         //渲染配置信息
         $this->assign('config', $config);
+
         //渲染权限对象
         $this->assign('auth', $this->auth);
+//         print_r(Session::get('admin'));
         //渲染管理员对象
         $this->assign('admin', Session::get('admin'));
     }

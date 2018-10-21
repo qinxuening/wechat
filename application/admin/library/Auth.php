@@ -109,6 +109,7 @@ class Auth extends \we\Auth{
         unset($admin_info['password']);
         unset($admin_info['salt']);
         unset($admin_info['token']);
+//         print_r($admin_info);die();
         Session::set("admin", $admin_info);
         $admin_info['group_id'] = $this->getGroupsIds($admin_info['id']);
         $admin_info['type'] = 'init';

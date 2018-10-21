@@ -1,0 +1,82 @@
+{extend name="layout/default" /}
+{block name="content"}
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-card">
+            <div class="layui-card-body">
+                <form class="layui-form" action="{:url('admin/profile/update','',false)}" tableid="tableReload" method="post" id="formRule" lay-filter="rule">
+                    <div class="layui-form-item layui-col-md6 layui-col-md-offset3">
+                        <label class="layui-form-label">登录账号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="username" autocomplete="off" value="{$admin.username}" data-rule="required;username" placeholder="登录账号" class="layui-input">
+                            <input type="hidden" name="id" lay-verify="id" value="{$admin.id}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-col-md6 layui-col-md-offset3">
+                        <label class="layui-form-label">昵称</label>
+                        <div class="layui-input-block">
+                            <input type="nickname" name="nickname" placeholder="昵称" value="{$admin.nickname}" data-rule="required" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-col-md6 layui-col-md-offset3">
+                        <label class="layui-form-label">邮箱</label>
+                        <div class="layui-input-block">
+                            <input type="email" name="email" placeholder="邮箱" value="{$admin.email}" autocomplete="off" data-rule="{required;email}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-col-md6 layui-col-md-offset3">
+                        <label class="layui-form-label">密码</label>
+                        <div class="layui-input-block">
+                            <input type="password" data-rule="passwdrule" data-rule-passwdrule="[/{$passwd_complexity_rule[0]}/, '{$passwd_complexity_rule[1]}']" name="password" placeholder="密码" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-col-md6 layui-col-md-offset3">
+                        <label class="layui-form-label">确认密码</label>
+                        <div class="layui-input-block">
+                            <input type="password" name="confirm_password" data-rule="{:__('Confirm password')}:match(password);" placeholder="确认密码"  autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-col-md6 layui-col-md-offset3">
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$admin.status == 1? 'checked' : ''}>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-col-md-offset3">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit="" lay-filter="component-form-element">确实</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).link(
+        " __STATIC__/style/jquery.validator.css"
+    ).use(['index','form','formValidator'], function(){
+        var form = layui.form
+            ,$ = layui.$
+            ,formValidator = layui.formValidator;
+
+        /**
+         * 绑定表单事件
+         */
+        formValidator.api.bindevent($("form#formRule"));
+    });
+</script>
+</body>
+</html>
+{/block}
