@@ -132,13 +132,34 @@ layui.define(['jquery','we','toastr'], function(exports){
                        url: url,
                        loading:true,
                        async:false,
-                       data: form.serialize() + (Object.keys(params).length > 0 ? '&' + $.param(params) : ''),
+                       // data: form.serialize() + (Object.keys(params).length > 0 ? '&' + $.param(params) : ''),
+                       data : weTable.api.getFormJson(form),
                        dataType: 'json',
                        tableid:tableid,
                        searchFlag:true,
                    });
                });
-           }
+           },
+
+           // 将form中的值转换为键值对。
+           // 形如：{name:'aaa',password:'tttt'}
+           // ps:注意将同名的放在一个数组里
+           getFormJson : function(frm) {
+                var o = {};
+                var a = $(frm).serializeArray();
+                $.each(a, function () {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+        }
+
        }
 
    };

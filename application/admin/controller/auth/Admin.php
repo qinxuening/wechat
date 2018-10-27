@@ -90,6 +90,7 @@ class Admin extends baseAdmin {
     
             $list = Db::name('admin')
                 ->where('id', 'in', $this->childrenAdminIds)
+                ->where(['username'=>['like','%' . input('username'). '%'],'nickname'=>['like','%' . input('nickname'). '%']])
                 ->field(['password', 'salt', 'token'], true)
                 ->page($page,$limit)
                 ->select();
