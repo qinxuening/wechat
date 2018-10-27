@@ -32,24 +32,29 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     if (result === false)
                         return;
                 }
-                toastr.clear()
-                toastr.success(ret.msg);
                 var tablereloadid = options.tableid; //获取重加载table
-                if (typeof tablereloadid != 'undefined') {
-                    if(options.action == 'del') {
-                        layer.closeAll();
-                        if(tablereloadid) {
-                            layui.table.reload(tablereloadid);
-                        }
-                    } else {
-                        var index = parent.layer.getFrameIndex(window.name);
-                        parent.layer.close(index);
-                        layer.closeAll();
-                        if(tablereloadid) {
-                            parent.layui.table.reload(tablereloadid);
+                if(options.searchFlag != 'undefined' && options.searchFlag == true) {
+                    layui.table.reload(tablereloadid);
+                } else {
+                    toastr.clear()
+                    toastr.success(ret.msg);
+                    if (typeof tablereloadid != 'undefined') {
+                        if(options.action == 'del') {
+                            layer.closeAll();
+                            if(tablereloadid) {
+                                layui.table.reload(tablereloadid);
+                            }
+                        } else {
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+                            layer.closeAll();
+                            if(tablereloadid) {
+                                parent.layui.table.reload(tablereloadid);
+                            }
                         }
                     }
                 }
+
                 console.log('执行步奏：成功2')
 
                 if(ret.url != false && typeof ret.url !="undefined") {

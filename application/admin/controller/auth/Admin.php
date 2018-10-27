@@ -102,7 +102,7 @@ class Admin extends baseAdmin {
                 $v['logintime'] = $v['logintime'] ? date('Y-m-d H:i:s', $v['logintime']) : '';
             }
             unset($v);
-            return json(['code' => 0, 'count' => $count, 'data' => $list,'msg' => '获取成功']);
+            return json(['code' => 0, 'status' => 'success', 'count' => $count, 'data' => $list,'msg' => '获取成功']);
         }
         return $this->view->fetch();
     }

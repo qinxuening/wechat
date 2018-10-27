@@ -30,7 +30,7 @@ layui.define(['jquery','we','toastr'], function(exports){
                $.extend(weTable.defaults,defaults);
                // console.log(weTable.defaults);
            },
-           bindevent:function () {
+           bindevent : function () {
                //监听行工具事件
                table.on('tool('+weTable.defaults.table+')', function(obj){
                    var data = obj.data;
@@ -47,7 +47,6 @@ layui.define(['jquery','we','toastr'], function(exports){
                        var url = weTable.defaults.extend.view_url + data.id;
                        we.api.open(url,'查看');
                    } else if(obj.event === 'edit') {
-                       weTable.api.toolevent(obj);
                        var url = weTable.defaults.extend.edit_url + data.id;
                        we.api.open(url,'编辑');
                    } else {
@@ -104,9 +103,41 @@ layui.define(['jquery','we','toastr'], function(exports){
                    };
                });
            },
-           toolevent:function (obj) {
-                // console.log(obj.data);
-               // return obj.data;
+
+           /**
+            * 搜索事件
+            */
+           searchForm:function (form) {
+               var type = form.attr("method").toUpperCase();
+               type = type && (type === 'GET' || type === 'POST') ? type : 'GET';
+               var url = form.attr("action");
+               url = url ? url : location.href;
+               var tableid = form.attr("tableid");
+               var params = {};
+               var multipleList = $("[name$='[]']", form);
+               if (multipleList.size() > 0) {
+                   var postFields = form.serializeArray().map(function (obj) {
+                       return $(obj).prop("name");
+                   });
+                   $.each(multipleList, function (i, j) {
+                       if (postFields.indexOf($(this).prop("name")) < 0) {
+                           params[$(this).prop("name")] = '';
+                       }
+                   });
+               }
+               $('body').on('click','.search-info',function () {
+                   console.log(form.serialize());
+                   we.api.ajax({
+                       type: type,
+                       url: url,
+                       loading:true,
+                       async:false,
+                       data: form.serialize() + (Object.keys(params).length > 0 ? '&' + $.param(params) : ''),
+                       dataType: 'json',
+                       tableid:tableid,
+                       searchFlag:true,
+                   });
+               });
            }
        }
 
