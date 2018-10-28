@@ -29,14 +29,6 @@ layui.define(['jquery','laydate'], function(exports){
                                             '<input type="text" name="'+value.field+'_end" id="'+value.field+'_end" placeholder="" autocomplete="off" class="layui-input">'+
                                             '</div>'+
                                             '</div>';
-                                            laydate.render({
-                                                elem: '#'+ value.field+'_start' //指定元素
-                                                ,type: 'datetime'
-                                            });
-                                            laydate.render({
-                                                elem: '#'+ value.field+'_end' //指定元素
-                                                ,type: 'datetime'
-                                            });
                                     }else {
                                         html += '<div class="layui-inline">'+
                                             '<label class="layui-form-label">'+value.title+'</label>'+
@@ -59,7 +51,22 @@ layui.define(['jquery','laydate'], function(exports){
                         '</div>'+
                         '</div>';
                     html += '</div></form>';
-                    $('.search-card-body').append(html);
+                    $('.search-card-body').html(html);
+
+                    $.each(cols, function (index, value) {
+                        if(typeof value.searchList !== 'undefined') {
+                            if (typeof value.searchList.event !== 'undefined' && value.searchList.event == 'date') {
+                                laydate.render({
+                                    elem: '#'+ value.field+'_start' //指定元素
+                                    ,type: 'datetime'
+                                });
+                                laydate.render({
+                                    elem: '#'+ value.field+'_end' //指定元素
+                                    ,type: 'datetime'
+                                });
+                            }
+                        }
+                    })
                 }
 
             }
