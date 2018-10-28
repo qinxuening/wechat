@@ -6,34 +6,34 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-body search-card-body">
-                    <form class="layui-form" method="post" action="{:url('admin/auth.admin/index','',false)}" tableid="tableReload" id="formRule" lay-filter="rule">
-                        <div class="layui-form-item">
-                            <div class="layui-inline">
-                                <label class="layui-form-label">登陆账号</label>
-                                <div class="layui-input-inline">
-                                    <input type="text" name="username" placeholder="" autocomplete="off" class="layui-input">
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">昵称</label>
-                                <div class="layui-input-inline">
-                                    <input type="text" name="nickname" placeholder="" autocomplete="off" class="layui-input">
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">邮箱</label>
-                                <div class="layui-input-inline">
-                                    <input type="text" name="email" placeholder="" autocomplete="off" class="layui-input">
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <div class="layui-input-inline search-inline">
-                                    <button class="layui-btn layui-btn-sm search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
-                                    <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <!--<form class="layui-form" method="post" action="{:url('admin/auth.admin/index','',false)}" tableid="tableReload" id="formRule" lay-filter="rule">-->
+                        <!--<div class="layui-form-item">-->
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">登陆账号</label>-->
+                                <!--<div class="layui-input-inline">-->
+                                    <!--<input type="text" name="username" placeholder="" autocomplete="off" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">昵称</label>-->
+                                <!--<div class="layui-input-inline">-->
+                                    <!--<input type="text" name="nickname" placeholder="" autocomplete="off" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">邮箱</label>-->
+                                <!--<div class="layui-input-inline">-->
+                                    <!--<input type="text" name="email" placeholder="" autocomplete="off" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-inline">-->
+                                <!--<div class="layui-input-inline search-inline">-->
+                                    <!--<button class="layui-btn layui-btn-sm search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>-->
+                                    <!--<button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</form>-->
                 </div>
             </div>
             <div class="layui-card">
@@ -84,7 +84,7 @@
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','element','form','authtree','we','weTable'], function(){
+    }).use(['index','table','element','form','authtree','we','weTable','formSearch'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
@@ -92,23 +92,24 @@
             ,we = layui.we
             ,form = layui.form
             ,weTable = layui.weTable
+            ,formSearch = layui.formSearch
             ,toastr = layui.toastr;
 
-        table.render({
+        var tableCommon = {
             elem: '#rule'
             ,method:'post'
-//            ,height: 500
             ,url:"{:url('Admin/auth.admin/index')}"
             ,id : 'tableReload'
             ,skin:'line'
             ,toolbar : '#toolbar'
+            ,search: true
             ,cols: [[
-                {type:'checkbox', fixed: 'left'}
+                {type:'checkbox', fixed: 'left',}
                 ,{field:'id', title: 'ID', sort: true}
-                ,{field:'username', title: '登陆账号'}
-                ,{field:'nickname', title: '昵称'}
+                ,{field:'username', title: '登陆账号', searchList:{'type':'input'}}
+                ,{field:'nickname', title: '昵称', searchList:{'type':'input'}}
                 ,{field:'groups_text', title: '角色'}
-                ,{field:'email', title: '邮箱'}
+                ,{field:'email', title: '邮箱', searchList:{'type':'input'}}
                 ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
                 ,{field:'logintime', title: '最后登陆', minWidth: 150}
                 ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:220}
@@ -119,7 +120,10 @@
                 ,last: false //不显示尾页
 
             }
-        });
+        }
+
+        table.render(tableCommon); //数据表格初始化
+        formSearch.api.init(tableCommon); //搜索初始化
 
         //监听性别操作
         form.on('switch(ruleStatus)', function(obj){
