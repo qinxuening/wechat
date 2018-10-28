@@ -146,7 +146,7 @@
                 ,{field:'nickname', title: '昵称', searchList:{'type':'input'}}
                 ,{field:'groups_text', title: '角色'}
                 ,{field:'email', title: '邮箱', searchList:{'type':'input'}}
-                ,{field:'status', title: '状态',templet: '#switchStatus', sort: true, searchList:{'type':'select','data':{'1':'激活','0':'禁用'}}}
+                ,{field:'status', title: '状态',templet: '#switchStatus', sort: true, searchList:{'type':'select','data':{$statusList}}}
                 ,{field:'logintime', title: '最后登陆时间', minWidth: 150, searchList:{'type':'input','event':'date'}}
                 ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:220}
             ]]
