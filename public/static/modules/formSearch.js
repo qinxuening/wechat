@@ -2,8 +2,10 @@
  * Created by qinxuening on 2018/10/28.
  */
 
-layui.define(['jquery','laydate'], function(exports){
-    var laydate = layui.laydate;
+layui.define(['jquery','laydate','form'], function(exports){
+    var laydate = layui.laydate
+        ,form = layui.form;
+
     var formSearch = {
         api:{
             init : function (defaults) {
@@ -39,11 +41,21 @@ layui.define(['jquery','laydate'], function(exports){
                                     }
                                     break;
                                 case 'select':
+                                    html += '<div class="layui-inline">'+
+                                        '<label class="layui-form-label">'+value.title+'</label>'+
+                                        '<div class="layui-input-inline">'+
+                                        '<select name="status">'+
+                                        '<option value="">请选择'+value.title+'</option>';
+                                        $.each(value.searchList.data, function (index, value) {
+                                            html += ' <option value="'+index+'">'+value+'</option>';
+                                        });
+                                    html += '</select></div></div>';
                                     break;
                                 default:;
                             }
                         }
                     });
+
                     html += '<div class="layui-inline">'+
                         '<div class="layui-input-inline search-inline">'+
                         '<button class="layui-btn layui-btn-sm search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>'+
@@ -53,6 +65,10 @@ layui.define(['jquery','laydate'], function(exports){
                     html += '</div></form>';
                     $('.search-card-body').html(html);
 
+                    /**
+                     * html加载完成方可初始化时间插件
+                     */
+                    html = '';
                     $.each(cols, function (index, value) {
                         if(typeof value.searchList !== 'undefined') {
                             if (typeof value.searchList.event !== 'undefined' && value.searchList.event == 'date') {
@@ -68,8 +84,9 @@ layui.define(['jquery','laydate'], function(exports){
                         }
                     })
                 }
+                form.render();
+            },
 
-            }
         }
     }
     exports('formSearch', formSearch);
