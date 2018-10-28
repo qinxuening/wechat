@@ -173,7 +173,7 @@ layui.define(['jquery','laydate','form'], function(exports){
                             this.name = this.name.slice(0,-4);
                             delete (this.name+'_end');
                             if(start || end) {
-                                o[this.name] = $('#'+this.name+'_start').val() +'-'+end;
+                                o[this.name] = $('#'+this.name+'_start').val() +' - '+end;
                             } else {
                                 o[this.name] = '';
                             }
