@@ -32,6 +32,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     if (result === false)
                         return;
                 }
+
                 var tablereloadid = options.tableid; //获取重加载table
                 if(options.searchFlag != 'undefined' && options.searchFlag == true) {
                     layui.table.reload(tablereloadid
@@ -39,6 +40,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                             where: options.data,
                          }
                     );
+                    // return console.log(options);
                     return false;
                 } else {
                     toastr.clear()
@@ -61,7 +63,6 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 }
 
                 console.log('执行步奏：成功2')
-
                 if(ret.url != false && typeof ret.url !="undefined") {
                     // console.log(12345678);
                     window.location.href = ret.url;

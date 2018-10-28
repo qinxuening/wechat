@@ -126,18 +126,24 @@ layui.define(['jquery','we','toastr'], function(exports){
                    });
                }
                $('body').on('click','.search-info',function () {
-                   console.log(form.serialize());
-                   we.api.ajax({
+                  // return  console.log(form.serialize());
+                   layui.table.reload(tableid
+                       ,{
+                           where: weTable.api.getFormJson(form),
+                       }
+                   );
+                   return false;
+
+                   /*we.api.ajax({
                        type: type,
                        url: url,
                        loading:true,
                        async:false,
-                       // data: form.serialize() + (Object.keys(params).length > 0 ? '&' + $.param(params) : ''),
                        data : weTable.api.getFormJson(form),
                        dataType: 'json',
                        tableid:tableid,
                        searchFlag:true,
-                   });
+                   });*/
                });
            },
 
