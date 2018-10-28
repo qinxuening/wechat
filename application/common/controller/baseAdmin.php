@@ -172,7 +172,124 @@ class baseAdmin extends Controller{
         Lang::load(APP_PATH . $this->request->module() . '/lang/' . Lang::detect() . '/' . str_replace('.', '/', $name) . '.php');
     }
     
-    
+    protected function buildparams(){
+        $filter = $this->request->param("filter", '');
+        $op = $this->request->param("op", '', 'trim');
+        $filter = json_decode($filter, TRUE);
+        $op = json_decode($op, TRUE);
+        $filter = $filter ? $filter : [];
+        $sort = $this->request->param("sort", "id");
+        $order = $this->request->param("order", "DESC");
+        $offset = $this->request->param("offset", 0);
+        $limit = $this->request->param("limit", 0);
+
+        $where = [];
+        $tableName = '';
+
+        foreach ($filter as $k => $v)
+        {
+            if($v === '') continue;
+            $sym = isset($op[$k]) ? $op[$k] : '=';
+            if (stripos($k, ".") === false)
+            {
+                $k = $tableName . $k;
+            }
+            $v = !is_array($v) ? trim($v) : $v;
+            $sym = strtoupper(isset($op[$k]) ? $op[$k] : $sym);
+            switch ($sym)
+            {
+                case '=':
+                case '!=':
+                    $where[] = [$k, $sym, (string) $v];
+                    break;
+                case 'LIKE':
+                case 'NOT LIKE':
+                case 'LIKE %...%':
+                case 'NOT LIKE %...%':
+                    $where[] = [$k, trim(str_replace('%...%', '', $sym)), "%{$v}%"];
+                    break;
+                case '>':
+                case '>=':
+                case '<':
+                case '<=':
+                    $where[] = [$k, $sym, intval($v)];
+                    break;
+                case 'FINDIN':
+                case 'FIND_IN_SET':
+                    $where[] = "FIND_IN_SET('{$v}', `{$k}`)";
+                    break;
+                case 'IN':
+                case 'IN(...)':
+                case 'NOT IN':
+                case 'NOT IN(...)':
+                    $where[] = [$k, str_replace('(...)', '', $sym), is_array($v) ? $v : explode(',', $v)];
+                    break;
+                case 'BETWEEN':
+                case 'NOT BETWEEN':
+                    $arr = array_slice(explode(',', $v), 0, 2);
+                    if (stripos($v, ',') === false || !array_filter($arr))
+                        continue;
+                    //当出现一边为空时改变操作符
+                    if ($arr[0] === '')
+                    {
+                        $sym = $sym == 'BETWEEN' ? '<=' : '>';
+                        $arr = $arr[1];
+                    }
+                    else if ($arr[1] === '')
+                    {
+                        $sym = $sym == 'BETWEEN' ? '>=' : '<';
+                        $arr = $arr[0];
+                    }
+                    $where[] = [$k, $sym, $arr];
+                    break;
+                case 'RANGE':
+                case 'NOT RANGE':
+                    $v = str_replace(' - ', ',', $v);
+                    $arr = array_slice(explode(',', $v), 0, 2);
+                    if (stripos($v, ',') === false || !array_filter($arr))
+                        continue;
+                    //当出现一边为空时改变操作符
+                    if ($arr[0] === '')
+                    {
+                        $sym = $sym == 'RANGE' ? '<=' : '>';
+                        $arr = $arr[1];
+                    }
+                    else if ($arr[1] === '')
+                    {
+                        $sym = $sym == 'RANGE' ? '>=' : '<';
+                        $arr = $arr[0];
+                    }
+                    $where[] = [$k, str_replace('RANGE', 'BETWEEN', $sym) . ' time', $arr];
+                    break;
+                case 'LIKE':
+                case 'LIKE %...%':
+                    $where[] = [$k, 'LIKE', "%{$v}%"];
+                    break;
+                case 'NULL':
+                case 'IS NULL':
+                case 'NOT NULL':
+                case 'IS NOT NULL':
+                    $where[] = [$k, strtolower(str_replace('IS ', '', $sym))];
+                    break;
+                default:
+                    break;
+            }
+        }
+        $where = function($query) use ($where) {
+            foreach ($where as $k => $v)
+            {
+                if (is_array($v))
+                {
+                    call_user_func_array([$query, 'where'], $v);
+                }
+                else
+                {
+                    $query->where($v);
+                }
+            }
+        };
+        return [$where, $sort, $order, $offset, $limit];
+    }
     
     
     

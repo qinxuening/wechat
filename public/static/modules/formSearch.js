@@ -6,12 +6,14 @@ layui.define(['jquery','laydate','form'], function(exports){
     var laydate = layui.laydate
         ,form = layui.form;
 
+    var options = {};
     var formSearch = {
         api:{
             init : function (defaults) {
                 var search = defaults.search;
                 var cols = defaults.cols[0];
                 var html = '';
+                options = defaults;
                 if(search == true) {
                     html += '<form class="layui-form" method="post" action="'+defaults.url+'" tableid="tableReload" id="formRule" lay-filter="rule">';
                     html += ' <div class="layui-form-item">';
@@ -86,6 +88,103 @@ layui.define(['jquery','laydate','form'], function(exports){
                 }
                 form.render();
             },
+            /**
+             * 搜索事件
+             */
+            searchForm:function (form) {
+                var type = form.attr("method").toUpperCase();
+                type = type && (type === 'GET' || type === 'POST') ? type : 'GET';
+                var url = form.attr("action");
+                url = url ? url : location.href;
+                var tableid = form.attr("tableid");
+                var params = {};
+                var multipleList = $("[name$='[]']", form);
+                if (multipleList.size() > 0) {
+                    var postFields = form.serializeArray().map(function (obj) {
+                        return $(obj).prop("name");
+                    });
+                    $.each(multipleList, function (i, j) {
+                        if (postFields.indexOf($(this).prop("name")) < 0) {
+                            params[$(this).prop("name")] = '';
+                        }
+                    });
+                }
+                // console.log(options);
+                $('body').on('click','.search-info',function () {
+                    var op = {};
+                    $.each(options.cols[0], function (index, value) {
+                        // console.log(value);
+                        if(typeof value.searchList !== 'undefined') {
+                            op[value.field] = value.searchList.operate;
+                        }
+                    });
+                    var where ={
+                        filter:JSON.stringify(formSearch.api.getFormJson(form))
+                        ,op:JSON.stringify(op)
+                    };
+                    // console.log(where);
+                    var index = layer.load();
+                    // return  console.log(form.serialize());
+                    layui.table.reload(tableid
+                        ,{
+                            page: {
+                                curr: 1
+                            }
+                            ,where: where,
+                        }
+                    );
+                    layer.close(index);
+                    return false;
+
+                    /*we.api.ajax({
+                     type: type,
+                     url: url,
+                     loading:true,
+                     async:false,
+                     data : weTable.api.getFormJson(form),
+                     dataType: 'json',
+                     tableid:tableid,
+                     searchFlag:true,
+                     });*/
+                });
+            },
+
+            // 将form中的值转换为键值对。
+            // 形如：{name:'aaa',password:'tttt'}
+            // ps:注意将同名的放在一个数组里
+            getFormJson : function(frm) {
+                var o = {};
+                var a = $(frm).serializeArray();
+                $.each(a, function () {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        if(this.name.indexOf('_start') != '-1') {
+                            var start = this.value ? this.value : ''
+                            this.name = this.name.slice(0,-6);
+                            delete (this.name+'_start');
+                            console.log(start);
+                        }
+                        if(this.name.indexOf('_end') != '-1') {
+                            var end = this.value ? this.value : ''
+                            this.name = this.name.slice(0,-4);
+                            delete (this.name+'_end');
+                            if(start || end) {
+                                o[this.name] = $('#'+this.name+'_start').val() +'-'+end;
+                            } else {
+                                o[this.name] = '';
+                            }
+                        }else {
+                            o[this.name] = this.value || '';
+                        }
+
+                    }
+                });
+                return o;
+            }
 
         }
     }

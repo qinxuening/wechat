@@ -88,13 +88,17 @@ class Admin extends baseAdmin {
             {
                 $adminGroupName[$this->auth->id][$n['id']] = __($n['name']);
             }
-    
+            
+            list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+
             $list = Db::name('admin')
                 ->where('id', 'in', $this->childrenAdminIds)
-                ->where(['username'=>['like','%' . input('username'). '%'],'nickname'=>['like','%' . input('nickname'). '%']])
+                ->where($where)
                 ->field(['password', 'salt', 'token'], true)
                 ->page($page,$limit)
+//                 ->fetchSql(true)
                 ->select();
+//             echo $list;die();
             $count = Db::name('admin')->where('id', 'in', $this->childrenAdminIds)->count('*');
             foreach ($list as $k => &$v)
             {
