@@ -1478,3 +1478,12 @@ body .layui-layer-we .layui-layer-setwin{
     height: auto;
     margin: auto;
 }
+.layui-form-label-search-date {
+    float: left;
+    display: block;
+    width: auto !important;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: right;
+    padding: 9px 15px 9px 8px;
+}

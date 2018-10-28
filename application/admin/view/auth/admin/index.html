@@ -20,10 +20,22 @@
                                     <!--<input type="text" name="nickname" placeholder="" autocomplete="off" class="layui-input">-->
                                 <!--</div>-->
                             <!--</div>-->
+
                             <!--<div class="layui-inline">-->
                                 <!--<label class="layui-form-label">邮箱</label>-->
                                 <!--<div class="layui-input-inline">-->
                                     <!--<input type="text" name="email" placeholder="" autocomplete="off" class="layui-input">-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <!--<div class="layui-inline">-->
+                                <!--<label class="layui-form-label">最后登陆</label>-->
+                                <!--<div class="layui-input-inline">-->
+                                    <!--<input type="text" name="logintime_start" placeholder="" autocomplete="off" class="layui-input">-->
+                                <!--</div>-->
+                                <!--<label class="layui-form-label-search-date">—</label>-->
+                                <!--<div class="layui-input-inline">-->
+                                    <!--<input type="text" name="logintime_end" placeholder="" autocomplete="off" class="layui-input">-->
                                 <!--</div>-->
                             <!--</div>-->
                             <!--<div class="layui-inline">-->
@@ -93,6 +105,7 @@
             ,form = layui.form
             ,weTable = layui.weTable
             ,formSearch = layui.formSearch
+//            ,laydate = layui.laydate
             ,toastr = layui.toastr;
 
         var tableCommon = {
@@ -111,7 +124,7 @@
                 ,{field:'groups_text', title: '角色'}
                 ,{field:'email', title: '邮箱', searchList:{'type':'input'}}
                 ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
-                ,{field:'logintime', title: '最后登陆', minWidth: 150}
+                ,{field:'logintime', title: '最后登陆时间', minWidth: 150, searchList:{'type':'input','event':'date'}}
                 ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:220}
             ]]
             ,page: {
@@ -124,6 +137,11 @@
 
         table.render(tableCommon); //数据表格初始化
         formSearch.api.init(tableCommon); //搜索初始化
+
+//        laydate.render({
+//            elem: '#logintime_start' //指定元素
+//            ,type: 'datetime'
+//        });
 
         //监听性别操作
         form.on('switch(ruleStatus)', function(obj){

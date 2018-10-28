@@ -2,7 +2,8 @@
  * Created by qinxuening on 2018/10/28.
  */
 
-layui.define(['jquery'], function(exports){
+layui.define(['jquery','laydate'], function(exports){
+    var laydate = layui.laydate;
     var formSearch = {
         api:{
             init : function (defaults) {
@@ -14,15 +15,36 @@ layui.define(['jquery'], function(exports){
                     html += ' <div class="layui-form-item">';
                     $.each(cols, function (index, value) {
                         if(typeof value.searchList !== 'undefined') {
-                            console.log(value.searchList);
+                            // console.log(value.searchList);
                             switch (value.searchList.type){
                                 case 'input':
-                                    html += '<div class="layui-inline">'+
-                                        '<label class="layui-form-label">'+value.title+'</label>'+
-                                        '<div class="layui-input-inline">'+
-                                        '<input type="text" name="'+value.field+'" placeholder="" autocomplete="off" class="layui-input">'+
-                                        '</div>'+
-                                        '</div>';
+                                    if(typeof value.searchList.event !== 'undefined' && value.searchList.event == 'date') {
+                                        html += '<div class="layui-inline">'+
+                                            '<label class="layui-form-label">'+value.title+'</label>'+
+                                            '<div class="layui-input-inline">'+
+                                            '<input type="text" name="'+value.field+'_start" id="'+value.field+'_start" placeholder="" autocomplete="off" class="layui-input">'+
+                                            '</div>'+
+                                            '<label class="layui-form-label-search-date">—</label>'+
+                                            '<div class="layui-input-inline">'+
+                                            '<input type="text" name="'+value.field+'_end" id="'+value.field+'_end" placeholder="" autocomplete="off" class="layui-input">'+
+                                            '</div>'+
+                                            '</div>';
+                                            laydate.render({
+                                                elem: '#'+ value.field+'_start' //指定元素
+                                                ,type: 'datetime'
+                                            });
+                                            laydate.render({
+                                                elem: '#'+ value.field+'_end' //指定元素
+                                                ,type: 'datetime'
+                                            });
+                                    }else {
+                                        html += '<div class="layui-inline">'+
+                                            '<label class="layui-form-label">'+value.title+'</label>'+
+                                            '<div class="layui-input-inline">'+
+                                            '<input type="text" name="'+value.field+'" id="'+value.field+'" placeholder="" autocomplete="off" class="layui-input">'+
+                                            '</div>'+
+                                            '</div>';
+                                    }
                                     break;
                                 case 'select':
                                     break;
@@ -37,7 +59,7 @@ layui.define(['jquery'], function(exports){
                         '</div>'+
                         '</div>';
                     html += '</div></form>';
-                    $('.search-card-body').html(html);
+                    $('.search-card-body').append(html);
                 }
 
             }

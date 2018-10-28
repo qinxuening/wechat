@@ -126,12 +126,14 @@ layui.define(['jquery','we','toastr'], function(exports){
                    });
                }
                $('body').on('click','.search-info',function () {
+                   var index = layer.load();
                   // return  console.log(form.serialize());
                    layui.table.reload(tableid
                        ,{
                            where: weTable.api.getFormJson(form),
                        }
                    );
+                   layer.close(index);
                    return false;
 
                    /*we.api.ajax({
