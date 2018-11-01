@@ -1,0 +1,153 @@
+{extend name="layout/default" /}
+{block name="content"}
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-card">
+            <div class="layui-card-header">常规设置</div>
+            <div class="layui-card-body">
+                <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">基础设置</li>
+                        <li class="">邮件配置</li>
+                        <li class="">常量配置</li>
+                        <li class="">其他</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <form class="layui-form" lay-filter="component-form-element" id="password_strategy"  method="POST" action="{:url('System/base_info',['type' => 1])}">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">请选择用户秘密策略：</label>
+                                    <div class="layui-input-block">
+                                        {:build_radios('strategy', ['1'=>__('Password strategy1'), '2'=>__('Password strategy2'), '3'=>__('Password strategy3')],$Password_strategy_type['passwd_complexity'])}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit="" lay-filter="component-form-element">确实</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="layui-tab-item">
+                            <form class="layui-form" lay-filter="component-form-element" id=""  method="POST" action="{:url('System/base_info',['type' => 2])}">
+                                <div class="layui-form-item layui-col-md6">
+                                    <div class="layui-row">
+                                        <div class="layui-col-md3">
+                                            <label class="layui-form-label">邮件发送方式</label>
+                                        </div>
+                                        <div class="layui-col-md9">
+                                            <select name="mail_smtp_send_type" id="mail_smtp_send_type" lay-search="" lay-verify="required">
+                                                <option value="">选择邮件发送方式</option>
+                                                <option value="SMTP">SMTP</option>
+                                                <option value="Mail">Mail</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-col-md6">
+                                    <div class="layui-row">
+                                        <div class="layui-col-md3">
+                                            <label class="layui-form-label">SMTP服务器</label>
+                                        </div>
+                                        <div class="layui-col-md9">
+                                            <input type="text" name="mail_smtp_host" id="mail_smtp_host" autocomplete="off" value="" data-rule="required" placeholder="" class="layui-input">
+                                            <input type="hidden" name="id" lay-verify="id" value="{$admin.id}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-col-md6">
+                                    <div class="layui-row">
+                                        <div class="layui-col-md3">
+                                             <label class="layui-form-label">SMTP端口</label>
+                                        </div>
+                                        <div class="layui-col-md9">
+                                            <input type="mail_smtp_port" name="mail_smtp_port" placeholder="" value="" data-rule="required" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-col-md6">
+                                    <div class="layui-row">
+                                        <div class="layui-col-md3">
+                                             <label class="layui-form-label">SMTP用户名</label>
+                                        </div>
+                                        <div class="layui-col-md9">
+                                             <input type="mail_smtp_user" name="mail_smtp_user" placeholder="" value="" autocomplete="off" data-rule="required" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-col-md6">
+                                    <div class="layui-row">
+                                        <div class="layui-col-md3">
+                                            <label class="layui-form-label">SMTP密码</label>
+                                        </div>
+                                        <div class="layui-col-md9">
+                                            <input type="mail_smtp_pass" name="mail_smtp_pass" placeholder="" value="" autocomplete="off" data-rule="required" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-col-md6">
+                                    <div class="layui-row">
+                                        <div class="layui-col-md3">
+                                            <label class="layui-form-label">SMTP验证方式</label>
+                                        </div>
+                                        <div class="layui-col-md9">
+                                            <select name="mail_smtp_check_type" id="mail_smtp_check_type" lay-verify="required" lay-search="">
+                                                <option value="">选择验证方式</option>
+                                                <option value="TLS">TLS</option>
+                                                <option value="SSL">SSL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-col-md6">
+                                    <div class="layui-row">
+                                        <div class="layui-col-md3">
+                                            <label class="layui-form-label">发件人邮箱</label>
+                                        </div>
+                                        <div class="layui-col-md9">
+                                            <input type="mail_from" name="mail_from" placeholder="" value="" autocomplete="off" data-rule="required" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" type="submit" lay-submit="" lay-filter="component-form-element">确实</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).link(
+        " __STATIC__/style/jquery.validator.css"
+    ).use(['index','form','formValidator'], function(){
+        var form = layui.form
+            ,formValidator = layui.formValidator;
+
+        /**
+         * 绑定表单事件
+         */
+        formValidator.api.bindevent($("form#password_strategy"));
+        formValidator.api.bindevent($("form#crack"));
+    });
+</script>
+</body>
+</html>
+{/block}

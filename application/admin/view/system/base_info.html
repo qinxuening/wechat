@@ -1,0 +1,48 @@
+{extend name="layout/default" /}
+{block name="content"}
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-card">
+            <div class="layui-card-header">系统基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">系统信息</li>
+                        <li class="">技术团队</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                        </div>
+                        <div class="layui-tab-item">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index','form','formValidator'], function(){
+        var form = layui.form
+            ,formValidator = layui.formValidator;
+
+        /**
+         * 绑定表单事件
+         */
+        formValidator.api.bindevent($("form#password_strategy"));
+        formValidator.api.bindevent($("form#crack"));
+    });
+</script>
+</body>
+</html>
+{/block}

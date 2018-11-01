@@ -50,4 +50,42 @@ class System extends baseAdmin{
         $this->view->assign('login_limit', $login_limit);
         return $this->view->fetch();
     }
+    
+    /**
+     * 系统基本信息
+     * @return string
+     */
+    public function base_info() {
+        if ($this->request->isPost()){
+            $type = input('type');
+            
+        }
+        return $this->view->fetch();
+    }
+    
+    /**
+     * 常规设置
+     * @return string
+     */
+    public function base_set() {
+        return $this->view->fetch();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
