@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eba9dd8d-246c-4fe0-aad3-6b066b9b38e6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/common.php" afterPath="$PROJECT_DIR$/application/admin/common.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/controller/System.php" afterPath="$PROJECT_DIR$/application/admin/controller/System.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/system/base_set.html" afterPath="$PROJECT_DIR$/application/admin/view/system/base_set.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/system/base_info.html" afterPath="$PROJECT_DIR$/application/admin/view/system/base_info.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
-              <caret line="17" column="110" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="110" />
+              <caret line="17" column="110" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="110" />
               <folding />
             </state>
           </provider>
@@ -53,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="104">
-              <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+              <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -72,29 +71,22 @@
       <file leaf-file-name="security.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/system/security.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="41" column="80" lean-forward="true" selection-start-line="41" selection-start-column="80" selection-end-line="41" selection-end-column="80" />
+            <state relative-caret-position="1107">
+              <caret line="41" column="80" lean-forward="false" selection-start-line="41" selection-start-column="80" selection-end-line="41" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base_set.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/system/base_set.html">
+      <file leaf-file-name="base_info.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/system/base_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1458">
-              <caret line="21" column="75" lean-forward="true" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="validator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/modules/validator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1458">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="540">
+              <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+              <folding>
+                <element signature="e#754#760#0" expanded="true" />
+                <element signature="e#760#766#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,16 +96,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="743">
               <caret line="1489" column="18" lean-forward="false" selection-start-line="1489" selection-start-column="1" selection-end-line="1489" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2158">
-              <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -216,10 +198,10 @@
         <option value="$PROJECT_DIR$/public/static/modules/weTable.js" />
         <option value="$PROJECT_DIR$/public/static/modules/formSearch.js" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/admin/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/system/base_info.html" />
         <option value="$PROJECT_DIR$/public/static/style/admin.css" />
         <option value="$PROJECT_DIR$/public/static/modules/formValidator.js" />
         <option value="$PROJECT_DIR$/application/admin/view/system/base_set.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/system/base_info.html" />
       </list>
     </option>
   </component>
@@ -321,6 +303,14 @@
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
               <item name="rule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
@@ -482,18 +472,18 @@
       <workItem from="1541076928186" duration="6077000" />
       <workItem from="1541120305938" duration="10000" />
       <workItem from="1541120322895" duration="43000" />
-      <workItem from="1541120373499" duration="11585000" />
+      <workItem from="1541120373499" duration="14089000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="432340000" />
+    <option name="totallyTimeSpent" value="434844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12291667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16145833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -548,13 +538,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/bar.html" />
-    <entry file="file://$PROJECT_DIR$/application/admin/view/common/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/common/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -734,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="141" column="24" lean-forward="false" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/profile/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
@@ -749,7 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/system/base_info.html" />
     <entry file="file://$PROJECT_DIR$/.project">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -820,14 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/system/security.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="41" column="80" lean-forward="true" selection-start-line="41" selection-start-column="80" selection-end-line="41" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/formValidator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -839,7 +806,7 @@
     <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
-          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -855,16 +822,51 @@
     <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
-          <caret line="17" column="110" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="110" />
+          <caret line="17" column="110" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2106">
+          <caret line="141" column="24" lean-forward="false" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/system/base_set.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1458">
-          <caret line="21" column="75" lean-forward="true" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+        <state relative-caret-position="-27">
+          <caret line="89" column="46" lean-forward="true" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/common/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1025">
+          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/system/security.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1107">
+          <caret line="41" column="80" lean-forward="false" selection-start-line="41" selection-start-column="80" selection-end-line="41" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/system/base_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <element signature="e#754#760#0" expanded="true" />
+            <element signature="e#760#766#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

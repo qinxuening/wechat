@@ -13,8 +13,12 @@
                     </ul>
                     <div class="layui-tab-content">
                         <div class="layui-tab-item layui-show">
+                            {volist name="server_info" id="vo"}
+                                <li>{$system_info[$key]}：&nbsp;&nbsp;<span>{$vo}</span></li>
+                            {/volist}
                         </div>
                         <div class="layui-tab-item">
+                            Mr Qin
                         </div>
                     </div>
                 </div>
