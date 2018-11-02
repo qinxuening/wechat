@@ -25,7 +25,9 @@ layui.define(['jquery', 'form','we','validator','zhCN','toastr'], function(expor
                     // showOk: "",
                     stopOnError: false,
                     display: function (elem) {
-                        return $(elem).closest('.layui-form-item').children('label:eq(0)').text(); //display: 是可选的，用于替换错误消息中的{0}，一般为显示的字段名。
+                        // console.log($(elem).closest('.layui-form-item').children().children().children('label:eq(0)').text());
+                        // console.log($(elem).closest('.layui-form-item').find('label:eq(0)').text());
+                        return $(elem).closest('.layui-form-item').find('label:eq(0)').text(); //display: 是可选的，用于替换错误消息中的{0}，一般为显示的字段名。
                     },
                     dataFilter: function (data) { //前端转换服务端返回的结果格式
                         if (data.code === 1) {
