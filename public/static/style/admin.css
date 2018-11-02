@@ -1487,3 +1487,6 @@ body .layui-layer-we .layui-layer-setwin{
     text-align: right;
     padding: 9px 15px 9px 8px;
 }
+.select-error-tips{
+    float: right;
+}
