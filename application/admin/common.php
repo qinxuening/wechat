@@ -437,3 +437,36 @@ if(!function_exists(space_map)) {
         return explode('_', $info);
     }
 }
+
+if(!function_exists(set_config)){
+    /**
+     * 设置配置文件
+     * @param unknown $config_file
+     */
+    function set_config($config_file,$data) {
+        if(file_exists($config_file)){
+            $configs = include $config_file;
+        }else {
+            $configs = [];
+        }
+        $configs=array_merge($configs,$data);
+        $result = file_put_contents($config_file, "<?php\r\nreturn " . var_export($configs, true) . ";");
+        return $result;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

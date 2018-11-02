@@ -58,8 +58,31 @@ class System extends baseAdmin{
     public function base_info() {
         if ($this->request->isPost()){
             $type = input('type');
-            
+            switch ($type) {
+                case 1:
+                    break;
+                case 2:
+                    $data = input('post.');
+                    foreach ($data as $k => $v) {
+                        if (!trim($v)) {
+                            return json(['code' => -2, 'status' => 'error', 'msg' => '表单字段'.$k.'不能为空']);
+                        }
+                    }
+                    
+                    $config_file = "../config/admin/email.php";
+                    $result = set_config($config_file,$data);
+                    
+                    if($result !== false) {
+                        return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                    } else {
+                        return json(['code' => -3, 'status' => 'error', 'msg' => '配置失败']);
+                    }
+                    break;
+                default:
+                    return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+            }
         }
+        
         return $this->view->fetch();
     }
     
@@ -68,6 +91,36 @@ class System extends baseAdmin{
      * @return string
      */
     public function base_set() {
+        if ($this->request->isPost()){
+            $type = input('type');
+            switch ($type) {
+                case 1:
+                    break;
+                case 2:
+                    $data = input('post.');
+                    foreach ($data as $k => $v) {
+                        if (!trim($v)) {
+                            return json(['code' => -2, 'status' => 'error', 'msg' => '表单字段'.$k.'不能为空']);
+                        }
+                    }
+                    
+                    $config_file = "../config/extra/email.php";
+                    $result = set_config($config_file,$data);
+                    
+                    if($result !== false) {
+                        return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                    } else {
+                        return json(['code' => -3, 'status' => 'error', 'msg' => '配置失败']);
+                    }
+                    break;
+                default:
+                    return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+            }
+        }
+        
+        $this->assign('email_config', config('email'));
+        $this->assign('mail_type_list',['SSL'=>'SSL', 'TLS' => 'TLS']);
+        $this->assign('send_type_list',['SMTP'=>'SMTP', 'Mail' => 'Mail']);
         return $this->view->fetch();
     }
     

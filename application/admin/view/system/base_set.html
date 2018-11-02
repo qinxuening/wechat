@@ -15,34 +15,22 @@
                     </ul>
                     <div class="layui-tab-content">
                         <div class="layui-tab-item layui-show">
-                            <form class="layui-form" lay-filter="component-form-element" id="password_strategy"  method="POST" action="{:url('System/base_info',['type' => 1])}">
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">请选择用户秘密策略：</label>
-                                    <div class="layui-input-block">
-                                        {:build_radios('strategy', ['1'=>__('Password strategy1'), '2'=>__('Password strategy2'), '3'=>__('Password strategy3')],$Password_strategy_type['passwd_complexity'])}
-                                    </div>
-                                </div>
-                                <div class="layui-form-item">
-                                    <div class="layui-input-block">
-                                        <button class="layui-btn" lay-submit="" lay-filter="component-form-element">确实</button>
-                                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                                    </div>
-                                </div>
-                            </form>
+
                         </div>
                         <div class="layui-tab-item">
-                            <form class="layui-form" lay-filter="component-form-element" id="send_emial"  method="POST" action="{:url('System/base_info',['type' => 2])}">
+                            <form class="layui-form" lay-filter="component-form-element" id="send_emial"  method="POST" action="{:url('System/base_set',['type' => 2])}">
                                 <div class="layui-form-item layui-col-md6">
                                     <div class="layui-row">
                                         <div class="layui-col-md3">
                                             <label class="layui-form-label">邮件发送方式</label>
                                         </div>
                                         <div class="layui-col-md9">
-                                            <select name="mail_smtp_send_type" id="mail_smtp_send_type" lay-search="" data-rule="required">
-                                                <option value="">选择邮件发送方式</option>
-                                                <option value="SMTP">SMTP</option>
-                                                <option value="Mail">Mail</option>
-                                            </select>
+                                            <!--<select name="mail_smtp_send_type" id="mail_smtp_send_type" lay-search="" data-rule="required">-->
+                                                <!--<option value="">选择邮件发送方式</option>-->
+                                                <!--<option value="SMTP">SMTP</option>-->
+                                                <!--<option value="Mail">Mail</option>-->
+                                            <!--</select>-->
+                                            {:build_select('mail_smtp_send_type', $send_type_list, $email_config['mail_smtp_send_type'], ['data-rule'=>'required'])}
                                         </div>
                                         <span class="msg-box n-right select-error-tips" for="mail_smtp_send_type"></span>
                                     </div>
@@ -53,7 +41,7 @@
                                             <label class="layui-form-label">SMTP服务器</label>
                                         </div>
                                         <div class="layui-col-md9">
-                                            <input type="text" name="mail_smtp_host" id="mail_smtp_host" autocomplete="off" value="" data-rule="required" placeholder="" class="layui-input">
+                                            <input type="text" name="mail_smtp_host" id="mail_smtp_host" autocomplete="off" value="{$email_config['mail_smtp_host']}" data-rule="required" placeholder="" class="layui-input">
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +51,7 @@
                                              <label class="layui-form-label">SMTP端口</label>
                                         </div>
                                         <div class="layui-col-md9">
-                                            <input type="mail_smtp_port" name="mail_smtp_port" placeholder="" value="" data-rule="required" autocomplete="off" class="layui-input">
+                                            <input type="mail_smtp_port" name="mail_smtp_port" placeholder="" value="{$email_config['mail_smtp_port']}" data-rule="required" autocomplete="off" class="layui-input">
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +61,7 @@
                                              <label class="layui-form-label">SMTP用户名</label>
                                         </div>
                                         <div class="layui-col-md9">
-                                             <input type="mail_smtp_user" name="mail_smtp_user" placeholder="" value="" autocomplete="off" data-rule="required" class="layui-input">
+                                             <input type="mail_smtp_user" name="mail_smtp_user" placeholder="" value="{$email_config['mail_smtp_user']}" autocomplete="off" data-rule="required" class="layui-input">
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +71,7 @@
                                             <label class="layui-form-label">SMTP密码</label>
                                         </div>
                                         <div class="layui-col-md9">
-                                            <input type="mail_smtp_pass" name="mail_smtp_pass" placeholder="" value="" autocomplete="off" data-rule="required" class="layui-input">
+                                            <input type="mail_smtp_pass" name="mail_smtp_pass" placeholder="" value="{$email_config['mail_smtp_pass']}" autocomplete="off" data-rule="required" class="layui-input">
                                         </div>
                                     </div>
                                 </div>
@@ -93,11 +81,12 @@
                                             <label class="layui-form-label">SMTP验证方式</label>
                                         </div>
                                         <div class="layui-col-md9">
-                                            <select name="mail_smtp_check_type" id="mail_smtp_check_type" data-rule="required" lay-search="">
-                                                <option value="">选择验证方式</option>
-                                                <option value="TLS">TLS</option>
-                                                <option value="SSL">SSL</option>
-                                            </select>
+                                            <!--<select name="mail_smtp_check_type" id="mail_smtp_check_type" data-rule="required" lay-search="">-->
+                                                <!--<option value="">选择验证方式</option>-->
+                                                <!--<option value="TLS">TLS</option>-->
+                                                <!--<option value="SSL">SSL</option>-->
+                                            <!--</select>-->
+                                            {:build_select('mail_smtp_check_type', $mail_type_list, $email_config['mail_smtp_check_type'], ['data-rule'=>'required'])}
                                         </div>
                                         <span class="msg-box n-right select-error-tips"  for="mail_smtp_check_type"></span>
                                     </div>
@@ -108,7 +97,7 @@
                                             <label class="layui-form-label">发件人邮箱</label>
                                         </div>
                                         <div class="layui-col-md9">
-                                            <input type="mail_from" name="mail_from" placeholder="" value="" autocomplete="off" data-rule="required" class="layui-input">
+                                            <input type="mail_from" name="mail_from" placeholder="" value="{$email_config['mail_from']}" autocomplete="off" data-rule="required" class="layui-input">
                                         </div>
                                     </div>
                                 </div>
