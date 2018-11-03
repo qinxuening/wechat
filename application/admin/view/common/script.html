@@ -1,9 +1,30 @@
 <script>
+    var clear_cache_url = "{:url('ajax/clearcache')}";
     layui.config({
         base: "__STATIC__/" //静态资源所在路径
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use('index');
+    }).use(['index','jquery','toastr'],function () {
+        $ = layui.$
+        ,toastr = layui.toastr
+        //清除缓存
+        $(document).on('click', "dl.clearcache dd a", function () {
+            $('.clearcache').hide();
+            $.ajax({
+                url: clear_cache_url,
+                dataType: 'json',
+                data: {type: $(this).attr("data-type")},
+                cache: false,
+                success: function (ret) {
+                    toastr.success(ret.msg);
+                    $('.clearcache').hide();
+                }, error: function () {
+                    toastr.error('非法操作');
+                    $('.clearcache').hide();
+                }
+            });
+        });
+    });
 </script>
 </body>
 </html>

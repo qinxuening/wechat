@@ -1,0 +1,51 @@
+---------------------------------------------------------------
+[ 2018-11-03T12:50:35+08:00 ] 127.0.0.1 GET /admin/ajax/clearcache.html?type=all&_=1541220504424
+[ info ] act.wechat.com/admin/ajax/clearcache.html?type=all&_=1541220504424 [运行时间：0.201012s][吞吐率：4.97req/s] [内存消耗：3,239.56kb] [文件加载：85]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.010000s ]
+[ info ] [ LANG ] E:\xm\wechat\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'clearcache',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'act.wechat.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'referer' => 'http://act.wechat.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=3lpn64035sien1tvhqf397rhj2',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'all',
+  '_' => '1541220504424',
+)
+[ info ] [ LANG ] E:\xm\wechat\public/../application/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] E:\xm\wechat\public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ RUN ] app\admin\controller\Ajax->clearcache[ E:\xm\wechat\application\admin\controller\Ajax.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]Use of undefined constant get_space_info - assumed 'get_space_info'[E:\xm\wechat\application\admin\common.php:413]
+[ error ] [8]Use of undefined constant space_map - assumed 'space_map'[E:\xm\wechat\application\admin\common.php:427]
+[ error ] [8]Use of undefined constant set_config - assumed 'set_config'[E:\xm\wechat\application\admin\common.php:441]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003001s ] mysql:host=127.0.0.1;port=3306;dbname=scan;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `scan_auth_group_access` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `scan_auth_group_access` `aga` LEFT JOIN `scan_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='1' ) [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `scan_auth_rule` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `scan_auth_rule` WHERE  `status` = 1 [ RunTime:0.002000s ]

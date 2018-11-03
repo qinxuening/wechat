@@ -1,4 +1,4 @@
-;layui.define("view", function (e) {
+;layui.define(['view'], function (e) {
     var a = layui.jquery, i = layui.laytpl, t = layui.element, l = layui.setter, n = layui.view, s = layui.device(),
         r = a(window), o = a("body"), u = a("#" + l.container), d = "layui-show", c = "layui-hide", y = "layui-this",
         f = "layui-disabled", h = "#LAY_app_body", m = "LAY_app_flexible", p = "layadmin-layout-tabs",
@@ -103,24 +103,8 @@
                     }
                 })
             }, note: function (e) {
-                var a = F.screen() < 2, i = layui.data(l.tableName).note;
-                P.note.index = F.popup({
-                    title: "便签",
-                    shade: 0,
-                    offset: ["41px", a ? null : e.offset().left - 250 + "px"],
-                    anim: -1,
-                    id: "LAY_adminNote",
-                    skin: "layadmin-note layui-anim layui-anim-upbit",
-                    content: '<textarea placeholder="内容"></textarea>',
-                    resize: !1,
-                    success: function (e, a) {
-                        var t = e.find("textarea"),
-                            n = void 0 === i ? "便签中的内容会存储在本地，这样即便你关掉了浏览器，在下次打开时，依然会读取到上一次的记录。是个非常小巧实用的本地备忘录" : i;
-                        t.val(n).focus().on("keyup", function () {
-                            layui.data(l.tableName, {key: "note", value: this.value})
-                        })
-                    }
-                })
+
+
             }, fullscreen: function (e) {
                 var a = "layui-icon-screen-full", i = "layui-icon-screen-restore", t = e.children("i");
                 if (t.hasClass(a)) {
