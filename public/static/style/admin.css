@@ -1360,9 +1360,11 @@ body .layui-layer-we .layui-layer-title {
     color: #fff !important;
     border: none
 }
-body .layui-layer-we .layui-layer-setwin a{
-    color:#ffffff !important;
+
+body .layui-layer-we .layui-layer-setwin a {
+    color: #ffffff !important;
 }
+
 body .layui-layer-we .layui-layer-btn a {
     background: #2c3e50;
     border-color: #2c3e50
@@ -1371,15 +1373,19 @@ body .layui-layer-we .layui-layer-btn a {
 body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
     background: #2c3e50
 }
-.lay_top{
+
+.lay_top {
     margin-top: 20px !important;
 }
+
 .hidden {
     display: none !important;
 }
+
 .layer-footer {
     display: none;
 }
+
 .footer {
     position: fixed;
     left: 0px;
@@ -1392,28 +1398,35 @@ body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
     overflow-x: hidden;
     overflow-y: hidden;
 }
-.footer-form{
+
+.footer-form {
     margin-top: 60px;
 }
-.layui-btn-view{
+
+.layui-btn-view {
     background-color: #18bc9c;
 }
-.layui-btn-danger{
+
+.layui-btn-danger {
     background-color: #d9534f;
     border-color: #d43f3a;
 }
-.layui-btn-danger:hover{
+
+.layui-btn-danger:hover {
     ckground-color: #c9302c;
     border-color: #ac2925;
 }
-body .layui-layer-we .layui-layer-btn .layui-layer-btn1{
+
+body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
     color: #ffffff !important;
 }
-body .layui-layer-we .layui-layer-btn0{
+
+body .layui-layer-we .layui-layer-btn0 {
     background-color: #18bc9c !important;
     border-color: #18bc9c !important;
 }
-body .layui-layer-we .layui-layer-setwin{
+
+body .layui-layer-we .layui-layer-setwin {
     color: #ffffff !important;
 }
 
@@ -1421,16 +1434,16 @@ body .layui-layer-we .layui-layer-setwin{
     color: #e74c3c;
 }
 
-.layui-form-item.has-error  input,
+.layui-form-item.has-error input,
 .layui-form-item.has-error select,
-.layui-form-item.has-error  textarea{
+.layui-form-item.has-error textarea {
     border-color: #e74c3c;
     box-shadow: none;
 }
 
-.layui-form-item.has-error  input:focus,
+.layui-form-item.has-error input:focus,
 .layui-form-item.has-error select:focus,
-.layui-form-item.has-error textarea:focus{
+.layui-form-item.has-error textarea:focus {
     border-color: #e74c3c !important;
     box-shadow: none;
 }
@@ -1439,32 +1452,35 @@ body .layui-layer-we .layui-layer-setwin{
     color: #009688;
 }
 
-.layui-form-item.has-succes  input,
-.layui-form-item.has-succes  select,
-.layui-form-item.has-succes  textarea{
+.layui-form-item.has-succes input,
+.layui-form-item.has-succes select,
+.layui-form-item.has-succes textarea {
     border-color: #009688;
     box-shadow: none;
 }
+
 .layui-form-label {
-  float: left;
-  display: block;
-  width: auto !important;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: right;
-  padding: 9px 15px;
+    float: left;
+    display: block;
+    width: auto !important;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: right;
+    padding: 9px 15px;
 }
+
 .layui-table-cell {
     height: 24px;
     line-height: 24px;
 }
-.input-medium{
+
+.input-medium {
     height: 28px;
     line-height: 28px;
     color: rgb(128, 128, 128);
 }
 
-.input-medium input,.input-medium .layui-form-label{
+.input-medium input, .input-medium .layui-form-label {
     height: 28px;
     line-height: 28px;
     color: rgb(128, 128, 128);
@@ -1473,11 +1489,13 @@ body .layui-layer-we .layui-layer-setwin{
 .search-inline {
     margin-left: 42px
 }
-.search-card-body{
+
+.search-card-body {
     padding: 20px 15px 1px 15px !important;
     height: auto;
     margin: auto;
 }
+
 .layui-form-label-search-date {
     float: left;
     display: block;
@@ -1487,6 +1505,7 @@ body .layui-layer-we .layui-layer-setwin{
     text-align: right;
     padding: 9px 15px 9px 8px;
 }
-.select-error-tips{
+
+.select-error-tips {
     float: right;
 }
