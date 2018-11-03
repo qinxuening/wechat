@@ -18,6 +18,7 @@ layui.define(['jquery','we','toastr'], function(exports){
                edit_url: '',
                del_url: '',
                import_url: '',
+               export_url:'',
                multi_url: '',
                stop_url: '',
                view_url : '',
@@ -95,7 +96,9 @@ layui.define(['jquery','we','toastr'], function(exports){
                            }
                            break;
                        case 'export':
-                           toastr.warning('功能正在完善');
+                           we.api.ajax({"url":weTable.defaults.extend.export_url});
+                           layer.close(index);
+                           // toastr.warning('功能正在完善');
                            break;
                        case 'import':
                            toastr.warning('功能正在完善');

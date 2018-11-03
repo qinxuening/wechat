@@ -41,7 +41,6 @@ class Rule extends baseAdmin{
      * @return string
      */
     public function index() {
-        //Dashboard/index
         return $this->view->fetch();
     }
     
@@ -65,7 +64,6 @@ class Rule extends baseAdmin{
     public function edit() {
         $id = intval(input('id'));
         if(request()->isPost()){
-//             print_r(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);die();
             $id = input('post.id');
             $data = input('');
             $data['status'] = $data['status'] == 'on' ? '1' : 0;
@@ -94,7 +92,6 @@ class Rule extends baseAdmin{
      */
     public function del($ids = "")
     {
-//          return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
         if ($ids)
         {
             $delIds = [];
@@ -103,7 +100,6 @@ class Rule extends baseAdmin{
                 $delIds = array_merge($delIds, Tree::instance()->getChildrenIds($v, TRUE));
             }
             $delIds = array_unique($delIds);
-//             print_r($ids);die();
             $count = Db::name('auth_rule')->where('id', 'in', $delIds)->delete();
             if ($count)
             {
@@ -116,8 +112,12 @@ class Rule extends baseAdmin{
          return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
     }
     
-    
-    
+   /**
+    * 导出数据
+    */ 
+   public function export() {
+       
+   }
     
     
     

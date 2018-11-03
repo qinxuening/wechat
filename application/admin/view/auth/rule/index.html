@@ -15,7 +15,7 @@
 </div>
 
 <!--头工具栏-->
-{:build_toolbar('toolbar',['add', 'del'])}
+{:build_toolbar('toolbar',['add', 'del','export'])}
 <!--<script type="text/html" id="toolbar">-->
     <!--<div class="layui-btn-container">-->
         <!--<button class="layui-btn layui-btn-sm" lay-event="refresh"><i class="layui-icon layui-icon-refresh-3"></i>刷新</button>-->
@@ -70,6 +70,7 @@
             ,id : 'tableReload'
             ,skin:'line'
             ,toolbar : '#toolbar'
+            ,defaultToolbar: []//'filter', 'print', 'exports'
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'id', title: 'ID', sort: true}
@@ -101,10 +102,11 @@
             table : "rule",
             tableid : "tableReload",
             extend : {
-            "add_url": "{:url('admin/auth.rule/edit','',false)}",
-            "edit_url": "{:url('admin/auth.rule/edit','',false)}/id/",
-            "view_url": "{:url('admin/auth.rule/view','',false)}/id/",
-            "del_url": "{:url('admin/auth.rule/del','',false)}",
+                "add_url": "{:url('admin/auth.rule/edit','',false)}",
+                "edit_url": "{:url('admin/auth.rule/edit','',false)}/id/",
+                "view_url": "{:url('admin/auth.rule/view','',false)}/id/",
+                "del_url": "{:url('admin/auth.rule/del','',false)}",
+                "export_url": "{:url('admin/auth.rule/export','',false)}",
              }
         });
 
