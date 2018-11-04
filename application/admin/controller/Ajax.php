@@ -22,7 +22,11 @@ class Ajax extends baseAdmin {
                 rmdirs(TEMP_PATH, false);
                 if ($type == 'template')
                     break;
+            case 'log' || 'all':
+                rmdirs(LOG_PATH, false);
+                if ($type == 'log')
+                    break;
         }
-        return json(['code' => 1, 'status' => 'success', 'msg' => '清除缓存成功']);
+        return json(['code' => 1, 'status' => 'success', 'msg' => '清除成功']);
     }
 }
