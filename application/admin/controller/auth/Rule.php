@@ -10,6 +10,7 @@ use app\common\controller\baseAdmin;
 use think\Db;
 use we\Tree;
 use think\Cache;
+use we\Export;
 
 class Rule extends baseAdmin{
     protected $rulelist;
@@ -116,7 +117,8 @@ class Rule extends baseAdmin{
     * 导出数据
     */ 
    public function export() {
-       
+       $action = new Export();
+       $action->excel();
    }
     
     

@@ -24,7 +24,7 @@ class Export extends Controller{
                 $this->excelWeeks();
                 exit;
             }
-            $this->after();
+//             $this->after();
             $title = $_POST["title"]?$_POST["title"]:"未命名";
             $list = $_POST["list"];
             $field = $_POST["field"];
@@ -34,7 +34,7 @@ class Export extends Controller{
             $field = json_decode($field,true);
     
             //导出excel
-            import("ORG.PHPExcel.PHPExcel");
+//             import("ORG.PHPExcel.PHPExcel");
             $objPHPExcel = new PHPExcel();
             $objProps = $objPHPExcel->getProperties();
             $objProps->setCreator("crm");
