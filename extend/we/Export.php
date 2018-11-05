@@ -15,24 +15,12 @@ class Export extends Controller{
      * field json格式的列名
      * list  json格式的内容
      */
-    public function excel(){
-        // 		if($this->isPost()){
-        
+    public function excel($list,$field,$title){
         set_time_limit ( 0 ); // 脚本执行没有时间限
         ini_set("memory_limit","-1");
         ini_set('max_execution_time', '0');
-        if($_POST["title"]=="统计报表"){
-            $this->excelWeeks();
-            exit;
-        }
         
-        $title = $_POST["title"]?$_POST["title"]:"未命名";
-        $list = $_POST["list"];
-        $field = $_POST["field"];
-        $search = $_POST["search"];
-        
-        $list = json_decode($list,true);
-        $field = json_decode($field,true);
+        $title = $title ? $title : "统计报表";
         
         //导出excel
         vendor('PHPExcel');
@@ -148,7 +136,6 @@ class Export extends Controller{
         header("Pragma:no-cache");
         header("Expires:0");
         $objWriter->save("php://output");
-        //         }
     }
     /*
      * 导出exel

@@ -122,12 +122,12 @@ class Rule extends baseAdmin{
     * 导出数据
     */ 
    public function export() {
-       $result = Db::name('auth_rule')
+       $list = Db::name('auth_rule')
                ->field('title,name,ismenu,status,weigh,createtime')
                ->order(['id'=>'desc','weigh'=>'desc'])
                ->select();
        
-       foreach ($result as $k => &$v) {
+       foreach ($list as $k => &$v) {
            $v['ID'] = $k +1;
            $v['status'] = $this->status[$v['status']];
            $v['ismenu'] = $this->status[$v['ismenu']];
@@ -145,11 +145,9 @@ class Rule extends baseAdmin{
                ["field" => "createtime", "name" => "创建时间", "excel_width" => 20],
        ];
        
-       $_POST["title"] = "规则报表";
-       $_POST['field'] = json_encode($field);
-       $_POST['list'] = json_encode($result);
+       $title = "规则报表";
        $action = new Export();
-       $action->excel();
+       $action->excel($list,$field,$title);
    }
     
     
