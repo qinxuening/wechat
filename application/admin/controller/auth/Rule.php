@@ -53,8 +53,10 @@ class Rule extends baseAdmin{
     public function getRule($page = 0, $limit = 10) {
         $this->rulelist = Db::name('auth_rule')
             ->order(['id'=>'desc','weigh'=>'desc'])
-            ->page($page,$limit)
+//             ->page($page,$limit)
             ->select();
+        Tree::instance()->init($this->rulelist);
+        $this->rulelist = Tree::instance()->getTreeList(Tree::instance()->getTreeArray(0), 'title');
         $count = Db::name('auth_rule')->count('*');
         return json(['code' => 0, 'count' => $count, 'data' => $this->rulelist,'msg' => '获取成功']);
     }
