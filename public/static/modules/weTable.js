@@ -96,7 +96,8 @@ layui.define(['jquery','we','toastr'], function(exports){
                            }
                            break;
                        case 'export':
-                           we.api.ajax({"url":weTable.defaults.extend.export_url});
+                           // we.api.ajax({"url":weTable.defaults.extend.export_url});
+                           window.location.href = weTable.defaults.extend.export_url;
                            layer.close(index);
                            // toastr.warning('功能正在完善');
                            break;

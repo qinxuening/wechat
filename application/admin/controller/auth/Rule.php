@@ -127,12 +127,13 @@ class Rule extends baseAdmin{
                ->order(['id'=>'desc','weigh'=>'desc'])
                ->select();
        
-       foreach ($result as $k => $v) {
-           $result['ID'] = $k +1;
-           $result['status'] = $this->status[$v['status']];
-           $result['ismenu'] = $this->status[$v['ismenu']];
+       foreach ($result as $k => &$v) {
+           $v['ID'] = $k +1;
+           $v['status'] = $this->status[$v['status']];
+           $v['ismenu'] = $this->status[$v['ismenu']];
+           $v['createtime'] = $v['createtime'] ? date('Y-m-d H:i:s', $v['createtime']) : 0;
        }       
-               
+       
        //第一列头
        $field['data'] = [
                ["field" => "ID", "name" => "序号", "excel_width" => 15],
