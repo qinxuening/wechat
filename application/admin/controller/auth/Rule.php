@@ -14,6 +14,7 @@ use we\Export;
 
 class Rule extends baseAdmin{
     protected $rulelist;
+    protected $status;
     
     public function _initialize(){
         parent::_initialize();
@@ -34,6 +35,10 @@ class Rule extends baseAdmin{
                 continue;
             $ruledata[$v['id']] = $v['title'];
         }
+        $this->status = [
+            '0' => '否',
+            '1' => '是',
+        ];
         $this->view->assign('ruledata', $ruledata);
     }
     
@@ -117,6 +122,31 @@ class Rule extends baseAdmin{
     * 导出数据
     */ 
    public function export() {
+       $result = Db::name('auth_rule')
+               ->field('title,name,ismenu,status,weigh,createtime')
+               ->order(['id'=>'desc','weigh'=>'desc'])
+               ->select();
+       
+       foreach ($result as $k => $v) {
+           $result['ID'] = $k +1;
+           $result['status'] = $this->status[$v['status']];
+           $result['ismenu'] = $this->status[$v['ismenu']];
+       }       
+               
+       //第一列头
+       $field['data'] = [
+               ["field" => "ID", "name" => "序号", "excel_width" => 15],
+               ["field" => "title", "name" => "规则名称", "excel_width" => 15],
+               ["field" => "name", "name" => "规则url", "excel_width" => 30],
+               ["field" => "ismenu", "name" => "是否是菜单", "excel_width" => 15],
+               ["field" => "status", "name" => "状态", "excel_width" => 15],
+               ["field" => "weigh", "name" => "权重", "excel_width" => 15],
+               ["field" => "createtime", "name" => "创建时间", "excel_width" => 20],
+       ];
+       
+       $_POST["title"] = "规则报表";
+       $_POST['field'] = json_encode($field);
+       $_POST['list'] = json_encode($result);
        $action = new Export();
        $action->excel();
    }
