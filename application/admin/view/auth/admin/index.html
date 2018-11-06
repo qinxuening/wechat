@@ -130,7 +130,7 @@
             ,formSearch = layui.formSearch
 //            ,laydate = layui.laydate
             ,toastr = layui.toastr;
-
+        layer.load(0, {shade: false});
         var tableCommon = {
             elem: '#rule'
             ,method:'post'
@@ -139,6 +139,8 @@
             ,skin:'line'
             ,toolbar : '#toolbar'
 //            ,limit : 4
+            ,loading:true
+            ,limit:10
             ,defaultToolbar: []//'filter', 'print', 'exports'
             ,search: true
             ,cols: [[
@@ -157,6 +159,11 @@
                 ,first: false //不显示首页
                 ,last: false //不显示尾页
 
+            }
+            ,done: function(res, curr, count){
+                if(res.status == 'success') {
+                    layer.closeAll();
+                }
             }
         }
 

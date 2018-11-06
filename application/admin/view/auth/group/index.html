@@ -57,7 +57,7 @@
             ,layer = layui.layer
             ,form = layui.form
             ,we = layui.we;
-
+        layer.load(0, {shade: false});
         table.render({
             elem: '#group'
             ,skin:'line'
@@ -65,6 +65,7 @@
             ,url:"{:url('Admin/auth.group/index')}"
             ,id: 'tableReload'
             ,defaultToolbar: []//'filter', 'print', 'exports'
+            ,loading:true
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'name', title: '角色名称', sort: true}
@@ -72,6 +73,11 @@
                 ,{field:'createtime', title: '操作时间', minWidth: 150}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
             ]]
+            ,done: function(res, curr, count){
+                if(res.status == 'success') {
+                    layer.closeAll();
+                }
+            }
         });
 
         /**

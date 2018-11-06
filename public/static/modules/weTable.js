@@ -68,6 +68,7 @@ layui.define(['jquery','we','toastr'], function(exports){
                    switch(obj.event){
                        case 'refresh':
                            console.log('refresh');
+                           layer.load(0, {shade: false});
                            table.reload(weTable.defaults.tableid)
                            break;
                        case 'add':
