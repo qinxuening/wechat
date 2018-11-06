@@ -2670,6 +2670,10 @@ layui.config({
                     });
                 }
             });
+            // layui.event.call(this, MOD_NAME, 'toolbar('+ filter +')', {
+            //     data: data//table.clearCacheKey(data)
+            //     ,event: othis.attr('lay-event')
+            // });
             tr.addClass(ELEM_CLICK).siblings('tr').removeClass(ELEM_CLICK);
         });
     }

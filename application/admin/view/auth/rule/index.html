@@ -15,7 +15,7 @@
 </div>
 
 <!--头工具栏-->
-{:build_toolbar('toolbar',['add', 'del','export'])}
+{:build_toolbar('toolbar',['refresh','add','export'])}
 <!--<script type="text/html" id="toolbar">-->
 <!--<div class="layui-btn-container">-->
 <!--<button class="layui-btn layui-btn-sm" lay-event="refresh"><i class="layui-icon layui-icon-refresh-3"></i>刷新</button>-->
@@ -70,7 +70,7 @@
             ,url:"{:url('Admin/auth.rule/getRule')}"
             ,id : 'tableReload'
             ,idField:'id'
-            ,height:'100%'
+//            ,height:'500'
             ,treeId:'id'//树形id字段名称
             ,treeUpId:'pid'//树形父id字段名称
             ,treeShowName:'title'//以树形式显示的字段

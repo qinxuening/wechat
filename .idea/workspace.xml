@@ -25,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="117" lean-forward="false" selection-start-line="8" selection-start-column="117" selection-end-line="8" selection-end-column="117" />
+            <state relative-caret-position="189">
+              <caret line="73" column="27" lean-forward="true" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -48,10 +48,17 @@
       <file leaf-file-name="treeGrid.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/treeGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="2681" column="3" lean-forward="false" selection-start-line="2681" selection-start-column="3" selection-end-line="2681" selection-end-column="3" />
+            <state relative-caret-position="229">
+              <caret line="727" column="43" lean-forward="false" selection-start-line="727" selection-start-column="43" selection-end-line="727" selection-end-column="43" />
               <folding>
-                <marker date="1541505969701" expanded="true" signature="0:4" ph="/** @Name：treeGrid树状表格 ...*/" />
+                <marker date="1541517449277" expanded="true" signature="32035:32153" ph="..." />
+                <marker date="1541517449277" expanded="true" signature="38193:38206" ph="..." />
+                <marker date="1541517449277" expanded="true" signature="48940:48997" ph="..." />
+                <marker date="1541517449277" expanded="true" signature="63366:63391" ph="..." />
+                <marker date="1541517449277" expanded="true" signature="70003:70011" ph="..." />
+                <marker date="1541517449277" expanded="true" signature="70063:70071" ph="..." />
+                <marker date="1541517449277" expanded="true" signature="94594:94640" ph="..." />
+                <marker date="1541517449277" expanded="true" signature="95180:95188" ph="..." />
               </folding>
             </state>
           </provider>
@@ -70,8 +77,8 @@
       <file leaf-file-name="weTreeGrid.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/weTreeGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="43" column="141" lean-forward="false" selection-start-line="43" selection-start-column="141" selection-end-line="43" selection-end-column="141" />
+            <state relative-caret-position="838">
+              <caret line="86" column="19" lean-forward="false" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -87,10 +94,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="we.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="we.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="594">
               <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
               <folding />
             </state>
@@ -110,11 +117,9 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4239">
+            <state relative-caret-position="505">
               <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-              <folding>
-                <marker date="1541505969706" expanded="true" signature="1702:1966" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>layadmin-pagetabs</find>
       <find>y</find>
       <find>lay-id</find>
       <find>.layadmin-pagetabs .layui-tab-title li.layui-this</find>
@@ -153,7 +157,6 @@
       <find>Class.prototype</find>
       <find>isOpenDefault</find>
       <find>数据请求</find>
-      <find>tool</find>
       <find>console.lo</find>
       <find>数据请求找那个</find>
       <find>console.log</find>
@@ -161,6 +164,8 @@
       <find>reload</find>
       <find>actionbar</find>
       <find>return tr</find>
+      <find>toolbar</find>
+      <find>tool</find>
       <find>action</find>
     </findStrings>
   </component>
@@ -212,15 +217,15 @@
         <option value="$PROJECT_DIR$/application/admin/view/common/script.html" />
         <option value="$PROJECT_DIR$/application/admin/view/common/header.html" />
         <option value="$PROJECT_DIR$/public/static/modules/dltable.js" />
-        <option value="$PROJECT_DIR$/public/static/modules/treeGrid.js" />
         <option value="$PROJECT_DIR$/public/static/modules/weTable.js" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/admin/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/group/index.html" />
         <option value="$PROJECT_DIR$/public/static/modules/formValidator.js" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/rule/edit.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
-        <option value="$PROJECT_DIR$/public/static/modules/weTreeGrid.js" />
         <option value="$PROJECT_DIR$/public/static/modules/we.js" />
+        <option value="$PROJECT_DIR$/public/static/modules/treeGrid.js" />
+        <option value="$PROJECT_DIR$/public/static/modules/weTreeGrid.js" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
       </list>
     </option>
   </component>
@@ -238,8 +243,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-11" />
     <option name="width" value="1456" />
     <option name="height" value="876" />
   </component>
@@ -380,6 +384,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rule" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -549,18 +583,18 @@
       <workItem from="1541332987424" duration="654000" />
       <workItem from="1541424765585" duration="6225000" />
       <workItem from="1541468748635" duration="18128000" />
-      <workItem from="1541506357117" duration="2282000" />
+      <workItem from="1541506357117" duration="7112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="481807000" />
+    <option name="totallyTimeSpent" value="486637000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-11" y="0" width="1456" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13046545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11777151" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -851,6 +885,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="1" column="8192" lean-forward="false" selection-start-line="1" selection-start-column="8192" selection-end-line="1" selection-end-column="8192" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -861,38 +896,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/treeGrid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="2681" column="3" lean-forward="false" selection-start-line="2681" selection-start-column="3" selection-end-line="2681" selection-end-column="3" />
-          <folding>
-            <marker date="1541505969701" expanded="true" signature="0:4" ph="/** @Name：treeGrid树状表格 ...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index4.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1485">
           <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4239">
-          <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-          <folding>
-            <marker date="1541505969706" expanded="true" signature="1702:1966" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="165" lean-forward="false" selection-start-line="6" selection-start-column="165" selection-end-line="6" selection-end-column="165" />
           <folding />
         </state>
       </provider>
@@ -913,11 +920,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="117" lean-forward="false" selection-start-line="8" selection-start-column="117" selection-end-line="8" selection-end-column="117" />
+        <state relative-caret-position="162">
+          <caret line="6" column="165" lean-forward="false" selection-start-line="6" selection-start-column="165" selection-end-line="6" selection-end-column="165" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/treeGrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="727" column="43" lean-forward="false" selection-start-line="727" selection-start-column="43" selection-end-line="727" selection-end-column="43" />
+          <folding>
+            <marker date="1541517449277" expanded="true" signature="32035:32153" ph="..." />
+            <marker date="1541517449277" expanded="true" signature="38193:38206" ph="..." />
+            <marker date="1541517449277" expanded="true" signature="48940:48997" ph="..." />
+            <marker date="1541517449277" expanded="true" signature="63366:63391" ph="..." />
+            <marker date="1541517449277" expanded="true" signature="70003:70011" ph="..." />
+            <marker date="1541517449277" expanded="true" signature="70063:70071" ph="..." />
+            <marker date="1541517449277" expanded="true" signature="94594:94640" ph="..." />
+            <marker date="1541517449277" expanded="true" signature="95180:95188" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -929,18 +961,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/weTreeGrid.js">
+    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="43" column="141" lean-forward="false" selection-start-line="43" selection-start-column="141" selection-end-line="43" selection-end-column="141" />
+        <state relative-caret-position="594">
+          <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
+    <entry file="file://$PROJECT_DIR$/public/static/modules/weTreeGrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="86" column="19" lean-forward="false" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+          <caret line="73" column="27" lean-forward="true" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
           <folding />
         </state>
       </provider>
