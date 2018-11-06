@@ -41,7 +41,7 @@ layui.define(['jquery','we','toastr','treeGrid'], function(exports){
                            title:'温馨提示',
                        }, function(index){
                            var url = weTreeGrid.defaults.extend.del_url
-                           we.api.ajax({"url":url,"data":{'ids':data.id},'tableid':weTreeGrid.defaults.tableid,'action':'del'});
+                           we.api.ajax({"url":url,"data":{'ids':data.id},'tableid':weTreeGrid.defaults.tableid,'treegird':true,'action':'del'});
                            layer.close(index);
                        });
                    } else if(obj.event === 'view'){

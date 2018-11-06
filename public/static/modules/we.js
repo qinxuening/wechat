@@ -50,9 +50,10 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     toastr.success(ret.msg);
                     if (typeof tablereloadid != 'undefined') {
                         if(options.action == 'del') {
+                            // return console.log(options.treegird);
                             layer.closeAll();
                             if(tablereloadid && typeof treegird != 'undefined') {
-                                window.parent.location.reload(); //刷新父页面
+                                location.reload(); //刷新父页面
                             } else {
                                 layui.table.reload(tablereloadid);
                             }

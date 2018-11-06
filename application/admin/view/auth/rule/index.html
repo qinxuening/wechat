@@ -70,6 +70,7 @@
             ,url:"{:url('Admin/auth.rule/getRule')}"
             ,id : 'tableReload'
             ,idField:'id'
+            ,height:'100%'
             ,treeId:'id'//树形id字段名称
             ,treeUpId:'pid'//树形父id字段名称
             ,treeShowName:'title'//以树形式显示的字段
@@ -89,7 +90,7 @@
                 ,{field:'ismenu', title: '是否为菜单', sort: true,templet: '#switchIsmenu'}
                 ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
                 ,{field:'name', title: '规则', minWidth: 150}
-                ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:220}
+                ,{align: 'center', title:'操作', toolbar: '#actionbar', width:220}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
