@@ -82,7 +82,7 @@ class Group extends baseAdmin{
                 }
             }
             $total = count($list);
-            return json(['code' => 0, 'count' => $total, 'data' => $list,'msg' => '获取成功']);
+            return json(['code' => 0, 'count' => $total,'status' => 'success', 'data' => $list,'msg' => '获取成功']);
         }
         return $this->view->fetch();
     }

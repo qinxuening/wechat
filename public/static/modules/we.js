@@ -27,6 +27,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 var data = typeof ret.data !== 'undefined' ? ret.data : null;
                 var msg = typeof ret.msg !== 'undefined' && ret.msg ? ret.msg : '操作完成';
                 if (typeof onAjaxSuccess === 'function') {
+                    // return console.log(options);
                     console.log('执行步奏：成功1');
                     var result = onAjaxSuccess.call(this, data, ret);
                     if (result === false)
@@ -34,6 +35,8 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 }
 
                 var tablereloadid = options.tableid; //获取重加载table
+                var treegird  = options.treegird;
+                // return console.log(tablereloadid);
                 if(options.searchFlag != 'undefined' && options.searchFlag == true) {
                     layui.table.reload(tablereloadid
                         ,{
@@ -48,14 +51,18 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     if (typeof tablereloadid != 'undefined') {
                         if(options.action == 'del') {
                             layer.closeAll();
-                            if(tablereloadid) {
+                            if(tablereloadid && typeof treegird != 'undefined') {
+                                window.parent.location.reload(); //刷新父页面
+                            } else {
                                 layui.table.reload(tablereloadid);
                             }
                         } else {
                             var index = parent.layer.getFrameIndex(window.name);
                             parent.layer.close(index);
                             layer.closeAll();
-                            if(tablereloadid) {
+                            if(tablereloadid && typeof treegird != 'undefined') {
+                                window.parent.location.reload(); //刷新父页面
+                            } else {
                                 parent.layui.table.reload(tablereloadid);
                             }
                         }
@@ -101,7 +108,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
         api: {
             //发送Ajax请求
             ajax: function (options, success, error) {
-                // console.log(options);
+                // return console.log(options);
                 options = typeof options === 'string' ? {url: options} : options;
                 var index = layer.load();
                 options = $.extend({

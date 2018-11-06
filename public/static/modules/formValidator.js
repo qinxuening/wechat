@@ -118,6 +118,7 @@ layui.define(['jquery', 'form','we','validator','zhCN','toastr'], function(expor
                 var url = form.attr("action");
                 url = url ? url : location.href;
                 var tableid = form.attr("tableid");
+                var treegird = form.attr("treegird");
                 // return console.log(url);
                 //修复当存在多选项元素时提交的BUG
                 var params = {};
@@ -147,6 +148,7 @@ layui.define(['jquery', 'form','we','validator','zhCN','toastr'], function(expor
                     data: form.serialize() + (Object.keys(params).length > 0 ? '&' + $.param(params) : ''),
                     dataType: 'json',
                     tableid:tableid,
+                    treegird:treegird,
                     complete: function (xhr) {
                         var token = xhr.getResponseHeader('__token__');
                         // console.log(form.serialize() + (Object.keys(params).length > 0 ? '&' + $.param(params) : ''));

@@ -6,7 +6,7 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-body">
-                    <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>
+                    <table class="layui-hide" id="tableReload" lay-filter="tableReload" table-reload-id="tableReload"></table>
                 </div>
             </div>
         </div>
@@ -48,25 +48,25 @@
 
 {block name="script"}
 <script>
-    var tableId = 'tableReload';
+    var ptable=null,treeGrid=null,tableId = 'tableReload',layer=null;
     layui.config({
         base: "__STATIC__/", //静态资源所在路径
         skin: 'layui-layer-we'
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['jquery','index','table','treeGrid','element','form','authtree','we','weTable'], function(){
+    }).use(['jquery','index','treeGrid','element','form','authtree','we','weTable','weTreeGrid'], function(){
         var admin = layui.admin
             ,$=layui.jquery
             ,element = layui.element
-            ,table = layui.table
             ,layer = layui.layer
             ,treeGrid = layui.treeGrid
             ,we = layui.we
             ,form = layui.form
             ,weTable = layui.weTable
+            ,weTreeGrid = layui.weTreeGrid
             ,toastr = layui.toastr;
-        treeGrid.render({
-            elem: '#rule'
+        ptable = treeGrid.render({
+            elem: '#tableReload'
             ,url:"{:url('Admin/auth.rule/getRule')}"
             ,id : 'tableReload'
             ,idField:'id'
@@ -108,20 +108,11 @@
             layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
         });
 
-        treeGrid.on('tool('+tableId+')',function (obj) {
-            if(obj.event === 'del') {
-                del(obj);
-            } else if(obj.event === 'add') {
-                add(obj);
-            }
-        });
-
-
         /**
          * 表格初始化
          */
-        weTable.api.init({
-            table : "rule",
+        weTreeGrid.api.init({
+            table : "tableReload",
             tableid : "tableReload",
             extend : {
                 "add_url": "{:url('admin/auth.rule/edit','',false)}",
@@ -134,7 +125,7 @@
         /**
          * 绑定监听事件
          * */
-        weTable.api.bindevent();
+        weTreeGrid.api.bindevent();
         //监听行工具事件
         /* table.on('tool(rule)', function(obj){
          var data = obj.data;
