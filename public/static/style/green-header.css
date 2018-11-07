@@ -48,6 +48,9 @@
 .layui-side-menu li{
     border-bottom: 1px solid #e5e5e5;
 }
+.layui-side-menu ul{
+    /*box-shadow:15px 0px 30px  #dedada;*/
+}
 .layui-side-menu li a{
     color: #666 !important;
 }
@@ -71,7 +74,7 @@
     color: #ffffff !important;
 }
 .layui-side-menu li .layui-nav-child{
-    background: #f9f9f9 !important;
+    background: #eaeaea !important;
     padding: 0px !important;
 }
 .layui-side-menu li dl.layui-nav-child dd{
@@ -81,6 +84,10 @@
     height: 50px !important;
 }
 .layui-side-menu .layui-nav .layui-nav-item > a{
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+.layui-side-menu .layui-nav .layui-nav-mored, .layui-nav-itemed>a:nth-child(1){
+    /*background: #1dc116;*/
+    box-shadow:15px 15px 30px  #dedada;
 }

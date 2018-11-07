@@ -483,7 +483,7 @@ html {
 }
 
 .layadmin-pagetabs .layui-tab-title {
-    height: 44px;
+    height: 40px;
     border: none
 }
 
@@ -575,6 +575,9 @@ html {
 
 .layui-layout-admin .layui-header a:hover {
     color: #000
+}
+.search-card{
+    margin-bottom: 5px !important;
 }
 
 .layui-layout-admin .layui-header .layui-nav .layui-nav-more {
@@ -1515,7 +1518,7 @@ body .layui-layer-we .layui-layer-setwin {
 }
 
 .layadmin-pagetabs,#LAY_app_tabs{
-    height: 44px !important;
+    height: 40px !important;
 }
 .webody{
     padding: 0px !important;
