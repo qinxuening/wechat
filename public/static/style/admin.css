@@ -483,13 +483,13 @@ html {
 }
 
 .layadmin-pagetabs .layui-tab-title {
-    height: 40px;
+    height: 44px;
     border: none
 }
 
 .layadmin-pagetabs .layui-tab-title li {
     min-width: 0;
-    line-height: 40px;
+    line-height: 44px;
     max-width: 160px;
     text-overflow: ellipsis;
     padding-right: 40px;
@@ -534,6 +534,7 @@ html {
 .layadmin-pagetabs .layui-tab-title li.layui-this, .layadmin-pagetabs .layui-tab-title li:hover {
     /*background-color: #f6f6f6;*/
     background: #2f4050;
+    /*background: #009688;*/
     color: #a7b1c2;
 }
 
