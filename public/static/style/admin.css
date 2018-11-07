@@ -1512,3 +1512,11 @@ body .layui-layer-we .layui-layer-setwin {
 .select-error-tips {
     float: right;
 }
+
+.layadmin-pagetabs,#LAY_app_tabs{
+    height: 44px !important;
+}
+.webody{
+    padding: 0px !important;
+    margin-left: -2px !important;
+}
