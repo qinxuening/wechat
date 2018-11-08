@@ -15,15 +15,24 @@ layui.define(['jquery', 'form','we','validator','zhCN','toastr'], function(expor
             validator: function (form, success, error, submit) {
                 if (!form.is("form"))
                     return;
+                var msgClass = 'n-right';
+                if(form.attr("msgClass") !== 'undefined') {
+                    msgClass = form.attr("msgClass");
+                }
+                console.log(form.attr("msgClass"));
                 //绑定表单事件
                 form.validator($.extend({
                     theme: "simple_right",
                     validClass: 'has-succes',
                     invalidClass: 'has-error',
                     bindClassTo: '.layui-form-item',
-                    msgClass: 'n-right',
+                    msgClass: msgClass,
                     // showOk: "",
-                    stopOnError: false,
+                    stopOnError: true,
+                    // msgWrapper: 'div',
+                    // msgMaker: function(opt){
+                    //     return '<span class="'+ opt.type +'">' + opt.msg + '</span>';
+                    // },
                     display: function (elem) {
                         // console.log($(elem).closest('.layui-form-item').children().children().children('label:eq(0)').text());
                         // console.log($(elem).closest('.layui-form-item').find('label:eq(0)').text());

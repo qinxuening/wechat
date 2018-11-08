@@ -185,6 +185,7 @@ if(!function_exists('build_actionbar')) {
                 $lay_url = '';
             }
             $html .= '<a class="' . $class . '" lay-event ="'.$v.'" '.$lay_url.'><i class="' . $icon . '"></i> ' . $text . '</a>';
+//             $html .= '<a class="' . $class . '" lay-event ="'.$v.'" '.$lay_url.'><i class="' . $icon . '"></i></a>';
         }
         $html .= '</script>';
         return $html;

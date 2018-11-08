@@ -149,7 +149,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     type: 2,
                     title: title,
                     shadeClose: true,
-                    shade: 0.6,
+                    // shade: 0.6,
                     maxmin: true,
                     moveOut: true,
                     area: area,

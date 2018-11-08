@@ -7,6 +7,9 @@
     }).use(['index','jquery','toastr'],function () {
         $ = layui.$
         ,toastr = layui.toastr
+        toastr.options ={
+            "closeButton":true,//显示关闭按钮
+        };
         //清除缓存
         $(document).on('click', "dl.clearcache dd a", function () {
             $.ajax({

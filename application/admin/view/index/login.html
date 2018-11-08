@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +15,8 @@
 <div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login" style="display: none;">
 
     <div class="layadmin-user-login-main">
-        <div class="layadmin-user-login-box layadmin-user-login-header">
-            <h2>后台登陆</h2>
-        </div>
         <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
-            <form class="layui-form" action="{:url('admin/Index/login','',false)}" method="post" lay-filter="login" id="formRule">
+            <form class="layui-form" msgClass="n-bottom" action="{:url('admin/Index/login','',false)}" method="post" lay-filter="login" id="formRule">
                 <div class="layui-form-item">
                     <label class="layui-form-label" style="display: none">用户名</label>
                     <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="username"></label>
