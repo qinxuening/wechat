@@ -34,7 +34,7 @@
                             <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" for="captcha"></label>
                             <input type="text" name="captcha" id="captcha" data-rule="required" placeholder="图形验证码" class="layui-input">
                         </div>
-                        <span class="msg-box n-right" for="captcha"><span role="alert" class="msg-wrap n-error"></span></span>
+                        <!--<span class="msg-box n-right" for="captcha"><span role="alert" class="msg-wrap n-error"></span></span>-->
                         <div class="layui-col-xs5">
                             <div style="margin-left: 10px;">
                                 <img src="{:rtrim('__PUBLIC__', '/')}/captcha" class="layadmin-user-login-codeimg" id="LAY-user-get-vercode" width="100" height="36" onclick="this.src = '{:rtrim('__PUBLIC__', '/')}/captcha?r=' + Math.random();"/>
