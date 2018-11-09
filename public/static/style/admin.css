@@ -1525,6 +1525,13 @@ body .layui-layer-we .layui-layer-setwin {
     margin-left: -2px !important;
 }
 
+.webody1{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+    margin-left: -2px !important;
+}
+
 body .layui-layer-we{
     border-radius:4px;
 }
