@@ -136,7 +136,9 @@ class Export extends Controller{
         header("Pragma:no-cache");
         header("Expires:0");
         $objWriter->save("php://output");
+        return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功','url' => url('Rule/index')]);
     }
+    
     /*
      * 导出exel
      * title 标题集合

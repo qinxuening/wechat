@@ -19,7 +19,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
         "hideEasing":"linear",//消失时的动画缓冲方式
         "showMethod":"fadeIn",//显示时的动画方式
         "hideMethod":"fadeOut",//消失时的动画方式
-        "progressBar":false,
+        "progressBar":true,
     };
     var we = {
         events: {
