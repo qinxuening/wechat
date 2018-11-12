@@ -485,7 +485,23 @@ if (!function_exists('rmdirs')) {
 }
 
 
-
+if(!function_exists('exportCols')){
+    /**
+     * 获取导出数据项
+     */
+    function exportCols() {
+        $data = input('post.cols');
+        $data = json_decode($data,true)[0];
+        
+        foreach ($data as $k => $v) {
+            if($v['hide'] === true || $v['type'] == 'checkbox' || isset($v['toolbar'])) {
+                unset($data[$k]);
+            }
+        }
+        sort($data);
+        return $data;
+    }
+}
 
 
 

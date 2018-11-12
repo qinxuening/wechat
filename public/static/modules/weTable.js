@@ -12,6 +12,7 @@ layui.define(['jquery','we','toastr'], function(exports){
        table: "",
        tableid:"",
        tableCommon:"",
+       form:"",
        defaults : {
            extend: {
                index_url: '',
@@ -65,7 +66,7 @@ layui.define(['jquery','we','toastr'], function(exports){
                //头工具栏事件
                table.on('toolbar('+weTable.defaults.table+')', function(obj){
                    var checkStatus = table.checkStatus(obj.config.id);
-                   console.log(obj.event);
+                   // console.log(obj.event);
                    switch(obj.event){
                        case 'refresh':
                            console.log('refresh');
@@ -103,7 +104,22 @@ layui.define(['jquery','we','toastr'], function(exports){
                            if(!weTable.defaults.extend.export_url) {
                                return toastr.error('操作异常');
                            }
-                           we.api.ajax({"url":weTable.defaults.extend.export_url,data:{'cols' : JSON.stringify(obj.config.cols)}});
+                           var op = {};
+                           var filter = {};
+                           $.each(obj.config.cols[0], function (index, value) {
+                               console.log(value);
+                               if(typeof value.searchList !== 'undefined') {
+                                   op[value.field] = value.searchList.operate;
+                               }
+                           });
+
+                           filter = JSON.stringify(weTable.api.getFormJson(weTable.defaults.form));
+                           we.api.ajax({"url":weTable.defaults.extend.export_url,
+                               data:{'cols' : JSON.stringify(obj.config.cols),
+                                       'op':JSON.stringify(op),
+                                       'filter':filter
+                                    }
+                           });
                            // window.location.href = weTable.defaults.extend.export_url;
                            // layer.close(index);
                            // toastr.warning('功能正在完善');
@@ -113,7 +129,42 @@ layui.define(['jquery','we','toastr'], function(exports){
                            break;
                    };
                });
+
            },
+
+           getFormJson : function(frm) {
+               var o = {};
+               var a = $(frm).serializeArray();
+               $.each(a, function () {
+                   if (o[this.name] !== undefined) {
+                       if (!o[this.name].push) {
+                           o[this.name] = [o[this.name]];
+                       }
+                       o[this.name].push(this.value || '');
+                   } else {
+                       if(this.name.indexOf('_start') != '-1') {
+                           var start = this.value ? this.value : ''
+                           this.name = this.name.slice(0,-6);
+                           delete (this.name+'_start');
+                           console.log(start);
+                       }
+                       if(this.name.indexOf('_end') != '-1') {
+                           var end = this.value ? this.value : ''
+                           this.name = this.name.slice(0,-4);
+                           delete (this.name+'_end');
+                           if(start || end) {
+                               o[this.name] = $('#'+this.name+'_start').val() +' - '+end;
+                           } else {
+                               o[this.name] = '';
+                           }
+                       }else {
+                           o[this.name] = this.value || '';
+                       }
+
+                   }
+               });
+               return o;
+           }
 
        }
 

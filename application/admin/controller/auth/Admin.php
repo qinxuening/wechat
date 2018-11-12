@@ -296,21 +296,16 @@ class Admin extends baseAdmin {
      * 导出数据
      */
     public function export() {
-        $data = input('post.cols');
-        $data = json_decode($data,true)[0];
-
+        $data = exportCols();
+        
+        list($where, $sort, $order, $offset, $limit) = $this->buildparams();
         
         $list = Db::name('admin')
-        ->where('id', 'in', $this->childrenAdminIds)
-        ->field(['password', 'salt', 'token'], true)
-        ->select();
-        
-        foreach ($data as $k => $v) {
-            if($v['hide'] === true || $v['type'] == 'checkbox') {
-                unset($data[$k]);
-            }
-        }
-        sort($data);
+            ->where('id', 'in', $this->childrenAdminIds)
+            ->where($where)
+            ->field(['password', 'salt', 'token'], true)
+            ->select();
+
         
         $field['data'] = $data;
         
