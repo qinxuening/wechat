@@ -11,6 +11,8 @@ use app\admin\model\AuthGroupAccess;
 use we\Random;
 use we\Tree;
 use think\Db;
+use we\Export;
+
 
 class Admin extends baseAdmin {
     
@@ -289,6 +291,37 @@ class Admin extends baseAdmin {
         }
         return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
     }
+    
+    /**
+     * 导出数据
+     */
+    public function export() {
+        $data = input('post.cols');
+        $data = json_decode($data,true)[0];
+
+        
+        $list = Db::name('admin')
+        ->where('id', 'in', $this->childrenAdminIds)
+        ->field(['password', 'salt', 'token'], true)
+        ->select();
+        
+        foreach ($data as $k => $v) {
+            if($v['hide'] === true || $v['type'] == 'checkbox') {
+                unset($data[$k]);
+            }
+        }
+        sort($data);
+        
+        $field['data'] = $data;
+        
+        $title = "账号管理报表";
+        $action = new Export();
+        $baseurl = $action->excel($list,$field,$title);
+        $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
+        
+        return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
+    }
+    
     
     /**
      * 批量更新

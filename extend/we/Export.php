@@ -90,10 +90,10 @@ class Export extends Controller{
                 }
                 if($value["rowspan"] > 0){
                     $objActSheet->mergeCells($column.($i-$value["rowspan"]+1).':'.$column.$i);
-                    $objActSheet->setCellValue($column.($i-$value["rowspan"]+1), $value["name"]);
+                    $objActSheet->setCellValue($column.($i-$value["rowspan"]+1), $value["title"]);
                     $objActSheet->getStyle($column.($i-$value["rowspan"]+1))->getAlignment()->setVertical(\PHPExcel_Style_Alignment::VERTICAL_CENTER);
                 }else{
-                    $objActSheet->setCellValue($column.$i, $value["name"]);
+                    $objActSheet->setCellValue($column.$i, $value["title"]);
                 }
                 if($value["excel_width"] > 0){
                     $objActSheet->getColumnDimension($column)->setWidth($value["excel_width"]);

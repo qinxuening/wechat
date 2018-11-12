@@ -138,13 +138,13 @@ class Rule extends baseAdmin{
        
        //第一列头
        $field['data'] = [
-               ["field" => "ID", "name" => "序号", "excel_width" => 15],
-               ["field" => "title", "name" => "规则名称", "excel_width" => 15],
-               ["field" => "name", "name" => "规则url", "excel_width" => 30],
-               ["field" => "ismenu", "name" => "是否是菜单", "excel_width" => 15],
-               ["field" => "status", "name" => "状态", "excel_width" => 15],
-               ["field" => "weigh", "name" => "权重", "excel_width" => 15],
-               ["field" => "createtime", "name" => "创建时间", "excel_width" => 20],
+               ["field" => "ID", "title" => "序号", "excel_width" => 15],
+               ["field" => "title", "title" => "规则名称", "excel_width" => 15],
+               ["field" => "name", "title" => "规则url", "excel_width" => 30],
+               ["field" => "ismenu", "title" => "是否是菜单", "excel_width" => 15],
+               ["field" => "status", "title" => "状态", "excel_width" => 15],
+               ["field" => "weigh", "title" => "权重", "excel_width" => 15],
+               ["field" => "createtime", "title" => "创建时间", "excel_width" => 20],
        ];
 
        $title = "规则报表";

@@ -82,7 +82,7 @@
 </div>
 
 <!--头工具栏-->
-{:build_toolbar('toolbar',['refresh', 'add', 'del'])}
+{:build_toolbar('toolbar',['refresh', 'add', 'del', 'export'])}
 <!--<script type="text/html" id="toolbar">-->
     <!--<div class="layui-btn-container">-->
         <!--<button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加</button>-->
@@ -141,17 +141,17 @@
 //            ,limit : 4
             ,loading:true
             ,limit:10
-            ,defaultToolbar: []//'filter', 'print', 'exports'
+            ,defaultToolbar: ['filter','exports']//'filter', 'print', 'exports'
             ,search: true
             ,cols: [[
                 {type:'checkbox', fixed: 'left',}
-                ,{field:'id', title: 'ID', sort: true}
-                ,{field:'username', title: '登陆账号', searchList:{type:'input',operate:'LIKE'}}
-                ,{field:'nickname', title: '昵称', searchList:{type:'input',operate:'LIKE'}}
-                ,{field:'groups_text', title: '角色'}
-                ,{field:'email', title: '邮箱', searchList:{type:'input',operate:'LIKE'}}
-                ,{field:'status', title: '状态',templet: '#switchStatus', sort: true, searchList:{type:'select',data:{$statusList},'operate':'='}}
-                ,{field:'logintime', title: '最后登陆时间', minWidth: 150, searchList:{type:'input',event:'date',operate: 'RANGE'}}
+                ,{field:'id', title: 'ID', sort: true, excel_width:15}
+                ,{field:'username', title: '登陆账号', excel_width:15, searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'nickname', title: '昵称', excel_width:15, searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'groups_text', title: '角色', excel_width:15}
+                ,{field:'email', title: '邮箱', excel_width:15, searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'status', title: '状态', excel_width:15,templet: '#switchStatus', sort: true, searchList:{type:'select',data:{$statusList},'operate':'='}}
+                ,{field:'logintime', title: '最后登陆时间', excel_width:15, minWidth: 150, searchList:{type:'input',event:'date',operate: 'RANGE'}}
                 ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:220}
             ]]
             ,page: {
@@ -187,11 +187,13 @@
         weTable.api.init({
             table : "rule",
             tableid : "tableReload",
+            tableCommon: tableCommon,
             extend : {
                 "add_url": "{:url('admin/auth.admin/add','',false)}",
                 "edit_url": "{:url('admin/auth.admin/edit','',false)}/ids/",
                 "view_url": "{:url('admin/auth.admin/view','',false)}/ids",
                 "del_url": "{:url('admin/auth.admin/del','',false)}",
+                "export_url" : "{:url('admin/auth.admin/export','',false)}"
             }
         });
 

@@ -11,6 +11,7 @@ layui.define(['jquery','we','toastr'], function(exports){
    var weTable = {
        table: "",
        tableid:"",
+       tableCommon:"",
        defaults : {
            extend: {
                index_url: '',
@@ -97,10 +98,14 @@ layui.define(['jquery','we','toastr'], function(exports){
                            }
                            break;
                        case 'export':
-                           layer.load(0, {shade: false});
-                           // we.api.ajax({"url":weTable.defaults.extend.export_url});
-                           window.location.href = weTable.defaults.extend.export_url;
-                           layer.close(index);
+                           // table.render();
+                           // console.log(obj.config.cols);
+                           if(!weTable.defaults.extend.export_url) {
+                               return toastr.error('操作异常');
+                           }
+                           we.api.ajax({"url":weTable.defaults.extend.export_url,data:{'cols' : JSON.stringify(obj.config.cols)}});
+                           // window.location.href = weTable.defaults.extend.export_url;
+                           // layer.close(index);
                            // toastr.warning('功能正在完善');
                            break;
                        case 'import':
