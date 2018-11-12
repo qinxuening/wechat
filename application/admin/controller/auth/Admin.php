@@ -19,10 +19,12 @@ class Admin extends baseAdmin {
     protected $model = null;
     protected $childrenGroupIds = [];
     protected $childrenAdminIds = [];
+    private $status;
     
     public function _initialize()
     {
         parent::_initialize();
+        $this->status = ['0'=>'禁用','1'=>'启用'];
         $this->model = model('Admin');
     
         $this->childrenAdminIds = $this->auth->getChildrenAdminIds(true);
@@ -93,14 +95,15 @@ class Admin extends baseAdmin {
             
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
 
+            $dataCol = exportCols();
+            
             $list = Db::name('admin')
                 ->where('id', 'in', $this->childrenAdminIds)
                 ->where($where)
                 ->field(['password', 'salt', 'token'], true)
-                ->page($page,$limit)
-//                 ->fetchSql(true)
+                ->page($dataCol ? 0 : $page,$dataCol ? null : $limit)
                 ->select();
-//             echo $list;die();
+
             $count = Db::name('admin')->where('id', 'in', $this->childrenAdminIds)->count('*');
             foreach ($list as $k => &$v)
             {
@@ -110,6 +113,23 @@ class Admin extends baseAdmin {
                 $v['logintime'] = $v['logintime'] ? date('Y-m-d H:i:s', $v['logintime']) : '';
             }
             unset($v);
+            
+            /**
+             * 导出数据
+             */
+            if($dataCol) {
+                foreach ($list as $k => &$v) {
+                    $v['ID'] = $k + 1;
+                    $v['status'] = $this->status[$v['status']];
+                }
+                $field['data'] = $dataCol;
+                $title = "账号管理报表";
+                $action = new Export();
+                $baseurl = $action->excel($list,$field,$title);
+                $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
+                return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
+            }
+            
             return json(['code' => 0, 'status' => 'success', 'count' => $count, 'data' => $list,'msg' => '获取成功']);
         }
         return $this->view->fetch();
@@ -295,7 +315,7 @@ class Admin extends baseAdmin {
     /**
      * 导出数据
      */
-    public function export() {
+    /*public function export() {
         $data = exportCols();
         
         list($where, $sort, $order, $offset, $limit) = $this->buildparams();
@@ -315,7 +335,7 @@ class Admin extends baseAdmin {
         $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
         
         return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
-    }
+    }*/
     
     
     /**

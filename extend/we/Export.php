@@ -37,6 +37,9 @@ class Export extends Controller{
         $objActSheet = $objPHPExcel->getActiveSheet();
         
         $objActSheet->setTitle('Sheet1');
+        
+        $field['data'] = array_merge([["field" => "ID", "title" => "序号", "excel_width" => 15]], $field['data']);
+
         //获取最后一列的列名
         $end_column = \PHPExcel_Cell::stringFromColumnIndex(count($field['data']) - 1);
         //设置标题
