@@ -131,12 +131,23 @@ class Export extends Controller{
         $objActSheet->getStyle('A3:'.$end_column.$i)->applyFromArray($styleArray);
         ob_end_clean();
         $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        
+        $filename = $title."_".date('Y-m-d',mktime()).".xls";
+        
+        $filename = iconv('UTF-8', 'GBK//IGNORE', $filename);
+        $url = './downloadfile/'.$filename;
+        $objWriter->save($url);
+        
+        /*
         header("Content-Type: application/vnd.ms-excel;");
         header("Content-Disposition:attachment;filename=".$title."_".date('Y-m-d',mktime()).".xls");
         header("Pragma:no-cache");
         header("Expires:0");
         $objWriter->save("php://output");
-        return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功','url' => url('Rule/index')]);
+        */
+
+//         return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功','url' => $url]);
+//         return serialize($url);
     }
     
     /*

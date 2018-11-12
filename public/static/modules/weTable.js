@@ -97,6 +97,7 @@ layui.define(['jquery','we','toastr'], function(exports){
                            }
                            break;
                        case 'export':
+                           layer.load(0, {shade: false});
                            // we.api.ajax({"url":weTable.defaults.extend.export_url});
                            window.location.href = weTable.defaults.extend.export_url;
                            layer.close(index);

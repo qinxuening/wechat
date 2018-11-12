@@ -75,9 +75,9 @@ layui.define(['jquery','we','toastr','treeGrid'], function(exports){
                             we.api.open(url,'添加');
                             break;
                         case 'export':
-                            // we.api.ajax({"url":weTreeGrid.defaults.extend.export_url});
-                            window.location.href = weTreeGrid.defaults.extend.export_url;
-                            layer.close(index);
+                            we.api.ajax({"url":weTreeGrid.defaults.extend.export_url});
+                            // window.location.href = weTreeGrid.defaults.extend.export_url;
+                            // layer.close(index);
                             // toastr.warning('功能正在完善');
                             break;
                         case 'import':

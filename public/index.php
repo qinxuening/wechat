@@ -16,5 +16,6 @@ define('APP_PATH', __DIR__ . '/../application/');
 // 定义配置文件目录和应用目录同级
 define('CONF_PATH', __DIR__.'/../config/');
 define('SCRIPT_DIR', rtrim(dirname($_SERVER['SCRIPT_NAME']), '\/\\'));
+// define('BIND_MODULE','admin');
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';

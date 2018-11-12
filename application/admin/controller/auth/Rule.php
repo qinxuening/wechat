@@ -146,10 +146,13 @@ class Rule extends baseAdmin{
                ["field" => "weigh", "name" => "权重", "excel_width" => 15],
                ["field" => "createtime", "name" => "创建时间", "excel_width" => 20],
        ];
-       
+
        $title = "规则报表";
        $action = new Export();
-       $action->excel($list,$field,$title);
+       $baseurl = $action->excel($list,$field,$title);
+       $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
+
+       return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
    }
     
     
