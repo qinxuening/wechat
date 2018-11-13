@@ -26,43 +26,46 @@ class Export extends Controller{
         vendor('PHPExcel');
         $objPHPExcel = new \PHPExcel();
         $objProps = $objPHPExcel->getProperties();
-        $objProps->setCreator("crm");
-        $objProps->setLastModifiedBy("crm");
-        $objProps->setTitle("crm Contact");
-        $objProps->setSubject($title);
+        $objProps->setCreator("qxn");  //创建人
+        $objProps->setLastModifiedBy("qxn"); //最后修改人
+        $objProps->setTitle("qxn Contact");//标题
+        $objProps->setSubject($title); //题目
         $objProps->setDescription("crm Contact Data");
         $objProps->setKeywords("crm Contact");
         $objProps->setCategory("crm");
-        $objPHPExcel->setActiveSheetIndex(0);
+        $objPHPExcel->setActiveSheetIndex(0); //设置当前的sheet
         $objActSheet = $objPHPExcel->getActiveSheet();
         
         $objActSheet->setTitle('Sheet1');
         
         $field['data'] = array_merge([["field" => "ID", "title" => "序号", "excel_width" => 15]], $field['data']);
 
-        //获取最后一列的列名
-        $end_column = \PHPExcel_Cell::stringFromColumnIndex(count($field['data']) - 1);
+        $end_column = \PHPExcel_Cell::stringFromColumnIndex(count($field['data']) - 1);//获取最后一列的列名
+        
         //设置标题
-        $objActSheet->mergeCells('A1:'.$end_column.'1');
-        $objActSheet->setCellValue('A1', $title);
-        //$objActSheet->getStyle('A1')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        $objActSheet->mergeCells('A1:'.$end_column.'1'); //mergeCells 合并单元格
+        
+        $objActSheet->setCellValue('A1', $title); //设置单元格值的坐标
+        $objActSheet->getStyle('A1')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);//设置水平居中
+        
         $objActSheet->getStyle('A1')->applyFromArray(
-            array(
-                'font' => array (
+            [
+                'font' => [
                     'bold' => true,
                     'size' => 20
-                ),
-                'alignment' => array(
+                ],
+                'alignment' => [
                     'horizontal' => \PHPExcel_Style_Alignment::HORIZONTAL_CENTER
-                )
-            )
+                ]
+            ]
             );
         
         //设置边框
-        $styleArray = array(
-            'borders' => array('allborders' => array('style' => \PHPExcel_Style_Border::BORDER_THIN)),
-            'alignment' => array('vertical' => \PHPExcel_Style_Alignment::VERTICAL_CENTER,'horizontal' => \PHPExcel_Style_Alignment::HORIZONTAL_LEFT),
-        );
+        $styleArray = [
+            'borders' => ['allborders' => array('style' => \PHPExcel_Style_Border::BORDER_THIN)], //设置单元格边框
+            //单元格对其方式,vertical垂直方向对齐，horizontal水平方向对齐
+            'alignment' => ['vertical' => \PHPExcel_Style_Alignment::VERTICAL_CENTER,'horizontal' => \PHPExcel_Style_Alignment::HORIZONTAL_LEFT],
+        ];
         //设置制表信息
         $objActSheet->mergeCells('A2:'.$end_column.'2');
         $objActSheet->getStyle('A2')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::VERTICAL_CENTER);
@@ -71,11 +74,7 @@ class Export extends Controller{
         $objActSheet->getStyle('A2')->getFont()->setSize(16);
         
         $objActSheet->setCellValue('A2', "制表时间:".date("Y-m-d H:i:s"));
-        
-        // 			if($search){
-        // 				$objActSheet->mergeCells('A3:'.$end_column.'3');
-        // 				$objActSheet->setCellValue('A3', $search);
-        // 			}
+
         $i = 2;
         $first_row = $i + 1;
         //设置列头
@@ -86,12 +85,12 @@ class Export extends Controller{
             $index = 0;
             foreach ($v as $key=>$value){
                 $column = \PHPExcel_Cell::stringFromColumnIndex($key + $index);
-                if($value["colspan"] > 0){
+                if($value["colspan"] > 0){ //列合并
                     $index = $index + $value["colspan"] - 1;
                     $end_column = \PHPExcel_Cell::stringFromColumnIndex($key + $index);
                     $objActSheet->mergeCells($column.$i.':'.$end_column.$i);
                 }
-                if($value["rowspan"] > 0){
+                if($value["rowspan"] > 0){//行合并
                     $objActSheet->mergeCells($column.($i-$value["rowspan"]+1).':'.$column.$i);
                     $objActSheet->setCellValue($column.($i-$value["rowspan"]+1), $value["title"]);
                     $objActSheet->getStyle($column.($i-$value["rowspan"]+1))->getAlignment()->setVertical(\PHPExcel_Style_Alignment::VERTICAL_CENTER);
@@ -99,39 +98,47 @@ class Export extends Controller{
                     $objActSheet->setCellValue($column.$i, $value["title"]);
                 }
                 if($value["excel_width"] > 0){
-                    $objActSheet->getColumnDimension($column)->setWidth($value["excel_width"]);
+                    $objActSheet->getColumnDimension($column)->setWidth($value["excel_width"]);//设置列宽度
                 }
                 if($value["note"]){
                     $objActSheet->getComment($column.i)->setAuthor($value["note"]["author"]);     //设置作者
                     $objCommentRichText = $objActSheet->getComment($column.i)->getText()->createTextRun($value["note"]["context"]);  //添加批注
                     // 						$objCommentRichText->getFont()->setBold($value["note"]["bold"]);  //将现有批注加粗
-                    
                     $objActSheet->getComment($column.i)->getFillColor()->setRGB($value["note"]["rgb"]);      //设置背景色 ，在office中有效在wps中无效
                 }
             }
         }
-        //die;
+
         //设置列头颜色
-        $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getFill()->setFillType(\PHPExcel_Style_Fill::FILL_SOLID);
-        $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getFill()->getStartColor()->setRGB('ffffff');
-        $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getFont()->setName('黑体');
+        //设置单元格格式
+        $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->applyFromArray([
+//             'fill' => ['filltype' => \PHPExcel_Style_Fill::FILL_SOLID],
+            'font' => ['name' => '黑体', 'size' => 12,], //'bold' => true
+            'alignment' => ['horizontal' => \PHPExcel_Style_Alignment::HORIZONTAL_CENTER],
+        ]);
+        $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getFill()->setFillType(\PHPExcel_Style_Fill::FILL_SOLID);  //设置填充样式
+        $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getFill()->getStartColor()->setRGB('ffffff'); ////设置背景色
+        /*$objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getFont()->setName('黑体');
         $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getFont()->setSize(12);
-        $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getFont()->setBold( true);
+        $objActSheet->getStyle('A'.$first_row.':'.$end_column.$i)->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);*/
         //内容显示
         
         foreach ($list as $k => $v) {
             $i++;
             foreach ($field['data'] as $key=>$value){
                 $column = \PHPExcel_Cell::stringFromColumnIndex($key);
-                if($value['DateType']==1&&$v[$value["field"]])
-                    $objActSheet->setCellValueExplicit($column.$i, $v[$value["field"]],\PHPExcel_Cell_DataType::TYPE_NUMERIC);
-                    else
-                        $objActSheet->setCellValueExplicit($column.$i, $v[$value["field"]],\PHPExcel_Cell_DataType::TYPE_STRING);
-                        //$objActSheet->getStyle($column.$i)->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_LEFT);
+                if($value['DateType']==1 && $v[$value["field"]]){
+                    $objActSheet->setCellValueExplicit($column.$i, $v[$value["field"]],\PHPExcel_Cell_DataType::TYPE_NUMERIC); //设置单元格的数据类型与类型
+                }else{
+                    $objActSheet->setCellValueExplicit($column.$i, $v[$value["field"]],\PHPExcel_Cell_DataType::TYPE_STRING);
+                }
+                //$objActSheet->getStyle($column.$i)->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_LEFT);
             }
         }
         
         $objActSheet->getStyle('A3:'.$end_column.$i)->applyFromArray($styleArray);
+        
         ob_end_clean();
         $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
         
