@@ -503,7 +503,59 @@ if(!function_exists('exportCols')){
     }
 }
 
-
+if(!function_exists('import_excel')) {
+    
+    //以excel表的自定义的字段保存数据
+    function import_excel($filePath, $SheetIndex = 0) {
+        $PHPExcel = new PHPExcel();
+        //默认用excel2007读取excel，若格式不对，则用之前的版本进行读取
+        $PHPReader = new PHPExcel_Reader_Excel2007();
+        if (!$PHPReader->canRead($filePath)) {
+            $PHPReader = new PHPExcel_Reader_Excel5();
+            if (!$PHPReader->canRead($filePath)) {
+                echo 'no Excel';
+                return;
+            }
+        }
+        
+        $PHPExcel = $PHPReader->load($filePath);  //读取Excel文件
+        $currentSheet = $PHPExcel->getSheet($SheetIndex);  //读取excel文件中的第一个工作表
+        $allColumn = $currentSheet->getHighestColumn(); //取得最大的列号
+        $allRow = $currentSheet->getHighestRow(); //取得一共有多少行
+        $array_excel = array();  //声明数组
+        $allColumn = PHPExcel_Cell::columnIndexFromString($allColumn);
+        
+        $array_head = array();
+        for ($currentColumn = 0; $currentColumn < $allColumn; $currentColumn++) {
+            $val = $currentSheet->getCellByColumnAndRow($currentColumn, 1)->getValue(); //取单元格的值
+            if ($val != '') {
+                $column = PHPExcel_Cell::stringFromColumnIndex($currentColumn);
+                $array_head[$column] = str_replace(" ", "", $val);
+            }
+        }
+        
+        for ($currentRow = 2; $currentRow <= $allRow; $currentRow++) {
+            $val = (string) $currentSheet->getCellByColumnAndRow(0, $currentRow)->getValue();
+            if ($val === "")
+                continue;
+                $temp = array();
+                for ($currentColumn = 0; $currentColumn < $allColumn; $currentColumn++) {
+                    $val = (string) $currentSheet->getCellByColumnAndRow($currentColumn, $currentRow)->getValue();
+                    //$val = str_replace("\n", "", trim($val));
+                    // $val = preg_replace("/(\s|\&nbsp\;|　|\xc2\xa0)/","",$val);#/[\s|　]+/
+                    $val = htmlentities($val);
+                    $val = str_replace(" ", "", trim($val));
+                    
+                    if ($val != '' || $val == 0) {
+                        $column = PHPExcel_Cell::stringFromColumnIndex($currentColumn);
+                        $temp[$array_head[$column]] = $val;
+                    }
+                }
+                $array_excel[] = $temp;
+        }
+        return $array_excel;
+    }
+}
 
 
 
