@@ -18,7 +18,7 @@ return [
     /**
      * 文件格式、文件名不变
      */
-    'savescript'   => '/uploads/script/{filemd5}{.suffix}',
+    'uploadfile'   => '/uploadfile/file/{filemd5}{.suffix}',
     
     /**
      * 最大可上传大小
@@ -28,7 +28,7 @@ return [
      * 可上传的文件类型
      */
 //     'mimetype'  => '*',
-    'mimetype'  => 'py',
+    'mimetype'  => 'xlsx,xls',
     /**
      * 是否支持批量上传
      */
