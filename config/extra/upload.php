@@ -28,7 +28,7 @@ return [
      * 可上传的文件类型
      */
 //     'mimetype'  => '*',
-    'mimetype'  => 'xlsx,xls',
+    'mimetype'  => 'xlsx,xls,zip',
     /**
      * 是否支持批量上传
      */

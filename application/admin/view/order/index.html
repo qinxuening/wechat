@@ -13,9 +13,13 @@
             <div class="layui-card">
                 <div class="layui-card-body">
                     <div class="layui-upload">
-                        <button type="button" class="layui-btn" id="upload">
-                            <i class="layui-icon">&#xe67c;</i>上传图片
+                        <button type="button" class="layui-btn layui-btn-sm" id="upload">
+                            <i class="layui-icon">&#xe654;</i>添加文件
                         </button>
+                        <button type="button"  class="layui-btn upload-btn layui-btn-disabled layui-btn-sm" id="testListAction"><i class="layui-icon">&#xe67c;</i>开始上传</button>
+                        <div class="layui-progress layui-progress-big" style="margin: 10px 0;" lay-showPercent="yes" lay-filter="progressBar">
+                            <div class="layui-progress-bar" lay-percent="0%"></div>
+                        </div>
                         <div class="layui-upload-list">
                             <table class="layui-table">
                                 <thead>
@@ -27,7 +31,6 @@
                                 <tbody id="demoList"></tbody>
                             </table>
                         </div>
-                        <button type="button" class="layui-btn" id="testListAction">开始上传</button>
                     </div>
                 </div>
             </div>
@@ -103,8 +106,12 @@
             ,done: function(res, index, upload){ //上传后的回调
 
             }
+            ,progress: function(e , percent) {
+//                console.log("进度：" + percent + '%');
+                element.progress('progressBar',percent  + '%');
+            }
             ,accept: 'file' //允许上传的文件类型
-            ,size: 50*1024 //最大允许上传的文件大小
+            ,size: 50*1024*1024 //最大允许上传的文件大小
             ,auto:false
             ,multiple: true
             ,bindAction: '#testListAction'
@@ -114,7 +121,8 @@
                 obj.preview(function(index, file, result){
                     var tr = $(['<tr id="upload-'+ index +'">'
                         ,'<td>'+ file.name +'</td>'
-                        ,'<td>'+ (file.size/1014).toFixed(1) +'kb</td>'
+//                        ,'<td>'+ (file.size/1014).toFixed(1) +'kb</td>'
+                        ,'<td>'+ format_bytes(file.size,'') +'</td>'
                         ,'<td>等待上传</td>'
                         ,'<td>'
                         ,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
@@ -135,31 +143,42 @@
                     });
 
                     demoListView.append(tr);
+                    element.progress('progressBar', '0%');
+                    $(".upload-btn").removeClass('layui-btn-disabled');
                 });
             }
             ,done: function(res, index, upload){
-                if(res.code == 0){ //上传成功
+                console.log(res);
+                if(res.status == 'success'){ //上传成功
                     var tr = demoListView.find('tr#upload-'+ index)
                         ,tds = tr.children();
                     tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
-                    tds.eq(3).html(''); //清空操作
                     return delete this.files[index]; //删除文件队列已经上传成功的文件
                 }
                 this.error(index, upload);
             }
             ,error: function(index, upload){
+                element.progress('progressBar', '0%');
                 var tr = demoListView.find('tr#upload-'+ index)
                     ,tds = tr.children();
                 tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
                 tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
             }
-        })
+        });
 
         //监听性别操作
         form.on('switch(ruleStatus)', function(obj){
 //            console.log(obj);
             layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
         });
+
+        function format_bytes(size, delimiter)
+        {
+            var units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+            for (var i = 0; size >= 1024 && i < 6; i++)
+                size /= 1024;
+            return size.toFixed(2) + delimiter + units[i];
+        }
 
         /**
          * 表格初始化
@@ -185,6 +204,7 @@
          * */
         weTable.api.bindevent();
     });
+
 </script>
 </body>
 </html>
