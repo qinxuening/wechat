@@ -219,6 +219,12 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     }
                 }
             });
+        },
+        format_bytes:function (size, delimiter) {
+            var units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+            for (var i = 0; size >= 1024 && i < 6; i++)
+                size /= 1024;
+            return size.toFixed(2) + delimiter + units[i];
         }
     };
     we.init();

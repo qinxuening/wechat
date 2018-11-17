@@ -44,15 +44,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="106" lean-forward="false" selection-start-line="18" selection-start-column="106" selection-end-line="18" selection-end-column="106" />
+            <state relative-caret-position="459">
+              <caret line="122" column="43" lean-forward="true" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <marker date="1542448707658" expanded="true" signature="6377:6392" ph="..." />
-                <marker date="1542448707658" expanded="true" signature="6806:6821" ph="..." />
+                <marker date="1542449500764" expanded="true" signature="6328:6343" ph="..." />
+                <marker date="1542449500764" expanded="true" signature="6757:6772" ph="..." />
               </folding>
             </state>
           </provider>
@@ -100,12 +100,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="we.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="we.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2226">
-              <caret line="111" column="12" lean-forward="false" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="339">
+              <caret line="222" column="8" lean-forward="false" selection-start-line="222" selection-start-column="8" selection-end-line="222" selection-end-column="8" />
+              <folding>
+                <element signature="e#718#4340#0" expanded="false" />
+                <element signature="e#4355#7983#0" expanded="false" />
+                <element signature="e#8011#8652#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,7 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>toolbar</find>
       <find>tool</find>
       <find>action</find>
       <find>layui-nav-more</find>
@@ -183,6 +186,7 @@
       <find>大小</find>
       <find>demoList</find>
       <find>xhr</find>
+      <find>上传失败</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -232,7 +236,6 @@
         <option value="$PROJECT_DIR$/application/admin/view/index/login.html" />
         <option value="$PROJECT_DIR$/application/admin/view/dashboard/detail.html" />
         <option value="$PROJECT_DIR$/public/static/style/admin.css" />
-        <option value="$PROJECT_DIR$/public/static/modules/we.js" />
         <option value="$PROJECT_DIR$/application/admin/view/common/script.html" />
         <option value="$PROJECT_DIR$/public/static/modules/weTreeGrid.js" />
         <option value="$PROJECT_DIR$/public/static/modules/formSearch.js" />
@@ -241,6 +244,7 @@
         <option value="$PROJECT_DIR$/application/admin/view/auth/admin/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/push/index.html" />
         <option value="$PROJECT_DIR$/public/static/layui/lay/modules/upload.js" />
+        <option value="$PROJECT_DIR$/public/static/modules/we.js" />
         <option value="$PROJECT_DIR$/application/admin/view/order/index.html" />
       </list>
     </option>
@@ -571,15 +575,15 @@
       <workItem from="1542088459650" duration="794000" />
       <workItem from="1542252797664" duration="2150000" />
       <workItem from="1542349589076" duration="3509000" />
-      <workItem from="1542439314734" duration="8291000" />
+      <workItem from="1542439314734" duration="9048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="540252000" />
+    <option name="totallyTimeSpent" value="541009000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10437235" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -936,26 +940,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/formValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2226">
-          <caret line="111" column="12" lean-forward="false" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/push/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/formValidator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -972,12 +968,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="106" lean-forward="false" selection-start-line="18" selection-start-column="106" selection-end-line="18" selection-end-column="106" />
+        <state relative-caret-position="459">
+          <caret line="122" column="43" lean-forward="true" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1542448707658" expanded="true" signature="6377:6392" ph="..." />
-            <marker date="1542448707658" expanded="true" signature="6806:6821" ph="..." />
+            <marker date="1542449500764" expanded="true" signature="6328:6343" ph="..." />
+            <marker date="1542449500764" expanded="true" signature="6757:6772" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="222" column="8" lean-forward="false" selection-start-line="222" selection-start-column="8" selection-end-line="222" selection-end-column="8" />
+          <folding>
+            <element signature="e#718#4340#0" expanded="false" />
+            <element signature="e#4355#7983#0" expanded="false" />
+            <element signature="e#8011#8652#0" expanded="false" />
           </folding>
         </state>
       </provider>

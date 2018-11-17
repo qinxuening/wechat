@@ -17,7 +17,7 @@
                             <i class="layui-icon">&#xe654;</i>添加文件
                         </button>
                         <button type="button"  class="layui-btn upload-btn layui-btn-disabled layui-btn-sm" id="testListAction"><i class="layui-icon">&#xe67c;</i>开始上传</button>
-                        <div class="layui-progress layui-progress-big" style="margin: 10px 0;" lay-showPercent="yes" lay-filter="progressBar">
+                        <div class="layui-progress layui-progress-big" style="margin: 10px 0;display: none" id="progressBar" lay-showPercent="yes" lay-filter="progressBar">
                             <div class="layui-progress-bar" lay-percent="0%"></div>
                         </div>
                         <div class="layui-upload-list">
@@ -107,7 +107,6 @@
 
             }
             ,progress: function(e , percent) {
-//                console.log("进度：" + percent + '%');
                 element.progress('progressBar',percent  + '%');
             }
             ,accept: 'file' //允许上传的文件类型
@@ -121,8 +120,7 @@
                 obj.preview(function(index, file, result){
                     var tr = $(['<tr id="upload-'+ index +'">'
                         ,'<td>'+ file.name +'</td>'
-//                        ,'<td>'+ (file.size/1014).toFixed(1) +'kb</td>'
-                        ,'<td>'+ format_bytes(file.size,'') +'</td>'
+                        ,'<td>'+ we.format_bytes(file.size,'') +'</td>'
                         ,'<td>等待上传</td>'
                         ,'<td>'
                         ,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
@@ -144,6 +142,7 @@
 
                     demoListView.append(tr);
                     element.progress('progressBar', '0%');
+                    $("#progressBar").show();
                     $(".upload-btn").removeClass('layui-btn-disabled');
                 });
             }
@@ -172,13 +171,13 @@
             layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
         });
 
-        function format_bytes(size, delimiter)
-        {
-            var units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
-            for (var i = 0; size >= 1024 && i < 6; i++)
-                size /= 1024;
-            return size.toFixed(2) + delimiter + units[i];
-        }
+//        function format_bytes(size, delimiter)
+//        {
+//            var units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+//            for (var i = 0; size >= 1024 && i < 6; i++)
+//                size /= 1024;
+//            return size.toFixed(2) + delimiter + units[i];
+//        }
 
         /**
          * 表格初始化
