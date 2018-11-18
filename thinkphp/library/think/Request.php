@@ -132,7 +132,7 @@ class Request
      * @access protected
      * @param array $options 参数
      */
-    protected function __construct($options = [])
+    protected function __construct($options = []) 
     {
         foreach ($options as $name => $item) {
             if (property_exists($this, $name)) {
