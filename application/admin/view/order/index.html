@@ -148,11 +148,13 @@
             }
             ,done: function(res, index, upload){
                 console.log(res);
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
                 if(res.status == 'success'){ //上传成功
-                    var tr = demoListView.find('tr#upload-'+ index)
-                        ,tds = tr.children();
                     tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
                     return delete this.files[index]; //删除文件队列已经上传成功的文件
+                } else {
+                    tds.eq(2).html('<span style="color: #FF5722;">'+res.msg+'</span>');
                 }
                 this.error(index, upload);
             }
@@ -160,7 +162,7 @@
                 element.progress('progressBar', '0%');
                 var tr = demoListView.find('tr#upload-'+ index)
                     ,tds = tr.children();
-                tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+//                tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
                 tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
             }
         });
