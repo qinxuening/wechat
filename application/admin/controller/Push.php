@@ -123,6 +123,9 @@ class Push extends baseAdmin{
      * 导入数据
      */
     public function import(){
+        set_time_limit ( 0 ); // 脚本执行没有时间限
+        ini_set("memory_limit","-1");
+        ini_set('max_execution_time', '0');
         if (IS_AJAX) {
             $filepath = input('filepath');
             $data = import_excel($filepath, 0);

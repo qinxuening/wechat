@@ -144,7 +144,7 @@
                 data: {'filepath':$("#filepath").val()},
                 async:false,
                 success: function (ret) {
-                    var html = '<table class="layui-table" lay-size="sm"><thead><tr><th>成功条数</th> <th>失败条数</th></tr></thead>';
+                    var html = '<table class="layui-table" lay-size="sm"><thead><tr><th>导入成功条数</th> <th>导入失败条数</th></tr></thead>';
                     if (ret.status == 'success') {
                         html += '<tr><td>'+ret.data[0]+'</td><td>'+ret.data[1]+'</td></tr></tbody></table>';
                         $("#import_result").html(html);

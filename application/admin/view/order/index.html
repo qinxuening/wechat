@@ -9,37 +9,37 @@
                     <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>
                 </div>
             </div>
-
-            <div class="layui-card">
-                <div class="layui-card-body">
-                    <div class="layui-upload">
-                        <button type="button" class="layui-btn layui-btn-sm" id="upload">
-                            <i class="layui-icon">&#xe654;</i>添加文件
-                        </button>
-                        <button type="button"  class="layui-btn upload-btn layui-btn-disabled layui-btn-sm" id="testListAction"><i class="layui-icon">&#xe67c;</i>开始上传</button>
-                        <div class="layui-progress layui-progress-big" style="margin: 10px 0;display: none" id="progressBar" lay-showPercent="yes" lay-filter="progressBar">
-                            <div class="layui-progress-bar" lay-percent="0%"></div>
-                        </div>
-                        <div class="layui-upload-list">
-                            <table class="layui-table">
-                                <thead>
-                                <tr><th>文件名</th>
-                                    <th>大小</th>
-                                    <th>状态</th>
-                                    <th>操作</th>
-                                </tr></thead>
-                                <tbody id="demoList"></tbody>
-                            </table>
-                        </div>
+            <!--
+                        <div class="layui-card">
+                            <div class="layui-card-body">
+                                <div class="layui-upload">
+                                    <button type="button" class="layui-btn layui-btn-sm" id="upload">
+                                        <i class="layui-icon">&#xe654;</i>添加文件
+                                    </button>
+                                    <button type="button"  class="layui-btn upload-btn layui-btn-disabled layui-btn-sm" id="testListAction"><i class="layui-icon">&#xe67c;</i>开始上传</button>
+                                    <div class="layui-progress layui-progress-big" style="margin: 10px 0;display: none" id="progressBar" lay-showPercent="yes" lay-filter="progressBar">
+                                        <div class="layui-progress-bar" lay-percent="0%"></div>
+                                    </div>
+                                    <div class="layui-upload-list">
+                                        <table class="layui-table">
+                                            <thead>
+                                            <tr><th>文件名</th>
+                                                <th>大小</th>
+                                                <th>状态</th>
+                                                <th>操作</th>
+                                            </tr></thead>
+                                            <tbody id="demoList"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-</div>
+            </div>
 
-<!--头工具栏-->
+            <!--头工具栏-->
 {:build_toolbar('toolbar',['refresh', 'add', 'del'])}
 <!--头工具栏-->
 
