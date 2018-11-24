@@ -292,8 +292,12 @@ class baseAdmin extends Controller{
         return [$where, $sort, $order, $offset, $limit];
     }
     
-    
-    
+    /**
+     * 导入数据
+     */
+    public function import() {
+        return $this->view->fetch();
+    }
     
     
     

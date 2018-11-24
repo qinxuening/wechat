@@ -15,7 +15,7 @@
 </div>
 
 <!--头工具栏-->
-{:build_toolbar('toolbar',['refresh', 'add', 'del', 'import'])}
+{:build_toolbar('toolbar',['refresh', 'add', 'del','export', 'import'])}
 <!--头工具栏-->
 
 <!--状态-->
@@ -92,6 +92,8 @@
                 "add_url": "{:url('admin/push/edit','',false)}",
                 "edit_url": "{:url('admin/push/edit','',false)}/ids/",
                 "del_url": "{:url('admin/push/del','',false)}",
+                "export_url": "{:url('admin/push/index','',false)}",
+                "import_url" :  "{:url('admin/push/import','',false)}",
             }
         });
 

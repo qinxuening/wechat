@@ -543,8 +543,8 @@ if(!function_exists('import_excel')) {
                     $val = (string) $currentSheet->getCellByColumnAndRow($currentColumn, $currentRow)->getValue();
                     //$val = str_replace("\n", "", trim($val));
                     // $val = preg_replace("/(\s|\&nbsp\;|　|\xc2\xa0)/","",$val);#/[\s|　]+/
-                    $val = htmlentities($val);
-                    $val = str_replace(" ", "", trim($val));
+                    $val = htmlentities(trim($val));
+//                     $val = str_replace(" ", "", trim($val));
                     
                     if ($val != '' || $val == 0) {
                         $column = PHPExcel_Cell::stringFromColumnIndex($currentColumn);

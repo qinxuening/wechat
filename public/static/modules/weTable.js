@@ -125,7 +125,8 @@ layui.define(['jquery','we','toastr'], function(exports){
                            // toastr.warning('功能正在完善');
                            break;
                        case 'import':
-                           toastr.warning('功能正在完善');
+                           we.api.open(weTable.defaults.extend.import_url,'导入');
+                           // toastr.warning('功能正在完善');
                            break;
                    };
                });
