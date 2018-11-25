@@ -1582,9 +1582,11 @@ tr>td.tdright {
     text-align: left;
     background: #ffffff !important;
     vertical-align: middle;
+    /*display: inline-block;*/
+    /*position: relative;*/
 }
 tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-textarea {
-    width: 220px;
+    width: 320px;
     background: #f4f6b4;
 }
 
