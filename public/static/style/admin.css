@@ -702,7 +702,7 @@ html {
 
 .layui-card .layui-tab-brief .layui-tab-title {
     height: 42px;
-    border-bottom-color: #f6f6f6
+    /*border-bottom-color: #f6f6f6*/
 }
 
 .layui-card .layui-tab-brief .layui-tab-title li {
@@ -1406,6 +1406,25 @@ body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
     overflow-y: hidden;
 }
 
+
+.footer-form {
+    border-top: 1px solid #d8d8d8;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    line-height: 40px;
+    padding: 5px 20px 5px 40px;
+    /*background-color: #ffffff;*/
+    background:#eaeaea url(./images/btn_wrap.png) repeat-x;
+    z-index: 1;
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.footer-form .layui-btn,.footer .layui-btn{
+    padding: 0px 40px;
+}
 .footer-form {
     margin-top: 60px;
 }
@@ -1542,7 +1561,13 @@ body .layui-layer-we{
     padding: 2px !important;
 }
 
-
+.layui-field-title {
+    margin: 0px 10px;
+}
+.layui-field-title>legend{
+    position: relative;
+    padding: 10px 10px 0px 10px;
+}
 
 
 
