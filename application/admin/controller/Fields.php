@@ -16,7 +16,7 @@ class Fields extends baseAdmin{
         parent::_initialize();
     }
     
-    public function index($page = 0, $limit = 20) {
+    public function index($page = 0, $limit = 15) {
         if ($this->request->isAjax())
         {
             $count = Db::name('fields')->count('*');
@@ -51,8 +51,19 @@ class Fields extends baseAdmin{
     }
     
     
+    /**
+     * 添加字段
+     */
+    public function add() {
+        return $this->view->fetch();
+    }
     
-    
+    /**
+     * 删除
+     */
+    public function del() {
+        return $this->view->fetch();
+    }
     
     
     

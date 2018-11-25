@@ -148,13 +148,13 @@
                 ,{field:'fields_id', title: 'ID', sort: true}
                 ,{field:'title', title: '表单名称'}
                 ,{field:'form_type', title: '表单类型'}
-                ,{field:'identifier', title: '字段标识', sort: true}
+                ,{field:'identifier', title: '字段标识', sort: true, minWidth: 150}
                 ,{field:'field_type', title: '字段类型',sort: true}
                 ,{field:'default_value', title: '默认值',sort: true}
                 ,{field:'sort', title: '排序',sort: true}
-                ,{field:'addition', title: '所属表名',sort: true}
+                ,{field:'addition', title: '所属表名',sort: true, minWidth: 200}
                 ,{field:'field_length', title: '字段长度'}
-                ,{align: 'center', title:'操作', toolbar: '#actionbar', width:220}
+                ,{align: 'center', title:'操作', toolbar: '#actionbar', width:200}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
@@ -194,7 +194,6 @@
             extend : {
                 "add_url": "{:url('admin/fields/add','',false)}",
                 "edit_url": "{:url('admin/fields/edit','',false)}/ids/",
-                "view_url": "{:url('admin/fields/view','',false)}/ids",
                 "del_url": "{:url('admin/fields/del','',false)}",
                 "export_url" : "{:url('admin/fields/index','',false)}"
             }

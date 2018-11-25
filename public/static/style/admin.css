@@ -1569,9 +1569,24 @@ body .layui-layer-we{
     padding: 10px 10px 0px 10px;
 }
 
+tr>td.tdleft {
+    text-align: right;
+    background-color: #EEEEEE;
+}
 
+tr>td.tdleft .tips{
+    color: red;
+}
 
-
+tr>td.tdright {
+    text-align: left;
+    background: #ffffff !important;
+    vertical-align: middle;
+}
+tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-textarea {
+    width: 220px;
+    background: #f4f6b4;
+}
 
 
 
