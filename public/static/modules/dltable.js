@@ -620,12 +620,12 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
                             }
                             return '';
                         }()
-                        ,'<th data-field="{{ item2.field||i2 }}" {{# if(item2.minWidth){ }}data-minwidth="{{item2.minWidth}}"{{# } }} '+ rowCols +' {{# if(item2.unresize){ }}data-unresize="true"{{# } }}>'
+                        ,'<th data-fields="{{ item2.fields||i2 }}" {{# if(item2.minWidth){ }}data-minwidth="{{item2.minWidth}}"{{# } }} '+ rowCols +' {{# if(item2.unresize){ }}data-unresize="true"{{# } }}>'
                         ,'<div class="layui-table-cell laytable-cell-'
                         ,'{{# if(item2.colspan > 1){ }}'
                         ,'group'
                         ,'{{# } else { }}'
-                        ,'{{d.index}}-{{item2.field || i2}}'
+                        ,'{{d.index}}-{{item2.fields || i2}}'
                         ,'{{# if(item2.type !== "normal"){ }}'
                         ,' laytable-cell-{{ item2.type }}'
                         ,'{{# } }}'
@@ -710,7 +710,7 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
             /*,'<style>'
             ,'{{# layui.each(d.data.cols, function(i1, item1){'
             ,'layui.each(item1, function(i2, item2){ }}'
-            ,'.laytable-cell-{{d.index}}-{{item2.field||i2}}{ '
+            ,'.laytable-cell-{{d.index}}-{{item2.fields||i2}}{ '
             ,'{{# if(item2.width){ }}'
             ,'width: {{item2.width}}px;'
             ,'{{# } }}'
@@ -1268,7 +1268,7 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
             ,m=options.elem
             ,hasRender = m.next('.' + ELEM_VIEW);
         var temhtml=that.treeConvertShowName(o);
-        var temdiv=that.layBody.find('tr[data-index="'+ o[table.config.indexName] +'"]').find('td[data-field='+options[TREE_SHOW_NAME]+']').find('.layui-table-cell');
+        var temdiv=that.layBody.find('tr[data-index="'+ o[table.config.indexName] +'"]').find('td[data-fields='+options[TREE_SHOW_NAME]+']').find('.layui-table-cell');
         $(temdiv).find('div').remove();
         $(temdiv).prepend(temhtml);
     }
@@ -1338,7 +1338,7 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
             }
         }
         //td内容
-        var td = ['<td data-field="'+ field +'" '+ function(){
+        var td = ['<td data-fields="'+ field +'" '+ function(){
             var attr = [];
             if(cols.edit) attr.push('data-edit="'+ cols.edit +'"'); //是否允许单元格编辑
             if(cols.align) attr.push('align="'+ cols.align +'"'); //对齐方式
@@ -1544,7 +1544,7 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
                 var rowCols=item2.colspan?'colspan="'+item2.colspan+'"':'';
                 var rowspan=item2.rowspan?'rowspan="'+item2.rowspan+'"':'';
                 var unresize=item2.unresize?'data-unresize="true"':'';
-                v.push('<th data-field="'+field+'"'+minW+rowCols+rowspan +unresize+'>');
+                v.push('<th data-fields="'+field+'"'+minW+rowCols+rowspan +unresize+'>');
                 v.push('<div class="layui-table-cell laytable-cell-'+function () {
                     var tem="";
                     if (item2.colspan > 1) {
@@ -1617,7 +1617,7 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
             elemSort.attr('lay-sort', type || null);
             that.layFixed.find('th')
         } catch(e){
-            return hint.error('Table modules: Did not match to field');
+            return hint.error('Table modules: Did not match to fields');
         }
 
         //记录排序索引和类型
@@ -2114,7 +2114,7 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
                     fields = fields || {};
                     layui.each(fields, function(key, value){
                         if(key in data){
-                            var templet, td = tr.children('td[data-field="'+ key +'"]');
+                            var templet, td = tr.children('td[data-fields="'+ key +'"]');
                             data[key] = value;
                             that.eachCols(function(i, item2){
                                 if(item2.field == key && item2.templet){

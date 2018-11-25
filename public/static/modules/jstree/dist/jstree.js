@@ -4459,7 +4459,7 @@
 			this.trigger('clear_buffer');
 		},
 		/**
-		 * put a node in edit mode (input field to rename the node)
+		 * put a node in edit mode (input fields to rename the node)
 		 * @name edit(obj [, default_text, callback])
 		 * @param  {mixed} obj
 		 * @param  {String} default_text the text to populate the input with (if omitted or set to a non-string value the node's text value is used)

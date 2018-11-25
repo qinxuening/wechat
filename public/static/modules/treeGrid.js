@@ -757,12 +757,12 @@ layui.config({
                     }
                     return '';
                 }()
-                ,'<th data-field="{{ item2.field||i2 }}" {{# if(item2.minWidth){ }}data-minwidth="{{item2.minWidth}}"{{# } }} '+ rowCols +' {{# if(item2.unresize){ }}data-unresize="true"{{# } }}>'
+                ,'<th data-fields="{{ item2.fields||i2 }}" {{# if(item2.minWidth){ }}data-minwidth="{{item2.minWidth}}"{{# } }} '+ rowCols +' {{# if(item2.unresize){ }}data-unresize="true"{{# } }}>'
                 ,'<div class="layui-table-cell laytable-cell-'
                 ,'{{# if(item2.colspan > 1){ }}'
                 ,'group'
                 ,'{{# } else { }}'
-                ,'{{d.index}}-{{item2.field || i2}}'
+                ,'{{d.index}}-{{item2.fields || i2}}'
                 ,'{{# if(item2.type !== "normal"){ }}'
                 ,' laytable-cell-{{ item2.type }}'
                 ,'{{# } }}'
@@ -847,7 +847,7 @@ layui.config({
             /*,'<style>'
             ,'{{# layui.each(d.data.cols, function(i1, item1){'
             ,'layui.each(item1, function(i2, item2){ }}'
-            ,'.laytable-cell-{{d.index}}-{{item2.field||i2}}{ '
+            ,'.laytable-cell-{{d.index}}-{{item2.fields||i2}}{ '
             ,'{{# if(item2.width){ }}'
             ,'width: {{item2.width}}px;'
             ,'{{# } }}'
@@ -972,7 +972,7 @@ layui.config({
             );
         }
 
-        that.layHeader.find(".layui-table thead tr").append('<th data-field="_swth" style="display: none"><div class="layui-table-cell" align="center"></div></th>');
+        that.layHeader.find(".layui-table thead tr").append('<th data-fields="_swth" style="display: none"><div class="layui-table-cell" align="center"></div></th>');
 
         //请求数据
         that.pullData(that.page,that.loading());
@@ -1453,7 +1453,7 @@ layui.config({
             if(isHtml){
                 return temTreeHtml;
             }else{
-                var temdiv=that.layBody.find('tr[data-index="'+ o[table.config.indexName] +'"]').find('td[data-field='+options[TREE_SHOW_NAME]+']').find('.layui-table-cell');
+                var temdiv=that.layBody.find('tr[data-index="'+ o[table.config.indexName] +'"]').find('td[data-fields='+options[TREE_SHOW_NAME]+']').find('.layui-table-cell');
                 $(temdiv).find('div .layui-tree-'+o[options.idField]).remove();//节点附加div
                 $(temdiv).find('div').append(temTreeHtml);
             }
@@ -1530,8 +1530,8 @@ layui.config({
      * 获取过滤条件
      * filterRules:
      * [
-     * {"field":"XXXX","op":"equals","value":["1"],"datatype":"array"}
-     * ,{"field":"XXXX","op":"contains","value":"3","datatype":"string"}
+     * {"fields":"XXXX","op":"equals","value":["1"],"datatype":"array"}
+     * ,{"fields":"XXXX","op":"contains","value":"3","datatype":"string"}
      * ]
      */
     Class.prototype.filterRules=function () {
@@ -1599,7 +1599,7 @@ layui.config({
             ,m=options.elem
             ,hasRender = m.next('.' + ELEM_VIEW);
         var temhtml=that.treeConvertShowName(o);
-        var temdiv=that.layBody.find('tr[data-index="'+ o[table.config.indexName] +'"]').find('td[data-field='+options[TREE_SHOW_NAME]+']').find('.layui-table-cell');
+        var temdiv=that.layBody.find('tr[data-index="'+ o[table.config.indexName] +'"]').find('td[data-fields='+options[TREE_SHOW_NAME]+']').find('.layui-table-cell');
         $(temdiv).find('div').remove();
         $(temdiv).prepend(temhtml);
     }
@@ -1687,7 +1687,7 @@ layui.config({
             }
         }
         //td内容
-        var td = ['<td data-field="'+ field +'" '+ function(){
+        var td = ['<td data-fields="'+ field +'" '+ function(){
             var attr = [];
             if(cols.edit) attr.push('data-edit="'+ cols.edit +'"'); //是否允许单元格编辑
             if(cols.align) attr.push('align="'+ cols.align +'"'); //对齐方式
@@ -1889,7 +1889,7 @@ layui.config({
                 var rowCols=item2.colspan?'colspan="'+item2.colspan+'"':'';
                 var rowspan=item2.rowspan?'rowspan="'+item2.rowspan+'"':'';
                 var unresize=item2.unresize?'data-unresize="true"':'';
-                v.push('<th data-field="'+field+'"'+minW+rowCols+rowspan +unresize+'>');
+                v.push('<th data-fields="'+field+'"'+minW+rowCols+rowspan +unresize+'>');
                 v.push('<div class="layui-table-cell laytable-cell-'+function () {
                     var tem="";
                     if (item2.colspan > 1) {
@@ -1983,16 +1983,16 @@ layui.config({
             elemSort.attr('lay-sort', type || null);
             that.layFixed.find('th')
         } catch(e){
-            return hint.error('Table modules: Did not match to field');
+            return hint.error('Table modules: Did not match to fields');
         }
        /* //记录排序索引和类型
         that.sortKey = {
-            field: field
+            fields: fields
             ,sort: type
         };
         if(type === 'asc'){ //升序
         } else if(type === 'desc'){ //降序
-            thisData = layui.sort(data, field, true);
+            thisData = layui.sort(data, fields, true);
         } else { //清除排序
             thisData = layui.sort(data, table.config.indexName);
         }
@@ -2228,9 +2228,9 @@ layui.config({
         //是否存在滚动条
         var sw=that.getScrollWidth(that.layMain[0]);
         if(sw){
-            that.layHeader.find(".layui-table thead tr th[data-field=_swth]").show();
+            that.layHeader.find(".layui-table thead tr th[data-fields=_swth]").show();
         }else{
-            that.layHeader.find(".layui-table thead tr th[data-field=_swth]").hide();
+            that.layHeader.find(".layui-table thead tr th[data-fields=_swth]").hide();
         }
     };
     //获取滚动条宽度
@@ -2655,7 +2655,7 @@ layui.config({
                     fields = fields || {};
                     layui.each(fields, function(key, value){
                         if(key in data){
-                            var templet, td = tr.children('td[data-field="'+ key +'"]');
+                            var templet, td = tr.children('td[data-fields="'+ key +'"]');
                             data[key] = value;
                             that.eachCols(function(i, item2){
                                 if(item2.field == key && item2.templet){

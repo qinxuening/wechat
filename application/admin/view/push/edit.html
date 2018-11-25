@@ -19,11 +19,9 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <div class="layui-inline">
                 <label class="layui-form-label">是否定时推送</label>
-                <div class="layui-input-inline">
+                <div class="layui-input-block">
                     <input type="checkbox" name="is_time_push" lay-skin="switch" lay-text="是|否"  {$list['is_time_push'] == 1? 'checked' : ''}>
-                </div>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -49,8 +47,8 @@
 
             <div class="layui-form-item footer-form">
                 <div class="footer">
-                    <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn btn-success btn-embossed disabled">{:__('OK')}</button>
-                    <button type="reset" class="layui-btn layui-btn-primary btn-embossed">{:__('Reset')}</button>
+                    <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+                    <button type="reset" class="layui-btn layui-btn-sm btn-embossed">{:__('Reset')}</button>
                 </div>
             </div>
         </form>
@@ -111,8 +109,8 @@
 //                    name:"required;email",
 //                },
 //                valid: function(form){
-//                    var formData = JSON.stringify(data.field);
-//                    we.api.ajax({"url":"{:url('admin/auth.rule/edit','',false)}","data":data.field,'tableid':'tableReload'});
+//                    var formData = JSON.stringify(data.fields);
+//                    we.api.ajax({"url":"{:url('admin/auth.rule/edit','',false)}","data":data.fields,'tableid':'tableReload'});
 //                }
 //            });
 //

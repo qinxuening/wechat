@@ -119,17 +119,17 @@ layui.define(["jquery"], function (exports) {
         timely        {Number}      1               Whether to enable timely validation
         theme         {String}     'default'        Theme name
         stopOnError   {Boolean}     false           Whether to stop validate when found an error input
-        focusCleanup  {Boolean}     false           Whether to clean up the field message when focus the field
-        focusInvalid  {Boolean}     true            Whether to focus the field that is invalid
-        ignoreBlank   {Boolean}     false           When the field has no value, whether to ignore validation
+        focusCleanup  {Boolean}     false           Whether to clean up the fields message when focus the fields
+        focusInvalid  {Boolean}     true            Whether to focus the fields that is invalid
+        ignoreBlank   {Boolean}     false           When the fields has no value, whether to ignore validation
         ignore        {jqSelector}    ''            Ignored fields (Using jQuery selector)
 
         beforeSubmit  {Function}                    Do something before submit form
         dataFilter    {Function}                    Convert ajax results
         valid         {Function}                    Triggered when the form is valid
         invalid       {Function}                    Triggered when the form is invalid
-        validClass    {String}      'n-valid'       Add this class name to a valid field
-        invalidClass  {String}      'n-invalid'     Add this class name to a invalid field
+        validClass    {String}      'n-valid'       Add this class name to a valid fields
+        invalidClass  {String}      'n-invalid'     Add this class name to a invalid fields
         bindClassTo   {jqSelector}  ':verifiable'   Which element should the className binding to
 
         display       {Function}                    Callback function to get dynamic display
@@ -160,9 +160,9 @@ layui.define(["jquery"], function (exports) {
         fields[key][msgWrapper] {String}            Tag name of the message placeholder element
         fields[key][msgMaker]   {Function}          A function to custom message HTML
         fields[key][dataFilter] {Function}          A function to convert ajax results
-        fields[key][valid]      {Function}          A function triggered when field is valid
-        fields[key][invalid]    {Function}          A function triggered when field is invalid
-        fields[key][must]       {Boolean}           If set true, we always check the field even has remote checking
+        fields[key][valid]      {Function}          A function triggered when fields is valid
+        fields[key][invalid]    {Function}          A function triggered when fields is invalid
+        fields[key][must]       {Boolean}           If set true, we always check the fields even has remote checking
         fields[key][timely]     {Boolean}           Whether to enable timely validation
         fields[key][target]     {jqSelector}        Define placement of a message
      */
@@ -195,7 +195,7 @@ layui.define(["jquery"], function (exports) {
     };
 
 
-    // Validate a field, or an area
+    // Validate a fields, or an area
     $.fn.isValid = function(callback, hideMsg) {
         var me = _getInstance(this[0]),
             hasCallback = isFunction(callback),
@@ -359,7 +359,7 @@ layui.define(["jquery"], function (exports) {
             var me = this, k, arr, i,
                 clear = fields === null;
 
-            // Processing field information
+            // Processing fields information
             if (clear) fields = me.fields;
 
             if ( isObject(fields) ) {
@@ -382,7 +382,7 @@ layui.define(["jquery"], function (exports) {
             });
 
             function initField(k, v) {
-                // delete a field from settings
+                // delete a fields from settings
                 if ( v === null || clear ) {
                     var el = me.elements[k];
                     if (el) me._resetElement(el, true);
@@ -393,7 +393,7 @@ layui.define(["jquery"], function (exports) {
             }
         },
 
-        // Parsing a field
+        // Parsing a fields
         _parse: function(el) {
             var me = this,
                 field,
@@ -404,7 +404,7 @@ layui.define(["jquery"], function (exports) {
 
             dataRule && attr(el, DATA_RULE, null);
 
-            // If the field has passed the key as id mode, or it doesn't has a name
+            // If the fields has passed the key as id mode, or it doesn't has a name
             if ( el.id && (
                 ('#' + el.id in me.fields) ||
                 !key ||
@@ -451,7 +451,7 @@ layui.define(["jquery"], function (exports) {
             return me.fields[key] = field;
         },
 
-        // Parsing field rules
+        // Parsing fields rules
         _parseRule: function(field) {
             var arr = rDisplay.exec(field.rule);
 
@@ -665,7 +665,7 @@ layui.define(["jquery"], function (exports) {
 
             // For checkbox and radio
             elem = el.name && _checkable(el) ? me.$el.find('input[name="'+ el.name +'"]').get(0) : el;
-            // Get field
+            // Get fields
             if (!(field = me.getField(elem)) || !field.rule) {
                 return;
             }
@@ -681,7 +681,7 @@ layui.define(["jquery"], function (exports) {
 
                 value = field.getValue();
 
-                // not validate field unless fill a value
+                // not validate fields unless fill a value
                 if ( field.ignoreBlank && !value && !focusin ) {
                     me.hideMsg(el);
                     return;
@@ -747,7 +747,7 @@ layui.define(["jquery"], function (exports) {
                 }
             }
 
-            // if the current field is ignored
+            // if the current fields is ignored
             if ( opt.ignore && $(el).is(opt.ignore) ) {
                 return;
             }
@@ -802,7 +802,7 @@ layui.define(["jquery"], function (exports) {
             }
         },
 
-        // Validated a field
+        // Validated a fields
         _validatedField: function(el, field, ret) {
             var me = this,
                 opt = me.options,
@@ -870,7 +870,7 @@ layui.define(["jquery"], function (exports) {
                 temp,
                 isValid = false;
 
-            // use null to break validation from a field
+            // use null to break validation from a fields
             if (ret === null) {
                 me._validatedField(el, field, {isValid: true, skip: true});
                 field._i = 0;
@@ -935,7 +935,7 @@ layui.define(["jquery"], function (exports) {
                 if (!isValid || special) {
                     /* rule message priority:
                         1. custom DOM message
-                        2. custom field message;
+                        2. custom fields message;
                         3. global defined message;
                         4. rule returned message;
                         5. default message;
@@ -965,7 +965,7 @@ layui.define(["jquery"], function (exports) {
                 field._i++;
                 me._checkRule(el, field);
             }
-            // field was invalid, or all fields was valid
+            // fields was invalid, or all fields was valid
             else {
                 field._i = 0;
 
@@ -986,7 +986,7 @@ layui.define(["jquery"], function (exports) {
             }
         },
 
-        // Verify a rule form a field
+        // Verify a rule form a fields
         _checkRule: function(el, field) {
             var me = this,
                 ret,
@@ -1022,7 +1022,7 @@ layui.define(["jquery"], function (exports) {
             if (isObject(ret) && isFunction(ret.then)) {
                 me.deferred[key] = ret;
 
-                // whether the field valid is unknown
+                // whether the fields valid is unknown
                 field.isValid = undefined;
 
                 // show loading message
@@ -1087,7 +1087,7 @@ layui.define(["jquery"], function (exports) {
             // Cache the value
             field.value = field.getValue();
 
-            // if the field is not required, and that has a blank value
+            // if the fields is not required, and that has a blank value
             if (!field.required && !field.must && !field.value) {
                 if (!_checkable(el)) {
                     me._validatedField(el, field, {isValid: true});
@@ -1296,11 +1296,11 @@ layui.define(["jquery"], function (exports) {
         },
 
         /**
-         * Get field information
+         * Get fields information
          *
          * @method getField
          * @param {Element} - input element
-         * @return {Object} field
+         * @return {Object} fields
          */
         getField: function(el, must) {
             var me = this,
@@ -1329,7 +1329,7 @@ layui.define(["jquery"], function (exports) {
         },
 
         /**
-         * Config a field
+         * Config a fields
          *
          * @method: setField
          * @param {String} key
@@ -1340,7 +1340,7 @@ layui.define(["jquery"], function (exports) {
 
             if (!key) return;
 
-            // update this field
+            // update this fields
             if (isString(key)) {
                 fields[key] = obj;
             }
@@ -1642,7 +1642,7 @@ layui.define(["jquery"], function (exports) {
         return /^\w+$/.test(name);
     }
 
-    // Translate field key to jQuery selector.
+    // Translate fields key to jQuery selector.
     function _key2selector(key) {
         var isID = key.charAt(0) === "#";
         key = key.replace(/([:.{(|)}/\[\]])/g, "\\$1");
@@ -1686,7 +1686,7 @@ layui.define(["jquery"], function (exports) {
     });
 
     new Messages({
-        fallback: "This field is not valid.",
+        fallback: "This fields is not valid.",
         loading: 'Validating...'
     });
 
@@ -1794,16 +1794,16 @@ layui.define(["jquery"], function (exports) {
         },
 
         /**
-         * match another field
+         * match another fields
          *
          * @example:
-            match[password]    Match the password field (two values ​​must be the same)
+            match[password]    Match the password fields (two values ​​must be the same)
             match[eq, password]  Ditto
-            match[neq, count]  The value must be not equal to the value of the count field
-            match[lt, count]   The value must be less than the value of the count field
-            match[lte, count]  The value must be less than or equal to the value of the count field
-            match[gt, count]   The value must be greater than the value of the count field
-            match[gte, count]  The value must be greater than or equal to the value of the count field
+            match[neq, count]  The value must be not equal to the value of the count fields
+            match[lt, count]   The value must be less than the value of the count fields
+            match[lte, count]  The value must be less than or equal to the value of the count fields
+            match[gt, count]   The value must be greater than the value of the count fields
+            match[gte, count]  The value must be greater than or equal to the value of the count fields
             match[gte, startDate, date]
             match[gte, startTime, time]
          **/
@@ -1825,7 +1825,7 @@ layui.define(["jquery"], function (exports) {
 
             selector2 = _key2selector(key);
             elem2 = me.$el.find(selector2)[0];
-            // If the compared field is not exist
+            // If the compared fields is not exist
             if (!elem2) return;
             field2 = me.getField(elem2);
             a = me.value;
@@ -1854,7 +1854,7 @@ layui.define(["jquery"], function (exports) {
                 }
             }
 
-            // If the compared field is incorrect, we only ensure that this field is correct.
+            // If the compared fields is incorrect, we only ensure that this fields is correct.
             if (type !== "eq" && !isNaN(+a) && isNaN(+b)) {
                 return true;
             }

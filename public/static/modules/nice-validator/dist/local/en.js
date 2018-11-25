@@ -37,7 +37,7 @@
 
         // Default error messages
         messages: {
-            0: "This field",
+            0: "This fields",
             fallback: "{0} is not valid.",
             loading: "Validating...",
             error: "Network Error.",
