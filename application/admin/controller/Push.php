@@ -52,7 +52,7 @@ class Push extends baseAdmin{
                 return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
             }
             
-            return json(['code' => 0, 'count' => $count, 'data' => $list,'msg' => '获取成功']);
+            return json(['code' => 0, 'count' => $count, 'status' => 'success', 'data' => $list,'msg' => '获取成功']);
         }else{
              return $this->view->fetch();
         }

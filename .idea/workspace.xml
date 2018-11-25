@@ -15,24 +15,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3086">
-              <caret line="75" column="117" lean-forward="false" selection-start-line="75" selection-start-column="117" selection-end-line="75" selection-end-column="117" />
+            <state relative-caret-position="-62">
+              <caret line="145" column="21" lean-forward="true" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+            <state relative-caret-position="972">
+              <caret line="105" column="13" lean-forward="false" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
               <folding>
-                <marker date="1543070689408" expanded="true" signature="6687:6702" ph="..." />
-                <marker date="1543070689408" expanded="true" signature="6864:6879" ph="..." />
+                <marker date="1543112750315" expanded="true" signature="6890:6905" ph="..." />
+                <marker date="1543112750315" expanded="true" signature="7067:7082" ph="..." />
               </folding>
             </state>
           </provider>
@@ -51,8 +51,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/push/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="8" column="102" lean-forward="false" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="102" />
+            <state relative-caret-position="162">
+              <caret line="81" column="13" lean-forward="false" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -63,16 +63,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1653">
               <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -101,7 +91,7 @@
       <file leaf-file-name="import.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/widget/import.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3637">
+            <state relative-caret-position="3051">
               <caret line="146" column="106" lean-forward="false" selection-start-line="146" selection-start-column="106" selection-end-line="146" selection-end-column="106" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -221,8 +211,8 @@
         <option value="$PROJECT_DIR$/public/static/modules/weTable.js" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/admin/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/push/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/widget/import.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/push/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/order/index.html" />
       </list>
     </option>
@@ -729,18 +719,18 @@
       <workItem from="1542349589076" duration="3509000" />
       <workItem from="1542439314734" duration="11690000" />
       <workItem from="1542958677495" duration="3157000" />
-      <workItem from="1542985086850" duration="16634000" />
+      <workItem from="1542985086850" duration="18209000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="563442000" />
+    <option name="totallyTimeSpent" value="565017000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.113540195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12200282" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -771,13 +761,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/static/lib/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="109" column="28" lean-forward="true" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/lib/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
@@ -1062,30 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3086">
-          <caret line="75" column="117" lean-forward="false" selection-start-line="75" selection-start-column="117" selection-end-line="75" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="89" column="31" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/push/import.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/weTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2511">
@@ -1102,9 +1061,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/push/import.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/widget/import.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3637">
+        <state relative-caret-position="3051">
           <caret line="146" column="106" lean-forward="false" selection-start-line="146" selection-start-column="106" selection-end-line="146" selection-end-column="106" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -1114,22 +1081,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-575">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/push/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="8" column="102" lean-forward="false" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="102" />
+        <state relative-caret-position="162">
+          <caret line="81" column="13" lean-forward="false" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="972">
+          <caret line="105" column="13" lean-forward="false" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
           <folding>
-            <marker date="1543070689408" expanded="true" signature="6687:6702" ph="..." />
-            <marker date="1543070689408" expanded="true" signature="6864:6879" ph="..." />
+            <marker date="1543112750315" expanded="true" signature="6890:6905" ph="..." />
+            <marker date="1543112750315" expanded="true" signature="7067:7082" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="89" column="31" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="145" column="21" lean-forward="true" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
