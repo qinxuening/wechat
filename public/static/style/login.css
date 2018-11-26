@@ -165,6 +165,11 @@
     opacity: .9
 }
 
+.layui-input, .layui-select, .layui-textarea,.layui-form-label,.layui-input-inline,.xm-input,.xm-select{
+    height: 38px !important;
+    line-height: 38px !important;
+}
+
 @media screen and (max-width: 768px) {
     .layadmin-user-login {
         padding-top: 60px

@@ -4,12 +4,12 @@
 <!--<div class="layui-container lay_top">-->
     <!--layui-card-->
     <!--<div class="layui-row layui-col-space30">-->
-        <!--<div class="layui-col-xs12">-->
+        <div class="body-form">
             <form class="layui-form" action="{:url('admin/auth.admin/add','',false)}" tableid="tableReload" method="post" id="formRule" lay-filter="rule">
                 <table class="layui-table" lay-skin="line" lay-size="sm">
                     <colgroup>
-                        <col class="tdleft" width="20%">
-                        <col class="tdright" width="60%">
+                        <col class="tdleft" width="30%">
+                        <col class="tdright" width="50%">
                         <col>
                     </colgroup>
                     <tbody>
@@ -18,14 +18,67 @@
                         <td class="tdright">
                             <input type="text" name="username" data-rule="required;" lay-verify="username" autocomplete="off" value="" placeholder="" class="layui-input">
                         </td>
-                        <td></td>
+                        <td class="tdright"></td>
                     </tr>
                     <tr>
                         <td class="tdleft">字段标识<span class="tips">*</span></td>
                         <td class="tdright">
                             <input type="text" name="username" data-rule="required;" lay-verify="username" autocomplete="off" value="" placeholder="" class="layui-input">
                         </td>
-                        <td>(注意：字母、数字下划线)</td>
+                        <td class="tdright">(注意：字母、数字下划线)</td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">字段类型<span class="tips">*</span></td>
+                        <td class="tdright">
+                            {:build_select('field_type', $field_type, '', ['class'=>'form-control', 'required'=>''])}
+                            <!--<input type="text" name="username" data-rule="required;" lay-verify="username" autocomplete="off" value="" placeholder="" class="layui-input">-->
+                        </td>
+                        <td class="tdright"></td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">字段长度<span class="tips">*</span></td>
+                        <td class="tdright">
+                            <input type="number" name="field_length" data-rule="required;" lay-verify="number" autocomplete="off" value="" placeholder="" class="layui-input">
+                        </td>
+                        <td class="tdright"></td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">表单名称<span class="tips">*</span></td>
+                        <td class="tdright">
+                            <input type="text" name="title" data-rule="required;" lay-verify="number" autocomplete="off" value="" placeholder="" class="layui-input">
+                        </td>
+                        <td class="tdright"></td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">表单类型<span class="tips">*</span></td>
+                        <td class="tdright">
+                            {:build_select('form_type', $form_type, '', ['class'=>'form-control', 'required'=>''])}
+                        </td>
+                        <td class="tdright"></td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">表单样式</td>
+                        <td class="tdright">
+                            <input type="text" name="form_style" lay-verify="form_style" autocomplete="off" value="" placeholder="" class="layui-input">
+                        </td>
+                        <td class="tdright">不需要加style标签，不超过248个字节</td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">表单属性、校验规则 <br>说明：<br>若选择ajax，则url替换为所需url地址。</td>
+                        <td class="tdright">
+                            <textarea  name="form_rule" lay-verify="form_rule" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
+                        </td>
+                        <td class="tdright">
+                            {:build_select('select_rule', $select_rule, '', ['class'=>'form-control', 'required'=>''])}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">表单脚本 <br>说明：<br>不需要加script标签</td>
+                        <td class="tdright">
+                            <textarea  name="form_script" lay-verify="form_script" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
+                        </td>
+                        <td class="tdright">
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -36,7 +89,7 @@
                     </div>
                 </div>
             </form>
-        <!--</div>-->
+        </div>
     <!--</div>-->
 <!--</div>-->
 {/block}
