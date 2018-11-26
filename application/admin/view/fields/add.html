@@ -38,14 +38,14 @@
                     <tr>
                         <td class="tdleft">字段长度<span class="tips">*</span></td>
                         <td class="tdright">
-                            <input type="number" name="field_length" data-rule="required;" lay-verify="number" autocomplete="off" value="" placeholder="" class="layui-input">
+                            <input type="number" name="field_length" data-rule="required;number"  autocomplete="off" value="" placeholder="" class="layui-input">
                         </td>
                         <td class="tdright"></td>
                     </tr>
                     <tr>
                         <td class="tdleft">表单名称<span class="tips">*</span></td>
                         <td class="tdright">
-                            <input type="text" name="title" data-rule="required;" lay-verify="number" autocomplete="off" value="" placeholder="" class="layui-input">
+                            <input type="text" name="title" data-rule="required;"  autocomplete="off" value="" placeholder="" class="layui-input">
                         </td>
                         <td class="tdright"></td>
                     </tr>
@@ -59,14 +59,14 @@
                     <tr>
                         <td class="tdleft">表单样式</td>
                         <td class="tdright">
-                            <input type="text" name="form_style" lay-verify="form_style" autocomplete="off" value="" placeholder="" class="layui-input">
+                            <input type="text" name="form_style" lay-verify="" autocomplete="off" value="" placeholder="" class="layui-input">
                         </td>
                         <td class="tdright">不需要加style标签，不超过248个字节</td>
                     </tr>
                     <tr>
                         <td class="tdleft">表单属性、校验规则 <br>说明：<br>若选择ajax，则url替换为所需url地址。</td>
                         <td class="tdright">
-                            <textarea  name="form_rule" lay-verify="form_rule" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
+                            <textarea  name="form_rule" lay-verify="" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
                         </td>
                         <td class="tdright">
                             {:build_select('select_rule', $select_rule, '', ['class'=>'form-control', 'required'=>''])}
@@ -75,10 +75,24 @@
                     <tr>
                         <td class="tdleft">表单脚本 <br>说明：<br>不需要加script标签</td>
                         <td class="tdright">
-                            <textarea  name="form_script" lay-verify="form_script" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
+                            <textarea  name="form_script" lay-verify="" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
                         </td>
                         <td class="tdright">
                         </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">表单默认值</td>
+                        <td class="tdright">
+                            <input type="text" name="default_value"  lay-verify="" autocomplete="off" value="" placeholder="" class="layui-input">
+                        </td>
+                        <td class="tdright"></td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">备注信息</td>
+                        <td class="tdright">
+                            <input type="text" name="note"  lay-verify="" autocomplete="off" value="" placeholder="" class="layui-input">
+                        </td>
+                        <td class="tdright"></td>
                     </tr>
                     </tbody>
                 </table>
@@ -86,6 +100,7 @@
                     <div class="footer">
                         <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
                         <button type="reset" class="layui-btn layui-btn-sm btn-embossed">{:__('Reset')}</button>
+                        <button type="reset" class="layui-btn layui-btn-sm btn-embossed go-back" onclick="window.history.go(-1)">返回</button>
                     </div>
                 </div>
             </form>

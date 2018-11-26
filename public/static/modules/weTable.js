@@ -13,6 +13,7 @@ layui.define(['jquery','we','toastr'], function(exports){
        tableid:"",
        tableCommon:"",
        form:"",
+       is_display:false,
        defaults : {
            extend: {
                index_url: '',
@@ -78,7 +79,12 @@ layui.define(['jquery','we','toastr'], function(exports){
 //                    layer.alert(JSON.stringify(data));
                            var url = weTable.defaults.extend.add_url;
                             console.log("----------"+url);
-                           we.api.open(url,'添加');
+                            if(weTable.defaults.is_display == true) {
+                                window.location.href = url;
+                            } else {
+                                we.api.open(url,'添加');
+                            }
+
                            break;
                        case 'del':
                            var data = checkStatus.data;
