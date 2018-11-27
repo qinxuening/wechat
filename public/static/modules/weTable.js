@@ -49,10 +49,18 @@ layui.define(['jquery','we','toastr'], function(exports){
                        });
                    } else if(obj.event === 'view'){
                        var url = weTable.defaults.extend.view_url + data.id;
-                       we.api.open(url,'查看');
+                       if(weTable.defaults.is_display == true) {
+                           window.location.href = url;
+                       } else {
+                           we.api.open(url,'查看');
+                       }
                    } else if(obj.event === 'edit') {
                        var url = weTable.defaults.extend.edit_url + data.id;
-                       we.api.open(url,'编辑');
+                       if(weTable.defaults.is_display == true) {
+                           window.location.href = url;
+                       } else {
+                           we.api.open(url,'编辑');
+                       }
                    } else {
                        var url = $(this).attr('lay-url');
                        if(url) {

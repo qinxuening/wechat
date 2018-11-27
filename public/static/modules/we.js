@@ -228,6 +228,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
         }
     };
     we.init();
+
     //将Layer暴露到全局中去
     window.Layer = layer;
     //将Toastr暴露到全局中去
