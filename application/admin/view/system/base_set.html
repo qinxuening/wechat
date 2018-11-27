@@ -11,10 +11,10 @@
             <!--<div class="layui-card-body">-->
                 <div class="" lay-filter="component-tabs-brief">
                     <ul class="tabpage" id="tabs">
-                        <li class="" id="li1"><a href="#" title="tab1">邮件配置</a></li>
-                        <li class="" id="li2"><a href="#" title="tab2">基础设置</a></li>
-                        <li class="" id="li3"><a href="#" title="tab3">常量配置</a></li>
-                        <li class="" id="li4"><a href="#" title="tab4">其他</a></li>
+                        <li class="" id="li1"><a href="#" class="tab1">邮件配置</a></li>
+                        <li class="" id="li2"><a href="#" class="tab2">基础设置</a></li>
+                        <li class="" id="li3"><a href="#" class="tab3">常量配置</a></li>
+                        <li class="" id="li4"><a href="#" class="tab4">其他</a></li>
                     </ul>
                     <div class="contenttab" id="content">
                         <div class="layui-tab-item" id="tab1">
@@ -120,22 +120,6 @@
         formValidator.api.bindevent($("form#password_strategy"));
         formValidator.api.bindevent($("form#send_emial"));
 
-        $().ready(function() {
-            var urlArr = location.href.split("#");
-            var current = urlArr[1] ? urlArr[1] : "tab1";
-            $("#tabs").find("li[id^=li]").find("a[title="+current+"]").parent().addClass("currenttab");
-            $("#content").find("div[id^=tab]").not("div[id="+urlArr[1]+"]").hide();
-            $("#content").find("div[id="+current+"]").fadeIn();
-            $("#tabs").find("li[id^=li]").find("a").bind("click",function(){
-                var title = $(this).attr("title");
-                location.href = urlArr[0] + "#"+ title;
-                $("#tabs").find("li[id^=li]").not("li[id="+title+"]").removeClass("currenttab");
-                $(this).parent().addClass("currenttab");
-                $("#content").find("div[id^=tab]").not("div[id="+title+"]").hide();
-                $("#content").find("div[id="+title+"]").fadeIn();
-                return false;
-            })
-        });
     });
 </script>
 </body>

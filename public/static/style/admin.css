@@ -534,7 +534,7 @@ html {
 
 .layadmin-pagetabs .layui-tab-title li.layui-this, .layadmin-pagetabs .layui-tab-title li:hover {
     /*background-color: #f6f6f6;*/
-    background: #2F4056;
+    background: #5FB878;
     /*background: #009688;*/
     color: #ffffff;
 }
@@ -1677,14 +1677,14 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
 }
 .tabpage .currenttab a, .tabpage .currenttab a::after {
     /*background: #fff;*/
-    background: #2F4056;
+    background: #5FB878;
     z-index: 3;
     color:#ffffff;
 }
 .contenttab {
     /*background: #fff;
     padding: 2em;*/
-    padding: .5em;
+    padding: .5em 0px;
     /*height: 220px;*/
     position: relative;
     z-index: 2;

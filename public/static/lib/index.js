@@ -13,8 +13,24 @@
             u[0].contentWindow.location.href = a
         }
         i.tabChange(o, a), n.tabsBodyChange(t.index, {url: a, text: d})
-    }, s = "#LAY_app_body", o = "layadmin-layout-tabs", r = layui.$;
-    r(window);
+    }, s = "#LAY_app_body", o = "layadmin-layout-tabs", $ = r = layui.$;
+    $(window);
+    $().ready(function() {
+        var urlArr = location.href.split("#");
+        var current = urlArr[1] ? urlArr[1] : "tab1";
+        $("#tabs").find("li[id^=li]").find("a[class="+current+"]").parent().addClass("currenttab");
+        $("#content").find("div[id^=tab]").not("div[id="+urlArr[1]+"]").hide();
+        $("#content").find("div[id="+current+"]").fadeIn();
+        $("#tabs").find("li[id^=li]").find("a").bind("click",function(){
+            var title = $(this).attr("class");
+            location.href = urlArr[0] + "#"+ title;
+            $("#tabs").find("li[id^=li]").not("li[id="+title+"]").removeClass("currenttab");
+            $(this).parent().addClass("currenttab");
+            $("#content").find("div[id^=tab]").not("div[id="+title+"]").hide();
+            $("#content").find("div[id="+title+"]").fadeIn();
+            return false;
+        })
+    });
     n.screen() < 2 && n.sideFlexible(), layui.config({base: e.base + "modules/"}), layui.each(e.extend, function (a, i) {
         var n = {};
         n[i] = "{/}" + e.base + "lib/extend/" + i, layui.extend(n)
