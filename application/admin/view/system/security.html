@@ -2,106 +2,123 @@
 {block name="content"}
 <body>
 <div class="layui-fluid">
-    <div class="layui-row layui-col-space15">
-        <div class="layui-col-md12 webody">
-        <div class="layui-card">
-            <fieldset class="layui-elem-field layui-field-title">
-                <legend>安全设置</legend>
-            </fieldset>
-            <div class="layui-card-body">
-                <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
-                    <ul class="layui-tab-title">
-                        <li class="layui-this">用户秘密策略</li>
-                        <li class="">防暴力破解</li>
+    <!--<div class="layui-row layui-col-space15">-->
+        <!--<div class="layui-col-md12 webody">-->
+        <!--<div class="layui-card">-->
+            <!--<fieldset class="layui-elem-field layui-field-title">-->
+                <!--<legend>安全设置</legend>-->
+            <!--</fieldset>-->
+            <!--<div class="layui-card-body">-->
+                <div class="" lay-filter="component-tabs-brief">
+                    <ul class="tabpage" id="tabs">
+                        <li class="" id="li1"><a href="#" class="tab1">用户秘密策略</a></li>
+                        <li class="" id="li2"><a href="#" class="tab2">防暴力破解</a></li>
                     </ul>
-                    <div class="layui-tab-content">
-                        <div class="layui-tab-item layui-show">
+                    <div class="contenttab" id="content">
+                        <div class="layui-tab-item" id="tab1">
                             <form class="layui-form" lay-filter="component-form-element" id="password_strategy"  method="POST" action="{:url('System/security',['type' => 1])}">
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">请选择用户秘密策略：</label>
-                                    <div class="layui-input-block">
-                                        {:build_radios('strategy', ['1'=>__('Password strategy1'), '2'=>__('Password strategy2'), '3'=>__('Password strategy3')],$Password_strategy_type['passwd_complexity'])}
-                                    </div>
-                                </div>
-                                <div class="layui-form-item">
-                                    <div class="layui-input-block">
-                                        <div class="footer-form">
-                                            <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="component-form-element">确实</button>
-                                            <button type="reset" class="layui-btn layui-btn-sm">重置</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--<div class="layui-form-item footer-form">-->
-                                    <!--<div class="footer">-->
-                                        <!--<button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn btn-success btn-embossed disabled">{:__('OK')}</button>-->
-                                        <!--<button type="reset" class="layui-btn layui-btn-primary btn-embossed">{:__('Reset')}</button>-->
+                                <table class="layui-table" lay-skin="line" lay-size="sm">
+                                    <colgroup>
+                                        <col class="tdleft" width="20%">
+                                        <col class="tdright">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <td class="tdleft">请选择用户秘密策略：</td>
+                                        <td class="tdright">
+                                            {:build_radios('strategy', ['1'=>__('Password strategy1'), '2'=>__('Password strategy2'), '3'=>__('Password strategy3')],$Password_strategy_type['passwd_complexity'])}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <!--<div class="layui-form-item">-->
+                                    <!--<label class="layui-form-label">请选择用户秘密策略：</label>-->
+                                    <!--<div class="layui-input-block">-->
+                                        <!--{:build_radios('strategy', ['1'=>__('Password strategy1'), '2'=>__('Password strategy2'), '3'=>__('Password strategy3')],$Password_strategy_type['passwd_complexity'])}-->
                                     <!--</div>-->
                                 <!--</div>-->
-                            </form>
-                        </div>
-                        <div class="layui-tab-item">
-                            <form class="layui-form" id="crack" action="{:url('System/security',['type' => 2])}" method="post"  lay-filter="component-form-element" >
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">图形验证码验证：</label>
-                                    <div class="layui-input-block">
-                                        {:build_radios('login_captcha', ['1'=>__('on'),'0'=>__('off')],$login_captcha['login_captcha'])}
+                                <!--<div class="layui-form-item">-->
+                                    <!--<div class="layui-input-block">-->
+                                        <!--<div class="footer footer-common">-->
+                                            <!--<button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="component-form-element">确实</button>-->
+                                            <!--<button type="reset" class="layui-btn layui-btn-sm">重置</button>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="layui-form-item footer-form">
+                                    <div class="footer footer-common">
+                                        <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+                                        <button type="reset" class="layui-btn layui-btn-sm btn-embossed">{:__('Reset')}</button>
                                     </div>
                                 </div>
-                                <div class="layui-form-item">
-                                    <div class="layui-inline">
-                                        <label class="layui-form-label">密码错误次数限制：</label>
-                                        <div class="layui-input-inline">
-                                        {:build_radios('login_limit', ['1'=>__('on'),'0'=>__('off')], $login_limit['login_limit'])}
-                                        </div>
-                                    </div>
+                            </form>
+                        </div>
+                        <div class="layui-tab-item" id="tab2">
+                            <form class="layui-form" id="crack" action="{:url('System/security',['type' => 2])}" method="post"  lay-filter="component-form-element" >
+                                <table class="layui-table" lay-skin="line" lay-size="sm">
+                                    <colgroup>
+                                        <col class="tdleft" width="20%">
+                                        <col class="tdright">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tdleft">图形验证码验证：</td>
+                                            <td class="tdright">
+                                                {:build_radios('login_captcha', ['1'=>__('on'),'0'=>__('off')],$login_captcha['login_captcha'])}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdleft">密码错误次数限制：</td>
+                                            <td class="tdright">
+                                                {:build_radios('login_limit', ['1'=>__('on'),'0'=>__('off')], $login_limit['login_limit'])}
+                                            </td>
+                                        </tr>
                                         {if condition="$login_limit['login_limit'] eq 1"}
-                                    <div class="layui-inline">
-                                         <label class="layui-form-label">用户登录密码错误</label>
-                                        <div class="layui-input-inline">
-                                          <input class="layui-input"  type="text" name="error_count" value="{$login_limit['error_count']}">
-                                        </div>
-                                        <div class="layui-form-mid">次，</div>
-                                    </div>
-                                    <div class="layui-inline">
-                                         <label class="layui-form-label">冻结账号登录</label>
-                                        <div class="layui-input-inline">
-                                          <input class="layui-input"  type="text" name="login_time_limit" value="{$login_limit['login_time_limit']}">
-                                         </div>
-                                         <div class="layui-form-mid">分钟</div>
-                                    </div>
+                                        <tr>
+                                            <td class="tdleft">用户登录密码错误：</td>
+                                            <td class="tdright">
+                                                <input class="layui-input" type="text" name="error_count" value="3">
+                                                次
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdleft">冻结账号登录：</td>
+                                            <td class="tdright">
+                                                <input class="layui-input" type="text" name="login_time_limit" value="10">分钟
+                                            </td>
+                                        </tr>
                                         {else /}
-                                    <div class="layui-inline">
-                                        <label class="layui-form-label">用户登录密码错误</label>
-                                        <div class="layui-input-inline">
-                                            <input class="layui-input" type="text" name="error_count" value="3">
-                                        </div>
-                                        <div class="layui-form-mid">次，</div>
-                                    </div>
-                                    <div class="layui-inline">
-                                        <label class="layui-form-label">冻结账号登录</label>
-                                        <div class="layui-input-inline">
-                                        <input class="layui-input" type="text" name="login_time_limit" value="10">
-                                        </div>
-                                        <div class="layui-form-mid">分钟</div>
-                                    </div>
+                                        <tr>
+                                            <td class="tdleft">用户登录密码错误：</td>
+                                            <td class="tdright">
+                                                <input class="layui-input" type="text" name="error_count" value="{$login_limit['error_count']}">
+                                                次
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdleft">冻结账号登录：</td>
+                                            <td class="tdright">
+                                                <input class="layui-input" type="text" name="login_time_limit" value="{$login_limit['login_time_limit']}">分钟
+                                            </td>
+                                        </tr>
                                         {/if}
-                                    </div>
+
+                                    </tbody>
+                                </table>
                                 <div class="layui-form-item">
-                                    <div class="layui-input-block">
-                                        <div class="footer-form">
-                                            <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="component-form-element">保存</button>
-                                            <button type="reset" class="layui-btn layui-btn-sm">重置</button>
-                                        </div>
+                                    <div class="footer footer-common">
+                                        <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="component-form-element">保存</button>
+                                        <button type="reset" class="layui-btn layui-btn-sm">重置</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        </div>
-    </div>
+            <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>
 
 {/block}

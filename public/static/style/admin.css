@@ -1573,6 +1573,7 @@ body .layui-layer-we{
 tr>td.tdleft {
     text-align: right;
     background-color: #EEEEEE;
+    /*display: table-cell;*/
 }
 
 tr>td.tdleft .tips{
@@ -1583,12 +1584,18 @@ tr>td.tdright {
     text-align: left;
     background: #F5F5F5 !important;
     vertical-align: middle;
+    /*float:left;*/
+    /*line-height: 30px;*/
+    /*height: 30px;*/
+    /*display:inline*/
+    /*display: table-cell;*/
     /*display: inline-block;*/
     /*position: relative;*/
 }
 tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-textarea {
     width: 320px;
     background: #f5f7bb;
+    display: inline;
     /*background: #ffffff;*/
 }
 
