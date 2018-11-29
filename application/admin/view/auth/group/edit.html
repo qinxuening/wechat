@@ -1,38 +1,45 @@
 {extend name="layout/default" /}
 {block name="content"}
 <body>
-<div class="layui-container lay_top">
-    <div class="layui-row layui-col-space30">
-        <div class="layui-col-xs12">
+<!--<div class="layui-container lay_top">-->
+    <!--<div class="layui-row layui-col-space30">-->
+        <div class="body-form">
         <form class="layui-form" action="" id="rule" lay-filter="rule">
             <input type="hidden" name="ids"  value="{$row['id']}" class="layui-input">
-            <div class="layui-form-item">
-                <label class="layui-form-label">父级</label>
-                <div class="layui-input-block">
-                    {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid'],'lay-filter'=>"character"],$row['id'], $groupList)}
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">名称</label>
-                <div class="layui-input-block">
-                    <input type="text" name="name" lay-verify="required" autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">状态</label>
-                <div class="layui-input-block">
-                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$row['status'] == 1? 'checked' : ''}>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">权限</label>
-                <div class="layui-input-block">
-                    <input type="checkbox"  id="checkall" lay-skin="primary"  lay-filter="checkall" title="{:__('Check all')}">
-                    <input type="checkbox"  id="expandall" lay-skin="primary" lay-filter="expandall" title="{:__('Expand all')}">
-                    <div id="LAY-auth-tree-index"></div>
-                </div>
-
-            </div>
+            <table class="layui-table" lay-skin="line" lay-size="sm">
+                <colgroup>
+                    <col class="tdleft" width="30%">
+                    <col class="tdright">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td class="tdleft">父级<span class="tips">*</span></td>
+                    <td class="tdright">
+                        {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid'],'lay-filter'=>"character"],$row['id'], $groupList)}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdleft">名称</td>
+                    <td class="tdright">
+                        <input type="text" name="name" lay-verify="required" autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdleft">状态</td>
+                    <td class="tdright">
+                        <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$row['status'] == 1? 'checked' : ''}>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdleft">权限</td>
+                    <td class="tdright">
+                        <input type="checkbox"  id="checkall" lay-skin="primary"  lay-filter="checkall" title="{:__('Check all')}">
+                        <input type="checkbox"  id="expandall" lay-skin="primary" lay-filter="expandall" title="{:__('Expand all')}">
+                        <div id="LAY-auth-tree-index"></div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
             <!--<div class="layui-form-item">-->
                 <!--<div class="layui-input-block">-->
                     <!--<button class="layui-btn" lay-submit="" lay-filter="formRule">立即提交</button>-->
@@ -48,8 +55,8 @@
             </div>
         </form>
         </div>
-    </div>
-</div>
+    <!--</div>-->
+<!--</div>-->
 {/block}
 {block name="script"}
 

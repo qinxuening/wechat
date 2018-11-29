@@ -38,7 +38,7 @@
 </script>
 
 <!--操作-->
-{:build_actionbar()}
+{:build_actionbar('',[ 'edit', 'del'])}
 <!--<script type="text/html" id="actionbar">-->
 <!--<a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view"><i class="layui-icon layui-icon-file-b"></i>查看</a>-->
 <!--<a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>-->
@@ -115,10 +115,11 @@
         weTreeGrid.api.init({
             table : "tableReload",
             tableid : "tableReload",
+            is_display:true,
             extend : {
                 "add_url": "{:url('admin/auth.rule/edit','',false)}",
                 "edit_url": "{:url('admin/auth.rule/edit','',false)}/id/",
-                "view_url": "{:url('admin/auth.rule/view','',false)}/id/",
+//                "view_url": "{:url('admin/auth.rule/view','',false)}/id/",
                 "del_url": "{:url('admin/auth.rule/del','',false)}",
                 "export_url": "{:url('admin/auth.rule/export','',false)}",
             }

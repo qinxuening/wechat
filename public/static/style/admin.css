@@ -1592,7 +1592,7 @@ tr>td.tdright {
     /*display: inline-block;*/
     /*position: relative;*/
 }
-tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-textarea {
+tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-textarea ,tr>td.tdright>.xm-select{
     width: 320px;
     background: #f5f7bb;
     display: inline;
