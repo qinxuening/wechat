@@ -74,6 +74,11 @@
                 ,last: false //不显示尾页
 
             }
+            ,done: function(res, curr, count){
+                if(res.status == 'success') {
+                    layer.closeAll();
+                }
+            }
         });
 
         //监听性别操作
