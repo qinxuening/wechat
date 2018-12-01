@@ -7,10 +7,14 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'think\\worker\\' => array($vendorDir . '/topthink/think-worker/src'),
+    'think\\oracle\\' => array($vendorDir . '/topthink/think-oracle/src'),
+    'think\\mongo\\' => array($vendorDir . '/topthink/think-mongo/src'),
+    'think\\migration\\' => array($vendorDir . '/topthink/think-migration/src'),
     'think\\helper\\' => array($vendorDir . '/topthink/think-helper/src'),
     'think\\composer\\' => array($vendorDir . '/topthink/think-installer/src'),
     'think\\captcha\\' => array($vendorDir . '/topthink/think-captcha/src'),
-    'think\\' => array($vendorDir . '/karsonzhang/fastadmin-addons/src'),
+    'think\\' => array($vendorDir . '/karsonzhang/fastadmin-addons/src', $vendorDir . '/topthink/think-queue/src', $vendorDir . '/topthink/think-image/src', $baseDir . '/thinkphp/library/think'),
+    'app\\' => array($baseDir . '/application'),
     'Workerman\\' => array($vendorDir . '/workerman/workerman'),
     'Symfony\\Polyfill\\Php70\\' => array($vendorDir . '/symfony/polyfill-php70'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
@@ -20,6 +24,7 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
+    'Phinx\\' => array($vendorDir . '/topthink/think-migration/phinx/src/Phinx'),
     'Overtrue\\Socialite\\' => array($vendorDir . '/overtrue/socialite/src'),
     'Overtrue\\Pinyin\\' => array($vendorDir . '/overtrue/pinyin/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),

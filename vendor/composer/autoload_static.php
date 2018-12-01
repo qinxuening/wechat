@@ -17,16 +17,25 @@ class ComposerStaticInitd15e2bd93c7f83bfccc320b8bde0c0e9
         '488987c28e9b5e95a1ce6b6bcb94606c' => __DIR__ . '/..' . '/karsonzhang/fastadmin-addons/src/common.php',
         '9e090711773bfc38738f5dbaee5a7f14' => __DIR__ . '/..' . '/overtrue/wechat/src/Payment/helpers.php',
         '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
+        'cc56288302d9df745d97c934d6a6e5f0' => __DIR__ . '/..' . '/topthink/think-queue/src/common.php',
+        'ddc3cd2a04224f9638c5d0de6a69c7e3' => __DIR__ . '/..' . '/topthink/think-migration/src/config.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         't' => 
         array (
             'think\\worker\\' => 13,
+            'think\\oracle\\' => 13,
+            'think\\mongo\\' => 12,
+            'think\\migration\\' => 16,
             'think\\helper\\' => 13,
             'think\\composer\\' => 15,
             'think\\captcha\\' => 14,
             'think\\' => 6,
+        ),
+        'a' => 
+        array (
+            'app\\' => 4,
         ),
         'W' => 
         array (
@@ -45,6 +54,7 @@ class ComposerStaticInitd15e2bd93c7f83bfccc320b8bde0c0e9
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+            'Phinx\\' => 6,
         ),
         'O' => 
         array (
@@ -83,6 +93,18 @@ class ComposerStaticInitd15e2bd93c7f83bfccc320b8bde0c0e9
         array (
             0 => __DIR__ . '/..' . '/topthink/think-worker/src',
         ),
+        'think\\oracle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-oracle/src',
+        ),
+        'think\\mongo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-mongo/src',
+        ),
+        'think\\migration\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-migration/src',
+        ),
         'think\\helper\\' => 
         array (
             0 => __DIR__ . '/..' . '/topthink/think-helper/src',
@@ -98,6 +120,13 @@ class ComposerStaticInitd15e2bd93c7f83bfccc320b8bde0c0e9
         'think\\' => 
         array (
             0 => __DIR__ . '/..' . '/karsonzhang/fastadmin-addons/src',
+            1 => __DIR__ . '/..' . '/topthink/think-queue/src',
+            2 => __DIR__ . '/..' . '/topthink/think-image/src',
+            3 => __DIR__ . '/../..' . '/thinkphp/library/think',
+        ),
+        'app\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/application',
         ),
         'Workerman\\' => 
         array (
@@ -134,6 +163,10 @@ class ComposerStaticInitd15e2bd93c7f83bfccc320b8bde0c0e9
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Phinx\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-migration/phinx/src/Phinx',
         ),
         'Overtrue\\Socialite\\' => 
         array (

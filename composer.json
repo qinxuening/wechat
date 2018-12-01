@@ -7,7 +7,9 @@
     "topthink/think-image" : "^1.0",
     "topthink/think-captcha" : "1.*",
     "topthink/think-worker" : "1.*",
-    "topthink/think-queue" : "1.*",
+    "topthink/think-helper": "^1.0.4",
+    "topthink/think-installer" : "1.0.*",
+    "topthink/think-queue" : "1.1.4",
     "topthink/think-mongo" : "1.*",
     "topthink/think-oracle" : "1.*",
     "topthink/think-migration" : "1.*"

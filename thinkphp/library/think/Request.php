@@ -132,7 +132,7 @@ class Request
      * @access protected
      * @param array $options 参数
      */
-    protected function __construct($options = []) 
+    protected function __construct($options = [])
     {
         foreach ($options as $name => $item) {
             if (property_exists($this, $name)) {
@@ -142,9 +142,7 @@ class Request
         if (is_null($this->filter)) {
             $this->filter = Config::get('default_filter');
         }
-        set_time_limit(0); // 脚本执行没有时间限
-        ini_set("memory_limit",-1);
-        ini_set('max_execution_time', 0);
+
         // 保存 php://input
         $this->input = file_get_contents('php://input');
     }
