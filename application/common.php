@@ -342,3 +342,57 @@ if (!function_exists('var_export_short'))
     }
 
 }
+
+if(!function_exists('myLog')) {
+    /**
+     * 打印日志
+     * 按时间戳生成文件名
+     * @param unknown $str
+     */
+    function myLog($str) {
+        $dir = getcwd(). './logs/';
+        if(!is_dir($dir)) {
+            $flag =  mkdir($dir, 0777, true);
+            dump($flag);
+            chmod($dir, 0777);
+
+        }
+
+        $file = $dir . date('Ymd') . '.log.txt';
+        $fp = fopen($file, 'a+');
+
+        if (flock($fp, LOCK_EX)) {
+            $content = "[" . date('Y-m-d H:i:s') . "]\r\n";
+            $content .= $str . "\r\n\r\n";
+            fwrite($fp, $content);
+            flock($fp, LOCK_UN);
+            fclose($fp);
+            chmod($file, 0777);
+            //return true;
+        } else {
+            fclose($fp);
+            // return false;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

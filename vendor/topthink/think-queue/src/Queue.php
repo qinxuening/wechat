@@ -30,7 +30,24 @@ class Queue
 
     private static function buildConnector()
     {
-        $options = Config::get('queue');
+//         $options = Config::get('queue');
+        $options = [
+//             'connector'  => 'Redis',		    // Redis 驱动
+//             'expire'     => 60,				// 任务的过期时间，默认为60秒; 若要禁用，则设置为 null
+//             'default'    => 'default',		// 默认的队列名称
+//             'host'       => '127.0.0.1',	    // redis 主机ip
+//             'port'       => 6380,			// redis 端口
+//             'password'   => '123456qxn',				// redis 密码
+//             'select'     => 0,				// 使用哪一个 db，默认为 db0
+//             'timeout'    => 0,				// redis连接的超时时间
+//             'persistent' => false,			// 是否是长连接
+        
+            'connector' => 'Database',   // 数据库驱动
+            'expire'    => 60,           // 任务的过期时间，默认为60秒; 若要禁用，则设置为 null
+            'default'   => 'default',    // 默认的队列名称
+            'table'     => 'jobs',       // 存储消息的表名，不带前缀
+            'dsn'       => [],
+        ];
         $type    = !empty($options['connector']) ? $options['connector'] : 'Sync';
 
         if (!isset(self::$connector)) {
