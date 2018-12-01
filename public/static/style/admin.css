@@ -1705,12 +1705,42 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
 .contenttab h2, .contenttab h3, .contenttab p {
     margin: 0 0 15px 0;
 }
+.nav {
+    height: auto;
+    /*overflow:auto;*/
+}
 
+.pull-left{
+    position: relative;
+}
+.pull-left li{
+    position: relative;
+    float: left;
+    height: 30px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    min-height: 30px;
+    display: inline-block;
+}
 
+.pull-left li .layui-input,.pull-left li .layui-select,.pull-left li .layui-textarea ,.pull-left li.xm-select,.pull-left li .layui-select-title,.pull-left li .layui-form-select{
+    width: 150px;
+    background: #f5f7bb;
+    display: inline;
+    height: 30px;
+    position: relative;
+    /*background: #ffffff;*/
+}
 
+.searchbody {
+    padding: 10px 15px 1px 15px !important;
+    height: auto;
+    /*overflow:auto;*/
+}
 
-
-
+.searchbody .layui-btn{
+    padding: 0px 30px;
+}
 
 
 

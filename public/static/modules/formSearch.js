@@ -16,56 +16,44 @@ layui.define(['jquery','laydate','form'], function(exports){
                 options = defaults;
                 if(search == true) {
                     html += '<form class="layui-form" method="post" action="'+defaults.url+'" tableid="tableReload" id="formRule" lay-filter="rule">';
-                    html += ' <div class="layui-form-item">';
+                    html += '<ul class="nav pull-left">';
                     $.each(cols, function (index, value) {
                         if(typeof value.searchList !== 'undefined') {
                             // console.log(value.searchList);
                             switch (value.searchList.type){
                                 case 'input':
                                     if(typeof value.searchList.event !== 'undefined' && value.searchList.event == 'date') {
-                                        html += '<div class="layui-inline">'+
-                                            '<label class="layui-form-label">'+value.title+'</label>'+
-                                            '<div class="layui-input-inline">'+
+                                        html += '<li>'+value.title+'：'+
                                             '<input type="text" name="'+value.field+'_start" id="'+value.field+'_start" placeholder="" autocomplete="off" class="layui-input">'+
-                                            '</div>'+
-                                            '<label class="layui-form-label-search-date">—</label>'+
-                                            '<div class="layui-input-inline">'+
+                                            ' — '+
                                             '<input type="text" name="'+value.field+'_end" id="'+value.field+'_end" placeholder="" autocomplete="off" class="layui-input">'+
-                                            '</div>'+
-                                            '</div>';
+                                            '</li>';
                                     }else {
-                                        html += '<div class="layui-inline">'+
-                                            '<label class="layui-form-label">'+value.title+'</label>'+
-                                            '<div class="layui-input-inline">'+
+                                        html += '<li>'+ value.title+'：'+
                                             '<input type="text" name="'+value.field+'" id="'+value.field+'" placeholder="" autocomplete="off" class="layui-input">'+
-                                            '</div>'+
-                                            '</div>';
+                                            '</li>';
                                     }
                                     break;
                                 case 'select':
-                                    html += '<div class="layui-inline">'+
-                                        '<label class="layui-form-label">'+value.title+'</label>'+
-                                        '<div class="layui-input-inline">'+
+                                    html += '<li>'+value.title+'：'+
                                         '<select name="status">'+
                                         '<option value="">请选择'+value.title+'</option>';
                                         $.each(value.searchList.data, function (index, value) {
                                             html += ' <option value="'+index+'">'+value+'</option>';
                                         });
-                                    html += '</select></div></div>';
+                                    html += '</select></li>';
                                     break;
                                 default:;
                             }
                         }
                     });
 
-                    html += '<div class="layui-inline">'+
-                        '<div class="layui-input-inline search-inline">'+
+                    html += '<li>'+
                         '<button class="layui-btn layui-btn-sm search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>'+
-                        '<button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>'+
-                        '</div>'+
-                        '</div>';
-                    html += '</div></form>';
-                    $('.search-card-body').html(html);
+                        '<button type="reset" class="layui-btn layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>'+
+                        '</li>';
+                    html += '</ul></form>';
+                    $('.searchbody').html(html);
 
                     /**
                      * html加载完成方可初始化时间插件

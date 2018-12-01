@@ -2,10 +2,38 @@
 {block name="content"}
 <body>
 <div class="layui-fluid">
-    <div class="layui-row layui-col-space15">
+    <!--<div class="layui-row layui-col-space15">-->
         <div class="layui-col-md12 webody">
-            <div class="layui-card search-card">
-                <div class="layui-card-body search-card-body">
+            <div class="layui-row layui-col-space15">
+            <div class="layui-col-12">
+                <div class="searchbody">
+                    <!--<form class="layui-form" method="post" action="{:url('admin/auth.admin/index','',false)}" tableid="tableReload" id="formRule" lay-filter="rule">-->
+                        <!--<ul class="nav pull-left">-->
+                            <!--<li>登陆账号：<input type="text" name="username" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                            <!--<li>昵称：<input type="text" name="nickname" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                            <!--<li>邮箱：<input type="text" name="email" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                            <!--<li>状态：-->
+                                <!--<select name="status">-->
+                                    <!--<option value="">请选择状态</option>-->
+                                    <!--<option value="1">激活</option>-->
+                                    <!--<option value="0">禁用</option>-->
+                                <!--</select>-->
+                            <!--</li>-->
+                            <!--<li>最后登陆时间：-->
+                                <!--<input type="text" name="logintime_start" id="logintime_start" placeholder="" autocomplete="off" class="layui-input">—-->
+                                <!--<input type="text" name="logintime_end" id="logintime_end" placeholder="" autocomplete="off" class="layui-input">-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<button class="layui-btn layui-btn-sm search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>-->
+                                <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</form>-->
+            </div>
+            </div>
+            </div>
+            <!--<div class="layui-card search-card">-->
+                <!--<div class="layui-card-body search-card-body">-->
                     <!--<form class="layui-form" method="post" action="{:url('admin/auth.admin/index','',false)}" tableid="tableReload" id="formRule" lay-filter="rule">-->
                         <!--<div class="layui-form-item">-->
                             <!--<div class="layui-inline">-->
@@ -69,8 +97,8 @@
                             <!--</div>-->
                         <!--</div>-->
                     <!--</form>-->
-                </div>
-            </div>
+                <!--</div>-->
+            <!--</div>-->
             <div class="layui-card">
                 <div class="layui-card-body">
                     <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload" lay-size="sm"></table>
@@ -78,7 +106,7 @@
             </div>
         </div>
     </div>
-</div>
+<!--</div>-->
 </div>
 
 <!--头工具栏-->
