@@ -12,4 +12,5 @@
 return [
     'default_return_type'    => 'html',
     'controller_auto_search' => 'true',
+    'default_filter'         => 'trim,strip_tags',
 ];

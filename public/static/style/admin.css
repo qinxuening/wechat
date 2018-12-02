@@ -1598,7 +1598,10 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     display: inline;
     /*background: #ffffff;*/
 }
-
+.body-form .layui-disabled{
+    background-color: rgb(228, 228, 228) !important;
+    color: #808080 !important;
+}
 .body-form{
     margin-bottom: 50px;
 }

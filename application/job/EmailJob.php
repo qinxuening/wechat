@@ -46,8 +46,6 @@ class EmailJob extends Controller{
      */
     private function sendMail($data)
     {
-//         sleep(2);
-//         return false;
         $title = '账号激活邮件';
         $msg = '欢迎您注册xxx网站,您的请点击一下连接激活您的账号!....';
         try {

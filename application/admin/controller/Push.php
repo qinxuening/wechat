@@ -32,7 +32,7 @@ class Push extends baseAdmin{
             $dataCol = exportCols();
             
             $list = Db::name('push')
-                ->page($dataCol ? 0 : $page,$dataCol ? null : $limit)
+                ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
                 ->select();
             
             /**
