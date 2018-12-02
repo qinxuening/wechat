@@ -179,6 +179,7 @@ fi
 crontab -e
 vim /etc/crontab
 */2 * * * *  /shell/start.sh
+*/2 * * * *  /var/www/html/wechat/crons/work_check.sh
 
 
 
