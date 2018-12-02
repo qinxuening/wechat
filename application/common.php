@@ -368,10 +368,8 @@ if(!function_exists('myLog')) {
             flock($fp, LOCK_UN);
             fclose($fp);
             chmod($file, 0777);
-            //return true;
         } else {
             fclose($fp);
-            // return false;
         }
     }
 }

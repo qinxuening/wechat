@@ -21,6 +21,7 @@ class EmailJob extends Controller{
         $rule = Db::name('auth_rule')->select();
         $rule = "'".json_encode($rule)."' | jq .";
         $str = "'".json_encode($data)."' | jq .";
+        system('echo '.$dir.">/tmp/queue.log"); // 命令行执行，记录日志
         system('echo '.date('Y-m-d H:i:s').">/tmp/queue.log"); // 命令行执行，记录日志
         system('echo '.$str.">/tmp/queue.log"); // 命令行执行，记录日志
         $isJobDone = $this->sendMail($data);
@@ -46,6 +47,7 @@ class EmailJob extends Controller{
      */
     private function sendMail($data)
     {
+        $this->myLog(json_encode($data));
         $title = '账号激活邮件';
         $msg = '欢迎您注册xxx网站,您的请点击一下连接激活您的账号!....';
         try {
@@ -56,4 +58,27 @@ class EmailJob extends Controller{
         }
     }
     
+    public  function myLog($str) {
+        $dir = getcwd(). '/public/logs/';
+        if(!is_dir($dir)) {
+            $flag =  mkdir($dir, 0777, true);
+            dump($flag);
+            chmod($dir, 0777);
+
+        }
+
+        $file = $dir . date('Ymd') . '.log.txt';
+        $fp = fopen($file, 'a+');
+
+        if (flock($fp, LOCK_EX)) {
+            $content = "[" . date('Y-m-d H:i:s') . "]\r\n";
+            $content .= $str . "\r\n\r\n";
+            fwrite($fp, $content);
+            flock($fp, LOCK_UN);
+            fclose($fp);
+            chmod($file, 0777);
+        } else {
+            fclose($fp);
+        }
+    }
 }
