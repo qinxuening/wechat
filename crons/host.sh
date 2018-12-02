@@ -1,0 +1,1 @@
+webhttp="http://we.wechat.com"

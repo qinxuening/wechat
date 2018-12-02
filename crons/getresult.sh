@@ -1,8 +1,8 @@
 #!/bin/bash
-
-webhttp="http://localhost" #marip
-
-cron=${webhttp}"/mare/index.php/sapi/GetAiinfo/getResult"
+. ./host.sh
+#webhttp="http://localhost"
+echo $webhttp
+cron=${webhttp}"/cronapi/get_info/getResult"
 
 T=$(date +%H:%M)
 int=1;
