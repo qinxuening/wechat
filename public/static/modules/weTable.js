@@ -2,9 +2,10 @@
  * Created by qinxuening on 2018/10/2.
  */
 
-layui.define(['jquery','we','toastr'], function(exports){
+layui.define(['jquery','we','toastr','layer'], function(exports){
    var $ = layui.jquery
        ,we = layui.we
+       // ,layer = layui.layer
        ,toastr = layui.toastr
        ,table = layui.table;
 
@@ -128,6 +129,9 @@ layui.define(['jquery','we','toastr'], function(exports){
                            });
 
                            filter = JSON.stringify(weTable.api.getFormJson(weTable.defaults.form));
+                           layer.load(0, {shade: true});
+                           // console.log(123123);
+                           // return false;
                            we.api.ajax({"url":weTable.defaults.extend.export_url,
                                data:{'cols' : JSON.stringify(obj.config.cols),
                                        'op':JSON.stringify(op),

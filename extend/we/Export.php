@@ -144,7 +144,7 @@ class Export extends Controller{
         
         $filename = $title."_".date('Y-m-d',mktime()).".xls";
         
-        $filename = iconv('UTF-8', 'GBK//IGNORE', $filename);
+//         $filename = iconv('UTF-8', 'GBK//IGNORE', $filename);
         $url = './downloadfile/'.$filename;
         $objWriter->save($url);
         

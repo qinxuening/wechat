@@ -73,6 +73,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
 
                 console.log('执行步奏：成功2')
                 if(ret.url != false && typeof ret.url !="undefined") {
+                    layer.closeAll();
                     // console.log(12345678);
                     window.location.href = ret.url;
                 }
@@ -116,7 +117,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 options = $.extend({
                     type: "POST",
                     dataType: "json",
-                    async:false,
+                    async:true,
                     success: function (ret) {
                         layer.close(index);
                         ret = we.events.onAjaxResponse(ret);
