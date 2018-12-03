@@ -357,7 +357,11 @@ if(!function_exists('myLog')) {
             chmod($dir, 0777);
 
         }
-
+        
+        if(is_array($str)) {
+            $str = json_encode($str);
+        }
+        
         $file = $dir . date('Ymd') . '.log.txt';
         $fp = fopen($file, 'a+');
 
@@ -374,11 +378,72 @@ if(!function_exists('myLog')) {
     }
 }
 
+if(!function_exists('is_json')) {
+    /**
+     * 判断数据是合法的json数据
+     * @param unknown $string
+     */
+    function is_json($string) {
+        json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE);
+    }
+}
 
 
+if(!function_exists('systemLog')) {
+    /**
+     * 系统日志
+     * 按时间戳生成文件名
+     * @param unknown $str
+     */
+    function systemLog($str) {
+        $dir = getcwd(). '/public/systemlogs/';
+        
+        if(!is_dir($dir)) {
+            $flag =  mkdir($dir, 0777, true);
+            dump($flag);
+            chmod($dir, 0777);
+
+        }
+
+        $file = $dir . date('Ymd') . '.log.txt';
+        $fp = fopen($file, 'a+');
+
+        if(is_array($str)) {
+            $str = json_encode($str);
+        }
+        
+        if (flock($fp, LOCK_EX)) {
+            $content = "[" . date('Y-m-d H:i:s') . "]\r\n";
+            $content .= $str . "\r\n\r\n";
+            fwrite($fp, $content);
+            flock($fp, LOCK_UN);
+            fclose($fp);
+            chmod($file, 0777);
+        } else {
+            fclose($fp);
+        }
+    }
+}
 
 
-
+if(!function_exists('cliLog')) {
+    /**
+     * 命令执行生成日志
+     */
+    function cliLog($str) {
+        if(is_array($str)) {
+            $str = json_encode($str);
+            $str = "'".$str."' | jq .";
+        }
+        $file = '/tmp/'. date('Ymd') . '.cli_log.txt';
+        $content = "[" . date('Y-m-d H:i:s') . "]";
+//         $dir = getcwd(). '/public/systemlogs/';
+//         system('echo '.$dir.">{$file}");
+        system('echo '.$content.">{$file}");
+        system('echo '.$str.">{$file}"); 
+    }
+}
 
 
 
