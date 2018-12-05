@@ -12,7 +12,7 @@ class EmailJob extends Controller{
     
     /**
      * yum install jq -y
-     * 队列调用
+     * 队列调用,消费者
      * @param Job $job
      * @param unknown $data
      */
@@ -25,13 +25,17 @@ class EmailJob extends Controller{
             $str = "Job is Filed!";
             if ($job->attempts() > 3) {
                 $str = "Job is Filed,Delete!";
-                $job->delete();
+                $job->delete(); 
             } else {
-                $job->release(); //重发任务
+                $job->release(10); //重新发布任务,该任务延迟10秒后再执行
                 $str = "Job is release!-----------" . $job->attempts() . "!";
             }
         }
         systemLog($str);
+    }
+    
+    public function failed($data){
+        // ...任务达到最大重试次数后，失败了
     }
     
     /**

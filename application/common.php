@@ -438,15 +438,36 @@ if(!function_exists('cliLog')) {
         }
         $file = '/tmp/'. date('Ymd') . '.cli_log.txt';
         $content = "[" . date('Y-m-d H:i:s') . "]";
-//         $dir = getcwd(). '/public/systemlogs/';
-//         system('echo '.$dir.">{$file}");
         system('echo '.$content.">{$file}");
         system('echo '.$str.">{$file}"); 
     }
 }
 
 
-
+if(!function_exists('curl_api')) {
+    /**
+     * curl 请求数据
+     * @param unknown $url
+     * @param unknown $crypt_data
+     * @return \think\response\Json
+     */
+    function curl_api($url, $data) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_SAFE_UPLOAD , true);//TRUE 禁用 @ 前缀在 CURLOPT_POSTFIELDS 中发送文件,安全作用，使用 CURLFile 作为上传的代替
+        curl_setopt($ch, CURLOPT_VERBOSE, 0); //TRUE将在安全传输时输出 SSL 证书信息到 STDERR
+        curl_setopt($ch, CURLOPT_TIMEOUT,60); //超时时间
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $return_data = curl_exec($ch);
+        if(!!$error = curl_error($ch)) {
+            return json(['code' => -101, 'status' => 'error', 'msg' => $error]);
+        } else {
+            return json(['code' => 200, 'status' => 'success','data' => $return_data]);
+        }
+    }
+}
 
 
 
