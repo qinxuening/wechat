@@ -14,11 +14,10 @@ class CurlApi extends Controller{
         $data['status'] = 1;
         $data['skey'] = 'szpt';
         
-        $url = "";
+        $url = "http://act.wechat.com/serverapi/Server/Api";
         
-        $result = curl_api($url, $data);
-        
-        echo $result;
+        $result = curl_api($url, json_encode($data));
+        return json(json_decode($result)); 
     }
     
     

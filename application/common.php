@@ -457,14 +457,17 @@ if(!function_exists('curl_api')) {
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_SAFE_UPLOAD , true);//TRUE 禁用 @ 前缀在 CURLOPT_POSTFIELDS 中发送文件,安全作用，使用 CURLFile 作为上传的代替
         curl_setopt($ch, CURLOPT_VERBOSE, 0); //TRUE将在安全传输时输出 SSL 证书信息到 STDERR
-        curl_setopt($ch, CURLOPT_TIMEOUT,60); //超时时间
+        curl_setopt($ch, CURLOPT_TIMEOUT,30); //超时时间
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $return_data = curl_exec($ch);
         if(!!$error = curl_error($ch)) {
-            return json(['code' => -101, 'status' => 'error', 'msg' => $error]);
+            /**
+             * 超时、异常处理
+             */
+            return json_encode(['code' => -101, 'status' => 'error', 'msg' => $error],JSON_UNESCAPED_UNICODE);
         } else {
-            return json(['code' => 200, 'status' => 'success','data' => $return_data]);
+            return $return_data;
         }
     }
 }
