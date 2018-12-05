@@ -15,6 +15,7 @@ class Server extends Controller{
      */
     public function Api() {
         $raw = file_get_contents("php://input");
+        sleep(30);
         myLog($raw);
         return json(['code' => '200', 'status' => 'success', 'msg' => '请求成功']);
     }

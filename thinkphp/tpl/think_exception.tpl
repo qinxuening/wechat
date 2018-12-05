@@ -361,7 +361,7 @@
     <?php } else { ?>
     <div class="exception">
         
-            <div class="info"><h1><?php echo htmlentities($message); ?></h1></div>
+            <div class="info"><?php echo htmlentities($message); ?></div>
         
     </div>
     <?php } ?>
@@ -439,11 +439,6 @@
     </div>
     <?php } ?>
 
-    <div class="copyright">
-        <a title="官方网站" href="http://www.thinkphp.cn">ThinkPHP</a> 
-        <span>V<?php echo THINK_VERSION; ?></span> 
-        <span>{ 十年磨一剑-为API开发设计的高性能框架 }</span>
-    </div>
     <?php if(\think\App::$debug) { ?>
     <script>
         var LINE = <?php echo $line; ?>;
