@@ -13,10 +13,18 @@ class CurlApi extends Controller{
         $data['appid'] = 10;
         $data['status'] = 1;
         $data['skey'] = 'szpt';
+        $data['appkey'] = config('secret_key')['APPKEY'];
+        $data['secret'] = config('secret_key')['SECRET'];
+        $data['skey'] = 'szpt';
+        $data['timestamp'] = date('YmdHis', time());//strtotime(20160721165055);//microtime();////time();
         
-        $url = "http://act.wechat.com/serverapi/Server/Api";
+        $sign_data['appkey'] = $data['appkey'];
+        $sign_data['secret'] = $data['secret'];
+        $sign_data['timestamp'] = $data['timestamp'];
         
-        $result = curl_api($url, json_encode($data));
+        $data['sign'] = data_auth_sign($sign_data);
+        $url = "http://act.wechat.com/serverapi/Server/Api"; 
+        $result = curl_api($url, aes_encrypt_($data));
         return json(json_decode($result)); 
     }
     

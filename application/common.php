@@ -473,7 +473,93 @@ if(!function_exists('curl_api')) {
 }
 
 
+/**
+ * 签名校验
+ * @param unknown $data
+ * @param number $expires
+ * @return boolean
+ * @author qxn
+ */
+function check_sign($data, $expires = 300) {
+    $params = array();
+    $params['timestamp'] = $data['timestamp'];
 
+    if (time() - strtotime($params['timestamp']) > $expires) {
+        myLog('签名过期或者请求超时');
+        return -1; //签名已过期
+    }
+    if ($data['appkey'] != config('secret_key')['APPKEY']) {
+        myLog('appkey错误!');
+        return -2; //appkey错误
+    }
+    
+    if ($data['secret'] != config('secret_key')['SECRET']){
+        myLog('通信密钥错误!');
+        return -3; //secret通信密钥错误
+    }
+
+    $params['appkey'] = config('secret_key')['APPKEY'];
+    $params['secret'] = config('secret_key')['SECRET'];
+    
+    $sign = data_auth_sign($params);
+    
+    if ($sign !== $data['sign']) {
+        myLog('签名错误!');
+        return -4; //签名错误
+    }
+
+    return true;
+}
+
+
+/**
+ * sha1加密校验
+ * @param unknown $data
+ * @return string
+ * @author qxn
+ */
+function data_auth_sign($data) {
+    if (!is_array($data)) {
+        $data = (array) $data;
+    }
+    ksort($data);
+    $param = array();
+    foreach ($data as $key => $val) {
+        $param[] = $key . "=" . $val;
+    }
+    $param = join("&", $param);
+    $sign = sha1($param);
+    return $sign;
+}
+
+
+/**
+ * AES加密
+ * @param unknown $data
+ * @return string
+ */
+function aes_encrypt_ ($data) {
+    $data = json_encode($data);
+    $data = urlencode($data);
+    $result =  mcrypt_encrypt(MCRYPT_RIJNDAEL_128, config('secret_key')['AES_KEY'], $data, MCRYPT_MODE_CBC,config('secret_key')['AES_IV']);
+    $result = base64_encode($result);
+    return $result;
+}
+
+
+/**
+ * AES解密
+ * @param unknown $data
+ * @return string
+ */
+function aes_decrypt_($data) {
+    $data= base64_decode($data);
+    $result =  rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_128, config('secret_key')['AES_KEY'], $data, MCRYPT_MODE_CBC,config('secret_key')['AES_IV']),"\0");
+    //解密后右端会有空白字符 需要手动清除 猜测是mcrypt的一个BUG
+    $result= urldecode($result);
+    $result= json_decode($result, true);
+    return $result;
+}
 
 
 
