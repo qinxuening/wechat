@@ -16,7 +16,7 @@ class CurlApi extends Controller{
         $data['appkey'] = config('secret_key')['APPKEY'];
         $data['secret'] = config('secret_key')['SECRET'];
         $data['skey'] = 'szpt';
-        $data['timestamp'] = date('YmdHis', time());//strtotime(20160721165055);//microtime();////time();
+        $data['timestamp'] = date('YmdHis', time());
         
         $sign_data['appkey'] = $data['appkey'];
         $sign_data['secret'] = $data['secret'];

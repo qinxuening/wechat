@@ -119,6 +119,16 @@ flush privileges;
 mysql_upgrade -u root -p --force
 重启
 
+mysqldump -uroot -p314233qxnQXN, scan> scan.sql
+    发生警告：[Warning] Using a password on the command line interface can be insecure.
+         解决方案：
+    vim /etc/my.cmf
+    添加：
+    [mysqldump]
+        user=root
+        password=314233qxnQXN,
+        
+
 安装redis：
 yum install redis 
 

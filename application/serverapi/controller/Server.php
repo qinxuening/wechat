@@ -36,7 +36,7 @@ class Server extends Controller{
                     $this->msg = json(['code' => '-104', 'status' => 'error', 'msg' => '签名错误!']);
                     break;
                 default:
-                    $this->msg = json(['code' => '-105', 'status' => 'error', 'msg' => '系统异常!']);
+                    $this->msg = json(['code' => '-105', 'status' => 'error', 'msg' => '解密失败!']);
             }
         }
 
