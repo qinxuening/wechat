@@ -1,7 +1,7 @@
 #!/bin/bash
 . ./host.sh
 #webhttp="http://localhost"
-echo $webhttp
+#echo $webhttp
 cron=${webhttp}"/cronapi/get_info/getResult"
 
 T=$(date +%H:%M)

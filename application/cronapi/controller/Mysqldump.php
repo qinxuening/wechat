@@ -8,16 +8,12 @@
 namespace app\cronapi\controller;
 use think\Controller;
 
-class mysqldump extends Controller{
+class Mysqldump extends Controller{
     
     public function dumpdata() {
-       system("mysqldump scan> scan.sql");
+       system("nohup mysqldump scan > scan.sql &");
     }
-    
-    
-    
-    
-    
+
     
     
     
