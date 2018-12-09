@@ -27,18 +27,20 @@ class Database extends baseAdmin{
             }
             $path = realpath($path);
             $flag = \FilesystemIterator::KEY_AS_FILENAME;
-            $glob = new \FilesystemIterator($path,  $flag);
+            $glob = new \FilesystemIterator($path, $flag);
             $list = array();
             $key = -1;
             foreach ($glob as $name => $file) {
-                $key++;
-                $list[$key]['id'] = $name;
-                $list[$key]['ID'] = $key + 1;
-                $list[$key]['backup_name'] = $name;
-                $list[$key]['size'] = format_bytes($file->getSize());
-                $list[$key]['time'] = date('Y-m-d H:i:s', strtotime(substr(explode("_", $name)[1],0,strpos(explode("_", $name)[1],'.'))));
+                if(preg_match('/^[A-Za-z0-9]+_\d{14}+\.sql$/', $name)){
+                    $key++;
+                    $list[$key]['id'] = $name;
+                    $list[$key]['ID'] = $key + 1;
+                    $list[$key]['backup_name'] = $name;
+                    $list[$key]['size'] = format_bytes($file->getSize());
+                    $list[$key]['time'] = date('Y-m-d H:i:s', strtotime(substr(explode("_", $name)[1],0,strpos(explode("_", $name)[1],'.'))));
+                }
             }
-            return json(['code' => 0, 'count' => count($glob), 'status' => 'success', 'data' => $list,'msg' => '获取成功']);
+            return json(['code' => 0, 'count' => count($list), 'status' => 'success', 'data' => $list,'msg' => '获取成功']);
         }else{
              return $this->view->fetch();
         }
@@ -65,7 +67,34 @@ class Database extends baseAdmin{
     }
     
     
-    
+    /**
+     * 执行备份命令
+     */
+    public function dumpdata() {
+        $lock = realpath(config('DATA_BACKUP_PATH')) . DIRECTORY_SEPARATOR."/backup.lock";
+        if(is_file($lock)){
+            return json(['code' => -3, 'status' => 'error', 'msg' => '检测到有一个备份任务正在执行']);
+        }
+        
+        $backup_name = 'scan_'.date('YmdHis', time());
+        $result = system("mysqldump scan > ".config('DATA_BACKUP_PATH')."{$backup_name}.sql 2>&1 &", $return_status);
+        if($return_status === 0) {
+            file_put_contents($lock, $_SERVER['REQUEST_TIME']);
+            if(!is_writeable($lock)){
+                return json(['code' => -2, 'status' => 'error', 'msg' => $lock.'文件不可写']);
+            }            
+            return json(['code' => 1, 'status' => 'success',
+                    'info' => [
+                    'return_status' =>$return_status, 
+                    'result' => $result
+                ],
+                'msg' => '正在备份'
+              ]);
+        } else {
+            return json(['code' => -1, 'status' => 'error', 'msg' => '备份失败']);
+        }
+
+    }
     
     
     

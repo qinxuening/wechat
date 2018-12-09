@@ -146,6 +146,9 @@ layui.define(['jquery','we','toastr','layer'], function(exports){
                            we.api.open(weTable.defaults.extend.import_url,'导入');
                            // toastr.warning('功能正在完善');
                            break;
+                       case 'dumpdata':
+                           we.api.ajax({"url":"/admin/Database/dumpdata",'tableid':weTable.defaults.tableid,'action':'del'});
+                           break;
                    };
                });
 
