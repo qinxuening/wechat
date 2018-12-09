@@ -82,7 +82,8 @@ class Database extends baseAdmin{
             file_put_contents($lock, $_SERVER['REQUEST_TIME']);
             if(!is_writeable($lock)){
                 return json(['code' => -2, 'status' => 'error', 'msg' => $lock.'文件不可写']);
-            }            
+            }   
+            system('../crons/check_backup_lock.sh > /dev/null &');//监控执行备份
             return json(['code' => 1, 'status' => 'success',
                     'info' => [
                     'return_status' =>$return_status, 
