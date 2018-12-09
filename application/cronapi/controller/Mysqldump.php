@@ -11,7 +11,8 @@ use think\Controller;
 class Mysqldump extends Controller{
     
     public function dumpdata() {
-       system("nohup mysqldump scan > scan.sql &");
+       $backup_name = 'scan_'.date('YmdHis', time());
+       system("mysqldump scan > ../database/{$backup_name}.sql &");
     }
 
     
