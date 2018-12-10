@@ -29,7 +29,9 @@ yum install --enablerepo=remi --enablerepo=remi-php56 php-fpm
 
 systemctl enable php-fpm 
  
-   
+5.设置上传大小：
+    upload_max_filesize = 120M
+    upload_max_filesize = 120M
 //二、安装httpd  
 //yum install httpd
 //systemctl enable httpd
