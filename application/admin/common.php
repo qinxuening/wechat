@@ -110,6 +110,9 @@ if (!function_exists('build_toolbar')) {
         $auth = \app\admin\library\Auth::instance();
         $controller = str_replace('.', '/', strtolower(think\Request::instance()->controller()));
         $btns = $btns ? $btns : ['refresh', 'add', 'del','export', 'import'];
+        if($attr) {
+            $btns = array_merge($btns,array_keys($attr));
+        }
         $btns = is_array($btns) ? $btns : explode(',', $btns);
         $index = array_search('delete', $btns); //array_search() 函数在数组中搜索某个键值，并返回对应的键名
 
@@ -124,6 +127,7 @@ if (!function_exists('build_toolbar')) {
             'import'  => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-upload', '导入'],
         ];
         $btnAttr = array_merge($btnAttr, $attr);
+//         print_r($btnAttr);
         $html = '';
         $html .= "<script type='text/html' id='{$id}'><div class='layui-btn-container'>";
         foreach ($btns as $k => $v) {

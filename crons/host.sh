@@ -1,1 +1,2 @@
-webhttp="http://we.wechat.com"
+webhttp="http://we.wechat.com";
+databasedir="../database";

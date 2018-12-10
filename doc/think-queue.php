@@ -1,24 +1,28 @@
 <?php
 // supervisor管理进程 
 //https://blog.csdn.net/will5451/article/details/80434174
-thinkphp-queue 是thinkphp 官方提供的一个消息队列服务，它支持消息队列的一些基本特性：
+1、thinkphp-queue 是thinkphp 官方提供的一个消息队列服务，它支持消息队列的一些基本特性：
+        消息的发布，获取，执行，删除，重发，失败处理，延迟执行，超时控制等
+        队列的多队列， 内存限制 ，启动，停止，守护等
+        消息队列可降级为同步执行
 
-消息的发布，获取，执行，删除，重发，失败处理，延迟执行，超时控制等
-队列的多队列， 内存限制 ，启动，停止，守护等
-消息队列可降级为同步执行
+    think\Queue::push($job, $data = '', $queue = null) 
+    think\Queue::later($delay, $job, $data = '', $queue = null)
+    两个方法，前者是立即执行，后者是在$delay秒后执行
 
-think\Queue::push($job, $data = '', $queue = null) 
-think\Queue::later($delay, $job, $data = '', $queue = null)
- 两个方法，前者是立即执行，后者是在$delay秒后执行
+2、开始队列 
+    php think queue:listen
+    php think queue:work --daemon（不加--daemon为执行单个任务）
 
-php think queue:listen
-php think queue:work --daemon（不加--daemon为执行单个任务）
+3、重启所有队列
+    php think queue:restart
 
-//查看文档
-php think queue:work -h
-php think queue:listen -h
+4、查看文档
+    php think queue:work -h
+    php think queue:listen -h
 
- 创建 -> 推送 -> 消费 -> 删除 
+5、过程
+        创建 -> 推送 -> 消费 -> 删除 
 
 
 work 命令是在脚本内部做循环，框架脚本在命令执行的初期就已加载完毕；
@@ -49,7 +53,7 @@ listen命令的适用场景是：
 多任务
 如果一个任务类里有多个小任务的话，在发布任务时，需要用 任务的类名@方法名 如 app\lib\job\Job2@task1、app\lib\job\Job2@task2
 
-使用方式：
+6、使用方式：
 	在生产者业务代码中：
 	// 即时执行
 	$isPushed = Queue::push($jobHandlerClassName, $jobDataArr, $jobQueueName);
@@ -73,7 +77,9 @@ listen命令的适用场景是：
 	php think queue:work --delay 3  
 
 
-
+7、 队列的稳定性和拓展性
+	稳定性：不管是 listen 模式还是 work 模式，都建议使用 supervisor 或者 自定义的cron 脚本，去定时检查 work 进程是否正常
+	拓展性： 当某个队列的消费者不足时，再给这个队列添加 work进程即可。
 
 
 
