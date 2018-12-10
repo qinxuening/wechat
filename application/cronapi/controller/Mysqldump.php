@@ -61,6 +61,7 @@ class Mysqldump extends Controller{
             myLog('备份失败');
             unlink($lock); //删除锁文件
             system('echo true > ../crons/logs_backup.txt');
+            exit();
             #return true;
         }
         
@@ -70,6 +71,7 @@ class Mysqldump extends Controller{
             myLog('备份完成');
             unlink($lock); //删除锁文件
             system('echo true > ../crons/logs_backup.txt');
+            exit();
             #return true;
         }
         system('echo false > ../crons/logs_backup.txt');

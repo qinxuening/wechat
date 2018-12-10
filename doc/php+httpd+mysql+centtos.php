@@ -100,11 +100,14 @@ systemctl unset-environment MYSQLD_OPTS
 systemctl start mysqld
 
 Try to login using your new password:
-7. mysql -u root -p
+7. mysql -u root -p  --default-character-set=utf8
 
 
 创建数据库：
 CREATE DATABASE `mars` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+设置编码连接
+mysql -uroot -p314233qxnQXN,  --default-character-set=utf8
 
 导入：
 source /var/www/mars.sql;
@@ -119,7 +122,7 @@ flush privileges;
 mysql_upgrade -u root -p --force
 重启
 
-mysqldump -uroot -p314233qxnQXN, scan> scan.sql
+mysqldump --default-character-set=utf8 -uroot -p314233qxnQXN, scan> scan.sql
     发生警告：[Warning] Using a password on the command line interface can be insecure.
          解决方案：
     vim /etc/my.cmf
@@ -207,8 +210,10 @@ linux查看文件倒数第几行：
 linux查看文件文件第几行：
     head -1 scan.sql
 
-
-
+apache apache 执行shell权限
+    vim /etc/sudoers
+    apache ALL=(ALL) NOPASSWD: ALL
+    
 
 
 
