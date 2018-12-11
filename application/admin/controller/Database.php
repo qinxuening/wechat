@@ -77,13 +77,13 @@ class Database extends baseAdmin{
         }
         
         $backup_name = 'scan_'.date('YmdHis', time());
-        $result = system("mysqldump scan > ".config('DATA_BACKUP_PATH')."{$backup_name}.sql 2>&1 &", $return_status);
+        $result = system("mysqldump loan > ".config('DATA_BACKUP_PATH')."{$backup_name}.sql 2>&1 &", $return_status);
         if($return_status === 0) {
             file_put_contents($lock, $_SERVER['REQUEST_TIME']);
             if(!is_writeable($lock)){
                 return json(['code' => -2, 'status' => 'error', 'msg' => $lock.'文件不可写']);
             }   
-            $shell = "sudo /var/www/html/wechat/crons/check_backup_lock.sh > /dev/null 2>&1 &";
+            $shell = "sudo ../crons/check_backup_lock.sh > /dev/null 2>&1 &";
             exec($shell,$out);//监控执行备份
             return json(['code' => 1, 'status' => 'success',
                     'info' => [
