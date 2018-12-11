@@ -23,7 +23,7 @@ class Mysqldump extends Controller{
     }
 
     /**
-     * 查看当前数据库备份是否完成
+     * 查看当前数据库备份是否完成, 已经不用
      */
     public function checkBackupLock() {
         $lock = realpath(config('DATA_BACKUP_PATH')) . DIRECTORY_SEPARATOR."/backup.lock";
