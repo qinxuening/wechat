@@ -59,11 +59,11 @@
             ,defaultToolbar: ['filter']
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
-                ,{field:'id', title: 'ID', sort: true}
-                ,{field:'queue', title: '队列名称'}
-                ,{field:'payload', title: '内容', minWidth: 400}
-                ,{field:'attempts', title: '尝试发送次数', sort: true}
-                ,{field:'created_at', title: '创建时间'}
+                ,{field:'id', title: 'ID', sort: true,excel_width:15}
+                ,{field:'queue', title: '队列名称',excel_width:15}
+                ,{field:'payload', title: '内容', minWidth: 400,excel_width:150}
+                ,{field:'attempts', title: '尝试发送次数', sort: true,excel_width:15}
+                ,{field:'created_at', title: '创建时间',excel_width:15}
                 ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:150}
             ]]
             ,page: {

@@ -56,7 +56,8 @@ class Export extends Controller{
                 ],
                 'alignment' => [
                     'horizontal' => \PHPExcel_Style_Alignment::HORIZONTAL_CENTER
-                ]
+                ],
+//                 'excel_width' => 1500,
             ]
             );
         
@@ -81,6 +82,7 @@ class Export extends Controller{
         //PHPExcel_Cell::stringFromColumnIndex($i);
         //$i = 2;
         foreach ($field as $k=>$v){
+            //print_r($v);die();
             $i++;
             $index = 0;
             foreach ($v as $key=>$value){
@@ -144,7 +146,7 @@ class Export extends Controller{
         
         $filename = $title."_".date('Y-m-d',mktime()).".xls";
         
-//         $filename = iconv('UTF-8', 'GBK//IGNORE', $filename);
+        $filename = iconv('UTF-8', 'GBK//IGNORE', $filename);
         $url = './downloadfile/'.$filename;
         $objWriter->save($url);
         

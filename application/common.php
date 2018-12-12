@@ -473,6 +473,22 @@ if(!function_exists('curl_api')) {
 }
 
 
+if(!function_exists('is_timestamp')) {
+    /**
+     * 判断是否为正确时间戳
+     * @param unknown $timestamp
+     * @return unknown|boolean
+     */
+    function is_timestamp($timestamp) {
+        if(strtotime(date('m-d-Y H:i:s', $timestamp)) == $timestamp && strlen(trim($timestamp)) >= 10) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+
 /**
  * 签名校验
  * @param unknown $data

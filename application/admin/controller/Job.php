@@ -8,71 +8,26 @@ namespace app\admin\controller;
 use app\common\controller\baseAdmin;
 use think\Queue;
 use think\Db;
-use we\Export;
 
 class Job extends baseAdmin{
-    /**
-     * 推送列表
-     */
-    public function index($page = 0, $limit = 10) {
-        if ($this->request->isAjax())
-        {
-            $count = Db::name('jobs')->count('*');
-            
-            $dataCol = exportCols();
-            $list = Db::name('jobs')
-                ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
-                ->select();
-            
-            foreach ($list as $k => &$v) {
-                $v['ID'] = $k + 1;
-                $v['created_at'] = date('Y-m-d H:i:s', $v['created_at']);
-            }
-            /**
-             * 导出数据
-             */
-            if($dataCol) {
-                $field['data'] = $dataCol;
-                $title = "任务管理报表";
-                $action = new Export();
-                $baseurl = $action->excel($list,$field,$title);
-                $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
-                return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
-            }
-            
-            return json(['code' => 0, 'count' => $count, 'status' => 'success', 'data' => $list,'msg' => '获取成功']);
-        }else{
-             return $this->view->fetch();
-        }
-    }
-
-    /**
-     * 编辑
-     * @param string $ids
-     */
-    public function edit($ids = NULL) {
-        if ($this->request->isAjax()){
-            $id = input('post.id');
-            $data = input('');
-            $data['created_at'] = strtotime($data['created_at']);
-            if($id) {
-                $result = Db::name('jobs')->where(['id' => $id])->update($data);
-            } else {
-                unset($data['id']);
-                $result = Db::name('jobs')->insert($data);
-            }
+    protected $table;
+    protected $excel_title;
     
-            if(false !== $result){
-                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
-            } else {
-                return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
-            }
-        }
-        $list = Db::name('jobs')->where(['id' => $ids])->find();
-        $list['created_at'] = date('Y-m-d H:i:s', $list['created_at']);
-        $this->assign('list', $list);
-        return $this->view->fetch();
+    public function _initialize()
+    {
+        parent::_initialize();
+        $this->table = Db::name('jobs');
+        $this->excel_title = '任务管理报表';
     }
+    
+    public function afterIndex() {
+        foreach ($this->list as $k => &$v) {
+            $v['ID'] = $k + 1;
+            $v['created_at'] = date('Y-m-d H:i:s', $v['created_at']);
+        }
+    }
+    
+ 
     
     /**
      * 删除

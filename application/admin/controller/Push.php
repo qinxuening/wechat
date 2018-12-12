@@ -30,7 +30,6 @@ class Push extends baseAdmin{
             $count = Db::name('push')->count('*');
             
             $dataCol = exportCols();
-            
             $list = Db::name('push')
                 ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
                 ->select();

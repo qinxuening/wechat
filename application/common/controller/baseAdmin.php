@@ -12,6 +12,7 @@ use think\Lang;
 use think\Hook;
 use think\Session;
 
+
 class baseAdmin extends Controller{
     /**
      * 无需登录的方法,同时也就不需要鉴权了
@@ -87,6 +88,7 @@ class baseAdmin extends Controller{
      */
     protected $importHeadType = 'comment';
     
+    use \app\admin\library\traits\Base;
     public function _initialize()
     {
         $modulename = $this->request->module();
@@ -300,7 +302,7 @@ class baseAdmin extends Controller{
     }
     
     
-    
+
     
     
     
