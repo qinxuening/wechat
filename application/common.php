@@ -350,7 +350,7 @@ if(!function_exists('myLog')) {
      * @param unknown $str
      */
     function myLog($str) {
-        $dir = getcwd(). './logs/';
+        $dir = getcwd(). '/logs/';
         if(!is_dir($dir)) {
             $flag =  mkdir($dir, 0777, true);
             dump($flag);

@@ -23,7 +23,7 @@ class Mysqldump extends Controller{
     }
 
     /**
-     * 查看当前数据库备份是否完成
+     * 查看当前数据库备份是否完成, 已经不用
      */
     public function checkBackupLock() {
         $lock = realpath(config('DATA_BACKUP_PATH')) . DIRECTORY_SEPARATOR."/backup.lock";
@@ -54,26 +54,26 @@ class Mysqldump extends Controller{
         }
         
         $result = system("head -1 ".config('DATA_BACKUP_PATH').$latest_task.' 2>&1', $return_head);
-        if (strpos($result, "MySQL dump")){
-            //echo '开始备份';
+        if (strpos($result, "MySQL dump") != false){
         } else {
-            //echo '备份失败';
             myLog('备份失败');
-            unlink($lock); //删除锁文件
+            unlink("../database/backup.lock"); //删除锁文件
             system('echo true > ../crons/logs_backup.txt');
-            #return true;
+            exit();
         }
         
         $last_info = system("tail -1 ".config('DATA_BACKUP_PATH').$latest_task.' 2>&1', $return_head);
-        
-        if(strpos($last_info,'Dump completed')) {
+        if(strpos($last_info,'Dump completed') != false) {
             myLog('备份完成');
-            unlink($lock); //删除锁文件
+            unlink("../database/backup.lock"); //删除锁文件
             system('echo true > ../crons/logs_backup.txt');
+            exit();
             #return true;
         }
         system('echo false > ../crons/logs_backup.txt');
         #return false;
+        
+        system("ps -ef | grep mysqldump |grep -v grep | awk '{print $2}'");
     }
     
     
