@@ -480,7 +480,17 @@ if(!function_exists('is_timestamp')) {
      * @return unknown|boolean
      */
     function is_timestamp($timestamp) {
-        if(strtotime(date('m-d-Y H:i:s', $timestamp)) == $timestamp && strlen(trim($timestamp)) >= 10) {
+        if(strtotime(date('Y-m-d H:i:s', $timestamp)) == $timestamp && strlen(trim($timestamp)) >= 10) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+if(!function_exists('is_date')) {
+    function is_date($date) {
+        if(date('Y-m-d H:i:s', strtotime($date)) == $date) {
             return true;
         } else {
             return false;

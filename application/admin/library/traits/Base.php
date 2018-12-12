@@ -50,7 +50,6 @@ trait Base{
             $id = input('post.id');
             $data = input('');
             $this->afterDate($data);
-//             $data['created_at'] = strtotime($data['created_at']);
             if($id) {
                 $result = $this->table->where([$this->table->getPk()=> $id])->update($data);
             } else {
@@ -65,24 +64,48 @@ trait Base{
             }
         }
         $list = $this->table->where([$this->table->getPk() => $ids])->find();
-//         $list['created_at'] = date('Y-m-d H:i:s', $list['created_at']);
-        $this->afterDate($list);
+        $this->afterTimestamp($list);
         $this->assign('list', $list);
         return $this->view->fetch();
     }
     
+
+    /**
+     * 删除
+     */
+    public function del($ids = "")
+    {
+        if ($ids)
+        {
+            $count = $this->table->where($this->table->getPk(), 'in', explode(',', $ids))->delete();
+            if ($count)
+            {
+                return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功','url'=>'']);
+            } else {
+                return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
+            }
+        }
+        return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
+    }
     
     /**
      * index后置操作
      */
     public function afterIndex() {
-
+        foreach ($this->list as $k => &$v) {
+            $v['ID'] = $k + 1;
+            foreach ($v as $k_ => $v_) {
+                if(is_timestamp($v_)) {
+                    $v[$k_] = date('Y-m-d H:i:s', $v_);
+                }
+            }
+        }
     }
     
     /**
-     * 处理时间
+     * 处理时间戳，转为日期
      */
-    public function afterDate(&$data) {
+    public function afterTimestamp(&$data) {
         foreach ($data as $k => $v) {
             if(is_timestamp($v)) {
                 $data[$k] = date('Y-m-d H:i:s', $v);
@@ -90,8 +113,16 @@ trait Base{
         }
     }
     
-    
-    
+    /**
+     * 处理时间,转为时间戳
+     */
+    public function afterDate(&$data){
+        foreach ($data as $k => $v) {
+            if(is_date($v)) {
+                $data[$k] = strtotime($v);
+            }
+        }
+    }
     
     
     

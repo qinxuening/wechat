@@ -19,34 +19,7 @@ class Job extends baseAdmin{
         $this->table = Db::name('jobs');
         $this->excel_title = '任务管理报表';
     }
-    
-    public function afterIndex() {
-        foreach ($this->list as $k => &$v) {
-            $v['ID'] = $k + 1;
-            $v['created_at'] = date('Y-m-d H:i:s', $v['created_at']);
-        }
-    }
-    
- 
-    
-    /**
-     * 删除
-     */
-    public function del($ids = "")
-    {
-        if ($ids)
-        {
-            $count = Db::name('jobs')->where('id', 'in', explode(',', $ids))->delete();
-            if ($count)
-            {
-                return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功','url'=>'']);
-            } else {
-                return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
-            }
-        }
-        return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
-    }
-    
+
     /**
      * 入列测试，发布任务，生产者
      */
