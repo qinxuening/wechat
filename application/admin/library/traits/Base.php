@@ -21,12 +21,12 @@ trait Base{
             $this->list = $this->table
                 ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
                 ->select();
-            
-            $this->afterIndex();
             /**
              * 导出数据
              */
             if($dataCol) {
+                $this->afterIndex();
+                
                 $field['data'] = $dataCol;
                 $title = $this->excel_title;
                 $action = new Export();
@@ -95,6 +95,9 @@ trait Base{
         foreach ($this->list as $k => &$v) {
             $v['ID'] = $k + 1;
             foreach ($v as $k_ => $v_) {
+                if(count($this->status[$k_]) > 0) {
+                    $v[$k_] = $this->status[$k_][$v_];
+                }
                 if(is_timestamp($v_)) {
                     $v[$k_] = date('Y-m-d H:i:s', $v_);
                 }

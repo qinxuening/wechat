@@ -11,13 +11,20 @@ use GatewayClient\Gateway;
 use we\Export;
 
 class Push extends baseAdmin{
-    private $status;
-    private $status_c;
+    protected $status;
+    protected $status_c;
+    protected $table;
+    protected $excel_title;
     
     public function _initialize()
     {
         parent::_initialize();
-        $this->status = ['0'=>'禁用','1'=>'启用'];
+        $this->table = Db::name('push');
+        $this->excel_title = '推送管理报表';
+        $this->status = [
+            'status' => ['0'=>'禁用','1'=>'启用'],
+            'is_time_push' => ['0'=>'禁用','1'=>'启用'],
+        ];
         $this->status_c = ['禁用'=>'1','启用'=>'1'];
         parent::_initialize();
     }
@@ -33,10 +40,7 @@ class Push extends baseAdmin{
             $list = Db::name('push')
                 ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
                 ->select();
-            
-            /**
-             * 导出数据
-             */
+
             if($dataCol) {
                 foreach ($list as $k => &$v) {
                     $v['ID'] = $k + 1;
