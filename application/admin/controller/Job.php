@@ -12,12 +12,16 @@ use think\Db;
 class Job extends baseAdmin{
     protected $table;
     protected $excel_title;
+    protected $table_name;
+    protected $status;
     
     public function _initialize()
     {
         parent::_initialize();
         $this->table = Db::name('jobs');
+        $this->table_name = 'jobs';
         $this->excel_title = '任务管理报表';
+        $this->status = [];
     }
 
     /**
