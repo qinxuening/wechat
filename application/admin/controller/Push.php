@@ -8,18 +8,19 @@ namespace app\admin\controller;
 use app\common\controller\baseAdmin;
 use think\Db;
 use GatewayClient\Gateway;
-use we\Export;
 
 class Push extends baseAdmin{
     protected $status;
     protected $status_c;
     protected $table;
+    protected $table_name;
     protected $excel_title;
     
     public function _initialize()
     {
         parent::_initialize();
         $this->table = Db::name('push');
+        $this->table_name = 'push';
         $this->excel_title = '推送管理报表';
         $this->status = [
             'status' => ['0'=>'禁用','1'=>'启用'],
@@ -28,44 +29,13 @@ class Push extends baseAdmin{
         $this->status_c = ['禁用'=>'1','启用'=>'1'];
         parent::_initialize();
     }
-    /**
-     * 推送列表
-     */
-    public function index($page = 0, $limit = 10) {
-        if ($this->request->isAjax())
-        {
-            $count = Db::name('push')->count('*');
-            
-            $dataCol = exportCols();
-            $list = Db::name('push')
-                ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
-                ->select();
 
-            if($dataCol) {
-                foreach ($list as $k => &$v) {
-                    $v['ID'] = $k + 1;
-                    $v['status'] = $this->status[$v['status']];
-                    $v['is_time_push'] = $this->status[$v['is_time_push']];
-                }
-                $field['data'] = $dataCol;
-                $title = "推送管理报表";
-                $action = new Export();
-                $baseurl = $action->excel($list,$field,$title);
-                $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
-                return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
-            }
-            
-            return json(['code' => 0, 'count' => $count, 'status' => 'success', 'data' => $list,'msg' => '获取成功']);
-        }else{
-             return $this->view->fetch();
-        }
-    }
     
     /**
      * 编辑
      * @param string $ids
      */
-    public function edit($ids = NULL) {
+    /*public function edit($ids = NULL) {
         if ($this->request->isAjax()){
             $id = input('post.id');
             $data = input('');
@@ -87,7 +57,7 @@ class Push extends baseAdmin{
         $list = Db::name('push')->where(['id' => $ids])->find();
         $this->assign('list', $list);
         return $this->view->fetch();
-    }
+    }*/
     
     /**
      * 删除

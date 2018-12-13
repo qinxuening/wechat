@@ -21,12 +21,12 @@ trait Base{
             $this->list = $this->table
                 ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
                 ->select();
+
+            $this->afterIndex($dataCol);
             /**
              * 导出数据
              */
             if($dataCol) {
-                $this->afterIndex();
-                
                 $field['data'] = $dataCol;
                 $title = $this->excel_title;
                 $action = new Export();
@@ -49,7 +49,7 @@ trait Base{
         if ($this->request->isAjax()){
             $id = input('post.id');
             $data = input('');
-            $this->afterDate($data);
+            $this->beforeSave($data);
             if($id) {
                 $result = $this->table->where([$this->table->getPk()=> $id])->update($data);
             } else {
@@ -64,7 +64,7 @@ trait Base{
             }
         }
         $list = $this->table->where([$this->table->getPk() => $ids])->find();
-        $this->afterTimestamp($list);
+        $this->afterEdit($list);
         $this->assign('list', $list);
         return $this->view->fetch();
     }
@@ -91,11 +91,11 @@ trait Base{
     /**
      * index后置操作
      */
-    public function afterIndex() {
+    public function afterIndex($dataCol) {
         foreach ($this->list as $k => &$v) {
             $v['ID'] = $k + 1;
             foreach ($v as $k_ => $v_) {
-                if(count($this->status[$k_]) > 0) {
+                if(count($this->status[$k_]) > 0 && $dataCol) {
                     $v[$k_] = $this->status[$k_][$v_];
                 }
                 if(is_timestamp($v_)) {
@@ -108,7 +108,7 @@ trait Base{
     /**
      * 处理时间戳，转为日期
      */
-    public function afterTimestamp(&$data) {
+    public function afterEdit(&$data) {
         foreach ($data as $k => $v) {
             if(is_timestamp($v)) {
                 $data[$k] = date('Y-m-d H:i:s', $v);
@@ -119,15 +119,32 @@ trait Base{
     /**
      * 处理时间,转为时间戳
      */
-    public function afterDate(&$data){
-        foreach ($data as $k => $v) {
+    public function beforeSave(&$data){
+        foreach (array_keys($this->status) as $value) {
+            if(!in_array($value, array_keys($data))) {
+                $data[$value] = 0;
+            }
+        }
+        foreach ($data as $k => &$v) {
+            if($this->getFieldType()[$k] == 'tinyint(1)') {
+                $data[$k] = $data[$k] === 'on' ? '1' : 0;
+            }
             if(is_date($v)) {
                 $data[$k] = strtotime($v);
             }
         }
     }
     
-    
+    /**
+     * 获取字段类型
+     */
+    public function getFieldType() {
+        static $field_type = [];
+        if(!$field_type) {
+            $field_type = $this->table->getTableInfo()['type'];
+        }
+        return $field_type;
+    }
     
     
     
