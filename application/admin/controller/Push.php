@@ -27,7 +27,6 @@ class Push extends baseAdmin{
             'is_time_push' => ['0'=>'禁用','1'=>'启用'],
         ];
         $this->status_c = ['禁用'=>'1','启用'=>'1'];
-        parent::_initialize();
     }
 
     
