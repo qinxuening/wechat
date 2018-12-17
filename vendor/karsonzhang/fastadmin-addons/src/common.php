@@ -121,7 +121,6 @@ function get_addon_list()
         $addonDir = ADDON_PATH . DS . $name . DS;
         if (!is_dir($addonDir))
             continue;
-
         if (!is_file($addonDir . ucfirst($name) . '.php'))
             continue;
 
@@ -130,7 +129,6 @@ function get_addon_list()
         $info_file = $addonDir . 'info.ini';
         if (!is_file($info_file))
             continue;
-
         $info = Config::parse($info_file, '', "addon-info-{$name}");
         $info['url'] = addon_url($name);
         $list[$name] = $info;

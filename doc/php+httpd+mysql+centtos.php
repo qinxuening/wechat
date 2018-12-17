@@ -211,6 +211,9 @@ linux查看文件倒数第几行：
     
 linux查看文件文件第几行：
     head -1 scan.sql
+    
+linux全局搜索某个目录下的文字对应文件：
+    grep -r "abc" ./
 
 apache apache 执行shell权限
     vim /etc/sudoers
