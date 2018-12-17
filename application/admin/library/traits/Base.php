@@ -65,6 +65,7 @@ trait Base{
         }
         $list = $this->table->where([$this->table->getPk() => $ids])->find();
         $this->afterEdit($list);
+        $this->editAssign();
         $this->assign('list', $list);
         return $this->view->fetch();
     }
@@ -114,6 +115,10 @@ trait Base{
                 $data[$k] = date('Y-m-d H:i:s', $v);
             }
         }
+    }
+    
+    public function editAssign() {
+        
     }
     
     /**

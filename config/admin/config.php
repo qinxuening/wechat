@@ -14,5 +14,6 @@ return [
     'controller_auto_search' => 'true',
     'default_filter'         => 'trim,strip_tags',
     
-    'DATA_BACKUP_PATH'       => '../database/'
+    'DATA_BACKUP_PATH'       => '../database/',
+    'ADDON_KEY'              => '#@xn8852**$$',
 ];

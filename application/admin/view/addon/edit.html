@@ -19,6 +19,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="tdleft">插件秘钥</td>
+                    <td class="tdright">
+                        <input type="text" name="unic_key"  data-rule="required" placeholder="插件秘钥" value="{$list['unic_key']?$list['unic_key']:$unic_key}"  autocomplete="off" class="layui-input">
+                        <input type="hidden" name="id" value="{$list['addon_id']}">
+                    </td>
+                </tr>
+                <tr>
                     <td class="tdleft">插件描述</td>
                     <td class="tdright">
                         <textarea placeholder="插件描述" rows="20" class="layui-textarea" name="describe">

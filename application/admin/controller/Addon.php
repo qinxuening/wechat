@@ -8,6 +8,8 @@
 namespace app\admin\controller;
 use app\common\controller\baseAdmin;
 use think\Db;
+use we\Random;
+
 
 class Addon extends baseAdmin{
     protected $table;
@@ -27,7 +29,12 @@ class Addon extends baseAdmin{
     }
     
     
-    
+    public function editAssign() {
+        $salt = Random::alnum();
+        $addon_key = config('ADDON_KEY');
+        $unic_key = sha1(md5($salt).md5($addon_key).time());
+        $this->assign('unic_key', $unic_key);
+    }
     
     
     
