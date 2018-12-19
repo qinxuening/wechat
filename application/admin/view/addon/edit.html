@@ -4,7 +4,7 @@
 <!--<div class="layui-container lay_top">-->
     <!--<div class="layui-row layui-col-space30">-->
         <div class="body-form">
-        <form class="layui-form" action="{:url('admin/job/edit','',false)}" tableid="tableReload" method="post" lay-filter="rule" id="formRule">
+        <form class="layui-form" action="{:url('admin/addon/edit','',false)}" tableid="tableReload" method="post" lay-filter="rule" id="formRule">
             <table class="layui-table" lay-skin="line" lay-size="sm">
                 <colgroup>
                     <col class="tdleft" width="30%">
@@ -19,18 +19,22 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="tdleft">简述</td>
+                    <td class="tdright">
+                        <input type="text" name="title"  data-rule="required" placeholder="简述" value="{$list['title']}"  autocomplete="off" class="layui-input">
+                    </td>
+                </tr>
+                <tr>
                     <td class="tdleft">插件秘钥</td>
                     <td class="tdright">
-                        <input type="text" name="unic_key"  data-rule="required" placeholder="插件秘钥" value="{$list['unic_key']?$list['unic_key']:$unic_key}"  autocomplete="off" class="layui-input">
+                        <input type="text" name="unic_key"  data-rule="required" placeholder="插件秘钥" value="{$list['unic_key']?$list['unic_key']:$unic_key}"  autocomplete="off" {if condition="$list['unic_key'] neq ''"}disabled{/if} class='layui-input {if condition="$list['unic_key'] neq ''"}layui-disabled disabled{/if}'>
                         <input type="hidden" name="id" value="{$list['addon_id']}">
                     </td>
                 </tr>
                 <tr>
                     <td class="tdleft">插件描述</td>
                     <td class="tdright">
-                        <textarea placeholder="插件描述" rows="20" class="layui-textarea" name="describe">
-                            {$list['describe']}
-                        </textarea>
+                        <textarea placeholder="插件描述" rows="20" class="layui-textarea" name="describe">{$list['describe']}</textarea>
                     </td>
                 </tr>
                 <tr>
@@ -100,10 +104,18 @@
                 <!--</div>-->
             <!--</div>-->
 
+            <!--<div class="layui-form-item footer-form">-->
+                <!--<div class="footer">-->
+                    <!--<button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm btn-embossed disabled">{:__('OK')}</button>-->
+                    <!--<button type="reset" class="layui-btn layui-btn-sm btn-embossed">{:__('Reset')}</button>-->
+                <!--</div>-->
+            <!--</div>-->
             <div class="layui-form-item footer-form">
-                <div class="footer">
+                <div class="footer footer-common">
                     <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
                     <button type="reset" class="layui-btn layui-btn-sm btn-embossed">{:__('Reset')}</button>
+                    <a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-sm btn-embossed go-back">返回</div></a>
+                    <!--onclick="window.history.go(-1)"-->
                 </div>
             </div>
         </form>
@@ -133,7 +145,7 @@
             ,formValidator = layui.formValidator;
 
         laydate.render({
-            elem: '#created_at' //指定元素
+            elem: '#create_time' //指定元素
             ,type: 'datetime'
         });
             /**

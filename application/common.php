@@ -480,7 +480,7 @@ if(!function_exists('is_timestamp')) {
      * @return unknown|boolean
      */
     function is_timestamp($timestamp) {
-        if(strtotime(date('Y-m-d H:i:s', $timestamp)) == $timestamp && strlen(trim($timestamp)) >= 10) {
+        if(strtotime(date('Y-m-d H:i:s', $timestamp)) == $timestamp && strlen(trim($timestamp)) == 10) {
             return true;
         } else {
             return false;

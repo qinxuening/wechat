@@ -22,7 +22,7 @@ trait Base{
                 ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
                 ->select();
 
-            $this->afterIndex($dataCol);
+            $this->afterIndex($dataCol, $page, $limit);
             /**
              * 导出数据
              */
@@ -50,10 +50,10 @@ trait Base{
             $id = input('post.id');
             $data = input('');
             $this->beforeSave($data);
+            unset($data['id']);
             if($id) {
                 $result = $this->table->where([$this->table->getPk()=> $id])->update($data);
             } else {
-                unset($data['id']);
                 $result = $this->table->insert($data);
             }
             
@@ -67,6 +67,7 @@ trait Base{
         $this->afterEdit($list);
         $this->editAssign();
         $this->assign('list', $list);
+        $this->assign('return_url', request()->module().'/'.request()->controller().'/index');
         return $this->view->fetch();
     }
     
@@ -92,9 +93,9 @@ trait Base{
     /**
      * index后置操作
      */
-    public function afterIndex($dataCol) {
+    public function afterIndex($dataCol, $page, $limit) {
         foreach ($this->list as $k => &$v) {
-            $v['ID'] = $k + 1;
+            $v['id'] = $k + 1 + ($page - 1) * $limit;
             foreach ($v as $k_ => $v_) {
                 if(count($this->status[$k_]) > 0 && $dataCol) {
                     $v[$k_] = $this->status[$k_][$v_];

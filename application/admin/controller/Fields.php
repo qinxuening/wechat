@@ -33,7 +33,7 @@ class Fields extends baseAdmin{
     /**
      * 添加字段
      */
-    public function add() {
+    public function editAssign() {
         $this->assign('field_type', $this->field_type);
         $this->assign('form_type', $this->form_type);
         $this->assign('select_rule', $this->select_rule);
