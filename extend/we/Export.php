@@ -38,7 +38,7 @@ class Export extends Controller{
         
         $objActSheet->setTitle('Sheet1');
         
-        $field['data'] = array_merge([["field" => "ID", "title" => "序号", "excel_width" => 15]], $field['data']);
+        $field['data'] = array_merge([["field" => "id", "title" => "序号", "excel_width" => 15]], $field['data']);
 
         $end_column = \PHPExcel_Cell::stringFromColumnIndex(count($field['data']) - 1);//获取最后一列的列名
         

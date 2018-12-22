@@ -28,6 +28,10 @@
     <input type="checkbox" name="is_time_push" value="{{d.is_time_push}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.is_time_push == 1 ? 'checked' : '' }}>
 </script>
 
+<script type="text/html" id="nameTpl">
+    <a href="/addons/{{d.name}}" class="layui-table-link">{{d.name}}</a>
+</script>
+
 <!--操作-->
 {:build_actionbar('actionbar',['edit','test', 'del'])}
 {/block}
@@ -60,9 +64,9 @@
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'id', title: 'ID', sort: true,excel_width:15}
-                ,{field:'name', title: '插件名称',excel_width:15}
+                ,{field:'name', title: '插件名称',excel_width:15, templet: '#nameTpl'}
                 ,{field:'title', title: '简述',excel_width:15}
-                ,{field:'describe', title: '插件描述', excel_width:150}
+                ,{field:'describe', title: '插件描述', excel_width:15}
                 ,{field:'author', title: '作者', sort: true,excel_width:15}
                 ,{field:'download_count', title: '下载次数', sort: true,excel_width:15}
                 ,{field:'version', title: '版本', sort: true,excel_width:15}

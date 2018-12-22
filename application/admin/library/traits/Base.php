@@ -12,7 +12,7 @@ trait Base{
     /**
      * 列表
      */
-    public function index($page = 0, $limit = 10) {
+    public function index($page = 1, $limit = 10) {
         if ($this->request->isAjax())
         {
             $count = $this->table->count('*');

@@ -501,6 +501,7 @@ if(!function_exists('exportCols')){
             if($v['hide'] === true || $v['type'] == 'checkbox' || isset($v['toolbar'])) {
                 unset($data[$k]);
             }
+            if ($v['title'] == 'ID') unset($data[$k]);
         }
         sort($data);
         return $data;
