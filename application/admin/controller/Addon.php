@@ -30,6 +30,7 @@ class Addon extends baseAdmin{
         $this->excel_title = '插件管理报表';
     }
 
+    
     public function editAssign() {
         $salt = Random::alnum();
         $addon_key = config('ADDON_KEY');
