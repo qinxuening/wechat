@@ -68,5 +68,4 @@ class Addon extends baseAdmin{
             return $this->view->fetch();
         }
     }*/
-    
 }
