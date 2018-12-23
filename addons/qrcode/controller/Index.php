@@ -26,6 +26,11 @@ class Index extends Controller
         return $this->view->fetch();
     }
 
+    public function index2()
+    {
+        return $this->view->fetch();
+    }
+    
     // 生成二维码
     public function build()
     {

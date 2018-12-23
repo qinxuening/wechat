@@ -1,177 +1,155 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-        <title>二维码生成 - {$site.name}</title>
-        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <title>二维码生成器</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="__STATIC__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__STATIC__/style/admin.css" media="all">
+    <script src="__STATIC__/layui/layui.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-row">
+    <!--<div class="layui-row layui-col-space15">-->
+    <!--<div class="layui-col-md12 webody">-->
+    <!--<div class="layui-card">-->
+    <!--<fieldset class="layui-elem-field layui-field-title">-->
+    <!--<legend>常规设置</legend>-->
+    <!--</fieldset>-->
+    <!--<div class="layui-card-body">-->
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <ul class="layui-nav layui-bg-green" lay-filter="">
+                <li class="layui-nav-item"><a href="">二维码生成器</a></li>
+            </ul>
+        </div>
+    </div>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
-          <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        <div class="container">
-            <h2>二维码生成</h2>
-            <hr>
-            <div class="well">
-                <form action="" method="post">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="control-label">文本内容</label>
-                                <input type="text" name="text" class="form-control" placeholder="" value="http://www.fastadmin.net">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">标签</label>
-                                <input type="text" name="label" placeholder="" class="form-control" value="FastAdmin">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Logo</label>
-                                <div class="form-inline">
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="logo" id="logoyes" value="1" checked="">
-                                            显示(Logo地址在代码中修改)
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="logo" id="logono" value="0">
-                                            不显示
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-info" />
-                                <input type="reset" class="btn btn-default" />
-                            </div>
+    <div class="layui-tab layui-tab-brief" lay-filter="">
+        <ul class="layui-tab-title">
+            <li class="layui-this">文本</li>
+            <li>网址</li>
+            <li>图片</li>
+            <li>名片</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form" lay-filter="component-form-element" method="POST" action="">
+                    <div class="layui-row">
+                        <div class="layui-col-md6">
+                            <table class="layui-table" lay-skin="line" lay-size="sm">
+                                <colgroup>
+                                    <col class="tdleft" width="20%">
+                                    <col class="tdright">
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td class="tdleft">文本内容<span class="tips">*</span></td>
+                                    <td class="tdright"><textarea placeholder="文本内容" rows="20" class="layui-textarea" id="text" name="text"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft">大小<span class="tips">*</span></td>
+                                    <td class="tdright">
+                                        <input type="number" name="size" id="size" autocomplete="off" value="200" max="600" data-rule="required" placeholder="" class="layui-input">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft">容错级别<span class="tips">*</span></td>
+                                    <td class="tdright">
+                                        <!--<div class="layui-input-block">-->
+                                            <input type="radio" name="errorcorrection" value="low" title="低" >
+                                            <input type="radio" name="errorcorrection" value="medium" checked="" title="中等">
+                                            <input type="radio" name="errorcorrection" value="quartile" title="高">
+                                            <input type="radio" name="errorcorrection" value="high" title="超高">
+                                        <!--</div>-->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft">内边距<span class="tips">*</span></td>
+                                    <td class="tdright">
+                                        <input type="number" name="padding" id="padding" autocomplete="off" value="10" max="50" data-rule="required" placeholder="" class="layui-input">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft">前景色<span class="tips">*</span></td>
+                                    <td class="tdright">
+                                        <input type="text" name="foreground" id="foreground" autocomplete="off" value="#ffffff" data-rule="required" placeholder="" class="layui-input">
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
                         </div>
-
-                        <div class="col-md-2">
-                            <div id="toastTypeGroup">
-                                <label>标签水平位置</label>
-                                <div class="form-group radio">
-                                    <label><input type="radio" name="labelhalign" value="0" checked="">居中</label>
-                                </div>
-                                <div class="form-group radio">
-                                    <label><input type="radio" name="labelhalign" value="1">左</label>
-                                </div>
-                                <div class="form-group radio">
-                                    <label><input type="radio" name="labelhalign" value="2">左边框</label>
-                                </div>
-                                <div class="form-group radio">
-                                    <label><input type="radio" name="labelhalign" value="3">左图片</label>
-                                </div>
-                                <div class="form-group radio">
-                                    <label><input type="radio" name="labelhalign" value="4">右</label>
-                                </div>
-                                <div class="form-group radio">
-                                    <label><input type="radio" name="labelhalign" value="5">右边框</label>
-                                </div>
-                                <div class="form-group radio">
-                                    <label><input type="radio" name="labelhalign" value="6">右图片</label>
-                                </div>
-                            </div>
-                            <div id="positionGroup">
-                                <label>标签垂直位置</label>
-                                <div class="form-group radio">
-                                    <label>
-                                        <input type="radio" name="labelvalign" value="1">上
-                                    </label>
-                                </div>
-                                <div class="form-group radio">
-                                    <label>
-                                        <input type="radio" name="labelvalign" value="2">上边框
-                                    </label>
-                                </div>
-                                <div class="form-group radio">
-                                    <label>
-                                        <input type="radio" name="labelvalign" value="3" checked="">中
-                                    </label>
-                                </div>
-                                <div class="form-group radio">
-                                    <label>
-                                        <input type="radio" name="labelvalign" value="4">下
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <div class="form-group">
-                                    <label class="control-label">前景色</label>
-                                    <input type="text" name="foreground" placeholder="" class="form-control" value="#ffffff">
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">背景色</label>
-                                    <input type="text" name="background" placeholder="" class="form-control" value="#000000">
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">大小</label>
-                                    <input type="number" name="size" placeholder="" class="form-control" value="300">
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">内边距</label>
-                                    <input type="number" name="padding" placeholder="" class="form-control" value="10">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label class="control-label">Logo大小</label>
-                                <input type="number" name="logosize" placeholder="" class="form-control" value="50">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">标签大小</label>
-                                <input type="number" name="labelfontsize" placeholder="" class="form-control" value="14">
-                            </div>
-                            <div class="form-group">
-                                <div id="positionGroup">
-                                    <label>容错级别</label>
-                                    <div class="form-group radio">
-                                        <label>
-                                            <input type="radio" name="errorcorrection" value="low">低
-                                        </label>
-                                    </div>
-                                    <div class="form-group radio">
-                                        <label>
-                                            <input type="radio" name="errorcorrection" value="medium" checked="">中等
-                                        </label>
-                                    </div>
-                                    <div class="form-group radio">
-                                        <label>
-                                            <input type="radio" name="errorcorrection" value="quartile">高
-                                        </label>
-                                    </div>
-                                    <div class="form-group radio">
-                                        <label>
-                                            <input type="radio" name="errorcorrection" value="high">超高
-                                        </label>
-                                    </div>
+                        <div class="layui-col-md6">
+                            <div  style="margin-top: 11px; text-align: center;vertical-align: middle;line-height: 284px;height: 284px; ">
+                                <div class="img_src" style="line-height: 260px;background: #F5F5F5 !important;">
+                                    <!--<input type="hidden" name="qrcodeurl" id="qrcodeurl"  autocomplete="off" data-rule="required" placeholder="" class="layui-input">-->
+                                    <p style="max-height: 220px;" class="p_msg">此处生成二维码</p>
+                                    <img src="" alt="此处生成二维码" id='qrcodeimg' style="max-width:220px;max-height: 220px;display: none"/>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="layui-input-block">
+                        <div class="footer footer-common">
+                            <button class="layui-btn layui-btn-sm" type="submit" lay-submit="" lay-filter="component-form-element">生成二维码</button>
+                            <button type="reset" class="layui-btn  layui-btn-sm">重置</button>
+                        </div>
+                    </div>
                 </form>
             </div>
-            <input type="text" class="form-control" id='qrcodeurl' />
-            <img src="" alt="" id='qrcodeimg' />
+            <div class="layui-tab-item" id="tab2">
+
+            </div>
         </div>
-        <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(function () {
-                $("form").submit(function () {
-                    $("#qrcodeimg").prop("src", "{:addon_url('qrcode/index/build',[],false)}?" + $(this).serialize());
-                    $("#qrcodeurl").val("{:addon_url('qrcode/index/build',[],false,true)}?" + $(this).serialize());
-                    return false;
-                });
-                $("form").trigger('submit');
-            });
-        </script>
-    </body>
-</html>
+    </div>
+    </div>
+</div>
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).use(['form','element'], function(){
+        var form = layui.form
+            ,$ = layui.$
+            ,element = layui.element;
+//            var urlArr = location.href.split("#");
+//              console.log(urlArr[1]);
+//            var current = urlArr[1] ? urlArr[1] : "tab1";
+//            $("#tabs").find("li[id^=li]").find("a[class="+current+"]").parent().addClass("currenttab");
+//            $("#content").find("div[id^=tab]").not("div[id="+urlArr[1]+"]").hide();
+//            $("#content").find("div[id="+current+"]").fadeIn();
+//            $("#tabs").find("li[id^=li]").find("a").bind("click",function(){
+//                var title = $(this).attr("class");
+//                location.href = urlArr[0] + "#"+ title;
+//                $("#tabs").find("li[id^=li]").not("li[id="+title+"]").removeClass("currenttab");
+//                $(this).parent().addClass("currenttab");
+//                $("#content").find("div[id^=tab]").not("div[id="+title+"]").hide();
+//                $("#content").find("div[id="+title+"]").fadeIn();
+//                return false;
+//            })
+        $("form").submit(function () {
+            if($("#text").val() != ''){
+                $(".p_msg").hide();
+                $("#qrcodeimg").css({"display":"inline-block"});
+                $("#qrcodeimg").prop("src", "{:addon_url('qrcode/index/build',[],false)}?" + $(this).serialize());
+                $("#qrcodeurl").val("{:addon_url('qrcode/index/build',[],false,true)}?" + $(this).serialize());
+            }
+            return false;
+        });
+        $("form").trigger('submit');
+    });
+</script>
