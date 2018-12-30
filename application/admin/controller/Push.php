@@ -8,6 +8,7 @@ namespace app\admin\controller;
 use app\common\controller\baseAdmin;
 use think\Db;
 use GatewayClient\Gateway;
+use think\Config;
 
 class Push extends baseAdmin{
     protected $status;
@@ -16,6 +17,7 @@ class Push extends baseAdmin{
     protected $table_name;
     protected $excel_title;
     
+    use \app\admin\library\traits\Upload;
     public function _initialize()
     {
         parent::_initialize();
@@ -44,6 +46,14 @@ class Push extends baseAdmin{
         $result = Gateway::sendToUid(session('admin')['id'], json_encode($list)); // 发送给指定用户
         return json(['code' => 1, 'status' => 'success', 'data'=>Gateway::getAllUidList(), 'msg' => '推送成功','url'=>'']);
     }
+    
+    /**
+     * 文件上传、配置
+     */
+    public function setConfig() {
+       return Config::get('upload');
+    }
+    
     
     /**
      * 导入数据

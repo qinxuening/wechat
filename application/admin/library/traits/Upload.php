@@ -4,15 +4,14 @@
  * @E-mial: 2423859713@qq.com
  * @date: 2018年11月24日 下午5:51:19
  */
-namespace app\admin\controller;
+namespace app\admin\library\traits;
 use think\Config;
-use app\common\controller\baseAdmin;
 
-class Upload extends baseAdmin{
+trait Upload{
     /**
      * 上传文件
      */
-    static function upload($upload_config)
+    public function upload()
     {
         try {
             Config::set('default_return_type', 'json');
@@ -23,7 +22,7 @@ class Upload extends baseAdmin{
             //判断是否已经存在附件
             $sha1 = $file->hash();
     
-            $upload = $upload_config;//Config::get('upload')
+            $upload = $this->setConfig();//Config::get('upload')
     
             preg_match('/(\d+)(\w+)/', $upload['maxsize'], $matches);
     
@@ -85,4 +84,9 @@ class Upload extends baseAdmin{
             return json(['code' => -4, 'status' => 'error', 'msg' => $e->getMessage()]);
         }
     }
+    
+    public function setConfig() {
+        
+    }
+    
 }

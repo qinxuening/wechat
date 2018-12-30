@@ -1,5 +1,6 @@
 {extend name="layout/default" /}
 {block name="content"}
+
 <body>
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">
@@ -63,11 +64,11 @@
             ,upload = layui.upload
             ,we = layui.we
             ,toastr = layui.toastr
-
+//         console.log({$import_url});
         var demoListView = $('#demoList');
         var uploadListIns = upload.render({
             elem: '#upload'
-            ,url: "{:url('Admin/Upload/upload')}"
+            ,url: "{$import_url}"
             ,done: function(res, index, upload){ //上传后的回调
 
             }

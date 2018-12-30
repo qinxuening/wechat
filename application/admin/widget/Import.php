@@ -11,7 +11,8 @@ use app\common\controller\baseAdmin;
 
 class Import extends baseAdmin{
     
-    public function Import(){
+    public function Import($import_url = false){
+        $this->assign('import_url', $import_url);
         return $this->fetch('widget/import');
     }
 }
