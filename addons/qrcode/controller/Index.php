@@ -5,6 +5,7 @@ namespace addons\qrcode\controller;
 use Endroid\QrCode\QrCode;
 use think\addons\Controller;
 use think\Response;
+use think\Config;
 
 /**
  * 二维码生成
@@ -12,24 +13,26 @@ use think\Response;
  */
 class Index extends Controller
 {
-
     protected $model = null;
 
+    use \app\common\library\traits\Upload;
     public function _initialize()
     {
         parent::_initialize();
     }
 
-    // 
     public function index()
     {
         return $this->view->fetch();
     }
-
-    public function index2()
-    {
-        return $this->view->fetch();
+    
+    /**
+     * 文件上传、配置
+     */
+    public function setConfig() {
+        return Config::get('qrcode_upload');
     }
+    
     
     // 生成二维码
     public function build()
@@ -71,11 +74,14 @@ class Index extends Controller
             ->setLabelValign($labelvalign)
             ->setImageType(QrCode::IMAGE_TYPE_PNG);
         if ($logo) {
-            $qrCode->setLogo(ROOT_PATH . 'public/assets/img/qrcode.png');
+//             $qrCode->setLogo(ROOT_PATH . 'public/assets/img/qrcode.png');
+            $qrCode->setLogo(ROOT_PATH . 'public'.substr($logo, 1));
         }
         //也可以直接使用render方法输出结果
         //$qrCode->render();
         return new Response($qrCode->get(), 200, ['Content-Type' => $qrCode->getContentType()]);
     }
+    
+    
 
 }

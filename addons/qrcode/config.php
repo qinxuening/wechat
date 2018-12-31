@@ -12,6 +12,7 @@ return [
         array(
             'index/index' => '/qrcode$',
             'index/build' => '/qrcode/build$',
+            'index/upload' => '/qrcode/upload$',
         ),
         'rule'    => 'required',
         'msg'     => '',

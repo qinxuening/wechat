@@ -84,7 +84,18 @@
                                         <input type="text" name="foreground" id="foreground" autocomplete="off" value="#ffffff" data-rule="required" placeholder="" class="layui-input">
                                     </td>
                                 </tr>
-
+                                <tr>
+                                    <td class="tdleft">LOGO</td>
+                                    <td class="tdright">
+                                        <button type="button" class="layui-btn layui-btn-sm" id="qrcodelogo">
+                                            <i class="layui-icon">&#xe67c;</i>上传图片
+                                        </button>
+                                        <input type="hidden" name="logo" id="logo"   class="layui-input">
+                                        <div class="layui-progress layui-progress-big" style="margin: 10px 0;display: none" id="progressBar" lay-showPercent="yes" lay-filter="progressBar">
+                                            <div class="layui-progress-bar" lay-percent="0%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -122,9 +133,10 @@
     layui.config({
         base: "__STATIC__/", //静态资源所在路径
         skin: 'layui-layer-we'
-    }).use(['form','element'], function(){
+    }).use(['form','element','upload'], function(){
         var form = layui.form
             ,$ = layui.$
+            ,upload = layui.upload
             ,element = layui.element;
 //            var urlArr = location.href.split("#");
 //              console.log(urlArr[1]);
@@ -141,6 +153,29 @@
 //                $("#content").find("div[id="+title+"]").fadeIn();
 //                return false;
 //            })
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#qrcodelogo' //绑定元素
+            ,url: "{:url('/addons/qrcode/index/upload')}" //上传接口
+//            ,field: 'logo'
+            ,accept: 'file'
+            ,exts:'jpg|png|gif|bmp|jpeg'
+            ,progress: function(e , percent) {
+                $("#progressBar").show();
+                element.progress('progressBar',percent  + '%');
+            }
+            ,done: function(res){
+                $("#logo").val(res.data.url);
+//                console.log(res);
+                //上传完毕回调
+            }
+            ,error: function(){
+                $("#progressBar").hide();
+                element.progress('progressBar', '0%');
+                //请求异常回调
+            }
+        });
+
         $("form").submit(function () {
             if($("#text").val() != ''){
                 $(".p_msg").hide();
