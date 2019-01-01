@@ -215,7 +215,7 @@ class Lang
         if (empty(self::$allowLangList) || in_array($langSet, self::$allowLangList)) {
             self::$range = $langSet ?: self::$range;
         }
-
+//         echo  self::$range;die();
         return self::$range;
     }
 

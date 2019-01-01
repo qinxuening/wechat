@@ -1,0 +1,165 @@
+{extend name="layout/default" /}
+{block name="content"}
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12 webody">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <table class="layui-hide" id="group"  lay-filter="group" table-reload-id="tableReload"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--工具栏-->
+{:build_toolbar('toolbar','refresh,add')}
+<!--<script type="text/html" id="toolbar">-->
+<!--<div class="layui-btn-container">-->
+<!--<button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i> 添加角色</button>-->
+<!--</div>-->
+<!--</script>-->
+<!--工具栏-->
+
+<!--状态-->
+<script type="text/html" id="switchStatus">
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
+</script>
+
+<!--状态-->
+<script type="text/html" id="switchIsmenu">
+    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
+</script>
+
+<!--操作-->
+<script type="text/html" id="barDemo">
+    {{# if(d.rules != '*'){  }}
+    <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+    {{# }  }}
+</script>
+{/block}
+
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        ,we: 'we',
+    }).use(['jquery','index','table','element','we','weTable'], function(){
+        var admin = layui.admin
+            ,element = layui.element
+            ,$ = layui.$ //重点处
+            ,table = layui.table
+            ,weTable = layui.weTable
+            ,layer = layui.layer
+            ,form = layui.form
+            ,we = layui.we;
+        layer.load(0, {shade: false});
+        table.render({
+            elem: '#group'
+            ,skin:'line'
+            ,toolbar: '#toolbar'
+            ,url:"{:url('Admin/auth.group/index')}"
+            ,id: 'tableReload'
+            ,defaultToolbar: []//'filter', 'print', 'exports'
+            ,loading:true
+            ,cols: [[
+                {type:'checkbox', fixed: 'left'}
+                ,{field:'name', title: '角色名称', sort: true}
+                ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
+                ,{field:'createtime', title: '操作时间', minWidth: 150}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
+            ]]
+            ,done: function(res, curr, count){
+                if(res.status == 'success') {
+                    layer.closeAll();
+                }
+            }
+        });
+
+        /**
+         * 表格初始化
+         */
+        weTable.api.init({
+            table : "group",
+            tableid : "tableReload",
+            extend : {
+                "add_url": "{:url('admin/auth.group/edit','',false)}",
+                "edit_url": "{:url('admin/auth.group/edit','',false)}/ids/",
+            }
+        });
+
+        /**
+         * 绑定监听事件
+         * */
+        weTable.api.bindevent();
+
+
+//        //监听行工具事件
+//        table.on('tool(group)', function(obj){
+//            var data = obj.data;
+//             if(obj.event === 'edit') {
+//                var url = "{:url('admin/auth.group/edit','',false)}/ids/" + data.id;
+//                we.api.open(url,'编辑');
+//            }
+//        });
+//
+//        //头工具栏事件
+//        table.on('toolbar(group)', function(obj){
+//            if(obj.event == 'add') {
+//                var url = "{:url('admin/auth.group/add','',false)}";
+//                we.api.open(url, '添加角色');
+//            }
+////            var checkStatus = table.checkStatus(obj.config.id);
+////            switch(obj.event){
+////                case 'add':
+////                    var data = checkStatus.data;
+////                    layer.alert(JSON.stringify(data));
+////                    break;
+////            };
+//        });
+
+        /*form.on('submit(formRule)', function(data){
+         var frame = layer.getChildFrame('html');
+         frame.find("[type=submit]").removeClass('disabled');
+         var name = frame.find("input[name=name]").val();
+         var layerfooter = frame.find(".layer-footer");
+         var formdata = frame.find("form").serializeArray();
+
+         var d = {};
+         var t = frame.find("form").serializeArray();
+         $.each(t, function () {
+         d[this.name] = this.value;
+         });
+
+         var ids = frame.find("input[name=ids]").val();
+         var url = "{:url('admin/auth.group/edit','',false)}/ids/" + ids;
+         $.ajax({
+         "url":"{:url('admin/auth.group/edit','',false)}/ids/" + ids,
+         "cache":false,
+         "data":formdata,
+         "async":true,
+         "type":'post',
+         "success":function(data){
+         layer.msg(data.info);
+         layer.closeAll();
+         table.reload('testReload', {});
+         },
+         "error":function (data) {
+         layer.msg(data.info);
+         }
+         });
+         return false;
+
+         });*/
+
+
+    });
+
+</script>
+</body>
+</html>
+{/block}

@@ -14,7 +14,8 @@ trait Base{
      */
     public function index($page = 1, $limit = 10) {
         if ($this->request->isAjax())
-        {
+        {  
+//             $this->request->filter(['strip_tags', 'htmlspecialchars']);
             $count = $this->table->count('*');
             
             $dataCol = exportCols();

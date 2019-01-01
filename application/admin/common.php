@@ -8,7 +8,8 @@ use app\common\model\Category;
 use we\Form;
 use we\Tree;
 use think\Db;
-
+use think\Lang;
+Lang::setAllowLangList(['zh-cn','en-us']);
 if (!function_exists('build_select')) {
 
     /**

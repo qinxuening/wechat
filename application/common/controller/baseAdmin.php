@@ -91,6 +91,19 @@ class baseAdmin extends Controller{
     use \app\admin\library\traits\Base;
     public function _initialize()
     {
+        switch ($_GET['lang']) {
+            case 'zh-cn':
+                cookie('think_var', 'zh-cn');
+            ;
+            break;
+            case 'en-us':
+                cookie('think_var', 'en-us');
+                ;
+                break;
+            default:
+                ;
+            break;
+        }
         $modulename = $this->request->module();
         $controllername = strtolower($this->request->controller());
         $actionname = strtolower($this->request->action());
@@ -143,6 +156,8 @@ class baseAdmin extends Controller{
         //渲染配置信息
         $this->assign('config', $config);
 
+        $this->assign('this_url', '/'.$modulename.'/'.$controllername.'/'.$actionname);
+        
         //渲染权限对象
         $this->assign('auth', $this->auth);
 //         print_r(Session::get('admin'));

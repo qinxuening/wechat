@@ -1,0 +1,191 @@
+{extend name="layout/default" /}
+{block name="content"}
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12 webody">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <table class="layui-hide" id="tableReload" lay-filter="tableReload" lay-size="sm" table-reload-id="tableReload"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--头工具栏-->
+{:build_toolbar('toolbar',['refresh','add','export'])}
+<!--<script type="text/html" id="toolbar">-->
+<!--<div class="layui-btn-container">-->
+<!--<button class="layui-btn layui-btn-sm" lay-event="refresh"><i class="layui-icon layui-icon-refresh-3"></i>刷新</button>-->
+<!--<button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加</button>-->
+<!--<button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del"><i class="layui-icon layui-icon-edit"></i>删除</button>-->
+<!--<button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-file"></i>导出</button>-->
+<!--<button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-upload"></i>导入</button>-->
+<!--</div>-->
+<!--</script>-->
+<!--头工具栏-->
+
+<!--状态-->
+<script type="text/html" id="switchStatus">
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="激活|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
+</script>
+
+<!--状态-->
+<script type="text/html" id="switchIsmenu">
+    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
+</script>
+
+<!--操作-->
+{:build_actionbar('',[ 'edit', 'del'])}
+<!--<script type="text/html" id="actionbar">-->
+<!--<a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view"><i class="layui-icon layui-icon-file-b"></i>查看</a>-->
+<!--<a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>-->
+<!--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>-->
+<!--</script>-->
+{/block}
+
+{block name="script"}
+<script>
+    var ptable=null,treeGrid=null,tableId = 'tableReload',layer=null;
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['jquery','index','treeGrid','element','form','authtree','we','weTable','weTreeGrid'], function(){
+        var admin = layui.admin
+            ,$=layui.jquery
+            ,element = layui.element
+            ,layer = layui.layer
+            ,treeGrid = layui.treeGrid
+            ,we = layui.we
+            ,form = layui.form
+            ,weTable = layui.weTable
+            ,weTreeGrid = layui.weTreeGrid
+            ,toastr = layui.toastr;
+        ptable = treeGrid.render({
+            elem: '#tableReload'
+            ,url:"{:url('Admin/auth.rule/getRule')}"
+            ,id : 'tableReload'
+            ,idField:'id'
+//            ,height:'500'
+            ,treeId:'id'//树形id字段名称
+            ,treeUpId:'pid'//树形父id字段名称
+            ,treeShowName:'title'//以树形式显示的字段
+            ,iconOpen:false //是否显示图标【默认显示】
+            ,isOpenDefault:false//节点默认是展开还是折叠【默认展开】
+            ,loading:true
+            ,method:'post'
+            ,isPage:false
+            ,skin:'line'
+            ,toolbar : '#toolbar'
+            ,defaultToolbar: ['filter']//'filter', 'print', 'exports'
+            ,cols: [[
+                {type:'checkbox',sort:true}
+                ,{field:'id', title: 'ID', sort: true}
+                ,{field:'title', title: '规则名称'}
+                ,{field:'icon', title: '图标'}
+                ,{field:'ismenu', title: '是否为菜单', sort: true,templet: '#switchIsmenu'}
+                ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
+                ,{field:'name', title: '规则', minWidth: 150}
+                ,{align: 'center', title:'操作', toolbar: '#actionbar', width:220}
+            ]]
+            ,page: {
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                ,first: false //不显示首页
+                ,last: false //不显示尾页
+            }
+            ,onClickRow:function (index, o) {
+                console.log(index,o,"单击！");
+            }
+            ,onDblClickRow:function (index, o) {
+                console.log(index,o,"双击");
+            }
+        });
+
+//        form.on('switch(ruleStatus)', function(obj){
+//            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+//        });
+
+        /**
+         * 表格初始化
+         */
+        weTreeGrid.api.init({
+            table : "tableReload",
+            tableid : "tableReload",
+            is_display:true,
+            extend : {
+                "add_url": "{:url('admin/auth.rule/edit','',false)}",
+                "edit_url": "{:url('admin/auth.rule/edit','',false)}/id/",
+//                "view_url": "{:url('admin/auth.rule/view','',false)}/id/",
+                "del_url": "{:url('admin/auth.rule/del','',false)}",
+                "export_url": "{:url('admin/auth.rule/export','',false)}",
+            }
+        });
+        /**
+         * 绑定监听事件
+         * */
+        weTreeGrid.api.bindevent();
+        //监听行工具事件
+        /* table.on('tool(rule)', function(obj){
+         var data = obj.data;
+         if(obj.event === 'del'){
+         layer.confirm('真的删除行么',{
+         skin: 'layui-layer-we',
+         title:'温馨提示',
+         }, function(index){
+         we.api.ajax({"url":"{:url('admin/auth.rule/del')}","data":{'ids':data.id},'tableid':'tableReload','action':'del'});
+         layer.close(index);
+         });
+         } else if(obj.event === 'view'){
+         var url = "{:url('admin/auth.rule/view','',false)}/id/" + data.id;
+         we.api.open(url,'查看');
+         } else if(obj.event === 'edit') {
+         var url = "{:url('admin/auth.rule/edit','',false)}/id/" + data.id;
+         we.api.open(url,'编辑');
+         }
+         });
+         //头工具栏事件
+         table.on('toolbar(rule)', function(obj){
+         var checkStatus = table.checkStatus(obj.config.id);
+         switch(obj.event){
+         case 'add':
+         //                    var data = checkStatus.data;
+         //                    layer.alert(JSON.stringify(data));
+         var url = "{:url('admin/auth.rule/edit','',false)}";
+         we.api.open(url,'添加规则');
+         break;
+         case 'del':
+         var data = checkStatus.data;
+         var idsArr = [];
+         if(data != "") {
+         $.each(data,function (index, value) {
+         idsArr.push(value.id);
+         });
+         layer.confirm('真的删除行么',{
+         skin: 'layui-layer-we',
+         title:'温馨提示',
+         }, function(index){
+         we.api.ajax({"url":"{:url('admin/auth.rule/del')}","data":{'ids':idsArr.join(',')},'tableid':'tableReload','action':'del'});
+         layer.close(index);
+         });
+         } else {
+         toastr.error('没有选择数据');
+         }
+         break;
+         case 'export':
+         toastr.warning('功能正在完善');
+         break;
+         case 'import':
+         toastr.warning('功能正在完善');
+         break;
+         };
+         });*/
+    });
+
+</script>
+</body>
+</html>
+{/block}

@@ -74,7 +74,6 @@ class Index extends Controller
             ->setLabelValign($labelvalign)
             ->setImageType(QrCode::IMAGE_TYPE_PNG);
         if ($logo) {
-//             $qrCode->setLogo(ROOT_PATH . 'public/assets/img/qrcode.png');
             $qrCode->setLogo(ROOT_PATH . 'public'.substr($logo, 1));
         }
         //也可以直接使用render方法输出结果

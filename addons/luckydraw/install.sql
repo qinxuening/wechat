@@ -1,4 +1,3 @@
-
 CREATE TABLE IF NOT EXISTS `__PREFIX__luckydraw_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL COMMENT '用户ID',
