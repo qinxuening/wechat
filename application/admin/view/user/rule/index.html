@@ -39,11 +39,6 @@
 
 <!--操作-->
 {:build_actionbar('',[ 'edit', 'del'])}
-<!--<script type="text/html" id="actionbar">-->
-<!--<a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view"><i class="layui-icon layui-icon-file-b"></i>查看</a>-->
-<!--<a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>-->
-<!--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>-->
-<!--</script>-->
 {/block}
 
 {block name="script"}
@@ -67,7 +62,7 @@
             ,toastr = layui.toastr;
         ptable = treeGrid.render({
             elem: '#tableReload'
-            ,url:"{:url('Admin/auth.rule/getRule')}"
+            ,url:"{:url('Admin/user.rule/getRule')}"
             ,id : 'tableReload'
             ,idField:'id'
 //            ,height:'500'
@@ -105,10 +100,6 @@
             }
         });
 
-//        form.on('switch(ruleStatus)', function(obj){
-//            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
-//        });
-
         /**
          * 表格初始化
          */
@@ -117,72 +108,17 @@
             tableid : "tableReload",
             is_display:true,
             extend : {
-                "add_url": "{:url('admin/auth.rule/edit','',false)}",
-                "edit_url": "{:url('admin/auth.rule/edit','',false)}/id/",
+                "add_url": "{:url('admin/user.rule/edit','',false)}",
+                "edit_url": "{:url('admin/user.rule/edit','',false)}/id/",
 //                "view_url": "{:url('admin/auth.rule/view','',false)}/id/",
-                "del_url": "{:url('admin/auth.rule/del','',false)}",
-                "export_url": "{:url('admin/auth.rule/export','',false)}",
+                "del_url": "{:url('admin/user.rule/del','',false)}",
+                "export_url": "{:url('admin/user.rule/export','',false)}",
             }
         });
         /**
          * 绑定监听事件
          * */
         weTreeGrid.api.bindevent();
-        //监听行工具事件
-        /* table.on('tool(rule)', function(obj){
-         var data = obj.data;
-         if(obj.event === 'del'){
-         layer.confirm('真的删除行么',{
-         skin: 'layui-layer-we',
-         title:'温馨提示',
-         }, function(index){
-         we.api.ajax({"url":"{:url('admin/auth.rule/del')}","data":{'ids':data.id},'tableid':'tableReload','action':'del'});
-         layer.close(index);
-         });
-         } else if(obj.event === 'view'){
-         var url = "{:url('admin/auth.rule/view','',false)}/id/" + data.id;
-         we.api.open(url,'查看');
-         } else if(obj.event === 'edit') {
-         var url = "{:url('admin/auth.rule/edit','',false)}/id/" + data.id;
-         we.api.open(url,'编辑');
-         }
-         });
-         //头工具栏事件
-         table.on('toolbar(rule)', function(obj){
-         var checkStatus = table.checkStatus(obj.config.id);
-         switch(obj.event){
-         case 'add':
-         //                    var data = checkStatus.data;
-         //                    layer.alert(JSON.stringify(data));
-         var url = "{:url('admin/auth.rule/edit','',false)}";
-         we.api.open(url,'添加规则');
-         break;
-         case 'del':
-         var data = checkStatus.data;
-         var idsArr = [];
-         if(data != "") {
-         $.each(data,function (index, value) {
-         idsArr.push(value.id);
-         });
-         layer.confirm('真的删除行么',{
-         skin: 'layui-layer-we',
-         title:'温馨提示',
-         }, function(index){
-         we.api.ajax({"url":"{:url('admin/auth.rule/del')}","data":{'ids':idsArr.join(',')},'tableid':'tableReload','action':'del'});
-         layer.close(index);
-         });
-         } else {
-         toastr.error('没有选择数据');
-         }
-         break;
-         case 'export':
-         toastr.warning('功能正在完善');
-         break;
-         case 'import':
-         toastr.warning('功能正在完善');
-         break;
-         };
-         });*/
     });
 
 </script>

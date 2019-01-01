@@ -249,6 +249,7 @@ return [
         'gateway_port' => 8282,
     ],
     
+    'fields_strict'  => false,
 
     'DATA_BACKUP_PATH'       => '../database/'
 ];

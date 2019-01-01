@@ -130,13 +130,18 @@ class User extends baseAdmin
     /**
      * 编辑
      */
-    public function edit($ids = NULL)
-    {
-        $row = $this->model->get($ids);
-        if (!$row)
-            $this->error(__('No Results were found'));
-        $this->view->assign('groupList', build_select('row[group_id]', \app\admin\model\UserGroup::column('id,name'), $row['group_id'], ['class' => 'form-control selectpicker']));
-        return parent::edit($ids);
-    }
+//     public function edit($ids = NULL)
+//     {
+//         $row = $this->model->get($ids);
+//         if (!$row)
+//             $this->error(__('No Results were found'));
+//         $groupdata = Db::name('user_group')->where(['status' => 1])->column('name','id');
+//         $this->assign('groupdata',$groupdata);
+//         return parent::edit($ids);
+//     }
 
+    public function editAssign() {
+        $groupdata = Db::name('user_group')->where(['status' => 1])->column('name','id');
+        $this->assign('groupdata',$groupdata);
+    }
 }

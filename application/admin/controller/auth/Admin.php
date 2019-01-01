@@ -58,7 +58,7 @@ class Admin extends baseAdmin {
             }
             $groupdata = $result;
         }
-
+//         print_r($groupdata);die();
         $this->assign('statusList', json_encode(['0'=>'禁用','1'=>'启用'],JSON_FORCE_OBJECT));
         $this->view->assign('groupdata', $groupdata);
         $this->assignconfig("admin", ['id' => $this->auth->id]);

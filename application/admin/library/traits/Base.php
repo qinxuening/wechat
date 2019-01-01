@@ -53,9 +53,9 @@ trait Base{
             $this->beforeSave($data);
             unset($data['id']);
             if($id) {
-                $result = $this->table->where([$this->table->getPk()=> $id])->update($data);
+                $result = $this->table->strict(false)->where([$this->table->getPk()=> $id])->update($data);
             } else {
-                $result = $this->table->insert($data);
+                $result = $this->table->strict(false)->insert($data);
             }
             
             if(false !== $result){
@@ -133,6 +133,9 @@ trait Base{
             }
         }
         foreach ($data as $k => &$v) {
+            if(!$v) {
+                unset($data[$k]);
+            }
             if($this->getFieldType()[$k] == 'tinyint(1)') {
                 $data[$k] = $data[$k] === 'on' ? '1' : 0;
             }
