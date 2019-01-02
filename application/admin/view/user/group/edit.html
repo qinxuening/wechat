@@ -1,40 +1,190 @@
-<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
-    <input type="hidden" name="row[rules]" value="{$row.rules}" />
-    <div class="form-group">
-        <label for="c-name" class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-name" class="form-control" name="row[name]" type="text" value="{$row.name}">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="nickname" class="control-label col-xs-12 col-sm-2">{:__('Permission')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <span class="text-muted"><input type="checkbox" name="" id="checkall" /> <label for="checkall"><small>{:__('Check all')}</small></label></span>
-            <span class="text-muted"><input type="checkbox" name="" id="expandall" /> <label for="expandall"><small>{:__('Expand all')}</small></label></span>
-
-            <div id="treeview"></div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="c-status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            
-            <div class="radio">
-            {foreach name="statusList" item="vo"}
-            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="$row.status"}checked{/in} /> {$vo}</label> 
-            {/foreach}
+{extend name="layout/default" /}
+{block name="content"}
+<body>
+<!--<div class="layui-container lay_top">-->
+<!--<div class="layui-row layui-col-space30">-->
+<div class="body-form">
+    <form class="layui-form" action="" id="rule" lay-filter="rule">
+        <input type="hidden" name="ids"  value="{$list['id']}" class="layui-input">
+        <table class="layui-table" lay-skin="line" lay-size="sm">
+            <colgroup>
+                <col class="tdleft" width="30%">
+                <col class="tdright">
+            </colgroup>
+            <tbody>
+            <td class="tdleft">{:__('Name')}:<span class="tips">*</span></td>
+            <td class="tdright">
+                <input type="text" name="name" data-rule="required;" lay-verify="name" autocomplete="off" value="{$list['name']}" placeholder="" class="layui-input">
+                <input type="hidden" name="id" lay-verify="id" value="{$list['id']}">
+            </td>
+            <tr>
+                <td class="tdleft">{:__('Status')}:</td>
+                <td class="tdright">
+                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">{:__('Permission')}:</td>
+                <td class="tdright">
+                    <input type="checkbox"  id="checkall" lay-skin="primary"  lay-filter="checkall" title="{:__('Check all')}">
+                    <input type="checkbox"  id="expandall" lay-skin="primary" lay-filter="expandall" title="{:__('Expand all')}">
+                    <div id="LAY-auth-tree-index"></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!--<div class="layui-form-item">-->
+        <!--<div class="layui-input-block">-->
+        <!--<button class="layui-btn" lay-submit="" lay-filter="formRule">立即提交</button>-->
+        <!--<button type="reset" class="layui-btn layui-btn-primary">重置</button>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--hidden layer-footer-->
+        <div class="layui-form-item footer-form">
+            <div class="footer">
+                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+                <button type="reset" class="layui-btn layui-btn-sm btn-embossed">{:__('Reset')}</button>
             </div>
+        </div>
+    </form>
+</div>
+<!--</div>-->
+<!--</div>-->
+{/block}
+{block name="script"}
 
-        </div>
-    </div>
-    <div class="form-group layer-footer">
-        <label class="control-label col-xs-12 col-sm-2"></label>
-        <div class="col-xs-12 col-sm-8">
-            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
-            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
-        </div>
-    </div>
-</form>
 <script>
-    var nodeData = {:json_encode($nodeList); };
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        ,authtree: 'authtree',
+//        ,jstree: 'jstree/dist/jstree'
+//    .link("__STATIC__/modules/jstree/dist/themes/default/style.css")
+    }).use(['jquery','index','form','element','layer','authtree','we'], function(){
+        var admin = layui.admin
+            ,$ = layui.$ //重点处
+            ,form = layui.form
+            ,table = layui.table
+            ,layer = layui.layer
+            ,we = layui.we
+            ,authtree = layui.authtree;
+
+        var authids = authtree.getChecked('#LAY-auth-tree-index');
+        //监听提交
+        form.on('submit(formRule)', function(data){
+            var formData = data.field;
+            var ids = "{$list['id']}";
+            var url = "{:url('admin/user.group/edit','',false)}/ids/" + ids;
+            formData['rules'] = authids.join(',');
+            we.api.ajax({"url":url,"data":formData,'tableid':'tableReload'});
+        });
+        var id = "{$list['id']}";
+//        var pid = "{$row['pid']}" ? "{$row['pid']}" : 1;
+
+        // 初始化
+        $.ajax({
+            url: "{:url('admin/user.group/roletree')}",
+            dataType: 'json',
+            "data":{'ids':id},
+            "type":'post',
+            success: function(data){
+                // 渲染时传入渲染目标ID，树形结构数据（具体结构看样例，checked表示默认选中），以及input表单的名字
+                authtree.render('#LAY-auth-tree-index', data.data.trees, {
+                    inputname: 'authids[]',
+                    layfilter: 'lay-check-auth',
+                    // openall: true,
+                    autowidth: true,
+                });
+                // 使用 authtree.on() 不会有冒泡延迟
+                authtree.on('change(lay-check-auth)', function(data) {
+                    console.log('监听 authtree 触发事件数据', data);
+                    // 获取所有节点
+                    var all = authtree.getAll('#LAY-auth-tree-index');
+                    console.log('all', all);
+                    // 获取所有已选中节点
+                    var checked = authtree.getChecked('#LAY-auth-tree-index');
+                    console.log('checked', checked);
+                    // 获取所有未选中节点
+                    var notchecked = authtree.getNotChecked('#LAY-auth-tree-index');
+                    console.log('notchecked', notchecked);
+                    // 获取选中的叶子节点
+                    var leaf = authtree.getLeaf('#LAY-auth-tree-index');
+                    console.log('leaf', leaf);
+                    // 获取最新选中
+                    var lastChecked = authtree.getLastChecked('#LAY-auth-tree-index');
+                    console.log('lastChecked', lastChecked);
+                    // 获取最新取消
+                    var lastNotChecked = authtree.getLastNotChecked('#LAY-auth-tree-index');
+                    console.log('lastNotChecked', lastNotChecked);
+
+                });
+                authtree.on('deptChange(lay-check-auth)', function(data) {
+                    console.log('监听到显示层数改变',data);
+                });
+
+            }
+        });
+
+        /**
+         * 全选
+         * */
+        form.on('checkbox(checkall)', function(data){
+            if(data.elem.checked) {
+                authtree.checkAll("#LAY-auth-tree-index");
+            } else {
+                authtree.uncheckAll("#LAY-auth-tree-index");
+            }
+        });
+
+        /**
+         * 全部展开
+         * */
+        form.on('checkbox(expandall)', function(data){
+            if(data.elem.checked) {
+                authtree.showAll("#LAY-auth-tree-index");
+            } else {
+                authtree.closeAll("#LAY-auth-tree-index");
+            }
+        });
+
+        /**
+         * 监听select选择
+         */
+        form.on('select(character)', function(data){
+            console.log(data.elem);
+            console.log(data.value); //得到被选中的值
+            console.log(data.othis.data("pid"));
+            $.ajax({
+                url: "{:url('admin/user.group/roletree')}",
+                type: 'post',
+                dataType: 'json',
+                async:true,
+                data: {id: id, pid: data.value},
+                success: function (ret) {
+                    if (ret.code == 1) {
+                        $("#LAY-auth-tree-index").html('');
+                        //销毁已有的节点树
+                        authtree.render('#LAY-auth-tree-index', ret.data.trees, {
+                            inputname: 'authids[]',
+                            layfilter: 'lay-check-auth',
+                            // openall: true,
+                            autowidth: true,
+                        });
+                    } else {
+                        layer.tips(ret.data);
+                    }
+                }, error: function (e) {
+                    layer.tips(e.message);
+                }
+            });
+
+        });
+
+
+    });
 </script>
+</body>
+</html>
+{/block}

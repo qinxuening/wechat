@@ -50,8 +50,10 @@ trait Base{
         if ($this->request->isAjax()){
             $id = input('post.id');
             $data = input('');
+            $this->autoData($data);
             $this->beforeSave($data);
             unset($data['id']);
+//             print_r($data);die();
             if($id) {
                 $result = $this->table->strict(false)->where([$this->table->getPk()=> $id])->update($data);
             } else {
@@ -123,6 +125,10 @@ trait Base{
         
     }
     
+    public function autoData(&$data){
+        
+    }
+    
     /**
      * 处理时间,转为时间戳
      */
@@ -132,8 +138,9 @@ trait Base{
                 $data[$value] = 0;
             }
         }
+
         foreach ($data as $k => &$v) {
-            if(!$v) {
+            if($v === '' || $v === null) {
                 unset($data[$k]);
             }
             if($this->getFieldType()[$k] == 'tinyint(1)') {

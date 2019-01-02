@@ -3,6 +3,7 @@
 namespace app\admin\controller\user;
 use app\common\controller\baseAdmin;
 use think\Db;
+use app\admin\library\Category;
 
 /**
  * 会员组管理
@@ -33,23 +34,20 @@ class Group extends baseAdmin
         $this->model = model('UserGroup');
         $this->view->assign("statusList", $this->model->getStatusList());
     }
-
-    public function add()
-    {
-        $nodeList = \app\admin\model\UserRule::getTreeList();
-        $this->assign("nodeList", $nodeList);
-        return parent::add();
-    }
-
-    public function edit($ids = NULL)
-    {
-        $row = $this->model->get($ids);
-        if (!$row)
-            $this->error(__('No Results were found'));
+    
+    public function roletree() {
+        $row = $this->model->get(input('ids'));
+        $allnode = Db::name('user_rule')->field('id,pid,title as name')->select();
+        foreach ($allnode as $k => &$v){
+            $v['value'] = $v['id'];
+        }
         $rules = explode(',', $row['rules']);
-        $nodeList = \app\admin\model\UserRule::getTreeList($rules);
-        $this->assign("nodeList", $nodeList);
-        return parent::edit($ids);
+        $arr_ = Category::unlimiteForLayer($allnode,'list',$rules,true);
+        return json(['code' =>1, 'msg' => '获取成功', 'data' => ['trees' => $arr_]]);
     }
 
+    public function autoData(&$data){
+        $data['rules'] = implode(',', $data['authids']);
+    }
+    
 }
