@@ -196,6 +196,7 @@ vim /etc/crontab
 */2 * * * *  /shell/start.sh
 */2 * * * *  /var/www/html/wechat/crons/work_check.sh
 
+重启cron服务：service cron restart
 
 坏的解释器: 没有那个文件或目录
     解决：sed -i 's/\r$//' dump_sql.sh
