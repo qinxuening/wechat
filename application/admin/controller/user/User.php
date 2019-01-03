@@ -39,14 +39,17 @@ class User extends baseAdmin
         if ($this->request->isAjax())
         {
             $this->request->filter(['strip_tags']);
+            list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $count = $this->table
                 ->alias('u')
+                ->where($where)
                 ->join('__USER_GROUP__ a','a.id=u.group_id', 'LEFT')
                 ->count('*');
     
             $dataCol = exportCols(); 
             $this->list = $this->table
                 ->alias('u')
+                ->where($where)
                 ->join('__USER_GROUP__ a','a.id=u.group_id', 'LEFT')
                 ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
 //                 ->fetchSql(true)
@@ -92,6 +95,8 @@ class User extends baseAdmin
 
     public function editAssign() {
         $groupdata = Db::name('user_group')->where(['status' => 1])->column('name','id');
+        $rule_info = get_passwd_rule();
+        $this->view->assign('passwd_complexity_rule', $rule_info);
         $this->assign('groupdata',$groupdata);
     }
 }

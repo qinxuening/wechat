@@ -16,10 +16,12 @@ trait Base{
         if ($this->request->isAjax())
         {  
 //             $this->request->filter(['strip_tags', 'htmlspecialchars']);
-            $count = $this->table->count('*');
+            list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+            $count = $this->table->where($where)->count('*');
             
             $dataCol = exportCols();
             $this->list = $this->table
+                ->where($where)
                 ->page($dataCol ? 1 : $page,$dataCol ? $count : $limit)
                 ->select();
 

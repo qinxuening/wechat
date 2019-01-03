@@ -72,8 +72,6 @@ class Rule extends baseAdmin
         return json(['code' => 0, 'count' => $count, 'data' => $this->rulelist,'msg' => '获取成功']);
     }
 
-    public function autoData(&$data){
 
-    }
 
 }
