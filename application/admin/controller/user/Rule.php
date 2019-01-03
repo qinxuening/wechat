@@ -19,10 +19,21 @@ class Rule extends baseAdmin
     protected $model = null;
     protected $rulelist = [];
     protected $multiFields = 'ismenu,status';
+    protected $table;
+    protected $excel_title;
+    protected $table_name;
+    protected $status;
 
     public function _initialize()
     {
         parent::_initialize();
+        $this->table = Db::name('UserRule');
+        $this->table_name = 'UserRule';
+        $this->excel_title = '会员规则管理报表';
+        $this->status = [
+            'status' => ['0'=>'禁用', '1'=>'启用'],
+            'ismenu' => ['0'=>'否', '1' => '否']
+        ];
         $this->model = model('UserRule');
         $this->view->assign("statusList", $this->model->getStatusList());
         // 必须将结果集转换为数组
@@ -61,43 +72,8 @@ class Rule extends baseAdmin
         return json(['code' => 0, 'count' => $count, 'data' => $this->rulelist,'msg' => '获取成功']);
     }
 
-    /**
-     * 查看
-     */
-    public function index()
-    {
-        if ($this->request->isAjax())
-        {
-            $list = $this->rulelist;
-            $total = count($this->rulelist);
+    public function autoData(&$data){
 
-            $result = array("total" => $total, "rows" => $list);
-
-            return json($result);
-        }
-        return $this->view->fetch();
-    }
-
-    /**
-     * 删除
-     */
-    public function del($ids = "")
-    {
-        if ($ids)
-        {
-            $delIds = [];
-            foreach (explode(',', $ids) as $k => $v)
-            {
-                $delIds = array_merge($delIds, Tree::instance()->getChildrenIds($v, TRUE));
-            }
-            $delIds = array_unique($delIds);
-            $count = $this->model->where('id', 'in', $delIds)->delete();
-            if ($count)
-            {
-                $this->success();
-            }
-        }
-        $this->error();
     }
 
 }

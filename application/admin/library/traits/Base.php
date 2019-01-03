@@ -55,8 +55,10 @@ trait Base{
             unset($data['id']);
 //             print_r($data);die();
             if($id) {
+                $data['updatetime'] = time();
                 $result = $this->table->strict(false)->where([$this->table->getPk()=> $id])->update($data);
             } else {
+                $data['createtime'] = time();
                 $result = $this->table->strict(false)->insert($data);
             }
             
