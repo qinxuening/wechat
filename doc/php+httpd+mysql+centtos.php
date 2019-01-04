@@ -221,7 +221,7 @@ apache apache 执行shell权限
     apache ALL=(ALL) NOPASSWD: ALL
     
 
-
+查看所有数据库名：SELECT SCHEMA_NAME as '表名' from SCHEMATA;
 
 
 
