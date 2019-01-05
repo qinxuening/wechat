@@ -121,11 +121,11 @@ if (!function_exists('build_toolbar')) {
             $btns[$index] = 'del';
         }
         $btnAttr = [
-            'refresh' => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-refresh-3', '刷新'],
-            'add'     => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-add-1', '添加'],
-            'del'     => ['layui-btn layui-btn-sm layui-btn-danger', 'layui-icon layui-icon-delete', '删除'],//btn-disabled disabled
-            'export'  => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-file', '导出'],
-            'import'  => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-upload', '导入'],
+            'refresh' => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-refresh-3', __('Refresh')],
+            'add'     => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-add-1', __('Add')],
+            'del'     => ['layui-btn layui-btn-sm layui-btn-danger', 'layui-icon layui-icon-delete', __('Delete')],//btn-disabled disabled
+            'export'  => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-file', __('Export')],
+            'import'  => ['layui-btn layui-btn-sm', 'layui-icon layui-icon-upload', __('Import')],
         ];
         $btnAttr = array_merge($btnAttr, $attr);
 //         print_r($btnAttr);
@@ -170,9 +170,9 @@ if(!function_exists('build_actionbar')) {
             $btns[$index] = 'del';
         }
         $btnAttr = [
-            'view' => ['layui-btn layui-btn-xs layui-btn-view', 'layui-icon layui-icon-file-b', '查看',''],
-            'edit'     => ['layui-btn layui-btn-xs', 'layui-icon layui-icon-edit', '编辑',''],
-            'del'     => ['layui-btn layui-btn-danger layui-btn-xs', 'layui-icon layui-icon-delete', '删除',''],//btn-disabled disabled
+            'view' => ['layui-btn layui-btn-xs layui-btn-view', 'layui-icon layui-icon-file-b', __('View'),''],
+            'edit'     => ['layui-btn layui-btn-xs', 'layui-icon layui-icon-edit', __('Edit'),''],
+            'del'     => ['layui-btn layui-btn-danger layui-btn-xs', 'layui-icon layui-icon-delete', __('Delete'),''],//btn-disabled disabled
         ];
 
         $btnAttr = array_merge($btnAttr, $attr);

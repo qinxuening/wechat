@@ -5,13 +5,14 @@
 layui.define(['jquery','laydate','form'], function(exports){
     var laydate = layui.laydate
         ,form = layui.form;
-
+    // var Search = "{:__('Search')}";
     var options = {};
     var formSearch = {
         api:{
             init : function (defaults) {
                 var search = defaults.search;
                 var cols = defaults.cols[0];
+                var data = defaults.data;
                 var html = '';
                 options = defaults;
                 if(search == true) {
@@ -49,8 +50,8 @@ layui.define(['jquery','laydate','form'], function(exports){
                     });
 
                     html += '<li>'+
-                        '<button class="layui-btn layui-btn-sm search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>'+
-                        '<button type="reset" class="layui-btn layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>'+
+                        '<button class="layui-btn layui-btn-sm search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>'+data.Search+'</button>'+
+                        '<button type="reset" class="layui-btn layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>'+data.Reset+'</button>'+
                         '</li>';
                     html += '</ul></form>';
                     $('.searchbody').html(html);
