@@ -490,9 +490,8 @@ class Auth extends \we\Auth{
             $v['pinyin'] = $pinyin->permalink($v['title'], '');#返回拼音
             $v['title'] = __($v['title']);
         }
-//         print_r($ruleList);
+//         print_r($ruleList);die();
         $arr_ = Category::unlimiteForLayer($ruleList,'child');
-
 
         $html = '';
         foreach ($arr_ as $k => $v){
