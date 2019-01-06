@@ -218,13 +218,13 @@ return [
     'Payment Information'                            => '支付信息',
     'Business management'                            => '业务管理',
     'Task list'                                      => '任务列表',
-    
-    
-    
-    
-    
-    
-    
+    'Change password'                                => '修改密码',
+    'Logout'                                         => '退出',
+    'Message center'                                 => '消息中心',
+    'Management system'                              => '后台管理系统', 
+    'Close current tab'                              => '关闭当前标签页',
+    'Close other tabs'                               => '关闭其它标签页',
+    'Close all tabs'                                 => '关闭全部标签页',
     
     
     

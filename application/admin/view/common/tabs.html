@@ -7,16 +7,16 @@
             <li class="layui-nav-item" lay-unselect>
                 <a href="javascript:;"></a>
                 <dl class="layui-nav-child layui-anim-fadein">
-                    <dd layadmin-event="closeThisTabs"><a href="javascript:;">关闭当前标签页</a></dd>
-                    <dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>
-                    <dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>
+                    <dd layadmin-event="closeThisTabs"><a href="javascript:;">{:__('Close current tab')}</a></dd>
+                    <dd layadmin-event="closeOtherTabs"><a href="javascript:;">{:__('Close other tabs')}</a></dd>
+                    <dd layadmin-event="closeAllTabs"><a href="javascript:;">{:__('Close all tabs')}</a></dd>
                 </dl>
             </li>
         </ul>
     </div>
     <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
         <ul class="layui-tab-title" id="LAY_app_tabsheader">
-            <li lay-id="home/console.html" lay-attr="home/console.html" class="layui-this">首页</li>
+            <li lay-id="home/console.html" lay-attr="home/console.html" class="layui-this">{:__('Home')}</li>
         </ul>
     </div>
 </div>

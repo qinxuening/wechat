@@ -36,6 +36,7 @@ return [
     'Wipe all cache'                                             => '一键清除缓存',
     'Wipe content cache'                                         => '清空内容缓存',
     'Wipe template cache'                                        => '清除模板缓存',
+    'Wipe log cache'                                             => '清除日志缓存',
     'Wipe addons cache'                                          => '清除插件缓存',
     'Check for updates'                                          => '检测更新',
     'Latest news'                                                => '最新消息',

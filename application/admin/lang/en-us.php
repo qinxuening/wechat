@@ -155,7 +155,7 @@ return [
     'Admin log'                                             => 'Admin log',
     'Group'                                                 => 'Group',
     'Rule'                                                  => 'Rule',
-    'User'                                                  => 'Member',
+    'User'                                                  => 'Member management',
     'User list'                                             => 'Member list',
     'User group'                                            => 'User group',
     'User rule'                                             => 'User rule',
@@ -217,11 +217,13 @@ return [
     'Payment Information'                            => 'Payment Information',
     'Business management'                            => 'Business management',
     'Task list'                                      => 'Task list',
-    
-    
-    
-    
-    
+    'Change password'                                => 'Change password',
+    'Logout'                                         => 'Logout',
+    'Message center'                                 => 'Message center',
+    'Management system'                              => 'Management System', 
+    'Close current tab'                              => 'Close current tab',
+    'Close other tabs'                               => 'Close other tabs',
+    'Close all tabs'                                 => 'Close all tabs',
     
     
     
