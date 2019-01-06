@@ -224,9 +224,10 @@ return [
     'Close current tab'                              => 'Close current tab',
     'Close other tabs'                               => 'Close other tabs',
     'Close all tabs'                                 => 'Close all tabs',
-    
-    
-    
+    'Counts'                                         => 'Counts',
+    'Freeze account login'                           => 'Freeze account login',
+    'Minute'                                         => 'Minutes',
+    'Save'                                           => 'Save',
     
     
     

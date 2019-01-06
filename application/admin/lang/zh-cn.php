@@ -225,9 +225,10 @@ return [
     'Close current tab'                              => '关闭当前标签页',
     'Close other tabs'                               => '关闭其它标签页',
     'Close all tabs'                                 => '关闭全部标签页',
-    
-    
-    
+    'Counts'                                         => '次',
+    'Freeze account login'                           => '冻结账号登录',
+    'Minute'                                         => '分钟',
+    'Save'                                           => '保存',
     
     
     

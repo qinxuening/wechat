@@ -1573,6 +1573,7 @@ body .layui-layer-we{
 tr>td.tdleft {
     text-align: right;
     background-color: #EEEEEE;
+    font-size: 14px !important;
     /*display: table-cell;*/
 }
 
@@ -1584,6 +1585,7 @@ tr>td.tdright {
     text-align: left;
     background: #F5F5F5 !important;
     vertical-align: middle;
+    font-size: 14px !important;
     /*float:left;*/
     /*line-height: 30px;*/
     /*height: 30px;*/
