@@ -60,17 +60,16 @@ class System extends baseAdmin{
         $version = Db::name()->query('select VERSION() as version');
         $version = $version[0]['version'];
         $info = [
-            'OPERATING_SYSTEM' => PHP_OS,
-            'OPERATING_ENVIRONMENT' => $_SERVER["SERVER_SOFTWARE"],
-            'PHP_RUN_MODE' => php_sapi_name(),
-            'MYSQL_VERSION' => $version,
-            'UPLOAD_MAX_FILESIZE' => ini_get('upload_max_filesize'),
-            'MAX_EXECUTION_TIME' => ini_get('max_execution_time') . "s",
-            'DISK_FREE_SPACE' => format_bytes(@disk_free_space(".")) ,//round((@disk_free_space(".") / (1024 * 1024)), 2) . 'M',
+             __('OPERATING_SYSTEM') => PHP_OS,
+             __('OPERATING_ENVIRONMENT') => $_SERVER["SERVER_SOFTWARE"],
+             __('PHP_RUN_MODE') => php_sapi_name(),
+             __('MYSQL_VERSION') => $version,
+             __('UPLOAD_MAX_FILESIZE') => ini_get('upload_max_filesize'),
+             __('MAX_EXECUTION_TIME') => ini_get('max_execution_time') . "s",
+             __('DISK_FREE_SPACE') => format_bytes(@disk_free_space(".")) ,//round((@disk_free_space(".") / (1024 * 1024)), 2) . 'M',
         ];
 
         $this->assign('server_info', $info);
-//         print_r(config('system_info'));die();
         $this->assign('system_info', config('system_info'));
         return $this->view->fetch();
     }
