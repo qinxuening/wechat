@@ -122,8 +122,10 @@ return [
     //提示
     'Go back'                                               => '返回上一页',
     'Jump now'                                              => '立即跳转',
-    'Operation completed'                                   => '操作成功!',
-    'Operation failed'                                      => '操作失败!',
+    'Operation completed'                                   => 'Operation completed!',
+    'Operation failed'                                      => 'Operation failed!',
+    'Get completed'                                         => 'Get completed!',
+    'Illegal operation'                                     => 'Illegal operation',
     'Unknown data format'                                   => '未知的数据格式!',
     'Network error'                                         => '网络错误!',
     'Invalid parameters'                                    => '未知参数',
@@ -182,7 +184,7 @@ return [
     '0'                                                     => '禁用',
     'Cancle'                                                => '取消',
     'Account is not activated'                              => '账号未激活',
-    'Confirm password' => '确认密码',
+    'Confirm password' => 'Confirm password',
     'Password check error' => '密码和原始密码不一致',
     'Password not equalt confirm_password' => '密码和确认密码不一致',
     'Are you sure you want to stop this item?' => '确定停止此项?',
@@ -228,8 +230,8 @@ return [
     'Freeze account login'                           => 'Freeze account login',
     'Minute'                                         => 'Minutes',
     'Save'                                           => 'Save',
-    
-    
+    'Successfully deleted'                           => 'Successfully deleted',
+    'Failed to delete'                               => 'Failed to delete',
     
     
     

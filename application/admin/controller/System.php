@@ -19,9 +19,9 @@ class System extends baseAdmin{
                 $result = Db::name('config')->where(['key' => 'passwd_complexity'])->update(['value' => $params['strategy']]);
         
                 if(false !== $result) {
-                   return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                   return json(['code' => 1, 'status' => 'success', 'msg' =>  __('Operation completed')]);
                 } else {
-                   return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+                   return json(['code' => -1, 'status' => 'error', 'msg' => __('Operation failed')]);
                 }
             } else {
                 $result1 = Db::name('config')->where(['key' => 'login_captcha'])->update(['value' => $params['login_captcha']]);
@@ -36,9 +36,9 @@ class System extends baseAdmin{
                 $result2 = Db::name('config')->where(['key' => 'login_limit'])->update(['value' => $arr]);
         
                 if(false !== $result1 && false !== $result2) {
-                     return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                     return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
                 } else {
-                    return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+                    return json(['code' => -1, 'status' => 'error', 'msg' => __('Operation failed')]);
                 }
             }
         
@@ -96,13 +96,13 @@ class System extends baseAdmin{
                     $result = set_config($config_file,$data);
                     
                     if($result !== false) {
-                        return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                        return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
                     } else {
-                        return json(['code' => -3, 'status' => 'error', 'msg' => '配置失败']);
+                        return json(['code' => -3, 'status' => 'error', 'msg' =>  __('Operation failed')]);
                     }
                     break;
                 default:
-                    return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+                    return json(['code' => -1, 'status' => 'error', 'msg' => __('Illegal operation')]);
             }
         }
         

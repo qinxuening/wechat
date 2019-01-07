@@ -58,12 +58,12 @@ class Database extends baseAdmin{
                 $path  = realpath(config('DATA_BACKUP_PATH')).'/'.$v;
                 array_map("unlink", glob($path));
                 if(count(glob($path))){
-                    return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
+                    return json(['code' => -1, 'status' => 'error', 'msg' => __('Failed to delete')]);
                 }
             }
-            return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功','url'=>'']);
+            return json(['code' => 1, 'status' => 'success', 'msg' => __('Successfully deleted'),'url'=>'']);
         }
-        return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
+        return json(['code' => -2, 'status' => 'error', 'msg' => __('Illegal operation')]);
     }
     
     
@@ -73,7 +73,7 @@ class Database extends baseAdmin{
     public function dumpdata() {
         $lock = realpath(config('DATA_BACKUP_PATH')) . DIRECTORY_SEPARATOR."/backup.lock";
         if(is_file($lock)){
-            return json(['code' => -3, 'status' => 'error', 'msg' => '检测到有一个备份任务正在执行']);
+            return json(['code' => -3, 'status' => 'error', 'msg' => '正在备份中']);
         }
         
         $backup_name = 'scan_'.date('YmdHis', time());

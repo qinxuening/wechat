@@ -124,6 +124,8 @@ return [
     'Go back'                                               => '返回上一页',
     'Jump now'                                              => '立即跳转',
     'Operation completed'                                   => '操作成功!',
+    'Get completed'                                         => '获取成功!',
+    'Illegal operation'                                     => '非法操作',
     'Operation failed'                                      => '操作失败!',
     'Unknown data format'                                   => '未知的数据格式!',
     'Network error'                                         => '网络错误!',
@@ -229,8 +231,8 @@ return [
     'Freeze account login'                           => '冻结账号登录',
     'Minute'                                         => '分钟',
     'Save'                                           => '保存',
-    
-    
+    'Successfully deleted'                           => '删除成功',
+    'Failed to delete'                               => '删除失败',
     
     
     

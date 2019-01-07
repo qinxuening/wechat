@@ -127,10 +127,10 @@ class Admin extends baseAdmin {
                 $action = new Export();
                 $baseurl = $action->excel($list,$field,$title);
                 $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
-                return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed'), 'url' => $filename]);
             }
             
-            return json(['code' => 0, 'status' => 'success', 'count' => $count, 'data' => $list,'msg' => '获取成功']);
+            return json(['code' => 0, 'status' => 'success', 'count' => $count, 'data' => $list,'msg' => __('Get completed')]);
         }
         return $this->view->fetch();
     }

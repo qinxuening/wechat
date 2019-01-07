@@ -14,40 +14,40 @@
                         </colgroup>
                         <tbody>
                         <tr>
-                            <td class="tdleft">登录账号<span class="tips">*</span></td>
+                            <td class="tdleft">{:__('Username')}<span class="tips">*</span></td>
                             <td class="tdright">
                                 <input type="text" name="username" autocomplete="off" value="{$admin.username}" data-rule="required;username" placeholder="登录账号" class="layui-input">
                                 <input type="hidden" name="id" lay-verify="id" value="{$admin.id}">
                             </td>
                         </tr>
                         <tr>
-                            <td class="tdleft">昵称</td>
+                            <td class="tdleft">{:__('Nickname')}</td>
                             <td class="tdright">
                                 <input type="nickname" name="nickname" placeholder="昵称" value="{$admin.nickname}" data-rule="required" autocomplete="off" class="layui-input">
                             </td>
                         </tr>
                         <tr>
-                            <td class="tdleft">邮箱</td>
+                            <td class="tdleft">{:__('Email')}</td>
                             <td class="tdright">
                                 <input type="email" name="email" placeholder="邮箱" value="{$admin.email}" autocomplete="off" data-rule="{required;email}" class="layui-input">
                             </td>
                         </tr>
                         <tr>
-                            <td class="tdleft">密码</td>
+                            <td class="tdleft">{:__('Password')}</td>
                             <td class="tdright">
                                 <input type="password" data-rule="passwdrule" data-rule-passwdrule="[/{$passwd_complexity_rule[0]}/, '{$passwd_complexity_rule[1]}']" name="password" placeholder="密码" autocomplete="off" class="layui-input">
                             </td>
                         </tr>
                         <tr>
-                            <td class="tdleft">确认密码</td>
+                            <td class="tdleft">{:__('Confirm password')}</td>
                             <td class="tdright">
                                 <input type="password" name="confirm_password" data-rule="{:__('Confirm password')}:match(password);" placeholder="确认密码"  autocomplete="off" class="layui-input">
                             </td>
                         </tr>
                         <tr>
-                            <td class="tdleft">状态</td>
+                            <td class="tdleft">{:__('Status')}</td>
                             <td class="tdright">
-                                <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$admin.status == 1? 'checked' : ''}>
+                                <input type="checkbox" name="status" lay-skin="switch" lay-text="{:__('On')}|{:__('Off')}"  {$admin.status == 1? 'checked' : ''}>
                             </td>
                         </tr>
                         </tbody>
@@ -92,8 +92,8 @@
                     <!--</div>-->
                     <div class="layui-form-item footer-form">
                         <div class="footer footer-common">
-                            <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="component-form-element">确实</button>
-                            <button type="reset" class="layui-btn layui-btn-sm">重置</button>
+                            <button type="submit" lay-submit="" lay-filter="" class="layui-btn layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+                            <button type="reset" class="layui-btn layui-btn-sm btn-embossed">{:__('Reset')}</button>
                         </div>
                     </div>
                 </form>

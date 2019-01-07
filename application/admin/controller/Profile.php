@@ -98,9 +98,9 @@ class Profile extends baseAdmin{
                 $admin->allowField(true)->save($params); //->allowField(true)过滤非数据表字段的数据
                 //                 }
                 Session::set("admin", $admin->toArray());
-                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
             }
-            return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+            return json(['code' => -1, 'status' => 'error', 'msg' => __('Illegal operation')]);
         }
         return;
     }

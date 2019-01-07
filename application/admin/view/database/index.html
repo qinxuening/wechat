@@ -149,10 +149,10 @@
                 {type:'checkbox',sort:true}
                 ,{field:'ID', title: 'ID',sort: true}
                 ,{field:'id', title: 'id',sort: true,hide:true}
-                ,{field:'backup_name', title: '备份名称'}
-                ,{field:'size', title: '数据大小'}
-                ,{field:'time', title: '备份时间', sort: true}
-                ,{align: 'center', title:'操作', toolbar: '#actionbar', width:200}
+                ,{field:'backup_name', title: "{:__('Backup name')}"}
+                ,{field:'size', title: "{:__('Data size')}"}
+                ,{field:'time', title: "{:__('Backup time')}", sort: true}
+                ,{align: 'center', title:"{:__('Operate')}", toolbar: '#actionbar', width:200}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
