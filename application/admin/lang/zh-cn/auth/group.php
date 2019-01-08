@@ -8,5 +8,7 @@ return [
     'Can not change the parent to self'                                    => '父组别不能是它的子组别',
     'You can not delete group that contain child group and administrators' => '你不能删除含有子组和管理员的组',
     'Group_name'                                                           => '角色名称',
-    'Updatetime'                                                           => '操作时间'
+    'Updatetime'                                                           => '操作时间',
+    'Parent group'                                                         => '父级', 
+    'Permission'                                                           => '权限',
 ];

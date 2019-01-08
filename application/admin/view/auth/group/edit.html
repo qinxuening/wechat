@@ -13,25 +13,25 @@
                 </colgroup>
                 <tbody>
                 <tr>
-                    <td class="tdleft">父级<span class="tips">*</span></td>
+                    <td class="tdleft">{:__('Parent group')}<span class="tips">*</span></td>
                     <td class="tdright">
                         {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid'],'lay-filter'=>"character"],$row['id'], $groupList)}
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">名称</td>
+                    <td class="tdleft">{:__('Group name')}</td>
                     <td class="tdright">
                         <input type="text" name="name" lay-verify="required" autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">状态</td>
+                    <td class="tdleft">{:__('Status')}</td>
                     <td class="tdright">
                         <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$row['status'] == 1? 'checked' : ''}>
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">权限</td>
+                    <td class="tdleft">{:__('Permission')}</td>
                     <td class="tdright">
                         <input type="checkbox"  id="checkall" lay-skin="primary"  lay-filter="checkall" title="{:__('Check all')}">
                         <input type="checkbox"  id="expandall" lay-skin="primary" lay-filter="expandall" title="{:__('Expand all')}">

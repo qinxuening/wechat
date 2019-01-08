@@ -85,12 +85,12 @@
             ,cols: [[
                 {type:'checkbox',sort:true}
                 ,{field:'id', title: 'ID', sort: true}
-                ,{field:'title', title: '规则名称'}
-                ,{field:'icon', title: '图标'}
-                ,{field:'ismenu', title: '是否为菜单', sort: true,templet: '#switchIsmenu'}
-                ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
-                ,{field:'name', title: '规则', minWidth: 150}
-                ,{align: 'center', title:'操作', toolbar: '#actionbar', width:220}
+                ,{field:'title', title: "{:__('Name')}",align:"center"}
+                ,{field:'icon', title: "{:__('Icon')}"}
+                ,{field:'ismenu', title: "{:__('Ismenu')}", sort: true,templet: '#switchIsmenu'}
+                ,{field:'status', title: "{:__('Status')}",templet: '#switchStatus', sort: true}
+                ,{field:'name', title: "{:__('Controller/Action')}"}
+                ,{align: 'center', title:"{:__('Operate')}", toolbar: '#actionbar', width:150}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局

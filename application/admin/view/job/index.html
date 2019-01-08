@@ -60,10 +60,10 @@
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'id', title: 'ID', sort: true,excel_width:15}
-                ,{field:'queue', title: '队列名称',excel_width:15}
-                ,{field:'payload', title: '内容', minWidth: 400,excel_width:150}
-                ,{field:'attempts', title: '尝试发送次数', sort: true,excel_width:15}
-                ,{field:'created_at', title: '创建时间',excel_width:15}
+                ,{field:'queue', title: "{:__('Name')}",excel_width:15}
+                ,{field:'payload', title: "{:__('Content')}", minWidth: 400,excel_width:150}
+                ,{field:'attempts', title: "{:__('Attempts')}", sort: true,excel_width:15}
+                ,{field:'created_at', title: "{:__('Add time')}",excel_width:15}
                 ,{fixed: 'right', title:"{:__('Operate')}", toolbar: '#actionbar', width:150}
             ]]
             ,page: {
