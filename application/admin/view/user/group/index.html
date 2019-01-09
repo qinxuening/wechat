@@ -19,18 +19,18 @@
 
 <!--状态-->
 <script type="text/html" id="switchStatus">
-    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="{:__('On')}|{:__('Off')}" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
 </script>
 
 <!--状态-->
 <script type="text/html" id="switchIsmenu">
-    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
+    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="{:__(Yes)}|{:__('No')}" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
 </script>
 
 <!--操作-->
 <script type="text/html" id="barDemo">
     {{# if(d.rules != '*'){  }}
-    <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>{:__('Edit')}</a>
     {{# }  }}
 </script>
 {/block}
@@ -68,7 +68,7 @@
                 ,{field:'status', title: "{:__('Status')}",templet: '#switchStatus', sort: true}
                 ,{field:'createtime', title: "{:__('Createtime')}", minWidth: 150}
                 ,{field:'updatetime', title: "{:__('Updatetime')}", minWidth: 150}
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
+                ,{fixed: 'right', title:"{:__('Operate')}", toolbar: '#barDemo', width:200}
             ]]
             ,done: function(res, curr, count){
                 if(res.status == 'success') {

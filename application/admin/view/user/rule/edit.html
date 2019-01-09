@@ -12,46 +12,46 @@
             </colgroup>
             <tbody>
             <tr>
-                <td class="tdleft">菜单<span class="tips">*</span></td>
+                <td class="tdleft">{:__('Ismenu')}<span class="tips">*</span></td>
                 <td class="tdright">
-                    <input type="checkbox" name="ismenu" lay-skin="switch" lay-text="是|否" {$list['ismenu'] == 1? 'checked' : ''}>
+                    <input type="checkbox" name="ismenu" lay-skin="switch" lay-text="{:__('Yes')}|{:__('No')}" {$list['ismenu'] == 1? 'checked' : ''}>
                     <input type="hidden" name="id" value="{$list['id']}">
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">父级</td>
+                <td class="tdleft">{:__('Pid')}</td>
                 <td class="tdright">
                     {:build_select('pid', $ruledata, $list['pid'], ['class'=>'form-control', 'required'=>''])}
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">规则</td>
+                <td class="tdleft">{:__('Name')}</td>
                 <td class="tdright">
-                    <input type="text" name="name" data-rule="required;" autocomplete="off" value="{$list['name']}" placeholder="规则名称" class="layui-input">
+                    <input type="text" name="name" data-rule="required;" autocomplete="off" value="{$list['name']}" placeholder="" class="layui-input">
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">标题</td>
+                <td class="tdleft">{:__('Title')}</td>
                 <td class="tdright">
-                    <input type="title" name="title"  data-rule="required" placeholder="标题" value="{$list['title']}" autocomplete="off" class="layui-input">
+                    <input type="title" name="title"  data-rule="required" placeholder="" value="{$list['title']}" autocomplete="off" class="layui-input">
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">权重</td>
+                <td class="tdleft">{:__('Weigh')}</td>
                 <td class="tdright">
                     <input type="weigh" name="weigh" data-rule="required;integer(+0)" placeholder="权重" value="{$list['weigh']}" autocomplete="off" class="layui-input">
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">状态</td>
+                <td class="tdleft">{:__('Status')}</td>
                 <td class="tdright">
-                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>
+                    <input type="checkbox" name="status" lay-skin="switch" lay-text="{:__('On')}|{:__('Off')}"  {$list['status'] == 1? 'checked' : ''}>
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">备注</td>
+                <td class="tdleft">{:__('Remark')}</td>
                 <td class="tdright">
-                    <textarea placeholder="备注" class="layui-textarea" name="remark">{$list['remark']}</textarea>
+                    <textarea placeholder="" class="layui-textarea" name="remark">{$list['remark']}</textarea>
                 </td>
             </tr>
             </tbody>

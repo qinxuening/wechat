@@ -3,6 +3,7 @@
 return [
     'Id'             => 'ID',
     'Group_id'       => 'Group_id',
+    'Group'          => 'Group',
     'Username'       => 'Username',
     'Nickname'       => 'Nickname',
     'Password'       => 'Password',

@@ -65,9 +65,9 @@ trait Base{
             }
             
             if(false !== $result){
-                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
             } else {
-                return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+                return json(['code' => -1, 'status' => 'error', 'msg' => __('Operation failed')]);
             }
         }
         $list = $this->table->where([$this->table->getPk() => $ids])->find();

@@ -157,10 +157,17 @@
                 ,{align: 'center', title:'操作', toolbar: '#actionbar', width:200}
             ]]
             ,page: {
-                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
-                ,first: false //不显示首页
-                ,last: false //不显示尾页
-
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']
+                ,all:"{:__('Total')}"
+                ,item:"{:__('Item')}"
+                ,confirm:"{:__('Confirm')}"
+                ,page:"{:__('Page')}"
+                ,ipage:"{:__('IPage')}"
+                ,to:"{:__('To')}"
+                ,first: "{:__('First')}"
+                ,last: "{:__('Last')}"
+                ,prev: "{:__('Previous')}"
+                ,next: "{:__('Next')}"
             }
             ,done: function(res, curr, count){
                 if(res.status == 'success') {

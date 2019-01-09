@@ -3,6 +3,7 @@
 return [
     'Id'             => 'ID',
     'Group_id'       => '组别ID',
+    'Group'          => '角色',
     'Username'       => '用户名',
     'Nickname'       => '昵称',
     'Password'       => '密码',
