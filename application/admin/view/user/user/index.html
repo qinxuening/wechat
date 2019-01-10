@@ -25,14 +25,14 @@
 {:build_toolbar('toolbar',['refresh', 'add', 'del', 'export'])}
 
 <!--状态-->
-<script type="text/html" id="switchStatus">
-    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="激活|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
-</script>
+<!--<script type="text/html" id="switchStatus">-->
+    <!--<input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="激活|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>-->
+<!--</script>-->
 
 <!--状态-->
-<script type="text/html" id="switchIsmenu">
-    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
-</script>
+<!--<script type="text/html" id="switchIsmenu">-->
+    <!--<input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>-->
+<!--</script>-->
 
 <!--操作-->
 {:build_actionbar('actionbar',['edit', 'del'])}

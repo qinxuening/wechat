@@ -35,9 +35,9 @@ trait Base{
                 $action = new Export();
                 $baseurl = $action->excel($this->list,$field,$title);
                 $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
-                return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Export successful'), 'url' => $filename]);
             }
-            return json(['code' => 0, 'count' => $count, 'status' => 'success', 'data' => $this->list,'msg' => '获取成功']);
+            return json(['code' => 0, 'count' => $count, 'status' => 'success', 'data' => $this->list,'msg' => __('Get completed')]);
         }else{
             return $this->view->fetch();
         }
@@ -89,12 +89,12 @@ trait Base{
             $count = $this->table->where($this->table->getPk(), 'in', explode(',', $ids))->delete();
             if ($count)
             {
-                return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功','url'=>'']);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('deleted Successfully'),'url'=>'']);
             } else {
-                return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
+                return json(['code' => -1, 'status' => 'error', 'msg' => __('Failed to delete')]);
             }
         }
-        return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
+        return json(['code' => -2, 'status' => 'error', 'msg' => __('Failed to delete')]);
     }
     
     /**

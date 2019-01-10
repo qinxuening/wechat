@@ -31,4 +31,20 @@ return [
     'Token'          => 'Token',
     'Status'         => 'Status',
     'Leave password blank if dont want to change' => '不修改密码请留空',
+    'Member report'  => 'Member report',
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 ];

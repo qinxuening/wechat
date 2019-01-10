@@ -27,9 +27,9 @@ class Group extends baseAdmin
         parent::_initialize();
         $this->table = Db::name('UserGroup');
         $this->table_name = 'UserGroup';
-        $this->excel_title = '会员管理报表';
+        $this->excel_title = __('Group report');
         $this->status = [
-            'status' => ['0'=>'禁用','1'=>'启用'],
+            'status' => ['0'=>__('Off'),'1'=>__('On')],
         ];
         $this->model = model('UserGroup');
         $this->view->assign("statusList", $this->model->getStatusList());
@@ -43,7 +43,7 @@ class Group extends baseAdmin
         }
         $rules = explode(',', $row['rules']);
         $arr_ = Category::unlimiteForLayer($allnode,'list',$rules,true);
-        return json(['code' =>1, 'msg' => '获取成功', 'data' => ['trees' => $arr_]]);
+        return json(['code' =>1, 'msg' => __('Get completed'), 'data' => ['trees' => $arr_]]);
     }
 
     public function autoData(&$data){

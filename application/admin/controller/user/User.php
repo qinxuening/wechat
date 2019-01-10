@@ -27,7 +27,7 @@ class User extends baseAdmin
         parent::_initialize();
         $this->table = Db::name('user');
         $this->table_name = 'user';
-        $this->excel_title = '会员管理报表';
+        $this->excel_title = __('Member report');
         $this->status = [];
         $this->model = model('User');
     }
@@ -65,9 +65,9 @@ class User extends baseAdmin
                 $action = new Export();
                 $baseurl = $action->excel($this->list,$field,$title);
                 $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
-                return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Export successful'), 'url' => $filename]);
             }
-            return json(['code' => 0, 'count' => $count, 'status' => 'success', 'data' => $this->list,'msg' => '获取成功']);
+            return json(['code' => 0, 'count' => $count, 'status' => 'success', 'data' => $this->list,'msg' => __('Get completed')]);
         }else{
             return $this->view->fetch();
         }

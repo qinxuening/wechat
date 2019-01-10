@@ -29,10 +29,10 @@ class Rule extends baseAdmin
         parent::_initialize();
         $this->table = Db::name('UserRule');
         $this->table_name = 'UserRule';
-        $this->excel_title = '会员规则管理报表';
+        $this->excel_title = __('User report');
         $this->status = [
-            'status' => ['0'=>'禁用', '1'=>'启用'],
-            'ismenu' => ['0'=>'否', '1' => '否']
+            'status' => ['0'=>__('Off'), '1'=> __('On')],
+            'ismenu' => ['0'=>__('Yes'), '1' => __('Yes')]
         ];
         $this->model = model('UserRule');
         $this->view->assign("statusList", $this->model->getStatusList());
@@ -69,7 +69,7 @@ class Rule extends baseAdmin
         Tree::instance()->init($this->rulelist);
         $this->rulelist = Tree::instance()->getTreeList(Tree::instance()->getTreeArray(0), 'title');
         $count = Db::name('auth_rule')->count('*');
-        return json(['code' => 0, 'count' => $count, 'data' => $this->rulelist,'msg' => '获取成功']);
+        return json(['code' => 0, 'count' => $count, 'data' => $this->rulelist,'msg' => __('Get completed')]);
     }
 
 

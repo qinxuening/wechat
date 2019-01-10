@@ -31,4 +31,5 @@ return [
     'Token'          => 'Token',
     'Status'         => '状态',
     'Leave password blank if dont want to change' => '不修改密码请留空',
+    'Member report'  => '会员管理报表',
 ];

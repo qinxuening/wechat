@@ -125,6 +125,7 @@ return [
     'Operation completed'                                   => 'Operation completed!',
     'Operation failed'                                      => 'Operation failed!',
     'Get completed'                                         => 'Get completed!',
+    'Export successful'                                     => 'Export successful!',
     'Illegal operation'                                     => 'Illegal operation',
     'Unknown data format'                                   => '未知的数据格式!',
     'Network error'                                         => '网络错误!',
@@ -230,7 +231,7 @@ return [
     'Freeze account login'                           => 'Freeze account login',
     'Minute'                                         => 'Minutes',
     'Save'                                           => 'Save',
-    'Successfully deleted'                           => 'Successfully deleted',
+    'deleted Successfully'                           => 'deleted Successfully',
     'Failed to delete'                               => 'Failed to delete',
     
     
