@@ -12,53 +12,53 @@
                 </colgroup>
                 <tbody>
                 <tr>
-                    <td class="tdleft">插件名称</td>
+                    <td class="tdleft">{:__('Plugin name')}</td>
                     <td class="tdright">
-                        <input type="text" name="name"  data-rule="required" placeholder="插件名称" value="{$list['name']}"  autocomplete="off" class="layui-input">
+                        <input type="text" name="name"  data-rule="required" placeholder="" value="{$list['name']}"  autocomplete="off" class="layui-input">
                         <input type="hidden" name="id" value="{$list['addon_id']}">
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">简述</td>
+                    <td class="tdleft">{:__('Title')}</td>
                     <td class="tdright">
-                        <input type="text" name="title"  data-rule="required" placeholder="简述" value="{$list['title']}"  autocomplete="off" class="layui-input">
+                        <input type="text" name="title"  data-rule="required" placeholder="" value="{$list['title']}"  autocomplete="off" class="layui-input">
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">插件秘钥</td>
+                    <td class="tdleft">{:__('Plugin key')}</td>
                     <td class="tdright">
-                        <input type="text" name="unic_key"  data-rule="required" placeholder="插件秘钥" value="{$list['unic_key']?$list['unic_key']:$unic_key}"  autocomplete="off" {if condition="$list['unic_key'] neq ''"}disabled{/if} class='layui-input {if condition="$list['unic_key'] neq ''"}layui-disabled disabled{/if}'>
+                        <input type="text" name="unic_key"  data-rule="required" placeholder="" value="{$list['unic_key']?$list['unic_key']:$unic_key}"  autocomplete="off" {if condition="$list['unic_key'] neq ''"}disabled{/if} class='layui-input {if condition="$list['unic_key'] neq ''"}layui-disabled disabled{/if}'>
                         <input type="hidden" name="id" value="{$list['addon_id']}">
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">插件描述</td>
+                    <td class="tdleft">{:__('Describe')}</td>
                     <td class="tdright">
-                        <textarea placeholder="插件描述" rows="20" class="layui-textarea" name="describe">{$list['describe']}</textarea>
+                        <textarea placeholder="" rows="20" class="layui-textarea" name="describe">{$list['describe']}</textarea>
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">作者</td>
+                    <td class="tdleft">{:__('Author')}</td>
                     <td class="tdright">
-                        <input type="text" name="author"  data-rule="required" placeholder="作者" value="{$list['author']}" autocomplete="off" class="layui-input">
+                        <input type="text" name="author"  data-rule="required" placeholder="" value="{$list['author']}" autocomplete="off" class="layui-input">
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">版本</td>
+                    <td class="tdleft">{:__('Version')}</td>
                     <td class="tdright">
                         <input type="text" name="version"  data-rule="required" placeholder="版本" value="{$list['version']}" autocomplete="off" class="layui-input">
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">状态</td>
+                    <td class="tdleft">{:__('Status')}</td>
                     <td class="tdright">
-                        <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>
+                        <input type="checkbox" name="status" lay-skin="switch" lay-text="{:__('On')}|{:__('Off')}"  {$list['status'] == 1? 'checked' : ''}>
                     </td>
                 </tr>
                 <tr>
-                    <td class="tdleft">修改时间</td>
+                    <td class="tdleft">{:__('Create time')}</td>
                     <td class="tdright">
-                        <input type="text" name="create_time" id="create_time"  data-rule="required" placeholder="创建时间" value="{$list['create_time']}" autocomplete="off" class="layui-input">
+                        <input type="text" name="create_time" id="create_time"  data-rule="required" placeholder="" value="{$list['create_time']}" autocomplete="off" class="layui-input">
                     </td>
                 </tr>
                 </tbody>
@@ -114,7 +114,7 @@
                 <div class="footer footer-common">
                     <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
                     <button type="reset" class="layui-btn layui-btn-sm btn-embossed">{:__('Reset')}</button>
-                    <a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-sm btn-embossed go-back">返回</div></a>
+                    <a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-sm btn-embossed go-back">{:__('Back')}</div></a>
                     <!--onclick="window.history.go(-1)"-->
                 </div>
             </div>

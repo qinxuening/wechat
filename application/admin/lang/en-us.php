@@ -231,7 +231,7 @@ return [
     'Freeze account login'                           => 'Freeze account login',
     'Minute'                                         => 'Minutes',
     'Save'                                           => 'Save',
-    'deleted Successfully'                           => 'deleted Successfully',
+    'deleted Successfully'                           => 'Deleted Successfully',
     'Failed to delete'                               => 'Failed to delete',
     
     

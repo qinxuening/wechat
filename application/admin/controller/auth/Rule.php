@@ -36,8 +36,8 @@ class Rule extends baseAdmin{
             $ruledata[$v['id']] = $v['title'];
         }
         $this->status = [
-            '0' => '否',
-            '1' => '是',
+            '0' => __('No'),
+            '1' => __('Yes'),
         ];
         $this->view->assign('ruledata', $ruledata);
     }
@@ -57,7 +57,7 @@ class Rule extends baseAdmin{
         Tree::instance()->init($this->rulelist);
         $this->rulelist = Tree::instance()->getTreeList(Tree::instance()->getTreeArray(0), 'title');
         $count = Db::name('auth_rule')->count('*');
-        return json(['code' => 0, 'count' => $count, 'data' => $this->rulelist,'msg' => '获取成功']);
+        return json(['code' => 0, 'count' => $count, 'data' => $this->rulelist,'msg' => __('Get completed')]);
     }
     
     public function view() {
@@ -83,9 +83,9 @@ class Rule extends baseAdmin{
             }
             
             if(false !== $result){  
-                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
             } else {
-                return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+                return json(['code' => -1, 'status' => 'error', 'msg' => __('Operation failed')]);
             }
         }
         $list = Db::name('auth_rule')->where(['id' => $id])->find();
@@ -111,12 +111,12 @@ class Rule extends baseAdmin{
             if ($count)
             {
                 Cache::rm('__menu__');
-               return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功']);
+               return json(['code' => 1, 'status' => 'success', 'msg' => __('deleted Successfully')]);
             } else {
-                return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
+                return json(['code' => -1, 'status' => 'error', 'msg' => __('Failed to delete')]);
             }
         }
-         return json(['code' => -2, 'status' => 'error', 'msg' => '非法操作']);
+         return json(['code' => -2, 'status' => 'error', 'msg' => __('Illegal operation')]);
     }
     
    /**
@@ -151,7 +151,7 @@ class Rule extends baseAdmin{
        $baseurl = $action->excel($list,$field,$title);
        $filename = '/downloadfile/'.$title."_".date('Y-m-d',mktime()).".xls";
 
-       return json(['code' => 1, 'status' => 'success', 'msg' => '导出成功', 'url' => $filename]);
+       return json(['code' => 1, 'status' => 'success', 'msg' => __('Export successful'), 'url' => $filename]);
    }
     
     

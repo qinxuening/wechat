@@ -20,7 +20,7 @@ class Job extends baseAdmin{
         parent::_initialize();
         $this->table = Db::name('jobs');
         $this->table_name = 'jobs';
-        $this->excel_title = '任务管理报表';
+        $this->excel_title = __('Job report');
         $this->status = [];
     }
 

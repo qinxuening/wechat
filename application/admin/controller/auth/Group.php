@@ -82,7 +82,7 @@ class Group extends baseAdmin{
                 }
             }
             $total = count($list);
-            return json(['code' => 0, 'count' => $total,'status' => 'success', 'data' => $list,'msg' => '获取成功']);
+            return json(['code' => 0, 'count' => $total,'status' => 'success', 'data' => $list,'msg' => __('Get completed')]);
         }
         return $this->view->fetch();
     }
@@ -122,10 +122,10 @@ class Group extends baseAdmin{
             {
                 $this->model->create($params);
 //                 $this->success();
-                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
             }
 //             $this->error();
-            return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+            return json(['code' => -1, 'status' => 'error', 'msg' => __('Illegal operation')]);
         }
         return $this->view->fetch('edit');
     }
@@ -175,9 +175,9 @@ class Group extends baseAdmin{
                 } else {
                     $this->model->create($params);
                 }
-                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                return json(['code' => 1, 'status' => 'success', 'msg' =>  __('Operation completed')]);
             }
-            return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+            return json(['code' => -1, 'status' => 'error', 'msg' => __('Illegal operation')]);
         }
 
         $this->view->assign("row", $row);
@@ -324,7 +324,7 @@ class Group extends baseAdmin{
                     $nodeList[] = array('id' => $v['id'], 'parent' => $v['pid'] ? $v['pid'] : '#', 'text' => __($v['title']), 'type' => 'menu', 'state' => $state);
                 }
 //                 $this->success('', null, $nodeList);          
-                return json(['code' =>1, 'msg' => '获取成功', 'data' => ['trees' => $arr_]]);
+                return json(['code' =>1, 'msg' => __('Get completed'), 'data' => ['trees' => $arr_]]);
             }
             else
             {

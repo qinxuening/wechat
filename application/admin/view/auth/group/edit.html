@@ -21,13 +21,13 @@
                 <tr>
                     <td class="tdleft">{:__('Group name')}</td>
                     <td class="tdright">
-                        <input type="text" name="name" lay-verify="required" autocomplete="off" value="{$row['name']}" placeholder="规则名称" class="layui-input">
+                        <input type="text" name="name" lay-verify="required" autocomplete="off" value="{$row['name']}" placeholder="" class="layui-input">
                     </td>
                 </tr>
                 <tr>
                     <td class="tdleft">{:__('Status')}</td>
                     <td class="tdright">
-                        <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$row['status'] == 1? 'checked' : ''}>
+                        <input type="checkbox" name="status" lay-skin="switch" lay-text="{:__('On')}|{:__('Off')}"  {$row['status'] == 1? 'checked' : ''}>
                     </td>
                 </tr>
                 <tr>

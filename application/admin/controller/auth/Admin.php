@@ -24,7 +24,7 @@ class Admin extends baseAdmin {
     public function _initialize()
     {
         parent::_initialize();
-        $this->status = ['0'=>'禁用','1'=>'启用'];
+        $this->status = ['0'=>__('Off'),'1'=>__('On')];
         $this->model = model('Admin');
     
         $this->childrenAdminIds = $this->auth->getChildrenAdminIds(true);
@@ -59,7 +59,7 @@ class Admin extends baseAdmin {
             $groupdata = $result;
         }
 //         print_r($groupdata);die();
-        $this->assign('statusList', json_encode(['0'=>'禁用','1'=>'启用'],JSON_FORCE_OBJECT));
+        $this->assign('statusList', json_encode(['0'=>__('Off'),'1'=>__('On')],JSON_FORCE_OBJECT));
         $this->view->assign('groupdata', $groupdata);
         $this->assignconfig("admin", ['id' => $this->auth->id]);
     }
@@ -181,9 +181,9 @@ class Admin extends baseAdmin {
                     $dataset[] = ['uid' => $this->model->id, 'group_id' => $value];
                 }
                 model('AuthGroupAccess')->saveAll($dataset);
-                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
             }
-            return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+            return json(['code' => -1, 'status' => 'error', 'msg' => __('Illegal operation')]);
         }
         $this->view->assign('passwd_complexity_rule', $rule_info);
         return $this->view->fetch();
@@ -262,9 +262,9 @@ class Admin extends baseAdmin {
                 }
                 //                 print_r($dataset);die();
                 model('AuthGroupAccess')->saveAll($dataset);
-                return json(['code' => 1, 'status' => 'success', 'msg' => '操作成功']);
+                return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
             }
-            return json(['code' => -1, 'status' => 'error', 'msg' => '非法操作']);
+            return json(['code' => -1, 'status' => 'error', 'msg' => __('Illegal operation')]);
         }
 
         $grouplist = $this->auth->getGroups($row['id']);
@@ -305,11 +305,11 @@ class Admin extends baseAdmin {
                 {
                     $this->model->destroy($deleteIds);
                     model('AuthGroupAccess')->where('uid', 'in', $deleteIds)->delete();
-                    return json(['code' => 1, 'status' => 'success', 'msg' => '删除成功']);
+                    return json(['code' => 1, 'status' => 'success', 'msg' => __('deleted Successfully')]);
                 }
             }
         }
-        return json(['code' => -1, 'status' => 'error', 'msg' => '删除失败']);
+        return json(['code' => -1, 'status' => 'error', 'msg' => __('deleted Successfully')]);
     }
     
     /**

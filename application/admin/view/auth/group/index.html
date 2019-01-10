@@ -24,12 +24,12 @@
 
 <!--状态-->
 <script type="text/html" id="switchStatus">
-    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="{:__('On')}|{:__('Off')}" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
 </script>
 
 <!--状态-->
 <script type="text/html" id="switchIsmenu">
-    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
+    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="{:__('Yes')}|{:__('No')}" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
 </script>
 
 <!--操作-->

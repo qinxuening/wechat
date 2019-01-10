@@ -15,21 +15,21 @@
 </div>
 
 <!--头工具栏-->
-{:build_toolbar('toolbar',['refresh', 'add', 'del','export'])}
+{:build_toolbar('toolbar',['refresh', 'del','export'])}
 <!--头工具栏-->
 
 <!--状态-->
-<script type="text/html" id="switchStatus">
-    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
-</script>
+<!--<script type="text/html" id="switchStatus">-->
+    <!--<input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>-->
+<!--</script>-->
 
 <!--状态-->
-<script type="text/html" id="switchPush">
-    <input type="checkbox" name="is_time_push" value="{{d.is_time_push}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.is_time_push == 1 ? 'checked' : '' }}>
-</script>
+<!--<script type="text/html" id="switchPush">-->
+    <!--<input type="checkbox" name="is_time_push" value="{{d.is_time_push}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.is_time_push == 1 ? 'checked' : '' }}>-->
+<!--</script>-->
 
 <!--操作-->
-{:build_actionbar('actionbar',['edit','test', 'del'])}
+{:build_actionbar('actionbar',['test', 'del'])}
 {/block}
 
 {block name="script"}
@@ -97,8 +97,8 @@
             table : "rule",
             tableid : "tableReload",
             extend : {
-                "add_url": "{:url('admin/Job/edit','',false)}",
-                "edit_url": "{:url('admin/Job/edit','',false)}/ids/",
+//                "add_url": "{:url('admin/Job/edit','',false)}",
+//                "edit_url": "{:url('admin/Job/edit','',false)}/ids/",
                 "del_url": "{:url('admin/Job/del','',false)}",
                 "export_url": "{:url('admin/Job/index','',false)}",
                 "import_url" :  "{:url('admin/Job/import','',false)}",
