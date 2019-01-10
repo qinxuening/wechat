@@ -146,7 +146,7 @@ return [
     'An unexpected error occurred'                          => '发生了一个意外错误,程序猿正在紧急处理中',
     'This page will be re-directed in %s seconds'           => '页面将在 %s 秒后自动跳转',
     //菜单
-    'Dashboard'                                             => '控制台',
+//     'Dashboard'                                             => '控制台',
     'General'                                               => '常规管理',
     'Category'                                              => '分类管理',
     'Addon'                                                 => '插件管理',
@@ -233,8 +233,11 @@ return [
     'Save'                                           => 'Save',
     'deleted Successfully'                           => 'Deleted Successfully',
     'Failed to delete'                               => 'Failed to delete',
-    
-    
+    'Situational awareness'   => 'Situational awareness',
+    'Situational awareness'   => 'Situational awareness',
+    'Data management'         => 'Data management',
+    'Line chart'              =>  'Line chart',
+    'Histogram'               => 'Histogram',
     
     
     

@@ -42,4 +42,30 @@ return [
     'Cdn url'                 => '静态资源CDN',
     'Timezone'                => '时区',
     'Language'                => '语言',
+    'Situational awareness'   => '态势感知',
+    'Data management'         => '数据管控',
+    'Line chart'              =>  '折线图',
+    'Histogram'               => '柱状图',
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 ];

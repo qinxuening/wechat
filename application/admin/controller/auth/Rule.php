@@ -54,6 +54,11 @@ class Rule extends baseAdmin{
         $this->rulelist = Db::name('auth_rule')
             ->order(['id'=>'desc','weigh'=>'desc'])
             ->select();
+        
+        foreach ($this->rulelist as $k => &$v){
+            $v['title'] = __($v['title']);
+        }
+            
         Tree::instance()->init($this->rulelist);
         $this->rulelist = Tree::instance()->getTreeList(Tree::instance()->getTreeArray(0), 'title');
         $count = Db::name('auth_rule')->count('*');
