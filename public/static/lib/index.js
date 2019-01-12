@@ -15,19 +15,19 @@
         i.tabChange(o, a), n.tabsBodyChange(t.index, {url: a, text: d})
     }, s = "#LAY_app_body", o = "layadmin-layout-tabs", $ = r = layui.$;
     $(window);
-    $().ready(function() {
+    $().ready(function () {
         var urlArr = location.href.split("#");
         var current = urlArr[1] ? urlArr[1] : "tab1";
-        $("#tabs").find("li[id^=li]").find("a[class="+current+"]").parent().addClass("currenttab");
-        $("#content").find("div[id^=tab]").not("div[id="+urlArr[1]+"]").hide();
-        $("#content").find("div[id="+current+"]").fadeIn();
-        $("#tabs").find("li[id^=li]").find("a").bind("click",function(){
+        $("#tabs").find("li[id^=li]").find("a[class=" + current + "]").parent().addClass("currenttab");
+        $("#content").find("div[id^=tab]").not("div[id=" + urlArr[1] + "]").hide();
+        $("#content").find("div[id=" + current + "]").fadeIn();
+        $("#tabs").find("li[id^=li]").find("a").bind("click", function () {
             var title = $(this).attr("class");
-            location.href = urlArr[0] + "#"+ title;
-            $("#tabs").find("li[id^=li]").not("li[id="+title+"]").removeClass("currenttab");
+            location.href = urlArr[0] + "#" + title;
+            $("#tabs").find("li[id^=li]").not("li[id=" + title + "]").removeClass("currenttab");
             $(this).parent().addClass("currenttab");
-            $("#content").find("div[id^=tab]").not("div[id="+title+"]").hide();
-            $("#content").find("div[id="+title+"]").fadeIn();
+            $("#content").find("div[id^=tab]").not("div[id=" + title + "]").hide();
+            $("#content").find("div[id=" + title + "]").fadeIn();
             return false;
         })
     });

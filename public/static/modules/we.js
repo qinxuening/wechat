@@ -158,7 +158,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     // content: [url,'no'],
                     scrollbar:false,
                     moveOut:false,
-                    skin: 'layui-layer-we',
+                    // skin: 'layui-layer-we',
                     zIndex: layer.zIndex,
                     success: function (layero, index) {
                         var that = this;

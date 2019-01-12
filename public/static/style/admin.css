@@ -1378,8 +1378,10 @@ body .layui-layer-we .layui-layer-btn a {
     border-color: #2c3e50
 }
 
-body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
-    background: #2c3e50
+body .layui-layer-we .layui-layer-btn .layui-layer-btn1,.layui-layer-btn .layui-layer-btn1 {
+    background: #009688;
+    color:#ffffff;
+    border-color: #009688 !important;
 }
 
 .lay_top {
@@ -1448,9 +1450,9 @@ body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
     color: #ffffff !important;
 }
 
-body .layui-layer-we .layui-layer-btn0 {
-    background-color: #18bc9c !important;
-    border-color: #18bc9c !important;
+body .layui-layer-we .layui-layer-btn0 ,.layui-layer-btn .layui-layer-btn0{
+    background-color: #009688 !important;
+    border-color: #009688 !important;
 }
 
 body .layui-layer-we .layui-layer-setwin {
@@ -1747,5 +1749,7 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     padding: 0px 30px;
 }
 
-
+.layer_notice{float:left; height:75px; width:330px;  overflow:hidden;  background:#5FB878; padding:10px;}
+.layer_notice a{color:#fff;}
+.layer_notice li{ line-height:25px;}
 

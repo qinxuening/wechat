@@ -1,35 +1,14 @@
 ;layui.define(['view'], function (e) {
-    var a = layui.jquery, i = layui.laytpl, t = layui.element, l = layui.setter, n = layui.view, s = layui.device(),
+    var a = layui.jquery, i = layui.laytpl, t = layui.element, l = layui.setter, n = layui.view, s = layui.device(),layer=layui.layer,
         r = a(window), o = a("body"), u = a("#" + l.container), d = "layui-show", c = "layui-hide", y = "layui-this",
         f = "layui-disabled", h = "#LAY_app_body", m = "LAY_app_flexible", p = "layadmin-layout-tabs",
         v = "layadmin-side-spread-sm", b = "layadmin-tabsbody-item", g = "layui-icon-shrink-right",
         x = "layui-icon-spread-left", C = "layadmin-side-shrink", k = "LAY-system-side-menu", F = {
-            v: "1.0.0 std", req: n.req, sendAuthCode: function (e) {
-                e = a.extend({seconds: 60, elemPhone: "#LAY_phone", elemVercode: "#LAY_vercode"}, e);
-                var i, t = e.seconds, l = a(e.elem), n = function (a) {
-                    t--, t < 0 ? (l.removeClass(f).html("获取验证码"), t = e.seconds, clearInterval(i)) : l.addClass(f).html(t + "秒后重获"), a || (i = setInterval(function () {
-                        n(!0)
-                    }, 1e3))
-                };
-                e.elemPhone = a(e.elemPhone), e.elemVercode = a(e.elemVercode), l.on("click", function () {
-                    var i = e.elemPhone, l = i.val();
-                    if (t === e.seconds && !a(this).hasClass(f)) {
-                        if (!/^1\d{10}$/.test(l)) return i.focus(), layer.msg("请输入正确的手机号");
-                        if ("object" == typeof e.ajax) {
-                            var s = e.ajax.success;
-                            delete e.ajax.success
-                        }
-                        F.req(a.extend(!0, {
-                            url: "/auth/code", type: "get", data: {phone: l}, success: function (a) {
-                                layer.msg("验证码已发送至你的手机，请注意查收", {icon: 1, shade: 0}), e.elemVercode.focus(), n(), s && s(a)
-                            }
-                        }, e.ajax))
-                    }
-                })
-            }, screen: function () {
+            screen: function () {
                 var e = r.width();
                 return e >= 1200 ? 3 : e >= 992 ? 2 : e >= 768 ? 1 : 0
-            }, exit: n.exit, sideFlexible: function (e) {
+            },
+            exit: n.exit, sideFlexible: function (e) {
                 var i = u, t = a("#" + m), n = F.screen();
                 "spread" === e ? (t.removeClass(x).addClass(g), n < 2 ? i.addClass(v) : i.removeClass(v), i.removeClass(C)) : (t.removeClass(g).addClass(x), n < 2 ? i.removeClass(C) : i.addClass(C), i.removeClass(v)), layui.event.call(this, l.MOD_NAME, "side({*})", {status: e})
             }, escape: function (e) {
@@ -50,12 +29,6 @@
                     area: "300px"
                 }, e))
             }, theme: function (e) {
-                // var t = (l.theme, layui.data(l.tableName)), n = "LAY_layadmin_theme", s = document.createElement("style"),
-                //     r = i([".layui-side-menu,", ".layadmin-pagetabs .layui-tab-title li:after,", ".layadmin-pagetabs .layui-tab-title li.layui-this:after,", ".layui-layer-admin .layui-layer-title,", ".layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child", "{background-color:{{d.color.main}} !important;}", ".layui-nav-tree .layui-this,", ".layui-nav-tree .layui-this>a,", ".layui-nav-tree .layui-nav-child dd.layui-this,", ".layui-nav-tree .layui-nav-child dd.layui-this a", "{background-color:{{d.color.selected}} !important;}", ".layui-layout-admin .layui-logo{background-color:{{d.color.logo || d.color.main}} !important;}", "{{# if(d.color.header){ }}", ".layui-layout-admin .layui-header{background-color:{{ d.color.header }};}", ".layui-layout-admin .layui-header a,", ".layui-layout-admin .layui-header a cite{color: #f8f8f8;}", ".layui-layout-admin .layui-header a:hover{color: #fff;}", ".layui-layout-admin .layui-header .layui-nav .layui-nav-more{border-top-color: #fbfbfb;}", ".layui-layout-admin .layui-header .layui-nav .layui-nav-mored{border-color: transparent; border-bottom-color: #fbfbfb;}", ".layui-layout-admin .layui-header .layui-nav .layui-this:after, .layui-layout-admin .layui-header .layui-nav-bar{background-color: #fff; background-color: rgba(255,255,255,.5);}", ".layadmin-pagetabs .layui-tab-title li:after{display: none;}", "{{# } }}"].join("")).render(e = a.extend({}, t.theme, e)),
-                //     u = document.getElementById(n);
-                // "styleSheet" in s ? (s.setAttribute("type", "text/css"), s.styleSheet.cssText = r) : s.innerHTML = r, s.id = n, u && o[0].removeChild(u), o[0].appendChild(s), o.attr("layadmin-themealias", e.color.alias), t.theme = t.theme || {}, layui.each(e, function (e, a) {
-                //     t.theme[e] = a
-                // }), layui.data(l.tableName, {key: "theme", value: t.theme})
             }, initTheme: function (e) {
                 var a = l.theme;
                 e = e || 0, a.color[e] && (a.color[e].index = e, F.theme({color: a.color[e]}))
@@ -169,27 +142,25 @@
                 P.closeOtherTabs("all")
             }, shade: function () {
                 F.sideFlexible()
-            }, im: function () {
-                F.popup({
-                    id: "LAY-popup-layim-demo",
-                    shade: 0,
-                    area: ["800px", "300px"],
-                    title: "面板外的操作示例",
-                    offset: "lb",
-                    success: function () {
-                        layui.view(this.id).render("layim/demo").then(function () {
-                            layui.use("im")
-                        })
-                    }
-                })
             }
         };
     !function () {
         var e = layui.data(l.tableName);
-        e.theme ? F.theme(e.theme) : l.theme && F.initTheme(l.theme.initColorIndex), "pageTabs" in layui.setter || (layui.setter.pageTabs = !0), l.pageTabs || (a("#LAY_app_tabs").addClass(c), u.addClass("layadmin-tabspage-none")), s.ie && s.ie < 10 && n.error("IE" + s.ie + "下访问可能不佳，推荐使用：Chrome / Firefox / Edge 等高级浏览器", {
-            offset: "auto",
-            id: "LAY_errorIE"
-        })
+        e.theme ? F.theme(e.theme) : l.theme && F.initTheme(l.theme.initColorIndex), "pageTabs" in layui.setter || (layui.setter.pageTabs = !0), l.pageTabs || (a("#LAY_app_tabs").addClass(c), u.addClass("layadmin-tabspage-none")), s.ie && s.ie < 10 &&
+        // n.error("IE" + s.ie + "下访问可能不佳，推荐使用：Chrome / Firefox / Edge 等高级浏览器", {
+        //     offset: "auto",
+        //     id: "LAY_errorIE"
+        // })
+        /**
+         * 2019-10-12修改IE温馨提示
+         */
+        layer.open({
+            type: 1,
+            offset: '25%',
+            shade: false,
+            title: false, //不显示标题
+            content: "<ul class='layer_notice'><li><a href='#'>IE" + s.ie + "下访问可能不佳，推荐使用：Chrome / Firefox / Edge 等高级浏览器</a></li></ul>", //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        });
     }(), t.on("tab(" + p + ")", function (e) {
         F.tabsPage.index = e.index
     }), F.on("tabsPage(setMenustatus)", function (e) {

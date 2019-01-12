@@ -41,7 +41,7 @@ layui.define(['jquery','we','toastr','layer'], function(exports){
                    var data = obj.data;
                    if(obj.event === 'del'){
                        layer.confirm('请确定是否删除？',{
-                           skin: 'layui-layer-we',
+                           // skin: 'layui-layer-we',
                            title:'温馨提示',
                        }, function(index){
                            var url = weTable.defaults.extend.del_url
