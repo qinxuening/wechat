@@ -30,6 +30,16 @@
             $("#content").find("div[id=" + title + "]").fadeIn();
             return false;
         })
+
+        /**
+         * 新增导航管理
+         */
+        $(".nav_menu a").on("click", function () {
+            console.log($(this).attr('data-id'));
+            var data_id = $(this).attr('data-id');
+            $("#LAY-system-side-menu").find("li[data-id]").addClass('layui-hide');
+            $("#LAY-system-side-menu").find("li[data-id="+data_id+"]").removeClass('layui-hide');
+        });
     });
     n.screen() < 2 && n.sideFlexible(), layui.config({base: e.base + "modules/"}), layui.each(e.extend, function (a, i) {
         var n = {};

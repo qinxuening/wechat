@@ -6,12 +6,15 @@
                 <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
             </a>
         </li>
-        <li class="layui-nav-item layui-this"><a href="javascript:void(0);">{:__('Home')}</a></li>
-        <li class="layui-nav-item"><a href="javascript:void(0);">{:__('Order management')}</a></li>
-        <li class="layui-nav-item"><a href="javascript:void(0);">{:__('Member management')}</a></li>
-        <li class="layui-nav-item"><a href="javascript:void(0);">{:__('Marketing management')}</a></li>
-        <li class="layui-nav-item"><a href="javascript:void(0);">{:__('Scoring management')}</a></li>
-        <li class="layui-nav-item"><a href="javascript:void(0);">{:__('Backstage management')}</a></li>
+        {foreach $nav_list as $key=>$vo }
+            <li class="layui-nav-item nav_menu"><a href="javascript:void(0);" data-id="{$key}">{:__($vo)}</a></li>
+        {/foreach}
+        <!--<li class="layui-nav-item" data-id=""><a href="javascript:void(0);">{:__('Home')}</a></li>-->
+        <!--<li class="layui-nav-item"><a href="javascript:void(0);">{:__('Order management')}</a></li>-->
+        <!--<li class="layui-nav-item"><a href="javascript:void(0);">{:__('Member management')}</a></li>-->
+        <!--<li class="layui-nav-item"><a href="javascript:void(0);">{:__('Marketing management')}</a></li>-->
+        <!--<li class="layui-nav-item"><a href="javascript:void(0);">{:__('Scoring management')}</a></li>-->
+        <!--<li class="layui-nav-item"><a href="javascript:void(0);">{:__('Backstage management')}</a></li>-->
     </ul>
 
     <!--<ul class="layui-nav layui-bg-green ">-->

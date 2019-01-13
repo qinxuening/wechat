@@ -6,7 +6,9 @@
         </div>
 
         <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
-            {$menulist[222]}
+            {foreach $menulist1 as $key=>$vo }
+                {$vo}
+            {/foreach}
             <!--<li data-name="home" class="layui-nav-item layui-nav-itemed">-->
                 <!--<a href="javascript:;" lay-tips="主页">-->
                     <!--<i class="layui-icon layui-icon-home"></i>-->

@@ -36,8 +36,13 @@ class Index extends baseAdmin {
                 $this->success('', null, ['menulist' => $menulist]);
             }
         }
-//         dump($menulist);die();
-        $this->view->assign('menulist', $menulist);
+        
+        $nav_list = Db::name('AuthRule')->where(['ismenu' => 1, 'status' => 1, 'pid' => 0])->column('title','id');
+//         dump($nav_list);die();
+        $this->view->assign('nav_list', $nav_list);
+//         cookie('menulist',$menulist);
+//         $this->view->assign('menulist', json_encode($menulist));
+        $this->view->assign('menulist1', $menulist);
         $this->view->assign('title', __('Home'));
         return $this->view->fetch();
     }

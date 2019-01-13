@@ -500,6 +500,7 @@ class Auth extends \we\Auth{
         }
 //         print_r($arr);die();
         $html = [];
+        $i = 1;
         foreach ($arr as $k4 => $v4){
             foreach ($v4 as $k => $v) {
                 if($v['pid']) {
@@ -512,7 +513,12 @@ class Auth extends \we\Auth{
                     $expand = "";
                     $active = "";
                 }
-                $html[$k4] .= "<li data-name='{$v['pinyin']}' class='layui-nav-item {$expand}'>";
+                if($i == 1) {
+                    $html[$k4] .= "<li data-name='{$v['pinyin']}' data-id='{$k4}' class='layui-nav-item {$expand}'>";
+                } else {
+                    $html[$k4] .= "<li data-name='{$v['pinyin']}' data-id='{$k4}' class='layui-nav-item {$expand} layui-hide'>";
+                }
+
                 if(isset($v['child'])){
                     $html[$k4] .= "<a href='javascript:;' lay-tips='{$v['title']}'>";
                 } else {
@@ -548,6 +554,7 @@ class Auth extends \we\Auth{
                 }
                 $html[$k4] .= '</li>';           
             }
+            $i++;
         }
         
         
