@@ -265,9 +265,10 @@
     }).extend({
         index: 'lib/index' //主入口模块
         ,sample:'sample'
-    }).use(['index','element','sample','countUp'], function(){
+    }).use(['index','element','sample','countUp','we'], function(){
         var admin = layui.admin
             ,element = layui.element
+            ,we = layui.we
             ,countUp = layui.countUp;
 
         var readCount = new countUp.CountUp("readCount", 0, 9999666);
@@ -278,6 +279,7 @@
         downloadCount.start();
         incomeCount.start();
         onlineCount.start();
+        we.tips("<li><a href='#'>欢迎使用云创crm系统！！！！！</a></li>")
     });
 </script>
 </body>

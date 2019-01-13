@@ -1,5 +1,11 @@
 ;layui.define(["laytpl", "layer"], function (e) {
-    var t = layui.jquery, n = layui.laytpl, a = layui.layer, r = layui.setter, o = (layui.device(), layui.hint()),
+    var t = layui.jquery,
+        n = layui.laytpl,
+        a = layui.layer,
+        r = layui.setter,
+        o = (layui.device(), layui.hint()),
+        //layui.device(key)  获取设备信息
+        //hint()向控制台打印一些异常信息，目前只返回了error方法：layui.hint().error('出错啦')
         i = function (e) {
             return new d(e)
         }, s = "LAY_app_body", d = function (e) {
@@ -10,6 +16,7 @@
     }, i.removeLoad = function () {
         this.elemLoad && this.elemLoad.remove()
     }, i.exit = function (e) {
+        //localStorage 持久化存储：layui.data(table, settings)，数据会永久存在，除非物理删除。
         layui.data(r.tableName, {key: r.request.tokenName, remove: !0}), e && e()
     }, i.req = function (e) {
         var n = e.success, a = (e.error, r.request), o = r.response, s = function () {

@@ -226,6 +226,15 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
             for (var i = 0; size >= 1024 && i < 6; i++)
                 size /= 1024;
             return size.toFixed(2) + delimiter + units[i];
+        },
+        tips:function (content) {
+            layer.open({
+                type: 1,
+                offset: '25%',
+                shade: false,
+                title: false,
+                content: "<ul class='layer_notice'>" + content +"</ul>",
+            });
         }
     };
     we.init();

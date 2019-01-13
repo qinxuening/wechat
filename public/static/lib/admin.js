@@ -147,10 +147,6 @@
     !function () {
         var e = layui.data(l.tableName);
         e.theme ? F.theme(e.theme) : l.theme && F.initTheme(l.theme.initColorIndex), "pageTabs" in layui.setter || (layui.setter.pageTabs = !0), l.pageTabs || (a("#LAY_app_tabs").addClass(c), u.addClass("layadmin-tabspage-none")), s.ie && s.ie < 10 &&
-        // n.error("IE" + s.ie + "下访问可能不佳，推荐使用：Chrome / Firefox / Edge 等高级浏览器", {
-        //     offset: "auto",
-        //     id: "LAY_errorIE"
-        // })
         /**
          * 2019-10-12修改IE温馨提示
          */

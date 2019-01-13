@@ -1,11 +1,35 @@
 <div class="layui-header">
     <!-- 头部区域 -->
-    <ul class="layui-nav layui-layout-left">
+    <ul class="layui-nav layui-layout-left ">
         <li class="layui-nav-item layadmin-flexible" lay-unselect>
             <a href="javascript:;" layadmin-event="flexible" title="">
                 <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
             </a>
         </li>
+        <li class="layui-nav-item layui-this"><a href="">控制台</a></li>
+        <li class="layui-nav-item"><a href="">订单管理</a></li>
+        <li class="layui-nav-item"><a href="">会员管理</a></li>
+        <li class="layui-nav-item"><a href="">营销管理</a></li>
+        <li class="layui-nav-item"><a href="">评分关怀</a></li>
+        <li class="layui-nav-item"><a href="">后台管理</a></li>
+    </ul>
+
+    <!--<ul class="layui-nav layui-bg-green ">-->
+        <!--<li class="layui-nav-item"><a href="">墨绿导航</a></li>-->
+        <!--<li class="layui-nav-item layui-this"><a href="">产品</a></li>-->
+        <!--<li class="layui-nav-item"><a href="">大数据</a></li>-->
+        <!--<li class="layui-nav-item">-->
+            <!--<a href="javascript:;">解决方案</a>-->
+            <!--<dl class="layui-nav-child">-->
+                <!--<dd><a href="">移动模块</a></dd>-->
+                <!--<dd><a href="">后台模版</a></dd>-->
+                <!--<dd><a href="">电商平台</a></dd>-->
+            <!--</dl>-->
+        <!--</li>-->
+        <!--<li class="layui-nav-item"><a href="">社区</a></li>-->
+    <!--</ul>-->
+
+    <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
         <li class="layui-nav-item layui-hide-xs" lay-unselect>
             <a href="javascript:;" target="_blank" title="{:__('Index')}">
                 <i class="layui-icon layui-icon-website"></i>
@@ -16,9 +40,6 @@
                 <i class="layui-icon layui-icon-refresh-3"></i>
             </a>
         </li>
-    </ul>
-    <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
-
         <li class="layui-nav-item" lay-unselect>
             <a lay-href="app/message/index.html" layadmin-event="message" lay-text="{:__('Message center')}">
                 <i class="layui-icon layui-icon-notice"></i>

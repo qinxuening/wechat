@@ -1749,7 +1749,21 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     padding: 0px 30px;
 }
 
-.layer_notice{float:left; height:75px; width:330px;  overflow:hidden;  background:#5FB878; padding:10px;}
-.layer_notice a{color:#fff;}
-.layer_notice li{ line-height:25px;}
+.layer_notice {
+    float: left;
+    min-height: 75px;
+    line-height: 75px;
+    width: 330px;
+    overflow: hidden;
+    background: #5FB878;
+    padding: 10px;
+}
+
+.layer_notice a {
+    color: #fff;
+}
+
+.layer_notice li {
+    line-height: 25px;
+}
 
