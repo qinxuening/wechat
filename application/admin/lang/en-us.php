@@ -238,9 +238,14 @@ return [
     'Data management'         => 'Data management',
     'Line chart'              =>  'Line chart',
     'Histogram'               => 'Histogram',
-    
-    
-    
+    'Home'                    => 'Home',
+    'Order management'        => 'Order',
+    'Member management'       => 'Member',
+    'Marketing management'    => 'Marketing',
+    'Scoring management'      => 'Scoring',
+    'Backstage management'    => 'Backstage',
+    'On'                      => 'On',
+    'Off'                     => 'Off',
     
     
     

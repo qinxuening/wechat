@@ -239,11 +239,14 @@ return [
     'Data management'         => '数据管控',
     'Line chart'              =>  '折线图',
     'Histogram'               => '柱状图',
-    
-    
-    
-    
-    
+    'Home'                    => '首页',
+    'Order management'        => '订单管理',
+    'Member management'       => '会员管理',
+    'Marketing management'    => '营销管理',
+    'Scoring management'      => '评分管理',
+    'Backstage management'    => '系统管理',
+    'On'                      => '启用',
+    'Off'                     => '禁用',
     
     
     
