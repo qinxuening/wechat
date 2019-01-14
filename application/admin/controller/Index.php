@@ -33,7 +33,7 @@ class Index extends baseAdmin {
         {
             if ($action == 'refreshmenu')
             {
-                $this->success('', null, ['menulist' => $menulist]);
+                $this->success('', null, ['menulist' => $menulist[0]]);
             }
         }
         
@@ -42,7 +42,9 @@ class Index extends baseAdmin {
         $this->view->assign('nav_list', $nav_list);
 //         cookie('menulist',$menulist);
 //         $this->view->assign('menulist', json_encode($menulist));
-        $this->view->assign('menulist1', $menulist);
+//{if condition="$key eq 215"}lay-href="{:url('dashboard/detail')}"{/if} 
+        $this->view->assign('menulist1', $menulist[0]);
+        $this->view->assign('nav_url', $menulist[1]);
         $this->view->assign('title', __('Home'));
         return $this->view->fetch();
     }

@@ -8,6 +8,7 @@
 
 .layui-layout-admin .layui-logo {
     background-color: #009688 !important;
+    z-index: 1002;
 }
 
 .layui-layout-admin .layui-header {
