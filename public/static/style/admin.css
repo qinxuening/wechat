@@ -20,7 +20,7 @@ html {
 }
 
 [lay-href], [lay-tips], [layadmin-event] {
-    cursor: pointer
+    cursor: pointer;
 }
 
 .layui-layout-admin .layui-header {
@@ -399,6 +399,7 @@ html {
 
 .layadmin-side-shrink .layui-side-menu .layui-nav > .layui-nav-itemed > a {
     background: rgba(0, 0, 0, .3)
+    /*background:#1AA094;*/
 }
 
 .layadmin-side-spread-sm .layadmin-pagetabs, .layadmin-side-spread-sm .layui-layout-admin .layui-body, .layadmin-side-spread-sm .layui-layout-admin .layui-footer, .layadmin-side-spread-sm .layui-layout-admin .layui-layout-left {

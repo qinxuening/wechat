@@ -214,9 +214,10 @@
         if (!e.parent().hasClass("layui-nav-item") || u.hasClass(C)) {
             var i = e.attr("lay-tips"), t = e.attr("lay-offset"), l = e.attr("lay-direction"), n = layer.tips(i, this, {
                 tips: l || 1, time: -1, success: function (e, a) {
-                    t && e.css("margin-left", t + "px")
+                    t && e.css({"margin-left": t + "px","color":"#d9534f"})
                 }
             });
+            e.css({"color":"#d9534f"});
             e.data("index", n)
         }
     }).on("mouseleave", "*[lay-tips]", function () {
