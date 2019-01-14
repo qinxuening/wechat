@@ -37,27 +37,27 @@
         $(".nav_menu a").on("click", function () {
             console.log($(this).attr('data-id'));
             var data_id = $(this).attr('data-id');
-            if(data_id == 215) {
-                $('.layadmin-pagetabs,.layui-layout-admin .layui-body').css({
-                    'left':"0px",
-                });
-                $('.layui-layout-admin .layui-body').css({
-                    'top':"50px",
-                });
-                $('.layui-layout-admin .layui-side,#LAY_app_tabs').css({
-                    "display":"none"
-                });
-            } else {
-                $('.layadmin-pagetabs,.layui-layout-admin .layui-body').css({
-                    'left':"220px",
-                });
-                $('.layui-layout-admin .layui-body').css({
-                    'top':"90px",
-                });
-                $('.layui-layout-admin .layui-side,#LAY_app_tabs').css({
-                    "display":"block"
-                });
-            }
+            // if(data_id == 215) {
+            //     $('.layadmin-pagetabs,.layui-layout-admin .layui-body').css({
+            //         'left':"0px",
+            //     });
+            //     $('.layui-layout-admin .layui-body').css({
+            //         'top':"50px",
+            //     });
+            //     $('.layui-layout-admin .layui-side,#LAY_app_tabs').css({
+            //         "display":"none"
+            //     });
+            // } else {
+            //     $('.layadmin-pagetabs,.layui-layout-admin .layui-body').css({
+            //         'left':"220px",
+            //     });
+            //     $('.layui-layout-admin .layui-body').css({
+            //         'top':"90px",
+            //     });
+            //     $('.layui-layout-admin .layui-side,#LAY_app_tabs').css({
+            //         "display":"block"
+            //     });
+            // }
             $("#LAY-system-side-menu").find("li[data-id]").addClass('layui-hide');
             $("#LAY-system-side-menu").find("li[data-id="+data_id+"]").removeClass('layui-hide');
         });

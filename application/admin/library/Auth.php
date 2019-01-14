@@ -560,6 +560,7 @@ class Auth extends \we\Auth{
             $i++;
         }
         
+//         print_r($nav_url);die();
         
         return [$html,$nav_url];
         // 构造菜单数据

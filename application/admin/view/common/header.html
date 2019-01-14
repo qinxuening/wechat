@@ -4,11 +4,11 @@
         <span>{:__('Management system')}</span>
     </div>
     <ul class="layui-nav layui-layout-left ">
-        <!--<li class="layui-nav-item layadmin-flexible" lay-unselect>-->
-            <!--<a href="javascript:;" layadmin-event="flexible" title="">-->
-                <!--<i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>-->
-            <!--</a>-->
-        <!--</li>-->
+        <li class="layui-nav-item layadmin-flexible" lay-unselect>
+            <a href="javascript:;" layadmin-event="flexible" title="">
+                <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
+            </a>
+        </li>
         {foreach $nav_list as $key=>$vo }
             <li class="layui-nav-item nav_menu {if condition="$key eq 215"}layui-this{/if}"><a {if condition="$key eq 215"}lay-href="{:url('dashboard/detail')}"{else/}lay-href="{$nav_url[$key]}"{/if} href="javascript:void(0);" data-id="{$key}">{:__($vo)}</a></li>
         {/foreach}

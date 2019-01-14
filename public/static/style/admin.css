@@ -66,15 +66,15 @@ html {
 }
 
 .layadmin-pagetabs, .layui-layout-admin .layui-body{
-    left: 0px
+    left: 220px
 }
 
 .layui-layout-admin .layui-side,#LAY_app_tabs{
-    display: none;
+    /*display: none;*/
 }
 
 .layui-layout-admin .layui-body{
-    top:50px;
+    top:90px;
 }
 
 .layadmin-pagetabs {
