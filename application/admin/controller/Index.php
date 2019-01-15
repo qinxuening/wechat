@@ -21,30 +21,6 @@ class Index extends baseAdmin {
     }
     public function index() {
         //左侧菜单
-        $menulist = $this->auth->getSidebar([
-            'dashboard' => '',//hot
-            'addon'     => ['new', 'red', 'badge'],
-            'auth/rule' => '',//__('Menu')
-            'general'   => ['new', 'purple'],
-                ], $this->view->site['fixedpage']);
-
-        $action = $this->request->request('action');
-        if ($this->request->isPost())
-        {
-            if ($action == 'refreshmenu')
-            {
-                $this->success('', null, ['menulist' => $menulist[0]]);
-            }
-        }
-        
-        $nav_list = Db::name('AuthRule')->where(['ismenu' => 1, 'status' => 1, 'pid' => 0])->column('title','id');
-//         dump($nav_list);die();
-        $this->view->assign('nav_list', $nav_list);
-//         cookie('menulist',$menulist);
-//         $this->view->assign('menulist', json_encode($menulist));
-//{if condition="$key eq 215"}lay-href="{:url('dashboard/detail')}"{/if} 
-        $this->view->assign('menulist1', $menulist[0]);
-        $this->view->assign('nav_url', $menulist[1]);
         $this->view->assign('title', __('Home'));
         return $this->view->fetch();
     }

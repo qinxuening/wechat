@@ -536,7 +536,7 @@ class Auth extends \we\Auth{
                             $html[$k4] .= '<dl class="layui-nav-child">';
                             foreach ($v1['child'] as $k2 => $v2) {
                                 if($k2 == 0) {
-                                    $nav_url[$k4] = $v2['url'];
+                                    $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v2['url'];
                                     $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$active}'><a lay-href='{$v2['url']}'><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 } else {
                                     $html[$k4] .= "<dd data-name='{$v2['pinyin']}'><a lay-href='{$v2['url']}'><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
@@ -546,7 +546,7 @@ class Auth extends \we\Auth{
                             $html[$k4] .= '</dl></dd>';
                         }else {
                             if($k1 == 0) {
-                                $nav_url[$k4] = $v1['url'];
+                                $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v1['url'];
                                 $html[$k4] .= "<dd class='{$active}' data-name='{$v1['pinyin']}'><a lay-href='{$v1['url']}'><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             } else {
                                 $html[$k4] .= "<dd data-name='{$v1['pinyin']}'><a lay-href='{$v1['url']}'><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";

@@ -38,6 +38,7 @@
             console.log($(this).attr('data-id'));
             var data_id = $(this).attr('data-id');
             // if(data_id == 215) {
+            //     console.log(data_id);
             //     $('.layadmin-pagetabs,.layui-layout-admin .layui-body').css({
             //         'left':"0px",
             //     });

@@ -91,7 +91,7 @@ class baseAdmin extends Controller{
     use \app\admin\library\traits\Base;
     public function _initialize()
     {
-        switch ($_GET['lang']) {
+        switch (input('lang')) {
             case 'zh-cn':
                 cookie('think_var', 'zh-cn');
             ;
@@ -146,31 +146,45 @@ class baseAdmin extends Controller{
             $this->view->engine->layout('layout/' . $this->layout);
         }
         
-//         //左侧菜单
-//         $menulist = $this->auth->getSidebar([
-//             'dashboard' => '',//hot
-//             'addon'     => ['new', 'red', 'badge'],
-//             'auth/rule' => '',//__('Menu')
-//             'general'   => ['new', 'purple'],
-//         ], $this->view->site['fixedpage']);
+        /**
+         * 缓存导航、menu
+         */
+        if(!cache('menulist1')){
+            //左侧菜单
+            $menulist = $this->auth->getSidebar([
+                'dashboard' => '',//hot
+                'addon'     => ['new', 'red', 'badge'],
+                'auth/rule' => '',//__('Menu')
+                'general'   => ['new', 'purple'],
+            ], $this->view->site['fixedpage']);
+            
+            $action = $this->request->request('action');
+            if ($this->request->isPost())
+            {
+                if ($action == 'refreshmenu')
+                {
+                    $this->success('', null, ['menulist' => $menulist[0]]);
+                }
+            }
+            
+            $nav_list = Db::name('AuthRule')->where(['ismenu' => 1, 'status' => 1, 'pid' => 0])->column('title,weigh','id');
+            cache('nav_list',$nav_list);
+            cache('menulist1',$menulist[0]);
+            cache('nav_url',$menulist[1]);
+        }
         
-//         $action = $this->request->request('action');
-//         if ($this->request->isPost())
-//         {
-//             if ($action == 'refreshmenu')
-//             {
-//                 $this->success('', null, ['menulist' => $menulist[0]]);
-//             }
-//         }
-        
-//         $nav_list = Db::name('AuthRule')->where(['ismenu' => 1, 'status' => 1, 'pid' => 0])->column('title','id');
-//         //         dump($nav_list);die();
-//         $this->view->assign('nav_list', $nav_list);
-//         //         cookie('menulist',$menulist);
-//         //         $this->view->assign('menulist', json_encode($menulist));
-//         //{if condition="$key eq 215"}lay-href="{:url('dashboard/detail')}"{/if}
-//         $this->view->assign('menulist1', $menulist[0]);
-//         $this->view->assign('nav_url', $menulist[1]);
+        foreach (cache('nav_list') as $k =>$v) {
+            $max_weigh[] = $v['weigh'];
+        } 
+
+        $this->assign('max_weigh', $max_weigh);
+        //         dump($nav_list);die();
+        $this->view->assign('nav_list', cache('nav_list'));
+        //         cookie('menulist',$menulist);
+        //         $this->view->assign('menulist', json_encode($menulist));
+        //{if condition="$key eq 215"}lay-href="{:url('dashboard/detail')}"{/if}
+        $this->view->assign('menulist1', cache('menulist1'));
+        $this->view->assign('nav_url', cache('nav_url'));
         
         // 语言检测
         $lang = strip_tags(Lang::detect());
