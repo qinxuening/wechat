@@ -3,7 +3,7 @@
     <div class="layui-logo" href="javascript:void(0);">
         <span>{:__('Management system')}</span>
     </div>
-    <ul class="layui-nav layui-layout-left ">
+    <ul class="layui-nav layui-layout-left">
         <li class="layui-nav-item layadmin-flexible" lay-unselect>
             <a href="javascript:;" layadmin-event="flexible" title="">
                 <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
@@ -11,7 +11,23 @@
         </li>
         <!--<li class="layui-nav-item nav_menu layui-this"><a href="/admin/dashboard/detail"  data-id="{$key}">{:__('Situational awareness')}</a></li>-->
         {foreach $nav_list as $key=>$vo }
-            <li class="layui-nav-item nav_menu {if condition="max($max_weigh) eq $vo['weigh']"}layui-this{/if}"><a lay-href="{$nav_url[$key]}" href="javascript:void(0);" data-id="{$key}">{:__($vo['title'])}</a></li>
+        <li class="layui-nav-item nav_menu {if condition="max($max_weigh) eq $vo['weigh']"}layui-this{/if}">
+            <a lay-href="{$nav_url[$key]}" href="javascript:void(0);" data-id="{$key}">{:__($vo['title'])}</a>
+            <!--<dl class="layui-nav-child clearcache">-->
+                <!--<dd><a href="javascript:;" data-type="all">{:__('Wipe all cache')}</a></dd>-->
+                <!--<dd><a href="javascript:;" data-type="content">{:__('Wipe content cache')}</a></dd>-->
+                <!--<dd><a href="javascript:;" data-type="template">{:__('Wipe template cache')}</a></dd>-->
+                <!--<dd><a href="javascript:;" data-type="log">{:__('Wipe log cache')}</a></dd>-->
+            <!--</dl>-->
+        </li>
+
+        <ul>
+            <li><a href="javascript:;" data-type="all">{:__('Wipe all cache')}</a></li>
+            <li><a href="javascript:;" data-type="content">{:__('Wipe content cache')}</a></li>
+            <li><a href="javascript:;" data-type="template">{:__('Wipe template cache')}</a></li>
+            <li><a href="javascript:;" data-type="log">{:__('Wipe log cache')}</a></li>
+        </ul>
+
         {/foreach}
         <!--<li class="layui-nav-item" data-id=""><a href="javascript:void(0);">{:__('Home')}</a></li>-->
         <!--<li class="layui-nav-item"><a href="javascript:void(0);">{:__('Order management')}</a></li>-->
@@ -37,11 +53,11 @@
     <!--</ul>-->
 
     <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
-        <li class="layui-nav-item layui-hide-xs" lay-unselect>
-            <a href="javascript:;" target="_blank" title="{:__('Index')}">
-                <i class="layui-icon layui-icon-website"></i>
-            </a>
-        </li>
+        <!--<li class="layui-nav-item layui-hide-xs" lay-unselect>-->
+            <!--<a href="javascript:;" target="_blank" title="{:__('Index')}">-->
+                <!--<i class="layui-icon layui-icon-website"></i>-->
+            <!--</a>-->
+        <!--</li>-->
         <li class="layui-nav-item" lay-unselect>
             <a href="javascript:;" layadmin-event="refresh" title="{:__('Refresh')}">
                 <i class="layui-icon layui-icon-refresh-3"></i>
@@ -67,15 +83,15 @@
             </dl>
         </li>
 
-        <li class="layui-nav-item layui-hide-xs" lay-unselect>
-            <a href="javascript:;" layadmin-event="lang">
-                中/EN
-            </a>
-            <dl class="layui-nav-child lang">
-                <dd><a href="javascript:;" data-type="zh-cn">中文简体</a></dd>
-                <dd><a href="javascript:;" data-type="en-us">English</a></dd>
-            </dl>
-        </li>
+        <!--<li class="layui-nav-item layui-hide-xs" lay-unselect>-->
+            <!--<a href="javascript:;" layadmin-event="lang">-->
+                <!--中/EN-->
+            <!--</a>-->
+            <!--<dl class="layui-nav-child lang">-->
+                <!--<dd><a href="javascript:;" data-type="zh-cn">中文简体</a></dd>-->
+                <!--<dd><a href="javascript:;" data-type="en-us">English</a></dd>-->
+            <!--</dl>-->
+        <!--</li>-->
 
         <li class="layui-nav-item layui-hide-xs" lay-unselect>
             <a href="javascript:;" layadmin-event="fullscreen">
