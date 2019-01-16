@@ -205,9 +205,10 @@ class baseAdmin extends Controller{
         $this->assign('config', $config);
 
         $this->assign('this_url', '/'.$modulename.'/'.$controllername.'/'.$actionname);
-        
+//         echo '/'.$modulename.'/'.$controllername.'/'.$actionname;die();
         //渲染权限对象
         $this->assign('auth', $this->auth);
+//         $this->assign('first_assign', '/admin/order/index');
 //         print_r(Session::get('admin'));
         //渲染管理员对象
         $this->assign('admin', Session::get('admin'));
