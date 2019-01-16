@@ -25,7 +25,7 @@
                 <ul>
                     <h3>{$vo1['title']}</h3>
                     {foreach $vo1['child'] as $key2=>$vo2 }
-                    <li><a href="javascript:void(0);" >{$vo2['title']}</a></li>
+                    <li><a lay-href="{:url($vo2['name'])}" href="javascript:void(0);" >{$vo2['title']}</a></li>
                     {/foreach}
                 </ul>
             {/foreach}
