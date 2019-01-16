@@ -167,6 +167,7 @@ html {
     top:50px;
     float: left;
     width: 780px;
+    border-bottom: 1px solid #e3e2e5;
 }
 .layui-layout-admin .layui-header .layui-nav .layui-dropdown ul li{
     margin-left: 5px;

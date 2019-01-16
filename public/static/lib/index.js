@@ -60,6 +60,12 @@
             $('.layui-dropdown').hide();
         });
 
+        $(document).mouseup(function(e){
+            var _con = $('.nav_menu, .layui-dropdown');   // 设置目标区域
+            if(!_con.is(e.target) && _con.has(e.target).length === 0){ // Mark 1
+                $('.layui-dropdown').hide();
+            }
+        });
     });
     n.screen() < 2 && n.sideFlexible(), layui.config({base: e.base + "modules/"}), layui.each(e.extend, function (a, i) {
         var n = {};
