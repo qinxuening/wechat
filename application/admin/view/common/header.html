@@ -9,9 +9,9 @@
                 <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
             </a>
         </li>
-        <!--<li class="layui-nav-item nav_menu layui-this"><a href="/admin/dashboard/detail"  data-id="{$key}">{:__('Situational awareness')}</a></li>-->
+        <li class="layui-nav-item nav_menu {if condition="$this_url eq '/admin/dashboard/detail'"}layui-this{/if}"><a href="/admin/dashboard/detail"  data-id="{$key}">{:__('Home')}</a></li>
         {foreach $nav_list as $key=>$vo }
-        <li class="layui-nav-item nav_menu {if condition="max($max_weigh) eq $vo['weigh']"}layui-this{/if}">
+        <li class="layui-nav-item nav_menu">
             <a lay-href="{$nav_url[$key]}" href="javascript:void(0);" data-id="{$key}">{:__($vo['title'])}</a>
             <!--<dl class="layui-nav-child clearcache">-->
                 <!--<dd><a href="javascript:;" data-type="all">{:__('Wipe all cache')}</a></dd>-->

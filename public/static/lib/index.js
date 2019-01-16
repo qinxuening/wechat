@@ -35,10 +35,21 @@
          * 新增导航管理
          */
         $(".nav_menu a").on("click", function () {
+            console.log(window.location.pathname);
+            var this_path_name = window.location.pathname;
             console.log($(this).attr('data-id'));
             var data_id = $(this).attr('data-id');
-            $("#LAY-system-side-menu").find("li[data-id]").addClass('layui-hide');
-            $("#LAY-system-side-menu").find("li[data-id="+data_id+"]").removeClass('layui-hide');
+            if(data_id && this_path_name == "/admin/dashboard/detail") {
+                console.log($(this).parent());
+                console.log($(".layadmin-iframe").attr('src'));
+                // $(this).closest().addClass('layui-this"');
+                window.location.href = "/admin/index/index";
+            }
+            if(data_id != null && data_id != '') {
+                $("#LAY-system-side-menu").find("li[data-id]").addClass('layui-hide');
+                $("#LAY-system-side-menu").find("li[data-id="+data_id+"]").removeClass('layui-hide');
+            }
+
         });
 
         /**
