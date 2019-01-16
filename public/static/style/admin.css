@@ -156,9 +156,9 @@ html {
     line-height: 30px;
     font-weight: bold;
     padding: 0 20px;
-    border: 1px solid #BFBFBF;
-    border-radius: 4px;
-    background-color: rgba(68, 68, 68, 0.2);
+    /*border: 1px solid #BFBFBF;*/
+    /*border-radius: 4px;*/
+    /*background-color: rgba(68, 68, 68, 0.2);*/
     margin-top: 10px;
 }
 .layui-layout-admin .layui-header .layui-nav .layui-dropdown ul{
@@ -169,6 +169,7 @@ html {
     width: 780px;
     border-bottom: 1px solid #e3e2e5;
 }
+
 .layui-layout-admin .layui-header .layui-nav .layui-dropdown ul li{
     margin-left: 5px;
     display: inline-block;
@@ -178,6 +179,11 @@ html {
     height: 30px;
     line-height: 30px;
 }
+
+.layui-layout-admin .layui-header .layui-nav .layui-dropdown ul:nth-last-child(1){
+    border-bottom: none !important;
+}
+
 .layui-layout-admin .layui-header .layui-nav .layui-dropdown ul li a{
     color: #666;
     padding: 0 20px;
@@ -464,7 +470,9 @@ html {
 
 .layadmin-side-shrink .layui-side-menu .layui-nav > .layui-nav-itemed > a {
     background: rgba(0, 0, 0, .3)
-    /*background:#1AA094;*/
+    /*border-top:1px solid #ffffff;*/
+    /*background:#009688;*/
+    /*color: #ffffff;*/
 }
 
 .layadmin-side-spread-sm .layadmin-pagetabs, .layadmin-side-spread-sm .layui-layout-admin .layui-body, .layadmin-side-spread-sm .layui-layout-admin .layui-footer, .layadmin-side-spread-sm .layui-layout-admin .layui-layout-left {
