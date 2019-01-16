@@ -562,7 +562,7 @@ class Auth extends \we\Auth{
         
 //         print_r($nav_url);die();
         
-        return [$html,$nav_url];
+        return [$html,$nav_url,$arr_];
         // 构造菜单数据
         Tree::instance()->init($ruleList);
         #@clas: li.class="treeview"表示一级导航有下拉，,第一层ul.class="sidebar-menu",第二级ul.class="treeview-menu"

@@ -13,21 +13,23 @@
         {foreach $nav_list as $key=>$vo }
         <li class="layui-nav-item nav_menu {if condition="max($max_weigh) eq $vo['weigh']"}layui-this{/if}">
             <a lay-href="{$nav_url[$key]}" href="javascript:void(0);" data-id="{$key}">{:__($vo['title'])}</a>
-            <!--<dl class="layui-nav-child clearcache">-->
+            <dl class="layui-nav-child clearcache">
                 <!--<dd><a href="javascript:;" data-type="all">{:__('Wipe all cache')}</a></dd>-->
                 <!--<dd><a href="javascript:;" data-type="content">{:__('Wipe content cache')}</a></dd>-->
                 <!--<dd><a href="javascript:;" data-type="template">{:__('Wipe template cache')}</a></dd>-->
                 <!--<dd><a href="javascript:;" data-type="log">{:__('Wipe log cache')}</a></dd>-->
-            <!--</dl>-->
+            </dl>
         </li>
-
-        <ul>
-            <li><a href="javascript:;" data-type="all">{:__('Wipe all cache')}</a></li>
-            <li><a href="javascript:;" data-type="content">{:__('Wipe content cache')}</a></li>
-            <li><a href="javascript:;" data-type="template">{:__('Wipe template cache')}</a></li>
-            <li><a href="javascript:;" data-type="log">{:__('Wipe log cache')}</a></li>
-        </ul>
-
+        <div class="layui-dropdown">
+            {foreach $vo['child'] as $key1=>$vo1 }
+                <ul>
+                    <h3>{$vo1['title']}</h3>
+                    {foreach $vo1['child'] as $key2=>$vo2 }
+                    <li><a href="javascript:void(0);" >{$vo2['title']}</a></li>
+                    {/foreach}
+                </ul>
+            {/foreach}
+        </div>
         {/foreach}
         <!--<li class="layui-nav-item" data-id=""><a href="javascript:void(0);">{:__('Home')}</a></li>-->
         <!--<li class="layui-nav-item"><a href="javascript:void(0);">{:__('Order management')}</a></li>-->

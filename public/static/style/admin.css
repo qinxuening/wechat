@@ -127,8 +127,8 @@ html {
     /*position: relative;*/
     width: 728px;
 }
-.layui-layout-admin .layui-header .layui-nav ul{
-    left: 5%;
+.layui-layout-admin .layui-header .layui-nav .layui-dropdown{
+    left: 5px;
     background: #ffffff;
     position: absolute;
     width: 780px;
@@ -138,19 +138,36 @@ html {
     white-space: nowrap;
     top: 50px;
     z-index: 199;
-    box-shadow: 1px 3px 5px #cccc;
+    /*box-shadow: 1px 3px 5px #cccc;*/
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.16);
     min-height: 100px;
     border-bottom: 1px solid #dcdcdc;
+    display: none;
+    transition: opacity .13s ease-in-out,width .13s ease-in-out;
+    cursor: pointer;
 }
-.layui-layout-admin .layui-header .layui-nav ul li{
+.layui-layout-admin .layui-header .layui-nav .layui-dropdown ul h3{
+    color: #000;
+    font-weight: bold;
+    padding: 0 20px;
+}
+.layui-layout-admin .layui-header .layui-nav .layui-dropdown ul{
+    /*width: 180px;*/
+    /*display: inline-block;*/
+    top:50px;
+    float: left;
+    width: 780px;
+}
+.layui-layout-admin .layui-header .layui-nav .layui-dropdown ul li{
     display: inline-block;
     cursor: pointer;
 }
-.layui-layout-admin .layui-header .layui-nav ul li a{
+.layui-layout-admin .layui-header .layui-nav .layui-dropdown ul li a{
     color: #666;
     padding: 0 20px;
+    display: block;
 }
-.layui-layout-admin .layui-header .layui-nav ul li:hover,.layui-layout-admin .layui-header .layui-nav ul li a:hover{
+.layui-layout-admin .layui-header .layui-nav .layui-dropdown ul li:hover,.layui-layout-admin .layui-header .layui-nav .layui-dropdown ul li a:hover{
     background-color: #009688 !important;
     color:#ffffff !important;
 }

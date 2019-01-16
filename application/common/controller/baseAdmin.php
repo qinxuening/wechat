@@ -168,6 +168,12 @@ class baseAdmin extends Controller{
             }
             
             $nav_list = Db::name('AuthRule')->where(['ismenu' => 1, 'status' => 1, 'pid' => 0])->column('title,weigh','id');
+            
+            foreach ($menulist[2] as $k => $v) {
+                $arr_nav[$v['id']] = $v;
+            }
+            
+            cache('menulist2', $arr_nav);
             cache('nav_list',$nav_list);
             cache('menulist1',$menulist[0]);
             cache('nav_url',$menulist[1]);
@@ -177,9 +183,11 @@ class baseAdmin extends Controller{
             $max_weigh[] = $v['weigh'];
         } 
 
+//         print_r(cache('menulist2'));die();
+        
         $this->assign('max_weigh', $max_weigh);
         //         dump($nav_list);die();
-        $this->view->assign('nav_list', cache('nav_list'));
+        $this->view->assign('nav_list', cache('menulist2'));
         //         cookie('menulist',$menulist);
         //         $this->view->assign('menulist', json_encode($menulist));
         //{if condition="$key eq 215"}lay-href="{:url('dashboard/detail')}"{/if}

@@ -62,6 +62,13 @@
             $("#LAY-system-side-menu").find("li[data-id]").addClass('layui-hide');
             $("#LAY-system-side-menu").find("li[data-id="+data_id+"]").removeClass('layui-hide');
         });
+
+        $("body").on("mouseenter",'.nav_menu', function () {
+            $('.layui-dropdown').hide();
+            $(this).next().show();
+        })
+
+
     });
     n.screen() < 2 && n.sideFlexible(), layui.config({base: e.base + "modules/"}), layui.each(e.extend, function (a, i) {
         var n = {};
