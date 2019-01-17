@@ -183,7 +183,7 @@ class baseAdmin extends Controller{
             $max_weigh[] = $v['weigh'];
         } 
 
-//         print_r(cache('menulist2'));die();
+//         print_r(cache('nav_url'));die();
         
         $this->assign('max_weigh', $max_weigh);
         //         dump($nav_list);die();
@@ -194,9 +194,10 @@ class baseAdmin extends Controller{
         $this->view->assign('menulist1', cache('menulist1'));
         $this->view->assign('nav_url', cache('nav_url'));
         
+        
+        
         // 语言检测
         $lang = strip_tags(Lang::detect());
-        
         // 配置信息后
         Hook::listen("config_init", $config);
         //加载当前控制器语言包

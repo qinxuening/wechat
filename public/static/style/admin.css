@@ -93,6 +93,13 @@ html {
     bottom: 0
 }
 
+/*.layui-body {*/
+    /*width: 100%;*/
+    /*padding: 0.5% 2% 0.5% 8%;*/
+    /*overflow-y: auto;*/
+    /*overflow-x: hidden;*/
+/*}*/
+
 .layui-layout-admin .layui-body .layadmin-tabsbody-item {
     position: absolute;
     top: 0;

@@ -39,17 +39,16 @@
             var this_path_name = window.location.pathname;
             console.log($(this).attr('data-id'));
             var data_id = $(this).attr('data-id');
-            if(data_id && this_path_name == "/admin/dashboard/detail") {
-                console.log($(this).parent());
-                console.log($(".layadmin-iframe").attr('src'));
-                // $(this).closest().addClass('layui-this"');
-                window.location.href = "/admin/index/index";
+            if(data_id && this_path_name == "/admin/dashboard/detail"){
+                var lay_href  = $(this).attr('lay-href');
+                console.log(lay_href);
+                $(this).parent().addClass('layui-this');
+                window.location.href = "/admin/index/index?return_url=" + encodeURIComponent(lay_href);
             }
-            if(data_id != null && data_id != '') {
+            if(data_id != null && data_id != ''){
                 $("#LAY-system-side-menu").find("li[data-id]").addClass('layui-hide');
                 $("#LAY-system-side-menu").find("li[data-id="+data_id+"]").removeClass('layui-hide');
             }
-
         });
 
         /**

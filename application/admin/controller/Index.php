@@ -20,6 +20,11 @@ class Index extends baseAdmin {
         parent::_initialize();
     }
     public function index() {
+        $return_url = input('return_url');
+        if($return_url) {
+//             echo urldecode($return_url);die();
+            $this->assign('return_url', urldecode($return_url));
+        }
         //左侧菜单
         $this->view->assign('title', __('Home'));
         return $this->view->fetch();
