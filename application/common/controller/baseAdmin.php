@@ -191,10 +191,10 @@ class baseAdmin extends Controller{
         $pid = intval(input('nav_pid'));
 
         if($id){
-            $arr_ = Category::getParent(cache('ruleList'),$id);
+            $arr_ = Category::getParent( cache('ruleList3'),$id);
             $pid = $arr_[0]['id'];
         }
-//         print_r($menulist);die();
+//         print_r($menulist[3]);die();
         $this->assign('max_weigh', $max_weigh);
         $this->view->assign('nav_list', cache('menulist2'));
 

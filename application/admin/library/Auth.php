@@ -477,8 +477,11 @@ class Auth extends \we\Auth{
         if(!cache('ruleList2')){      
             // 必须将结果集转换为数组
             $ruleList1 = collection(\app\admin\model\AuthRule::where('status', '1')->where('ismenu', 1)->order('weigh', 'desc')->select())->toArray();
+            $pid_ids = Db::name('AuthRule')->column('pid','id');
             cache('ruleList2', $ruleList1);
+            cache('pid_ids', $pid_ids);
         }
+
         $ruleList = cache('ruleList2');
 //         print_r($ruleList);die();
         foreach ($ruleList as $k => &$v)
@@ -498,35 +501,40 @@ class Auth extends \we\Auth{
 //             $v['pinyin'] = $pinyin->permalink($v['title'], '');#返回拼音
             $v['title'] = __($v['title']);
         }
-//         print_r($ruleList);die();
+        if(!cache('ruleList3')) {
+            cache('ruleList3', $ruleList);
+        }
         $arr_ = Category::unlimiteForLayer($ruleList,'child');
         foreach ($arr_ as $k3 => $v3){
             $arr[$v3['id']] = $v3['child'];
         }
-//         print_r($arr);die();
+
         $html = [];
         $nav_url = [];
         $i = 1;
         $menu_active = "";
         $nav_id = intval(input('nav_id'));
+        $nav_pid = intval(input('nav_pid'));
+//         $ruleList2 = $ruleList;
+
         foreach ($arr as $k4 => $v4){
             foreach ($v4 as $k => $v) {
-                if($v['pid']) {
-                    
-                }
-                if($k == 0) {
+                if($k == 0 && $nav_pid) {
                     $expand = "layui-nav-itemed";
                     $active = "layui-this";
                 } else {
                     $expand = "";
                     $active = "";
                 }
+                if(cache('pid_ids')[$nav_id] == $v['id']) {
+                    $expand = "layui-nav-itemed";
+                }
                 if($i == 1) {
                     $html[$k4] .= "<li data-name='{$v['pinyin']}' data-id='{$k4}' class='layui-nav-item {$expand}'>";
                 } else {
                     $html[$k4] .= "<li data-name='{$v['pinyin']}' data-id='{$k4}' class='layui-nav-item {$expand}'>";
                 }
-
+                $expand = "";
                 if(isset($v['child'])){
                     $html[$k4] .= "<a href='javascript:;' lay-tips='{$v['title']}'>";
                 } else {
@@ -550,7 +558,7 @@ class Auth extends \we\Auth{
 
                                 if($k2 == 0) {
                                     $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v2['url'];
-                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$menu_active}'><a href=".url($v2['url'],['nav_id' => $v2['id']])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
+                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$active} {$menu_active}'><a href=".url($v2['url'],['nav_id' => $v2['id']])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 } else {
                                     $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$menu_active}'><a href=".url($v2['url'],['nav_id' => $v2['id']])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 }
@@ -565,7 +573,7 @@ class Auth extends \we\Auth{
                             }
                             if($k1 == 0) {
                                 $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v1['url'];
-                                $html[$k4] .= "<dd class='{$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id']])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd class='{$active} {$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id']])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             } else {
                                 $html[$k4] .= "<dd class='{$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id']])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             }
@@ -577,8 +585,8 @@ class Auth extends \we\Auth{
             }
             $i++;
         }
-        
-//         print_r($html);die();
+//         print_r($ruleList2);die();
+//         print_r($ruleList);die();
         
         return [$html,$nav_url,$arr_,$ruleList];
         // 构造菜单数据
