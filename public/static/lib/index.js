@@ -1,18 +1,18 @@
 ;layui.extend({setter: "config", admin: "lib/admin", view: "lib/view"}).define(["setter", "admin"], function (a) {
     var e = layui.setter, i = layui.element, n = layui.admin, t = n.tabsPage, d = layui.view, l = function (a, d) {
         var l, b = r("#LAY_app_tabsheader>li"), y = a.replace(/(^http(s*):)|(\?[\s\S]*$)/g, "");
-        if (b.each(function (e) {
-                var i = r(this), n = i.attr("lay-id");
-                n === a && (l = !0, t.index = e)
-            }), d = d || "新标签页", e.pageTabs) l || (r(s).append(['<div class="layadmin-tabsbody-item layui-show">', '<iframe src="' + a + '" frameborder="0" class="layadmin-iframe"></iframe>', "</div>"].join("")), t.index = b.length, i.tabAdd(o, {
-            title: "<span>" + d + "</span>",
-            id: a,
-            attr: y
-        })); else {
-            var u = n.tabsBody(n.tabsPage.index).find(".layadmin-iframe");
-            u[0].contentWindow.location.href = a
-        }
-        i.tabChange(o, a), n.tabsBodyChange(t.index, {url: a, text: d})
+        // if (b.each(function (e) {
+        //         var i = r(this), n = i.attr("lay-id");
+        //         n === a && (l = !0, t.index = e)
+        //     }), d = d || "新标签页", e.pageTabs) l || (r(s).append(['<div class="layadmin-tabsbody-item layui-show">', '<iframe src="' + a + '" frameborder="0" class="layadmin-iframe"></iframe>', "</div>"].join("")), t.index = b.length, i.tabAdd(o, {
+        //     title: "<span>" + d + "</span>",
+        //     id: a,
+        //     attr: y
+        // })); else {
+        //     var u = n.tabsBody(n.tabsPage.index).find(".layadmin-iframe");
+        //     u[0].contentWindow.location.href = a
+        // }
+        // i.tabChange(o, a), n.tabsBodyChange(t.index, {url: a, text: d})
     }, s = "#LAY_app_body", o = "layadmin-layout-tabs", $ = r = layui.$;
     $(window);
     $().ready(function () {
@@ -39,16 +39,18 @@
             var this_path_name = window.location.pathname;
             console.log($(this).attr('data-id'));
             var data_id = $(this).attr('data-id');
-            if(data_id && this_path_name == "/admin/dashboard/detail"){
-                var lay_href  = $(this).attr('lay-href');
-                console.log(lay_href);
-                $(this).parent().addClass('layui-this');
-                window.location.href = "/admin/index/index?return_url=" + encodeURIComponent(lay_href);
-            }
-            if(data_id != null && data_id != ''){
-                $("#LAY-system-side-menu").find("li[data-id]").addClass('layui-hide');
-                $("#LAY-system-side-menu").find("li[data-id="+data_id+"]").removeClass('layui-hide');
-            }
+            // console.log(data_id);
+            // if(data_id && this_path_name == "/admin/dashboard/detail"){
+            //     var lay_href  = $(this).attr('lay-href');
+            //     console.log(lay_href);
+            //     $(this).parent().addClass('layui-this');
+                // window.location.href = "/admin/index/index?return_url=" + encodeURIComponent(lay_href);
+                // window.location.href = "/admin/index/index";
+            // }
+            // if(data_id != null && data_id != ''){
+            //     $("#LAY-system-side-menu").find("li[data-id]").addClass('layui-hide');
+            //     $("#LAY-system-side-menu").find("li[data-id="+data_id+"]").removeClass('layui-hide');
+            // }
         });
 
         /**

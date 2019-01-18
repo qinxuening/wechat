@@ -472,7 +472,8 @@ class Auth extends \we\Auth{
     
         $select_id = 0;
         $pinyin = new \Overtrue\Pinyin\Pinyin('Overtrue\Pinyin\MemoryFileDictLoader');
-    
+        
+        
         // 必须将结果集转换为数组
         $ruleList = collection(\app\admin\model\AuthRule::where('status', '1')->where('ismenu', 1)->order('weigh', 'desc')->cache("__menu__")->select())->toArray();
 //         print_r($ruleList);die();
@@ -517,13 +518,13 @@ class Auth extends \we\Auth{
                 if($i == 1) {
                     $html[$k4] .= "<li data-name='{$v['pinyin']}' data-id='{$k4}' class='layui-nav-item {$expand}'>";
                 } else {
-                    $html[$k4] .= "<li data-name='{$v['pinyin']}' data-id='{$k4}' class='layui-nav-item {$expand} layui-hide'>";
+                    $html[$k4] .= "<li data-name='{$v['pinyin']}' data-id='{$k4}' class='layui-nav-item {$expand}'>";
                 }
 
                 if(isset($v['child'])){
                     $html[$k4] .= "<a href='javascript:;' lay-tips='{$v['title']}'>";
                 } else {
-                    $html[$k4] .= "<a lay-href='{$v['lay-href']}' lay-tips='{$v['title']}'>";
+                    $html[$k4] .= "<a href='{$v['lay-href']}' lay-tips='{$v['title']}'>";
                 }
                 $html[$k4] .= "<i class='layui-icon {$v['icon']}'></i><cite>{$v['title']}</cite></a>";
                 
@@ -537,9 +538,9 @@ class Auth extends \we\Auth{
                             foreach ($v1['child'] as $k2 => $v2) {
                                 if($k2 == 0) {
                                     $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v2['url'];
-                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$active}'><a lay-href='{$v2['url']}'><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
+                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$active}'><a href='{$v2['url']}'><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 } else {
-                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}'><a lay-href='{$v2['url']}'><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
+                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}'><a href='{$v2['url']}'><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 }
                                
                             }
@@ -547,9 +548,9 @@ class Auth extends \we\Auth{
                         }else {
                             if($k1 == 0) {
                                 $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v1['url'];
-                                $html[$k4] .= "<dd class='{$active}' data-name='{$v1['pinyin']}'><a lay-href='{$v1['url']}'><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd class='{$active}' data-name='{$v1['pinyin']}'><a href='{$v1['url']}'><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             } else {
-                                $html[$k4] .= "<dd data-name='{$v1['pinyin']}'><a lay-href='{$v1['url']}'><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd data-name='{$v1['pinyin']}'><a href='{$v1['url']}'><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             }
                         }
                     }
@@ -562,7 +563,7 @@ class Auth extends \we\Auth{
         
 //         print_r($nav_url);die();
         
-        return [$html,$nav_url,$arr_];
+        return [$html,$nav_url,$arr_,$ruleList];
         // 构造菜单数据
         Tree::instance()->init($ruleList);
         #@clas: li.class="treeview"表示一级导航有下拉，,第一层ul.class="sidebar-menu",第二级ul.class="treeview-menu"

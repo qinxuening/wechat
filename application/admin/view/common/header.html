@@ -12,7 +12,7 @@
         <li class="layui-nav-item nav_menu {if condition="$this_url eq '/admin/dashboard/detail'"}layui-this{/if}"><a href="/admin/dashboard/detail"  data-id="{$key}">{:__('Home')}</a></li>
         {foreach $nav_list as $key=>$vo }
         <li class="layui-nav-item nav_menu">
-            <a lay-href="{$nav_url[$key]}" href="javascript:void(0);" data-id="{$key}">{:__($vo['title'])}</a>
+            <a  href="{$nav_url[$key]}" data-id="{$key}">{:__($vo['title'])}</a>
             <!--<dl class="layui-nav-child clearcache">-->
                 <!--<dd><a href="javascript:;" data-type="all">{:__('Wipe all cache')}</a></dd>-->
                 <!--<dd><a href="javascript:;" data-type="content">{:__('Wipe content cache')}</a></dd>-->

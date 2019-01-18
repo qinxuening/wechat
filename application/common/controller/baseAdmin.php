@@ -12,6 +12,8 @@ use think\Lang;
 use think\Hook;
 use think\Session;
 use think\Db;
+use we\Tree;
+use app\admin\library\Category;
 
 class baseAdmin extends Controller{
     /**
@@ -173,25 +175,36 @@ class baseAdmin extends Controller{
                 $arr_nav[$v['id']] = $v;
             }
             
+            $auth_rule_ids = Db::name('AuthRule')->column('name','id');
+//             foreach ($auth_rule_ids as  $k => &$v) {
+//                 $auth_rule_ids[$k] = url($v,'',false);
+//             }
+            $auth_rule_ids = array_flip($auth_rule_ids);
             cache('menulist2', $arr_nav);
             cache('nav_list',$nav_list);
             cache('menulist1',$menulist[0]);
             cache('nav_url',$menulist[1]);
+            cache('auth_rule_ids',$auth_rule_ids);
+            cache('ruleList',$menulist[3]);
         }
         
         foreach (cache('nav_list') as $k =>$v) {
             $max_weigh[] = $v['weigh'];
         } 
-
-//         print_r(cache('nav_url'));die();
+//         print_r($auth_rule_ids);die();
+        $baseUrl = request()->url(true);
+        $baseUrl = parse_url($baseUrl,PHP_URL_PATH);
+//         print_r(cache('auth_rule_ids'));
+//         echo $baseUrl;die();
+        $baseUrl = substr($baseUrl, 7);
+        $myid = cache('auth_rule_ids')[$baseUrl];
+        $arr_ = Category::getParent(cache('ruleList'),$myid);
         
         $this->assign('max_weigh', $max_weigh);
-        //         dump($nav_list);die();
+//         dump(cache('menulist1')[$arr_[0]['id']]);die();
         $this->view->assign('nav_list', cache('menulist2'));
-        //         cookie('menulist',$menulist);
-        //         $this->view->assign('menulist', json_encode($menulist));
-        //{if condition="$key eq 215"}lay-href="{:url('dashboard/detail')}"{/if}
-        $this->view->assign('menulist1', cache('menulist1'));
+
+        $this->view->assign('menulist1', cache('menulist1')[$arr_[0]['id']]);
         $this->view->assign('nav_url', cache('nav_url'));
         
         
