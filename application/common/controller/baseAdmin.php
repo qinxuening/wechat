@@ -151,24 +151,23 @@ class baseAdmin extends Controller{
         /**
          * 缓存导航、menu
          */
-        if(!cache('menulist1')){
-            //左侧菜单
-            $menulist = $this->auth->getSidebar([
-                'dashboard' => '',//hot
-                'addon'     => ['new', 'red', 'badge'],
-                'auth/rule' => '',//__('Menu')
-                'general'   => ['new', 'purple'],
-            ], $this->view->site['fixedpage']);
-            
-            $action = $this->request->request('action');
-            if ($this->request->isPost())
+        //左侧菜单
+        $menulist = $this->auth->getSidebar([
+            'dashboard' => '',//hot
+            'addon'     => ['new', 'red', 'badge'],
+            'auth/rule' => '',//__('Menu')
+            'general'   => ['new', 'purple'],
+        ], $this->view->site['fixedpage']);
+        
+        $action = $this->request->request('action');
+        if ($this->request->isPost())
+        {
+            if ($action == 'refreshmenu')
             {
-                if ($action == 'refreshmenu')
-                {
-                    $this->success('', null, ['menulist' => $menulist[0]]);
-                }
+                $this->success('', null, ['menulist' => $menulist[0]]);
             }
-            
+        }
+        if(!cache('menulist2')){
             $nav_list = Db::name('AuthRule')->where(['ismenu' => 1, 'status' => 1, 'pid' => 0])->column('title,weigh','id');
             
             foreach ($menulist[2] as $k => $v) {
@@ -179,12 +178,11 @@ class baseAdmin extends Controller{
             $auth_rule_ids = array_flip($auth_rule_ids);
             cache('menulist2', $arr_nav);
             cache('nav_list',$nav_list);
-            cache('menulist1',$menulist[0]);
             cache('nav_url',$menulist[1]);
             cache('auth_rule_ids',$auth_rule_ids);
             cache('ruleList',$menulist[3]);
         }
-
+//         cache('menulist1',$menulist[0]);
         foreach (cache('nav_list') as $k =>$v) {
             $max_weigh[] = $v['weigh'];
         } 
@@ -196,11 +194,11 @@ class baseAdmin extends Controller{
             $arr_ = Category::getParent(cache('ruleList'),$id);
             $pid = $arr_[0]['id'];
         }
-        
+//         print_r($menulist);die();
         $this->assign('max_weigh', $max_weigh);
         $this->view->assign('nav_list', cache('menulist2'));
 
-        $this->view->assign('menulist1', cache('menulist1')[$pid]);
+        $this->view->assign('menulist1', $menulist[0][$pid]);
         $this->view->assign('nav_url', cache('nav_url'));
         
         // 语言检测

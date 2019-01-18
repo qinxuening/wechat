@@ -1868,3 +1868,6 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     line-height: 25px;
 }
 
+#LAY_app_body{
+    z-index: auto !important;
+}

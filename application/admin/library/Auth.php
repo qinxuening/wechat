@@ -438,44 +438,48 @@ class Auth extends \we\Auth{
      */
     public function getSidebar($params = [], $fixedPage = 'dashboard')
     {
-        $colorArr = ['red', 'green', 'yellow', 'blue', 'teal', 'orange', 'purple'];
-        $colorNums = count($colorArr);
-        $badgeList = [];
-        $module = request()->module();
-        // 生成菜单的badge
-        foreach ($params as $k => $v)
-        {
-    
-            $url = $k;
-    
-            if (is_array($v))
+
+            $colorArr = ['red', 'green', 'yellow', 'blue', 'teal', 'orange', 'purple'];
+            $colorNums = count($colorArr);
+            $badgeList = [];
+            $module = request()->module();
+            // 生成菜单的badge
+            foreach ($params as $k => $v)
             {
-                $nums = isset($v[0]) ? $v[0] : 0;
-                $color = isset($v[1]) ? $v[1] : $colorArr[(is_numeric($nums) ? $nums : strlen($nums)) % $colorNums];
-                $class = isset($v[2]) ? $v[2] : 'label';
+        
+                $url = $k;
+        
+                if (is_array($v))
+                {
+                    $nums = isset($v[0]) ? $v[0] : 0;
+                    $color = isset($v[1]) ? $v[1] : $colorArr[(is_numeric($nums) ? $nums : strlen($nums)) % $colorNums];
+                    $class = isset($v[2]) ? $v[2] : 'label';
+                }
+                else
+                {
+                    $nums = $v;
+                    $color = $colorArr[(is_numeric($nums) ? $nums : strlen($nums)) % $colorNums];
+                    $class = 'label';
+                }
+                //必须nums大于0才显示
+                if ($nums)
+                {
+                    $badgeList[$url] = '<small class="' . $class . ' pull-right bg-' . $color . '">' . $nums . '</small>';
+                }
             }
-            else
-            {
-                $nums = $v;
-                $color = $colorArr[(is_numeric($nums) ? $nums : strlen($nums)) % $colorNums];
-                $class = 'label';
-            }
-            //必须nums大于0才显示
-            if ($nums)
-            {
-                $badgeList[$url] = '<small class="' . $class . ' pull-right bg-' . $color . '">' . $nums . '</small>';
-            }
+        
+            // 读取管理员当前拥有的权限节点
+            $userRule = $this->getRuleList();
+        
+            $select_id = 0;
+//             $pinyin = new \Overtrue\Pinyin\Pinyin('Overtrue\Pinyin\MemoryFileDictLoader');
+            
+        if(!cache('ruleList2')){      
+            // 必须将结果集转换为数组
+            $ruleList1 = collection(\app\admin\model\AuthRule::where('status', '1')->where('ismenu', 1)->order('weigh', 'desc')->select())->toArray();
+            cache('ruleList2', $ruleList1);
         }
-    
-        // 读取管理员当前拥有的权限节点
-        $userRule = $this->getRuleList();
-    
-        $select_id = 0;
-        $pinyin = new \Overtrue\Pinyin\Pinyin('Overtrue\Pinyin\MemoryFileDictLoader');
-        
-        
-        // 必须将结果集转换为数组
-        $ruleList = collection(\app\admin\model\AuthRule::where('status', '1')->where('ismenu', 1)->order('weigh', 'desc')->cache("__menu__")->select())->toArray();
+        $ruleList = cache('ruleList2');
 //         print_r($ruleList);die();
         foreach ($ruleList as $k => &$v)
         {
@@ -490,8 +494,8 @@ class Auth extends \we\Auth{
             $select_id = $v['name'] == $fixedPage ? $v['id'] : $select_id; #控制台
             $v['url'] = '/' . $module . '/' . $v['name'];
             $v['badge'] = isset($badgeList[$v['name']]) ? $badgeList[$v['name']] : ''; #hot、new
-            $v['py'] = $pinyin->abbr($v['title'], ''); #Return first letters.
-            $v['pinyin'] = $pinyin->permalink($v['title'], '');#返回拼音
+//             $v['py'] = $pinyin->abbr($v['title'], ''); #Return first letters.
+//             $v['pinyin'] = $pinyin->permalink($v['title'], '');#返回拼音
             $v['title'] = __($v['title']);
         }
 //         print_r($ruleList);die();
@@ -503,6 +507,8 @@ class Auth extends \we\Auth{
         $html = [];
         $nav_url = [];
         $i = 1;
+        $menu_active = "";
+        $nav_id = intval(input('nav_id'));
         foreach ($arr as $k4 => $v4){
             foreach ($v4 as $k => $v) {
                 if($v['pid']) {
@@ -536,21 +542,32 @@ class Auth extends \we\Auth{
                             $html[$k4] .= "<a href='javascript:;' lay-tips='{$v1['title']}'>{$v1['title']}</a>";
                             $html[$k4] .= '<dl class="layui-nav-child">';
                             foreach ($v1['child'] as $k2 => $v2) {
+                                if($v2['id'] == $nav_id) {
+                                    $menu_active = "layui-this";
+                                } else {
+                                    $menu_active = "";
+                                }
+
                                 if($k2 == 0) {
                                     $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v2['url'];
-                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$active}'><a href=".url($v2['url'],['nav_id' => $v2['id']])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
+                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$menu_active}'><a href=".url($v2['url'],['nav_id' => $v2['id']])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 } else {
-                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}'><a href=".url($v2['url'],['nav_id' => $v2['id']])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
+                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$menu_active}'><a href=".url($v2['url'],['nav_id' => $v2['id']])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 }
                                
                             }
                             $html[$k4] .= '</dl></dd>';
                         }else {
+                            if($v1['id'] == $nav_id) {
+                                $menu_active = "layui-this";
+                            } else {
+                                $menu_active = "";
+                            }
                             if($k1 == 0) {
                                 $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v1['url'];
-                                $html[$k4] .= "<dd class='{$active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id']])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd class='{$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id']])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             } else {
-                                $html[$k4] .= "<dd data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id']])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd class='{$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id']])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             }
                         }
                     }
@@ -561,7 +578,7 @@ class Auth extends \we\Auth{
             $i++;
         }
         
-//         print_r($nav_url);die();
+//         print_r($html);die();
         
         return [$html,$nav_url,$arr_,$ruleList];
         // 构造菜单数据
