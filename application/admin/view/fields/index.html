@@ -200,10 +200,10 @@
             is_display:true,
             tableCommon: tableCommon,
             extend : {
-                "add_url": "{:url('admin/fields/edit','',false)}",
-                "edit_url": "{:url('admin/fields/edit','',false)}/ids/",
-                "del_url": "{:url('admin/fields/del','',false)}",
-                "export_url" : "{:url('admin/fields/index','',false)}"
+                "add_url": "{:url('admin/fields/edit',['nav_id'=>input('nav_id')],false)}",
+                "edit_url": "{:url('admin/fields/edit',['nav_id'=>input('nav_id')],false)}&ids=",
+                "del_url": "{:url('admin/fields/del',['nav_id'=>input('nav_id')],false)}",
+                "export_url" : "{:url('admin/fields/index',['id'=>input('nav_id')],false)}"
             }
         });
 

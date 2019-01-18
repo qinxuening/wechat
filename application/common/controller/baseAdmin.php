@@ -176,9 +176,6 @@ class baseAdmin extends Controller{
             }
             
             $auth_rule_ids = Db::name('AuthRule')->column('name','id');
-//             foreach ($auth_rule_ids as  $k => &$v) {
-//                 $auth_rule_ids[$k] = url($v,'',false);
-//             }
             $auth_rule_ids = array_flip($auth_rule_ids);
             cache('menulist2', $arr_nav);
             cache('nav_list',$nav_list);
@@ -187,27 +184,24 @@ class baseAdmin extends Controller{
             cache('auth_rule_ids',$auth_rule_ids);
             cache('ruleList',$menulist[3]);
         }
-        
+
         foreach (cache('nav_list') as $k =>$v) {
             $max_weigh[] = $v['weigh'];
         } 
-//         print_r($auth_rule_ids);die();
-        $baseUrl = request()->url(true);
-        $baseUrl = parse_url($baseUrl,PHP_URL_PATH);
-//         print_r(cache('auth_rule_ids'));
-//         echo $baseUrl;die();
-        $baseUrl = substr($baseUrl, 7);
-        $myid = cache('auth_rule_ids')[$baseUrl];
-        $arr_ = Category::getParent(cache('ruleList'),$myid);
+        
+        $id = intval(input('nav_id'));
+        $pid = intval(input('nav_pid'));
+
+        if($id){
+            $arr_ = Category::getParent(cache('ruleList'),$id);
+            $pid = $arr_[0]['id'];
+        }
         
         $this->assign('max_weigh', $max_weigh);
-//         dump(cache('menulist1')[$arr_[0]['id']]);die();
         $this->view->assign('nav_list', cache('menulist2'));
 
-        $this->view->assign('menulist1', cache('menulist1')[$arr_[0]['id']]);
+        $this->view->assign('menulist1', cache('menulist1')[$pid]);
         $this->view->assign('nav_url', cache('nav_url'));
-        
-        
         
         // 语言检测
         $lang = strip_tags(Lang::detect());
@@ -219,11 +213,8 @@ class baseAdmin extends Controller{
         $this->assign('config', $config);
 
         $this->assign('this_url', '/'.$modulename.'/'.$controllername.'/'.$actionname);
-//         echo '/'.$modulename.'/'.$controllername.'/'.$actionname;die();
         //渲染权限对象
         $this->assign('auth', $this->auth);
-//         $this->assign('first_assign', '/admin/order/index');
-//         print_r(Session::get('admin'));
         //渲染管理员对象
         $this->assign('admin', Session::get('admin'));
     }

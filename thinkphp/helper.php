@@ -279,6 +279,9 @@ if (!function_exists('url')) {
      */
     function url($url = '', $vars = '', $suffix = true, $domain = false)
     {
+//         if($vars) {
+//             $vars = http_build_query($vars);
+//         }
         return Url::build($url, $vars, $suffix, $domain);
     }
 }

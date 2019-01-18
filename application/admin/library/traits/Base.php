@@ -74,7 +74,7 @@ trait Base{
         $this->afterEdit($list);
         $this->editAssign();
         $this->assign('list', $list);
-        $this->assign('return_url', request()->module().'/'.request()->controller().'/index');
+        $this->assign('return_url', request()->module().'/'.request()->controller().'/index?nav_id='.intval(input('nav_id')));
         return $this->view->fetch();
     }
     

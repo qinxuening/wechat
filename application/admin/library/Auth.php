@@ -538,9 +538,9 @@ class Auth extends \we\Auth{
                             foreach ($v1['child'] as $k2 => $v2) {
                                 if($k2 == 0) {
                                     $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v2['url'];
-                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$active}'><a href='{$v2['url']}'><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
+                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$active}'><a href=".url($v2['url'],['nav_id' => $v2['id']])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 } else {
-                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}'><a href='{$v2['url']}'><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
+                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}'><a href=".url($v2['url'],['nav_id' => $v2['id']])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 }
                                
                             }
@@ -548,9 +548,9 @@ class Auth extends \we\Auth{
                         }else {
                             if($k1 == 0) {
                                 $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v1['url'];
-                                $html[$k4] .= "<dd class='{$active}' data-name='{$v1['pinyin']}'><a href='{$v1['url']}'><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd class='{$active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id']])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             } else {
-                                $html[$k4] .= "<dd data-name='{$v1['pinyin']}'><a href='{$v1['url']}'><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id']])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             }
                         }
                     }
