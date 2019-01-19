@@ -1653,6 +1653,7 @@ body .layui-layer-we .layui-layer-setwin {
     padding-right: 0px !important;
     padding-bottom: 0px !important;
     margin-left: -2px !important;
+    margin-top: 4px;
 }
 
 body .layui-layer-we{
@@ -1874,7 +1875,7 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
 
 .sm-st {
     background: #fff;
-    padding: 40px 20px;
+    padding: 40px 20px 0px 20px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -1910,6 +1911,7 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     -moz-osx-font-smoothing: grayscale;
 }
 .sm-st-info {
+    height: 120px;
     font-size: 12px;
     padding-top: 2px;
 }
@@ -1942,4 +1944,75 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
 }
 .st-back-money{
     background-color: #e77149;
+}
+.h1{
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom:1px dashed #e5e5e5;
+}
+
+tr>td.yty_tdleft {
+    text-align: right;
+    font-size: 14px !important;
+    border: none;
+}
+
+tr>td.yty_tdright {
+    text-align: left;
+    vertical-align: middle;
+    font-size: 14px !important;
+    border: none;
+}
+
+.table-border{
+    border: none !important;
+}
+.table-border tr>td{
+    font-size: 0.875rem;
+    color: #666;
+}
+.table-border tr:hover{
+    background-color: #ffffff !important;
+}
+.red_color{
+    color: #F05050 ;
+    font-weight: 600;
+}
+
+.yty-btn{
+    width: 120px;
+}
+
+.shop_level{
+    color: #fff;
+    font-size: 0.75rem;
+    background: #ffbb37;
+    padding: 5px 10px;
+    border-radius: 14px;
+    margin-left: 20px;
+}
+.shop_user{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    line-height: 80px;
+    text-align: center;
+    font-size: 40px;
+    background: #eee;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 40px;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.st-shop{
+    background: #6ccac9;
+}
+
+.right-module{
+    padding-left: 2px;
+}
+.yty-layui-body{
+    padding: 8px;
 }
