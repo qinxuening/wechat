@@ -4,11 +4,12 @@
     <div class="layui-layout layui-layout-admin">
         {include file="common/header" /}
         <div class="layui-body" id="LAY_app_body" style="top: 50px;left: 0px">
-        <div class="layui-fluid yty-layui-body">
+        <div class="layui yty-layui-body">
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-12">
                     <div class="layui-row">
-                        <div class="layui-col-md8 layui-col-sm6">
+                        <!--------左侧模块模块begin-------->
+                        <div class="layui-col-md9 layui-col-sm6">
                             <!--------历史统计模块begin-------->
                             <div class="layui-col-md12 webody">
                                 <div class="layui-col-sm6 layui-col-md3">
@@ -59,7 +60,7 @@
                             <!--------统计模块end-------->
 
                             <!--------今日统计模块begin-------->
-                            <div class="layui-col-md12 webody1">
+                            <div class="layui-col-md12 webody">
                                     <div class="layui-col-sm6 layui-col-md3">
                                         <div class="layui-card">
                                             <div class="sm-st clearfix">
@@ -200,15 +201,17 @@
                                 </div>
                             </div>
                         </div>
+                        <!--------左侧模块模块end-------->
 
-                        <div class="layui-col-md4 layui-col-sm6 right-module">
+                        <!--------又侧模块模块begin-------->
+                        <div class="layui-col-md3 layui-col-sm6 right-module">
                             <!--------店铺信息模块begin-------->
-                            <div class="layui-card">
+                            <div class="layui-card yty-card">
                                 <div class="layui-card-header h1">店铺信息</div>
                                 <div class="layui-card-body">
                                     <table class="layui-table table-border" lay-skin="line" lay-size="sm">
                                         <colgroup>
-                                            <col class="yty_tdleft" width="40%">
+                                            <col class="yty_tdleft" width="70%">
                                             <col class="yty_tdright">
                                         </colgroup>
                                         <tbody>
@@ -236,7 +239,26 @@
                                 </div>
                             </div>
                             <!--------店铺信息模块end-------->
+
+                            <!--------公告信息模块begin-------->
+                            <div class="layui-card yty-notice" style="height: 260px">
+                                <div class="layui-card-header h1">公告</div>
+                                <div class="layui-card-body">
+                                    <ul>
+                                        <li class="yty-notice-t"><a href="">【通知】彩票营销服务下线通知<span class="notice">2018-12-28</span></a></li>
+                                        <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                        <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                        <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                        <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                        <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                        <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--------公告信息模块end-------->
+
                         </div>
+                        <!--------又侧模块模块end-------->
 
                     </div>
                 </div>

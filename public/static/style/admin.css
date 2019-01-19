@@ -1875,7 +1875,7 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
 
 .sm-st {
     background: #fff;
-    padding: 40px 20px 0px 20px;
+    padding: 35px 20px 0px 20px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -2015,4 +2015,18 @@ tr>td.yty_tdright {
 }
 .yty-layui-body{
     padding: 8px;
+}
+.yty-card{
+    margin-bottom: 5px;
+}
+.notice{
+    float: right;
+}
+
+.yty-notice ul li{
+    margin-bottom: 3px;
+}
+
+.yty-notice-t a{
+    color: red;
 }
