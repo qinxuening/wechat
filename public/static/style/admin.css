@@ -1871,3 +1871,75 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
 #LAY_app_body{
     z-index: auto !important;
 }
+
+.sm-st {
+    background: #fff;
+    padding: 40px 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    /*margin-bottom: 20px;*/
+    -webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+}
+
+.st-red {
+    background-color: #F05050 !important;
+}
+.sm-st-icon {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    background: #eee;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    float: left;
+    margin-right: 10px;
+    color: #fff;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.sm-st-info {
+    font-size: 12px;
+    padding-top: 2px;
+}
+
+.sm-st-info span {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+}
+.st-blue {
+    background-color: #23b7e5;
+}
+
+.st-green {
+    background-color: #27C24C;
+}
+
+.st-violet {
+    background-color: #7266ba;
+}
+
+.st-money{
+    background-color: #18bc9c;
+}
+.st-client{
+    background-color: #6ccac9;
+}
+.st-percent{
+    background-color: #f8d347;
+}
+.st-back-money{
+    background-color: #e77149;
+}

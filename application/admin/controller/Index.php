@@ -35,7 +35,7 @@ class Index extends baseAdmin {
      */
     public function login()
     {
-        $url = $this->request->get('url', 'index');
+        $url = $this->request->get('url', '/admin/dashboard/detail');
         $rule_info = get_passwd_rule();
         $login_captcha = Db::name('config')->where(['key' => 'login_captcha'])->column('value')[0];
     
