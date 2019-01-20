@@ -1039,6 +1039,7 @@ html {
 }
 
 .layuiadmin-badge, .layuiadmin-btn-group, .layuiadmin-span-color {
+    display: inline-block;
     position: absolute;
     right: 15px
 }
@@ -2097,4 +2098,29 @@ tr>td.yty_tdright {
     text-align: center;
     margin-right: 0px !important;
     color: #fff;
+}
+
+.sm-st-icon-left{
+    margin-top: 4px;
+    width: 10px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #4051c7;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    float: left;
+    color: #fff;
+}
+
+.yty-card-header{
+    font-weight: 600;
+    height: 30px;
+    line-height: 30px;
+}
+
+.yty-card-header span{
+    margin-right: 5px;
 }
