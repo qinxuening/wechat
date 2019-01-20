@@ -1,7 +1,7 @@
 <div class="layui-header">
     <!-- 头部区域 -->
     <div class="layui-logo" href="javascript:void(0);">
-        <span>{:__('Management system')}</span>
+        <span><i class="fa  fa-diamond"></i> {:__('Management system')}</span>
     </div>
     <ul class="layui-nav layui-layout-left">
         <li class="layui-nav-item layadmin-flexible" lay-unselect>
@@ -60,30 +60,29 @@
                 <!--<i class="layui-icon layui-icon-website"></i>-->
             <!--</a>-->
         <!--</li>-->
+        <!--<li class="layui-nav-item" lay-unselect>-->
+            <!--<a href="javascript:;" layadmin-event="refresh" title="{:__('Refresh')}">-->
+                <!--<i class="layui-icon layui-icon-refresh-3"></i>-->
+            <!--</a>-->
+        <!--</li>-->
         <li class="layui-nav-item" lay-unselect>
-            <a href="javascript:;" layadmin-event="refresh" title="{:__('Refresh')}">
-                <i class="layui-icon layui-icon-refresh-3"></i>
-            </a>
-        </li>
-        <li class="layui-nav-item" lay-unselect>
-            <a lay-href="app/message/index.html" layadmin-event="message" lay-text="{:__('Message center')}">
+            <a lay-href="" layadmin-event="message" title="消息" lay-text="{:__('Message center')}">
                 <i class="layui-icon layui-icon-notice"></i>
-
                 <!-- 如果有新消息，则显示小圆点 -->
                 <span class="layui-badge-dot"></span>
             </a>
         </li>
-        <li class="layui-nav-item layui-hide-xs" lay-unselect>
-            <a href="javascript:;" layadmin-event="note">
-                <i class="layui-icon layui-icon-delete"></i>
-            </a>
-            <dl class="layui-nav-child clearcache">
-                <dd><a href="javascript:;" data-type="all">{:__('Wipe all cache')}</a></dd>
-                <dd><a href="javascript:;" data-type="content">{:__('Wipe content cache')}</a></dd>
-                <dd><a href="javascript:;" data-type="template">{:__('Wipe template cache')}</a></dd>
-                <dd><a href="javascript:;" data-type="log">{:__('Wipe log cache')}</a></dd>
-            </dl>
-        </li>
+        <!--<li class="layui-nav-item layui-hide-xs" lay-unselect>-->
+            <!--<a href="javascript:;" layadmin-event="note">-->
+                <!--<i class="layui-icon layui-icon-delete"></i>-->
+            <!--</a>-->
+            <!--<dl class="layui-nav-child clearcache">-->
+                <!--<dd><a href="javascript:;" data-type="all">{:__('Wipe all cache')}</a></dd>-->
+                <!--<dd><a href="javascript:;" data-type="content">{:__('Wipe content cache')}</a></dd>-->
+                <!--<dd><a href="javascript:;" data-type="template">{:__('Wipe template cache')}</a></dd>-->
+                <!--<dd><a href="javascript:;" data-type="log">{:__('Wipe log cache')}</a></dd>-->
+            <!--</dl>-->
+        <!--</li>-->
 
         <!--<li class="layui-nav-item layui-hide-xs" lay-unselect>-->
             <!--<a href="javascript:;" layadmin-event="lang">-->
@@ -102,15 +101,19 @@
         </li>
         <li class="layui-nav-item" lay-unselect>
             <a href="javascript:;">
-                <cite>{$admin.nickname}</cite>
+                <i class="fa fa-user-circle-o"></i><cite> {$admin.nickname}</cite>
             </a>
-            <dl class="layui-nav-child">
-                <dd><a lay-href="{:url('profile/index')}">{:__('Profile')}</a></dd>
-                <dd><a lay-href="{:url('profile/index')}">{:__('Change password')}</a></dd>
-                <dd><a href="{:url('index/logout')}">{:__('Logout')}</a></dd>
-            </dl>
+            <!--<dl class="layui-nav-child">-->
+                <!--<dd><a lay-href="{:url('profile/index')}">{:__('Profile')}</a></dd>-->
+                <!--<dd><a lay-href="{:url('profile/index')}">{:__('Change password')}</a></dd>-->
+                <!--<dd><a href="{:url('index/logout')}">{:__('Logout')}</a></dd>-->
+            <!--</dl>-->
         </li>
-
+        <li class="layui-nav-item" lay-unselect>
+            <a href="javascript:;" title="退出">
+                <i class="fa fa-power-off"></i>
+            </a>
+        </li>
         <li class="layui-nav-item layui-hide-xs" lay-unselect>
             <a href="javascript:;" layadmin-event="about"><i class="layui-icon layui-icon-more-vertical"></i></a>
         </li>

@@ -1922,7 +1922,7 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     font-weight: 600;
 }
 .st-blue {
-    background-color: #23b7e5;
+    background-color: #1faba8;
 }
 
 .st-green {
@@ -1934,13 +1934,13 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
 }
 
 .st-money{
-    background-color: #18bc9c;
+    background-color: #a85ba1;
 }
 .st-client{
-    background-color: #6ccac9;
+    background-color: #a158fc;
 }
 .st-percent{
-    background-color: #f8d347;
+    background-color: #f7c711;
 }
 .st-back-money{
     background-color: #e77149;
@@ -2007,7 +2007,7 @@ tr>td.yty_tdright {
 }
 
 .st-shop{
-    background: #6ccac9;
+    background: #3d9afc;
 }
 
 .right-module{
@@ -2029,4 +2029,29 @@ tr>td.yty_tdright {
 
 .yty-notice-t a{
     color: red;
+}
+.layui-btn-normal{
+    background-color: #4961dd;
+}
+
+.sm-st-icon-right {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    /*font-size: 18px;*/
+    background-color: #F05050;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    float: left;
+    color: #fff;
+}
+
+.shop-info{
+    background-color: #11c8a5;
+}
+.sm-client{
+    background-color: #3d9afc;
 }

@@ -224,7 +224,7 @@ return [
     'Change password'                                => '修改密码',
     'Logout'                                         => '退出',
     'Message center'                                 => '消息中心',
-    'Management system'                              => '后台管理系统', 
+    'Management system'                              => '金店长', 
     'Close current tab'                              => '关闭当前标签页',
     'Close other tabs'                               => '关闭其它标签页',
     'Close all tabs'                                 => '关闭全部标签页',

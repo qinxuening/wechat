@@ -3,16 +3,21 @@
 }
 
 .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a {
-    background-color: #009688 !important;
+    background-color: #313aa4 !important;
 }
 
 .layui-layout-admin .layui-logo {
-    background-color: #009688 !important;
+    background-color: #313aa4 !important;
     z-index: 1002;
 }
 
 .layui-layout-admin .layui-header {
-    background-color: #009688;
+    /*background-color: #313aa4;*/
+    background: -webkit-linear-gradient(left, #313aa4 , #506dee); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left, #313aa4 , #506dee); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left, #313aa4 , #506dee); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left, #313aa4 , #506dee); /* 标准的语法 */
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 /*.layui-nav-tree li:hover{*/
@@ -94,6 +99,7 @@
 }
 .layui-layout-admin .layui-logo{
     height: 50px !important;
+    font-weight: 600;
 }
 .layui-side-menu .layui-nav .layui-nav-item > a{
     padding-top: 0px !important;
