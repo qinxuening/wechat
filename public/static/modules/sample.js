@@ -40,26 +40,39 @@
         var e = layui.$, a = (layui.carousel, layui.echarts), l = [], t = [{
             tooltip: {trigger: "axis"},
             calculable: !0,
-            legend: {data: ["访问量", "下载量", "平均访问量"]},
+            legend: {data: ["描述相符", "服务质量", "发货质量"]},
             xAxis: [{
                 type: "category",
-                data: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+                data: ["2019-01-13", "2019-01-14", "2019-01-15", "2019-01-16", "2019-01-17", "2019-01-18", "2019-01-19"]
             }],
-            yAxis: [{type: "value", name: "访问量", axisLabel: {formatter: "{value} 万"}}, {
-                type: "value",
-                name: "下载量",
-                axisLabel: {formatter: "{value} 万"}
-            }],
+            yAxis: [{type: "value"}],
             series: [{
-                name: "访问量",
+                name: "描述相符",
                 type: "line",
-                data: [900, 850, 950, 1e3, 1100, 1050, 1e3, 1150, 1250, 1370, 1250, 1100]
+                itemStyle: {
+                    normal: {
+                        color: "#ffaf25"
+                    }
+                },
+                data: [1, 2, 1, 5, 2, 0, 3]
             }, {
-                name: "下载量",
+                name: "服务质量",
                 type: "line",
-                yAxisIndex: 1,
-                data: [850, 850, 800, 950, 1e3, 950, 950, 1150, 1100, 1240, 1e3, 950]
-            }, {name: "平均访问量", type: "line", data: [870, 850, 850, 950, 1050, 1e3, 980, 1150, 1e3, 1300, 1150, 1e3]}]
+                itemStyle: {
+                    normal: {
+                        color: "#3d9afc"
+                    }
+                },
+                data: [0, 1, 2, 2, 0, 5, 1]
+            }, {
+                name: "发货质量",
+                type: "line",
+                itemStyle: {
+                    normal: {
+                        color: "#a85ba1"
+                    }
+                },
+                data: [5, 4, 0, 1, 3, 3, 3]}]
         }], i = e("#LAY-index-pagetwo").children("div"), n = function (e) {
             l[e] = a.init(i[e], layui.echartsTheme), l[e].setOption(t[e]), window.onresize = l[e].resize
         };

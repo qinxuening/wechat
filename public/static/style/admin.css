@@ -898,7 +898,7 @@ html {
 }
 
 .layadmin-dataview > [carousel-item] > div {
-    height: 332px
+    height: 300px
 }
 
 .layadmin-takerates {
@@ -2119,8 +2119,60 @@ tr>td.yty_tdright {
     font-weight: 600;
     height: 30px;
     line-height: 30px;
+    padding-top: 5px;
 }
 
 .yty-card-header span{
     margin-right: 5px;
+}
+.no-check{
+    background-color: #8099ff;
+}
+
+.layuiadmin-btn-group a:hover,.layuiadmin-btn-group a:active{
+    background-color: #3744b3;
+}
+.stat-col{
+    margin-top: 24px;
+}
+.stat-icon {
+    padding-top: 10px;
+    color: #1E9FFF;
+    display: inline-block;
+    font-size: 26px;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+    float: left;
+}
+
+.stat {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.stat .value {
+    font-size: 20px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.stat .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stats-container .layui-progress{
+    height: 2px;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+}
+
+.stats-container .layui-progress-bar{
+    height: 2px;
 }
