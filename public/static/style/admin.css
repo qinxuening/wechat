@@ -890,7 +890,7 @@ html {
 }
 
 .layadmin-dataview {
-    height: 332px !important
+    height: 284px !important
 }
 
 .layadmin-dataview > [carousel-item]:before {
@@ -1983,14 +1983,23 @@ tr>td.yty_tdright {
 .yty-btn{
     width: 120px;
 }
-
+.user_name{
+    float: left;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding: 5px 8px;
+}
 .shop_level{
     color: #fff;
     font-size: 0.75rem;
     background: #ffbb37;
-    padding: 5px 10px;
+    padding: 2px 20px;
     border-radius: 14px;
-    margin-left: 20px;
+    margin: 0 auto;
+    /*float: left;*/
+    text-align: center;
+    display: inline-block;
 }
 .shop_user{
     width: 80px;
@@ -2008,7 +2017,7 @@ tr>td.yty_tdright {
 }
 
 .st-shop{
-    background: #3d9afc;
+    /*background: #3d9afc;*/
 }
 
 .right-module{
@@ -2036,10 +2045,10 @@ tr>td.yty_tdright {
 }
 
 .sm-st-icon-right {
-    margin-top: 8px;
-    width: 26px;
-    height: 26px;
-    line-height: 26px;
+    margin-top: 10px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
     text-align: center;
     font-size: 14px;
     background-color: #F05050;
@@ -2119,7 +2128,7 @@ tr>td.yty_tdright {
     font-weight: 600;
     height: 30px;
     line-height: 30px;
-    padding-top: 5px;
+    padding: 5px 0;
 }
 
 .yty-card-header span{
