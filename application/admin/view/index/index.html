@@ -152,9 +152,9 @@
                                         <div class="layui-card-header yty-card-header">
                                             <span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span> DSR评分
                                             <div class="layuiadmin-btn-group">
-                                                <a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-radius layui-btn-sm">近七天</a>
-                                                <a href="javascript:;" class="layui-btn layui-btn-normal no-check layui-btn-radius  layui-btn-sm">近15天</a>
-                                                <a href="javascript:;" class="layui-btn layui-btn-normal no-check layui-btn-radius  layui-btn-sm">更多</a>
+                                                <a href="javascript:void(0);" class="layui-btn layui-btn-normal layui-btn-radius layui-btn-sm seven_days">近七天</a>
+                                                <a href="javascript:void(0);" class="layui-btn layui-btn-normal no-check layui-btn-radius  layui-btn-sm fifteen_days">近15天</a>
+                                                <a href="javascript:void(0);" class="layui-btn layui-btn-normal no-check layui-btn-radius  layui-btn-sm more">更多</a>
                                             </div>
                                         </div>
                                         <div class="layui-card-body">
@@ -469,13 +469,12 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-//        , sample: 'sample'
     }).use(['index', 'element', 'sample','echarts', 'countUp', 'we'], function () {
         var admin = layui.admin
             , we = layui.we
             , $  = layui.$
             , countUp = layui.countUp;
-
+        var e = layui.$, a = (layui.carousel, layui.echarts), l = [];
         /**
          * 统计部分
          * @type {CountUp}
@@ -506,48 +505,79 @@
         $(".layuiadmin-btn-group a").click(function () {
             $(".layuiadmin-btn-group a").addClass('no-check');
             $(this).removeClass('no-check');
+            if($(this).hasClass('seven_days')) {
+                chart_switch(7);
+            } else if($(this).hasClass('fifteen_days')) {
+                chart_switch(15);
+            } else {
+                window.location.href = "/admin/system/base_info.html?nav_pid=222&nav_id=141"
+            }
         });
 
-        var e = layui.$, a = (layui.carousel, layui.echarts), l = [], t = [{
-            tooltip: {trigger: "axis"},
-            calculable: !0,
-            legend: {data: ["描述相符", "服务质量", "发货质量"]},
-            xAxis: [{
-                type: "category",
-                data: ["2019-01-13", "2019-01-14", "2019-01-15", "2019-01-16", "2019-01-17", "2019-01-18", "2019-01-19"]
-            }],
-            yAxis: [{type: "value"}],
-            series: [{
-                name: "描述相符",
-                type: "line",
-                itemStyle: {
-                    normal: {
-                        color: "#ffaf25"
-                    }
+        /**
+         * 默认显示7天
+         * */
+        chart_switch(7);
+
+        /**
+         *趋势图、7、15天统计函数
+         * @param switch_
+         */
+        function chart_switch(switch_) {
+            $.ajax({
+                type: "post",
+                url: "", //调用后台接口
+                async: true,
+                cache: false,
+                data:{'switch':switch_},
+                success: function (data) {
+                    var t = [{
+                        tooltip: {trigger: "axis"},
+                        calculable: !0,
+                        legend: {data: ["描述相符", "服务质量", "发货质量"]},
+                        xAxis: [{
+                            type: "category",
+                            data: ["2019-01-13", "2019-01-14", "2019-01-15", "2019-01-16", "2019-01-17", "2019-01-18", "2019-01-19"]
+                        }],
+                        yAxis: [{type: "value"}],
+                        series: [{
+                            name: "描述相符",
+                            type: "line",
+                            itemStyle: {
+                                normal: {
+                                    color: "#ffaf25"
+                                }
+                            },
+                            data: [1, 2, 1, 5, 2, 0, 3]
+                        }, {
+                            name: "服务质量",
+                            type: "line",
+                            itemStyle: {
+                                normal: {
+                                    color: "#3d9afc"
+                                }
+                            },
+                            data: [0, 1, 2, 2, 0, 5, 1]
+                        }, {
+                            name: "发货质量",
+                            type: "line",
+                            itemStyle: {
+                                normal: {
+                                    color: "#a85ba1"
+                                }
+                            },
+                            data: [5, 4, 0, 1, 3, 3, 3]}]
+                    }], i = e("#LAY-index-pagetwo").children("div"), n = function (e) {
+                        l[e] = a.init(i[e], layui.echartsTheme), l[e].setOption(t[e]), window.onresize = l[e].resize
+                    };
+                    i[0] && n(0)
                 },
-                data: [1, 2, 1, 5, 2, 0, 3]
-            }, {
-                name: "服务质量",
-                type: "line",
-                itemStyle: {
-                    normal: {
-                        color: "#3d9afc"
-                    }
-                },
-                data: [0, 1, 2, 2, 0, 5, 1]
-            }, {
-                name: "发货质量",
-                type: "line",
-                itemStyle: {
-                    normal: {
-                        color: "#a85ba1"
-                    }
-                },
-                data: [5, 4, 0, 1, 3, 3, 3]}]
-        }], i = e("#LAY-index-pagetwo").children("div"), n = function (e) {
-            l[e] = a.init(i[e], layui.echartsTheme), l[e].setOption(t[e]), window.onresize = l[e].resize
-        };
-        i[0] && n(0)
+                error:function () {
+                    
+                }
+            });
+
+        }
     });
 </script>
 </body>
