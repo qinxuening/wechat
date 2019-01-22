@@ -1,25 +1,497 @@
-{extend name="layout/default" /}
-{block name="content"}
+{include file="common/meta" /}
 <body class="layui-layout-body" layadmin-themealias="green-header">
 <div id="LAY_app" class="">
     <div class="layui-layout layui-layout-admin">
         {include file="common/header" /}
-        {include file="common/menu" /}
-        {include file="common/tabs" /}
-        <!-- 主体内容 -->
-        <div class="layui-body" id="LAY_app_body">
-            <div class="layadmin-tabsbody-item layui-show">
+        <div class="layui-body" id="LAY_app_body" style="top: 50px;left: 0px">
+            <div class="layui yty-layui-body">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-12">
+                        <div class="layui-row">
+                            <!--------左侧模块模块begin-------->
+                            <div class="layui-col-md9 layui-col-sm6">
+                                <!--------历史统计模块begin-------->
+                                <div class="layui-col-md12 webody">
+                                    <div class="layui-card">
+                                        <div class="layui-col-sm6 layui-col-md3">
+                                            <div class="sm-st clearfix">
+                                                <span class="sm-st-icon st-red"><i class="fa fa-users"></i></span>
+                                                <div class="sm-st-info">
+                                                    <span>35200</span>
+                                                    总会员数（人）
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-sm6 layui-col-md3">
+                                            <div class="sm-st clearfix">
+                                                <span class="sm-st-icon st-violet"><i class="fa fa-book"></i></span>
+                                                <div class="sm-st-info">
+                                                    <span>219390</span>
+                                                    历史访问总数（次）
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-sm6 layui-col-md3">
+                                            <div class="sm-st clearfix">
+                                                <span class="sm-st-icon st-blue"><i class="fa fa-shopping-bag"></i></span>
+                                                <div class="sm-st-info">
+                                                    <span>35200</span>
+                                                    历史总订单数(笔)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-sm6 layui-col-md3">
+                                            <div class="sm-st clearfix">
+                                                <span class="sm-st-icon st-green"><i class="fa fa-rmb"></i></span>
+                                                <div class="sm-st-info">
+                                                    <span>352</span>
+                                                    历史总金额（元）
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--------统计模块end-------->
 
-                <iframe src="{:url('/admin/order/index')}" frameborder="0" class="layadmin-iframe">
+                                <!--------今日统计模块begin-------->
+                                <div class="layui-col-md12 webody">
+                                    <div class="layui-card">
+                                        <div class="layui-col-sm6 layui-col-md3">
+                                            <div class="sm-st clearfix">
+                                                <span class="sm-st-icon st-money"><i class="fa fa-money"></i></span>
+                                                <div class="sm-st-info">
+                                                    <span>1110</span>
+                                                    今日成交金额（元）
+                                                </div>
+                                            </div>
+                                        </div>
 
-                </iframe>
+                                        <div class="layui-col-sm6 layui-col-md3">
+                                            <div class="sm-st clearfix">
+                                                <span class="sm-st-icon st-client"><i class="fa fa-handshake-o"></i></span>
+                                                <div class="sm-st-info">
+                                                    <span>219390</span>
+                                                    今日成交客户（人）
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-sm6 layui-col-md3">
+                                            <div class="sm-st clearfix">
+                                                <span class="sm-st-icon st-percent"><i class="fa fa-percent"></i></span>
+                                                <div class="sm-st-info">
+                                                    <span>50%</span>
+                                                    今日成交转化率（百分比）
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-sm6 layui-col-md3">
+                                            <div class="sm-st clearfix">
+                                            <span class="sm-st-icon st-back-money"><i
+                                                    class="fa  fa-volume-up"></i></span>
+                                                <div class="sm-st-info">
+                                                    <span>352</span>
+                                                    今日催付挽回金额（元）
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--------今日模块end-------->
 
+                                <!--------推荐功能模块begin-------->
+                                <div class="layui-col-md12 webody1">
+                                    <div class="layui-card">
+                                        <div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>推荐功能</div>
+                                        <div class="layui-col-sm6 layui-col-md3 recommend-col">
+                                            <div class="sm-st-recommend-re clearfix">
+                                                <a href="">
+                                                    <div class="sm-st-icon st-money"><i class="fa  fa-envelope-o"></i></div>
+                                                    <div class="sm-st-info-re">
+                                                        <span>短信群发</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-col-sm6 layui-col-md3 recommend-col">
+                                            <div class="sm-st-recommend-re clearfix">
+                                                <a href="">
+                                                    <span class="sm-st-icon st-client"><i class="fa fa-podcast"></i></span>
+                                                    <div class="sm-st-info-re">
+                                                        催付提醒
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-sm6 layui-col-md3 recommend-col">
+                                            <div class="sm-st-recommend-re sm-st-info clearfix">
+                                                <a href="">
+                                                    <span class="sm-st-icon st-percent"><i class="fa fa-free-code-camp"></i></span>
+                                                    <div class="sm-st-info-re">
+                                                        订单关怀
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-sm6 layui-col-md3 recommend-col">
+                                            <div class="sm-st-recommend-re clearfix">
+                                                <a href="">
+                                                    <span class="sm-st-icon st-back-money"><i class="fa  fa-qrcode"></i></span>
+                                                    <div class="sm-st-info-re">
+                                                        数据分析
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--------推荐功能模块end-------->
+
+                                <div class="layui-col-sm12 webody1">
+                                    <div class="layui-card">
+                                        <div class="layui-card-header yty-card-header">
+                                            <span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span> DSR评分
+                                            <div class="layuiadmin-btn-group">
+                                                <a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-radius layui-btn-sm">近七天</a>
+                                                <a href="javascript:;" class="layui-btn layui-btn-normal no-check layui-btn-radius  layui-btn-sm">近15天</a>
+                                                <a href="javascript:;" class="layui-btn layui-btn-normal no-check layui-btn-radius  layui-btn-sm">更多</a>
+                                            </div>
+                                        </div>
+                                        <div class="layui-card-body">
+                                            <div class="layui-row">
+                                                <div class="layui-col-sm8">
+                                                    <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade"
+                                                         lay-filter="LAY-index-pagetwo">
+                                                        <div carousel-item id="LAY-index-pagetwo">
+                                                            <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="layui-col-sm4">
+                                                    <div class="card-block">
+                                                        <div class="layui-row row-sm stats-container">
+                                                            <div class="layui-col-xs6  stat-col">
+                                                                <div class="stat-icon"> <i class="fa fa-shopping-bag"></i> </div>
+                                                                <div class="stat">
+                                                                    <div class="value"> 2324（笔） </div>
+                                                                    <div class="name"> 累计订单 </div>
+                                                                </div>
+                                                                <div class="layui-progress">
+                                                                    <div class="layui-progress-bar layui-bg-blue" style="width: 40%;"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-xs6  stat-col">
+                                                                <div class="stat-icon"> <i class="fa fa-shopping-bag"></i> </div>
+                                                                <div class="stat">
+                                                                    <div class="value"> 132（笔） </div>
+                                                                    <div class="name"> 成交订单 </div>
+                                                                </div>
+                                                                <div class="layui-progress">
+                                                                    <div class="layui-progress-bar layui-bg-blue" style="width: 40%;"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-xs6  stat-col">
+                                                                <div class="stat-icon"> <i class="fa fa-rmb"></i> </div>
+                                                                <div class="stat">
+                                                                    <div class="value"> 2534（元） </div>
+                                                                    <div class="name"> 累计成交金额 </div>
+                                                                </div>
+                                                                <div class="layui-progress">
+                                                                    <div class="layui-progress-bar layui-bg-blue" style="width: 40%;"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-xs6 stat-col">
+                                                                <div class="stat-icon"> <i class="fa fa-handshake-o"></i> </div>
+                                                                <div class="stat">
+                                                                    <div class="value"> 22（人） </div>
+                                                                    <div class="name"> 累计成交客户 </div>
+                                                                </div>
+                                                                <div class="layui-progress">
+                                                                    <div class="layui-progress-bar layui-bg-blue" style="width: 40%;"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-xs6  stat-col">
+                                                                <div class="stat-icon"> <i class="fa fa-envelope-o"></i> </div>
+                                                                <div class="stat">
+                                                                    <div class="value"> 320（条） </div>
+                                                                    <div class="name"> 发送短信 </div>
+                                                                </div>
+                                                                <div class="layui-progress">
+                                                                    <div class="layui-progress-bar layui-bg-blue" style="width: 40%;"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-xs6 stat-col">
+                                                                <div class="stat-icon"> <i class="fa fa-percent"></i> </div>
+                                                                <div class="stat">
+                                                                    <div class="value"> 32% </div>
+                                                                    <div class="name"> 转化率 </div>
+                                                                </div>
+                                                                <div class="layui-progress">
+                                                                    <div class="layui-progress-bar layui-bg-blue" style="width: 40%;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="layui-col-sm12 webody1">
+                                    <div class="layui-card">
+                                        <div class="layui-card-header">
+                                            访问量
+                                            <div class="layui-btn-group layuiadmin-btn-group">
+                                                <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">去年</a>
+                                                <a href="javascript:;" class="layui-btn layui-btn-primary layui-btn-xs">今年</a>
+                                            </div>
+                                        </div>
+                                        <div class="layui-card-body">
+                                            <div class="layui-row">
+                                                <div class="layui-col-sm8">
+                                                    <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade"
+                                                         lay-filter="LAY-index-pagetwo">
+                                                        <div carousel-item id="LAY-index-pagetwo">
+                                                            <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-col-sm4">
+                                                    <div class="layuiadmin-card-list">
+                                                        <p class="layuiadmin-normal-font">月访问数</p>
+                                                        <span>同上期增长</span>
+                                                        <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                                                            <div class="layui-progress-bar" lay-percent="30%"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="layuiadmin-card-list">
+                                                        <p class="layuiadmin-normal-font">月下载数</p>
+                                                        <span>同上期增长</span>
+                                                        <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                                                            <div class="layui-progress-bar" lay-percent="20%"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="layuiadmin-card-list">
+                                                        <p class="layuiadmin-normal-font">月收入</p>
+                                                        <span>同上期增长</span>
+                                                        <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                                                            <div class="layui-progress-bar" lay-percent="25%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                -->
+                            </div>
+                            <!--------左侧模块模块end-------->
+
+                            <!--------右侧模块模块begin-------->
+                            <div class="layui-col-md3 layui-col-sm6 right-module">
+                                <!--------店铺信息模块begin-------->
+                                <div class="layui-card yty-card">
+                                    <div class="layui-card-header h1"><span class="sm-st-icon-right shop-info"><i class="fa  fa-diamond"></i></span> 店铺信息</div>
+                                    <div class="layui-card-body">
+                                        <table class="layui-table table-border" lay-skin="line" lay-size="sm">
+                                            <colgroup>
+                                                <col class="yty_tdleft" width="70%">
+                                                <col class="yty_tdright">
+                                            </colgroup>
+                                            <tbody>
+                                            <tr>
+                                                <td class="yty_tdleft">
+                                                    <span class="st-shop shop_user"><i class="fa fa-user-circle-o"></i></span>
+                                                </td>
+                                                <td class="yty_tdright">
+                                                    <span class="user_name">里小狗</span>
+                                                    <span class="shop_level">标准版</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="yty_tdright">到期时间：<span class="expire_date red_color">2019-01-28</span></td>
+                                                <td class="yty_tdright">
+                                                    <button class="layui-btn yty-btn layui-btn-normal layui-btn-sm layui-btn-fluid" lay-submit="">软件续费</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="yty_tdright">剩余短信：<span class="sms red_color">300</span>条</td>
+                                                <td class="yty_tdright">
+                                                    <button class="layui-btn yty-btn layui-btn-normal layui-btn-sm layui-btn-fluid" lay-submit="">短信充值</button>
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--------店铺信息模块end-------->
+
+                                <!--------公告信息模块begin-------->
+                                <div class="layui-card yty-notice yty-card" style="height: 260px">
+                                    <div class="layui-card-header h1"><span class="sm-st-icon-right"><i class="fa  fa-volume-up"></i></span> 公告</div>
+                                    <div class="layui-card-body">
+                                        <ul>
+                                            <li class="yty-notice-t"><a href="">【通知】彩票营销服务下线通知<span class="notice">2018-12-28</span></a></li>
+                                            <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                            <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                            <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                            <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                            <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                            <li><a href="">【新增】宝贝分析--标题优化，添...<span class="notice">2018-12-28</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--------公告信息模块end-------->
+
+                                <!--------联系客服模块begin-------->
+                                <div class="layui-card yty-card" style="height: 260px">
+                                    <div class="layui-card-header h1"><span class="sm-st-icon-right sm-client"><i class="fa fa-phone-square"></i></span> 联系客服</div>
+                                    <div class="layui-card-body">
+                                        <table class="layui-table table-border" lay-skin="line" lay-size="sm">
+                                            <colgroup>
+                                                <col class="yty_tdright" width="100%">
+                                            </colgroup>
+                                            <tbody>
+                                            <tr>
+                                                <td class="yty_tdright">客服热线：<span class="expire_date  red_color">0755-46513546</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="yty_tdright">周末客服：<span class="sms red_color">1374654656</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="yty_tdright">微信咨询：<span class="sms red_color">1374654656</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="yty_tdright">
+                                                    QQ咨询：
+                                                    <a class="serviceIcon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2778686329&amp;site=qq&amp;menu=yes" target="_blank"><img style="CURSOR: pointer" border="0" src="http://wpa.qq.com/pa?p=1:2778686329:10" alt="点击这里给我发消息"></a>
+                                                    <a class="serviceIcon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2778686329&amp;site=qq&amp;menu=yes" target="_blank"><img style="CURSOR: pointer" border="0" src="http://wpa.qq.com/pa?p=1:2778686329:10" alt="点击这里给我发消息"></a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--------联系客服模块end-------->
+
+                            </div>
+                            <!--------又侧模块模块end-------->
+
+                        </div>
+                    </div>
+                    <!--
+                    <div class="layui-col-md12 webody">
+                        <div class="layui-col-sm6 layui-col-md3">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    访问量
+                                    <span class="layui-badge layui-bg-blue layuiadmin-badge">周</span>
+                                </div>
+                                <div class="layui-card-body layuiadmin-card-list">
+                                    <p class="layuiadmin-big-font" id="readCount">0</p>
+                                    <p>
+                                        总计访问量
+                                        <span class="layuiadmin-span-color">88万 <i
+                                                class="layui-inline layui-icon layui-icon-flag"></i></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-sm6 layui-col-md3">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    下载
+                                    <span class="layui-badge layui-bg-cyan layuiadmin-badge">月</span>
+                                </div>
+                                <div class="layui-card-body layuiadmin-card-list">
+                                    <p class="layuiadmin-big-font" id="downloadCount">0</p>
+                                    <p>
+                                        新下载
+                                        <span class="layuiadmin-span-color">10% <i
+                                                class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-sm6 layui-col-md3">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    收入
+                                    <span class="layui-badge layui-bg-green layuiadmin-badge">年</span>
+                                </div>
+                                <div class="layui-card-body layuiadmin-card-list">
+
+                                    <p class="layuiadmin-big-font" id="incomeCount">0</p>
+                                    <p>
+                                        总收入
+                                        <span class="layuiadmin-span-color">*** <i
+                                                class="layui-inline layui-icon layui-icon-dollar"></i></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-sm6 layui-col-md3">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    活跃用户
+                                    <span class="layui-badge layui-bg-orange layuiadmin-badge">月</span>
+                                </div>
+                                <div class="layui-card-body layuiadmin-card-list">
+
+                                    <p class="layuiadmin-big-font" id="onlineCount">0</p>
+                                    <p>
+                                        最近一个月
+                                        <span class="layuiadmin-span-color">15% <i
+                                                class="layui-inline layui-icon layui-icon-user"></i></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+
+
+                </div>
             </div>
         </div>
-
-        <!-- 辅助元素，一般用于移动设备下遮罩 -->
-        <div class="layadmin-body-shade" layadmin-event="shade"></div>
-        {include file="common/footer" /}
     </div>
 </div>
-{/block}
+</div>
+<script src="__STATIC__/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we',
+        version:true,
+    }).extend({
+        index: 'lib/index' //主入口模块
+        , sample: 'sample'
+    }).use(['index', 'element', 'sample', 'countUp', 'we'], function () {
+        var admin = layui.admin
+            , element = layui.element
+            , we = layui.we
+            , $  = layui.$
+            , countUp = layui.countUp;
+
+        /*var readCount = new countUp.CountUp("readCount", 0, 9999666);
+        var downloadCount = new countUp.CountUp("downloadCount", 0, 33555);
+        var incomeCount = new countUp.CountUp("incomeCount", 0, 999666);
+        var onlineCount = new countUp.CountUp("onlineCount", 0, 666666);
+        readCount.start();
+        downloadCount.start();
+        incomeCount.start();
+        onlineCount.start();*/
+
+        we.tips("<li><a href='#'>欢迎使用云创crm系统！！！！！</a></li>");
+        $(".layuiadmin-btn-group a").click(function () {
+            $(".layuiadmin-btn-group a").addClass('no-check');
+            $(this).removeClass('no-check');
+        });
+    });
+</script>
+</body>
+</html>

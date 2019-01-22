@@ -9,7 +9,7 @@
                 <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
             </a>
         </li>
-        <li class="layui-nav-item nav_menu {if condition="$this_url eq '/admin/dashboard/detail'"}layui-this{/if}"><a href="/admin/dashboard/detail"  data-id="{$key}">{:__('Home')}</a></li>
+        <li class="layui-nav-item nav_menu {if condition="$this_url eq '/admin/Index/index'"}layui-this{/if}"><a href="/admin/Index/index"  data-id="{$key}">{:__('Home')}</a></li>
         {foreach $nav_list as $key=>$vo }
         <li class="layui-nav-item nav_menu {if condition="$vo['id'] eq Input('nav_pid')"}layui-this{/if}">
             <a  href="{:url($nav_url[$key],['nav_pid' => $vo['id'],'nav_id' => $vo['child'][0]['id']])}"  data-id="{$key}">{:__($vo['title'])}</a>

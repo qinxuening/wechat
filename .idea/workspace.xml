@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd2929a5-94d4-4545-8a59-6480752a55ce" name="Default" comment="" />
+    <list default="true" id="bd2929a5-94d4-4545-8a59-6480752a55ce" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/admin/view/index/index2.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/logs/20190108.log.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/controller/Index.php" afterPath="$PROJECT_DIR$/application/admin/controller/Index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/addon/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/addon/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/addon/index.html" afterPath="$PROJECT_DIR$/application/admin/view/addon/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/auth/admin/add.html" afterPath="$PROJECT_DIR$/application/admin/view/auth/admin/add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/auth/admin/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/auth/admin/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/auth/admin/index.html" afterPath="$PROJECT_DIR$/application/admin/view/auth/admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/auth/group/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/auth/group/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/auth/group/index.html" afterPath="$PROJECT_DIR$/application/admin/view/auth/group/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/auth/rule/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/auth/rule/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" afterPath="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/common/header.html" afterPath="$PROJECT_DIR$/application/admin/view/common/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/dashboard/bar.html" afterPath="$PROJECT_DIR$/application/admin/view/dashboard/bar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/dashboard/console.html" afterPath="$PROJECT_DIR$/application/admin/view/dashboard/console.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/dashboard/detail.html" afterPath="$PROJECT_DIR$/application/admin/view/dashboard/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/dashboard/line.html" afterPath="$PROJECT_DIR$/application/admin/view/dashboard/line.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/database/index.html" afterPath="$PROJECT_DIR$/application/admin/view/database/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/fields/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/fields/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/fields/index.html" afterPath="$PROJECT_DIR$/application/admin/view/fields/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/index/forget.html" afterPath="$PROJECT_DIR$/application/admin/view/index/forget.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/index/index.html" afterPath="$PROJECT_DIR$/application/admin/view/index/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/index/login.html" afterPath="$PROJECT_DIR$/application/admin/view/index/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/index/reg.html" afterPath="$PROJECT_DIR$/application/admin/view/index/reg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/job/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/job/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/job/index.html" afterPath="$PROJECT_DIR$/application/admin/view/job/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/order/index.html" afterPath="$PROJECT_DIR$/application/admin/view/order/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/profile/index.html" afterPath="$PROJECT_DIR$/application/admin/view/profile/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/push/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/push/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/push/index.html" afterPath="$PROJECT_DIR$/application/admin/view/push/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/system/base_info.html" afterPath="$PROJECT_DIR$/application/admin/view/system/base_info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/system/base_set.html" afterPath="$PROJECT_DIR$/application/admin/view/system/base_set.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/system/security.html" afterPath="$PROJECT_DIR$/application/admin/view/system/security.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/user/group/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/user/group/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/user/group/index.html" afterPath="$PROJECT_DIR$/application/admin/view/user/group/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/user/rule/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/user/rule/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/user/rule/index.html" afterPath="$PROJECT_DIR$/application/admin/view/user/rule/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/user/user/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/user/user/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/user/user/index.html" afterPath="$PROJECT_DIR$/application/admin/view/user/user/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/static/config.js" afterPath="$PROJECT_DIR$/public/static/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/static/modules/sample.js" afterPath="$PROJECT_DIR$/public/static/modules/sample.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -12,84 +55,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/common/header.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1322">
-              <caret line="11" column="70" lean-forward="false" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="meta.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/common/meta.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="55" lean-forward="false" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="2020" column="1" lean-forward="true" selection-start-line="2020" selection-start-column="1" selection-end-line="2020" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="green.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/style/green.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/profile/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="font-awesome.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/awesome/css/font-awesome.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="green-header.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/style/green-header.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-729">
-              <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="152" column="117" lean-forward="false" selection-start-line="152" selection-start-column="117" selection-end-line="152" selection-end-column="117" />
+            <state relative-caret-position="392">
+              <caret line="468" column="21" lean-forward="true" selection-start-line="468" selection-start-column="21" selection-end-line="468" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
@@ -106,24 +78,6 @@
                 <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <marker date="1548084733161" expanded="false" signature="16820:20303" ph="..." />
-                <marker date="1548084733161" expanded="false" signature="16877:20268" ph="..." />
-                <marker date="1548084733161" expanded="false" signature="27265:30882" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sample.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/modules/sample.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="71" column="39" lean-forward="false" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1547994197863" expanded="true" signature="5874:5889" ph="..." />
-                <marker date="1547994197863" expanded="true" signature="5955:5970" ph="..." />
-                <marker date="1547994197863" expanded="true" signature="6015:6030" ph="..." />
               </folding>
             </state>
           </provider>
@@ -133,10 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ho</find>
-      <find>干货</find>
-      <find>hove</find>
-      <find>layadmin-iframe</find>
       <find>click</find>
       <find>color</find>
       <find>mous</find>
@@ -163,6 +113,10 @@
       <find>覃</find>
       <find>里小狗</find>
       <find>layuiadmin-btn-group</find>
+      <find>localStorage</find>
+      <find>Cache</find>
+      <find>layui.data</find>
+      <find>LAY-index-pagetwo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,57 +125,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/admin/view/database/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/push/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/user/group/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/addon/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/job/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/profile/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/admin/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/group/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/user/rule/index.html" />
-        <option value="$PROJECT_DIR$/public/static/modules/weTreeGrid.js" />
-        <option value="$PROJECT_DIR$/public/static/modules/weTable.js" />
-        <option value="$PROJECT_DIR$/public/static/modules/we.js" />
-        <option value="$PROJECT_DIR$/public/static/lib/view.js" />
-        <option value="$PROJECT_DIR$/public/static/config.js" />
-        <option value="$PROJECT_DIR$/application/admin/view/common/script.html" />
-        <option value="$PROJECT_DIR$/public/static/layui/css/layui.css" />
-        <option value="$PROJECT_DIR$/application/admin/view/index/login.html" />
-        <option value="$PROJECT_DIR$/public/static/lib/admin.js" />
         <option value="$PROJECT_DIR$/application/admin/view/common/tabs.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/index/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/layout/default.html" />
         <option value="$PROJECT_DIR$/application/admin/view/common/menu.html" />
         <option value="$PROJECT_DIR$/public/static/lib/index.js" />
         <option value="$PROJECT_DIR$/application/admin/view/layout/default2.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/group/edit.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/edit.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/rule/view.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/addon/edit.html" />
         <option value="$PROJECT_DIR$/application/admin/view/dashboard/console2.html" />
         <option value="$PROJECT_DIR$/application/admin/view/dashboard/detail2.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/job/edit.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/push/edit.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/system/base_info.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/user/group/edit.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/user/rule/edit.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/fields/edit.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/order/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/dashboard/line.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/dashboard/bar.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/auth/admin/add.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/common/meta.html" />
+        <option value="$PROJECT_DIR$/public/static/style/green-header.css" />
+        <option value="$PROJECT_DIR$/public/static/style/admin.css" />
+        <option value="$PROJECT_DIR$/application/admin/view/common/header.html" />
+        <option value="$PROJECT_DIR$/public/static/lib/admin.js" />
+        <option value="$PROJECT_DIR$/public/static/lib/view.js" />
+        <option value="$PROJECT_DIR$/public/static/config.js" />
+        <option value="$PROJECT_DIR$/application/admin/view/index/index.html" />
+        <option value="$PROJECT_DIR$/public/static/modules/sample.js" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/admin/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/auth/admin/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/admin/add.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/addon/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/addon/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/group/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/group/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/dashboard/bar.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/dashboard/console.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/dashboard/detail.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/dashboard/line.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/database/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/fields/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/fields/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/index/forget.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/index/login.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/index/reg.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/job/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/job/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/order/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/profile/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/push/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/push/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/system/base_info.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/system/base_set.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/system/security.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/user/group/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/user/group/edit.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/user/rule/index.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/user/rule/edit.html" />
         <option value="$PROJECT_DIR$/application/admin/view/user/user/edit.html" />
         <option value="$PROJECT_DIR$/application/admin/view/user/user/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/fields/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/common/meta.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/common/header.html" />
-        <option value="$PROJECT_DIR$/public/static/style/green-header.css" />
-        <option value="$PROJECT_DIR$/public/static/modules/sample.js" />
-        <option value="$PROJECT_DIR$/public/static/style/admin.css" />
-        <option value="$PROJECT_DIR$/application/admin/view/dashboard/detail.html" />
       </list>
     </option>
   </component>
@@ -239,10 +193,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="x" value="-732" />
+    <option name="y" value="166" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -259,123 +213,237 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="addon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="group" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="rule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="fields" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="job" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="push" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="group" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="rule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gjx" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fastadmin" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\wechat\application\admin\view\index" />
       <recent name="E:\xm\wechat\public\static\awesome" />
       <recent name="E:\xm\wechat\application\admin\view\dashboard" />
       <recent name="E:\xm\wechat\application\admin\view\user\user" />
       <recent name="E:\xm\wechat\application\admin\view" />
-      <recent name="E:\xm\wechat\addons\qrcode\view\index" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -391,6 +459,14 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -426,15 +502,6 @@
       <option name="cucumberJsArguments" value="" />
       <option name="executablePath" />
       <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -482,16 +549,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355591000" />
+    <option name="totallyTimeSpent" value="369296000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114950635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18387777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -499,15 +565,22 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114950635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -517,96 +590,176 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/admin/view/system/security.html">
+    <entry file="file://$PROJECT_DIR$/public/static/modules/senior.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6183">
-          <caret line="229" column="8" lean-forward="false" selection-start-line="229" selection-start-column="8" selection-end-line="229" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/common/tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/console.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-10773">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="84" column="17" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/lib/extend/echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="20" column="8923" lean-forward="false" selection-start-line="20" selection-start-column="8923" selection-end-line="20" selection-end-column="8923" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/common/meta.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/static/lib/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1350">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="3996">
+          <caret line="148" column="231" lean-forward="false" selection-start-line="148" selection-start-column="231" selection-end-line="148" selection-end-column="231" />
+          <folding>
+            <marker date="1548142021059" expanded="true" signature="4078:4093" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/console.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="78" lean-forward="false" selection-start-line="17" selection-start-column="78" selection-end-line="17" selection-end-column="78" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/common/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/static/lib/view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1323">
-          <caret line="59" column="45" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="45" />
+        <state relative-caret-position="-1255">
+          <caret line="19" column="81" lean-forward="false" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="81" />
+          <folding>
+            <marker date="1548142034100" expanded="true" signature="2631:2639" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/lib/index.js">
+    <entry file="file://$PROJECT_DIR$/public/static/modules/sample.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="297">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1548145917222" expanded="true" signature="5874:5889" ph="..." />
+            <marker date="1548145917222" expanded="true" signature="5955:5970" ph="..." />
+            <marker date="1548145917222" expanded="true" signature="6015:6030" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="147" column="21" lean-forward="false" selection-start-line="147" selection-start-column="21" selection-end-line="147" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/layout/default.html">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="378">
+          <caret line="74" column="21" lean-forward="false" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/layout/default2.html">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="351">
+          <caret line="121" column="21" lean-forward="false" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/addon/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+        <state relative-caret-position="189">
+          <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/addon/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+        <state relative-caret-position="351">
+          <caret line="130" column="21" lean-forward="false" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/group/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="86" column="21" lean-forward="false" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/rule/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -614,304 +767,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/detail2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/database/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/index/forget.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/job/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/push/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/push/import.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/system/base_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-886">
-          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user/group/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user/rule/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user/rule/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/fields/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/line.html">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/console.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/bar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user/group/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/index/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="839">
-          <caret line="64" column="49" lean-forward="false" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/addon/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/common/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user/user/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3213">
-          <caret line="119" column="42" lean-forward="false" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/formSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/weTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="48" column="46" lean-forward="false" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/fields/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="205" column="91" lean-forward="false" selection-start-line="205" selection-start-column="91" selection-end-line="205" selection-end-column="91" />
-          <folding>
-            <marker date="1547824267901" expanded="true" signature="6021:9425" ph="{...}" />
-            <marker date="1547824267901" expanded="true" signature="8694:9284" ph="{&quot;table&quot;: &quot;rule&quot;...}" />
-            <marker date="1547824267901" expanded="true" signature="8886:9274" ph="{&quot;add_url&quot;: &quot;{:url('admin/fields/edit','',false)}&quot;...}" />
-            <marker date="1547824267901" expanded="true" signature="9296:9331" ph="/** 绑定监听事件 ...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user/user/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="128" column="94" lean-forward="false" selection-start-line="128" selection-start-column="94" selection-end-line="128" selection-end-column="94" />
-          <folding>
-            <marker date="1547824267893" expanded="true" signature="1585:5511" ph="{...}" />
-            <marker date="1547824267893" expanded="true" signature="4667:5370" ph="{&quot;table&quot;: &quot;rule&quot;...}" />
-            <marker date="1547824267893" expanded="true" signature="4859:5360" ph="{&quot;add_url&quot;: &quot;{:url('admin/user.user/edit','',false)}&quot;...}" />
-            <marker date="1547824267893" expanded="true" signature="5382:5417" ph="/** 绑定监听事件 ...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="55" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="124" column="18" lean-forward="false" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="57" selection-end-column="20" />
-          <folding>
-            <element signature="n#table#0;n#form#0;n#div#0;n#body#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/common/meta.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="55" lean-forward="false" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/awesome/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/style/green-header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-729">
-          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/sample.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="71" column="39" lean-forward="false" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1547994197863" expanded="true" signature="5874:5889" ph="..." />
-            <marker date="1547994197863" expanded="true" signature="5955:5970" ph="..." />
-            <marker date="1547994197863" expanded="true" signature="6015:6030" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/style/green.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/profile/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/common/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1322">
-          <caret line="11" column="70" lean-forward="false" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="2020" column="1" lean-forward="true" selection-start-line="2020" selection-start-column="1" selection-end-line="2020" selection-end-column="1" />
+        <state relative-caret-position="594">
+          <caret line="271" column="21" lean-forward="false" selection-start-line="271" selection-start-column="21" selection-end-line="271" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="152" column="117" lean-forward="false" selection-start-line="152" selection-start-column="117" selection-end-line="152" selection-end-column="117" />
+        <state relative-caret-position="423">
+          <caret line="468" column="21" lean-forward="false" selection-start-line="468" selection-start-column="21" selection-end-line="468" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
@@ -928,9 +799,252 @@
             <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1548084733161" expanded="false" signature="16820:20303" ph="..." />
-            <marker date="1548084733161" expanded="false" signature="16877:20268" ph="..." />
-            <marker date="1548084733161" expanded="false" signature="27265:30882" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/dashboard/line.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="91" column="21" lean-forward="false" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/database/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="121" column="21" lean-forward="false" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/fields/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="116" column="21" lean-forward="false" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/fields/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="119" column="21" lean-forward="false" selection-start-line="119" selection-start-column="21" selection-end-line="119" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/index/forget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="73" column="21" lean-forward="false" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/index/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="73" column="21" lean-forward="false" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/index/reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="68" column="21" lean-forward="false" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/job/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/job/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="39" column="21" lean-forward="false" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/layout/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+          <folding>
+            <marker date="1548146324938" expanded="true" signature="6913:6928" ph="..." />
+            <marker date="1548146324938" expanded="true" signature="7090:7105" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/profile/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="112" column="21" lean-forward="false" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/push/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="110" column="21" lean-forward="false" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/push/import.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/push/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="41" column="21" lean-forward="false" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/system/base_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/system/base_set.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="107" column="21" lean-forward="false" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/system/security.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="130" column="21" lean-forward="false" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/group/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/group/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/group/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/rule/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="74" column="21" lean-forward="false" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/rule/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/user/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="132" column="21" lean-forward="false" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/widget/import.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1546391184153" expanded="true" signature="5314:5329" ph="..." />
+            <marker date="1546391184153" expanded="true" signature="5613:5628" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/rule/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="49" column="21" lean-forward="false" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="468" column="21" lean-forward="true" selection-start-line="468" selection-start-column="21" selection-end-line="468" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#4;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
