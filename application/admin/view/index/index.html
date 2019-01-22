@@ -17,7 +17,7 @@
                                             <div class="sm-st clearfix">
                                                 <span class="sm-st-icon st-red"><i class="fa fa-users"></i></span>
                                                 <div class="sm-st-info">
-                                                    <span>35200</span>
+                                                    <span id="member_count">0</span>
                                                     总会员数（人）
                                                 </div>
                                             </div>
@@ -26,7 +26,7 @@
                                             <div class="sm-st clearfix">
                                                 <span class="sm-st-icon st-violet"><i class="fa fa-book"></i></span>
                                                 <div class="sm-st-info">
-                                                    <span>219390</span>
+                                                    <span id="visited_count">0</span>
                                                     历史访问总数（次）
                                                 </div>
                                             </div>
@@ -35,7 +35,7 @@
                                             <div class="sm-st clearfix">
                                                 <span class="sm-st-icon st-blue"><i class="fa fa-shopping-bag"></i></span>
                                                 <div class="sm-st-info">
-                                                    <span>35200</span>
+                                                    <span id="order_count">0</span>
                                                     历史总订单数(笔)
                                                 </div>
                                             </div>
@@ -44,7 +44,7 @@
                                             <div class="sm-st clearfix">
                                                 <span class="sm-st-icon st-green"><i class="fa fa-rmb"></i></span>
                                                 <div class="sm-st-info">
-                                                    <span>352</span>
+                                                    <span id="money_count">0</span>
                                                     历史总金额（元）
                                                 </div>
                                             </div>
@@ -60,7 +60,7 @@
                                             <div class="sm-st clearfix">
                                                 <span class="sm-st-icon st-money"><i class="fa fa-money"></i></span>
                                                 <div class="sm-st-info">
-                                                    <span>1110</span>
+                                                    <span id="today_in_money">0</span>
                                                     今日成交金额（元）
                                                 </div>
                                             </div>
@@ -70,7 +70,7 @@
                                             <div class="sm-st clearfix">
                                                 <span class="sm-st-icon st-client"><i class="fa fa-handshake-o"></i></span>
                                                 <div class="sm-st-info">
-                                                    <span>219390</span>
+                                                    <span id="today_hand_customer">0</span>
                                                     今日成交客户（人）
                                                 </div>
                                             </div>
@@ -89,7 +89,7 @@
                                             <span class="sm-st-icon st-back-money"><i
                                                     class="fa  fa-volume-up"></i></span>
                                                 <div class="sm-st-info">
-                                                    <span>352</span>
+                                                    <span id="today_call_money">0</span>
                                                     今日催付挽回金额（元）
                                                 </div>
                                             </div>
@@ -469,28 +469,85 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-        , sample: 'sample'
-    }).use(['index', 'element', 'sample', 'countUp', 'we'], function () {
+//        , sample: 'sample'
+    }).use(['index', 'element', 'sample','echarts', 'countUp', 'we'], function () {
         var admin = layui.admin
-            , element = layui.element
             , we = layui.we
             , $  = layui.$
             , countUp = layui.countUp;
 
-//        var readCount = new countUp.CountUp("readCount", 0, 9999666);
-//        var downloadCount = new countUp.CountUp("downloadCount", 0, 33555);
-//        var incomeCount = new countUp.CountUp("incomeCount", 0, 999666);
-//        var onlineCount = new countUp.CountUp("onlineCount", 0, 666666);
-//        readCount.start();
-//        downloadCount.start();
-//        incomeCount.start();
-//        onlineCount.start();
+        /**
+         * 统计部分
+         * @type {CountUp}
+         */
+        var member_count = new countUp.CountUp("member_count", 0, 35200);
+        var visited_count = new countUp.CountUp("visited_count", 0, 33555);
+        var order_count = new countUp.CountUp("order_count", 0, 999666);
+        var money_count = new countUp.CountUp("money_count", 0, 666666);
+        var today_in_money = new countUp.CountUp("today_in_money", 0, 4200);
+        var today_hand_customer = new countUp.CountUp("today_hand_customer", 0, 20);
+        var today_call_money = new countUp.CountUp("today_call_money", 0, 20);
+        member_count.start();
+        visited_count.start();
+        order_count.start();
+        money_count.start();
+        today_in_money.start();
+        today_hand_customer.start();
+        today_call_money.start();
+
+        /**
+         * 首次进入系统弹窗
+         */
         we.tips("<li><a href='#'>欢迎使用云创crm系统！！！！！</a></li>");
+
+        /**
+         * DSR评分（近7天、15天、更多切换）
+         */
         $(".layuiadmin-btn-group a").click(function () {
-//            console.log($(this).text());
             $(".layuiadmin-btn-group a").addClass('no-check');
             $(this).removeClass('no-check');
         });
+
+        var e = layui.$, a = (layui.carousel, layui.echarts), l = [], t = [{
+            tooltip: {trigger: "axis"},
+            calculable: !0,
+            legend: {data: ["描述相符", "服务质量", "发货质量"]},
+            xAxis: [{
+                type: "category",
+                data: ["2019-01-13", "2019-01-14", "2019-01-15", "2019-01-16", "2019-01-17", "2019-01-18", "2019-01-19"]
+            }],
+            yAxis: [{type: "value"}],
+            series: [{
+                name: "描述相符",
+                type: "line",
+                itemStyle: {
+                    normal: {
+                        color: "#ffaf25"
+                    }
+                },
+                data: [1, 2, 1, 5, 2, 0, 3]
+            }, {
+                name: "服务质量",
+                type: "line",
+                itemStyle: {
+                    normal: {
+                        color: "#3d9afc"
+                    }
+                },
+                data: [0, 1, 2, 2, 0, 5, 1]
+            }, {
+                name: "发货质量",
+                type: "line",
+                itemStyle: {
+                    normal: {
+                        color: "#a85ba1"
+                    }
+                },
+                data: [5, 4, 0, 1, 3, 3, 3]}]
+        }], i = e("#LAY-index-pagetwo").children("div"), n = function (e) {
+            l[e] = a.init(i[e], layui.echartsTheme), l[e].setOption(t[e]), window.onresize = l[e].resize
+        };
+        i[0] && n(0)
     });
 </script>
 </body>
