@@ -213,6 +213,7 @@ class baseAdmin extends Controller{
         $this->assign('this_url', '/'.$modulename.'/'.$controllername.'/'.$actionname);
         //渲染权限对象
         $this->assign('auth', $this->auth);
+        $this->assign('msectime', msectime());
         //渲染管理员对象
         $this->assign('admin', Session::get('admin'));
     }

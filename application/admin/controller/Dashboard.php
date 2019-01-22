@@ -6,7 +6,7 @@
 */
 namespace app\admin\controller;
 use app\common\controller\baseAdmin;
-use GatewayClient\Gateway;
+// use GatewayClient\Gateway;
 
 class Dashboard extends baseAdmin {
     
