@@ -2194,3 +2194,23 @@ tr>td.yty_tdright {
     border-color: #506def;
     background-color: #506def;
 }
+
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #506def;
+    background-color: #506def;
+    color: #fff;
+}
+
+.layui-form-checkbox[lay-skin=primary] i:hover{
+    border-color: #506def !important;
+}
+
+.layui-form-checkbox[lay-skin=primary]:hover :nth-child(2){
+    /*CSS3 子节点选择器*/
+    border-color: #506def !important;
+}
+
+.layui-form-checkbox[lay-skin=primary] span:hover + i{
+    /*css设置兄弟节点的样式*/
+    border-color: #506def !important;
+}
