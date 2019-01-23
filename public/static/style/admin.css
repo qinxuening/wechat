@@ -2129,7 +2129,7 @@ tr>td.yty_tdright {
     font-weight: 600;
     height: 30px;
     line-height: 30px;
-    padding: 5px 0;
+    padding: 5px 10px;
 }
 
 .yty-card-header span{
@@ -2228,4 +2228,19 @@ tr>td.yty_tdright {
 
 .layui-form-radio>i:hover, .layui-form-radioed>i {
     color: #506def;
+}
+
+tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdright .layui-textarea, tr>td.yty_tdright>.xm-select {
+    width: 150px;
+    background: #f5f7bb;
+    display: inline;
+}
+
+.input-margin {
+    margin-right: 10px;
+}
+
+.layui-laydate .layui-this {
+    background-color: #506def!important;
+    color: #fff!important;
 }

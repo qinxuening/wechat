@@ -5,39 +5,46 @@
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12 webody">
             <div class="layui-card">
+                <div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>订单查询</div>
                 <div class="layui-card-body">
-                    <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>
+                    <table class="layui-table table-border" lay-skin="line" lay-size="sm">
+                        <colgroup>
+                            <col class="yty_tdleft" width="8%">
+                            <col class="yty_tdright">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td class="yty_tdleft">订单编号：</td>
+                            <td class="yty_tdright">
+                                <input type="text" name="tid" id="tid" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                手机号码：
+                                <input type="mobile" name="mobile" id="mobile" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                省份：
+                                <input type="text" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                商品ID：
+                                <input type="text" name="itemId" id="itemId" placeholder="" autocomplete="off" class="layui-input input-margin">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="yty_tdleft">下单时间∶</td>
+                            <td class="yty_tdright">
+                                <input type="text" name="time_start" id="time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="time_end" id="time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
+                                订单金额：
+                                <input type="text" name="payment_start" id="payment_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="payment_end" id="payment_end" placeholder="" autocomplete="off" class="layui-input" lay-key="2">
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+
+                    <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
                 </div>
             </div>
-            <!--
-                        <div class="layui-card">
-                            <div class="layui-card-body">
-                                <div class="layui-upload">
-                                    <button type="button" class="layui-btn layui-btn-sm" id="upload">
-                                        <i class="layui-icon">&#xe654;</i>添加文件
-                                    </button>
-                                    <button type="button"  class="layui-btn upload-btn layui-btn-disabled layui-btn-sm" id="testListAction"><i class="layui-icon">&#xe67c;</i>开始上传</button>
-                                    <div class="layui-progress layui-progress-big" style="margin: 10px 0;display: none" id="progressBar" lay-showPercent="yes" lay-filter="progressBar">
-                                        <div class="layui-progress-bar" lay-percent="0%"></div>
-                                    </div>
-                                    <div class="layui-upload-list">
-                                        <table class="layui-table">
-                                            <thead>
-                                            <tr><th>文件名</th>
-                                                <th>大小</th>
-                                                <th>状态</th>
-                                                <th>操作</th>
-                                            </tr></thead>
-                                            <tbody id="demoList"></tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-                    </div>
-                </div>
-            </div>
-            </div>
+        </div>
+    </div>
+</div>
+</div>
 
             <!--头工具栏-->
 {:build_toolbar('toolbar',['refresh', 'add', 'del'])}
@@ -65,12 +72,13 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','upload','element','form','authtree','we','weTable'], function(){
+    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
             ,layer = layui.layer
             ,we = layui.we
+            ,laydate = layui.laydate
             ,form = layui.form
             ,upload = layui.upload
             ,weTable = layui.weTable
@@ -174,6 +182,14 @@
             }
         });
 
+        laydate.render({
+            elem: '#time_start' //指定元素
+            ,type: 'datetime'
+        });
+        laydate.render({
+            elem: '#time_end' //指定元素
+            ,type: 'datetime'
+        });
         //监听性别操作
         form.on('switch(ruleStatus)', function(obj){
 //            console.log(obj);
