@@ -108,11 +108,11 @@
             tableid : "tableReload",
             is_display:true,
             extend : {
-                "add_url": "{:url('admin/Addon/edit','',false)}",
-                "edit_url": "{:url('admin/Addon/edit','',false)}/ids/",
-                "del_url": "{:url('admin/Addon/del','',false)}",
-                "export_url": "{:url('admin/Addon/index','',false)}",
-                "import_url" :  "{:url('admin/Addon/import','',false)}",
+                "add_url": "{:url('admin/Addon/edit',['nav_id'=>input('nav_id')],false)}",
+                "edit_url": "{:url('admin/Addon/edit',['nav_id'=>input('nav_id')],false)}&ids=",
+                "del_url": "{:url('admin/Addon/del',['nav_id'=>input('nav_id')],false)}",
+                "export_url": "{:url('admin/Addon/index',['nav_id'=>input('nav_id')],false)}",
+                "import_url" :  "{:url('admin/Addon/import',['nav_id'=>input('nav_id')],false)}",
             }
         });
         /**

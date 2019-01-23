@@ -115,9 +115,9 @@
         </table>
         <div class="layui-form-item footer-form">
             <div class="footer footer-common">
-                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
-                <button type="reset" class="layui-btn layui-btn-sm btn-embossed">{:__('Reset')}</button>
-                <a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-sm btn-embossed go-back">{:__('Back')}</div></a>
+                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+                <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>
+                <a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed go-back">{:__('Back')}</div></a>
             </div>
         </div>
     </form>
@@ -135,10 +135,10 @@
         index: 'lib/index', //主入口模块
         formSelects: 'formSelects-v4'
     }).link(
-        '__STATIC__/style/formSelects-v4.css'
+        '__STATIC__/style/formSelects-v4.css?v={$msectime}'
     ).
     link(
-        " __STATIC__/style/jquery.validator.css"
+        " __STATIC__/style/jquery.validator.css?v={$msectime}"
     ).
     use(['jquery','index','laydate','formSelects','formValidator'], function(){
         var admin = layui.admin

@@ -2214,3 +2214,17 @@ tr>td.yty_tdright {
     /*css设置兄弟节点的样式*/
     border-color: #506def !important;
 }
+
+.layui-form-checkbox[lay-skin=primary] i{
+    /*css设置兄弟节点的样式*/
+    border-color: #506def !important;
+}
+
+.layui-form-select dl dd.layui-this {
+    background-color: #506def;
+    color: #fff;
+}
+
+.layui-form-radio>i:hover, .layui-form-radioed>i {
+    color: #506def;
+}
