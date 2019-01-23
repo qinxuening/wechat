@@ -182,7 +182,7 @@ class baseAdmin extends Controller{
             cache('auth_rule_ids',$auth_rule_ids);
             cache('ruleList',$menulist[3]);
         }
-//         cache('menulist1',$menulist[0]);
+        
         foreach (cache('nav_list') as $k =>$v) {
             $max_weigh[] = $v['weigh'];
         } 
@@ -191,16 +191,21 @@ class baseAdmin extends Controller{
         $pid = intval(input('nav_pid'));
 
         if($id){
-            $arr_ = Category::getParent( cache('ruleList3'),$id);
-            $pid = $arr_[0]['id'];
+            $arr_ = Category::getParent(cache('ruleList3'),$id);
+            $pid1 = $arr_[0]['id'];
         }
-//         print_r($menulist[3]);die();
-        $this->assign('max_weigh', $max_weigh);
-        $this->view->assign('nav_list', cache('menulist2'));
+        
+        if((isset($_GET['nav_pid']) && !in_array($pid, array_keys(cache('nav_url')))) 
+            || (isset($_GET['nav_id']) && !$menulist[0][$pid1])
+            ) {
+            $this->redirect("/admin/index/index");
+        }
 
-        $this->view->assign('menulist1', $menulist[0][$pid]);
-        $this->view->assign('nav_url', cache('nav_url'));
-//         print_r(cache('menulist2'));die();
+        $this->assign('max_weigh', $max_weigh);
+        $this->view->assign('nav_list', cache('menulist2'));//rule
+
+        $this->view->assign('menulist1', $menulist[0][$pid1]);//menu
+        $this->view->assign('nav_url', cache('nav_url'));  //导航
         // 语言检测
         $lang = strip_tags(Lang::detect());
         // 配置信息后
@@ -220,7 +225,8 @@ class baseAdmin extends Controller{
     
     
     public function _empty(){
-        return json(['code'=>-1,'status'=>'error','info'=>'非法访问']);
+        $this->redirect("/admin/index/index");
+        //return json(['code'=>-1,'status'=>'error','info'=>'非法访问']);
     }
     
     /**
