@@ -1794,7 +1794,7 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
 }
 .tabpage .currenttab a, .tabpage .currenttab a::after {
     /*background: #fff;*/
-    background: #5FB878;
+    background: #506def;
     z-index: 3;
     color:#ffffff;
 }
@@ -2041,7 +2041,7 @@ tr>td.yty_tdright {
     color: red;
 }
 .layui-btn-normal{
-    background-color: #4961dd;
+    background-color: #506def;
 }
 
 .sm-st-icon-right {
@@ -2184,4 +2184,13 @@ tr>td.yty_tdright {
 
 .stats-container .layui-progress-bar{
     height: 2px;
+}
+
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: #506def;
+}
+
+.layui-form-onswitch {
+    border-color: #506def;
+    background-color: #506def;
 }

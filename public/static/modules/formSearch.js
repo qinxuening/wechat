@@ -50,8 +50,8 @@ layui.define(['jquery','laydate','form'], function(exports){
                     });
 
                     html += '<li>'+
-                        '<button class="layui-btn layui-btn-sm search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>'+data.Search+'</button>'+
-                        '<button type="reset" class="layui-btn layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>'+data.Reset+'</button>'+
+                        '<button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>'+data.Search+'</button>'+
+                        '<button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>'+data.Reset+'</button>'+
                         '</li>';
                     html += '</ul></form>';
                     $('.searchbody').html(html);
