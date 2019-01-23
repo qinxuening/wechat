@@ -123,11 +123,11 @@
             form:$("form#formRule"),
             tableCommon: tableCommon,
             extend : {
-                "add_url": "{:url('admin/user.user/edit',['nav_id'=>input('nav_id')],false)}",
-                "edit_url": "{:url('admin/user.user/edit',['nav_id'=>input('nav_id')],false)}&ids=",
-                "view_url": "{:url('admin/user.user/view',['nav_id'=>input('nav_id')],false)}&ids=",
-                "del_url": "{:url('admin/user.user/del',['nav_id'=>input('nav_id')],false)}",
-                "export_url" : "{:url('admin/user.user/index',['id'=>input('nav_id')],false)}"
+                "add_url": "{:url('admin/user.user/edit',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}",
+                "edit_url": "{:url('admin/user.user/edit',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}&ids=",
+                "view_url": "{:url('admin/user.user/view',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}&ids=",
+                "del_url": "{:url('admin/user.user/del',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}",
+                "export_url" : "{:url('admin/user.user/index',['id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}"
             }
         });
 
