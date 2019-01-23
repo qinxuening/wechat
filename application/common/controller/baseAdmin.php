@@ -200,7 +200,7 @@ class baseAdmin extends Controller{
 
         $this->view->assign('menulist1', $menulist[0][$pid]);
         $this->view->assign('nav_url', cache('nav_url'));
-        
+//         print_r(cache('menulist2'));die();
         // 语言检测
         $lang = strip_tags(Lang::detect());
         // 配置信息后

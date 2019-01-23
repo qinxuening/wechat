@@ -514,6 +514,7 @@ class Auth extends \we\Auth{
         $i = 1;
         $menu_active = "";
         $nav_id = intval(input('nav_id'));
+//         echo $nav_id;
         $nav_pid = intval(input('nav_pid'));
 //         $ruleList2 = $ruleList;
 
@@ -573,7 +574,7 @@ class Auth extends \we\Auth{
                             }
                             if($k1 == 0) {
                                 $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v1['url'];
-                                $html[$k4] .= "<dd class='{$active} {$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id'],'nav_pid' => $k4])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd class='{$menu_active} {$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id'],'nav_pid' => $k4])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             } else {
                                 $html[$k4] .= "<dd class='{$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id'],'nav_pid' => $k4])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             }
