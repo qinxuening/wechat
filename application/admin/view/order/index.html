@@ -50,7 +50,7 @@
                             <td class="yty_tdleft">屏蔽标旗 :</td>
                             <td class="yty_tdright">
                                 <ul class="yty-checkbox">
-                                    <li><span class="red_flag"></span></li>
+                                    <li class="checkbox-active"><span class="red_flag"></span></li>
                                     <li><span class="yellow_flag"></span></li>
                                     <li><span class="cyan_flag"></span></li>
                                     <li><span class="blue_flag"></span></li>
@@ -58,6 +58,22 @@
                                 </ul>
                             </td>
                         </tr>
+
+                        <tr>
+                            <td class="yty_tdleft">订单状态 :</td>
+                            <td class="yty_tdright">
+                                <div class="layui-form">
+                                    <input type="checkbox" name="orderStatus[WAIT_BUYER_PAY]" title="下单未付款" checked="">
+                                    <input type="checkbox" name="orderStatus[WAIT_SELLER_SEND_GOODS]" title="付款未发货">
+                                    <input type="checkbox" name="orderStatus[WAIT_BUYER_CONFIRM_GOODS]" title="已发货">
+                                    <input type="checkbox" name="orderStatus[SELLER_CONSIGNED_PART]" title="部分发货">
+                                    <input type="checkbox" name="orderStatus[TRADE_FINISHED]" title="交易成功">
+                                    <input type="checkbox" name="orderStatus[TRADE_CLOSED]" title="已退款">
+                                    <input type="checkbox" name="orderStatus[TRADE_CLOSED_BY_TAOBAO]" title="交易关闭">
+                                </div>
+                            </td>
+                        </tr>
+
                         </tbody>
                     </table>
                     <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
@@ -100,6 +116,7 @@
             ,table = layui.table
             ,layer = layui.layer
             ,we = layui.we
+            ,$  = layui.$
             ,laydate = layui.laydate
             ,form = layui.form
             ,upload = layui.upload
@@ -249,6 +266,15 @@
          * 绑定监听事件
          * */
         weTable.api.bindevent();
+
+        $("body").on("click","ul li",function () {
+            if($(this).hasClass('checkbox-active')) {
+                $(this).removeClass('checkbox-active');
+            } else {
+                $(this).addClass('checkbox-active')
+            }
+
+        });
     });
 
 </script>

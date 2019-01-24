@@ -2252,8 +2252,11 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .layui-form-checked i, .layui-form-checked:hover i {
     color: #506def;
     border: 1px solid #506def;
+    display: none;
 }
-
+.layui-unselect i{
+    display: none;
+}
 .yty-checkbox{
     
 }
@@ -2290,4 +2293,10 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 }
 .purple_flag{
     background-position: -141px -262px !important;
+}
+.yty-checkbox li.checkbox-active{
+    border: 1px solid #506def;
+}
+.layui-form-checkbox{
+    padding-right: 0px;
 }
