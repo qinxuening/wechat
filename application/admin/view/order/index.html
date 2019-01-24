@@ -164,17 +164,22 @@
             ,url:"{:url('Admin/Order/index')}"
             ,id : 'tableReload'
             ,skin:'line'
+            ,height:400
             ,defaultToolbar: ['filter']
             ,toolbar : '#toolbar'
+            ,width:1600
             ,cols: [[
-//                {type:'checkbox', fixed: 'left'}
-                ,{field:'id', title: 'ID', sort: true}
-                ,{field:'title', title: '概要'}
-                ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
-                ,{field:'is_time_push', title: '是否定时推送',templet: '#switchPush', sort: true}
-                ,{field:'time_push', title: '定时推送时间'}
-                ,{field:'createtime', title: '创建时间', minWidth: 150}
-                ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:250}
+                {type:'checkbox', fixed: 'left'}
+                ,{field:'buyer_name', title: '买家昵称', sort: true}
+                ,{field:'consignee_name', title: '收货人姓名'}
+                ,{field:'order_status', title: '订单状态',templet: '#switchStatus', sort: true}
+                ,{field:'order_source', title: '订单来源', sort: true}
+                ,{field:'consignee_city', title: '收货人所在城市'}
+                ,{field:'mobile', title: '手机号码'}
+                ,{field:'order_number', title: '订单编号'}
+                ,{field:'pay_money', title: '付款金额（元）'}
+                ,{field:'order_time', title: '下单时间'}
+                ,{field:'commodity', title: '购买的宝贝'}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
