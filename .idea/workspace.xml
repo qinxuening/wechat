@@ -4,7 +4,6 @@
     <list default="true" id="bd2929a5-94d4-4545-8a59-6480752a55ce" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/order/index.html" afterPath="$PROJECT_DIR$/application/admin/view/order/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/static/style/admin.css" afterPath="$PROJECT_DIR$/public/static/style/admin.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -88,12 +87,12 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="66" column="115" lean-forward="false" selection-start-line="66" selection-start-column="115" selection-end-line="66" selection-end-column="115" />
+            <state relative-caret-position="356">
+              <caret line="96" column="117" lean-forward="false" selection-start-line="96" selection-start-column="117" selection-end-line="96" selection-end-column="117" />
               <folding>
-                <element signature="e#6438#7604#0" expanded="false" />
-                <marker date="1548312597951" expanded="true" signature="9922:9937" ph="..." />
-                <marker date="1548312597951" expanded="true" signature="10099:10114" ph="..." />
+                <element signature="e#8079#9245#0" expanded="false" />
+                <marker date="1548315112259" expanded="true" signature="11563:11578" ph="..." />
+                <marker date="1548315112259" expanded="true" signature="11740:11755" ph="..." />
               </folding>
             </state>
           </provider>
@@ -248,8 +247,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-400" />
-    <option name="y" value="42" />
+    <option name="x" value="84" />
+    <option name="y" value="75" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -477,7 +476,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="416785000" />
+    <option name="totallyTimeSpent" value="419031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -901,12 +900,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="66" column="115" lean-forward="false" selection-start-line="66" selection-start-column="115" selection-end-line="66" selection-end-column="115" />
+        <state relative-caret-position="356">
+          <caret line="96" column="117" lean-forward="false" selection-start-line="96" selection-start-column="117" selection-end-line="96" selection-end-column="117" />
           <folding>
-            <element signature="e#6438#7604#0" expanded="false" />
-            <marker date="1548312597951" expanded="true" signature="9922:9937" ph="..." />
-            <marker date="1548312597951" expanded="true" signature="10099:10114" ph="..." />
+            <element signature="e#8079#9245#0" expanded="false" />
+            <marker date="1548315112259" expanded="true" signature="11563:11578" ph="..." />
+            <marker date="1548315112259" expanded="true" signature="11740:11755" ph="..." />
           </folding>
         </state>
       </provider>

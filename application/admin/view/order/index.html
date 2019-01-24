@@ -74,6 +74,30 @@
                             </td>
                         </tr>
 
+                        <tr>
+                            <td class="yty_tdleft">评价状态 :</td>
+                            <td class="yty_tdright">
+                                <div class="layui-form">
+                                    <input type="checkbox" name="evaluationStatus[ALL]" title="全部" checked="">
+                                    <input type="checkbox" name="evaluationStatus[BUYER_RATE]" title="买家已评">
+                                    <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" title="买家未评">
+                                    <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" title="买家未评，卖家已评">
+                                    <input type="checkbox" name="evaluationStatus[BUYER_RATE_SELLER_NOT]" title="双发已评">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="yty_tdleft">订单类型 :</td>
+                            <td class="yty_tdright">
+                                <div class="layui-form">
+                                    <input type="checkbox" name="orderType[ALL]" title="全部" checked="">
+                                    <input type="checkbox" name="orderType[FRONT_NOPAID_FINAL_NOPAID]" title="定金未定">
+                                    <input type="checkbox" name="orderType[FRONT_PAID_FINAL_NOPAID]" title="已付定金，未付尾款">
+                                    <input type="checkbox" name="orderType[FRONT_PAID_FINAL_PAID]" title="定金已付，尾款已付">
+                                </div>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                     <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
