@@ -14,7 +14,7 @@
                         </colgroup>
                         <tbody>
                         <tr>
-                            <td class="yty_tdleft">订单编号：</td>
+                            <td class="yty_tdleft">订单编号 :</td>
                             <td class="yty_tdright">
                                 <input type="text" name="tid" id="tid" placeholder="" autocomplete="off" class="layui-input input-margin">
                                 手机号码：
@@ -25,8 +25,9 @@
                                 <input type="text" name="itemId" id="itemId" placeholder="" autocomplete="off" class="layui-input input-margin">
                             </td>
                         </tr>
+
                         <tr>
-                            <td class="yty_tdleft">下单时间∶</td>
+                            <td class="yty_tdleft">下单时间 :</td>
                             <td class="yty_tdright">
                                 <input type="text" name="time_start" id="time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="time_end" id="time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
                                 订单金额：
@@ -34,10 +35,31 @@
                             </td>
                         </tr>
 
+                        <tr>
+                            <td class="yty_tdleft">订单来源 :</td>
+                            <td class="yty_tdright">
+                                <div class="layui-form">
+                                    <input type="checkbox" name="tradefrom[pc]" title="pc端" checked="">
+                                    <input type="checkbox" name="like[wap]" title="移动端" checked="">
+                                    <input type="checkbox" name="like[ht]" title="历史订单">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="yty_tdleft">屏蔽标旗 :</td>
+                            <td class="yty_tdright">
+                                <ul class="yty-checkbox">
+                                    <li><span class="red_flag"></span></li>
+                                    <li><span class="yellow_flag"></span></li>
+                                    <li><span class="cyan_flag"></span></li>
+                                    <li><span class="blue_flag"></span></li>
+                                    <li><span class="purple_flag"></span></li>
+                                </ul>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
-
-
                     <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
                 </div>
             </div>
