@@ -141,21 +141,21 @@
             ,toolbar : '#toolbar'
 //            ,limit : 4
             ,loading:true
-            ,limit:15
+            ,limit:10
             ,defaultToolbar: ['filter']//'filter', 'print', 'exports'
             ,search: false
             ,cols: [[
                 {type:'checkbox',sort:true}
                 ,{field:'fields_id', title: 'ID', sort: true}
-                ,{field:'title', title: '表单名称'}
-                ,{field:'form_type', title: '表单类型'}
+                ,{field:'title', title: '表单名称',minWidth:150}
+                ,{field:'form_type', title: '表单类型',minWidth:100}
                 ,{field:'identifier', title: '字段标识', sort: true, minWidth: 150}
-                ,{field:'field_type', title: '字段类型',sort: true}
-                ,{field:'default_value', title: '默认值',sort: true}
-                ,{field:'sort', title: '排序',sort: true}
+                ,{field:'field_type', title: '字段类型',sort: true,minWidth:100}
+                ,{field:'default_value', title: '默认值',sort: true,minWidth:150}
+                ,{field:'sort', title: '排序',sort: true,minWidth:100}
                 ,{field:'addition', title: '所属表名',sort: true, minWidth: 200}
-                ,{field:'field_length', title: '字段长度'}
-                ,{align: 'center', title:'操作', toolbar: '#actionbar', width:200}
+                ,{field:'field_length', title: '字段长度',minWidth:100}
+//                ,{align: 'center', title:'操作', toolbar: '#actionbar', width:200}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']

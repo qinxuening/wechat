@@ -106,7 +106,8 @@ html {
     bottom: 0;
     left: 0;
     right: 0;
-    overflow: hidden
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 .layui-layout-admin .layui-header .layui-nav-img {
@@ -2245,10 +2246,6 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     color: #fff!important;
 }
 
-.layui-form-checked span, .layui-form-checked:hover span {
-    background-color: #506def;
-}
-
 .layui-form-checked i, .layui-form-checked:hover i {
     color: #506def;
     border: 1px solid #506def;
@@ -2294,13 +2291,20 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .purple_flag{
     background-position: -141px -262px !important;
 }
-.yty-checkbox li.checkbox-active{
-    border: 1px solid #506def;
-}
+
 .layui-form-checkbox{
     padding-right: 0px;
 }
 
 .main-table .layui-table-view{
     margin-left: 20px; !important;
+}
+
+.layui-form-checkbox span,.layui-form-checkbox span:hover{
+    background-color: #ababab;
+}
+
+
+.layui-form-checked span, .layui-form-checked:hover span {
+    background-color: #506def;
 }
