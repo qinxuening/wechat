@@ -7,6 +7,7 @@
             <div class="layui-card main-table">
                 <div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>订单查询</div>
                 <div class="layui-card-body">
+                    <!--表格查询条件begin-->
                     <table class="layui-table table-border" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
                         <colgroup>
                             <col class="yty_tdright" width="6%">
@@ -100,7 +101,11 @@
                         </tr>
                         </tbody>
                     </table>
+                    <!--表格查询条件end-->
+
+                    <!--订单查询结果begin-->
                     <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>
+                    <!--订单查询结果end-->
                 </div>
             </div>
         </div>
@@ -108,18 +113,20 @@
 </div>
 </div>
 
-            <!--头工具栏-->
+<!--头工具栏-->
 <!--{:build_toolbar('toolbar',['refresh'])}-->
 
+<!--表格头部按钮begin-->
 <script type="text/html" id="toolbar">
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-search"></i> 查询</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-envelope-o"></i> 发送短信</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-envelope-o"></i> 按查询结果发送</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-plus-square"></i> 添加订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-plus"></i> 添加订单</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-file-text-o"></i> 导入苏宁订单</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-file-o"></i> 导出苏宁订单</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-hand-o-down"></i> 拉黑</a>
 </script>
+<!--表格头部按钮end-->
 
 <!--头工具栏-->
 
@@ -134,7 +141,7 @@
 </script>
 
 <!--操作-->
-{:build_actionbar('actionbar',['edit','test', 'del'])}
+<!--{:build_actionbar('actionbar',['edit','test', 'del'])}-->
 {/block}
 
 {block name="script"}
