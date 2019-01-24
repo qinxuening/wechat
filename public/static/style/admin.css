@@ -2300,3 +2300,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .layui-form-checkbox{
     padding-right: 0px;
 }
+
+.main-table .layui-table-view{
+    margin-left: 20px; !important;
+}

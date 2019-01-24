@@ -4,12 +4,12 @@
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12 webody">
-            <div class="layui-card">
+            <div class="layui-card main-table">
                 <div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>订单查询</div>
                 <div class="layui-card-body">
-                    <table class="layui-table table-border" lay-skin="line" lay-size="sm">
+                    <table class="layui-table table-border" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
                         <colgroup>
-                            <col class="yty_tdleft" width="8%">
+                            <col class="yty_tdright" width="6%">
                             <col class="yty_tdright">
                         </colgroup>
                         <tbody>
@@ -100,7 +100,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
+                    <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>
                 </div>
             </div>
         </div>
@@ -109,7 +109,18 @@
 </div>
 
             <!--头工具栏-->
-{:build_toolbar('toolbar',['refresh', 'add', 'del'])}
+<!--{:build_toolbar('toolbar',['refresh'])}-->
+
+<script type="text/html" id="toolbar">
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-search"></i> 查询</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-envelope-o"></i> 发送短信</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-envelope-o"></i> 按查询结果发送</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-plus-square"></i> 添加订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-file-text-o"></i> 导入苏宁订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-file-o"></i> 导出苏宁订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-hand-o-down"></i> 拉黑</a>
+</script>
+
 <!--头工具栏-->
 
 <!--状态-->
@@ -156,7 +167,7 @@
             ,defaultToolbar: ['filter']
             ,toolbar : '#toolbar'
             ,cols: [[
-                {type:'checkbox', fixed: 'left'}
+//                {type:'checkbox', fixed: 'left'}
                 ,{field:'id', title: 'ID', sort: true}
                 ,{field:'title', title: '概要'}
                 ,{field:'status', title: '状态',templet: '#switchStatus', sort: true}
