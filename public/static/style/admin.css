@@ -2251,7 +2251,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     border: 1px solid #506def;
     display: none;
 }
-.yty-form .layui-unselect i{
+.yty-form .layui-form-checkbox i{
     display: none;
 }
 .yty-checkbox{
@@ -2302,6 +2302,10 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .yty-form .layui-form-checkbox span,.yty-form .layui-form-checkbox span:hover{
     background-color: #ababab;
+}
+
+.yty-form .layui-form-checkbox{
+    border-radius: 2px;
 }
 
 .yty-form .layui-form-checked span,.yty-form .layui-form-checked:hover span {
