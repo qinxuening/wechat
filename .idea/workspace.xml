@@ -38,18 +38,18 @@
       <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="2314" column="10" lean-forward="false" selection-start-line="2314" selection-start-column="10" selection-end-line="2314" selection-end-column="10" />
+            <state relative-caret-position="1177">
+              <caret line="2309" column="23" lean-forward="true" selection-start-line="2309" selection-start-column="23" selection-end-line="2309" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="67" />
+            <state relative-caret-position="-104">
+              <caret line="318" column="49" lean-forward="true" selection-start-line="318" selection-start-column="7" selection-end-line="318" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <marker date="1548489667998" expanded="true" signature="12847:12862" ph="..." />
@@ -59,21 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="we.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2296">
-              <caret line="141" column="12" lean-forward="false" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="get_area_id.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="get_area_id.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/get_area_id.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2886">
-              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="378">
+              <caret line="116" column="82" lean-forward="false" selection-start-line="116" selection-start-column="82" selection-end-line="116" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -173,8 +163,8 @@
       <find>checkbox-active</find>
       <find>active</find>
       <find>yty-checkbox</find>
-      <find>input-margin</find>
       <find>main-table</find>
+      <find>input-margin</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -186,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/admin/view/auth/rule/view.html" />
         <option value="$PROJECT_DIR$/application/admin/view/dashboard/console2.html" />
         <option value="$PROJECT_DIR$/application/admin/view/dashboard/detail2.html" />
         <option value="$PROJECT_DIR$/public/static/style/green-header.css" />
@@ -237,6 +226,7 @@
         <option value="$PROJECT_DIR$/application/admin/view/order/getAreaId.html" />
         <option value="$PROJECT_DIR$/application/admin/view/order/index.html" />
         <option value="$PROJECT_DIR$/public/static/style/admin.css" />
+        <option value="$PROJECT_DIR$/application/admin/view/order/get_area_id.html" />
       </list>
     </option>
   </component>
@@ -255,8 +245,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1452" />
-    <option name="height" value="860" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -518,13 +509,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="439045000" />
+    <option name="totallyTimeSpent" value="446114000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1452" height="860" extended-state="1" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.109618105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14598025" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -918,31 +909,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/order/get_area_id.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2886">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="2314" column="10" lean-forward="false" selection-start-line="2314" selection-start-column="10" selection-end-line="2314" selection-end-column="10" />
+        <state relative-caret-position="1177">
+          <caret line="2309" column="23" lean-forward="true" selection-start-line="2309" selection-start-column="23" selection-end-line="2309" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="67" />
+        <state relative-caret-position="-104">
+          <caret line="318" column="49" lean-forward="true" selection-start-line="318" selection-start-column="7" selection-end-line="318" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <marker date="1548489667998" expanded="true" signature="12847:12862" ph="..." />
             <marker date="1548489667998" expanded="true" signature="13024:13039" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/order/get_area_id.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="116" column="82" lean-forward="false" selection-start-line="116" selection-start-column="82" selection-end-line="116" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>

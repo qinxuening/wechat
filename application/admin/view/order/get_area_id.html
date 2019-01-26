@@ -5,92 +5,121 @@
 <!--<div class="layui-row layui-col-space30">-->
 <div class="body-form">
     <form class="layui-form" action="{:url('admin/push/edit','',false)}" tableid="tableReload" method="post" lay-filter="rule" id="formRule">
-        <table class="layui-table" lay-skin="line" lay-size="sm">
+        <table class="layui-table yty-form" lay-skin="line" lay-size="sm">
             <colgroup>
                 <col class="tdleft" width="30%">
-                <col class="tdright" width="50%">
-                <col>
+                <col class="tdright">
             </colgroup>
             <tbody>
             <tr>
-                <td class="tdleft">概要</td>
+                <td class="tdleft">华东地区:</td>
                 <td class="tdright">
-                    <input type="text" name="title"  data-rule="required" placeholder="概要" value="{$list['title']}" autocomplete="off" class="layui-input">
-                    <input type="hidden" name="id" value="{$list['id']}">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="上海" class="">
+                        <input type="checkbox" name="cityId[]" title="浙江" class="">
+                        <input type="checkbox" name="cityId[]" title="江苏" class="">
+                        <input type="checkbox" name="cityId[]" title="安徽" class="">
+                        <input type="checkbox" name="cityId[]" title="江西" class="">
+                    </div>
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">状态</td>
+                <td class="tdleft">华北地区:</td>
                 <td class="tdright">
-                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="北京" class="">
+                        <input type="checkbox" name="cityId[]" title="天津" class="">
+                        <input type="checkbox" name="cityId[]" title="安徽" class="">
+                        <input type="checkbox" name="cityId[]" title="山西" class="">
+                        <input type="checkbox" name="cityId[]" title="山东" class="">
+                        <input type="checkbox" name="cityId[]" title="内蒙古" class="">
+                    </div>
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">是否定时推送</td>
+                <td class="tdleft">华中地区:</td>
                 <td class="tdright">
-                    <input type="checkbox" name="is_time_push" lay-skin="switch" lay-text="是|否"  {$list['is_time_push'] == 1? 'checked' : ''}>
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="湖北" class="">
+                        <input type="checkbox" name="cityId[]" title="湖南" class="">
+                        <input type="checkbox" name="cityId[]" title="河南" class="">
+                    </div>
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">定时时间</td>
+                <td class="tdleft">华南地区:</td>
                 <td class="tdright">
-                    <input type="text" name="time_push" id="time_push"  data-rule="required" placeholder="定时推送时间" value="{$list['time_push']}" autocomplete="off" class="layui-input">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="广东" class="">
+                        <input type="checkbox" name="cityId[]" title="广西" class="">
+                        <input type="checkbox" name="cityId[]" title="福建" class="">
+                        <input type="checkbox" name="cityId[]" title="海南" class="">
+                    </div>
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">创建时间</td>
+                <td class="tdleft">东北地区:</td>
                 <td class="tdright">
-                    <input type="text" name="createtime" id="createtime"  data-rule="required" placeholder="创建时间" value="{$list['createtime']}" autocomplete="off" class="layui-input">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="辽宁" class="">
+                        <input type="checkbox" name="cityId[]" title="吉林" class="">
+                        <input type="checkbox" name="cityId[]" title="黑龙江" class="">
+                    </div>
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">推送内容</td>
+                <td class="tdleft">西北地区:</td>
                 <td class="tdright">
-                    <textarea placeholder="推送内容" class="layui-textarea" name="content">{$list['content']}</textarea>
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="陕西" class="">
+                        <input type="checkbox" name="cityId[]" title="新疆" class="">
+                        <input type="checkbox" name="cityId[]" title="青海" class="">
+                        <input type="checkbox" name="cityId[]" title="宁夏" class="">
+                        <input type="checkbox" name="cityId[]" title="甘肃" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">西南地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="四川" class="">
+                        <input type="checkbox" name="cityId[]" title="云南" class="">
+                        <input type="checkbox" name="cityId[]" title="贵州" class="">
+                        <input type="checkbox" name="cityId[]" title="西藏" class="">
+                        <input type="checkbox" name="cityId[]" title="重庆" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">港澳台地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="香港" class="">
+                        <input type="checkbox" name="cityId[]" title="澳门" class="">
+                        <input type="checkbox" name="cityId[]" title="台湾" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">海外地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="海外" class="">
+                    </div>
                 </td>
             </tr>
             </tbody>
         </table>
-
-        <!--<div class="layui-form-item">-->
-        <!--<label class="layui-form-label">概要</label>-->
-        <!--<div class="layui-input-block">-->
-        <!--<input type="text" name="title"  data-rule="required" placeholder="概要" value="{$list['title']}" autocomplete="off" class="layui-input">-->
-        <!--<input type="hidden" name="id" value="{$list['id']}">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="layui-form-item">-->
-        <!--<label class="layui-form-label">状态</label>-->
-        <!--<div class="layui-input-block">-->
-        <!--<input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="layui-form-item">-->
-        <!--<label class="layui-form-label">是否定时推送</label>-->
-        <!--<div class="layui-input-block">-->
-        <!--<input type="checkbox" name="is_time_push" lay-skin="switch" lay-text="是|否"  {$list['is_time_push'] == 1? 'checked' : ''}>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="layui-form-item">-->
-        <!--&lt;!&ndash;<div class="layui-inline">&ndash;&gt;-->
-        <!--<label class="layui-form-label">定时时间</label>-->
-        <!--<div class="layui-input-block">-->
-        <!--<input type="text" name="time_push" id="time_push"  data-rule="required" placeholder="定时推送时间" value="{$list['time_push']}" autocomplete="off" class="layui-input">-->
-        <!--</div>-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--</div>-->
-        <!--<div class="layui-form-item">-->
-        <!--<label class="layui-form-label">创建时间</label>-->
-        <!--<div class="layui-input-block">-->
-        <!--<input type="text" name="createtime" id="createtime"  data-rule="required" placeholder="创建时间" value="{$list['createtime']}" autocomplete="off" class="layui-input">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="layui-form-item layui-form-text">-->
-        <!--<label class="layui-form-label">推送内容</label>-->
-        <!--<div class="layui-input-block">-->
-        <!--<textarea placeholder="推送内容" class="layui-textarea" name="content">{$list['content']}</textarea>-->
-        <!--</div>-->
-        <!--</div>-->
 
         <div class="layui-form-item footer-form">
             <div class="footer">
@@ -137,6 +166,20 @@
          * 绑定表单事件
          */
         formValidator.api.bindevent($("form#formRule"));
+
+        $("body").on("click",".layui-form-checkbox",function (){
+            var p = $(this).prev();
+            if(p.attr('class') == 'all' && p.attr('class') !== 'undefined') {
+                console.log(123456);
+                if($(this).hasClass('layui-form-checked')) {
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').prop('checked', true);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
+                } else {
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').prop('checked', false);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
+                }
+            }
+        });
     });
 </script>
 </body>

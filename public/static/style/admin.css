@@ -2306,6 +2306,8 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .yty-form .layui-form-checked span,.yty-form .layui-form-checked:hover span {
     background-color: #506def;
+    /*border: 1px solid #506def;*/
+    border-radius: 2px;
 }
 
 .yty-form li.checkbox-active{
