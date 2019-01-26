@@ -8,7 +8,7 @@
                 <div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>订单查询</div>
                 <div class="layui-card-body">
                     <!--表格查询条件begin-->
-                    <table class="layui-table table-border" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
+                    <table class="layui-table table-border yty-form" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
                         <colgroup>
                             <col class="yty_tdright" width="100px">
                             <col class="yty_tdright">
@@ -167,8 +167,7 @@
 
         table.render({
             elem: '#rule'
-//            ,height: 500
-//            ,url:"{:url('Admin/fields/index')}"
+            ,url:""
             ,id : 'tableReload'
             ,skin:'line'
             ,limit:10
@@ -314,14 +313,26 @@
          * */
         weTable.api.bindevent();
 
-        $("body").on("click","ul li",function () {
+        /**
+         * 屏蔽标旗点击切换
+         */
+        $("body").on("click","ul li",function (){
             if($(this).hasClass('checkbox-active')) {
                 $(this).removeClass('checkbox-active');
             } else {
                 $(this).addClass('checkbox-active')
             }
-
         });
+
+        /**
+         * 省份点击
+         */
+        $("body").on("click","#areaId",function (){
+            console.log(123);
+            var url = "{:url('admin/order/getAreaId','',false)}";
+            we.api.open(url,'选择所在省份');
+        })
+
     });
 
 </script>

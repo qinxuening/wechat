@@ -16,7 +16,14 @@ class Order extends baseAdmin{
         return $this->view->fetch();
     }
     
-
+    /**
+     * 获取省份
+     */
+    public function getAreaId() {
+         return $this->view->fetch();
+    }
+    
+    
     
 
     

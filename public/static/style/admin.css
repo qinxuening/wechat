@@ -2233,7 +2233,7 @@ tr>td.yty_tdright {
 
 tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdright .layui-textarea, tr>td.yty_tdright>.xm-select {
     width: 150px;
-    background: #f5f7bb;
+    /*background: #f5f7bb;*/
     display: inline;
 }
 
@@ -2246,12 +2246,12 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     color: #fff!important;
 }
 
-.layui-form-checked i, .layui-form-checked:hover i {
+.yty-form .layui-form-checked i,.yty-form .layui-form-checked:hover i {
     color: #506def;
     border: 1px solid #506def;
     display: none;
 }
-.layui-unselect i{
+.yty-form .layui-unselect i{
     display: none;
 }
 .yty-checkbox{
@@ -2292,22 +2292,26 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     background-position: -141px -262px !important;
 }
 
-.layui-form-checkbox{
+.yty-form .layui-form-checkbox{
     padding-right: 0px;
 }
 
-.main-table .layui-table-view{
+.main-table .yty-form .layui-table-view{
     margin-left: 20px; !important;
 }
 
-.layui-form-checkbox span,.layui-form-checkbox span:hover{
+.yty-form .layui-form-checkbox span,.yty-form .layui-form-checkbox span:hover{
     background-color: #ababab;
 }
 
-.layui-form-checked span, .layui-form-checked:hover span {
+.yty-form .layui-form-checked span,.yty-form .layui-form-checked:hover span {
     background-color: #506def;
 }
 
-li.checkbox-active{
+.yty-form li.checkbox-active{
     border: 1px solid #506def !important;
+}
+
+.yty-form .layui-disabled{
+    background-color: #e7e7e7;
 }

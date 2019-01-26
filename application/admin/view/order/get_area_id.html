@@ -1,0 +1,144 @@
+{extend name="layout/default2" /}
+{block name="content"}
+<body>
+<!--<div class="layui-container lay_top">-->
+<!--<div class="layui-row layui-col-space30">-->
+<div class="body-form">
+    <form class="layui-form" action="{:url('admin/push/edit','',false)}" tableid="tableReload" method="post" lay-filter="rule" id="formRule">
+        <table class="layui-table" lay-skin="line" lay-size="sm">
+            <colgroup>
+                <col class="tdleft" width="30%">
+                <col class="tdright" width="50%">
+                <col>
+            </colgroup>
+            <tbody>
+            <tr>
+                <td class="tdleft">概要</td>
+                <td class="tdright">
+                    <input type="text" name="title"  data-rule="required" placeholder="概要" value="{$list['title']}" autocomplete="off" class="layui-input">
+                    <input type="hidden" name="id" value="{$list['id']}">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">状态</td>
+                <td class="tdright">
+                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">是否定时推送</td>
+                <td class="tdright">
+                    <input type="checkbox" name="is_time_push" lay-skin="switch" lay-text="是|否"  {$list['is_time_push'] == 1? 'checked' : ''}>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">定时时间</td>
+                <td class="tdright">
+                    <input type="text" name="time_push" id="time_push"  data-rule="required" placeholder="定时推送时间" value="{$list['time_push']}" autocomplete="off" class="layui-input">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">创建时间</td>
+                <td class="tdright">
+                    <input type="text" name="createtime" id="createtime"  data-rule="required" placeholder="创建时间" value="{$list['createtime']}" autocomplete="off" class="layui-input">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">推送内容</td>
+                <td class="tdright">
+                    <textarea placeholder="推送内容" class="layui-textarea" name="content">{$list['content']}</textarea>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">概要</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<input type="text" name="title"  data-rule="required" placeholder="概要" value="{$list['title']}" autocomplete="off" class="layui-input">-->
+        <!--<input type="hidden" name="id" value="{$list['id']}">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">状态</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁止"  {$list['status'] == 1? 'checked' : ''}>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">是否定时推送</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<input type="checkbox" name="is_time_push" lay-skin="switch" lay-text="是|否"  {$list['is_time_push'] == 1? 'checked' : ''}>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-form-item">-->
+        <!--&lt;!&ndash;<div class="layui-inline">&ndash;&gt;-->
+        <!--<label class="layui-form-label">定时时间</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<input type="text" name="time_push" id="time_push"  data-rule="required" placeholder="定时推送时间" value="{$list['time_push']}" autocomplete="off" class="layui-input">-->
+        <!--</div>-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+        <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">创建时间</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<input type="text" name="createtime" id="createtime"  data-rule="required" placeholder="创建时间" value="{$list['createtime']}" autocomplete="off" class="layui-input">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-form-item layui-form-text">-->
+        <!--<label class="layui-form-label">推送内容</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<textarea placeholder="推送内容" class="layui-textarea" name="content">{$list['content']}</textarea>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <div class="layui-form-item footer-form">
+            <div class="footer">
+                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+                <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--</div>-->
+<!--</div>-->
+{/block}
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we',
+        version:true,
+    }).extend({
+        index: 'lib/index' //主入口模块
+//        ,validator:'jquery.validator'
+//        ,zhCN:'zh-CN'
+    }).link(
+        '__STATIC__/style/jquery.validator.css?v={$msectime}'
+    ).link(
+        " __STATIC__/style/jquery.validator.css?v={$msectime}"
+    ).use(['jquery','index','laydate','formValidator'], function(){
+        var admin = layui.admin
+            ,$ = layui.$
+            ,table = layui.table
+            ,laydate = layui.laydate
+            ,formValidator = layui.formValidator;
+
+        laydate.render({
+            elem: '#time_push' //指定元素
+            ,type: 'datetime'
+        });
+
+        laydate.render({
+            elem: '#createtime' //指定元素
+            ,type: 'datetime'
+        });
+        /**
+         * 绑定表单事件
+         */
+        formValidator.api.bindevent($("form#formRule"));
+    });
+</script>
+</body>
+</html>
+{/block}
