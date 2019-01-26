@@ -79,11 +79,11 @@
                             <td class="yty_tdleft">评价状态 :</td>
                             <td class="yty_tdright">
                                 <div class="layui-form">
-                                    <input type="checkbox" name="evaluationStatus[ALL]" title="全部" checked="">
-                                    <input type="checkbox" name="evaluationStatus[BUYER_RATE]" title="买家已评">
-                                    <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" title="买家未评">
-                                    <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" title="买家未评，卖家已评">
-                                    <input type="checkbox" name="evaluationStatus[BUYER_RATE_SELLER_NOT]" title="双发已评">
+                                    <input type="checkbox" name="evaluationStatus[ALL]" value="ALL" title="全部"  lay-filter="check_all">
+                                    <input type="checkbox" name="evaluationStatus[BUYER_RATE]" value="BUYER_RATE" title="买家已评"  lay-filter="check_all">
+                                    <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评"  lay-filter="check_all">
+                                    <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评，卖家已评"  lay-filter="check_all">
+                                    <input type="checkbox" name="evaluationStatus[BUYER_RATE_SELLER_NOT]" value="BUYER_RATE_SELLER_NOT" title="双发已评"  lay-filter="check_all">
                                 </div>
                             </td>
                         </tr>
@@ -92,10 +92,10 @@
                             <td class="yty_tdleft">订单类型 :</td>
                             <td class="yty_tdright">
                                 <div class="layui-form">
-                                    <input type="checkbox" name="orderType[ALL]" title="全部" checked="">
-                                    <input type="checkbox" name="orderType[FRONT_NOPAID_FINAL_NOPAID]" title="定金未定">
-                                    <input type="checkbox" name="orderType[FRONT_PAID_FINAL_NOPAID]" title="已付定金，未付尾款">
-                                    <input type="checkbox" name="orderType[FRONT_PAID_FINAL_PAID]" title="定金已付，尾款已付">
+                                    <input type="checkbox" name="orderType[ALL]" value="ALL" title="全部" lay-filter="check_all">
+                                    <input type="checkbox" name="orderType[FRONT_NOPAID_FINAL_NOPAID]" value="FRONT_NOPAID_FINAL_NOPAID" title="定金未定" lay-filter="check_all">
+                                    <input type="checkbox" name="orderType[FRONT_PAID_FINAL_NOPAID]" value="FRONT_PAID_FINAL_NOPAID" title="已付定金，未付尾款" lay-filter="check_all">
+                                    <input type="checkbox" name="orderType[FRONT_PAID_FINAL_PAID]" value="FRONT_PAID_FINAL_PAID" title="定金已付，尾款已付" lay-filter="check_all">
                                 </div>
                             </td>
                         </tr>
@@ -333,6 +333,22 @@
             we.api.open(url,'选择所在省份');
         })
 
+        /**
+         * 评价状态、订单类型全选、非全选状态
+         */
+        form.on('checkbox(check_all)', function(data){
+            var value = data.value;
+            //console.log(value);
+            if(value == 'ALL') {
+                if (data.elem.checked) {
+                    $(this).parent(".layui-form").children('input').prop('checked', true);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
+                } else {
+                    $(this).parent(".layui-form").children('input').prop('checked', false);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
+                }
+            }
+        });
     });
 
 </script>
