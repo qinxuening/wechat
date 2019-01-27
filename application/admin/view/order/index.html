@@ -263,13 +263,13 @@
 
 <!--表格头部按钮begin-->
 <script type="text/html" id="toolbar">
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="Search"><i class="fa fa-search"></i> 查询</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-envelope-o"></i> 发送短信</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-envelope-o"></i> 按查询结果发送</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-plus"></i> 添加订单</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-file-text-o"></i> 导入苏宁订单</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-file-o"></i> 导出苏宁订单</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-hand-o-down"></i> 拉黑</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="sendSms"><i class="fa fa-envelope-o"></i> 发送短信</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="sendSearchResultSms"><i class="fa fa-envelope-o"></i> 按查询结果发送</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="addOrder"><i class="fa fa-plus"></i> 添加订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="importOrder"><i class="fa fa-file-text-o"></i> 导入苏宁订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="exportOrder"><i class="fa fa-file-o"></i> 导出苏宁订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="toBlack"><i class="fa fa-hand-o-down"></i> 拉黑</a>
 </script>
 <!--表格头部按钮end-->
 
@@ -540,17 +540,52 @@
 
         table.on('toolbar(rule)', function(obj){
             var layEvent = obj.event;
-            console.log(obj);
-            if(layEvent == 'Search') {
-                layui.table.reload("tableReload"
-                    ,{
-                        page: {
-                            curr: 1
+            var checkStatus = table.checkStatus(obj.config.id);
+            //console.log(checkStatus.data);
+            //获取订单id
+            var order_id = [];
+            $.each(checkStatus.data,function (index, value) {
+                order_id.push(value.id);
+            })
+            //console.log(order_id);
+            switch(layEvent){
+                //查询
+                case 'search':
+                    layui.table.reload("tableReload"
+                        ,{
+                            page: {
+                                curr: 1
+                            }
+                            ,where: [],
                         }
-                        ,where: [],
-                    }
-                );
+                    );
+                    break;
+                //发送短信
+                case 'sendSms':
+                    we.tips("<li><a href='#'>发送短信！！！！！</a></li>");
+                    break;
+                //按查询结果发送
+                case 'sendSearchResultSms':
+                    we.tips("<li><a href='#'>按查询结果发送！！！！！</a></li>");
+                    break;
+                //添加订单
+                case 'addOrder':
+                    we.tips("<li><a href='#'>添加订单！！！！！</a></li>");
+                    break;
+                //导入苏宁订单
+                case 'importOrder':
+                    we.tips("<li><a href='#'>导入苏宁订单！！！！！</a></li>");
+                    break;
+                //导出苏宁订单
+                case 'exportOrder':
+                    we.tips("<li><a href='#'>导出苏宁订单！！！！！</a></li>");
+                    break;
+                //拉黑
+                case 'toBlack':
+                    we.tips("<li><a href='#'>拉黑！！！！！</a></li>");
+                    break;
             }
+
         });
 
     });
