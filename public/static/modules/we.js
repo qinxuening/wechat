@@ -192,10 +192,10 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     // skin: 'layui-layer-we',
                     zIndex: layer.zIndex,
                     success: function (layero, index) {
-                        var that = this;
+                        // layer.closeAll();
                     },
                     end: function () {
-                        // location.reload();
+                        // layer.closeAll();
                     }
                 }, options ? options : {});
                 return layer.open(options);
