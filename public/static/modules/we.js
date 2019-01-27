@@ -138,7 +138,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 $.ajax(options);
             },
 
-            //打开一个弹出窗口
+            //打开一个弹出iframe窗口
             open: function (url, title, options,windowSize) {
                 title = title ? title : "";
                 if (windowSize != null) {
@@ -155,6 +155,37 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                     moveOut: true,
                     area: area,
                     content: [url],
+                    // content: [url,'no'],
+                    scrollbar:false,
+                    moveOut:false,
+                    // skin: 'layui-layer-we',
+                    zIndex: layer.zIndex,
+                    success: function (layero, index) {
+                        var that = this;
+                    },
+                    end: function () {
+                        // location.reload();
+                    }
+                }, options ? options : {});
+                return layer.open(options);
+            },
+
+            open_current_page_layer:function (id, title, options,windowSize) {
+                title = title ? title : "";
+                if (windowSize != null) {
+                    var area = windowSize;
+                } else {
+                    var area = ['80%' , '80%'];
+                }
+                options = $.extend({
+                    type: 1,
+                    title: title,
+                    shadeClose: true,
+                    // shade: 0.6,
+                    maxmin:false,
+                    moveOut: true,
+                    area: area,
+                    content: id,
                     // content: [url,'no'],
                     scrollbar:false,
                     moveOut:false,

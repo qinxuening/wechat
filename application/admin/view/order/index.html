@@ -1,5 +1,144 @@
 {extend name="layout/default" /}
 {block name="content"}
+<!--获取省份弹出begin-->
+<div class="body-form layer-form" style="display: none">
+    <form class="layui-form" action="" tableid="tableReload" method="post" lay-filter="rule" id="formRule">
+        <table class="layui-table yty-form" lay-skin="line" lay-size="sm">
+            <colgroup>
+                <col class="tdleft" width="30%">
+                <col class="tdright">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td class="tdleft"></td>
+                <td colspan="2" class="tdright">
+                    <div class="layui-form">
+                        <input type="radio" name="check_all" lay-filter="check_all" class="check_all" value="all" title="全选">
+                        <input type="radio" name="check_all" lay-filter="check_all" value="none" class="check_all_none" title="反选">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">华东地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="上海" class="">
+                        <input type="checkbox" name="cityId[]" title="浙江" class="">
+                        <input type="checkbox" name="cityId[]" title="江苏" class="">
+                        <input type="checkbox" name="cityId[]" title="安徽" class="">
+                        <input type="checkbox" name="cityId[]" title="江西" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">华北地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="北京" class="">
+                        <input type="checkbox" name="cityId[]" title="天津" class="">
+                        <input type="checkbox" name="cityId[]" title="安徽" class="">
+                        <input type="checkbox" name="cityId[]" title="山西" class="">
+                        <input type="checkbox" name="cityId[]" title="山东" class="">
+                        <input type="checkbox" name="cityId[]" title="内蒙古" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">华中地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="湖北" class="">
+                        <input type="checkbox" name="cityId[]" title="湖南" class="">
+                        <input type="checkbox" name="cityId[]" title="河南" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">华南地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="广东" class="">
+                        <input type="checkbox" name="cityId[]" title="广西" class="">
+                        <input type="checkbox" name="cityId[]" title="福建" class="">
+                        <input type="checkbox" name="cityId[]" title="海南" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">东北地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="辽宁" class="">
+                        <input type="checkbox" name="cityId[]" title="吉林" class="">
+                        <input type="checkbox" name="cityId[]" title="黑龙江" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">西北地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="陕西" class="">
+                        <input type="checkbox" name="cityId[]" title="新疆" class="">
+                        <input type="checkbox" name="cityId[]" title="青海" class="">
+                        <input type="checkbox" name="cityId[]" title="宁夏" class="">
+                        <input type="checkbox" name="cityId[]" title="甘肃" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">西南地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="四川" class="">
+                        <input type="checkbox" name="cityId[]" title="云南" class="">
+                        <input type="checkbox" name="cityId[]" title="贵州" class="">
+                        <input type="checkbox" name="cityId[]" title="西藏" class="">
+                        <input type="checkbox" name="cityId[]" title="重庆" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">港澳台地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="香港" class="">
+                        <input type="checkbox" name="cityId[]" title="澳门" class="">
+                        <input type="checkbox" name="cityId[]" title="台湾" class="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">海外地区:</td>
+                <td class="tdright">
+                    <div class="layui-form">
+                        <input type="checkbox" name="cityId[]" title="全部" class="all">
+                        <input type="checkbox" name="cityId[]" title="海外" class="">
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="layui-form-item layer-form-footer">
+            <div class="footer-inner">
+                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+                <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--获取省份弹出end-->
+
+
 <body>
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">
@@ -329,16 +468,16 @@
          */
         $("body").on("click","#areaId",function (){
             console.log(123);
-            var url = "{:url('admin/order/getAreaId','',false)}";
-            we.api.open(url,'选择所在省份');
+            //var url = "{:url('admin/order/getAreaId','',false)}";
+            //we.api.open(url,'选择所在省份');
+            we.api.open_current_page_layer($(".layer-form"),'选择所在省份','',['80%' , '*']);
         })
 
         /**
          * 评价状态、订单类型全选、非全选状态
          */
-        form.on('checkbox(check_all)', function(data){
+        /*form.on('checkbox(check_all)', function(data){
             var value = data.value;
-            //console.log(value);
             if(value == 'ALL') {
                 if (data.elem.checked) {
                     $(this).parent(".layui-form").children('input').prop('checked', true);
@@ -348,7 +487,8 @@
                     $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
                 }
             }
-        });
+        });*/
+
     });
 
 </script>

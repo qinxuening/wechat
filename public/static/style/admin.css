@@ -2321,3 +2321,39 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .yty-form .layui-disabled{
     background-color: #e7e7e7;
 }
+
+.footer-inner{
+    /*position: fixed;*/
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    /*line-height: 60px;*/
+    background-color: #ffffff;
+    z-index: 1;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-left: 0px;
+}
+
+.layer-form-footer{
+    margin-top: 20px;
+    /*border-top: 1px solid #d8d8d8;*/
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    /*line-height: 40px;*/
+    /*padding: 5px 20px 5px 40px;*/
+    background-color: #ffffff;
+    /*background: #eaeaea url(./images/btn_wrap.png) repeat-x;*/
+    z-index: 1;
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-bottom: 0px;
+}
+
+.layer-form-footer .layui-btn, .footer-inner .layui-btn{
+    padding: 0px 40px;
+}
