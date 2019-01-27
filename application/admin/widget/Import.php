@@ -15,4 +15,9 @@ class Import extends baseAdmin{
         $this->assign('import_url', $import_url);
         return $this->fetch('widget/import');
     }
+    
+    public function importSuning($import_url = false){
+        $this->assign('import_url', $import_url);
+        return $this->fetch('widget/importSuning');
+    }
 }
