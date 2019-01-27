@@ -147,100 +147,105 @@
                 <div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>订单查询</div>
                 <div class="layui-card-body">
                     <!--表格查询条件begin-->
-                    <table class="layui-table table-border yty-form" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
-                        <colgroup>
-                            <col class="yty_tdright" width="100px">
-                            <col class="yty_tdright">
-                        </colgroup>
-                        <tbody>
-                        <tr>
-                            <td class="yty_tdleft">订单编号 :</td>
-                            <td class="yty_tdright">
-                                <input type="text" name="tid" id="tid" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                手机号码：
-                                <input type="mobile" name="mobile" id="mobile" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                省份：
-                                <input type="text" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                商品ID：
-                                <input type="text" name="itemId" id="itemId" placeholder="" autocomplete="off" class="layui-input input-margin">
-                            </td>
-                        </tr>
+                    <div class="searchbody">
+                        <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="rule">
+                            <table class="layui-table table-border yty-form" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
+                                <colgroup>
+                                    <col class="yty_tdright" width="100px">
+                                    <col class="yty_tdright">
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td class="yty_tdleft">订单编号 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="text" name="tid" id="tid" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        手机号码：
+                                        <input type="mobile" name="mobile" id="mobile" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        省份：
+                                        <input type="text" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        商品ID：
+                                        <input type="text" name="itemId" id="itemId" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                    </td>
+                                </tr>
 
-                        <tr>
-                            <td class="yty_tdleft">下单时间 :</td>
-                            <td class="yty_tdright">
-                                <input type="text" name="time_start" id="time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="time_end" id="time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
-                                订单金额：
-                                <input type="text" name="payment_start" id="payment_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="payment_end" id="payment_end" placeholder="" autocomplete="off" class="layui-input" lay-key="2">
-                            </td>
-                        </tr>
+                                <tr>
+                                    <td class="yty_tdleft">下单时间 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="text" name="time_start" id="time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="time_end" id="time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
+                                        订单金额：
+                                        <input type="text" name="payment_start" id="payment_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="payment_end" id="payment_end" placeholder="" autocomplete="off" class="layui-input" lay-key="2">
+                                    </td>
+                                </tr>
 
-                        <tr>
-                            <td class="yty_tdleft">订单来源 :</td>
-                            <td class="yty_tdright">
-                                <div class="layui-form">
-                                    <input type="checkbox" name="tradefrom[pc]" title="pc端" checked="">
-                                    <input type="checkbox" name="like[wap]" title="移动端" checked="">
-                                    <input type="checkbox" name="like[ht]" title="历史订单">
-                                </div>
-                            </td>
-                        </tr>
+                                <tr>
+                                    <td class="yty_tdleft">订单来源 :</td>
+                                    <td class="yty_tdright">
+                                        <div class="layui-form">
+                                            <input type="checkbox" name="tradefrom[pc]" title="pc端" checked="">
+                                            <input type="checkbox" name="like[wap]" title="移动端">
+                                            <input type="checkbox" name="like[ht]" title="历史订单">
+                                        </div>
+                                    </td>
+                                </tr>
 
-                        <tr>
-                            <td class="yty_tdleft">屏蔽标旗 :</td>
-                            <td class="yty_tdright">
-                                <ul class="yty-checkbox">
-                                    <li class="checkbox-active"><span class="red_flag"></span></li>
-                                    <li><span class="yellow_flag"></span></li>
-                                    <li><span class="cyan_flag"></span></li>
-                                    <li><span class="blue_flag"></span></li>
-                                    <li><span class="purple_flag"></span></li>
-                                </ul>
-                            </td>
-                        </tr>
+                                <tr>
+                                    <td class="yty_tdleft">屏蔽标旗 :</td>
+                                    <td class="yty_tdright">
+                                        <ul class="yty-checkbox">
+                                            <li class="checkbox-active"><span class="red_flag"></span></li>
+                                            <li><span class="yellow_flag"></span></li>
+                                            <li><span class="cyan_flag"></span></li>
+                                            <li><span class="blue_flag"></span></li>
+                                            <li><span class="purple_flag"></span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
 
-                        <tr>
-                            <td class="yty_tdleft">订单状态 :</td>
-                            <td class="yty_tdright">
-                                <div class="layui-form">
-                                    <input type="checkbox" name="orderStatus[WAIT_BUYER_PAY]" title="下单未付款" checked="">
-                                    <input type="checkbox" name="orderStatus[WAIT_SELLER_SEND_GOODS]" title="付款未发货">
-                                    <input type="checkbox" name="orderStatus[WAIT_BUYER_CONFIRM_GOODS]" title="已发货">
-                                    <input type="checkbox" name="orderStatus[SELLER_CONSIGNED_PART]" title="部分发货">
-                                    <input type="checkbox" name="orderStatus[TRADE_FINISHED]" title="交易成功">
-                                    <input type="checkbox" name="orderStatus[TRADE_CLOSED]" title="已退款">
-                                    <input type="checkbox" name="orderStatus[TRADE_CLOSED_BY_TAOBAO]" title="交易关闭">
-                                </div>
-                            </td>
-                        </tr>
+                                <tr>
+                                    <td class="yty_tdleft">订单状态 :</td>
+                                    <td class="yty_tdright">
+                                        <div class="layui-form">
+                                            <input type="checkbox" name="orderStatus[ALL]" value="ALL" title="全部"  lay-filter="check_all">
+                                            <input type="checkbox" name="orderStatus[WAIT_BUYER_PAY]" title="下单未付款">
+                                            <input type="checkbox" name="orderStatus[WAIT_SELLER_SEND_GOODS]" title="付款未发货">
+                                            <input type="checkbox" name="orderStatus[WAIT_BUYER_CONFIRM_GOODS]" title="已发货">
+                                            <input type="checkbox" name="orderStatus[SELLER_CONSIGNED_PART]" title="部分发货">
+                                            <input type="checkbox" name="orderStatus[TRADE_FINISHED]" title="交易成功">
+                                            <input type="checkbox" name="orderStatus[TRADE_CLOSED]" title="已退款">
+                                            <input type="checkbox" name="orderStatus[TRADE_CLOSED_BY_TAOBAO]" title="交易关闭">
+                                        </div>
+                                    </td>
+                                </tr>
 
-                        <tr>
-                            <td class="yty_tdleft">评价状态 :</td>
-                            <td class="yty_tdright">
-                                <div class="layui-form">
-                                    <input type="checkbox" name="evaluationStatus[ALL]" value="ALL" title="全部"  lay-filter="check_all">
-                                    <input type="checkbox" name="evaluationStatus[BUYER_RATE]" value="BUYER_RATE" title="买家已评"  lay-filter="check_all">
-                                    <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评"  lay-filter="check_all">
-                                    <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评，卖家已评"  lay-filter="check_all">
-                                    <input type="checkbox" name="evaluationStatus[BUYER_RATE_SELLER_NOT]" value="BUYER_RATE_SELLER_NOT" title="双发已评"  lay-filter="check_all">
-                                </div>
-                            </td>
-                        </tr>
+                                <tr>
+                                    <td class="yty_tdleft">评价状态 :</td>
+                                    <td class="yty_tdright">
+                                        <div class="layui-form">
+                                            <input type="checkbox" name="evaluationStatus[ALL]" value="ALL" title="全部"  lay-filter="check_all">
+                                            <input type="checkbox" name="evaluationStatus[BUYER_RATE]" value="BUYER_RATE" title="买家已评"  lay-filter="check_all">
+                                            <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评"  lay-filter="check_all">
+                                            <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评，卖家已评"  lay-filter="check_all">
+                                            <input type="checkbox" name="evaluationStatus[BUYER_RATE_SELLER_NOT]" value="BUYER_RATE_SELLER_NOT" title="双发已评"  lay-filter="check_all">
+                                        </div>
+                                    </td>
+                                </tr>
 
-                        <tr>
-                            <td class="yty_tdleft">订单类型 :</td>
-                            <td class="yty_tdright">
-                                <div class="layui-form">
-                                    <input type="checkbox" name="orderType[ALL]" value="ALL" title="全部" lay-filter="check_all">
-                                    <input type="checkbox" name="orderType[FRONT_NOPAID_FINAL_NOPAID]" value="FRONT_NOPAID_FINAL_NOPAID" title="定金未定" lay-filter="check_all">
-                                    <input type="checkbox" name="orderType[FRONT_PAID_FINAL_NOPAID]" value="FRONT_PAID_FINAL_NOPAID" title="已付定金，未付尾款" lay-filter="check_all">
-                                    <input type="checkbox" name="orderType[FRONT_PAID_FINAL_PAID]" value="FRONT_PAID_FINAL_PAID" title="定金已付，尾款已付" lay-filter="check_all">
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                                <tr>
+                                    <td class="yty_tdleft">订单类型 :</td>
+                                    <td class="yty_tdright">
+                                        <div class="layui-form">
+                                            <input type="checkbox" name="orderType[ALL]" value="ALL" title="全部" lay-filter="check_all">
+                                            <input type="checkbox" name="orderType[FRONT_NOPAID_FINAL_NOPAID]" value="FRONT_NOPAID_FINAL_NOPAID" title="定金未定" lay-filter="check_all">
+                                            <input type="checkbox" name="orderType[FRONT_PAID_FINAL_NOPAID]" value="FRONT_PAID_FINAL_NOPAID" title="已付定金，未付尾款" lay-filter="check_all">
+                                            <input type="checkbox" name="orderType[FRONT_PAID_FINAL_PAID]" value="FRONT_PAID_FINAL_PAID" title="定金已付，尾款已付" lay-filter="check_all">
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
                     <!--表格查询条件end-->
 
                     <!--订单查询结果begin-->
@@ -258,7 +263,7 @@
 
 <!--表格头部按钮begin-->
 <script type="text/html" id="toolbar">
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-search"></i> 查询</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="Search"><i class="fa fa-search"></i> 查询</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-envelope-o"></i> 发送短信</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-envelope-o"></i> 按查询结果发送</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event=""><i class="fa fa-plus"></i> 添加订单</a>
@@ -292,7 +297,7 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable'], function(){
+    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
@@ -302,21 +307,24 @@
             ,laydate = layui.laydate
             ,form = layui.form
             ,upload = layui.upload
+            ,formSearch = layui.formSearch
             ,weTable = layui.weTable
             ,toastr = layui.toastr;
 
-        table.render({
+        var tableCommon = {
             elem: '#rule'
-            ,url:""
+//            ,url:""
+            ,url:"{:url('Admin/user.user/index')}"
             ,id : 'tableReload'
             ,skin:'line'
             ,limit:10
             ,defaultToolbar: ['filter']
             ,toolbar : '#toolbar'
-            ,height:400
+            ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
+            ,search: false
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
-                ,{field:'buyer_name', title: '买家昵称', sort: true,minWidth:150}
+                ,{field:'buyer_name', title: '买家昵称', sort: true,minWidth:150,searchList:{type:'input',operate:'LIKE'}}
                 ,{field:'consignee_name', title: '收货人姓名',minWidth:150}
                 ,{field:'order_status', title: '订单状态',templet: '#switchStatus', sort: true,minWidth:100}
                 ,{field:'order_source', title: '订单来源', sort: true,minWidth:150}
@@ -338,7 +346,11 @@
                     layer.closeAll();
                 }
             }
-        });
+        };
+
+        table.render(tableCommon); //数据表格初始化
+//        formSearch.api.init(tableCommon); //搜索初始化
+
         var demoListView = $('#demoList');
         var uploadListIns = upload.render({
             elem: '#upload'
@@ -421,20 +433,15 @@
             layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
         });
 
-//        function format_bytes(size, delimiter)
-//        {
-//            var units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
-//            for (var i = 0; size >= 1024 && i < 6; i++)
-//                size /= 1024;
-//            return size.toFixed(2) + delimiter + units[i];
-//        }
-
         /**
          * 表格初始化
          */
         weTable.api.init({
             table : "rule",
+            is_display:true,
             tableid : "tableReload",
+            form:$("form#formRule"),
+            tableCommon: tableCommon,
             extend : {
                 "add_url": "{:url('admin/push/add','',false)}",
                 "edit_url": "{:url('admin/push/edit','',false)}/ids/",
@@ -442,16 +449,11 @@
             }
         });
 
-//        table.on('tool('+weTable.defaults.table+')', function(obj){
-//            var data = obj.data;
-//            if(obj.event === 'test'){
-//                console.log('推送测试');
-//            }
-//        });
         /**
          * 绑定监听事件
          * */
-        weTable.api.bindevent();
+//        weTable.api.bindevent();
+        formSearch.api.searchForm($("form#formRule"));
 
         /**
          * 屏蔽标旗点击切换
@@ -472,7 +474,6 @@
             },['80%' , '*']);
             var areaId = [];
             var areaIdCh = []
-
             //选中省份
             $("body").on("click",".submit",function (){
                 $(".body-form input[type=checkbox]").each(function (index,value) {
@@ -485,7 +486,6 @@
                 $("#areaIdH").val(areaId.join(','));
                 layer.closeAll();
             });
-
             //重置
             $("body").on("click",".reset",function (){
                 layer.closeAll();
@@ -535,6 +535,21 @@
                     $(this).parent(".layui-form").children('input').prop('checked', false);
                     $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
                 }
+            }
+        });
+
+        table.on('toolbar(rule)', function(obj){
+            var layEvent = obj.event;
+            console.log(obj);
+            if(layEvent == 'Search') {
+                layui.table.reload("tableReload"
+                    ,{
+                        page: {
+                            curr: 1
+                        }
+                        ,where: [],
+                    }
+                );
             }
         });
 

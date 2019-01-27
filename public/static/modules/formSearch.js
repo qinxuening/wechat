@@ -16,6 +16,7 @@ layui.define(['jquery','laydate','form'], function(exports){
                 var html = '';
                 options = defaults;
                 if(search == true) {
+                    console.log(123);
                     html += '<form class="layui-form" method="post" action="'+defaults.url+'" tableid="tableReload" id="formRule" lay-filter="rule">';
                     html += '<ul class="nav pull-left">';
                     $.each(cols, function (index, value) {

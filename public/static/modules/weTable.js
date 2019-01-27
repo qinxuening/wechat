@@ -76,7 +76,7 @@ layui.define(['jquery','we','toastr','layer'], function(exports){
                //头工具栏事件
                table.on('toolbar('+weTable.defaults.table+')', function(obj){
                    var checkStatus = table.checkStatus(obj.config.id);
-                   // console.log(obj.event);
+                   console.log(weTable.defaults.table);
                    switch(obj.event){
                        case 'refresh':
                            console.log('refresh');
