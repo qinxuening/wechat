@@ -16,7 +16,7 @@ class System extends baseAdmin{
             $type = input('type');
             if($type == 1) {
                 $result = Db::name('config')->where(['key' => 'passwd_complexity'])->update(['value' => $params['strategy']]);
-        
+
                 if(false !== $result) {
                    return json(['code' => 1, 'status' => 'success', 'msg' =>  __('Operation completed')]);
                 } else {
@@ -24,16 +24,16 @@ class System extends baseAdmin{
                 }
             } else {
                 $result1 = Db::name('config')->where(['key' => 'login_captcha'])->update(['value' => $params['login_captcha']]);
-        
+
                 if($params['login_limit'] == 1) {
                     unset($params['login_captcha']);
                     $arr = json_encode($params);
                 } else {
                     $arr = json_encode(['login_limit' => $params['login_limit']]);
                 }
-        
+
                 $result2 = Db::name('config')->where(['key' => 'login_limit'])->update(['value' => $arr]);
-        
+
                 if(false !== $result1 && false !== $result2) {
                      return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
                 } else {
@@ -49,13 +49,13 @@ class System extends baseAdmin{
         $this->view->assign('login_limit', $login_limit);
         return $this->view->fetch();
     }
-    
+
     /**
      * 系统基本信息
      * @return string
      */
     public function base_info() {
-        $version = Db::name()->query('select VERSION() as version');
+        $version = Db::name('')->query('select VERSION() as version');
         $version = $version[0]['version'];
         $info = [
              __('OPERATING_SYSTEM') => PHP_OS,
@@ -71,7 +71,7 @@ class System extends baseAdmin{
         $this->assign('system_info', config('system_info'));
         return $this->view->fetch();
     }
-    
+
     /**
      * 常规设置
      * @return string
@@ -89,10 +89,10 @@ class System extends baseAdmin{
                             return json(['code' => -2, 'status' => 'error', 'msg' => '表单字段'.$k.'不能为空']);
                         }
                     }
-                    
+
                     $config_file = "../config/extra/email.php";
                     $result = set_config($config_file,$data);
-                    
+
                     if($result !== false) {
                         return json(['code' => 1, 'status' => 'success', 'msg' => __('Operation completed')]);
                     } else {
@@ -103,28 +103,28 @@ class System extends baseAdmin{
                     return json(['code' => -1, 'status' => 'error', 'msg' => __('Illegal operation')]);
             }
         }
-        
+
         $this->assign('email_config', config('email'));
         $this->assign('mail_type_list',['SSL'=>'SSL', 'TLS' => 'TLS']);
         $this->assign('send_type_list',['SMTP'=>'SMTP', 'Mail' => 'Mail']);
         return $this->view->fetch();
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

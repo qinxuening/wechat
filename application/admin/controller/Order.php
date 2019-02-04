@@ -12,18 +12,25 @@ class Order extends baseAdmin{
     public function _initialize(){
         parent::_initialize();
     }
-    
+
     public function index() {
         return $this->view->fetch();
     }
-    
+
     /**
      * 获取省份
      */
     public function getAreaId() {
          return $this->view->fetch();
     }
-    
+
+    /**
+     * 下单关怀
+     */
+    public function order_care() {
+        return $this->view->fetch();
+    }
+
     /**
      * 导入数据
      */
@@ -63,34 +70,34 @@ class Order extends baseAdmin{
         }
         return $this->view->fetch();
     }
-    
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -2357,3 +2357,26 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .layer-form-footer .layui-btn, .footer-inner .layui-btn{
     padding: 0px 40px;
 }
+
+.layui-btn-disabled, .layui-btn-disabled:active, .layui-btn-disabled:hover{
+    background-color: #506def !important;
+}
+
+.marginbuttom5{
+    margin-bottom: 5px;
+    width: 100%;
+    height: 5px;
+}
+
+.dashed-td tr>td{
+    border-bottom: 1px dashed #e5e5e5 !important;
+    padding: 10px 10 !important;
+}
+
+.dashed-td tr{
+
+}
+
+.dashed-td .layui-form-radio{
+    margin:auto;
+}

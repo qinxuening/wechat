@@ -357,11 +357,11 @@ if(!function_exists('myLog')) {
             chmod($dir, 0777);
 
         }
-        
+
         if(is_array($str)) {
             $str = json_encode($str);
         }
-        
+
         $file = $dir . date('Ymd') . '.log.txt';
         $fp = fopen($file, 'a+');
 
@@ -398,7 +398,7 @@ if(!function_exists('systemLog')) {
      */
     function systemLog($str) {
         $dir = getcwd(). '/public/systemlogs/';
-        
+
         if(!is_dir($dir)) {
             $flag =  mkdir($dir, 0777, true);
             dump($flag);
@@ -412,7 +412,7 @@ if(!function_exists('systemLog')) {
         if(is_array($str)) {
             $str = json_encode($str);
         }
-        
+
         if (flock($fp, LOCK_EX)) {
             $content = "[" . date('Y-m-d H:i:s') . "]\r\n";
             $content .= $str . "\r\n\r\n";
@@ -439,7 +439,7 @@ if(!function_exists('cliLog')) {
         $file = '/tmp/'. date('Ymd') . '.cli_log.txt';
         $content = "[" . date('Y-m-d H:i:s') . "]";
         system('echo '.$content.">{$file}");
-        system('echo '.$str.">{$file}"); 
+        system('echo '.$str.">{$file}");
     }
 }
 
@@ -518,7 +518,7 @@ function check_sign($data, $expires = 300) {
         myLog('appkey错误!');
         return -2; //appkey错误
     }
-    
+
     if ($data['secret'] != config('secret_key')['SECRET']){
         myLog('通信密钥错误!');
         return -3; //secret通信密钥错误
@@ -526,9 +526,9 @@ function check_sign($data, $expires = 300) {
 
     $params['appkey'] = config('secret_key')['APPKEY'];
     $params['secret'] = config('secret_key')['SECRET'];
-    
+
     $sign = data_auth_sign($params);
-    
+
     if ($sign !== $data['sign']) {
         myLog('签名错误!');
         return -4; //签名错误

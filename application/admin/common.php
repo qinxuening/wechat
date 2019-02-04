@@ -165,7 +165,7 @@ if(!function_exists('build_actionbar')) {
 //         print_r($btns);
         $btns = is_array($btns) ? $btns : explode(',', $btns);
         $index = array_search('delete', $btns); //array_search() 函数在数组中搜索某个键值，并返回对应的键名
-        
+
         if ($index !== FALSE) {
             $btns[$index] = 'del';
         }
@@ -357,7 +357,7 @@ if(!function_exists('localDownFile')){
             if (strpos($_SERVER['HTTP_USER_AGENT'],"Triden") && $name_) {
                 $name = urlencode($name);
             }
-             
+
             $file 	= fopen($url, "r");  //打开文件url
             //         var_dump($file);
             //         echo $url;die();
@@ -416,7 +416,7 @@ if(!function_exists('myLog')) {
 }
 
 
-if(!function_exists(get_space_info)) {
+if(!function_exists('get_space_info')) {
     /**
      * 获取磁盘信息
      * @return array
@@ -430,7 +430,7 @@ if(!function_exists(get_space_info)) {
 }
 
 
-if(!function_exists(space_map)) {
+if(!function_exists('space_map')) {
     /**
      * linux 命令执行返回字符串切割
      * @param unknown $command
@@ -444,7 +444,7 @@ if(!function_exists(space_map)) {
     }
 }
 
-if(!function_exists(set_config)){
+if(!function_exists('set_config')){
     /**
      * 设置配置文件
      * @param unknown $config_file
@@ -497,7 +497,7 @@ if(!function_exists('exportCols')){
     function exportCols() {
         $data = input('post.cols');
         $data = json_decode($data,true)[0];
-        
+
         foreach ($data as $k => $v) {
             if($v['hide'] === true || $v['type'] == 'checkbox' || isset($v['toolbar'])) {
                 unset($data[$k]);
@@ -510,7 +510,7 @@ if(!function_exists('exportCols')){
 }
 
 if(!function_exists('import_excel')) {
-    
+
     //以excel表的自定义的字段保存数据
     function import_excel($filePath, $SheetIndex = 0) {
         $PHPExcel = new PHPExcel();
@@ -523,14 +523,14 @@ if(!function_exists('import_excel')) {
                 return;
             }
         }
-        
+
         $PHPExcel = $PHPReader->load($filePath);  //读取Excel文件
         $currentSheet = $PHPExcel->getSheet($SheetIndex);  //读取excel文件中的第一个工作表
         $allColumn = $currentSheet->getHighestColumn(); //取得最大的列号
         $allRow = $currentSheet->getHighestRow(); //取得一共有多少行
         $array_excel = array();  //声明数组
         $allColumn = PHPExcel_Cell::columnIndexFromString($allColumn);
-        
+
         $array_head = array();
         for ($currentColumn = 0; $currentColumn < $allColumn; $currentColumn++) {
             $val = $currentSheet->getCellByColumnAndRow($currentColumn, 1)->getValue(); //取单元格的值
@@ -539,7 +539,7 @@ if(!function_exists('import_excel')) {
                 $array_head[$column] = str_replace(" ", "", $val);
             }
         }
-        
+
         for ($currentRow = 2; $currentRow <= $allRow; $currentRow++) {
             $val = (string) $currentSheet->getCellByColumnAndRow(0, $currentRow)->getValue();
             if ($val === "")
@@ -551,7 +551,7 @@ if(!function_exists('import_excel')) {
                     // $val = preg_replace("/(\s|\&nbsp\;|　|\xc2\xa0)/","",$val);#/[\s|　]+/
                     $val = htmlentities(trim($val));
 //                     $val = str_replace(" ", "", trim($val));
-                    
+
                     if ($val != '' || $val == 0) {
                         $column = PHPExcel_Cell::stringFromColumnIndex($currentColumn);
                         $temp[$array_head[$column]] = $val;
