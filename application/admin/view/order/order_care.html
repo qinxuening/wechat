@@ -138,6 +138,66 @@
 </div>
 <!--获取省份弹出end-->
 
+<!--短信模版弹出begin-->
+<div class="body-form sms-layer" style="display: none">
+    <div class="layui-form">
+        <div class="layui-card main-table">
+            <div class="layui-card-body main-body">
+                <blockquote class="layui-elem-quote layui-text layui-quote-style">
+                    <p>1. 短信中插入标签或链接时，标签或链接前后需有空格分隔，请勿删除前后空格，否则可能导致无法正常替换和跳转；</p>
+                    <p>2. 短信内容中若含有促销词如:微信、QQ、店庆等,请务必在短信内容末尾添加“退订回N”</p>
+                </blockquote>
+                <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
+                    <colgroup>
+                        <col class="yty_tdleft" width="30%">
+                        <col class="yty_tdright">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <td class="yty_tdleft"><span class="red_color">*</span> 短信签名</td>
+                        <td colspan="2" class="yty_tdright">
+                            【<input type="text" name="sms_name" id="sms_name" value="阿里狗" placeholder="" autocomplete="off" class="layui-input">】
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft"><span class="red_color">*</span> 短信标签</td>
+                        <td class="yty_tdright">
+                            <ul class="ulstyle0">
+                                <li><a href="javascript:void(0);">收货人</a></li>
+                                <li><a href="javascript:void(0);">订单编号</a></li>
+                                <li><a href="javascript:void(0);">买家昵称</a></li>
+                                <li><a href="javascript:void(0);">商品简称</a></li>
+                                <li><a href="javascript:void(0);">商品名称</a></li>
+                            </ul>
+                            <!--<br>-->
+                            <!--<p class="marginbuttom5"></p>-->
+                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea" readonly>注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">短信测试</td>
+                        <td class="yty_tdright">
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="layui-form-item layer-form-footer">
+                    <div class="footer-inner">
+                        <button type="submit" lay-submit="" lay-filter="formRule"
+                                class="layui-btn layui-btn-normal submit layui-btn-sm btn-embossed">{:__('OK')}
+                        </button>
+                        <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">
+                            {:__('Reset')}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--短信模版弹出end-->
 
 <body>
 <div class="layui-fluid">
@@ -310,7 +370,7 @@
                                     <td class="yty_tdright">
                                         <div class="layui-inline layui-form">
                                             <textarea placeholder="请输入内容" class="layui-textarea yty-textarea" readonly>注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
-                                            <a href="javascript:void(0);" class="astyle">修改短信内容</a>
+                                            <a href="javascript:void(0);" class="astyle sms-event">修改短信内容</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -598,10 +658,10 @@
         });
 
         /**
-         * 省份点击
+         * 短信模版
          */
-        $("body").on("click","#areaId",function (){
-            we.api.open_current_page_layer($(".layer-form"),'选择所在省份',{
+        $("body").on("click",".sms-event",function (){
+            we.api.open_current_page_layer($(".sms-layer"),'选择短信模版',{
             },['80%' , '*']);
             var areaId = [];
             var areaIdCh = []
