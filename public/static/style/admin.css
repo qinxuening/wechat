@@ -2370,7 +2370,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .dashed-td tr>td{
     border-bottom: 1px dashed #e5e5e5 !important;
-    padding: 10px 10 !important;
+    padding: 10px 10px !important;
 }
 
 .dashed-td tr{
@@ -2379,4 +2379,12 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .dashed-td .layui-form-radio{
     margin:auto;
+}
+
+.yty-form .layui-form-select,.yty-form .layui-select-title{
+    width: 150px !important;
+}
+
+.layui-btn-primary:hover,.layui-btn-primary:active{
+    border: 1px solid #506def !important;
 }
