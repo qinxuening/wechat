@@ -145,7 +145,7 @@
         <div class="layui-col-md12 webody">
             <div class="layui-card main-table">
                 <div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>下单关怀</div>
-                <div class="layui-card-body">
+                <div class="layui-card-body main-body">
                     <!--表格查询条件begin-->
                     <!--<div class="searchbody">-->
                         <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="rule">
@@ -243,54 +243,94 @@
                                     </td>
                                 </tr>
 
-                                <tr class="yty-form">
-                                    <td class="yty_tdleft"> 订单状态 :</td>
+                                <tr>
+                                    <td class="yty_tdleft"> 过滤设置 :</td>
                                     <td class="yty_tdright">
-                                        <div class="layui-form">
-                                            <input type="checkbox" name="orderStatus[ALL]" value="ALL" title="全部"  lay-filter="check_all">
-                                            <input type="checkbox" name="orderStatus[WAIT_BUYER_PAY]" title="下单未付款">
-                                            <input type="checkbox" name="orderStatus[WAIT_SELLER_SEND_GOODS]" title="付款未发货">
-                                            <input type="checkbox" name="orderStatus[WAIT_BUYER_CONFIRM_GOODS]" title="已发货">
-                                            <input type="checkbox" name="orderStatus[SELLER_CONSIGNED_PART]" title="部分发货">
-                                            <input type="checkbox" name="orderStatus[TRADE_FINISHED]" title="交易成功">
-                                            <input type="checkbox" name="orderStatus[TRADE_CLOSED]" title="已退款">
-                                            <input type="checkbox" name="orderStatus[TRADE_CLOSED_BY_TAOBAO]" title="交易关闭">
+                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        <div class="layui-inline yty-form">
+                                            <span>不发送</span>
+                                            <div class="layui-input-inline">
+                                                <select name="modules" lay-verify="required" lay-search="">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3" selected>3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                            <span>天内有过付款的客户</span>
+                                        </div>
+                                        <br>
+                                        <p class="marginbuttom5"></p>
+
+                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        不发送标旗订单
+                                        <div class="layui-inline yty-form">
+                                        <ul class="yty-checkbox">
+                                            <li class="checkbox-active"><span class="red_flag"></span></li>
+                                            <li><span class="yellow_flag"></span></li>
+                                            <li><span class="cyan_flag"></span></li>
+                                            <li><span class="blue_flag"></span></li>
+                                            <li><span class="purple_flag"></span></li>
+                                        </ul>
+                                        </div>
+                                        <br>
+                                        <p class="marginbuttom5"></p>
+
+                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        不发送订单来源
+                                        <input type="checkbox" name="order_from[pc]" lay-skin="primary"  title="PC端">
+                                        <input type="checkbox" name="order_from[mobile]" lay-skin="primary"  title="移动端">
+                                        <br>
+                                        <p class="marginbuttom5"></p>
+
+                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">当收货地区是
+                                        <input type="text" name="shipping_address" id="shipping_address" placeholder="" autocomplete="off" class="layui-input"> 时,短信不提醒！
+                                        <br>
+                                        <p class="marginbuttom5"></p>
+
+                                        不发送黑名单客户 <a href="javascript:void(0);" class="astyle">设置黑名单</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="yty_tdleft"> 赠送礼品 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        <div class="layui-inline yty-form">
+                                            <span>赠送流量</span>
+                                            <a href="javascript:void(0);" class="astyle">选择流量卡 </a>
+                                            <a href="javascript:void(0);" class="astyle">流量充值 </a>
                                         </div>
                                     </td>
                                 </tr>
 
                                 <tr class="yty-form">
-                                    <td class="yty_tdleft">评价状态 :</td>
+                                    <td class="yty_tdleft"> 短信内容 :</td>
                                     <td class="yty_tdright">
-                                        <div class="layui-form">
-                                            <input type="checkbox" name="evaluationStatus[ALL]" value="ALL" title="全部"  lay-filter="check_all">
-                                            <input type="checkbox" name="evaluationStatus[BUYER_RATE]" value="BUYER_RATE" title="买家已评"  lay-filter="check_all">
-                                            <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评"  lay-filter="check_all">
-                                            <input type="checkbox" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评，卖家已评"  lay-filter="check_all">
-                                            <input type="checkbox" name="evaluationStatus[BUYER_RATE_SELLER_NOT]" value="BUYER_RATE_SELLER_NOT" title="双发已评"  lay-filter="check_all">
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr class="yty-form">
-                                    <td class="yty_tdleft">订单类型 :</td>
-                                    <td class="yty_tdright">
-                                        <div class="layui-form">
-                                            <input type="checkbox" name="orderType[ALL]" value="ALL" title="全部" lay-filter="check_all">
-                                            <input type="checkbox" name="orderType[FRONT_NOPAID_FINAL_NOPAID]" value="FRONT_NOPAID_FINAL_NOPAID" title="定金未定" lay-filter="check_all">
-                                            <input type="checkbox" name="orderType[FRONT_PAID_FINAL_NOPAID]" value="FRONT_PAID_FINAL_NOPAID" title="已付定金，未付尾款" lay-filter="check_all">
-                                            <input type="checkbox" name="orderType[FRONT_PAID_FINAL_PAID]" value="FRONT_PAID_FINAL_PAID" title="定金已付，尾款已付" lay-filter="check_all">
+                                        <div class="layui-inline layui-form">
+                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea" readonly>注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
+                                            <a href="javascript:void(0);" class="astyle">修改短信内容</a>
                                         </div>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
+
+                            <div class="layui-form-item footer-form">
+                                <div class="footer footer-common">
+                                    <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+                                    <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>
+                                    <a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed go-back">返回</div></a>
+                                    <!--onclick="window.history.go(-1)"-->
+                                </div>
+                            </div>
                         </form>
                     <!--</div>-->
                     <!--表格查询条件end-->
 
                     <!--订单查询结果begin-->
-                    <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>
+                    <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
                     <!--订单查询结果end-->
                 </div>
             </div>
