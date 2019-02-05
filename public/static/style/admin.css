@@ -2411,27 +2411,56 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     margin:5px auto !important;
 }
 
-.ulstyle0 {
-    float: left;
+.ulstyle0,.ulstyle1{
     display: inline-block;
 }
 
 
 .ulstyle0  li{
     float: left;
-    /*width: 80px;*/
     margin-right: 5px;
 }
 
-.ulstyle0  li a{
+.ulstyle0 li a,.ulstyle1 li a{
     color: #506def;
 }
 
+.ulstyle1{
+    margin-left: 50px;
+}
 
+.ulstyle1  li{
+    float: right;
+    margin-left: 5px;
+}
 
+.sms-phone{
+    float: right;
+    margin-left: 20px;
+    background: url(./images/phone.png) no-repeat;
+    width: 198px;
+    height: 387px;
+    margin-right: 55px;
+    position: relative;
+}
 
+.phone-container{
+    margin-top: 68px;
+    padding: 0 12px 0;
+    height: 252px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
-
+.smg-content{
+    color: #fff;
+    font-size: 12px;
+    padding: 8px;
+    background: #28a3ef;
+    border-radius: 10px;
+    margin: 15px 0px 15px 15px;
+    word-break: break-all;
+}
 
 
 
