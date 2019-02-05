@@ -71,7 +71,13 @@ class Order extends baseAdmin{
         return $this->view->fetch();
     }
 
-
+    /**
+     * 短信测试发送记录
+     * @return string
+     */
+    public function sms_record() {
+        return $this->view->fetch();
+    }
 
 
 

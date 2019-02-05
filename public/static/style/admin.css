@@ -1482,9 +1482,9 @@ body .layui-layer-we .layui-layer-btn a {
 }
 
 body .layui-layer-we .layui-layer-btn .layui-layer-btn1,.layui-layer-btn .layui-layer-btn1 {
-    background: #009688;
+    background: #506def;
     color:#ffffff;
-    border-color: #009688 !important;
+    border-color: #506def !important;
 }
 
 .lay_top {
@@ -1554,8 +1554,8 @@ body .layui-layer-we .layui-layer-btn .layui-layer-btn1 {
 }
 
 body .layui-layer-we .layui-layer-btn0 ,.layui-layer-btn .layui-layer-btn0{
-    background-color: #009688 !important;
-    border-color: #009688 !important;
+    background-color: #506def !important;
+    border-color: #506def !important;
 }
 
 body .layui-layer-we .layui-layer-setwin {
@@ -2455,7 +2455,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .smg-content{
     color: #fff;
     font-size: 12px;
-    padding: 8px;
+    padding:0px 8px;
     background: #28a3ef;
     border-radius: 10px;
     margin: 15px 0px 15px 15px;

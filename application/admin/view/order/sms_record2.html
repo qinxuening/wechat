@@ -1,0 +1,94 @@
+{extend name="layout/default2" /}
+{block name="content"}
+<body>
+<!--<div class="layui-container lay_top">-->
+<!--<div class="layui-row layui-col-space30">-->
+<div class="body-form">
+    <form class="layui-form" action="" tableid="tableReload" method="post" lay-filter="rule" id="formRule">
+        <table class="layui-table yty-form" lay-skin="line" lay-size="sm">
+
+        </table>
+
+        <!--<div class="layui-form-item footer-form">-->
+            <!--<div class="footer">-->
+                <!--<button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>-->
+                <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    </form>
+</div>
+<!--</div>-->
+<!--</div>-->
+{/block}
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we',
+        version:true,
+    }).extend({
+        index: 'lib/index' //主入口模块
+//        ,validator:'jquery.validator'
+//        ,zhCN:'zh-CN'
+    }).link(
+        '__STATIC__/style/jquery.validator.css?v={$msectime}'
+    ).link(
+        " __STATIC__/style/jquery.validator.css?v={$msectime}"
+    ).use(['jquery','index','laydate','form','formValidator'], function(){
+        var admin = layui.admin
+            ,$ = layui.$
+            ,form = layui.form
+            ,table = layui.table
+            ,laydate = layui.laydate
+            ,formValidator = layui.formValidator;
+
+        laydate.render({
+            elem: '#time_push' //指定元素
+            ,type: 'datetime'
+        });
+
+        laydate.render({
+            elem: '#createtime' //指定元素
+            ,type: 'datetime'
+        });
+        /**
+         * 绑定表单事件
+         */
+//        formValidator.api.bindevent($("form#formRule"));
+
+        /**
+         * 地区点击选中事件
+         */
+        $("body").on("click",".layui-form-checkbox",function (){
+            var p = $(this).prev();
+            if(p.attr('class') == 'all' && p.attr('class') !== 'undefined') {
+                if($(this).hasClass('layui-form-checked')) {
+                    $(this).parent(".layui-form").children('input').prop('checked', true);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
+                } else {
+                    $(this).parent(".layui-form").children('input').prop('checked', false);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
+                }
+            }
+        });
+
+        /**
+         *省份全选、反选
+         */
+        form.on('radio(check_all)', function(data){
+            var value = data.value;
+            if(value == 'all') {
+                $("input[type=checkbox]").prop('checked', true);
+                $(".layui-form-checkbox").addClass('layui-form-checked');
+            } else {
+                $("input[type=checkbox]").prop('checked', false);
+                $(".layui-form-checkbox").removeClass('layui-form-checked');
+            }
+        });
+
+
+    });
+</script>
+</body>
+</html>
+{/block}

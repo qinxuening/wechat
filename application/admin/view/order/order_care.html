@@ -188,7 +188,6 @@
                                 <td class="yty_tdright">
                                     <input type="text" style="font-size: 12px;width: 300px;" name="test_phone" placeholder="请输入短信测试手机号，多个手机号用逗号(,)隔开" id="test_phone" value="" placeholder="" autocomplete="off" class="layui-input">
                                     <button type="button" name="" id="" autocomplete="off" class="layui-btn layui-btn-sm  layui-btn-primary">短信测试</button>
-                                    <a href="javascript:void(0);" class="astyle">短信测试记录</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -392,6 +391,7 @@
                                         <div class="layui-inline layui-form">
                                             <textarea placeholder="请输入内容" class="layui-textarea yty-textarea" readonly>注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
                                             <a href="javascript:void(0);" class="astyle sms-event">修改短信内容</a>
+                                            <a href="javascript:void(0);" class="astyle sms_record">短信测试记录</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -703,6 +703,15 @@
                 layer.closeAll();
             });
         })
+
+        /**
+         * sms_record短信测试发送记录
+         * */
+        $("body").on("click",".sms_record",function (){
+            var url = "{:url('admin/order/sms_record')}"
+            we.api.open(url,'短信测试发送记录');
+        })
+
 
         /**
          * 评价状态、订单类型全选、非全选状态
