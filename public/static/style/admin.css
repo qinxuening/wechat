@@ -1859,7 +1859,7 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     line-height: 75px;
     width: 330px;
     overflow: hidden;
-    background: #5FB878;
+    background: #506def;
     padding: 10px;
 }
 
@@ -2392,6 +2392,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .astyle,.astyle:hover{
     margin-left: 15px;
     color: #506def;
+    cursor: pointer;
 }
 
 .yty-textarea{
@@ -2462,6 +2463,9 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     word-break: break-all;
 }
 
-
+.tips-icon{
+    font-size: 18px !important;
+    color: #506def;
+}
 
 

@@ -179,7 +179,9 @@
                                     <!--<br>-->
                                     <!--<p class="marginbuttom5"></p>-->
                                     <textarea placeholder="请输入内容" class="layui-textarea yty-textarea">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
-                                    <p style="font-size:12px">已输入：<span class="red_color">68</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 计费规则(重要)</p>
+                                    <p style="font-size:12px">已输入：<span class="red_color">68</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-msg" title-msg="1、单条70个字,超出70个字将按照67个字每条计算<br>
+2、一个汉字,数字,字母,空格都算一个字<br>
+3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
                                     <p style="font-size:12px">提示：<span class="red_color">标签和链接前后需有空格分隔，请勿删除前后空格！</span></p>
                                 </td>
                             </tr>
@@ -291,6 +293,8 @@
                                         午休时间 <input type="text" name="day_hour_start" id="siesta_hour_start" placeholder="" autocomplete="off" class="layui-input"> 时 至
                                         <input type="text" name="day_hour_end" id="siesta_hour_end" placeholder="" autocomplete="off" class="layui-input">
                                         不发送
+                                        <i class="fa fa-question-circle tips-icon" title-icon="为避免午休时间内打扰客户休息，可选择午休时间通知短信自动顺延发送，勾选则顺延发送。"></i>
+                                        <!--为避免午休时间内打扰客户休息，可选择午休时间通知短信自动顺延发送，勾选则顺延发送。-->
                                     </td>
                                 </tr>
 
@@ -758,6 +762,25 @@
                 }
             }
         });
+
+        /**
+         * tips-icon 弹出信息、销毁信息
+         */
+        $("body").on("mouseenter",".tips-icon",function (){
+            var title = $(this).attr('title-icon');
+            index = layer.tips(title,this, {tips:[1,"#506def"],time:0})
+        })
+        $("body").on("mouseleave",".tips-icon",function (){
+            layer.close(index);
+        })
+
+        /**
+         * tips-msg 弹出信息
+         */
+        $("body").on("click",".tips-msg",function (){
+            var title = $(this).attr('title-msg');
+            we.tips("<li><a href='#'>"+title+"</a></li>");
+        })
 
         table.on('toolbar(rule)', function(obj){
             var layEvent = obj.event;
