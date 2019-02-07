@@ -165,16 +165,16 @@
                                 <td class="yty_tdleft"><span class="red_color">*</span> 短信标签</td>
                                 <td class="yty_tdright sms_label">
                                     <ul class="ulstyle0">
-                                        <li><a href="javascript:void(0);">收货人</a></li>
-                                        <li><a href="javascript:void(0);">订单编号</a></li>
-                                        <li><a href="javascript:void(0);">买家昵称</a></li>
-                                        <li><a href="javascript:void(0);">商品简称</a></li>
+                                        <li><a href="javascript:void(0);" id="buyer">收货人</a></li>
+                                        <li><a href="javascript:void(0);" id="order_id">订单编号</a></li>
+                                        <li><a href="javascript:void(0);" id="seller_nick_name">买家昵称</a></li>
+                                        <li><a href="javascript:void(0);" id="product_name">商品简称</a></li>
                                         <li><a href="javascript:void(0);">商品名称</a></li>
                                     </ul>
 
                                     <ul class="ulstyle1">
-                                        <li><a href="javascript:void(0);">#短链#</a></li>
-                                        <li><a href="javascript:void(0);">#短信模板#</a></li>
+                                        <li><a href="javascript:void(0);" id="short_href">#短链#</a></li>
+                                        <li><a href="javascript:void(0);" id="sms_module">#短信模板#</a></li>
                                     </ul>
                                     <!--<br>-->
                                     <!--<p class="marginbuttom5"></p>-->
@@ -606,9 +606,23 @@
          */
         $("body").on("click",".sms_label ul li",function (){
             console.log($(this).text());
+            var label_id = $(this).children().attr('id');
             var content = "{" +$(this).text()+ "}";
-            insertText(document.getElementById("sms-content"),content)
-
+            if(typeof label_id !== 'undefined'){
+                console.log(label_id);
+                var title = '';
+                if(label_id == 'order_id'){
+                    title = '{订单编号} 实际替换后长度约为16个字，实际扣费以发出字数为准，您是否确定添加？';
+                }
+                layer.confirm(title,{
+                    title:'温馨提示',area: ['400px','200px']
+                }, function(index){
+                    insertText(document.getElementById("sms-content"),content)
+                    layer.close(index);
+                });
+            } else {
+                insertText(document.getElementById("sms-content"),content)
+            }
         });
 
         /**
@@ -651,6 +665,7 @@
                 obj.selectionStart = obj.selectionEnd = len;
             }
         }
+
 
 
     });
