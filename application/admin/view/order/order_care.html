@@ -163,7 +163,7 @@
                             </tr>
                             <tr>
                                 <td class="yty_tdleft"><span class="red_color">*</span> 短信标签</td>
-                                <td class="yty_tdright">
+                                <td class="yty_tdright sms_label">
                                     <ul class="ulstyle0">
                                         <li><a href="javascript:void(0);">收货人</a></li>
                                         <li><a href="javascript:void(0);">订单编号</a></li>
@@ -178,7 +178,7 @@
                                     </ul>
                                     <!--<br>-->
                                     <!--<p class="marginbuttom5"></p>-->
-                                    <textarea placeholder="请输入内容" class="layui-textarea yty-textarea">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
+                                    <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
                                     <p class="font12">已输入：<span class="red_color">68</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
 2、一个汉字,数字,字母,空格都算一个字<br>
 3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
@@ -771,7 +771,7 @@
          */
         $("body").on("mouseenter",".tips-icon",function (){
             var title = $(this).attr('title-icon');
-            console.log(title)
+            // console.log(title)
             index = layer.tips(title,this, {tips:[1,"#506def"],time:0,area: '400px',zIndex:1000000000})
         })
         $("body").on("mouseleave",".tips-icon",function (){
@@ -785,6 +785,48 @@
             var title = $(this).attr('title-msg');
             we.tips("<li><a href='#'>"+title+"</a></li>");
         })*/
+
+
+        /**
+         * 短信标签设置
+         */
+        $("body").on("click",".sms_label ul li",function (){
+            console.log($(this).text());
+            var content = "{" +$(this).text()+ "}";
+            insertText(document.getElementById("sms-content"),content)
+
+        });
+
+        function insertText(obj,str) {
+            // obj.focus();
+            if (document.selection) {
+                var sel = document.selection.createRange();
+                sel.text = str;
+            } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+                var startPos = obj.selectionStart,
+                    endPos = obj.selectionEnd,
+                    cursorPos = startPos,
+                    tmpStr = obj.value;
+                obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+                cursorPos += str.length;
+                obj.selectionStart = obj.selectionEnd = cursorPos;
+            } else {
+                obj.value += str;
+                console.log(obj.value)
+            }
+        }
+        function moveEnd(obj){
+            obj.focus();
+            var len = obj.value.length;
+            if (document.selection) {
+                var sel = obj.createTextRange();
+                sel.moveStart('character',len);
+                sel.collapse();
+                sel.select();
+            } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
+                obj.selectionStart = obj.selectionEnd = len;
+            }
+        }
 
         table.on('toolbar(rule)', function(obj){
             var layEvent = obj.event;

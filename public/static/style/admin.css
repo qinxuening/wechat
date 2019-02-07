@@ -1857,11 +1857,11 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     float: left;
     min-height: 75px;
     line-height: 75px;
-    width: 600px;
+    width: 330px;
     overflow: hidden;
     background: #506def;
     padding: 10px;
-    position: relative;
+    /*position: relative;*/
 }
 
 .layer_notice a {

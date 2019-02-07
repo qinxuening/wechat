@@ -243,12 +243,12 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
-    
+
     'worker' => [
         'register_port' => 1238,
         'gateway_port' => 8282,
     ],
-    
+
     'fields_strict'  => false,
 
     'DATA_BACKUP_PATH'       => '../database/'
