@@ -144,7 +144,7 @@
         <div class="layui-card main-table">
             <div class="layui-card-body main-body">
                 <blockquote class="layui-elem-quote layui-text layui-quote-style">
-                    <p>1. 短信中插入标签或链接时，标签或链接前后需有空格分隔，请勿删除前后空格，否则可能导致无法正常替换和跳转；</p>
+                    <p>1. 短信中插入标签或链接时，<span class="red_color">标签或链接前后需有空格分隔</span>，请勿删除前后空格，否则可能导致无法正常替换和跳转；</p>
                     <p>2. 短信内容中若含有促销词如:微信、QQ、店庆等,请务必在短信内容末尾添加“退订回N”</p>
                 </blockquote>
                 <div class="layui-row">
@@ -179,10 +179,13 @@
                                     <!--<br>-->
                                     <!--<p class="marginbuttom5"></p>-->
                                     <textarea placeholder="请输入内容" class="layui-textarea yty-textarea">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
-                                    <p style="font-size:12px">已输入：<span class="red_color">68</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-msg" title-msg="1、单条70个字,超出70个字将按照67个字每条计算<br>
+                                    <p class="font12">已输入：<span class="red_color">68</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
 2、一个汉字,数字,字母,空格都算一个字<br>
 3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
-                                    <p style="font-size:12px">提示：<span class="red_color">标签和链接前后需有空格分隔，请勿删除前后空格！</span></p>
+                                    <p class="font12">1、单条70个字,超出70个字将按照67个字每条计算<br></p>
+                                    <p class="font12">2、一个汉字,数字,字母,空格都算一个字<br></p>
+                                    <p class="font12">3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！</p>
+                                    <p class="font12">提示：<span class="red_color">标签和链接前后需有空格分隔，请勿删除前后空格！</span></p>
                                 </td>
                             </tr>
                             <tr>
@@ -768,7 +771,8 @@
          */
         $("body").on("mouseenter",".tips-icon",function (){
             var title = $(this).attr('title-icon');
-            index = layer.tips(title,this, {tips:[1,"#506def"],time:0})
+            console.log(title)
+            index = layer.tips(title,this, {tips:[1,"#506def"],time:0,area: '400px',zIndex:1000000000})
         })
         $("body").on("mouseleave",".tips-icon",function (){
             layer.close(index);
@@ -777,10 +781,10 @@
         /**
          * tips-msg 弹出信息
          */
-        $("body").on("click",".tips-msg",function (){
+        /*$("body").on("click",".tips-msg",function (){
             var title = $(this).attr('title-msg');
             we.tips("<li><a href='#'>"+title+"</a></li>");
-        })
+        })*/
 
         table.on('toolbar(rule)', function(obj){
             var layEvent = obj.event;

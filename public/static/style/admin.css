@@ -1857,10 +1857,11 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     float: left;
     min-height: 75px;
     line-height: 75px;
-    width: 330px;
+    width: 600px;
     overflow: hidden;
     background: #506def;
     padding: 10px;
+    position: relative;
 }
 
 .layer_notice a {
@@ -2468,4 +2469,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     color: #506def;
 }
 
-
+.font12{
+    font-size: 12px;
+    text-indent: 20px;
+}
