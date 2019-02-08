@@ -1,7 +1,7 @@
 {extend name="layout/default" /}
 {block name="content"}
-<!--获取省份弹出begin-->
-<div class="body-form sms-module-layer" style="display: none">
+<!--短信模版弹出begin-->
+<div class="body-form sms-module-layer auto-height-table" style="display: none">
     <div class="layui-form">
         <div class="" lay-filter="component-tabs-brief">
             <ul class="tabpage" id="tabs">
@@ -21,9 +21,9 @@
         </div>
     </div>
 </div>
-<!--获取省份弹出end-->
+<!--短信模版弹出end-->
 
-<!--短信模版弹出begin-->
+<!--修改短信内容弹出begin-->
 <div class="body-form sms-layer" style="display: none">
     <div class="layui-form">
         <div class="layui-card main-table">
@@ -107,7 +107,7 @@
         </div>
     </div>
 </div>
-<!--短信模版弹出end-->
+<!--修改短信内容弹出end-->
 
 <body>
 <div class="layui-fluid">
@@ -340,7 +340,13 @@
 </script>
 
 <!--操作-->
-{:build_actionbar('actionbar',['edit','test', 'del'])}
+<!--{:build_actionbar('actionbar',['edit','test', 'del'])}-->
+<script type="text/html" id="actionbar">
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_module">使用</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del_sms_module">删除</a>
+</script>
+
+
 {/block}
 
 {block name="script"}
