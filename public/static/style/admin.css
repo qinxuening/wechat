@@ -2484,7 +2484,9 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 }
 
 
-
+.auto-height-table .layui-table-view{
+    margin: 0px !important;
+}
 
 
 
