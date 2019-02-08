@@ -1,137 +1,22 @@
 {extend name="layout/default" /}
 {block name="content"}
 <!--获取省份弹出begin-->
-<div class="body-form layer-form" style="display: none">
+<div class="body-form sms-module-layer" style="display: none">
     <div class="layui-form">
-        <table class="layui-table yty-form" lay-skin="line" lay-size="sm">
-            <colgroup>
-                <col class="tdleft" width="30%">
-                <col class="tdright">
-            </colgroup>
-            <tbody>
-            <tr>
-                <td class="tdleft"></td>
-                <td colspan="2" class="tdright">
-                    <div class="layui-form">
-                        <input type="radio" name="check_all" lay-filter="check_all" class="check_all" value="all" title="全选">
-                        <input type="radio" name="check_all" lay-filter="check_all" value="none" class="check_all_none" title="反选">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">华东地区:</td>
-                <td class="tdright">
-                    <div class="layui-form">
-                        <input type="checkbox" name="cityId[]"  title="全部" class="all">
-                        <input type="checkbox" name="cityId[]" lay-filter="cityId" value="1" title="上海" class="">
-                        <input type="checkbox" name="cityId[]" lay-filter="cityId" value="2" title="浙江" class="">
-                        <input type="checkbox" name="cityId[]" lay-filter="cityId" value="3" title="江苏" class="">
-                        <input type="checkbox" name="cityId[]" lay-filter="cityId" value="4" title="安徽" class="">
-                        <input type="checkbox" name="cityId[]" lay-filter="cityId" value="5" title="江西" class="">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">华北地区:</td>
-                <td class="tdright">
-                    <div class="layui-form">
-                        <input type="checkbox" name="cityId[]"  title="全部" class="all">
-                        <input type="checkbox" name="cityId[]" value="6" lay-filter="cityId" title="北京" class="">
-                        <input type="checkbox" name="cityId[]" value="7" lay-filter="cityId" title="天津" class="">
-                        <input type="checkbox" name="cityId[]" value="8" lay-filter="cityId" title="安徽" class="">
-                        <input type="checkbox" name="cityId[]" value="9" lay-filter="cityId" title="山西" class="">
-                        <input type="checkbox" name="cityId[]" value="10" lay-filter="cityId" title="山东" class="">
-                        <input type="checkbox" name="cityId[]" value="11" lay-filter="cityId" title="内蒙古" class="">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">华中地区:</td>
-                <td class="tdright">
-                    <div class="layui-form">
-                        <input type="checkbox" name="cityId[]"  title="全部" class="all">
-                        <input type="checkbox" name="cityId[]" value="12" lay-filter="cityId" title="湖北" class="">
-                        <input type="checkbox" name="cityId[]" value="13" lay-filter="cityId" title="湖南" class="">
-                        <input type="checkbox" name="cityId[]" value="14" lay-filter="cityId" title="河南" class="">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">华南地区:</td>
-                <td class="tdright">
-                    <div class="layui-form">
-                        <input type="checkbox" name="cityId[]" title="全部" class="all">
-                        <input type="checkbox" name="cityId[]" value="16" lay-filter="cityId" title="广东" class="">
-                        <input type="checkbox" name="cityId[]" value="17" lay-filter="cityId" title="广西" class="">
-                        <input type="checkbox" name="cityId[]" value="18" lay-filter="cityId" title="福建" class="">
-                        <input type="checkbox" name="cityId[]" value="19" lay-filter="cityId" title="海南" class="">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">东北地区:</td>
-                <td class="tdright">
-                    <div class="layui-form">
-                        <input type="checkbox" name="cityId[]"  title="全部" class="all">
-                        <input type="checkbox" name="cityId[]" value="20" lay-filter="cityId" title="辽宁" class="">
-                        <input type="checkbox" name="cityId[]" value="21" lay-filter="cityId" title="吉林" class="">
-                        <input type="checkbox" name="cityId[]" value="22" lay-filter="cityId" title="黑龙江" class="">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">西北地区:</td>
-                <td class="tdright">
-                    <div class="layui-form">
-                        <input type="checkbox" name="cityId[]" title="全部" class="all">
-                        <input type="checkbox" name="cityId[]" value="23" lay-filter="cityId" title="陕西" class="">
-                        <input type="checkbox" name="cityId[]" value="24" lay-filter="cityId" title="新疆" class="">
-                        <input type="checkbox" name="cityId[]" value="25" lay-filter="cityId" title="青海" class="">
-                        <input type="checkbox" name="cityId[]" value="26" lay-filter="cityId" title="宁夏" class="">
-                        <input type="checkbox" name="cityId[]" value="27" lay-filter="cityId" title="甘肃" class="">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">西南地区:</td>
-                <td class="tdright">
-                    <div class="layui-form">
-                        <input type="checkbox" name="cityId[]" title="全部" class="all">
-                        <input type="checkbox" name="cityId[]" value="28" lay-filter="cityId" title="四川" class="">
-                        <input type="checkbox" name="cityId[]" value="29" lay-filter="cityId" title="云南" class="">
-                        <input type="checkbox" name="cityId[]" value="30" lay-filter="cityId" title="贵州" class="">
-                        <input type="checkbox" name="cityId[]" value="31" lay-filter="cityId" title="西藏" class="">
-                        <input type="checkbox" name="cityId[]" value="32" lay-filter="cityId" title="重庆" class="">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">港澳台地区:</td>
-                <td class="tdright">
-                    <div class="layui-form">
-                        <input type="checkbox" name="cityId[]"  title="全部" class="all">
-                        <input type="checkbox" name="cityId[]" value="33" lay-filter="cityId" title="香港" class="">
-                        <input type="checkbox" name="cityId[]" value="34" lay-filter="cityId" title="澳门" class="">
-                        <input type="checkbox" name="cityId[]" value="35" lay-filter="cityId" title="台湾" class="">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">海外地区:</td>
-                <td class="tdright">
-                    <div class="layui-form">
-                        <input type="checkbox" name="cityId[]"  title="全部" class="all">
-                        <input type="checkbox" name="cityId[]" value="36" lay-filter="cityId" title="海外" class="">
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="" lay-filter="component-tabs-brief">
+            <ul class="tabpage" id="tabs">
+                <li class="" id="li1"><a href="#" class="tab1">推荐场景</a></li>
+                <li class="" id="li2"><a href="#" class="tab2">模板库</a></li>
+                <li class="" id="li3"><a href="#" class="tab3">历史发送</a></li>
+                <li class="" id="li4"><a href="#" class="tab4">近期节日</a></li>
+            </ul>
+            <div class="contenttab" id="content">
+                <div class="layui-tab-item layui-show" id="tab1">
+                    <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>
+                </div>
+                <div class="layui-tab-item" id="tab2">
 
-        <div class="layui-form-item layer-form-footer">
-            <div class="footer-inner">
-                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal submit layui-btn-sm btn-embossed">{:__('OK')}</button>
-                <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">{:__('Reset')}</button>
+                </div>
             </div>
         </div>
     </div>
@@ -431,15 +316,15 @@
 <!--{:build_toolbar('toolbar',['refresh'])}-->
 
 <!--表格头部按钮begin-->
-<script type="text/html" id="toolbar">
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="sendSms"><i class="fa fa-envelope-o"></i> 发送短信</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="sendSearchResultSms"><i class="fa fa-envelope-o"></i> 按查询结果发送</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="addOrder"><i class="fa fa-plus"></i> 添加订单</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="importOrder"><i class="fa fa-file-text-o"></i> 导入苏宁订单</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="exportOrder"><i class="fa fa-file-o"></i> 导出苏宁订单</a>
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="toBlack"><i class="fa fa-hand-o-down"></i> 拉黑</a>
-</script>
+<!--<script type="text/html" id="toolbar">-->
+    <!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>-->
+    <!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="sendSms"><i class="fa fa-envelope-o"></i> 发送短信</a>-->
+    <!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="sendSearchResultSms"><i class="fa fa-envelope-o"></i> 按查询结果发送</a>-->
+    <!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="addOrder"><i class="fa fa-plus"></i> 添加订单</a>-->
+    <!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="importOrder"><i class="fa fa-file-text-o"></i> 导入苏宁订单</a>-->
+    <!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="exportOrder"><i class="fa fa-file-o"></i> 导出苏宁订单</a>-->
+    <!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="toBlack"><i class="fa fa-hand-o-down"></i> 拉黑</a>-->
+<!--</script>-->
 <!--表格头部按钮end-->
 
 <!--头工具栏-->
@@ -455,7 +340,7 @@
 </script>
 
 <!--操作-->
-<!--{:build_actionbar('actionbar',['edit','test', 'del'])}-->
+{:build_actionbar('actionbar',['edit','test', 'del'])}
 {/block}
 
 {block name="script"}
@@ -471,6 +356,7 @@
             ,element = layui.element
             ,layer = layui.layer
             ,we = layui.we
+            ,table = layui.table
             ,$  = layui.$
             ,laydate = layui.laydate
             ,form = layui.form
@@ -545,10 +431,10 @@
         });
 
         /**
-         * 短信模版
+         * 修改短息内容弹框
          */
         $("body").on("click",".sms-event",function (){
-            we.api.open_current_page_layer($(".sms-layer"),'选择短信模版',{
+            we.api.open_current_page_layer($(".sms-layer"),'修改短息内容',{zIndex:19891015
             },['80%' , '80%']);
             var areaId = [];
             var areaIdCh = []
@@ -568,6 +454,42 @@
             $("body").on("click",".reset",function (){
                 layer.closeAll();
             });
+        })
+
+
+        $("body").on("click","#sms_module",function (){
+            var tableCommon = {
+                elem: '#rule'
+                ,url:"/sms_data.json" //请求后台
+                // ,data:"./sms_data.json" //测试数据
+                ,id : 'tableReload'
+                ,skin:'line'
+                ,limit:10
+                ,defaultToolbar: ['filter']
+                // ,toolbar : '#toolbar'
+                ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
+                ,search: false
+                ,cols: [[
+                    {type:'checkbox', fixed: 'left', hide:true}
+                    ,{field:'sms_content', title: '短信内容'}
+                    ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:250}
+                ]]
+                ,page: {
+                    layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                    ,first: false //不显示首页
+                    ,last: false //不显示尾页
+
+                }
+                ,done: function(res, curr, count){
+                    if(res.status == 'success') {
+                        // layer.closeAll();
+                    }
+                }
+            };
+            table.render(tableCommon); //数据表格初始化
+            we.api.open_current_page_layer($(".sms-module-layer"),'选择短信模版',{zIndex:19891016
+            },['80%' , '80%']);
+
         })
 
         /**
@@ -613,13 +535,19 @@
                 var title = '';
                 if(label_id == 'order_id'){
                     title = '{订单编号} 实际替换后长度约为16个字，实际扣费以发出字数为准，您是否确定添加？';
+                } else if(label_id == 'product_name'){
+                    title = "{商品简称} 需要对宝贝设置对应的商品简称，未设置简称的宝贝加入该标签将不展示标签内容，您可以选择继续添加或者<a class='astyle' href='javascript:void(0);'>设置商品简称</a>？";
                 }
-                layer.confirm(title,{
-                    title:'温馨提示',area: ['400px','200px']
-                }, function(index){
+                if(title != '') {
+                    layer.confirm(title,{
+                        title:'温馨提示',area: ['400px','250px'],zIndex:19891016
+                    }, function(index){
+                        insertText(document.getElementById("sms-content"),content)
+                        layer.close(index);
+                    });
+                } else {
                     insertText(document.getElementById("sms-content"),content)
-                    layer.close(index);
-                });
+                }
             } else {
                 insertText(document.getElementById("sms-content"),content)
             }
