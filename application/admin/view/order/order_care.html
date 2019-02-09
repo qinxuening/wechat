@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="layui-row">
-                <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>
+                <table class="layui-hide" id="table-sms" lay-filter="table_sms" table-reload-id="tableReload"></table>
                 </div>
             </div>
         </div>
@@ -487,7 +487,7 @@
          * */
         form.on('radio(date_switch)', function(data){
             // console.log(data.elem);
-            console.log(data.value)
+            // console.log(data.value)
             if(data.value == 0){
                 $(".task_time").show()
             }else(
@@ -537,21 +537,26 @@
          * 选择模板短信
          * */
         $("body").on("click","#sms_module,#tabs .tab1",function (){
-            sms_table_init("form#form-recommend-sms-module");
+            console.log(this);
+            sms_table_init("form#form-recommend-sms-module",1);
         })
+
+        /**
+         * 短信模板切换初始化
+         * */
         $("#tabs").find("li[id^=li]").find("a").bind("click", function () {
             var title = $(this).attr("class");
             // console.log($("#content").find("div[id=" + title + "]").find("form").attr('id'));
-            sms_table_init("form#"+$("#content").find("div[id=" + title + "]").find("form").attr('id'));
+            sms_table_init("form#"+$("#content").find("div[id=" + title + "]").find("form").attr('id'),0);
         })
 
 
         /**
          * 选择短信模板初始化
          * */
-        function sms_table_init(form) {
+        function sms_table_init(form,flag){
             var tableCommon = {
-                elem: '#rule'
+                elem: '#table-sms'
                 ,url:"/sms_data.json" //请求后台
                 // ,data:"./sms_data.json" //测试数据
                 ,id : 'tableReload'
@@ -581,15 +586,16 @@
             };
 
             table.render(tableCommon); //数据表格初始化
-            if(form == "form#form-recommend-sms-module" && init_i == 0) {
-            we.api.open_current_page_layer($(".sms-module-layer"),'选择短信模版',{zIndex:19891016
-            },['80%' , '80%']);//搜索短信模版弹框
+            if((form == "form#form-recommend-sms-module" && init_i == 0) || flag == 1) {
+               index_sms = we.api.open_current_page_layer($(".sms-module-layer"),'选择短信模版',{zIndex:19891016
+                },['80%' , '80%']);//搜索短信模版弹框
             }
             init_i ++;
             /**
              * 绑定监听事件
              * */
             formSearch.api.searchForm($(form));
+            // console.log(index_sms);
             //formSearch.api.searchForm($("form#form-recommend-sms-module"));////短信搜索初始化【推荐场景】
             //formSearch.api.searchForm($("form#form-sms-module"));//短信搜索初始化【模板库】
         }
@@ -602,6 +608,20 @@
             console.log(JSON.stringify(formSearch.api.getFormJson("#form-sms-module")));
         })*/
 
+        //头工具栏事件
+        table.on('tool(table_sms)', function(obj){
+            // console.log(obj);
+            var data = obj.data.sms_content;
+            if(obj.event === 'use_sms_module'){
+                // console.log(data);
+                layer.close(index_sms)
+                $(".sms-content").val(data)
+            } else if(obj.event === 'del_sms_module') {
+
+            }
+        })
+
+
         /**
          * sms_record短信测试发送记录
          * */
@@ -609,8 +629,6 @@
             var url = "{:url('admin/order/sms_record')}"
             we.api.open(url,'短信测试发送记录');
         })
-
-
 
         /**
          * tips-icon 弹出信息、销毁信息
@@ -623,15 +641,6 @@
         $("body").on("mouseleave",".tips-icon",function (){
             layer.close(index);
         })
-
-        /**
-         * tips-msg 弹出信息
-         */
-        /*$("body").on("click",".tips-msg",function (){
-            var title = $(this).attr('title-msg');
-            we.tips("<li><a href='#'>"+title+"</a></li>");
-        })*/
-
 
         /**
          * 短信标签设置
