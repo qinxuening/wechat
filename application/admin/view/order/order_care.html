@@ -12,13 +12,30 @@
             </ul>
             <div class="contenttab" id="content">
                 <div class="layui-row">
-                    <form class="layui-form" method="post" action="/sms_data.json" tableid="tableReload" id="form-sms-module" lay-filter="form-sms-module">
-                        <div class="layui-tab-item layui-show" id="tab1">
-
-                        </div>
-                        <div class="layui-tab-item" id="tab2">
+                    <div class="layui-tab-item" id="tab1">
+                        <form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-recommend-sms-module" lay-filter="form-sms-module">
                             <div class="searchbody">
                                 <ul class="nav pull-left">
+                                    <input type="hidden" name="sms_type" value="1" placeholder="" autocomplete="off" class="layui-input">
+                                    <li>场景类型：
+                                        <select name="recommended_scene" id="recommended_scene">
+                                            <option value="4" selected>所有场景</option>
+                                            <option value="1">周年庆</option>
+                                            <option value="2">聚划算</option>
+                                            <option value="3">上新</option>
+                                        </select>
+                                    </li>
+                                    <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
+                                        <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
+                                    </li></ul>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="layui-tab-item" id="tab2">
+                        <form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-sms-module" lay-filter="form-sms-module">
+                            <div class="searchbody">
+                                <ul class="nav pull-left">
+                                    <input type="hidden" name="sms_type" value="2" placeholder="" autocomplete="off" class="layui-input">
                                     <li>模板来源：
                                         <select name="modeltype" id="modeltype">
                                             <option value="2" selected>所有类型</option>
@@ -52,14 +69,18 @@
                                         <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
                                     </li></ul>
                             </div>
-                        </div>
-                        <div class="layui-tab-item" id="tab3">
-
-                        </div>
-                        <div class="layui-tab-item" id="tab4">
-
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                    <div class="layui-tab-item" id="tab3">
+                        <form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-history-sms-module" lay-filter="form-sms-module">
+                            <input type="hidden" name="sms_type" value="3" placeholder="" autocomplete="off" class="layui-input">
+                        </form>
+                    </div>
+                    <div class="layui-tab-item" id="tab4">
+                        <form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-latest-sms-module" lay-filter="form-sms-module">
+                            <input type="hidden" name="sms_type" value="4" placeholder="" autocomplete="off" class="layui-input">
+                        </form>
+                    </div>
                 </div>
 
                 <div class="layui-row">
@@ -416,6 +437,7 @@
             ,form = layui.form
             ,weTable = layui.weTable
             ,formSearch = layui.formSearch
+            ,init_i = 0
             ,toastr = layui.toastr;
 
         /**
@@ -514,7 +536,20 @@
         /**
          * 选择模板短信
          * */
-        $("body").on("click","#sms_module",function (){
+        $("body").on("click","#sms_module,#tabs .tab1",function (){
+            sms_table_init("form#form-recommend-sms-module");
+        })
+        $("#tabs").find("li[id^=li]").find("a").bind("click", function () {
+            var title = $(this).attr("class");
+            // console.log($("#content").find("div[id=" + title + "]").find("form").attr('id'));
+            sms_table_init("form#"+$("#content").find("div[id=" + title + "]").find("form").attr('id'));
+        })
+
+
+        /**
+         * 选择短信模板初始化
+         * */
+        function sms_table_init(form) {
             var tableCommon = {
                 elem: '#rule'
                 ,url:"/sms_data.json" //请求后台
@@ -537,22 +572,27 @@
                     ,last: false //不显示尾页
 
                 }
+                ,where: {filter:JSON.stringify(formSearch.api.getFormJson($(form)))}
                 ,done: function(res, curr, count){
                     if(res.status == 'success') {
                         // layer.closeAll();
                     }
                 }
             };
+
             table.render(tableCommon); //数据表格初始化
+            if(form == "form#form-recommend-sms-module" && init_i == 0) {
             we.api.open_current_page_layer($(".sms-module-layer"),'选择短信模版',{zIndex:19891016
             },['80%' , '80%']);//搜索短信模版弹框
-
-
+            }
+            init_i ++;
             /**
              * 绑定监听事件
              * */
-            formSearch.api.searchForm($("form#form-sms-module"));//短信搜索初始化
-        })
+            formSearch.api.searchForm($(form));
+            //formSearch.api.searchForm($("form#form-recommend-sms-module"));////短信搜索初始化【推荐场景】
+            //formSearch.api.searchForm($("form#form-sms-module"));//短信搜索初始化【模板库】
+        }
 
         /**
          *

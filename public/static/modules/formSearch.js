@@ -100,7 +100,7 @@ layui.define(['jquery','laydate','form'], function(exports){
                     });
                 }
                 // console.log(options);
-                $('body').on('click','.search-info',function () {
+                $('body').on('click',"#"+form.attr("id")+' .search-info',function () {
                     var op = {};
                     if(typeof options.cols !== 'undefined') {
                         $.each(options.cols[0], function (index, value) {
