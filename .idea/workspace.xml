@@ -41,7 +41,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="669" />
-          <entry key="html" value="3856" />
+          <entry key="html" value="3877" />
           <entry key="js" value="79" />
           <entry key="json" value="38" />
         </counts>
@@ -49,7 +49,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="669" />
-          <entry key="HTML" value="3855" />
+          <entry key="HTML" value="3876" />
           <entry key="JSON" value="38" />
           <entry key="JavaScript" value="80" />
         </counts>
@@ -127,8 +127,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="631" column="22" selection-start-line="631" selection-start-column="22" selection-end-line="631" selection-end-column="22" />
+            <state relative-caret-position="529">
+              <caret line="597" selection-start-line="597" selection-end-line="600" selection-end-column="80" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -409,12 +409,12 @@
       <workItem from="1547429044064" duration="52877000" />
       <workItem from="1547826457594" duration="60018000" />
       <workItem from="1548336954168" duration="6008000" />
-      <workItem from="1549188351494" duration="122106000" />
+      <workItem from="1549188351494" duration="122361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="606897000" />
+    <option name="totallyTimeSpent" value="607152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="824" extended-state="6" />
@@ -797,8 +797,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="631" column="22" selection-start-line="631" selection-start-column="22" selection-end-line="631" selection-end-column="22" />
+        <state relative-caret-position="529">
+          <caret line="597" selection-start-line="597" selection-end-line="600" selection-end-column="80" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />

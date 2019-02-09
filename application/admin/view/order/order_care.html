@@ -594,11 +594,12 @@
                 // $.each($("#content").find("form").attr('id'),function (index, value) {
                 //     console.log(value);
                 // })
-
-                formSearch.api.searchForm($("form#form-recommend-sms-module"));
-                formSearch.api.searchForm($("form#form-history-sms-module"));
-                formSearch.api.searchForm($("form#form-sms-module"));
-                formSearch.api.searchForm($("form#form-latest-sms-module"));
+                if(init_i == 0){
+                    formSearch.api.searchForm($("form#form-recommend-sms-module"));
+                    formSearch.api.searchForm($("form#form-history-sms-module"));
+                    formSearch.api.searchForm($("form#form-sms-module"));
+                    formSearch.api.searchForm($("form#form-latest-sms-module"));
+                }
             }
             init_i ++;
             /**
