@@ -102,17 +102,19 @@ layui.define(['jquery','laydate','form'], function(exports){
                 // console.log(options);
                 $('body').on('click','.search-info',function () {
                     var op = {};
-                    $.each(options.cols[0], function (index, value) {
-                        // console.log(value);
-                        if(typeof value.searchList !== 'undefined') {
-                            op[value.field] = value.searchList.operate;
-                        }
-                    });
+                    if(typeof options.cols !== 'undefined') {
+                        $.each(options.cols[0], function (index, value) {
+                            // console.log(value);
+                            if (typeof value.searchList !== 'undefined') {
+                                op[value.field] = value.searchList.operate;
+                            }
+                        });
+                    }
                     var where ={
                         filter:JSON.stringify(formSearch.api.getFormJson(form))
                         ,op:JSON.stringify(op)
                     };
-                    // console.log(where);
+                    console.log(where);
                     var index = layer.load();
                     // return  console.log(form.serialize());
                     layui.table.reload(tableid

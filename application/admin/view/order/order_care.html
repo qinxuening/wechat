@@ -12,52 +12,54 @@
             </ul>
             <div class="contenttab" id="content">
                 <div class="layui-row">
-                <div class="layui-tab-item layui-show" id="tab1">
+                    <form class="layui-form" method="post" action="/sms_data.json" tableid="tableReload" id="form-sms-module" lay-filter="form-sms-module">
+                        <div class="layui-tab-item layui-show" id="tab1">
 
-                </div>
-                <div class="layui-tab-item" id="tab2">
-                    <div class="searchbody">
-                        <ul class="nav pull-left">
-                            <li>模板来源：
-                                <select name="modeltype" id="modeltype">
-                                    <option value="2" selected>所有类型</option>
-                                    <option value="1">自定义模板</option>
-                                    <option value="0">系统模板</option>
-                                </select>
-                            </li>
-                            <li>模板类型：
-                                <select name="selecttemp" id="selecttemp">
-                                    <option value="0" selected="selected">所有模板</option>
-                                    <option value="16">会员短信 </option>
-                                    <option value="17">指定号码发送</option>
-                                    <option value="18">订单短信群发 </option>
-                                    <option value="1">催付提醒</option>
-                                    <option value="2">发货提醒</option>
-                                    <option value="3">催付关怀</option>
-                                    <option value="4">派送提醒</option>
-                                    <option value="5">签收提醒</option>
-                                    <option value="6">回款关怀 </option>
-                                    <option value="7">退款关怀 </option>
-                                    <option value="8">评价关怀 </option>
-                                    <option value="9">中差评安抚 </option>
-                                    <option value="12">催评价 </option>
-                                    <option value="13">下单提醒 </option>
-                                    <option value="14">宝贝关怀 </option>
-                                    <option value="15">智能凑单 </option>
-                                </select>
-                            </li>
-                            <li>关键词：<input type="text" name="keyword" id="keyword" placeholder="" autocomplete="off" class="layui-input"></li>
-                            <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
-                                <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
-                            </li></ul>
-                    </div>
-                </div>
-                <div class="layui-tab-item" id="tab3">
+                        </div>
+                        <div class="layui-tab-item" id="tab2">
+                            <div class="searchbody">
+                                <ul class="nav pull-left">
+                                    <li>模板来源：
+                                        <select name="modeltype" id="modeltype">
+                                            <option value="2" selected>所有类型</option>
+                                            <option value="1">自定义模板</option>
+                                            <option value="0">系统模板</option>
+                                        </select>
+                                    </li>
+                                    <li>模板类型：
+                                        <select name="selecttemp" id="selecttemp">
+                                            <option value="0" selected="selected">所有模板</option>
+                                            <option value="16">会员短信 </option>
+                                            <option value="17">指定号码发送</option>
+                                            <option value="18">订单短信群发 </option>
+                                            <option value="1">催付提醒</option>
+                                            <option value="2">发货提醒</option>
+                                            <option value="3">催付关怀</option>
+                                            <option value="4">派送提醒</option>
+                                            <option value="5">签收提醒</option>
+                                            <option value="6">回款关怀 </option>
+                                            <option value="7">退款关怀 </option>
+                                            <option value="8">评价关怀 </option>
+                                            <option value="9">中差评安抚 </option>
+                                            <option value="12">催评价 </option>
+                                            <option value="13">下单提醒 </option>
+                                            <option value="14">宝贝关怀 </option>
+                                            <option value="15">智能凑单 </option>
+                                        </select>
+                                    </li>
+                                    <li>关键词：<input type="text" name="keyword" id="keyword" placeholder="" autocomplete="off" class="layui-input"></li>
+                                    <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
+                                        <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
+                                    </li></ul>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item" id="tab3">
 
-                </div>
-                <div class="layui-tab-item" id="tab4">
+                        </div>
+                        <div class="layui-tab-item" id="tab4">
 
-                </div>
+                        </div>
+                    </form>
                 </div>
 
                 <div class="layui-row">
@@ -413,6 +415,7 @@
             ,laydate = layui.laydate
             ,form = layui.form
             ,weTable = layui.weTable
+            ,formSearch = layui.formSearch
             ,toastr = layui.toastr;
 
         /**
@@ -508,7 +511,9 @@
             });
         })
 
-
+        /**
+         * 选择模板短信
+         * */
         $("body").on("click","#sms_module",function (){
             var tableCommon = {
                 elem: '#rule'
@@ -540,9 +545,22 @@
             };
             table.render(tableCommon); //数据表格初始化
             we.api.open_current_page_layer($(".sms-module-layer"),'选择短信模版',{zIndex:19891016
-            },['80%' , '80%']);
+            },['80%' , '80%']);//搜索短信模版弹框
 
+
+            /**
+             * 绑定监听事件
+             * */
+            formSearch.api.searchForm($("form#form-sms-module"));//短信搜索初始化
         })
+
+        /**
+         *
+         * 搜索短信模板
+         * */
+        /*$('body').on('click','.search-info',function () {
+            console.log(JSON.stringify(formSearch.api.getFormJson("#form-sms-module")));
+        })*/
 
         /**
          * sms_record短信测试发送记录
