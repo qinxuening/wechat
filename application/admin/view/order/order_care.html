@@ -552,12 +552,12 @@
 
 
         /**
-         * 选择短信模板初始化
+         * 选择短信模板初始化，sms_type：1推荐场景，sms_type：2模板库，sms_type：3历史发送，sms_type：4近期节日
          * */
         function sms_table_init(form,flag){
             var tableCommon = {
                 elem: '#table-sms'
-                ,url:"/sms_data.json" //请求后台
+                ,url:"/sms_data.json" //对接请求后台数据
                 // ,data:"./sms_data.json" //测试数据
                 ,id : 'tableReload'
                 ,skin:'line'
@@ -578,7 +578,7 @@
                     ,last: false //不显示尾页
 
                 }
-                ,where: {filter:JSON.stringify(formSearch.api.getFormJson($(form)))}
+                ,where: {filter:JSON.stringify(formSearch.api.getFormJson($(form)))}   //搜索条件
                 ,done: function(res, curr, count){
                     if(res.status == 'success') {
                         // layer.closeAll();
@@ -598,7 +598,7 @@
                 if(init_i == 0){
                     $.each($("#content .layui-row .layui-tab-item"),function (index, value) {
                         // console.log($(this).find("form").attr("id"));
-                        formSearch.api.searchForm($("form#" + $(this).find("form").attr("id")));
+                        formSearch.api.searchForm($("form#" + $(this).find("form").attr("id"))); //短信模板查询事件初始化
                     })
                     // formSearch.api.searchForm($("form#form-recommend-sms-module"));
                     // formSearch.api.searchForm($("form#form-history-sms-module"));
@@ -634,7 +634,8 @@
                 $(".sms-content").val(data.sms_content)
             } else if(obj.event === 'del_sms_module') {
                 var sms_id = data.sms_id;
-
+                var url = "";
+                we.api.ajax({"url":url,"data":{'sms_id':sms_id}});   //对接后台删除
                 //执行删除
             }
         })
