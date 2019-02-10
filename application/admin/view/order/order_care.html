@@ -591,14 +591,19 @@
                index_sms = we.api.open_current_page_layer($(".sms-module-layer"),'选择短信模版',{zIndex:19891016
                 },['80%' , '80%']);//搜索短信模版弹框
 
-                // $.each($("#content").find("form").attr('id'),function (index, value) {
-                //     console.log(value);
+                // $.each($("#content .layui-row .layui-tab-item"),function (index, value) {
+                //     console.log($(this).find("form").attr("id"));
                 // })
+
                 if(init_i == 0){
-                    formSearch.api.searchForm($("form#form-recommend-sms-module"));
-                    formSearch.api.searchForm($("form#form-history-sms-module"));
-                    formSearch.api.searchForm($("form#form-sms-module"));
-                    formSearch.api.searchForm($("form#form-latest-sms-module"));
+                    $.each($("#content .layui-row .layui-tab-item"),function (index, value) {
+                        // console.log($(this).find("form").attr("id"));
+                        formSearch.api.searchForm($("form#" + $(this).find("form").attr("id")));
+                    })
+                    // formSearch.api.searchForm($("form#form-recommend-sms-module"));
+                    // formSearch.api.searchForm($("form#form-history-sms-module"));
+                    // formSearch.api.searchForm($("form#form-sms-module"));
+                    // formSearch.api.searchForm($("form#form-latest-sms-module"));
                 }
             }
             init_i ++;
