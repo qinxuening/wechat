@@ -156,7 +156,7 @@
                         <div class="sms-phone">
                             <div class="phone-container">
                                 <div class="smg-content">
-                            【覃雪宁88】注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！
+                            【覃雪宁88】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>
                                 </div>
                             </div>
                         </div>
@@ -632,6 +632,7 @@
             if(obj.event === 'use_sms_module'){
                 layer.close(index_sms)
                 $(".sms-content").val(data.sms_content)
+                $(".synchronize_sms_content").text(data.sms_content)
             } else if(obj.event === 'del_sms_module') {
                 var sms_id = data.sms_id;
                 var url = "";
@@ -675,6 +676,8 @@
                     title = '{订单编号} 实际替换后长度约为16个字，实际扣费以发出字数为准，您是否确定添加？';
                 } else if(label_id == 'product_name'){
                     title = "{商品简称} 需要对宝贝设置对应的商品简称，未设置简称的宝贝加入该标签将不展示标签内容，您可以选择继续添加或者<a class='astyle' href='javascript:void(0);'>设置商品简称</a>？";
+                } else if(label_id == 'sms_module' || label_id == 'short_href') {
+                    return false;
                 }
                 if(title != '') {
                     layer.confirm(title,{
@@ -711,8 +714,9 @@
                 obj.selectionStart = obj.selectionEnd = cursorPos;
             } else {
                 obj.value += str;
-                console.log(obj.value)
+                // console.log(obj.value)
             }
+            $(".synchronize_sms_content").text(obj.value);
         }
 
         /**
