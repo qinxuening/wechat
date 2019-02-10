@@ -92,6 +92,32 @@
 </div>
 <!--短信模版弹出end-->
 
+
+<!--短链模版弹出begin-->
+<div class="body-form short-href-layer auto-height-table" style="display: none">
+    <div class="layui-form">
+        <div class="layui-tab yty-tab" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title tabpage">
+                <li class="layui-this"><a href="#">店铺常用链接</a></li>
+                <li><a href="#">宝贝链接</a></li>
+                <li><a href="#">宝贝分类</a></li>
+                <li><a href="#">优惠券</a></li>
+                <li><a href="#">搭配套餐</a></li>
+                <li><a href="#">金店长活动</a></li>
+            </ul>
+            <div class="layui-tab-content" style="height: 100px;">
+                <div class="layui-tab-item layui-show">内容不一样是要有，因为你可以监听tab事件（阅读下文档就是了）</div>
+                <div class="layui-tab-item">内容2</div>
+                <div class="layui-tab-item">内容3</div>
+                <div class="layui-tab-item">内容4</div>
+                <div class="layui-tab-item">内容5</div>
+                <div class="layui-tab-item">内容6</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--短链模版弹出end-->
+
 <!--修改短信内容弹出begin-->
 <div class="body-form sms-layer" style="display: none">
     <div class="layui-form">
@@ -641,6 +667,14 @@
             }
         })
 
+        /**
+         * 短链接弹框short-href-layer
+         * */
+        $("body").on("click","#short_href",function (){
+            // console.log(this);
+            we.api.open_current_page_layer($(".short-href-layer"),'添加短链',{zIndex:19891016
+            },['80%' , '80%']);
+        })
 
         /**
          * sms_record短信测试发送记录

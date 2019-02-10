@@ -2488,13 +2488,33 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     margin: 0px !important;
 }
 
+.layui-tab-brief>.layui-tab-title .layui-this {
+    color: #506def;
+}
+
+.layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #506def;
+}
+
+.yty-tab .layui-tab-title{
+    height: auto;;
+    border-bottom-width: 0;
+    border-bottom-style: none;
+}
+
+.yty-tab .layui-tab-title li{
+    min-width: auto;
+    padding: 0;
+}
 
 
-
-
-
-
-
-
+.yty-tab .layui-this a, .yty-tab .layui-this a::after {
+    /*background: #fff;*/
+    background: #506def !important;
+    z-index: 3 !important;
+    color:#ffffff !important;
+}
 
 
