@@ -2512,9 +2512,25 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .yty-tab .layui-this a, .yty-tab .layui-this a::after {
     /*background: #fff;*/
-    background: #506def !important;
-    z-index: 3 !important;
-    color:#ffffff !important;
+    background: #506def;
+    z-index: 3;
+    color:#ffffff;
 }
 
+.yty-tab .layui-tab{
+    margin: 0px;
+}
+
+.yty-tab .layui-tab-content{
+    padding: .5em 0px;
+    /* height: 220px; */
+    position: relative;
+    z-index: 2;
+    -moz-border-radius: 0 5px 5px 5px;
+    -webkit-border-radius: 0 5px 5px 5px;
+    border-radius: 0 5px 5px 5px;
+    -moz-box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+    box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+}
 

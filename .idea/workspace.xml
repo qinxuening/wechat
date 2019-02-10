@@ -43,16 +43,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="729" />
-          <entry key="html" value="4176" />
+          <entry key="css" value="768" />
+          <entry key="html" value="4178" />
           <entry key="js" value="79" />
           <entry key="json" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="729" />
-          <entry key="HTML" value="4175" />
+          <entry key="CSS" value="768" />
+          <entry key="HTML" value="4177" />
           <entry key="JSON" value="38" />
           <entry key="JavaScript" value="80" />
         </counts>
@@ -125,8 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="99" column="38" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="38" />
+            <state relative-caret-position="418">
+              <caret line="98" column="29" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -149,8 +149,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="2512" column="32" selection-start-line="2512" selection-start-column="32" selection-end-line="2512" selection-end-column="32" />
+            <state relative-caret-position="485">
+              <caret line="2534" column="1" selection-start-line="2534" selection-start-column="1" selection-end-line="2534" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -194,7 +194,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tips-icon</find>
       <find>计费规则</find>
       <find>textarea</find>
       <find>layer-form</find>
@@ -224,6 +223,7 @@
       <find>zIndex</find>
       <find>短链</find>
       <find>currenttab</find>
+      <find>tabpage</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -418,12 +418,12 @@
       <workItem from="1548336954168" duration="6008000" />
       <workItem from="1549188351494" duration="124812000" />
       <workItem from="1549772642953" duration="9178000" />
-      <workItem from="1549796732112" duration="2112000" />
+      <workItem from="1549796732112" duration="2911000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="620893000" />
+    <option name="totallyTimeSpent" value="621692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="804" extended-state="6" />
@@ -771,8 +771,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="99" column="38" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="38" />
+        <state relative-caret-position="418">
+          <caret line="98" column="29" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -793,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="2512" column="32" selection-start-line="2512" selection-start-column="32" selection-end-line="2512" selection-end-column="32" />
+        <state relative-caret-position="485">
+          <caret line="2534" column="1" selection-start-line="2534" selection-start-column="1" selection-end-line="2534" selection-end-column="1" />
         </state>
       </provider>
     </entry>
