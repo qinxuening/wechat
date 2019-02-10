@@ -26,7 +26,7 @@
         <counts>
           <entry key="css" value="3" />
           <entry key="html" value="35" />
-          <entry key="js" value="15" />
+          <entry key="js" value="16" />
           <entry key="json" value="3" />
           <entry key="ts" value="1" />
         </counts>
@@ -36,7 +36,7 @@
           <entry key="CSS" value="3" />
           <entry key="HTML" value="35" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="15" />
+          <entry key="JavaScript" value="16" />
           <entry key="TypeScript" value="1" />
           <entry key="tsconfig" value="1" />
         </counts>
@@ -45,7 +45,7 @@
         <counts>
           <entry key="css" value="768" />
           <entry key="html" value="4178" />
-          <entry key="js" value="79" />
+          <entry key="js" value="112" />
           <entry key="json" value="38" />
         </counts>
       </usages-collector>
@@ -54,22 +54,13 @@
           <entry key="CSS" value="768" />
           <entry key="HTML" value="4177" />
           <entry key="JSON" value="38" />
-          <entry key="JavaScript" value="80" />
+          <entry key="JavaScript" value="113" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/common/header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1843">
-              <caret line="97" column="63" selection-start-line="97" selection-start-column="63" selection-end-line="97" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,7 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
@@ -146,11 +137,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="2534" column="1" selection-start-line="2534" selection-start-column="1" selection-end-line="2534" selection-end-column="1" />
+            <state relative-caret-position="435">
+              <caret line="2450" column="26" selection-start-line="2450" selection-start-column="26" selection-end-line="2450" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -163,8 +154,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3268">
+            <state relative-caret-position="627">
               <caret line="172" column="78" selection-start-line="172" selection-start-column="78" selection-end-line="172" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/static/lib/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -281,10 +281,10 @@
         <option value="$PROJECT_DIR$/public/static/modules/setField.js" />
         <option value="$PROJECT_DIR$/application/admin/view/layout/default.html" />
         <option value="$PROJECT_DIR$/application/admin/view/order/data.json" />
-        <option value="$PROJECT_DIR$/public/static/lib/index.js" />
         <option value="$PROJECT_DIR$/public/sms_data.json" />
         <option value="$PROJECT_DIR$/public/static/modules/formSearch.js" />
         <option value="$PROJECT_DIR$/application/admin/view/order/order_care.html" />
+        <option value="$PROJECT_DIR$/public/static/lib/index.js" />
         <option value="$PROJECT_DIR$/public/static/style/admin.css" />
       </list>
     </option>
@@ -335,6 +335,20 @@
               <item name="wechat" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="metismenu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
@@ -418,12 +432,12 @@
       <workItem from="1548336954168" duration="6008000" />
       <workItem from="1549188351494" duration="124812000" />
       <workItem from="1549772642953" duration="9178000" />
-      <workItem from="1549796732112" duration="2911000" />
+      <workItem from="1549796732112" duration="4218000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="621692000" />
+    <option name="totallyTimeSpent" value="622999000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="804" extended-state="6" />
@@ -688,13 +702,6 @@
         <state relative-caret-position="-318" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="29" column="55" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/common/meta.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -752,13 +759,6 @@
     <entry file="file://$PROJECT_DIR$/public/sms_data.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3268">
-          <caret line="172" column="78" selection-start-line="172" selection-start-column="78" selection-end-line="172" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/formSearch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1387">
@@ -766,6 +766,27 @@
           <folding>
             <element signature="e#850#2890#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="172" column="78" selection-start-line="172" selection-start-column="78" selection-end-line="172" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="2450" column="26" selection-start-line="2450" selection-start-column="26" selection-end-line="2450" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -788,13 +809,6 @@
             <element signature="n#style#0;n#tr#3;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="2534" column="1" selection-start-line="2534" selection-start-column="1" selection-end-line="2534" selection-end-column="1" />
         </state>
       </provider>
     </entry>

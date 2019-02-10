@@ -17,19 +17,22 @@
     $(window);
     $().ready(function () {
         var urlArr = location.href.split("#");
-        var current = urlArr[1] ? urlArr[1] : "tab1";
-        $("#tabs").find("li[id^=li]").find("a[class=" + current + "]").parent().addClass("currenttab");
-        $("#content").find("div[id^=tab]").not("div[id=" + urlArr[1] + "]").hide();
-        $("#content").find("div[id=" + current + "]").fadeIn();
-        $("#tabs").find("li[id^=li]").find("a").bind("click", function () {
-            var title = $(this).attr("class");
-            location.href = urlArr[0] + "#" + title;
-            $("#tabs").find("li[id^=li]").not("li[id=" + title + "]").removeClass("currenttab");
-            $(this).parent().addClass("currenttab");
-            $("#content").find("div[id^=tab]").not("div[id=" + title + "]").hide();
-            $("#content").find("div[id=" + title + "]").fadeIn();
-            return false;
-        })
+        // console.log(urlArr)
+        if(urlArr[1] !== '') {
+            var current = urlArr[1] ? urlArr[1] : "tab1";
+            $("#tabs").find("li[id^=li]").find("a[class=" + current + "]").parent().addClass("currenttab");
+            $("#content").find("div[id^=tab]").not("div[id=" + urlArr[1] + "]").hide();
+            $("#content").find("div[id=" + current + "]").fadeIn();
+            $("#tabs").find("li[id^=li]").find("a").bind("click", function () {
+                var title = $(this).attr("class");
+                location.href = urlArr[0] + "#" + title;
+                $("#tabs").find("li[id^=li]").not("li[id=" + title + "]").removeClass("currenttab");
+                $(this).parent().addClass("currenttab");
+                $("#content").find("div[id^=tab]").not("div[id=" + title + "]").hide();
+                $("#content").find("div[id=" + title + "]").fadeIn();
+                return false;
+            })
+        }
 
         /**
          * 新增导航管理
