@@ -82,7 +82,6 @@
                         </form>
                     </div>
                 </div>
-
                 <div class="layui-row">
                 <table class="layui-hide" id="table-sms" lay-filter="table_sms" table-reload-id="tableReload"></table>
                 </div>
@@ -105,12 +104,48 @@
                 <li><a href="#">金店长活动</a></li>
             </ul>
             <div class="layui-tab-content" style="height: 100px;">
-                <div class="layui-tab-item layui-show common_link">内容不一样是要有，因为你可以监听tab事件（阅读下文档就是了）</div>
-                <div class="layui-tab-item good_link">内容2</div>
-                <div class="layui-tab-item gategory_list">内容3</div>
-                <div class="layui-tab-item coupon_list">内容4</div>
-                <div class="layui-tab-item match_list">内容5</div>
-                <div class="layui-tab-item jdz_list">内容6</div>
+                <!--<div class="layui-row">-->
+                    <div class="layui-tab-item layui-show common_link"></div>
+                    <div class="layui-tab-item good_link">
+                        <form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-sms-good-link" lay-filter="form-sms-good-link">
+                            <div class="searchbody">
+                                <ul class="nav pull-left">
+                                    <input type="hidden" name="short_sms_type" value="1" placeholder="" autocomplete="off" class="layui-input">
+                                    <li>宝贝状态：
+                                        <select name="goods_status" id="goods_status">
+                                            <option value="1" selected>所有状态</option>
+                                            <option value="2">出售中</option>
+                                            <option value="3">仓库中</option>
+                                        </select>
+                                    </li>
+                                    <li>宝贝ID：<input type="text" name="goods_id" id="goods_id" placeholder="" autocomplete="off" class="layui-input"></li>
+                                    <li>宝贝标题：<input type="text" name="goods_title" id="goods_title" placeholder="" autocomplete="off" class="layui-input"></li>
+                                    <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
+                                        <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
+                                    </li></ul>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="layui-tab-item gategory_list"></div>
+                    <div class="layui-tab-item coupon_list"></div>
+                    <div class="layui-tab-item match_list"></div>
+                    <div class="layui-tab-item jdz_list">
+                        <form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-sms-jdz-list" lay-filter="form-sms-jdz-list">
+                            <div class="searchbody">
+                                <ul class="nav pull-left">
+                                    <input type="hidden" name="short_sms_type" value="5" placeholder="" autocomplete="off" class="layui-input">
+                                    <li>活动名称：<input type="text" name="act_name" id="act_name" placeholder="" autocomplete="off" class="layui-input"></li>
+                                    <li>页面标题：<input type="text" name="act_title" id="act_title" placeholder="" autocomplete="off" class="layui-input"></li>
+                                    <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
+                                        <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
+                                    </li></ul>
+                            </div>
+                        </form>
+                    </div>
+                <!--</div>-->
+                <div class="layui-row">
+                    <table class="layui-hide" id="table-short-link-sms" lay-filter="table-short-link-sms" table-reload-id="tableReload"></table>
+                </div>
             </div>
         </div>
     </div>
@@ -433,13 +468,17 @@
     <input type="checkbox" name="is_time_push" value="{{d.is_time_push}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.is_time_push == 1 ? 'checked' : '' }}>
 </script>
 
-<!--操作-->
+<!--短信模板操作-->
 <!--{:build_actionbar('actionbar',['edit','test', 'del'])}-->
 <script type="text/html" id="actionbar">
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_module">使用</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del_sms_module">删除</a>
 </script>
 
+<!--短链操作-->
+<script type="text/html" id="short_sms_actionbar">
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_short_link">选择链接</a>
+</script>
 
 {/block}
 
@@ -462,7 +501,7 @@
             ,form = layui.form
             ,weTable = layui.weTable
             ,formSearch = layui.formSearch
-            ,init_i = 0
+            ,init_i = init_j = 0
             ,toastr = layui.toastr;
 
         /**
@@ -676,6 +715,7 @@
          * */
         $("body").on("click","#short_href",function (){
             // console.log(this);
+            sms_short_table_init('', {'short_sms_type':0});
             we.api.open_current_page_layer($(".short-href-layer"),'添加短链',{zIndex:19891016
             },['80%' , '80%']);
         })
@@ -685,25 +725,98 @@
          * */
         element.on('tab(short-href-tab)', function(data){
             // console.log(this); //当前Tab标题所在的原始DOM元素
-            console.log(data.index); //得到当前Tab的所在下标
+            // console.log(d ata.index); //得到当前Tab的所在下标
             // console.log(data); //得到当前的Tab大容器
-
+            var where = {'short_sms_type':data.index};
             switch (data.index) {
                 case 0:
+                    sms_short_table_init('', where);
                     break;
                 case 1:
+                    sms_short_table_init('', where);
                     break;
                 case 2:
+                    sms_short_table_init('', where);
                     break;
                 case 3:
+                    sms_short_table_init('', where);
                     break;
                 case 4:
+                    sms_short_table_init('', where);
                     break;
                 case 5:
+                    sms_short_table_init('', where);
                     break;
             }
 
         });
+
+        /**
+         * 短链接表格初始化
+         * */
+        function sms_short_table_init(form,where,flag){
+            var cols1 = [[
+                {type:'checkbox', fixed: 'left', hide:true}
+                ,{field:'sms_id', title: 'id', hide:true}
+                ,{field:'sms_content', title: '短链内容'}
+                ,{fixed: 'right', title:'操作', toolbar: '#short_sms_actionbar', width:250}
+            ]];
+
+            var cols2 = [[
+                {type:'checkbox', fixed: 'left', hide:true}
+                ,{field:'sms_id', title: 'id', hide:true}
+                ,{field:'activity_name',title:'活动名称'}
+                ,{field:'sms_content', title: '活动标题'}
+                ,{field:'sms_create_time', title: '创建时间'}
+                ,{fixed: 'right', title:'操作', toolbar: '#short_sms_actionbar', width:250}
+            ]];
+            var cols = cols1;
+            if(typeof where !== 'undefined'){
+                var cols = where.short_sms_type == 5 ? cols2 : cols1;
+            }
+            console.log(where)
+            var tableCommon = {
+                elem: '#table-short-link-sms'
+                ,url:"/sms_data.json" //对接请求后台数据
+                // ,data:"./sms_data.json" //测试数据
+                ,id : 'tableReload'
+                ,skin:'line'
+                ,limit:10
+                ,defaultToolbar: ['filter']
+                // ,toolbar : '#toolbar'
+                // ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
+                ,search: false
+                ,cols: cols
+                ,page: {
+                    layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                    ,first: false //不显示首页
+                    ,last: false //不显示尾页
+
+                }
+                ,where:where
+                // ,where: {filter:JSON.stringify(formSearch.api.getFormJson($(form)))}   //搜索条件
+                ,done: function(res, curr, count){
+                    if(res.status == 'success') {
+                        // layer.closeAll();
+                    }
+                }
+            };
+
+            table.render(tableCommon); //数据表格初始化
+            if(init_j == 0){
+                formSearch.api.searchForm($("form#form-sms-good-link"));
+                formSearch.api.searchForm($("form#form-sms-jdz-list"));
+            }
+            init_j ++;
+            /**
+             * 绑定监听事件
+             * */
+            // formSearch.api.searchForm($(form));
+            // console.log(index_sms);
+            //formSearch.api.searchForm($("form#form-recommend-sms-module"));////短信搜索初始化【推荐场景】
+            //formSearch.api.searchForm($("form#form-sms-module"));//短信搜索初始化【模板库】
+        }
+
 
         /**
          * sms_record短信测试发送记录

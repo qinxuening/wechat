@@ -30,9 +30,9 @@
                 location.href = urlArr[0] + "#" + title;
                 $("#tabs").find("li[id^=li]").not("li[id=" + title + "]").removeClass("currenttab");
                 $(this).parent().addClass("currenttab");
-                if(urlArr[1] !== '') {
+                // if(title !== '') {
                     $("#content").find("div[id^=tab]").not("div[id=" + title + "]").hide();
-                }
+                // }
                 $("#content").find("div[id=" + title + "]").fadeIn();
                 return false;
             })
