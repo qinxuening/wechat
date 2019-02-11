@@ -96,7 +96,7 @@
     <div class="layui-form yty-tab">
         <div class="layui-tab" lay-filter="short-href-tab">
             <ul class="layui-tab-title tabpage">
-                <li class="layui-this"><a href="#">店铺常用链接</a></li>
+                <li class="layui-this" lay-id="common_link"><a href="#">店铺常用链接</a></li>
                 <li><a href="#">宝贝链接</a></li>
                 <li><a href="#">宝贝分类</a></li>
                 <li><a href="#">优惠券</a></li>
@@ -716,6 +716,7 @@
         $("body").on("click","#short_href",function (){
             // console.log(this);
             sms_short_table_init('', {'short_sms_type':0});
+            element.tabChange('short-href-tab', 'common_link');
             we.api.open_current_page_layer($(".short-href-layer"),'添加短链',{zIndex:19891016
             },['80%' , '80%']);
         })
