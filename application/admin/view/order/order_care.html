@@ -693,7 +693,7 @@
             console.log(JSON.stringify(formSearch.api.getFormJson("#form-sms-module")));
         })*/
 
-        //头工具栏事件
+        //选择短信模板头工具栏事件
         table.on('tool(table_sms)', function(obj){
             console.log(obj);
             var data = obj.data;
@@ -717,7 +717,7 @@
             // console.log(this);
             sms_short_table_init('', {'short_sms_type':0});
             element.tabChange('short-href-tab', 'common_link');
-            we.api.open_current_page_layer($(".short-href-layer"),'添加短链',{zIndex:19891016
+            short_sms_layer_index = we.api.open_current_page_layer($(".short-href-layer"),'添加短链',{zIndex:19891016
             },['80%' , '80%']);
         })
 
@@ -817,6 +817,20 @@
             //formSearch.api.searchForm($("form#form-recommend-sms-module"));////短信搜索初始化【推荐场景】
             //formSearch.api.searchForm($("form#form-sms-module"));//短信搜索初始化【模板库】
         }
+
+        //短链工具栏事件
+        table.on('tool(table-short-link-sms)', function(obj){
+            console.log(obj);
+            var data = obj.data;
+            console.log(data.sms_id);
+            if(obj.event === 'use_sms_short_link'){
+                layer.close(short_sms_layer_index)
+                insertText(document.getElementById("sms-content"),'c.tb.cn/c.02iCLm')//测试数据
+            } else if(obj.event === 'del_sms_module') {
+
+            }
+        })
+
 
 
         /**
