@@ -684,11 +684,26 @@
          * 短链切换监听
          * */
         element.on('tab(short-href-tab)', function(data){
-            console.log(this); //当前Tab标题所在的原始DOM元素
+            // console.log(this); //当前Tab标题所在的原始DOM元素
             console.log(data.index); //得到当前Tab的所在下标
-            console.log(data); //得到当前的Tab大容器
-        });
+            // console.log(data); //得到当前的Tab大容器
 
+            switch (data.index) {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+            }
+
+        });
 
         /**
          * sms_record短信测试发送记录
