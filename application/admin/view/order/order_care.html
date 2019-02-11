@@ -92,11 +92,10 @@
 </div>
 <!--短信模版弹出end-->
 
-
 <!--短链模版弹出begin-->
 <div class="body-form short-href-layer auto-height-table" style="display: none">
     <div class="layui-form yty-tab">
-        <div class="layui-tab" lay-filter="docDemoTabBrief">
+        <div class="layui-tab" lay-filter="short-href-tab">
             <ul class="layui-tab-title tabpage">
                 <li class="layui-this"><a href="#">店铺常用链接</a></li>
                 <li><a href="#">宝贝链接</a></li>
@@ -106,12 +105,12 @@
                 <li><a href="#">金店长活动</a></li>
             </ul>
             <div class="layui-tab-content" style="height: 100px;">
-                <div class="layui-tab-item layui-show">内容不一样是要有，因为你可以监听tab事件（阅读下文档就是了）</div>
-                <div class="layui-tab-item">内容2</div>
-                <div class="layui-tab-item">内容3</div>
-                <div class="layui-tab-item">内容4</div>
-                <div class="layui-tab-item">内容5</div>
-                <div class="layui-tab-item">内容6</div>
+                <div class="layui-tab-item layui-show common_link">内容不一样是要有，因为你可以监听tab事件（阅读下文档就是了）</div>
+                <div class="layui-tab-item good_link">内容2</div>
+                <div class="layui-tab-item gategory_list">内容3</div>
+                <div class="layui-tab-item coupon_list">内容4</div>
+                <div class="layui-tab-item match_list">内容5</div>
+                <div class="layui-tab-item jdz_list">内容6</div>
             </div>
         </div>
     </div>
@@ -564,6 +563,11 @@
          * */
         $("body").on("click","#sms_module,#tabs .tab1",function (){
             // console.log(this);
+            var title = "tab1";
+            $("#tabs").find("li[id^=li]").not("li[id=" + title + "]").removeClass("currenttab");
+            $('#li1').addClass('currenttab');
+            $("#content").find("div[id^=tab]").not("div[id=" + title + "]").hide();
+            $("#content").find("div[id=" + title + "]").fadeIn();
             sms_table_init("form#form-recommend-sms-module",1);
         })
 
@@ -675,6 +679,16 @@
             we.api.open_current_page_layer($(".short-href-layer"),'添加短链',{zIndex:19891016
             },['80%' , '80%']);
         })
+
+        /**
+         * 短链切换监听
+         * */
+        element.on('tab(short-href-tab)', function(data){
+            console.log(this); //当前Tab标题所在的原始DOM元素
+            console.log(data.index); //得到当前Tab的所在下标
+            console.log(data); //得到当前的Tab大容器
+        });
+
 
         /**
          * sms_record短信测试发送记录
