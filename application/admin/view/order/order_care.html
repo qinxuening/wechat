@@ -245,7 +245,7 @@
             <form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-set-black" lay-filter="form-sms-good-link">
                 <div class="searchbody">
                     <ul class="nav pull-left">
-                        <li>旺旺/手机号码：<input type="text" name="uid_name" id="uid_name" placeholder="" autocomplete="off" class="layui-input"></li>
+                        <li>云信/手机号码：<input type="text" name="uid_name" id="uid_name" placeholder="" autocomplete="off" class="layui-input"></li>
                         <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
                             <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
                         </li></ul>
@@ -489,17 +489,33 @@
     <input type="checkbox" name="is_time_push" value="{{d.is_time_push}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.is_time_push == 1 ? 'checked' : '' }}>
 </script>
 
-<!--短信模板操作-->
-<!--{:build_actionbar('actionbar',['edit','test', 'del'])}-->
+<!--短信模板操作begin-->
 <script type="text/html" id="actionbar">
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_module">使用</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del_sms_module">删除</a>
 </script>
+<!--短信模板操作end-->
 
-<!--短链操作-->
+
+<!--短链操作begin-->
 <script type="text/html" id="short_sms_actionbar">
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_short_link">选择链接</a>
 </script>
+<!--短链操作end-->
+
+<!--设置黑名单头部工具栏begin-->
+<script type="text/html" id="set_black_toolbar">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm layui-btn-normal" lay-event="add_black"><i class="fa fa-plus"></i>添加黑名单</button>
+    </div>
+</script>
+<!--设置黑名单头部工具栏end-->
+
+<!--短信模板操作begin-->
+<script type="text/html" id="set_black_actionbar">
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_module">取消黑名单</a>
+</script>
+<!--短信模板操作end-->
 
 {/block}
 
@@ -522,7 +538,7 @@
             ,form = layui.form
             ,weTable = layui.weTable
             ,formSearch = layui.formSearch
-            ,init_i = init_j = 0
+            ,init_i = init_j = init_m = 0
             ,toastr = layui.toastr;
 
         /**
@@ -861,17 +877,17 @@
                 ,skin:'line'
                 ,limit:10
                 ,defaultToolbar: ['filter']
-                // ,toolbar : '#toolbar'
+                ,toolbar : '#set_black_toolbar'
                 ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
                 ,search: false
                 ,cols: [[
                     {type:'checkbox', fixed: 'left', hide:true}
                     ,{field:'id', title: 'id', hide:true}
-                    ,{field:'uid_name', title: '旺旺/手机号码'}
+                    ,{field:'uid_name', title: '云信/手机号码'}
                     ,{field:'black_type', title: '黑名单类型'}
                     ,{field:'add_time', title: '添加时间'}
                     ,{field:'source', title: '添加来源'}
-                    ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:250}
+                    ,{fixed: 'right', title:'操作', toolbar: '#set_black_actionbar', width:250}
                 ]]
                 ,page: {
                     layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
@@ -890,6 +906,10 @@
             table.render(tableCommon); //数据表格初始化
             set_black_layer_index = we.api.open_current_page_layer($(".black-module-layer"),'设置黑名单',{zIndex:19891016
             },['80%' , '80%']);
+
+            if(init_m == 0) {
+                formSearch.api.searchForm($("form#form-set-black"));
+            }
         })
 
         /**
