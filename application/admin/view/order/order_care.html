@@ -225,10 +225,10 @@
                 <div class="layui-form-item layer-form-footer">
                     <div class="footer-inner">
                         <button type="submit" lay-submit="" lay-filter="formRule"
-                                class="layui-btn layui-btn-normal submit layui-btn-sm btn-embossed">{:__('OK')}
+                                class="layui-btn layui-btn-normal submit layui-btn-sm sms-confirm btn-embossed">{:__('OK')}
                         </button>
                         <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">
-                            {:__('Reset')}
+                            取消
                         </button>
                     </div>
                 </div>
@@ -306,7 +306,7 @@
                                         <input type="radio" name="date_notice_switch" lay-filter="date_notice_switch" value="0" title="超出时间不发送">
                                         <br>
                                         <p class="marginbuttom5"></p>
-                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="lunch_hour_switch" lay-skin="primary"  title="" checked="">
                                         午休时间 <input type="text" name="day_hour_start" id="siesta_hour_start" placeholder="" autocomplete="off" class="layui-input"> 时 至
                                         <input type="text" name="day_hour_end" id="siesta_hour_end" placeholder="" autocomplete="off" class="layui-input">
                                         不发送
@@ -318,13 +318,13 @@
                                 <tr>
                                     <td class="yty_tdleft"> 关怀条件 :</td>
                                     <td class="yty_tdright">
-                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="care_swicht" lay-skin="primary"  title="" checked="">
                                         实付金额 <input type="number" value="0.00" min="0" name="actually_paid_start" id="actually_paid_start" placeholder="" autocomplete="off" class="layui-input"> —
                                         <input type="number" min="0" value="0.00" name="actually_paid_end" id="actually_paid_end" placeholder="" autocomplete="off" class="layui-input">元
                                         <br>
                                         <p class="marginbuttom5"></p>
 
-                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="goods_switch" lay-skin="primary"  title="" checked="">
                                         商品数量 <input type="number" value="0" min="0" name="number_of_products_start" id="number_of_products_start" placeholder="" autocomplete="off" class="layui-input"> —
                                         <input type="number" min="0" value="" name="number_of_products_end" id="number_of_products_end" placeholder="" autocomplete="off" class="layui-input">件
                                         <br>
@@ -340,14 +340,14 @@
                                         </div>
                                         <br>
                                         <p class="marginbuttom5"></p>
-                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">订单类型为<span style="color: #FF5722">货到付款</span>时才发送提醒
+                                        <input type="checkbox" name="order_type_switch" lay-skin="primary"  title="" checked="">订单类型为<span style="color: #FF5722">货到付款</span>时才发送提醒
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td class="yty_tdleft"> 过滤设置 :</td>
                                     <td class="yty_tdright">
-                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="filter_set_switch" lay-skin="primary"  title="" checked="">
                                         <div class="layui-inline yty-form">
                                             <span>不发送</span>
                                             <div class="layui-input-inline">
@@ -364,7 +364,7 @@
                                         <br>
                                         <p class="marginbuttom5"></p>
 
-                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="not_flag_switch" lay-skin="primary"  title="" checked="">
                                         不发送标旗订单
                                         <div class="layui-inline yty-form">
                                         <ul class="yty-checkbox">
@@ -378,14 +378,14 @@
                                         <br>
                                         <p class="marginbuttom5"></p>
 
-                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="not_send_order_switch" lay-skin="primary"  title="" checked="">
                                         不发送订单来源
                                         <input type="checkbox" name="order_from[pc]" lay-skin="primary"  title="PC端">
                                         <input type="checkbox" name="order_from[mobile]" lay-skin="primary"  title="移动端">
                                         <br>
                                         <p class="marginbuttom5"></p>
 
-                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">当收货地区是
+                                        <input type="checkbox" name="area_switch" lay-skin="primary"  title="" checked="">当收货地区是
                                         <input type="text" name="shipping_address" id="shipping_address" placeholder="" autocomplete="off" class="layui-input"> 时,短信不提醒！
                                         <br>
                                         <p class="marginbuttom5"></p>
@@ -397,7 +397,7 @@
                                 <tr>
                                     <td class="yty_tdleft"> 赠送礼品 :</td>
                                     <td class="yty_tdright">
-                                        <input type="checkbox" name="date[check]" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="gift_switch" lay-skin="primary"  title="" checked="">
                                         <div class="layui-inline yty-form">
                                             <span>赠送流量</span>
                                             <a href="javascript:void(0);" class="astyle">选择流量卡 </a>
@@ -410,7 +410,7 @@
                                     <td class="yty_tdleft"> 短信内容 :</td>
                                     <td class="yty_tdright">
                                         <div class="layui-inline layui-form">
-                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea" readonly>注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
+                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content-last" readonly>注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
                                             <a href="javascript:void(0);" class="astyle sms-event">修改短信内容</a>
                                             <a href="javascript:void(0);" class="astyle sms_record">短信测试记录</a>
                                         </div>
@@ -886,6 +886,14 @@
         });
 
         /**
+         *修改短信内容后点击确定
+         * sms-confirm
+         * */
+        $("body").on("click",".sms-confirm",function (){
+            $('.sms-content-last').val($('.sms-content').val());
+        });
+
+            /**
          * 获取文本域光标并插入内容
          * @param obj
          * @param str
