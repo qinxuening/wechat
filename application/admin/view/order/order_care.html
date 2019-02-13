@@ -238,7 +238,7 @@
 </div>
 <!--修改短信内容弹出end-->
 
-<!--设置黑名单-->
+<!--设置黑名单begin-->
 <div class="body-form black-module-layer auto-height-table" style="display: none">
     <div class="layui-form">
         <div class="layui-row">
@@ -257,7 +257,51 @@
         </div>
     </div>
 </div>
-<!--设置黑名单-->
+<!--设置黑名单end-->
+
+<!--添加黑名单begin-->
+<div class="body-form add-black-layer auto-height-table" style="display: none">
+    <div class="layui-form">
+        <div class="layui-row">
+            <div class="layui-card main-table">
+                <form class="layui-form" action="" id="rule" lay-filter="rule">
+                <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
+                    <colgroup>
+                        <col class="yty_tdleft" width="30%">
+                        <col class="yty_tdright">
+                    </colgroup>
+                    <tr>
+                        <td class="yty_tdleft">黑名单类型</td>
+                        <td class="yty_tdright">
+                            <input type="radio" name="sex" value="1" title="云信昵称" checked="">
+                            <input type="radio" name="sex" value="2" title="手机号码">
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--<td class="yty_tdleft"> 短信内容 :</td>-->
+                        <td class="yty_tdright" colspan="2">
+                            <textarea placeholder="请根据选择的类型输入昵称或手机号码(可以批量录入，每行输入一个)" class="layui-textarea" style="width: 100%;height: 80%"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div class="layui-form-item layer-form-footer">
+                        <div class="footer-inner">
+                            <button type="submit" lay-submit="" lay-filter="form_add_black"
+                                    class="layui-btn layui-btn-normal submit layui-btn-sm add-black-confirm btn-embossed">{:__('OK')}
+                            </button>
+                            <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加黑名单end-->
+
 
 <body>
 <div class="layui-fluid">
@@ -868,6 +912,9 @@
             }
         })
 
+        /**
+         * 设置黑名单弹框
+         * */
         $("body").on("click",".set_black",function (){
             var tableCommon = {
                 elem: '#table_black'
@@ -913,6 +960,17 @@
         })
 
         /**
+         *设置黑名单头部操作
+         * */
+        table.on('toolbar(table_black)', function(obj){
+            console.log(obj.event);
+            if(obj.event == 'add_black'){
+                add_black_layer_index = we.api.open_current_page_layer($(".add-black-layer"),'添加黑名单',{zIndex:19891017
+                },['40%' , '60%']);
+            }
+        });
+
+            /**
          * sms_record短信测试发送记录
          * */
         $("body").on("click",".sms_record",function (){
