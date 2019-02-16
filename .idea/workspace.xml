@@ -156,8 +156,8 @@
       <file leaf-file-name="member_sms.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="1159" column="39" lean-forward="false" selection-start-line="1159" selection-start-column="39" selection-end-line="1159" selection-end-column="39" />
+            <state relative-caret-position="292">
+              <caret line="485" column="44" lean-forward="true" selection-start-line="485" selection-start-column="44" selection-end-line="485" selection-end-column="44" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#!!top" expanded="false" />
@@ -656,12 +656,12 @@
       <workItem from="1549796732112" duration="24896000" />
       <workItem from="1549945454127" duration="15435000" />
       <workItem from="1550233806364" duration="1039000" />
-      <workItem from="1550336628747" duration="5949000" />
+      <workItem from="1550336628747" duration="6195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="666100000" />
+    <option name="totallyTimeSpent" value="666346000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1453" height="859" extended-state="0" />
@@ -1117,8 +1117,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="1159" column="39" lean-forward="false" selection-start-line="1159" selection-start-column="39" selection-end-line="1159" selection-end-column="39" />
+        <state relative-caret-position="292">
+          <caret line="485" column="44" lean-forward="true" selection-start-line="485" selection-start-column="44" selection-end-line="485" selection-end-column="44" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#!!top" expanded="false" />
