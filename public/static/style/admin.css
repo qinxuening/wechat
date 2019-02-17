@@ -2534,3 +2534,12 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
 }
 
+.yty-btn{
+    padding: 0px 40px;
+}
+.marginleft100{
+    margin-left: 100px;
+}
+.marginbuttom10{
+    margin-bottom: 10px;
+}

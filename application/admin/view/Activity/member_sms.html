@@ -624,15 +624,21 @@
                                 </tr>
                                 </tbody>
                             </table>
-
-                            <div class="layui-form-item footer-form">
-                                <div class="footer footer-common">
-                                    <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
-                                    <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>
-                                    <a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed go-back">返回</div></a>
-                                    <!--onclick="window.history.go(-1)"-->
-                                </div>
-                            </div>
+                            <p class="marginleft100 marginbuttom10">
+                                <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal layui-btn-sm btn-embossed">筛选</button>
+                                <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">重置</button>
+                            </p>
+                            <p>
+                                筛选结果： 共筛选出<span class="red_color">0位</span>会员，其中有效<span class="red_color">0位</span>会员（有手机号，并已排重，已过滤黑名单）数据不全？去导入历史订单
+                            </p>
+                            <!--<div class="layui-form-item footer-form">-->
+                                <!--<div class="footer footer-common">-->
+                                    <!--<button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>-->
+                                    <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>-->
+                                    <!--<a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed go-back">返回</div></a>-->
+                                    <!--&lt;!&ndash;onclick="window.history.go(-1)"&ndash;&gt;-->
+                                <!--</div>-->
+                            <!--</div>-->
                         </form>
                     <!--</div>-->
                     <!--表格查询条件end-->
