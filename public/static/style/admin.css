@@ -2437,7 +2437,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 }
 
 .sms-phone{
-    float: right;
+    float: left;
     margin-left: 20px;
     background: url(./images/phone.png) no-repeat;
     width: 198px;
