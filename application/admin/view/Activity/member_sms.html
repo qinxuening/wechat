@@ -306,7 +306,7 @@
 <div class="body-form layer-form" style="display: none">
     <div class="layui-card main-table">
         <div class="layui-card-body main-body">
-            <div class="layui-form">
+            <div class="layui-form location_address_layer">
                 <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm">
                     <colgroup>
                         <col class="yty_tdleft" width="30%">
@@ -1409,7 +1409,53 @@
                 });
             }
         })
-        
+
+        /**
+         *省份全选、反选
+         */
+        form.on('radio(check_all)', function(data){
+            var value = data.value;
+            if(value == 'all') {
+                $(".location_address_layer").find("input[type=checkbox]").prop('checked', true);
+                $(".location_address_layer").find(".layui-form-checkbox").addClass('layui-form-checked');
+            } else {
+                $(".location_address_layer").find("input[type=checkbox]").prop('checked', false);
+                $(".location_address_layer").find(".layui-form-checkbox").removeClass('layui-form-checked');
+            }
+        });
+
+        /**
+         * 地区点击选中事件、分区全选、反选
+         */
+        $("body").on("click",".location_address_layer .layui-form-checkbox",function (){
+            var p = $(this).prev();
+            if(p.attr('class') == 'all' && p.attr('class') !== 'undefined') {
+                if($(this).hasClass('layui-form-checked')){
+                    $(this).parent(".layui-form").children('input').prop('checked', true);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
+                } else {
+                    $(this).parent(".layui-form").children('input').prop('checked', false);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
+                }
+            }else {
+                if(!$(this).hasClass('layui-form-checked')){
+                    $(this).parent(".layui-form").find('input').first().prop('checked', false);
+                    $(this).parent(".layui-form").find('.layui-form-checkbox').first().removeClass('layui-form-checked');
+                }else{
+                    var this_ = $(this);
+                    this_.parent(".layui-form").find('.layui-form-checkbox').not(':first').each(function (i) {
+                        if (!$(this).hasClass('layui-form-checked')) {
+                            this_.parent(".layui-form").find('input').first().prop('checked', false);
+                            this_.parent(".layui-form").find('.layui-form-checkbox').first().removeClass('layui-form-checked');
+                            return false;
+                        } else {
+                            this_.parent(".layui-form").find('input').first().prop('checked', true);
+                            this_.parent(".layui-form").find('.layui-form-checkbox').first().addClass('layui-form-checked');
+                        }
+                    });
+                }
+            }
+        });
     });
 
 </script>
