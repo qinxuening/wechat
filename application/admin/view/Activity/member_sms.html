@@ -312,7 +312,7 @@
                 <div class="layui-card-body main-body">
                     <!--表格查询条件begin-->
                     <!--<div class="searchbody">-->
-                        <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="rule">
+                        <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="member_sms">
                             <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
                                 <colgroup>
                                     <col class="yty_tdright" width="120px">
@@ -378,8 +378,12 @@
                                 <tr>
                                     <td class="yty_tdleft"> 会员等级 :</td>
                                     <td class="yty_tdright">
-                                        <input type="checkbox" name="membership_level[]" lay-filter="membership_level" lay-skin="primary" value="0"  title="不限">
+                                        <input type="checkbox" name="membership_level[]" lay-filter="membership_level" lay-skin="primary" value="0"  title="所有会员" checked>
                                         <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="1"  title="店铺会员">
+                                        <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="2"  title="普通会员">
+                                        <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="3"  title="高级会员">
+                                        <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="4"  title="VIP会员">
+                                        <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="5"  title="至尊VIP会员">
                                     </td>
                                 </tr>
 
@@ -1156,6 +1160,26 @@
                 $(".customize_avg_price").hide()
             )
         });
+
+        /**
+         * 会员等级全选、非全选
+         */
+        form.on('checkbox(membership_level)', function(data){
+            var value = data.value;
+            console.log(data.elem.checked);
+            if(value != 0) {
+                if (data.elem.checked){
+                    $(this).parent("td").children('input').first().prop('checked', false);
+                    $(this).parent("td").children('.layui-form-checkbox').first().removeClass('layui-form-checked');
+                }
+            } else {
+                if (data.elem.checked){
+                    $(this).parent("td").children('input').not(':first').prop('checked', false);
+                    $(this).parent("td").children('.layui-form-checkbox').not(':first').removeClass('layui-form-checked');
+                }
+            }
+        });
+
     });
 
 </script>
