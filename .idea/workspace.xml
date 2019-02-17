@@ -183,8 +183,8 @@
       <file leaf-file-name="member_sms.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="594" column="142" lean-forward="false" selection-start-line="594" selection-start-column="142" selection-end-line="594" selection-end-column="142" />
+            <state relative-caret-position="523">
+              <caret line="623" column="37" lean-forward="false" selection-start-line="623" selection-start-column="37" selection-end-line="623" selection-end-column="37" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#!!top" expanded="false" />
@@ -197,6 +197,7 @@
                 <element signature="n#style#0;n#span#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#td#1;n#tr#9;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -550,12 +551,12 @@
       <workItem from="1549796732112" duration="24896000" />
       <workItem from="1549945454127" duration="15435000" />
       <workItem from="1550233806364" duration="1039000" />
-      <workItem from="1550336628747" duration="22098000" />
+      <workItem from="1550336628747" duration="23522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="682249000" />
+    <option name="totallyTimeSpent" value="683673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1453" height="860" extended-state="0" />
@@ -1015,8 +1016,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="594" column="142" lean-forward="false" selection-start-line="594" selection-start-column="142" selection-end-line="594" selection-end-column="142" />
+        <state relative-caret-position="523">
+          <caret line="623" column="37" lean-forward="false" selection-start-line="623" selection-start-column="37" selection-end-line="623" selection-end-column="37" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#!!top" expanded="false" />
@@ -1029,6 +1030,7 @@
             <element signature="n#style#0;n#span#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#9;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
