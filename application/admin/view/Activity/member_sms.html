@@ -582,6 +582,17 @@
                                     <td class="yty_tdright">
                                         <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="0"  title="不限" checked>
                                         <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="1"  title="自定义">
+                                        <input type="hidden" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft"> 商品选择 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="0"  title="不限" checked>
+                                        <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="1"  title="商品">
+                                        <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="2"  title="类目">
+                                        <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="3"  title="关键字">
                                     </td>
                                 </tr>
                                 <tr class="task_time" style="display: none">
@@ -1456,6 +1467,8 @@
                 }
             }
         });
+
+
     });
 
 </script>
