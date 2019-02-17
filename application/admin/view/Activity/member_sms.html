@@ -539,8 +539,8 @@
                                 <tr>
                                     <td class="yty_tdleft"> 筛选操作 :</td>
                                     <td class="yty_tdright">
-                                        <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal layui-btn-sm btn-embossed">查询</button>
-                                        <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">重置</button>
+                                        <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-primary btn-primary-border layui-btn-sm btn-embossed">查询</button>
+                                        <button type="reset" class="layui-btn layui-btn-sm  layui-btn-primary btn-primary-border yty-btn btn-embossed">重置</button>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -585,7 +585,7 @@
                             <tr>
                                 <td class="yty_tdleft"> 短信标题 :</td>
                                 <td class="yty_tdright">
-                                     <input type="text" name="sms_title" id="sms_title" placeholder="" autocomplete="off" class="layui-input">
+                                     <input type="text" name="sms_title" id="sms_title"  placeholder="" autocomplete="off" class="layui-input width250">
                                 </td>
                             </tr>
                             <tr>
@@ -622,39 +622,33 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="yty_tdleft"> 商品选择 :</td>
+                                <td class="yty_tdleft"> 短信测试 :</td>
                                 <td class="yty_tdright">
-                                    <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="0"  title="不限" checked>
-                                    <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="1"  title="商品">
-                                    <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="2"  title="类目">
-                                    <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="3"  title="关键字">
+                                    <input type="text" name="sms_test" id="sms_test"  placeholder="可输入5个测试手机号，用逗号“，”隔开" autocomplete="off" class="layui-input width250">
+                                    <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-primary btn-primary-border layui-btn-sm btn-embossed">查询</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="yty_tdleft"> 人群画像 :</td>
+                                <td class="yty_tdleft"> 发送号码 :</td>
                                 <td class="yty_tdright">
-                                    <input type="checkbox" name="crowd_portrait_type[]" lay-filter="crowd_portrait_type" lay-skin="primary" value="0"  title="不限" checked>
-                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="1"  title="学生">
-                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="2"  title="IT">
-                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="3"  title="金融族">
-                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="4"  title="白领">
-                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="公务员">
-                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="家居族">
-                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="医护人员">
-                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="其他">
+                                    <input type="radio" name="send_mobile_type" lay-filter="send_mobile_type" lay-skin="primary" value="0"  title="优先收货人号码" checked>
+                                    <input type="radio" name="send_mobile_type" lay-filter="send_mobile_type" lay-skin="primary" value="1"  title="优先支付宝号码">
+                                    <input type="radio" name="send_mobile_type" lay-filter="send_mobile_type" lay-skin="primary" value="2"  title="只发收货人号码">
+                                    <input type="radio" name="send_mobile_type" lay-filter="send_mobile_type" lay-skin="primary" value="3"  title="只发支付宝号码">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="yty_tdleft"> 已发短信过滤 :</td>
+                                <td class="yty_tdleft"> 发送人数 :</td>
                                 <td class="yty_tdright">
-                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="0" title="今天" checked>
-                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="1" title="近3天">
-                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="2" title="近7天">
-                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="3" title="近15天">
-                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="4" title="自定义">
-                                    <span class="customize_fitler_date" style="display: none">
-                                            近 <input type="number" name="customize_fitler_date" id="customize_fitler_date" placeholder="" autocomplete="off" class="layui-input"> 天
-                                        </span>
+                                    <input type="radio" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="0"  title="全部" checked>
+                                    <input type="radio" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="1"  title="部分">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="yty_tdleft"> 发送时间 :</td>
+                                <td class="yty_tdright">
+                                    <input type="radio" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="0"  title="立即发送" checked>
+                                    <input type="radio" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="1"  title="定时发送">
                                 </td>
                             </tr>
                             </tbody>
