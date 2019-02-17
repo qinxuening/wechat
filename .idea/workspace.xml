@@ -156,8 +156,8 @@
       <file leaf-file-name="member_sms.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="485" column="44" lean-forward="true" selection-start-line="485" selection-start-column="44" selection-end-line="485" selection-end-column="44" />
+            <state relative-caret-position="212">
+              <caret line="381" column="161" lean-forward="false" selection-start-line="381" selection-start-column="161" selection-end-line="381" selection-end-column="161" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#!!top" expanded="false" />
@@ -221,7 +221,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sms-module-layer</find>
       <find>tableCommon</find>
       <find>layer_notice</find>
       <find>options</find>
@@ -251,6 +250,7 @@
       <find>短信内容 :</find>
       <find>time_end</find>
       <find>time_start</find>
+      <find>移动端</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -656,18 +656,18 @@
       <workItem from="1549796732112" duration="24896000" />
       <workItem from="1549945454127" duration="15435000" />
       <workItem from="1550233806364" duration="1039000" />
-      <workItem from="1550336628747" duration="6195000" />
+      <workItem from="1550336628747" duration="7670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="666346000" />
+    <option name="totallyTimeSpent" value="667821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1453" height="859" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09893993" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.089045934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1117,8 +1117,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="485" column="44" lean-forward="true" selection-start-line="485" selection-start-column="44" selection-end-line="485" selection-end-column="44" />
+        <state relative-caret-position="212">
+          <caret line="381" column="161" lean-forward="false" selection-start-line="381" selection-start-column="161" selection-end-line="381" selection-end-column="161" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#!!top" expanded="false" />
