@@ -491,7 +491,7 @@
         <div class="layui-col-md12 webody">
             <div class="layui-card main-table">
                 <div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>第一步：筛选条件 </div>
-                <div class="layui-card-body main-body">
+                <div class="layui-card-body">
                     <!--表格查询条件begin-->
                     <!--<div class="searchbody">-->
                         <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="member_sms">
@@ -622,13 +622,18 @@
                                         </span>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td class="yty_tdleft"> 筛选操作 :</td>
+                                    <td class="yty_tdright">
+                                    <p class="marginbuttom10">
+                                        <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal layui-btn-sm btn-embossed">查询</button>
+                                        <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">重置</button>
+                                    </p>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
-                            <p class="marginleft100 marginbuttom10">
-                                <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal layui-btn-sm btn-embossed">筛选</button>
-                                <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">重置</button>
-                            </p>
-                            <p>
+                            <p class="search_result" style="display: block">
                                 筛选结果： 共筛选出<span class="red_color">0位</span>会员，其中有效<span class="red_color">0位</span>会员（有手机号，并已排重，已过滤黑名单）数据不全？去导入历史订单
                             </p>
                             <!--<div class="layui-form-item footer-form">-->
@@ -640,6 +645,82 @@
                                 <!--</div>-->
                             <!--</div>-->
                         </form>
+                    <!--</div>-->
+                    <!--表格查询条件end-->
+
+                    <!--订单查询结果begin-->
+                    <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
+                    <!--订单查询结果end-->
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md12 webody1">
+            <div class="layui-card main-table">
+                <div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>第二步：编辑短信  </div>
+                <div class="layui-card-body main-body">
+                    <!--表格查询条件begin-->
+                    <!--<div class="searchbody">-->
+                    <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="member_sms">
+                        <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
+                            <colgroup>
+                                <col class="yty_tdright" width="120px">
+                                <col class="yty_tdright">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td class="yty_tdleft"> 短信标题 :</td>
+                                <td class="yty_tdright">
+                                     <input type="text" name="sms_title" id="sms_title" placeholder="" autocomplete="off" class="layui-input">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="yty_tdleft"> 商品选择 :</td>
+                                <td class="yty_tdright">
+                                    <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="0"  title="不限" checked>
+                                    <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="1"  title="商品">
+                                    <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="2"  title="类目">
+                                    <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="3"  title="关键字">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="yty_tdleft"> 人群画像 :</td>
+                                <td class="yty_tdright">
+                                    <input type="checkbox" name="crowd_portrait_type[]" lay-filter="crowd_portrait_type" lay-skin="primary" value="0"  title="不限" checked>
+                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="1"  title="学生">
+                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="2"  title="IT">
+                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="3"  title="金融族">
+                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="4"  title="白领">
+                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="公务员">
+                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="家居族">
+                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="医护人员">
+                                    <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="其他">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="yty_tdleft"> 已发短信过滤 :</td>
+                                <td class="yty_tdright">
+                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="0" title="今天" checked>
+                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="1" title="近3天">
+                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="2" title="近7天">
+                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="3" title="近15天">
+                                    <input type="radio" name="fitler_date" lay-filter="fitler_date" value="4" title="自定义">
+                                    <span class="customize_fitler_date" style="display: none">
+                                            近 <input type="number" name="customize_fitler_date" id="customize_fitler_date" placeholder="" autocomplete="off" class="layui-input"> 天
+                                        </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--<div class="layui-form-item footer-form">-->
+                        <!--<div class="footer footer-common">-->
+                        <!--<button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>-->
+                        <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>-->
+                        <!--<a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed go-back">返回</div></a>-->
+                        <!--&lt;!&ndash;onclick="window.history.go(-1)"&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </form>
                     <!--</div>-->
                     <!--表格查询条件end-->
 
