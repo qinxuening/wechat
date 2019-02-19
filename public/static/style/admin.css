@@ -2543,7 +2543,6 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .marginbuttom10{
     margin-bottom: 10px;
 }
-
 .width250{
     width: 300px !important;
 }
@@ -2551,4 +2550,9 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .btn-primary-border{
     border: 1px solid #506def;
     color: #506def;
+}
+.search_result{
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
 }
