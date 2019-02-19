@@ -123,8 +123,8 @@
       <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="2556" column="17" lean-forward="false" selection-start-line="2556" selection-start-column="17" selection-end-line="2556" selection-end-column="17" />
+            <state relative-caret-position="705">
+              <caret line="1667" column="30" lean-forward="false" selection-start-line="1667" selection-start-column="30" selection-end-line="1667" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -133,33 +133,23 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="146" column="44" lean-forward="false" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
+            <state relative-caret-position="1226">
+              <caret line="585" column="0" lean-forward="true" selection-start-line="585" selection-start-column="0" selection-end-line="585" selection-end-column="0" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
-                <marker date="1550380456481" expanded="true" signature="22873:22888" ph="..." />
-                <marker date="1550380456481" expanded="true" signature="23050:23065" ph="..." />
+                <marker date="1550592208857" expanded="true" signature="26988:27003" ph="..." />
+                <marker date="1550592208857" expanded="true" signature="27165:27180" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="47" column="3" lean-forward="true" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="member_sms.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="member_sms.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="411" column="74" lean-forward="false" selection-start-line="411" selection-start-column="74" selection-end-line="411" selection-end-column="74" />
+            <state relative-caret-position="137">
+              <caret line="1387" column="74" lean-forward="false" selection-start-line="1387" selection-start-column="30" selection-end-line="1387" selection-end-column="74" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#!!top" expanded="false" />
@@ -179,6 +169,28 @@
                 <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
                 <marker date="1550581222142" expanded="false" signature="41553:41570" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formSearch.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/static/modules/formSearch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="37" />
+              <folding>
+                <element signature="e#850#2890#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formEvent.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/static/modules/formEvent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-366">
+              <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -224,8 +236,8 @@
       <find>check_all</find>
       <find>location_address_layer</find>
       <find>全选</find>
-      <find>areaIdH</find>
       <find>地区筛选</find>
+      <find>areaIdH</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -237,7 +249,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/admin/view/system/base_info.html" />
         <option value="$PROJECT_DIR$/application/admin/view/user/rule/index.html" />
         <option value="$PROJECT_DIR$/public/static/config.js" />
         <option value="$PROJECT_DIR$/application/admin/view/common/meta.html" />
@@ -285,9 +296,10 @@
         <option value="$PROJECT_DIR$/common.js" />
         <option value="$PROJECT_DIR$/public/static/lib/index.js" />
         <option value="$PROJECT_DIR$/application/admin/view/order/order_care.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/order/index.html" />
-        <option value="$PROJECT_DIR$/public/static/style/admin.css" />
         <option value="$PROJECT_DIR$/application/admin/view/Activity/member_sms.html" />
+        <option value="$PROJECT_DIR$/public/static/style/admin.css" />
+        <option value="$PROJECT_DIR$/application/admin/view/order/index.html" />
+        <option value="$PROJECT_DIR$/public/static/modules/formEvent.js" />
       </list>
     </option>
   </component>
@@ -387,7 +399,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -423,6 +435,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -437,11 +471,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xm\wechat\public\static\modules" />
       <recent name="E:\xm\wechat\application\admin\view\Activity" />
       <recent name="$PROJECT_DIR$/application/admin/view/order" />
       <recent name="E:\xm\wechat\application\admin\view\widget" />
       <recent name="E:\xm\wechat\application\admin\view\order" />
-      <recent name="E:\project\wechat\public\static\style\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -553,18 +587,18 @@
       <workItem from="1549796732112" duration="24896000" />
       <workItem from="1549945454127" duration="15435000" />
       <workItem from="1550233806364" duration="1039000" />
-      <workItem from="1550336628747" duration="35588000" />
+      <workItem from="1550336628747" duration="41141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="695739000" />
+    <option name="totallyTimeSpent" value="701292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1453" height="860" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15689047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09893993" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -593,14 +627,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4644">
-          <caret line="172" column="78" lean-forward="false" selection-start-line="172" selection-start-column="78" selection-end-line="172" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/lib/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -885,16 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/formSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1971">
-          <caret line="102" column="37" lean-forward="false" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
-          <folding>
-            <element signature="e#850#2890#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/modules/weTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -961,6 +977,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/push/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="1667" column="30" lean-forward="false" selection-start-line="1667" selection-start-column="30" selection-end-line="1667" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -993,39 +1025,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/push/index.html">
+    <entry file="file://$PROJECT_DIR$/public/static/modules/formSearch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="146" column="44" lean-forward="false" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
+        <state relative-caret-position="297">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="37" />
           <folding>
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <marker date="1550380456481" expanded="true" signature="22873:22888" ph="..." />
-            <marker date="1550380456481" expanded="true" signature="23050:23065" ph="..." />
+            <element signature="e#850#2890#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="2556" column="17" lean-forward="false" selection-start-line="2556" selection-start-column="17" selection-end-line="2556" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="411" column="74" lean-forward="false" selection-start-line="411" selection-start-column="74" selection-end-line="411" selection-end-column="74" />
+        <state relative-caret-position="137">
+          <caret line="1387" column="74" lean-forward="false" selection-start-line="1387" selection-start-column="30" selection-end-line="1387" selection-end-column="74" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#!!top" expanded="false" />
@@ -1045,6 +1058,27 @@
             <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
             <marker date="1550581222142" expanded="false" signature="41553:41570" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1226">
+          <caret line="585" column="0" lean-forward="true" selection-start-line="585" selection-start-column="0" selection-end-line="585" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <marker date="1550592208857" expanded="true" signature="26988:27003" ph="..." />
+            <marker date="1550592208857" expanded="true" signature="27165:27180" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/formEvent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-366">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1665,6 +1665,7 @@ body .layui-layer-we{
 .layui-input, .layui-select, .layui-textarea,.layui-form-label,.layui-input-inline,.xm-input,.xm-select{
     height: 30px !important;
     line-height: 30px !important;
+    border: 1px solid #d1d1d1;
     /*padding: 2px !important;*/
 }
 
@@ -2235,6 +2236,7 @@ tr>td.yty_tdright {
 tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdright .layui-textarea, tr>td.yty_tdright>.xm-select {
     width: 150px;
     /*background: #f5f7bb;*/
+    border:1px solid #d1d1d1;
     display: inline;
 }
 
@@ -2261,7 +2263,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .yty-checkbox li{
     float: left;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #d1d1d1;
     margin-left: 10px;
     padding: 2px 10px 0px 10px;
     border-radius: 2px;
