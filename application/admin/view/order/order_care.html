@@ -18,12 +18,16 @@
                                 <ul class="nav pull-left">
                                     <input type="hidden" name="sms_type" value="1" placeholder="" autocomplete="off" class="layui-input">
                                     <li>场景类型：
-                                        <select name="recommended_scene" id="recommended_scene">
-                                            <option value="4" selected>所有场景</option>
-                                            <option value="1">周年庆</option>
-                                            <option value="2">聚划算</option>
-                                            <option value="3">上新</option>
-                                        </select>
+                                        <div class="layui-inline">
+                                        <div class="layui-input-inline">
+                                            <select name="recommended_scene" lay-verify="required" lay-search="">
+                                                <option value="4" selected>所有场景</option>
+                                                <option value="1">周年庆</option>
+                                                <option value="2">聚划算</option>
+                                                <option value="3">上新</option>
+                                            </select>
+                                        </div>
+                                        </div>
                                     </li>
                                     <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
                                         <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
@@ -37,14 +41,17 @@
                                 <ul class="nav pull-left">
                                     <input type="hidden" name="sms_type" value="2" placeholder="" autocomplete="off" class="layui-input">
                                     <li>模板来源：
-                                        <select name="modeltype" id="modeltype">
+                                        <div class="layui-input-inline">
+                                        <select name="modeltype" id="modeltype"  lay-verify="required" lay-search="">
                                             <option value="2" selected>所有类型</option>
                                             <option value="1">自定义模板</option>
                                             <option value="0">系统模板</option>
                                         </select>
+                                        </div>
                                     </li>
                                     <li>模板类型：
-                                        <select name="selecttemp" id="selecttemp">
+                                        <div class="layui-input-inline">
+                                        <select name="selecttemp" id="selecttemp" lay-verify="required" lay-search="">
                                             <option value="0" selected="selected">所有模板</option>
                                             <option value="16">会员短信 </option>
                                             <option value="17">指定号码发送</option>
@@ -63,6 +70,7 @@
                                             <option value="14">宝贝关怀 </option>
                                             <option value="15">智能凑单 </option>
                                         </select>
+                                        </div>
                                     </li>
                                     <li>关键词：<input type="text" name="keyword" id="keyword" placeholder="" autocomplete="off" class="layui-input"></li>
                                     <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
@@ -112,11 +120,13 @@
                                 <ul class="nav pull-left">
                                     <input type="hidden" name="short_sms_type" value="1" placeholder="" autocomplete="off" class="layui-input">
                                     <li>宝贝状态：
-                                        <select name="goods_status" id="goods_status">
+                                        <div class="layui-input-inline">
+                                        <select name="goods_status" id="goods_status" lay-verify="required" lay-search="">
                                             <option value="1" selected>所有状态</option>
                                             <option value="2">出售中</option>
                                             <option value="3">仓库中</option>
                                         </select>
+                                        </div>
                                     </li>
                                     <li>宝贝ID：<input type="text" name="goods_id" id="goods_id" placeholder="" autocomplete="off" class="layui-input"></li>
                                     <li>宝贝标题：<input type="text" name="goods_title" id="goods_title" placeholder="" autocomplete="off" class="layui-input"></li>

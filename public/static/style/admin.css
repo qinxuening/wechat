@@ -1662,7 +1662,7 @@ body .layui-layer-we{
     border-radius:4px;
 }
 
-.layui-input, .layui-select, .layui-textarea,.layui-form-label,.layui-input-inline,.xm-input,.xm-select{
+.layui-input,.layui-unselect, .layui-select, .layui-textarea,.layui-form-label,.layui-input-inline,.xm-input,.xm-select{
     height: 30px !important;
     line-height: 30px !important;
     border: 1px solid #BFBFBF;
@@ -2318,7 +2318,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     border-radius: 2px;
 }
 
-.checkbox-active{
+.yty-checkbox .checkbox-active{
     border: 1px solid #506def !important;
 }
 
@@ -2561,5 +2561,8 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 }
 
 .layui-select-title .layui-input{
+    border: none !important;
+}
+.layui-select-title{
     border: none !important;
 }
