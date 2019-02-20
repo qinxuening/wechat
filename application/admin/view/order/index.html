@@ -249,8 +249,8 @@
                                 <tr>
                                     <td class="yty_tdleft">订单状态 :</td>
                                     <td class="yty_tdright">
-                                        <div class="layui-form">
-                                            <input type="checkbox" lay-skin="primary" name="orderStatus[ALL]" value="ALL" title="全部"  lay-filter="check_all">
+                                        <div class="layui-form yty-checkbox-all">
+                                            <input type="checkbox" lay-skin="primary" name="orderStatus[ALL]" value="ALL" class="all" title="全部"  lay-filter="check_all">
                                             <input type="checkbox" lay-skin="primary" name="orderStatus[WAIT_BUYER_PAY]" title="下单未付款">
                                             <input type="checkbox" lay-skin="primary" name="orderStatus[WAIT_SELLER_SEND_GOODS]" title="付款未发货">
                                             <input type="checkbox" lay-skin="primary" name="orderStatus[WAIT_BUYER_CONFIRM_GOODS]" title="已发货">
@@ -265,8 +265,8 @@
                                 <tr>
                                     <td class="yty_tdleft">评价状态 :</td>
                                     <td class="yty_tdright">
-                                        <div class="layui-form">
-                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[ALL]" value="ALL" title="全部"  lay-filter="check_all">
+                                        <div class="layui-form yty-checkbox-all">
+                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[ALL]" value="ALL" title="全部" class="all"  lay-filter="check_all">
                                             <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_RATE]" value="BUYER_RATE" title="买家已评"  lay-filter="check_all">
                                             <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评"  lay-filter="check_all">
                                             <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评，卖家已评"  lay-filter="check_all">
@@ -278,8 +278,8 @@
                                 <tr>
                                     <td class="yty_tdleft">订单类型 :</td>
                                     <td class="yty_tdright">
-                                        <div class="layui-form">
-                                            <input type="checkbox" lay-skin="primary" name="orderType[ALL]" value="ALL" title="全部" lay-filter="check_all">
+                                        <div class="layui-form yty-checkbox-all">
+                                            <input type="checkbox" lay-skin="primary" name="orderType[ALL]" value="ALL" title="全部" class="all" lay-filter="check_all">
                                             <input type="checkbox" lay-skin="primary" name="orderType[FRONT_NOPAID_FINAL_NOPAID]" value="FRONT_NOPAID_FINAL_NOPAID" title="定金未定" lay-filter="check_all">
                                             <input type="checkbox" lay-skin="primary" name="orderType[FRONT_PAID_FINAL_NOPAID]" value="FRONT_PAID_FINAL_NOPAID" title="已付定金，未付尾款" lay-filter="check_all">
                                             <input type="checkbox" lay-skin="primary" name="orderType[FRONT_PAID_FINAL_PAID]" value="FRONT_PAID_FINAL_PAID" title="定金已付，尾款已付" lay-filter="check_all">
@@ -540,18 +540,18 @@
         /**
          * 评价状态、订单类型全选、非全选状态
          */
-        form.on('checkbox(check_all)', function(data){
-            var value = data.value;
-            if(value == 'ALL') {
-                if (data.elem.checked) {
-                    $(this).parent(".layui-form").children('input').prop('checked', true);
-                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
-                } else {
-                    $(this).parent(".layui-form").children('input').prop('checked', false);
-                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
-                }
-            }
-        });
+//        form.on('checkbox(check_all)', function(data){
+//            var value = data.value;
+//            if(value == 'ALL') {
+//                if (data.elem.checked) {
+//                    $(this).parent(".layui-form").children('input').prop('checked', true);
+//                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
+//                } else {
+//                    $(this).parent(".layui-form").children('input').prop('checked', false);
+//                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
+//                }
+//            }
+//        });
 
         /**
          *省份全选、反选
@@ -568,9 +568,9 @@
         });
 
         /**
-         * 地区点击选中事件
+         * 地区点击选中、评价状态、订单类型全选、非全选状态
          */
-        formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox");
+        formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox, .yty-checkbox-all .layui-form-checkbox");
 //        $("body").on("click",".layui-form-checkbox",function (){
 //            var p = $(this).prev();
 //            if(p.attr('class') == 'all' && p.attr('class') !== 'undefined') {
