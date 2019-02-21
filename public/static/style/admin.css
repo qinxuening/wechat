@@ -2326,6 +2326,15 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     border: 1px solid #506def !important;
 }
 
+.yty-checkbox .checkbox-active p{
+    position: absolute;
+    width: 22px;
+    height: 17px;
+    right: -1px;
+    bottom: -1px;
+    background: url(./images/ytyBack.png) no-repeat -246px -75px;
+}
+
 .yty-form .layui-disabled{
     background-color: #e7e7e7;
 }
@@ -2557,9 +2566,10 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .btn-primary-border{
     border: 1px solid #506def;
     color: #506def;
+    border-radius: 4px;
 }
 .search_result{
-    border: 1px solid #e5e5e5;
+    border: 1px solid #BFBFBF;
     border-radius: 8px;
     padding: 20px;
 }
