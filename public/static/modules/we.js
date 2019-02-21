@@ -266,6 +266,53 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 title: false,
                 content: "<ul class='layer_notice'>" + content +"</ul>",
             });
+        },
+        monitor_input:function (origin_obj, target_obj) {
+            origin_obj.bind('input porpertychange',function(){
+                console.log($(this).val().length);
+                target_obj.text($(this).val());
+            });
+        },
+        /**
+         * 获取文本域光标并插入内容
+         * @param obj
+         * @param str
+         */
+        insertText:function(obj,str) {
+            obj.focus();
+            if (document.selection) {
+                var sel = document.selection.createRange();
+                sel.text = str;
+            } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+                var startPos = obj.selectionStart,
+                    endPos = obj.selectionEnd,
+                    cursorPos = startPos,
+                    tmpStr = obj.value;
+                obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+                cursorPos += str.length;
+                obj.selectionStart = obj.selectionEnd = cursorPos;
+            } else {
+                obj.value += str;
+                // console.log(obj.value)
+            }
+            $(".synchronize_sms_content").text(obj.value);
+            $('.sms-content-length').text(obj.value.length);
+        },
+        /**
+         * 把光标移动文本域末尾
+         * @param obj
+         */
+        moveEnd:function(obj){
+            obj.focus();
+            var len = obj.value.length;
+            if (document.selection) {
+                var sel = obj.createTextRange();
+                sel.moveStart('character',len);
+                sel.collapse();
+                sel.select();
+            } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
+                obj.selectionStart = obj.selectionEnd = len;
+            }
         }
     };
     we.init();

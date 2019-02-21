@@ -203,7 +203,7 @@
                                     <!--<br>-->
                                     <!--<p class="marginbuttom5"></p>-->
                                     <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
-                                    <p class="font12">已输入：<span class="red_color">68</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
+                                    <p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
 2、一个汉字,数字,字母,空格都算一个字<br>
 3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
                                     <!--<p class="font12">1、单条70个字,超出70个字将按照67个字每条计算<br></p>
@@ -796,6 +796,7 @@
                 layer.close(index_sms)
                 $(".sms-content").val(data.sms_content)
                 $(".synchronize_sms_content").text(data.sms_content)
+                $('.sms-content-length').text(data.sms_content.length);
             } else if(obj.event === 'del_sms_module') {
                 var sms_id = data.sms_id;
                 var url = "";
@@ -919,7 +920,7 @@
             console.log(data.sms_id);
             if(obj.event === 'use_sms_short_link'){
                 layer.close(short_sms_layer_index)
-                insertText(document.getElementById("sms-content"),'c.tb.cn/c.02iCLm')//测试数据
+                we.insertText(document.getElementById("sms-content"),'c.tb.cn/c.02iCLm')//测试数据
             } else if(obj.event === 'del_sms_module') {
 
             }
@@ -1024,14 +1025,14 @@
                     layer.confirm(title,{
                         title:'温馨提示',area: ['400px','250px'],zIndex:19891016
                     }, function(index){
-                        insertText(document.getElementById("sms-content"),content)
+                        we.insertText(document.getElementById("sms-content"),content)
                         layer.close(index);
                     });
                 } else {
-                    insertText(document.getElementById("sms-content"),content)
+                    we.insertText(document.getElementById("sms-content"),content)
                 }
             } else {
-                insertText(document.getElementById("sms-content"),content)
+                we.insertText(document.getElementById("sms-content"),content)
             }
         });
 
@@ -1048,45 +1049,53 @@
          * @param obj
          * @param str
          */
-        function insertText(obj,str) {
-            obj.focus();
-            if (document.selection) {
-                var sel = document.selection.createRange();
-                sel.text = str;
-            } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
-                var startPos = obj.selectionStart,
-                    endPos = obj.selectionEnd,
-                    cursorPos = startPos,
-                    tmpStr = obj.value;
-                obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
-                cursorPos += str.length;
-                obj.selectionStart = obj.selectionEnd = cursorPos;
-            } else {
-                obj.value += str;
-                // console.log(obj.value)
-            }
-            $(".synchronize_sms_content").text(obj.value);
-        }
+//        function insertText(obj,str) {
+//            obj.focus();
+//            if (document.selection) {
+//                var sel = document.selection.createRange();
+//                sel.text = str;
+//            } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+//                var startPos = obj.selectionStart,
+//                    endPos = obj.selectionEnd,
+//                    cursorPos = startPos,
+//                    tmpStr = obj.value;
+//                obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+//                cursorPos += str.length;
+//                obj.selectionStart = obj.selectionEnd = cursorPos;
+//            } else {
+//                obj.value += str;
+//                // console.log(obj.value)
+//            }
+//            $(".synchronize_sms_content").text(obj.value);
+//            $('.sms-content-length').text(obj.value.length);
+//        }
 
         /**
          * 把光标移动文本域末尾
          * @param obj
          */
-        function moveEnd(obj){
-            obj.focus();
-            var len = obj.value.length;
-            if (document.selection) {
-                var sel = obj.createTextRange();
-                sel.moveStart('character',len);
-                sel.collapse();
-                sel.select();
-            } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
-                obj.selectionStart = obj.selectionEnd = len;
-            }
-        }
+//        function moveEnd(obj){
+//            obj.focus();
+//            var len = obj.value.length;
+//            if (document.selection) {
+//                var sel = obj.createTextRange();
+//                sel.moveStart('character',len);
+//                sel.collapse();
+//                sel.select();
+//            } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
+//                obj.selectionStart = obj.selectionEnd = len;
+//            }
+//        }
 
-
-
+        /**
+         * 短信标签 输入框输入
+         */
+//        we.monitor_input($('#sms-content'), $('.synchronize_sms_content'));
+        $('#sms-content').bind('input porpertychange',function(){
+            console.log($(this).val().length);
+            $('.synchronize_sms_content').text($(this).val());
+            $('.sms-content-length').text($(this).val().length);
+        });
     });
 
 </script>

@@ -590,7 +590,7 @@
                             </tr>
                             <tr>
                                 <td class="yty_tdleft"> 短信内容 :</td>
-                                <td class="yty_tdright label_sm">
+                                <td class="yty_tdright label_sms">
                                     <ul class="ulstyle0">
                                         <li><a href="javascript:void(0);" id="buyer_name">卖家姓名</a></li>
                                         <li><a href="javascript:void(0);" id="buyer_customer_name">买家云信名称</a></li>
@@ -605,7 +605,7 @@
                                     <!--<br>-->
                                     <!--<p class="marginbuttom5"></p>-->
                                     <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
-                                    <p class="font12">已输入：<span class="red_color">68</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
+                                    <p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
 2、一个汉字,数字,字母,空格都算一个字<br>
 3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
                                     <!--<p class="font12">1、单条70个字,超出70个字将按照67个字每条计算<br></p>
@@ -751,7 +751,7 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch'], function(){
+    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch','formEvent'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,layer = layui.layer
@@ -763,6 +763,7 @@
             ,weTable = layui.weTable
             ,formSearch = layui.formSearch
             ,init_i = init_j = init_m = 0
+            ,formEvent = layui.formEvent
             ,toastr = layui.toastr;
 
         /**
@@ -1182,7 +1183,7 @@
         /**
          * 短信标签设置
          */
-        $("body").on("click",".sms_label ul li",function (){
+        $("body").on("click",".label_sms ul li",function (){
             console.log($(this).text());
             var label_id = $(this).children().attr('id');
             var content = "{" +$(this).text()+ "}";
@@ -1200,14 +1201,14 @@
                     layer.confirm(title,{
                         title:'温馨提示',area: ['400px','250px'],zIndex:19891016
                     }, function(index){
-                        insertText(document.getElementById("sms-content"),content)
-                        layer.close(index);
+                        we.insertText(document.getElementById("sms-content"),content)
+                        we.layer.close(index);
                     });
                 } else {
-                    insertText(document.getElementById("sms-content"),content)
+                    we.insertText(document.getElementById("sms-content"),content)
                 }
             } else {
-                insertText(document.getElementById("sms-content"),content)
+                we.insertText(document.getElementById("sms-content"),content)
             }
         });
 
@@ -1224,42 +1225,42 @@
          * @param obj
          * @param str
          */
-        function insertText(obj,str) {
-            obj.focus();
-            if (document.selection) {
-                var sel = document.selection.createRange();
-                sel.text = str;
-            } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
-                var startPos = obj.selectionStart,
-                    endPos = obj.selectionEnd,
-                    cursorPos = startPos,
-                    tmpStr = obj.value;
-                obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
-                cursorPos += str.length;
-                obj.selectionStart = obj.selectionEnd = cursorPos;
-            } else {
-                obj.value += str;
-                // console.log(obj.value)
-            }
-            $(".synchronize_sms_content").text(obj.value);
-        }
+//        function insertText(obj,str) {
+//            obj.focus();
+//            if (document.selection) {
+//                var sel = document.selection.createRange();
+//                sel.text = str;
+//            } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+//                var startPos = obj.selectionStart,
+//                    endPos = obj.selectionEnd,
+//                    cursorPos = startPos,
+//                    tmpStr = obj.value;
+//                obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+//                cursorPos += str.length;
+//                obj.selectionStart = obj.selectionEnd = cursorPos;
+//            } else {
+//                obj.value += str;
+//                // console.log(obj.value)
+//            }
+//            $(".synchronize_sms_content").text(obj.value);
+//        }
 
         /**
          * 把光标移动文本域末尾
          * @param obj
          */
-        function moveEnd(obj){
-            obj.focus();
-            var len = obj.value.length;
-            if (document.selection) {
-                var sel = obj.createTextRange();
-                sel.moveStart('character',len);
-                sel.collapse();
-                sel.select();
-            } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
-                obj.selectionStart = obj.selectionEnd = len;
-            }
-        }
+//        function moveEnd(obj){
+//            obj.focus();
+//            var len = obj.value.length;
+//            if (document.selection) {
+//                var sel = obj.createTextRange();
+//                sel.moveStart('character',len);
+//                sel.collapse();
+//                sel.select();
+//            } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
+//                obj.selectionStart = obj.selectionEnd = len;
+//            }
+//        }
 
         /**
          * 最近交易时间事件监听
@@ -1319,26 +1320,27 @@
         /**
          * 会员等级、订单来源
          */
-        all_check_not('checkbox(membership_level)');
-        all_check_not('checkbox(trade_from)');
-
-        function all_check_not(event_obj) {
-            form.on(event_obj, function(data){
-                var value = data.value;
-                console.log(data.elem.checked);
-                if(value != 0) {
-                    if (data.elem.checked){
-                        $(this).parent("td").children('input').first().prop('checked', false);
-                        $(this).parent("td").children('.layui-form-checkbox').first().removeClass('layui-form-checked');
-                    }
-                } else {
-                    if (data.elem.checked){
-                        $(this).parent("td").children('input').not(':first').prop('checked', false);
-                        $(this).parent("td").children('.layui-form-checkbox').not(':first').removeClass('layui-form-checked');
-                    }
-                }
-            });
-        }
+//        all_check_not('checkbox(membership_level)');
+//        all_check_not('checkbox(trade_from)');
+        formEvent.api.all_check_not('checkbox(membership_level)');
+        formEvent.api.all_check_not('checkbox(trade_from)');
+//        function all_check_not(event_obj) {
+//            form.on(event_obj, function(data){
+//                var value = data.value;
+//                console.log(data.elem.checked);
+//                if(value != 0) {
+//                    if (data.elem.checked){
+//                        $(this).parent("td").children('input').first().prop('checked', false);
+//                        $(this).parent("td").children('.layui-form-checkbox').first().removeClass('layui-form-checked');
+//                    }
+//                } else {
+//                    if (data.elem.checked){
+//                        $(this).parent("td").children('input').not(':first').prop('checked', false);
+//                        $(this).parent("td").children('.layui-form-checkbox').not(':first').removeClass('layui-form-checked');
+//                    }
+//                }
+//            });
+//        }
 
         /**
          * 省份点击
@@ -1385,37 +1387,45 @@
         /**
          * 地区点击选中事件、分区全选、反选
          */
-        $("body").on("click",".location_address_layer .layui-form-checkbox",function (){
-            var p = $(this).prev();
-            if(p.attr('class') == 'all' && p.attr('class') !== 'undefined') {
-                if($(this).hasClass('layui-form-checked')){
-                    $(this).parent(".layui-form").children('input').prop('checked', true);
-                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
-                } else {
-                    $(this).parent(".layui-form").children('input').prop('checked', false);
-                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
-                }
-            }else {
-                if(!$(this).hasClass('layui-form-checked')){
-                    $(this).parent(".layui-form").find('input').first().prop('checked', false);
-                    $(this).parent(".layui-form").find('.layui-form-checkbox').first().removeClass('layui-form-checked');
-                }else{
-                    var this_ = $(this);
-                    this_.parent(".layui-form").find('.layui-form-checkbox').not(':first').each(function (i) {
-                        if (!$(this).hasClass('layui-form-checked')) {
-                            this_.parent(".layui-form").find('input').first().prop('checked', false);
-                            this_.parent(".layui-form").find('.layui-form-checkbox').first().removeClass('layui-form-checked');
-                            return false;
-                        } else {
-                            this_.parent(".layui-form").find('input').first().prop('checked', true);
-                            this_.parent(".layui-form").find('.layui-form-checkbox').first().addClass('layui-form-checked');
-                        }
-                    });
-                }
-            }
+        formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox");
+//        $("body").on("click",".location_address_layer .layui-form-checkbox",function (){
+//            var p = $(this).prev();
+//            if(p.attr('class') == 'all' && p.attr('class') !== 'undefined') {
+//                if($(this).hasClass('layui-form-checked')){
+//                    $(this).parent(".layui-form").children('input').prop('checked', true);
+//                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
+//                } else {
+//                    $(this).parent(".layui-form").children('input').prop('checked', false);
+//                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
+//                }
+//            }else {
+//                if(!$(this).hasClass('layui-form-checked')){
+//                    $(this).parent(".layui-form").find('input').first().prop('checked', false);
+//                    $(this).parent(".layui-form").find('.layui-form-checkbox').first().removeClass('layui-form-checked');
+//                }else{
+//                    var this_ = $(this);
+//                    this_.parent(".layui-form").find('.layui-form-checkbox').not(':first').each(function (i) {
+//                        if (!$(this).hasClass('layui-form-checked')) {
+//                            this_.parent(".layui-form").find('input').first().prop('checked', false);
+//                            this_.parent(".layui-form").find('.layui-form-checkbox').first().removeClass('layui-form-checked');
+//                            return false;
+//                        } else {
+//                            this_.parent(".layui-form").find('input').first().prop('checked', true);
+//                            this_.parent(".layui-form").find('.layui-form-checkbox').first().addClass('layui-form-checked');
+//                        }
+//                    });
+//                }
+//            }
+//        });
+        /**
+         * 短信标签 输入框输入
+         */
+//        we.monitor_input($('#sms-content'), $('.synchronize_sms_content'));
+        $('#sms-content').bind('input porpertychange',function(){
+            console.log($(this).val().length);
+            $('.synchronize_sms_content').text($(this).val());
+            $('.sms-content-length').text($(this).val().length);
         });
-
-
     });
 
 </script>
