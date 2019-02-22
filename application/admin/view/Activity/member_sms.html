@@ -112,11 +112,13 @@
                                 <ul class="nav pull-left">
                                     <input type="hidden" name="short_sms_type" value="1" placeholder="" autocomplete="off" class="layui-input">
                                     <li>宝贝状态：
-                                        <select name="goods_status" id="goods_status">
-                                            <option value="1" selected>所有状态</option>
-                                            <option value="2">出售中</option>
-                                            <option value="3">仓库中</option>
-                                        </select>
+                                        <div class="layui-input-inline">
+                                            <select name="goods_status" id="goods_status" lay-verify="required" lay-search="">
+                                                <option value="1" selected>所有状态</option>
+                                                <option value="2">出售中</option>
+                                                <option value="3">仓库中</option>
+                                            </select>
+                                        </div>
                                     </li>
                                     <li>宝贝ID：<input type="text" name="goods_id" id="goods_id" placeholder="" autocomplete="off" class="layui-input"></li>
                                     <li>宝贝标题：<input type="text" name="goods_title" id="goods_title" placeholder="" autocomplete="off" class="layui-input"></li>
