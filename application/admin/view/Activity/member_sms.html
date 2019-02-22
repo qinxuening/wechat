@@ -18,12 +18,16 @@
                                 <ul class="nav pull-left">
                                     <input type="hidden" name="sms_type" value="1" placeholder="" autocomplete="off" class="layui-input">
                                     <li>场景类型：
-                                        <select name="recommended_scene" id="recommended_scene">
-                                            <option value="4" selected>所有场景</option>
-                                            <option value="1">周年庆</option>
-                                            <option value="2">聚划算</option>
-                                            <option value="3">上新</option>
-                                        </select>
+                                        <div class="layui-inline">
+                                            <div class="layui-input-inline">
+                                                <select name="recommended_scene" lay-verify="required" lay-search="">
+                                                    <option value="4" selected>所有场景</option>
+                                                    <option value="1">周年庆</option>
+                                                    <option value="2">聚划算</option>
+                                                    <option value="3">上新</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </li>
                                     <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
                                         <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
@@ -37,32 +41,36 @@
                                 <ul class="nav pull-left">
                                     <input type="hidden" name="sms_type" value="2" placeholder="" autocomplete="off" class="layui-input">
                                     <li>模板来源：
-                                        <select name="modeltype" id="modeltype">
-                                            <option value="2" selected>所有类型</option>
-                                            <option value="1">自定义模板</option>
-                                            <option value="0">系统模板</option>
-                                        </select>
+                                        <div class="layui-input-inline">
+                                            <select name="modeltype" id="modeltype"  lay-verify="required" lay-search="">
+                                                <option value="2" selected>所有类型</option>
+                                                <option value="1">自定义模板</option>
+                                                <option value="0">系统模板</option>
+                                            </select>
+                                        </div>
                                     </li>
                                     <li>模板类型：
-                                        <select name="selecttemp" id="selecttemp">
-                                            <option value="0" selected="selected">所有模板</option>
-                                            <option value="16">会员短信 </option>
-                                            <option value="17">指定号码发送</option>
-                                            <option value="18">订单短信群发 </option>
-                                            <option value="1">催付提醒</option>
-                                            <option value="2">发货提醒</option>
-                                            <option value="3">催付关怀</option>
-                                            <option value="4">派送提醒</option>
-                                            <option value="5">签收提醒</option>
-                                            <option value="6">回款关怀 </option>
-                                            <option value="7">退款关怀 </option>
-                                            <option value="8">评价关怀 </option>
-                                            <option value="9">中差评安抚 </option>
-                                            <option value="12">催评价 </option>
-                                            <option value="13">下单提醒 </option>
-                                            <option value="14">宝贝关怀 </option>
-                                            <option value="15">智能凑单 </option>
-                                        </select>
+                                        <div class="layui-input-inline">
+                                            <select name="selecttemp" id="selecttemp" lay-verify="required" lay-search="">
+                                                <option value="0" selected="selected">所有模板</option>
+                                                <option value="16">会员短信 </option>
+                                                <option value="17">指定号码发送</option>
+                                                <option value="18">订单短信群发 </option>
+                                                <option value="1">催付提醒</option>
+                                                <option value="2">发货提醒</option>
+                                                <option value="3">催付关怀</option>
+                                                <option value="4">派送提醒</option>
+                                                <option value="5">签收提醒</option>
+                                                <option value="6">回款关怀 </option>
+                                                <option value="7">退款关怀 </option>
+                                                <option value="8">评价关怀 </option>
+                                                <option value="9">中差评安抚 </option>
+                                                <option value="12">催评价 </option>
+                                                <option value="13">下单提醒 </option>
+                                                <option value="14">宝贝关怀 </option>
+                                                <option value="15">智能凑单 </option>
+                                            </select>
+                                        </div>
                                     </li>
                                     <li>关键词：<input type="text" name="keyword" id="keyword" placeholder="" autocomplete="off" class="layui-input"></li>
                                     <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
@@ -83,7 +91,7 @@
                     </div>
                 </div>
                 <div class="layui-row">
-                <table class="layui-hide" id="table-sms" lay-filter="table_sms" table-reload-id="tableReload"></table>
+                    <table class="layui-hide" id="table-sms" lay-filter="table_sms" table-reload-id="tableReload"></table>
                 </div>
             </div>
         </div>
@@ -643,14 +651,20 @@
                                 <td class="yty_tdleft"> 发送人数 :</td>
                                 <td class="yty_tdright">
                                     <input type="radio" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="0"  title="全部" checked>
-                                    <input type="radio" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="1"  title="部分">
+                                    <input type="radio" class="customize" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="1"  title="部分">
+                                    <span class="customize_send_limit_type" style="display: none">
+                                        <input type="text" name="part_people" id="part_people" value="0" placeholder="" autocomplete="off" class="layui-input">
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="yty_tdleft"> 发送时间 :</td>
                                 <td class="yty_tdright">
                                     <input type="radio" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="0"  title="立即发送" checked>
-                                    <input type="radio" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="1"  title="定时发送">
+                                    <input type="radio" class="customize" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="1"  title="定时发送">
+                                    <span class="customize_send_time_type" style="display: none">
+                                        <input type="text" name="timing" id="timing"  placeholder="" autocomplete="off" class="layui-input">
+                                    </span>
                                 </td>
                             </tr>
                             </tbody>
@@ -817,7 +831,11 @@
             ,type: 'date'
             // ,format:'H'
         });
-
+        laydate.render({
+            elem: '#timing' //指定元素
+            ,type: 'datetime'
+            // ,format:'H'
+        });
         /**
          *
          * 发送时间事件切换
@@ -1309,6 +1327,28 @@
         });
 
         /**
+         * 发送人数事件监听
+         * */
+        form.on('radio(send_limit_type)', function(data){
+            if(data.value == '1'){
+                $(".customize_send_limit_type").show()
+            }else(
+                $(".customize_send_limit_type").hide()
+            )
+        });
+
+        /**
+         * 发送人数事件监听
+         * */
+        form.on('radio(send_time_type)', function(data){
+            if(data.value == '1'){
+                $(".customize_send_time_type").show()
+            }else(
+                $(".customize_send_time_type").hide()
+            )
+        });
+
+        /**
          * 已发短信过滤事件监听
          * */
         form.on('radio(fitler_date)', function(data){
@@ -1427,6 +1467,13 @@
             console.log($(this).val().length);
             $('.synchronize_sms_content').text($(this).val());
             $('.sms-content-length').text($(this).val().length);
+        });
+
+        /**
+         *
+         */
+        $("body").on("click",".customize",function (){
+            console.log($(this).attr('title'));
         });
     });
 
