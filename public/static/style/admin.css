@@ -2273,6 +2273,8 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     padding: 2px 13px 0px 13px;
     border-radius: 4px;
     cursor: pointer;
+    height: 26px;
+    line-height: 26px;
 }
 
 .yty-checkbox li span{
@@ -2388,6 +2390,8 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .dashed-td tr>td{
     /*border-bottom: 1px dashed #e5e5e5 !important;*/
     /*padding: 20px 10px !important;*/
+    height: 32px;
+    line-height: 32px;
 }
 
 .dashed-td tr{

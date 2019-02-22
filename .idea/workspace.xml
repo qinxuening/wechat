@@ -117,10 +117,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member_sms.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="member_sms.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
+            <state relative-caret-position="22">
               <caret line="99" column="16" lean-forward="false" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -186,11 +186,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="2389" column="38" lean-forward="true" selection-start-line="2389" selection-start-column="38" selection-end-line="2389" selection-end-column="38" />
+            <state relative-caret-position="535">
+              <caret line="2276" column="22" lean-forward="false" selection-start-line="2276" selection-start-column="22" selection-end-line="2276" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -237,8 +237,8 @@
       <find>send_limit_type</find>
       <find>短信模板</find>
       <find>sms_module</find>
-      <find>form-recommend-sms-module</find>
       <find>宝贝状态</find>
+      <find>form-recommend-sms-module</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -299,8 +299,8 @@
         <option value="$PROJECT_DIR$/public/static/modules/we.js" />
         <option value="$PROJECT_DIR$/application/admin/view/order/order_care.html" />
         <option value="$PROJECT_DIR$/application/admin/view/order/index.html" />
-        <option value="$PROJECT_DIR$/public/static/style/admin.css" />
         <option value="$PROJECT_DIR$/application/admin/view/Activity/member_sms.html" />
+        <option value="$PROJECT_DIR$/public/static/style/admin.css" />
       </list>
     </option>
   </component>
@@ -618,12 +618,12 @@
       <workItem from="1549796732112" duration="24896000" />
       <workItem from="1549945454127" duration="15435000" />
       <workItem from="1550233806364" duration="1039000" />
-      <workItem from="1550336628747" duration="64897000" />
+      <workItem from="1550336628747" duration="65695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="725048000" />
+    <option name="totallyTimeSpent" value="725846000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1453" height="859" extended-state="0" />
@@ -1044,14 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="2389" column="38" lean-forward="true" selection-start-line="2389" selection-start-column="38" selection-end-line="2389" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1083,7 +1075,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
+        <state relative-caret-position="22">
           <caret line="99" column="16" lean-forward="false" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -1110,6 +1102,14 @@
             <element signature="n#style#0;n#span#0;n#td#1;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <marker date="1550847490068" expanded="false" signature="42445:42462" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="2276" column="22" lean-forward="false" selection-start-line="2276" selection-start-column="22" selection-end-line="2276" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
