@@ -2556,7 +2556,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 }
 
 .yty-btn{
-    padding: 0px 40px;
+    /*padding: 0px 40px;*/
 }
 .marginleft100{
     margin-left: 100px;
