@@ -363,13 +363,13 @@
             ,id : 'tableReload'
             ,skin:'line'
             ,limit:10
-            ,defaultToolbar: ['filter']
+            ,defaultToolbar: ['']
             ,toolbar : '#toolbar'
             ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
             ,search: false
             ,cols: [[
-                {type:'checkbox', fixed: 'left'}
-                ,{field:'buyer_name', title: '买家昵称', sort: true,minWidth:150,searchList:{type:'input',operate:'LIKE'}}
+                {type:'checkbox', fixed: 'left',hide:true}
+                ,{field:'buyer_name', title: '买家昵称',minWidth:150,searchList:{type:'input',operate:'LIKE'}}
                 ,{field:'consignee_name', title: '收货人姓名',minWidth:150}
                 ,{field:'order_status', title: '订单状态',templet: '#switchStatus', sort: true,minWidth:100}
                 ,{field:'order_source', title: '订单来源', sort: true,minWidth:150}

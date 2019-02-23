@@ -76,17 +76,18 @@
         var tableCommon = {
             elem: '#rule'
             ,method:'post'
-            ,url:"{:url('Admin/auth.admin/index')}"
+//            ,url:"{:url('Admin/auth.admin/index')}"
+            ,url:"/sms_data.json" //对接请求后台数据
             ,id : 'tableReload'
             ,skin:'line'
             ,toolbar : '#toolbar'
             ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
             ,loading:true
             ,limit:10
-            ,defaultToolbar: ['filter']//'filter', 'print', 'exports'
+            ,defaultToolbar: ['']//'filter', 'print', 'exports'
             ,search: true
             ,cols: [[
-                {type:'checkbox', fixed: 'left',}
+                {type:'checkbox', fixed: 'left',hide:true}
                 ,{field:'id', title: 'ID', sort: true, excel_width:15}
                 ,{field:'send_phone', title: "手机号码", excel_width:15, searchList:{type:'input',operate:'LIKE'}, minWidth: 120}
                 ,{field:'sms_title', title: "短信标题", excel_width:15, minWidth: 150}
