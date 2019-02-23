@@ -1842,7 +1842,7 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
 
 .pull-left li .layui-input,.pull-left li .layui-select,.pull-left li .layui-textarea ,.pull-left li.xm-select,.pull-left li .layui-select-title,.pull-left li .layui-form-select{
     width: 150px;
-    background: #f5f7bb;
+    /*background: #f5f7bb;*/
     display: inline;
     height: 30px;
     position: relative;
@@ -2586,4 +2586,10 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .layui-select-title{
     border: none !important;
 }
+.height-auto{
+    min-height: 100%;
+}
 
+.yty-bck{
+    background: #ffffff;
+}

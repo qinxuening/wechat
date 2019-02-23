@@ -38,12 +38,12 @@ layui.define(['jquery','laydate','form'], function(exports){
                                     break;
                                 case 'select':
                                     html += '<li>'+value.title+'：'+
-                                        '<select name="status">'+
+                                        '<div class="layui-input-inline"><select name="status">'+
                                         '<option value="">请选择'+value.title+'</option>';
                                         $.each(value.searchList.data, function (index, value) {
                                             html += ' <option value="'+index+'">'+value+'</option>';
                                         });
-                                    html += '</select></li>';
+                                    html += '</select></div></li>';
                                     break;
                                 default:;
                             }
