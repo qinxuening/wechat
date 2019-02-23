@@ -2050,6 +2050,7 @@ tr>td.yty_tdright {
 }
 .layui-btn-normal{
     background-color: #506def;
+    border-radius: 4px;
 }
 
 .sm-st-icon-right {
@@ -2581,6 +2582,8 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .layui-select-title .layui-input{
     border: none !important;
 }
+
 .layui-select-title{
     border: none !important;
 }
+
