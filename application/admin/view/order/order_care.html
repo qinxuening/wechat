@@ -13,7 +13,7 @@
             </div>
 
             <div class="layui-card">
-                <div class="layui-card-body">
+                <div class="layui-card-body layui-card-body-padding">
                     <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload" lay-size="sm"></table>
                 </div>
             </div>
@@ -154,7 +154,7 @@
             console.log(obj.event);
             if(obj.event == 'add_task') {
                 var url = "{:url('admin/order/task_add')}"
-                we.api.open(url,'新建任务',{zIndex:19891017,shade: 0.4},['98%' , '90%']);
+                we.api.open(url,'下单关怀 > 新建任务',{zIndex:19891017,shade: 0.4},['98%' , '90%']);
             }
         })
 
@@ -214,6 +214,7 @@
          break;
          };
          });*/
+
     });
 </script>
 </body>
