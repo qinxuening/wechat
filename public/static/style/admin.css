@@ -2657,3 +2657,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .step-active{
     color: #506def !important;
 }
+
+.step-one{
+    margin-left: 30px;
+}
