@@ -31,6 +31,10 @@ class Order extends baseAdmin{
         return $this->view->fetch();
     }
 
+    public function task_add() {
+        return $this->view->fetch();
+    }
+    
     /**
      * 导入数据
      */
