@@ -2598,3 +2598,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     color: #506def !important;
     font-weight: bold;
 }
+.layui-header .nav_menu a{
+    font-weight: bold;
+    font-size: 14px;
+}
