@@ -200,7 +200,8 @@ class baseAdmin extends Controller{
             ) {
             $this->redirect("/admin/index/index");
         }
-
+        $breadcrumb = $this->auth->getBreadCrumb($path);
+        $this->view->breadcrumb = $breadcrumb;
         $this->assign('max_weigh', $max_weigh);
         $this->view->assign('nav_list', cache('menulist2'));//rule
 

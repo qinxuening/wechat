@@ -510,7 +510,7 @@ html {
 .layadmin-pagetabs {
     height: 40px;
     line-height: 40px;
-    padding: 0 80px 0 40px;
+    /*padding: 0 80px 0 40px;*/
     background-color: #fff;
     box-sizing: border-box;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
@@ -2592,4 +2592,9 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .yty-bck{
     background: #ffffff;
+}
+
+.layui-breadcrumb a:hover,.layui-breadcrumb a:active,.layui-breadcrumb a cite,.layui-breadcrumb a cite{
+    color: #506def !important;
+    font-weight: bold;
 }

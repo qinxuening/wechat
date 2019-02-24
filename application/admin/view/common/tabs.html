@@ -1,22 +1,43 @@
 <!-- 页面标签 -->
 <div class="layadmin-pagetabs" id="LAY_app_tabs">
-    <div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>
-    <div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage"></div>
-    <div class="layui-icon layadmin-tabs-control layui-icon-down">
-        <ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">
-            <li class="layui-nav-item" lay-unselect>
-                <a href="javascript:;"></a>
-                <dl class="layui-nav-child layui-anim-fadein">
-                    <dd layadmin-event="closeThisTabs"><a href="javascript:;">{:__('Close current tab')}</a></dd>
-                    <dd layadmin-event="closeOtherTabs"><a href="javascript:;">{:__('Close other tabs')}</a></dd>
-                    <dd layadmin-event="closeAllTabs"><a href="javascript:;">{:__('Close all tabs')}</a></dd>
-                </dl>
-            </li>
-        </ul>
-    </div>
-    <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
-        <ul class="layui-tab-title" id="LAY_app_tabsheader">
-            <li lay-id="/admin/dashboard/detail" lay-attr="/admin/dashboard/detail" class="layui-this"></li>
-        </ul>
-    </div>
+
+    <!--{eq name="k" value="0"}-->
+    <!--<li><a href="javascript:void(0);" data-url="{$vo.url}">{$vo.title}</a></li>-->
+    <!--{else/}-->
+    <span class="layui-breadcrumb" lay-separator=">">
+         {foreach name="breadcrumb" item="vo" key="k"}
+            {if condition="$k+1 eq count($breadcrumb)"}
+                 <a href="{:url($vo.url)}" data-url="{:url($vo.url)}" ><cite>{$vo.title}</cite></a>
+            {elseif condition="$k eq 0"/}
+                   <a href="{:url($vo.url)}" data-url="{:url($vo.url)}" ><i class="fa fa-home" style="font-size: 16px"></i>&nbsp;{$vo.title}</a>
+            {else/}
+                 <a href="{:url($vo.url)}" data-url="{:url($vo.url)}" >{$vo.title}</a>
+            {/if}
+         {/foreach}
+      <!--<a href="/">首页</a>-->
+      <!--<a href="/demo/">演示</a>-->
+      <!--<a><cite>导航元素</cite></a>-->
+    </span>
+    <li></li>
+    <!--{/eq}-->
+
+    <!--<div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>-->
+    <!--<div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage"></div>-->
+    <!--<div class="layui-icon layadmin-tabs-control layui-icon-down">-->
+        <!--<ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">-->
+            <!--<li class="layui-nav-item" lay-unselect>-->
+                <!--<a href="javascript:;"></a>-->
+                <!--<dl class="layui-nav-child layui-anim-fadein">-->
+                    <!--<dd layadmin-event="closeThisTabs"><a href="javascript:;">{:__('Close current tab')}</a></dd>-->
+                    <!--<dd layadmin-event="closeOtherTabs"><a href="javascript:;">{:__('Close other tabs')}</a></dd>-->
+                    <!--<dd layadmin-event="closeAllTabs"><a href="javascript:;">{:__('Close all tabs')}</a></dd>-->
+                <!--</dl>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">-->
+        <!--<ul class="layui-tab-title" id="LAY_app_tabsheader">-->
+            <!--<li lay-id="/admin/dashboard/detail" lay-attr="/admin/dashboard/detail" class="layui-this"></li>-->
+        <!--</ul>-->
+    <!--</div>-->
 </div>
