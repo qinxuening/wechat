@@ -2138,7 +2138,7 @@ tr>td.yty_tdright {
     font-weight: 600;
     height: 30px;
     line-height: 30px;
-    padding: 5px 10px;
+    padding: 20px 10px;
 }
 
 .yty-card-header span{
@@ -2577,6 +2577,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     border: 1px solid #BFBFBF;
     border-radius: 8px;
     padding: 20px;
+    margin: 10px auto;
 }
 
 .layui-select-title .layui-input{
@@ -2612,14 +2613,47 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     top: 180px;
     bottom: 180px !important;
 }
-
 .top-menu{
     top: 102px;
     bottom: 0;
     position: fixed;
     display: block;
 }
-
 .layui-card-body-padding{
-    padding: 0px;
+    padding: 0px 5px 10px 5px;
+}
+
+.step{
+    padding: 6px 10px;
+    background: #a6a6a6;
+    height: 30px;
+    width: 30px;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.step-number-active{
+    background:#506def;
+}
+
+.step-line {
+    height: 1px;
+    margin: 10px 0;
+    border: 0;
+    clear: both;
+    background-color: #d0d0d0 !important;
+    display: inline-block;
+    width: 200px;
+    position: absolute;
+    margin: 15px 200px 15px 5px;
+}
+
+.step-left{
+    margin-left: 210px;
+}
+
+.step-active{
+    color: #506def !important;
 }
