@@ -24,7 +24,7 @@ html {
 }
 
 .layui-layout-admin .layui-header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -78,7 +78,7 @@ html {
 }
 
 .layadmin-pagetabs {
-    position: fixed;
+    position: absolute;
     top: 50px;
     right: 0;
     z-index: 999
@@ -2605,13 +2605,14 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 }
 
 .yty-body-auto{
-    width:100%;
-    height: 100%;
     background: #ffffff;
-    position: fixed;
+    position: absolute;
     display: block;
-    top: 180px;
-    bottom: 180px !important;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 69px !important;
+    box-shadow: 0 0 4px 0 rgba(200,200,200,.5);
 }
 .top-menu{
     top: 102px;
