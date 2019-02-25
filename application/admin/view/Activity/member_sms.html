@@ -1611,7 +1611,7 @@
          */
         $("body").on("click",".next-step",function (){
             $(".step-first").hide();
-            $(".step-second").show();
+            $(".step-second").slideToggle(400);;
             $(".step-two-msg").addClass('step-active');
             $(".step-tow-number").addClass('step-number-active');
         });
@@ -1620,7 +1620,7 @@
          * 点击上一步
          */
         $("body").on("click",".pre-step",function (){
-            $(".step-first").show();
+            $(".step-first").slideToggle(400);
             $(".step-second").hide();
             $(".step-two-msg").removeClass('step-active');
             $(".step-tow-number").removeClass('step-number-active');
