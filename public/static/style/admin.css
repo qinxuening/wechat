@@ -2666,3 +2666,11 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .body-overflow{
     margin-bottom: 68px;
 }
+
+input:focus, select:focus{
+    border:1px solid #506def !important;
+}
+
+.layui-input:focus, .layui-select:focus,  .layui-textarea:focus, .xm-select:focus{
+    border:1px solid #506def !important;
+}

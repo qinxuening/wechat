@@ -418,9 +418,9 @@
                     <!--<span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>-->
                     <span class="step step-number-active step-one">1</span><span class="step-active">第一步：筛选条件</span>
                     <span class="step-line"></span>
-                    <span class="step step-left">2</span>第二步：编辑短信
+                    <span class="step step-left step-tow-number">2</span><span class="step-two-msg">第二步：编辑短信</span>
                 </div>
-                <div class="layui-card-body layui-card-body-padding">
+                <div class="layui-card-body step-first layui-card-body-padding">
                     <!--表格查询条件begin-->
                     <!--<div class="searchbody">-->
                         <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="member_sms">
@@ -554,7 +554,7 @@
                                 <tr>
                                     <td class="yty_tdleft"  style="border-bottom: none !important;"> 筛选操作 :</td>
                                     <td class="yty_tdright"  style="border-bottom: none !important;">
-                                        <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-primary btn-primary-border layui-btn-sm">下一步</button>
+                                        <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step  layui-btn-primary btn-primary-border layui-btn-sm">下一步</button>
                                         <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-normal   layui-btn-sm">查询</button>
                                         <button type="reset" class="layui-btn layui-btn-sm  layui-btn-normal yty-btn">重置</button>
                                     </td>
@@ -580,6 +580,129 @@
                     <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
                     <!--订单查询结果end-->
                 </div>
+                <div class="layui-card-body layui-card-body-padding step-second" style="display: none">
+                    <!--表格查询条件begin-->
+                    <!--<div class="searchbody">-->
+                    <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="member_sms">
+                        <div class="layui-row">
+                            <div class="layui-col-md8">
+                                <table  class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
+                                    <colgroup>
+                                        <col class="yty_tdright" width="110px">
+                                        <col class="yty_tdright">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <td class="yty_tdleft"> 短信标题 :</td>
+                                        <td class="yty_tdright">
+                                            <input type="text" name="sms_title" id="sms_title"  placeholder="" autocomplete="off" class="layui-input width250">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yty_tdleft"> 短信内容 :</td>
+                                        <td class="yty_tdright label_sms">
+                                            <ul class="ulstyle0">
+                                                <li><a href="javascript:void(0);" id="buyer_name">卖家姓名</a></li>
+                                                <li><a href="javascript:void(0);" id="buyer_customer_name">买家云信名称</a></li>
+                                                <li><a href="javascript:void(0);" id="total_cost">消费总额</a></li>
+                                                <li><a href="javascript:void(0);" id="shop_address">店铺地址</a></li>
+                                                <li><a href="javascript:void(0);" id="recent_purchase_time">最近购买时间</a></li>
+                                            </ul>
+                                            <ul class="ulstyle1">
+                                                <li><a href="javascript:void(0);" id="short_href">#短链#</a></li>
+                                                <li><a href="javascript:void(0);" id="sms_module">#短信模板#</a></li>
+                                            </ul>
+                                            <!--<br>-->
+                                            <!--<p class="marginbuttom5"></p>-->
+                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
+                                            <p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
+2、一个汉字,数字,字母,空格都算一个字<br>
+3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
+                                            <!--<p class="font12">1、单条70个字,超出70个字将按照67个字每条计算<br></p>
+                                            <p class="font12">2、一个汉字,数字,字母,空格都算一个字<br></p>
+                                            <p class="font12">3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！</p>-->
+                                            <p class="font12">提示：<span class="red_color">标签和链接前后需有空格分隔，请勿删除前后空格！</span></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yty_tdleft"> 短信签名 :</td>
+                                        <td class="yty_tdright">
+                                            <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="【u[1715093595]】"  title="【u[1715093595]】" checked>
+                                            <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="自定义签名"  title="自定义签名">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yty_tdleft"> 短信测试 :</td>
+                                        <td class="yty_tdright">
+                                            <input type="text" name="sms_test" id="sms_test"  placeholder="可输入5个测试手机号，用逗号“，”隔开" autocomplete="off" class="layui-input width250">
+                                            <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-primary btn-primary-border layui-btn-sm btn-embossed">查询</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yty_tdleft"> 发送号码 :</td>
+                                        <td class="yty_tdright">
+                                            <input type="radio" name="send_mobile_type" lay-filter="send_mobile_type" lay-skin="primary" value="0"  title="优先收货人号码" checked>
+                                            <input type="radio" name="send_mobile_type" lay-filter="send_mobile_type" lay-skin="primary" value="1"  title="优先支付宝号码">
+                                            <input type="radio" name="send_mobile_type" lay-filter="send_mobile_type" lay-skin="primary" value="2"  title="只发收货人号码">
+                                            <input type="radio" name="send_mobile_type" lay-filter="send_mobile_type" lay-skin="primary" value="3"  title="只发支付宝号码">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yty_tdleft"> 发送人数 :</td>
+                                        <td class="yty_tdright">
+                                            <input type="radio" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="0"  title="全部" checked>
+                                            <input type="radio" class="customize" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="1"  title="部分">
+                                            <span class="customize_send_limit_type" style="display: none">
+                                        <input type="text" name="part_people" id="part_people" value="0" placeholder="" autocomplete="off" class="layui-input">
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yty_tdleft"> 发送时间 :</td>
+                                        <td class="yty_tdright">
+                                            <input type="radio" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="0"  title="立即发送" checked>
+                                            <input type="radio" class="customize" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="1"  title="定时发送">
+                                            <span class="customize_send_time_type" style="display: none">
+                                        <input type="text" name="timing" id="timing"  placeholder="" autocomplete="off" class="layui-input">
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="yty_tdleft"  style="border-bottom: none !important;"></td>
+                                        <td class="yty_tdright"  style="border-bottom: none !important;">
+                                            <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-primary pre-step btn-primary-border layui-btn-sm btn-embossed">上一步</button>
+                                            <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">发送短信</button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-col-md4">
+                                <div class="sms-phone">
+                                    <div class="phone-container">
+                                        <div class="smg-content">
+                                            【覃雪宁88】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="layui-form-item footer-form">-->
+                        <!--<div class="footer footer-common">-->
+                        <!--<button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>-->
+                        <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>-->
+                        <!--<a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed go-back">返回</div></a>-->
+                        <!--&lt;!&ndash;onclick="window.history.go(-1)"&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </form>
+                    <!--</div>-->
+                    <!--表格查询条件end-->
+
+                    <!--订单查询结果begin-->
+                    <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
+                    <!--订单查询结果end-->
+                </div >
             </div>
         </div>
 
@@ -676,7 +799,7 @@
                             <tr>
                                 <td class="yty_tdleft"  style="border-bottom: none !important;"></td>
                                 <td class="yty_tdright"  style="border-bottom: none !important;">
-                                    <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-primary btn-primary-border layui-btn-sm btn-embossed">上一步</button>
+                                    <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn pre-step layui-btn-primary btn-primary-border layui-btn-sm btn-embossed">上一步</button>
                                     <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">发送短信</button>
                                 </td>
                             </tr>
@@ -1484,10 +1607,23 @@
         });
 
         /**
-         *
+         *点击下一步
          */
-        $("body").on("click",".customize",function (){
-            console.log($(this).attr('title'));
+        $("body").on("click",".next-step",function (){
+            $(".step-first").hide();
+            $(".step-second").show();
+            $(".step-two-msg").addClass('step-active');
+            $(".step-tow-number").addClass('step-number-active');
+        });
+
+        /**
+         * 点击上一步
+         */
+        $("body").on("click",".pre-step",function (){
+            $(".step-first").show();
+            $(".step-second").hide();
+            $(".step-two-msg").removeClass('step-active');
+            $(".step-tow-number").removeClass('step-number-active');
         });
     });
 
