@@ -2574,9 +2574,9 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     border-radius: 4px;
 }
 .search_result{
-    /*border: 1px solid #BFBFBF;*/
-    /*border-radius: 8px;*/
-    /*padding: 10px;*/
+    border: 1px solid #BFBFBF;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 .layui-select-title .layui-input{
