@@ -2481,7 +2481,8 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     padding:0px 8px;
     background: #28a3ef;
     border-radius: 10px;
-    margin: 15px 5px 15px 20px;
+    margin: 20px;
+    width: 140px;
     word-break: break-all;
 }
 
