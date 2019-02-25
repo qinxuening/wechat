@@ -2610,7 +2610,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     top: 5px;
     left: 5px;
     right: 5px;
-    bottom: 69px !important;
+    /*bottom: 69px !important;*/
     box-shadow: 0 0 4px 0 rgba(200,200,200,.5);
 }
 .top-menu{
