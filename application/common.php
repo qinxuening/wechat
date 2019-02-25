@@ -83,7 +83,7 @@ if (!function_exists('human_date'))
      */
     function human_date($time, $local = null)
     {
-        return \fast\Date::human($time, $local);
+        return \we\Date::human($time, $local);
     }
 
 }
@@ -572,7 +572,6 @@ function aes_encrypt_ ($data) {
     return $result;
 }
 
-
 /**
  * AES解密
  * @param unknown $data
@@ -587,7 +586,6 @@ function aes_decrypt_($data) {
     return $result;
 }
 
-
 //返回当前的毫秒时间戳
 function msectime() {
     list($msec, $sec) = explode(' ', microtime());
@@ -595,8 +593,119 @@ function msectime() {
     return $msectime;
 }
 
+if(!function_exists('zipFolder')){
+    /**
+     * zip 压缩
+     * @param unknown $folderPath
+     * @param unknown $zipAs
+     * @return boolean
+     */
+    function zipFolder($folderPath, $zipAs){
+        $folderPath = (string)$folderPath;
+        $zipAs = (string)$zipAs;
+        if(!class_exists('ZipArchive')){
+            return false;
+        }
+        
+        if(!$files=scanFolder($folderPath, true, true)){
+            return false;
+        }
+        
+        $za = new ZipArchive;
+        if(true!==$za->open($zipAs, ZipArchive::OVERWRITE | ZipArchive::CREATE)){
+            return false;
+        }
+        
+        //     $za->setArchiveComment(base64_decode('LS0tIHd1eGlhbmNoZW5nLmNuIC0tLQ==').PHP_EOL.date('Y-m-d H:i:s'));
+        foreach($files as $aPath => $rPath){
+            $za->addFile($aPath, $rPath);
+        }
+        
+        if(!$za->close()){
+            return false;
+        }
+        return true;
+    }
+}
 
+if(!function_exists('scanFolder')){
+    /**
+     * 目录扫描
+     * @param string $path
+     * @param string $recursive
+     * @param string $noFolder
+     * @param string $returnAbsolutePath
+     * @param number $depth
+     * @return boolean|array|string[]|unknown[]
+     */
+    function scanFolder($path='', $recursive=true, $noFolder=true, $returnAbsolutePath=false,$depth=0){
+        $path = (string)$path;
+        if(!($path=realpath($path))){
+            return false;
+        }
+        $path = str_replace('\\','/',$path);
+        if(!($h=opendir($path))){
+            return false;
+        }
+        
+        $files = array();
+        static $topPath;
+        $topPath = $depth===0||empty($topPath)?$path:$topPath;
+        while(false!==($file=readdir($h))){
+            if($file!=='..' && $file!=='.'){
+                $fp = $path.'/'.$file;
+                if(!is_readable($fp)){
+                    continue;
+                }
+                if(is_dir($fp)){
+                    $fp .= '/';
+                    if(!$noFolder){
+                        $files[$fp] = $returnAbsolutePath?$fp:ltrim(str_replace($topPath,'',$fp),'/');
+                    }
+                    if(!$recursive){
+                        continue;
+                    }
+                    $function = __FUNCTION__;
+                    $subFolderFiles = $function($fp, $recursive, $noFolder, $returnAbsolutePath, $depth+1);
+                    if(is_array($subFolderFiles)){
+                        $files = array_merge($files, $subFolderFiles);
+                    }
+                }else{
+                    $files[$fp] = $returnAbsolutePath?$fp:ltrim(str_replace($topPath,'',$fp),'/');
+                }
+            }
+        }
+        return $returnAbsolutePath?array_values($files):$files;
+    }
+}
 
-
-
-
+if(!function_exists('array_sort')){
+    /**
+     * 排序
+     * @param unknown $array
+     * @param unknown $row
+     * @param unknown $type
+     * @return unknown
+     */
+    function array_sort($array,$row,$type){
+        $array_temp = array();
+        foreach($array as $k => $v){
+            $array_temp[$v[$row]][] = $v;
+        }
+        
+        if($type == 'asc'){
+            ksort($array_temp);
+        }elseif($type='desc'){
+            krsort($array_temp);
+        }else{
+            
+        }
+        
+        foreach ($array_temp as $key => $value) {
+            foreach ($value as $value_) {
+                $arr [] = $value_;
+            }
+        }
+        return $arr;
+    }
+}

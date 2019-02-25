@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>满屏</title>
+</head>
+<style>
+*{
+    padding:0px;
+    margin:0px;
+}
+html,body,.content{
+    height:100%;
+}
+.top,.bottom{
+    position: absolute;
+    height: 50px;
+    background-color: #20abf3;
+    left: 0;
+    right: 0;
+}
+.top{
+    top:0;
+}
+.bottom{
+    bottom:0;
+}
+.center{
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    background-color: #dcdcdc;
+    overflow: auto;
+}
+</style>
+<body>
+<div class="content">
+    <div class="top">定高</div>
+    <div class="center">
+        自适应
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        自适应
+    </div>
+    <div class="bottom">定高</div>
+</div>
+</body>
+</html>
