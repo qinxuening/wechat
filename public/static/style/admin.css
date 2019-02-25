@@ -2576,8 +2576,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 .search_result{
     border: 1px solid #BFBFBF;
     border-radius: 8px;
-    padding: 20px;
-    margin: 10px auto;
+    padding: 10px;
 }
 
 .layui-select-title .layui-input{
