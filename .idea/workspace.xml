@@ -101,13 +101,27 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="190" column="32" lean-forward="false" selection-start-line="190" selection-start-column="32" selection-end-line="190" selection-end-column="49" />
+            <state relative-caret-position="217">
+              <caret line="468" column="36" lean-forward="false" selection-start-line="468" selection-start-column="36" selection-end-line="468" selection-end-column="36" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#!!top" expanded="false" />
-                <marker date="1551183466615" expanded="true" signature="27105:27120" ph="..." />
-                <marker date="1551183466615" expanded="true" signature="27282:27297" ph="..." />
+                <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#script#0;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#script#1;n#body#0;n#!!top" expanded="false" />
+                <marker date="1551191435724" expanded="true" signature="26823:26838" ph="..." />
+                <marker date="1551191435724" expanded="true" signature="27000:27015" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formEvent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/static/modules/formEvent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,16 +182,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order_care2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26541">
-              <caret line="983" column="33" lean-forward="false" selection-start-line="982" selection-start-column="101" selection-end-line="983" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="weTable.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/modules/weTable.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -201,10 +205,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>layadmin-pagetabs</find>
-      <find>condition</find>
-      <find>layui-nav layadmin-tabs-select</find>
-      <find>记录</find>
       <find>sms_record</find>
       <find>add</find>
       <find>div1</find>
@@ -230,7 +230,11 @@
       <find>button</find>
       <find>短信标签</find>
       <find>赠送礼品</find>
+      <find>time_start</find>
+      <find>order_time_end</find>
       <find>webody1</find>
+      <find>order_time_start</find>
+      <find>switchStatus</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -694,7 +698,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="795436000" />
+    <option name="totallyTimeSpent" value="800749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -857,7 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/formEvent.js" />
     <entry file="file://$PROJECT_DIR$/application/admin/view/push/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1323">
@@ -1102,14 +1105,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/formEvent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="190" column="32" lean-forward="false" selection-start-line="190" selection-start-column="32" selection-end-line="190" selection-end-column="49" />
+        <state relative-caret-position="217">
+          <caret line="468" column="36" lean-forward="false" selection-start-line="468" selection-start-column="36" selection-end-line="468" selection-end-column="36" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#!!top" expanded="false" />
-            <marker date="1551183466615" expanded="true" signature="27105:27120" ph="..." />
-            <marker date="1551183466615" expanded="true" signature="27282:27297" ph="..." />
+            <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#script#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#body#0;n#!!top" expanded="false" />
+            <marker date="1551191435724" expanded="true" signature="26823:26838" ph="..." />
+            <marker date="1551191435724" expanded="true" signature="27000:27015" ph="..." />
           </folding>
         </state>
       </provider>

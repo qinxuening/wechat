@@ -192,7 +192,7 @@
                 <div class="layui-card-body layui-card-body-padding">
                     <!--表格查询条件begin-->
                     <div class="searchbody">
-                        <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="rule">
+                        <form class="layui-form" method="post" action="" tableid="tableReload" id="search_form" lay-filter="search_form">
                             <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
                                 <colgroup>
                                     <col class="yty_tdright" width="100px">
@@ -202,7 +202,7 @@
                                 <tr>
                                     <td class="yty_tdleft">订单编号 :</td>
                                     <td class="yty_tdright">
-                                        <input type="text" name="tid" id="tid" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        <input type="text" name="order_number" id="order_number" placeholder="" autocomplete="off" class="layui-input input-margin">
                                         手机号码：
                                         <input type="mobile" name="mobile" id="mobile" placeholder="" autocomplete="off" class="layui-input input-margin">
                                         省份：
@@ -216,7 +216,7 @@
                                 <tr>
                                     <td class="yty_tdleft">下单时间 :</td>
                                     <td class="yty_tdright">
-                                        <input type="text" name="time_start" id="time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="time_end" id="time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
+                                        <input type="text" name="order_time_start" id="order_time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="order_time_end" id="order_time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
                                         订单金额：
                                         <input type="text" name="payment_start" id="payment_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="payment_end" id="payment_end" placeholder="" autocomplete="off" class="layui-input" lay-key="2">
                                     </td>
@@ -227,8 +227,8 @@
                                     <td class="yty_tdright">
                                         <div class="layui-form">
                                             <input type="checkbox" name="tradefrom[pc]" lay-skin="primary" title="pc端" checked="">
-                                            <input type="checkbox" name="like[wap]" lay-skin="primary" title="移动端">
-                                            <input type="checkbox" name="like[ht]" lay-skin="primary" title="历史订单">
+                                            <input type="checkbox" name="tradefrom[wap]" lay-skin="primary" title="移动端">
+                                            <input type="checkbox" name="tradefrom[ht]" lay-skin="primary" title="历史订单">
                                         </div>
                                     </td>
                                 </tr>
@@ -251,13 +251,13 @@
                                     <td class="yty_tdright">
                                         <div class="layui-form yty-checkbox-all">
                                             <input type="checkbox" lay-skin="primary" name="orderStatus[ALL]" value="ALL" class="all" title="全部"  lay-filter="check_all">
-                                            <input type="checkbox" lay-skin="primary" name="orderStatus[WAIT_BUYER_PAY]" title="下单未付款">
-                                            <input type="checkbox" lay-skin="primary" name="orderStatus[WAIT_SELLER_SEND_GOODS]" title="付款未发货">
-                                            <input type="checkbox" lay-skin="primary" name="orderStatus[WAIT_BUYER_CONFIRM_GOODS]" title="已发货">
-                                            <input type="checkbox" lay-skin="primary" name="orderStatus[SELLER_CONSIGNED_PART]" title="部分发货">
-                                            <input type="checkbox" lay-skin="primary" name="orderStatus[TRADE_FINISHED]" title="交易成功">
-                                            <input type="checkbox" lay-skin="primary" name="orderStatus[TRADE_CLOSED]" title="已退款">
-                                            <input type="checkbox" lay-skin="primary" name="orderStatus[TRADE_CLOSED_BY_TAOBAO]" title="交易关闭">
+                                            <input type="checkbox" lay-skin="primary" name="orderStatus[WAIT_BUYER_PAY]" value="1" title="下单未付款">
+                                            <input type="checkbox" lay-skin="primary" name="orderStatus[WAIT_SELLER_SEND_GOODS]" value="2" title="付款未发货">
+                                            <input type="checkbox" lay-skin="primary" name="orderStatus[WAIT_BUYER_CONFIRM_GOODS]" value="3" title="已发货">
+                                            <input type="checkbox" lay-skin="primary" name="orderStatus[SELLER_CONSIGNED_PART]" value="4" title="部分发货">
+                                            <input type="checkbox" lay-skin="primary" name="orderStatus[TRADE_FINISHED]" value="5" title="交易成功">
+                                            <input type="checkbox" lay-skin="primary" name="orderStatus[TRADE_CLOSED]" value="6" title="已退款">
+                                            <input type="checkbox" lay-skin="primary" name="orderStatus[TRADE_CLOSED_BY_TAOBAO]" value="7" title="交易关闭">
                                         </div>
                                     </td>
                                 </tr>
@@ -267,10 +267,10 @@
                                     <td class="yty_tdright">
                                         <div class="layui-form yty-checkbox-all">
                                             <input type="checkbox" lay-skin="primary" name="evaluationStatus[ALL]" value="ALL" title="全部" class="all"  lay-filter="check_all">
-                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_RATE]" value="BUYER_RATE" title="买家已评"  lay-filter="check_all">
-                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评"  lay-filter="check_all">
-                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_NOT_RATE]" value="BUYER_NOT_RATE" title="买家未评，卖家已评"  lay-filter="check_all">
-                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_RATE_SELLER_NOT]" value="BUYER_RATE_SELLER_NOT" title="双发已评"  lay-filter="check_all">
+                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_RATE]" value="1" title="买家已评"  lay-filter="check_all">
+                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_NOT_RATE]" value="2" title="买家未评"  lay-filter="check_all">
+                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_NOT_RATE]" value="3" title="买家未评，卖家已评"  lay-filter="check_all">
+                                            <input type="checkbox" lay-skin="primary" name="evaluationStatus[BUYER_RATE_SELLER_NOT]" value="4" title="双发已评"  lay-filter="check_all">
                                         </div>
                                     </td>
                                 </tr>
@@ -280,9 +280,9 @@
                                     <td class="yty_tdright">
                                         <div class="layui-form yty-checkbox-all">
                                             <input type="checkbox" lay-skin="primary" name="orderType[ALL]" value="ALL" title="全部" class="all" lay-filter="check_all">
-                                            <input type="checkbox" lay-skin="primary" name="orderType[FRONT_NOPAID_FINAL_NOPAID]" value="FRONT_NOPAID_FINAL_NOPAID" title="定金未定" lay-filter="check_all">
-                                            <input type="checkbox" lay-skin="primary" name="orderType[FRONT_PAID_FINAL_NOPAID]" value="FRONT_PAID_FINAL_NOPAID" title="已付定金，未付尾款" lay-filter="check_all">
-                                            <input type="checkbox" lay-skin="primary" name="orderType[FRONT_PAID_FINAL_PAID]" value="FRONT_PAID_FINAL_PAID" title="定金已付，尾款已付" lay-filter="check_all">
+                                            <input type="checkbox" lay-skin="primary" name="orderType[FRONT_NOPAID_FINAL_NOPAID]" value="1" title="定金未定" lay-filter="check_all">
+                                            <input type="checkbox" lay-skin="primary" name="orderType[FRONT_PAID_FINAL_NOPAID]" value="2" title="已付定金，未付尾款" lay-filter="check_all">
+                                            <input type="checkbox" lay-skin="primary" name="orderType[FRONT_PAID_FINAL_PAID]" value="3" title="定金已付，尾款已付" lay-filter="check_all">
                                         </div>
                                     </td>
                                 </tr>
@@ -293,7 +293,7 @@
                     <!--表格查询条件end-->
 
                     <!--订单查询结果begin-->
-                    <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>
+                    <table class="layui-hide" id="order-data" lay-filter="order-data" table-reload-id="tableReload"></table>
                     <!--订单查询结果end-->
                 </div>
             </div>
@@ -319,14 +319,10 @@
 <!--头工具栏-->
 
 <!--状态-->
-<script type="text/html" id="switchStatus">
+<script type="text/html" id="order_status">
     <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
 </script>
 
-<!--状态-->
-<script type="text/html" id="switchPush">
-    <input type="checkbox" name="is_time_push" value="{{d.is_time_push}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.is_time_push == 1 ? 'checked' : '' }}>
-</script>
 
 <!--操作-->
 <!--{:build_actionbar('actionbar',['edit','test', 'del'])}-->
@@ -356,8 +352,7 @@
             ,toastr = layui.toastr;
 
         var tableCommon = {
-            elem: '#rule'
-//            ,url:""
+            elem: '#order-data'
             ,url:"{:url('Admin/user.user/index')}"
             ,id : 'tableReload'
             ,skin:'line'
@@ -370,7 +365,7 @@
                 {type:'checkbox', fixed: 'left',hide:true}
                 ,{field:'buyer_name', title: '买家昵称',minWidth:150,searchList:{type:'input',operate:'LIKE'}}
                 ,{field:'consignee_name', title: '收货人姓名',minWidth:150}
-                ,{field:'order_status', title: '订单状态',templet: '#switchStatus', sort: true,minWidth:100}
+                ,{field:'order_status', title: '订单状态',templet: '#order_status', sort: true,minWidth:100}
                 ,{field:'order_source', title: '订单来源', sort: true,minWidth:150}
                 ,{field:'consignee_city', title: '收货人所在城市',minWidth:150}
                 ,{field:'mobile', title: '手机号码',minWidth:100}
@@ -393,7 +388,6 @@
         };
 
         table.render(tableCommon); //数据表格初始化
-//        formSearch.api.init(tableCommon); //搜索初始化
 
         var demoListView = $('#demoList');
         var uploadListIns = upload.render({
@@ -464,40 +458,22 @@
         });
 
         laydate.render({
-            elem: '#time_start' //指定元素
+            elem: '#order_time_start' //指定元素
             ,type: 'datetime'
         });
         laydate.render({
-            elem: '#time_end' //指定元素
+            elem: '#order_time_end' //指定元素
             ,type: 'datetime'
         });
-        //监听性别操作
-        form.on('switch(ruleStatus)', function(obj){
-//            console.log(obj);
-            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
-        });
 
-        /**
-         * 表格初始化
-         */
-        weTable.api.init({
-            table : "rule",
-            is_display:true,
-            tableid : "tableReload",
-            form:$("form#formRule"),
-            tableCommon: tableCommon,
-            extend : {
-                "add_url": "{:url('admin/push/add','',false)}",
-                "edit_url": "{:url('admin/push/edit','',false)}/ids/",
-                "del_url": "{:url('admin/push/del','',false)}",
-            }
+        form.on('switch(order_status)', function(obj){
+            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
         });
 
         /**
          * 绑定监听事件
          * */
-//        weTable.api.bindevent();
-        formSearch.api.searchForm($("form#formRule"));
+        formSearch.api.searchForm($("form#search_form"));
 
         /**
          * 屏蔽标旗点击切换
@@ -530,7 +506,9 @@
                 $("#areaIdH").val(areaId.join(','));
                 layer.closeAll();
             });
-            //重置
+            /**
+             * 重置
+             * */
             $("body").on("click",".reset",function (){
                 layer.closeAll();
             });
@@ -539,18 +517,18 @@
         /**
          * 评价状态、订单类型全选、非全选状态
          */
-//        form.on('checkbox(check_all)', function(data){
-//            var value = data.value;
-//            if(value == 'ALL') {
-//                if (data.elem.checked) {
-//                    $(this).parent(".layui-form").children('input').prop('checked', true);
-//                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
-//                } else {
-//                    $(this).parent(".layui-form").children('input').prop('checked', false);
-//                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
-//                }
-//            }
-//        });
+        /*form.on('checkbox(check_all)', function(data){
+            var value = data.value;
+            if(value == 'ALL') {
+                if (data.elem.checked) {
+                    $(this).parent(".layui-form").children('input').prop('checked', true);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
+                } else {
+                    $(this).parent(".layui-form").children('input').prop('checked', false);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
+                }
+            }
+        });*/
 
         /**
          *省份全选、反选
@@ -570,20 +548,11 @@
          * 地区点击选中、评价状态、订单类型全选、非全选状态
          */
         formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox, .yty-checkbox-all .layui-form-checkbox");
-//        $("body").on("click",".layui-form-checkbox",function (){
-//            var p = $(this).prev();
-//            if(p.attr('class') == 'all' && p.attr('class') !== 'undefined') {
-//                if($(this).hasClass('layui-form-checked')) {
-//                    $(this).parent(".layui-form").children('input').prop('checked', true);
-//                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
-//                } else {
-//                    $(this).parent(".layui-form").children('input').prop('checked', false);
-//                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
-//                }
-//            }
-//        });
 
-        table.on('toolbar(rule)', function(obj){
+        /**
+         * 表格表头工具栏事件
+         */
+        table.on('toolbar(order-data)', function(obj){
             var layEvent = obj.event;
             var checkStatus = table.checkStatus(obj.config.id);
             //console.log(checkStatus.data);
