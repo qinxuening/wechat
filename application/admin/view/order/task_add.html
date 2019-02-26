@@ -163,89 +163,89 @@
 <!--短链模版弹出end-->
 
 <!--修改短信内容弹出begin-->
-<div class="body-form sms-layer" style="display: none">
-    <div class="layui-form">
-        <div class="layui-card main-table">
-            <div class="layui-card-body main-body">
-                <blockquote class="layui-elem-quote layui-text layui-quote-style">
-                    <p>1. 短信中插入标签或链接时，<span class="red_color">标签或链接前后需有空格分隔</span>，请勿删除前后空格，否则可能导致无法正常替换和跳转；</p>
-                    <p>2. 短信内容中若含有促销词如:微信、QQ、店庆等,请务必在短信内容末尾添加“退订回N”</p>
-                </blockquote>
-                <div class="layui-row">
-                    <div class="layui-col-md8">
-                        <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
-                            <colgroup>
-                                <col class="yty_tdleft" width="30%">
-                                <col class="yty_tdright">
-                            </colgroup>
-                            <tbody>
-                            <tr>
-                                <td class="yty_tdleft"><span class="red_color">*</span> 短信签名</td>
-                                <td colspan="2" class="yty_tdright">
-                                    【<input type="text" name="sms_name" id="sms_name" value="阿里狗" placeholder="" autocomplete="off" class="layui-input">】
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="yty_tdleft"><span class="red_color">*</span> 短信标签</td>
-                                <td class="yty_tdright sms_label">
-                                    <ul class="ulstyle0">
-                                        <li><a href="javascript:void(0);" id="buyer">收货人</a></li>
-                                        <li><a href="javascript:void(0);" id="order_id">订单编号</a></li>
-                                        <li><a href="javascript:void(0);" id="seller_nick_name">买家昵称</a></li>
-                                        <li><a href="javascript:void(0);" id="product_name">商品简称</a></li>
-                                        <li><a href="javascript:void(0);">商品名称</a></li>
-                                    </ul>
+<!--<div class="body-form sms-layer" style="display: none">-->
+    <!--<div class="layui-form">-->
+        <!--<div class="layui-card main-table">-->
+            <!--<div class="layui-card-body main-body">-->
+                <!--<blockquote class="layui-elem-quote layui-text layui-quote-style">-->
+                    <!--<p>1. 短信中插入标签或链接时，<span class="red_color">标签或链接前后需有空格分隔</span>，请勿删除前后空格，否则可能导致无法正常替换和跳转；</p>-->
+                    <!--<p>2. 短信内容中若含有促销词如:微信、QQ、店庆等,请务必在短信内容末尾添加“退订回N”</p>-->
+                <!--</blockquote>-->
+                <!--<div class="layui-row">-->
+                    <!--<div class="layui-col-md8">-->
+                        <!--<table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">-->
+                            <!--<colgroup>-->
+                                <!--<col class="yty_tdleft" width="30%">-->
+                                <!--<col class="yty_tdright">-->
+                            <!--</colgroup>-->
+                            <!--<tbody>-->
+                            <!--<tr>-->
+                                <!--<td class="yty_tdleft"><span class="red_color">*</span> 短信签名</td>-->
+                                <!--<td colspan="2" class="yty_tdright">-->
+                                    <!--【<input type="text" name="sms_name" id="sms_name" value="阿里狗" placeholder="" autocomplete="off" class="layui-input">】-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td class="yty_tdleft"><span class="red_color">*</span> 短信标签</td>-->
+                                <!--<td class="yty_tdright sms_label">-->
+                                    <!--<ul class="ulstyle0">-->
+                                        <!--<li><a href="javascript:void(0);" id="buyer">收货人</a></li>-->
+                                        <!--<li><a href="javascript:void(0);" id="order_id">订单编号</a></li>-->
+                                        <!--<li><a href="javascript:void(0);" id="seller_nick_name">买家昵称</a></li>-->
+                                        <!--<li><a href="javascript:void(0);" id="product_name">商品简称</a></li>-->
+                                        <!--<li><a href="javascript:void(0);">商品名称</a></li>-->
+                                    <!--</ul>-->
 
-                                    <ul class="ulstyle1">
-                                        <li><a href="javascript:void(0);" id="short_href">#短链#</a></li>
-                                        <li><a href="javascript:void(0);" id="sms_module">#短信模板#</a></li>
-                                    </ul>
-                                    <!--<br>-->
-                                    <!--<p class="marginbuttom5"></p>-->
-                                    <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
-                                    <p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
-2、一个汉字,数字,字母,空格都算一个字<br>
-3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
-                                    <!--<p class="font12">1、单条70个字,超出70个字将按照67个字每条计算<br></p>
-                                    <p class="font12">2、一个汉字,数字,字母,空格都算一个字<br></p>
-                                    <p class="font12">3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！</p>-->
-                                    <p class="font12">提示：<span class="red_color">标签和链接前后需有空格分隔，请勿删除前后空格！</span></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="yty_tdleft">短信测试</td>
-                                <td class="yty_tdright">
-                                    <input type="text" style="font-size: 12px;width: 300px;" name="test_phone" placeholder="请输入短信测试手机号，多个手机号用逗号(,)隔开" id="test_phone" value="" placeholder="" autocomplete="off" class="layui-input">
-                                    <button type="button" name="" id="" autocomplete="off" class="layui-btn layui-btn-sm  layui-btn-primary">短信测试</button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="layui-col-md4">
-                        <div class="sms-phone">
-                            <div class="phone-container">
-                                <div class="smg-content">
-                                    【覃雪宁88】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-form-item layer-form-footer">
-                    <div class="footer-inner">
-                        <button type="submit" lay-submit="" lay-filter="formRule"
-                                class="layui-btn layui-btn-normal submit layui-btn-sm sms-confirm btn-embossed">{:__('OK')}
-                        </button>
-                        <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">
-                            取消
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                                    <!--<ul class="ulstyle1">-->
+                                        <!--<li><a href="javascript:void(0);" id="short_href">#短链#</a></li>-->
+                                        <!--<li><a href="javascript:void(0);" id="sms_module">#短信模板#</a></li>-->
+                                    <!--</ul>-->
+                                    <!--&lt;!&ndash;<br>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<p class="marginbuttom5"></p>&ndash;&gt;-->
+                                    <!--<textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>-->
+                                    <!--<p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>-->
+<!--2、一个汉字,数字,字母,空格都算一个字<br>-->
+<!--3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>-->
+                                    <!--&lt;!&ndash;<p class="font12">1、单条70个字,超出70个字将按照67个字每条计算<br></p>-->
+                                    <!--<p class="font12">2、一个汉字,数字,字母,空格都算一个字<br></p>-->
+                                    <!--<p class="font12">3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！</p>&ndash;&gt;-->
+                                    <!--<p class="font12">提示：<span class="red_color">标签和链接前后需有空格分隔，请勿删除前后空格！</span></p>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td class="yty_tdleft">短信测试</td>-->
+                                <!--<td class="yty_tdright">-->
+                                    <!--<input type="text" style="font-size: 12px;width: 300px;" name="test_phone" placeholder="请输入短信测试手机号，多个手机号用逗号(,)隔开" id="test_phone" value="" placeholder="" autocomplete="off" class="layui-input">-->
+                                    <!--<button type="button" name="" id="" autocomplete="off" class="layui-btn layui-btn-sm  layui-btn-primary">短信测试</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--</tbody>-->
+                        <!--</table>-->
+                    <!--</div>-->
+                    <!--<div class="layui-col-md4">-->
+                        <!--<div class="sms-phone">-->
+                            <!--<div class="phone-container">-->
+                                <!--<div class="smg-content">-->
+                                    <!--【覃雪宁88】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="layui-form-item layer-form-footer">-->
+                    <!--<div class="footer-inner">-->
+                        <!--<button type="submit" lay-submit="" lay-filter="formRule"-->
+                                <!--class="layui-btn layui-btn-normal submit layui-btn-sm sms-confirm btn-embossed">{:__('OK')}-->
+                        <!--</button>-->
+                        <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">-->
+                            <!--取消-->
+                        <!--</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 <!--修改短信内容弹出end-->
 
 <!--设置黑名单begin-->
@@ -433,7 +433,6 @@
                                         <input type="checkbox" name="order_type_switch" lay-skin="primary"  title="" checked="">订单类型为<span style="color: #FF5722">货到付款</span>时才发送提醒
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td class="yty_tdleft"> 过滤设置 :</td>
                                     <td class="yty_tdright">
@@ -512,19 +511,85 @@
                                     </td>
                                 </tr>
 
-                                <tr class="yty-form">
-                                    <td class="yty_tdleft"> 短信内容 :</td>
-                                    <td class="yty_tdright">
-                                        <div class="layui-inline layui-form">
-                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content-last" readonly>注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
-                                            <a href="javascript:void(0);" class="astyle sms-event">修改短信内容</a>
-                                            <a href="javascript:void(0);" class="astyle sms_record">短信测试记录</a>
+                                <!--<tr class="yty-form">-->
+                                    <!--<td class="yty_tdleft"> 短信内容 :</td>-->
+                                    <!--<td class="yty_tdright">-->
+                                        <!--<div class="layui-inline layui-form">-->
+                                            <!--<textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content-last" readonly>注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>-->
+                                            <!--<a href="javascript:void(0);" class="astyle sms-event">修改短信内容</a>-->
+                                            <!--<a href="javascript:void(0);" class="astyle sms_record">短信测试记录</a>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+
+                                <tr>
+                                    <td  class="yty_tdright border-bottom" colspan="2">
+                                        <div class="layui-row">
+                                            <div class="layui-col-md8">
+                                                <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
+                                                    <colgroup>
+                                                        <col class="yty_tdright" width="100px">
+                                                        <col class="yty_tdright">
+                                                    </colgroup>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="yty_tdleft"><span class="red_color">*</span> 短信签名 :</td>
+                                                        <td colspan="2" class="yty_tdright">
+                                                            【<input type="text" name="sms_name" id="sms_name" value="阿里狗" placeholder="" autocomplete="off" class="layui-input">】
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="yty_tdright"><span class="red_color">*</span> 短信标签 :</td>
+                                                        <td class="yty_tdright sms_label">
+                                                            <ul class="ulstyle0">
+                                                                <li><a href="javascript:void(0);" id="buyer">收货人</a></li>
+                                                                <li><a href="javascript:void(0);" id="order_id">订单编号</a></li>
+                                                                <li><a href="javascript:void(0);" id="seller_nick_name">买家昵称</a></li>
+                                                                <li><a href="javascript:void(0);" id="product_name">商品简称</a></li>
+                                                                <li><a href="javascript:void(0);">商品名称</a></li>
+                                                            </ul>
+
+                                                            <ul class="ulstyle1">
+                                                                <li><a href="javascript:void(0);" id="short_href">#短链#</a></li>
+                                                                <li><a href="javascript:void(0);" id="sms_module">#短信模板#</a></li>
+                                                            </ul>
+                                                            <!--<br>-->
+                                                            <!--<p class="marginbuttom5"></p>-->
+                                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
+                                                            <p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
+2、一个汉字,数字,字母,空格都算一个字<br>
+3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
+                                                            <!--<p class="font12">1、单条70个字,超出70个字将按照67个字每条计算<br></p>
+                                                            <p class="font12">2、一个汉字,数字,字母,空格都算一个字<br></p>
+                                                            <p class="font12">3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！</p>-->
+                                                            <p class="font12">提示：<span class="red_color">标签和链接前后需有空格分隔，请勿删除前后空格！</span></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="yty_tdright">短信测试 :</td>
+                                                        <td class="yty_tdright">
+                                                            <input type="text" style="font-size: 12px;width: 300px;" name="test_phone" placeholder="请输入短信测试手机号，多个手机号用逗号(,)隔开" id="test_phone" value="" placeholder="" autocomplete="off" class="layui-input">
+                                                            <button type="button" name="" id="" autocomplete="off" class="layui-btn layui-btn-sm  layui-btn-primary">短信测试</button>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="layui-col-md4">
+                                                <div class="sms-phone">
+                                                    <div class="phone-container">
+                                                        <div class="smg-content">
+                                                            【覃雪宁88】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td colspan="2" class="yty_tdright"  style="border-bottom: none !important;">
+                                    <td colspan="2" class="yty_tdright border-bottom">
                                         <div class="layui-form-item footer-form">
                                             <div class="footer footer-common">
                                                 <button type="button" lay-submit="" lay-filter="" class="layui-btn layui-btn-normal layui-btn-sm  layui-btn-sm">提交</button>
@@ -1130,7 +1195,7 @@
          */
         $("body").on("click",".next-step",function (){
             $(".step-first").hide();
-            $(".step-second").slideToggle(400);;
+            $(".step-second").show();
             $(".step-two-msg").addClass('step-active');
             $(".step-tow-number").addClass('step-number-active');
         });
@@ -1139,7 +1204,7 @@
          * 点击第二步上一步
          */
         $("body").on("click",".pre-step",function (){
-            $(".step-first").slideToggle(400);
+            $(".step-first").show();
             $(".step-second").hide();
             $(".step-two-msg").removeClass('step-active');
             $(".step-tow-number").removeClass('step-number-active');
@@ -1150,7 +1215,7 @@
          */
         $("body").on("click",".next-step-thrid",function (){
             $(".step-second").hide();
-            $(".step-third").slideToggle(400);;
+            $(".step-third").show();
             $(".step-three-msg").addClass('step-active');
             $(".step-three-number").addClass('step-number-active');
         });
@@ -1159,7 +1224,7 @@
          * 点击第三步上一步
          */
         $("body").on("click",".pre-step-thrid",function (){
-            $(".step-second").slideToggle(400);
+            $(".step-second").show();
             $(".step-third").hide();
             $(".step-three-msg").removeClass('step-active');
             $(".step-three-number").removeClass('step-number-active');

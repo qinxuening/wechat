@@ -2418,7 +2418,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 }
 
 .yty-textarea{
-    width: 600px !important;
+    width: 100% !important;
 }
 
 .main-body{
@@ -2484,6 +2484,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     margin: 20px;
     width: 140px;
     word-break: break-all;
+    line-height: 2;
 }
 
 .tips-icon{
@@ -2674,4 +2675,8 @@ input:focus, select:focus{
 
 .layui-input:focus, .layui-select:focus,  .layui-textarea:focus, .xm-select:focus{
     border:1px solid #506def !important;
+}
+
+.dashed-td tr>td.border-bottom{
+    border-bottom: none !important;
 }

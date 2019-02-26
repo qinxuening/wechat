@@ -420,6 +420,7 @@
                     <span class="step-line"></span>
                     <span class="step step-left step-tow-number">2</span><span class="step-two-msg">第二步：编辑短信</span>
                 </div>
+                <!----------------------------第一步begin---------------------------->
                 <div class="layui-card-body step-first layui-card-body-padding">
                     <!--表格查询条件begin-->
                     <!--<div class="searchbody">-->
@@ -554,7 +555,8 @@
                                 <tr>
                                     <td class="yty_tdleft"  style="border-bottom: none !important;"> 筛选操作 :</td>
                                     <td class="yty_tdright"  style="border-bottom: none !important;">
-                                        <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step  layui-btn-primary btn-primary-border layui-btn-sm">下一步</button>
+                                        <!--layui-btn-primary btn-primary-border-->
+                                        <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step layui-btn-normal layui-btn-sm">下一步</button>
                                         <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-normal   layui-btn-sm">查询</button>
                                         <button type="reset" class="layui-btn layui-btn-sm  layui-btn-normal yty-btn">重置</button>
                                     </td>
@@ -580,6 +582,9 @@
                     <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
                     <!--订单查询结果end-->
                 </div>
+                <!----------------------------第一步end---------------------------->
+
+                <!----------------------------第二步begin---------------------------->
                 <div class="layui-card-body layui-card-body-padding step-second" style="display: none">
                     <!--表格查询条件begin-->
                     <!--<div class="searchbody">-->
@@ -668,9 +673,10 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="yty_tdleft"  style="border-bottom: none !important;"></td>
-                                        <td class="yty_tdright"  style="border-bottom: none !important;">
-                                            <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-primary pre-step btn-primary-border layui-btn-sm btn-embossed">上一步</button>
+                                        <td class="yty_tdleft border-bottom"></td>
+                                        <td class="yty_tdright border-bottom">
+                                            <!--btn-primary-border layui-btn-primary-->
+                                            <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal pre-step layui-btn-sm btn-embossed">上一步</button>
                                             <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">发送短信</button>
                                         </td>
                                     </tr>
@@ -703,6 +709,7 @@
                     <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
                     <!--订单查询结果end-->
                 </div >
+                <!----------------------------第二步end---------------------------->
             </div>
         </div>
 
@@ -1611,7 +1618,7 @@
          */
         $("body").on("click",".next-step",function (){
             $(".step-first").hide();
-            $(".step-second").slideToggle(400);;
+            $(".step-second").show();;
             $(".step-two-msg").addClass('step-active');
             $(".step-tow-number").addClass('step-number-active');
         });
@@ -1620,7 +1627,7 @@
          * 点击上一步
          */
         $("body").on("click",".pre-step",function (){
-            $(".step-first").slideToggle(400);
+            $(".step-first").show();
             $(".step-second").hide();
             $(".step-two-msg").removeClass('step-active');
             $(".step-tow-number").removeClass('step-number-active');
