@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd2929a5-94d4-4545-8a59-6480752a55ce" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/admin/view/order/task_add2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/Activity/member_sms.html" afterPath="$PROJECT_DIR$/application/admin/view/Activity/member_sms.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/order/task_add.html" afterPath="$PROJECT_DIR$/application/admin/view/order/task_add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/static/style/admin.css" afterPath="$PROJECT_DIR$/public/static/style/admin.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -70,28 +69,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="1899">
               <caret line="2390" column="0" lean-forward="false" selection-start-line="2390" selection-start-column="0" selection-end-line="2390" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task_add.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="task_add.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/task_add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="327" column="58" lean-forward="false" selection-start-line="327" selection-start-column="58" selection-end-line="327" selection-end-column="58" />
+            <state relative-caret-position="95">
+              <caret line="1163" column="60" lean-forward="true" selection-start-line="1163" selection-start-column="60" selection-end-line="1163" selection-end-column="60" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#!!top" expanded="false" />
                 <element signature="n#div#4;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#tr#3;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tbody#1;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#tbody#1;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#1;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tbody#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task_add2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/order/task_add2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="21" column="76" lean-forward="true" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,8 +121,6 @@
               <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
               <folding>
                 <element signature="n#script#2;n#body#0;n#!!top" expanded="false" />
-                <marker date="1551142002350" expanded="true" signature="186:640" ph="..." />
-                <marker date="1551142002350" expanded="true" signature="187:633" ph="..." />
               </folding>
             </state>
           </provider>
@@ -113,8 +129,8 @@
       <file leaf-file-name="member_sms.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="416" column="0" lean-forward="false" selection-start-line="416" selection-start-column="0" selection-end-line="421" selection-end-column="22" />
+            <state relative-caret-position="353">
+              <caret line="673" column="111" lean-forward="false" selection-start-line="673" selection-start-column="95" selection-end-line="673" selection-end-column="111" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#!!top" expanded="false" />
@@ -209,18 +225,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="we.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4104">
-              <caret line="152" column="33" lean-forward="false" selection-start-line="152" selection-start-column="23" selection-end-line="152" selection-end-column="33" />
-              <folding>
-                <marker date="1550797337550" expanded="true" signature="10144:12210" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -234,10 +238,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>68</find>
-      <find>yty_tdright</find>
-      <find>customize</find>
-      <find>send_limit_type</find>
       <find>短信模板</find>
       <find>sms_module</find>
       <find>公告</find>
@@ -261,9 +261,13 @@
       <find>body-overflow</find>
       <find>webody1</find>
       <find>step-second</find>
-      <find>pre-step</find>
       <find>button</find>
       <find>dashed-td</find>
+      <find>formRule</find>
+      <find>step-third</find>
+      <find>next-step-thrid</find>
+      <find>pre-step</find>
+      <find>pre-step-thrid</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -345,8 +349,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -437,11 +441,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\wechat\application\admin\view\order" />
       <recent name="E:\xm\wechat\application\admin\view\order" />
       <recent name="E:\xm\wechat\public\static\modules" />
       <recent name="E:\xm\wechat\application\admin\view\Activity" />
       <recent name="$PROJECT_DIR$/application/admin/view/order" />
-      <recent name="E:\xm\wechat\application\admin\view\widget" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -561,13 +565,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="772354000" />
+    <option name="totallyTimeSpent" value="776736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12223393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.117492095" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -602,13 +606,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/admin/view/fields/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1593">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/user/user/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
@@ -913,18 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/sms_record.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
-          <folding>
-            <element signature="n#script#2;n#body#0;n#!!top" expanded="false" />
-            <marker date="1551142002350" expanded="true" signature="186:640" ph="..." />
-            <marker date="1551142002350" expanded="true" signature="187:633" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -951,10 +936,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1899">
+          <caret line="2390" column="0" lean-forward="false" selection-start-line="2390" selection-start-column="0" selection-end-line="2390" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/order/task_add2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="21" column="76" lean-forward="true" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/sms_record.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <element signature="n#script#2;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="416" column="0" lean-forward="false" selection-start-line="416" selection-start-column="0" selection-end-line="421" selection-end-column="22" />
+        <state relative-caret-position="353">
+          <caret line="673" column="111" lean-forward="false" selection-start-line="673" selection-start-column="95" selection-end-line="673" selection-end-column="111" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#!!top" expanded="false" />
@@ -990,23 +1001,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/task_add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="327" column="58" lean-forward="false" selection-start-line="327" selection-start-column="58" selection-end-line="327" selection-end-column="58" />
+        <state relative-caret-position="95">
+          <caret line="1163" column="60" lean-forward="true" selection-start-line="1163" selection-start-column="60" selection-end-line="1163" selection-end-column="60" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#!!top" expanded="false" />
             <element signature="n#div#2;n#!!top" expanded="false" />
             <element signature="n#div#3;n#!!top" expanded="false" />
             <element signature="n#div#4;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#3;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tbody#1;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#tbody#1;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#1;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tbody#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="2390" column="0" lean-forward="false" selection-start-line="2390" selection-start-column="0" selection-end-line="2390" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
