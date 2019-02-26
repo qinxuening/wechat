@@ -329,23 +329,19 @@
                 </div>
                 <div class="layui-card-body main-body">
                     <!--表格查询条件begin-->
-                    <!--<div class="searchbody">-->
                     <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="rule">
                         <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
                             <colgroup>
                                 <col class="yty_tdright" width="100px">
                                 <col class="yty_tdright">
                             </colgroup>
+                            <!----------------------------第一步begin---------------------------->
                             <tbody class="step-first">
                                 <tr>
                                     <td class="yty_tdleft"> 是否开启 :</td>
                                     <td class="yty_tdright">
-                                        <!--<div class="layui-form-item">-->
-                                        <!--<div class="layui-input-block">-->
                                         <input type="radio" name="switch" value="1" title="开">
                                         <input type="radio" name="switch" value="0" title="关" checked="">
-                                        <!--</div>-->
-                                        <!--</div>-->
                                     </td>
                                 </tr>
                                 <tr>
@@ -355,16 +351,11 @@
                                         <span>(仅软件内部使用)</span>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td class="yty_tdleft"> 发送日期 :</td>
                                     <td class="yty_tdright">
-                                        <!--<div class="layui-form-item">-->
-                                        <!--<div class="layui-input-block">-->
                                         <input type="radio" name="date_switch" lay-filter="date_switch" value="1" title="不限日期" checked="">
                                         <input type="radio" name="date_switch" lay-filter="date_switch" value="0" title="指定日期">
-                                        <!--</div>-->
-                                        <!--</div>-->
                                     </td>
                                 </tr>
 
@@ -397,21 +388,19 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <!--<td class="yty_tdleft"  style="border-bottom: none !important;"> 筛选操作 :</td>-->
-                                    <!--<td class="yty_tdright"  style="border-bottom: none !important;">-->
-                                        <!--<button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step  layui-btn-primary btn-primary-border layui-btn-sm">下一步</button>-->
-                                        <!--<button type="reset" class="layui-btn layui-btn-sm  layui-btn-normal yty-btn">重置</button>-->
-                                    <!--</td>-->
                                     <td colspan="2" class="yty_tdright"  style="border-bottom: none !important;">
                                         <div class="layui-form-item footer-form">
                                             <div class="footer footer-common">
                                                 <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step  layui-btn-normal layui-btn-sm">下一步</button>
-                                                <button type="button" class="layui-btn layui-btn-sm  layui-btn-normal  yty-btn">取消</button>
+                                                <button type="button" class="layui-btn layui-btn-sm layui-btn-normal cancle yty-btn">取消</button>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
+                            <!----------------------------第一步end---------------------------->
+
+                            <!----------------------------第二步begin---------------------------->
                             <tbody class="step-second" style="display: none">
                                 <tr>
                                     <td class="yty_tdleft"> 关怀条件 :</td>
@@ -500,13 +489,16 @@
                                             <div class="footer footer-common">
                                                 <button type="button" lay-submit="" lay-filter="" class="layui-btn layui-btn-normal layui-btn-sm pre-step  layui-btn-sm">上一步</button>
                                                 <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step-thrid layui-btn-normal layui-btn-sm">下一步</button>
-                                                <button type="button" class="layui-btn layui-btn-sm layui-btn-normal  yty-btn">取消</button>
+                                                <button type="button" class="layui-btn layui-btn-sm layui-btn-normal cancle yty-btn">取消</button>
                                                 <!--<button type="reset" class="layui-btn layui-btn-sm btn-primary-border yty-btn btn-embossed">下一步</button>-->
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
+                            <!----------------------------第二步end---------------------------->
+
+                            <!----------------------------第三步begin---------------------------->
                             <tbody  class="step-third" style="display: none">
                                 <tr>
                                     <td class="yty_tdleft"> 赠送礼品 :</td>
@@ -537,22 +529,16 @@
                                             <div class="footer footer-common">
                                                 <button type="button" lay-submit="" lay-filter="" class="layui-btn layui-btn-normal layui-btn-sm  layui-btn-sm">提交</button>
                                                 <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn pre-step-thrid layui-btn-normal layui-btn-sm">上一步</button>
-                                                <button type="button" class="layui-btn layui-btn-sm layui-btn-normal  yty-btn">取消</button>
+                                                <button type="button" class="layui-btn layui-btn-sm layui-btn-normal cancle yty-btn">取消</button>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
+                            <!----------------------------第三步end---------------------------->
                         </table>
-
-
                     </form>
-                    <!--</div>-->
                     <!--表格查询条件end-->
-
-                    <!--订单查询结果begin-->
-                    <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
-                    <!--订单查询结果end-->
                 </div>
             </div>
         </div>
@@ -1138,8 +1124,9 @@
             $('.sms-content-length').text($(this).val().length);
         });
 
+        /*****************************执行步骤begin************************************/
         /**
-         *点击下一步
+         *点击第一步下一步
          */
         $("body").on("click",".next-step",function (){
             $(".step-first").hide();
@@ -1149,7 +1136,7 @@
         });
 
         /**
-         * 点击上一步
+         * 点击第二步上一步
          */
         $("body").on("click",".pre-step",function (){
             $(".step-first").slideToggle(400);
@@ -1177,6 +1164,16 @@
             $(".step-three-msg").removeClass('step-active');
             $(".step-three-number").removeClass('step-number-active');
         });
+
+        /**
+         * 点击取消
+         * 关掉layer弹层
+         */
+        $("body").on("click",".cancle",function (){
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
+        });
+        /*****************************执行步骤end************************************/
     });
 
 </script>
