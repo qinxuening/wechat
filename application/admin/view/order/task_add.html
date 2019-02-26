@@ -332,7 +332,7 @@
                     <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="rule">
                         <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
                             <colgroup>
-                                <col class="yty_tdright" width="100px">
+                                <col class="yty_tdright" width="110px">
                                 <col class="yty_tdright">
                             </colgroup>
                             <!----------------------------第一步begin---------------------------->
@@ -479,9 +479,35 @@
                                         <br>
                                         <p class="marginbuttom5"></p>
 
-                                        不发送黑名单客户 <a href="javascript:void(0);" class="astyle set_black">设置黑名单</a>
+                                        <!--不发送黑名单客户 <a href="javascript:void(0);" class="astyle set_black">设置黑名单</a>-->
                                     </td>
                                 </tr>
+
+                                <tr>
+                                    <td class="yty_tdleft">设置黑名单：</td>
+                                    <td class=""yty_tdright>
+                                        <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
+                                            <colgroup>
+                                                <col class="yty_tdleft" width="110px">
+                                                <col class="yty_tdright">
+                                            </colgroup>
+                                            <tr>
+                                                <td class="yty_tdleft border-bottom">黑名单类型</td>
+                                                <td class="yty_tdright border-bottom">
+                                                    <input type="radio" name="sex" value="1" title="云信昵称" checked="">
+                                                    <input type="radio" name="sex" value="2" title="手机号码">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!--<td class="yty_tdleft"> 短信内容 :</td>-->
+                                                <td class="yty_tdright border-bottom" colspan="2">
+                                                    <textarea placeholder="请根据选择的类型输入昵称或手机号码(可以批量录入，每行输入一个)" class="layui-textarea" style="width: 100%;height: 80%"></textarea>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
                                 <tr>
                                     <td colspan="2" class="yty_tdright"  style="border-bottom: none !important;">
                                         <div class="layui-form-item footer-form">
@@ -579,7 +605,7 @@
                                                 <div class="sms-phone">
                                                     <div class="phone-container">
                                                         <div class="smg-content">
-                                                            【覃雪宁88】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>
+                                                            【阿里狗】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>
                                                         </div>
                                                     </div>
                                                 </div>
