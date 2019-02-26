@@ -2390,7 +2390,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .dashed-td tr>td{
     border-bottom: 1px dashed #dcdcdc !important;
-    padding: 10px 10px !important;
+    padding: 10px 5px !important;
     height: 32px;
     line-height: 32px;
 }
