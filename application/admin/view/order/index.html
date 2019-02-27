@@ -226,9 +226,9 @@
                                     <td class="yty_tdleft">订单来源 :</td>
                                     <td class="yty_tdright">
                                         <div class="layui-form">
-                                            <input type="checkbox" name="tradefrom[pc]" lay-skin="primary" title="pc端" checked="">
-                                            <input type="checkbox" name="tradefrom[wap]" lay-skin="primary" title="移动端">
-                                            <input type="checkbox" name="tradefrom[ht]" lay-skin="primary" title="历史订单">
+                                            <input type="checkbox" name="tradefrom[pc]" lay-skin="primary" value="1" title="pc端" checked="">
+                                            <input type="checkbox" name="tradefrom[wap]" lay-skin="primary" value="2" title="移动端">
+                                            <input type="checkbox" name="tradefrom[ht]" lay-skin="primary" value="3" title="历史订单">
                                         </div>
                                     </td>
                                 </tr>
@@ -293,7 +293,7 @@
                     <!--表格查询条件end-->
 
                     <!--订单查询结果begin-->
-                    <table class="layui-hide" id="order-data" lay-filter="order-data" table-reload-id="tableReload"></table>
+                    <table class="layui-hide" id="order-data"  lay-filter="order-data" table-reload-id="tableReload"></table>
                     <!--订单查询结果end-->
                 </div>
             </div>
@@ -320,7 +320,7 @@
 
 <!--状态-->
 <script type="text/html" id="order_status">
-    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="order_status" {{ d.status == 1 ? 'checked' : '' }}>
 </script>
 
 
@@ -351,9 +351,10 @@
             ,formEvent = layui.formEvent
             ,toastr = layui.toastr;
 
+        /*********************表格初始化begin**************************/
         var tableCommon = {
             elem: '#order-data'
-            ,url:"{:url('Admin/user.user/index')}"
+            ,url:"{:url('Admin/user.user/index')}"    //对接后台读取数据列表方法
             ,id : 'tableReload'
             ,skin:'line'
             ,limit:10
@@ -386,13 +387,14 @@
                 }
             }
         };
-
         table.render(tableCommon); //数据表格初始化
+        /*********************表格初始化end**************************/
 
+        /*********************导入订单begin**************************/
         var demoListView = $('#demoList');
         var uploadListIns = upload.render({
             elem: '#upload'
-            ,url: "{:url('Admin/Order/upload')}"
+            ,url: "{:url('Admin/Order/upload')}" //对接后台读上传文件方法
             ,done: function(res, index, upload){ //上传后的回调
 
             }
@@ -456,18 +458,26 @@
                 tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
             }
         });
+        /*********************导入订单end**************************/
 
+        /**
+         * 时间初始化
+         * */
         laydate.render({
-            elem: '#order_time_start' //指定元素
+            elem: '#order_time_start'
             ,type: 'datetime'
         });
         laydate.render({
-            elem: '#order_time_end' //指定元素
+            elem: '#order_time_end'
             ,type: 'datetime'
         });
 
+        /**
+         * 订单状态切换触发事件
+         * */
         form.on('switch(order_status)', function(obj){
-            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+            console.log(obj);
+//            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
         });
 
         /**
@@ -487,7 +497,7 @@
         });
 
         /**
-         * 省份点击
+         * 省份点击弹窗
          */
         $("body").on("click","#areaId",function (){
             we.api.open_current_page_layer($(".layer-form"),'选择所在省份',{
@@ -515,6 +525,26 @@
         })
 
         /**
+         *省份全选、反选
+         */
+        form.on('radio(check_all)', function(data){
+            var value = data.value;
+            if(value == 'all') {
+                $(".location_address_layer").find("input[type=checkbox]").prop('checked', true);
+                $(".location_address_layer").find(".layui-form-checkbox").addClass('layui-form-checked');
+            } else {
+                $(".location_address_layer").find("input[type=checkbox]").prop('checked', false);
+                $(".location_address_layer").find(".layui-form-checkbox").removeClass('layui-form-checked');
+            }
+        });
+
+        /**
+         * 地区点击选中、评价状态、订单类型全选、非全选状态
+         */
+        formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox, .yty-checkbox-all .layui-form-checkbox");
+
+
+        /**
          * 评价状态、订单类型全选、非全选状态
          */
         /*form.on('checkbox(check_all)', function(data){
@@ -530,24 +560,6 @@
             }
         });*/
 
-        /**
-         *省份全选、反选
-         */
-        form.on('radio(check_all)', function(data){
-            var value = data.value;
-            if(value == 'all') {
-                $("input[type=checkbox]").prop('checked', true);
-                $(".layui-form-checkbox").addClass('layui-form-checked');
-            } else {
-                $("input[type=checkbox]").prop('checked', false);
-                $(".layui-form-checkbox").removeClass('layui-form-checked');
-            }
-        });
-
-        /**
-         * 地区点击选中、评价状态、订单类型全选、非全选状态
-         */
-        formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox, .yty-checkbox-all .layui-form-checkbox");
 
         /**
          * 表格表头工具栏事件
@@ -563,14 +575,15 @@
             })
             //console.log(order_id);
             switch(layEvent){
-                //查询
+                //点击查询
+                //
                 case 'search':
                     layui.table.reload("tableReload"
                         ,{
                             page: {
                                 curr: 1
                             }
-                            ,where: [],
+                            ,where: {filter:JSON.stringify(formSearch.api.getFormJson("form#search_form"))},
                         }
                     );
                     break;
@@ -600,7 +613,6 @@
                     we.tips("<li><a href='#'>拉黑！！！！！</a></li>");
                     break;
             }
-
         });
 
     });
