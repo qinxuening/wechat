@@ -293,7 +293,7 @@
                     <!--表格查询条件end-->
 
                     <!--订单查询结果begin-->
-                    <table class="layui-hide" id="order-data"  lay-filter="order-data" table-reload-id="tableReload"></table>
+                    <table class="layui-hide" id="order_data_list"  lay-filter="order_data_list" table-reload-id="tableReload"></table>
                     <!--订单查询结果end-->
                 </div>
             </div>
@@ -353,7 +353,8 @@
 
         /*********************表格初始化begin**************************/
         var tableCommon = {
-            elem: '#order-data'
+            elem: '#order_data_list'
+            ,formId:'search_form'
             ,url:"{:url('Admin/user.user/index')}"    //对接后台读取数据列表方法
             ,id : 'tableReload'
             ,skin:'line'
@@ -564,7 +565,7 @@
         /**
          * 表格表头工具栏事件
          */
-        table.on('toolbar(order-data)', function(obj){
+        table.on('toolbar(order_data_list)', function(obj){
             var layEvent = obj.event;
             var checkStatus = table.checkStatus(obj.config.id);
             //console.log(checkStatus.data);

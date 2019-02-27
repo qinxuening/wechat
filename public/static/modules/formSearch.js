@@ -13,11 +13,12 @@ layui.define(['jquery','laydate','form'], function(exports){
                 var search = defaults.search;
                 var cols = defaults.cols[0];
                 var data = defaults.data;
+                var formId = defaults.formId? defaults.formId : 'formRule';
                 var html = '';
                 options = defaults;
                 if(search == true) {
-                    console.log(123);
-                    html += '<form class="layui-form" method="post" action="'+defaults.url+'" tableid="tableReload" id="formRule" lay-filter="rule">';
+                    // console.log(123);
+                    html += '<form class="layui-form" method="post" action="'+defaults.url+'" tableid="tableReload" id="'+formId+'" lay-filter="'+formId+'">';
                     html += '<ul class="nav pull-left">';
                     $.each(cols, function (index, value) {
                         if(typeof value.searchList !== 'undefined') {
@@ -38,7 +39,7 @@ layui.define(['jquery','laydate','form'], function(exports){
                                     break;
                                 case 'select':
                                     html += '<li>'+value.title+'：'+
-                                        '<div class="layui-input-inline"><select name="status">'+
+                                        '<div class="layui-input-inline"><select name="'+value.field+'">'+
                                         '<option value="">请选择'+value.title+'</option>';
                                         $.each(value.searchList.data, function (index, value) {
                                             html += ' <option value="'+index+'">'+value+'</option>';
