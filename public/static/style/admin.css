@@ -2138,7 +2138,7 @@ tr>td.yty_tdright {
     font-weight: 600;
     height: 30px;
     line-height: 30px;
-    padding: 20px 10px;
+    padding: 10px;
 }
 
 .yty-card-header span{
@@ -2390,7 +2390,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .dashed-td tr>td{
     border-bottom: 1px dashed #dcdcdc !important;
-    padding: 10px 5px !important;
+    padding: 5px 5px !important;
     height: 32px;
     line-height: 32px;
 }
@@ -2689,3 +2689,75 @@ input:focus, select:focus{
 .layui-table-header tr th{
     font-weight: bold;
 }
+
+.margin_buttom5{
+    margin-bottom: 5px !important;
+}
+
+.padding20_10{
+    padding: 20px 10px;
+}
+
+.notice_ulstyle{
+    display: inline-block;
+    height: 200px;
+}
+
+.notice_ulstyle li{
+    float: left;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.notice_ulstyle li a {
+    display: block;
+    overflow: hidden;
+    font-size: 12px;
+    color: #515151;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+}
+
+.notice_ulstyle li a .img {
+    width: 48px;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(./images/info.png) no-repeat;
+    background-position: -10px -10px;
+}
+
+.notice_ulstyle li a .img1 {
+    background-position: -11px -69px;
+}
+
+.notice_ulstyle li.flowLine{
+    background: url(./images/flowLineRight.png) no-repeat;
+    height: 200px;
+    line-height: 200px;
+    margin-top: 18px;
+    margin-left: 5px;
+}
+
+.notice_ulstyle li span.flowLineBottom{
+    background: url(./images/flowLineBottom.png) no-repeat;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    margin-right: 15px;
+}
+
+.overflow-y{
+    overflow-x: auto;
+}
+
+
+
+
+
+
+
