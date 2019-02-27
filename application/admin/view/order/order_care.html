@@ -6,15 +6,19 @@
         <div class="layui-col-md12 webody body-overflow">
             <div class="layui-row yty-bck">
                 <div class="layui-col-12">
+                    <!----------------------------------表格查询条件begin------------------------------->
                     <div class="searchbody">
 
                     </div>
+                    <!-----------------------------------表格查询条件end--------------------------------->
                 </div>
             </div>
 
             <div class="layui-card">
                 <div class="layui-card-body layui-card-body-padding">
+                    <!-----------------------------------------------订单查询结果begin----------------------->
                     <table class="layui-hide" id="order_care_data_list" lay-filter="order_care_data_list" table-reload-id="tableReload" lay-size="sm"></table>
+                    <!----------------------------------------------订单查询结果end-------------------------->
                 </div>
             </div>
         </div>
@@ -22,21 +26,17 @@
 </div>
 <!--</div>-->
 
-<!--表格头部按钮begin-->
+<!-----------------------------表格头部按钮begin---------------------------->
 <script type="text/html" id="toolbar">
     <a class="layui-btn layui-btn-sm layui-btn-normal yty-btn" lay-event="add_task"><i class="fa fa-plus"></i> 新建任务</a>
 </script>
-<!--表格头部按钮end-->
+<!-----------------------------表格头部按钮end----------------------------->
 
-<!--状态-->
-<script type="text/html" id="task_type">
-    <input type="checkbox" name="task_type" value="{{d.status}}" lay-skin="switch" lay-text="成功|失败" lay-filter="task_type" {{ d.status == 1 ? 'checked' : '' }}>
-</script>
-
-<!--状态-->
+<!------------------------------任务状态begin--------------------------->
 <script type="text/html" id="task_status">
-    <input type="checkbox" name="task_status" value="{{d.ismenu}}" lay-skin="switch" lay-text="{:__('Yes')}|{:__('No')}" lay-filter="task_status" {{ d.ismenu == 1 ? 'checked' : '' }}>
+    <input type="checkbox" name="task_status" value="{{d.ismenu}}" lay-skin="switch" lay-text="开启|关闭" lay-filter="task_status" {{ d.ismenu == 1 ? 'checked' : '' }}>
 </script>
+<!------------------------------任务状态end--------------------------->
 
 <!--操作-->
 {:build_actionbar('actionbar',['edit', 'del'])}
@@ -85,8 +85,8 @@
                 {type:'checkbox', fixed: 'left',hide:true}
                 ,{field:'id', title: 'ID', sort: true, excel_width:15}
                 ,{field:'task_name', title: "任务名称", excel_width:15, minWidth: 120, searchList:{type:'input',operate:'LIKE'},}
-                ,{field:'task_type', title: "任务类型", excel_width:15,templet: '#task_type', searchList:{type:'select',data:{"1":"持续开启","0":"固定时段"},'operate':'='}, minWidth: 120}
-                ,{field:'task_status', title: "任务状态", excel_width:15,templet: '#task_status', searchList:{type:'select',data:{"1":"成功","0":"失败"},'operate':'='}, minWidth: 120}
+                ,{field:'task_type', title: "任务类型", excel_width:15, searchList:{type:'select',data:{"1":"持续开启","0":"固定时段"},'operate':'='}, minWidth: 120}
+                ,{field:'task_status', title: "任务状态", excel_width:15,templet: '#task_status', searchList:{type:'select',data:{"1":"开启","0":"关闭"},'operate':'='}, minWidth: 120}
                 ,{field:'send_content', title:  "发送内容", excel_width:15, minWidth: 200}
                 ,{field:'create_time', title: "创建时间", excel_width:15, searchList:{type:'input',event:'date',operate: 'RANGE'}, minWidth: 120}
                 ,{field:'update_time', title: "更新时间", excel_width:15, searchList:{type:'input',event:'date',operate: 'RANGE'}, minWidth: 120}

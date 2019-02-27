@@ -1,6 +1,6 @@
 {extend name="layout/default2" /}
 {block name="content"}
-<!--短信模版弹出begin-->
+<!---------------------------短信模版弹出begin----------------------->
 <div class="body-form sms-module-layer auto-height-table" style="display: none">
     <div class="layui-form">
         <div class="" lay-filter="component-tabs-brief">
@@ -97,9 +97,9 @@
         </div>
     </div>
 </div>
-<!--短信模版弹出end-->
+<!---------------------------短信模版弹出end-------------------------->
 
-<!--短链模版弹出begin-->
+<!----------------------------短链模版弹出begin----------------------->
 <div class="body-form short-href-layer auto-height-table" style="display: none">
     <div class="layui-form yty-tab">
         <div class="layui-tab" lay-filter="short-href-tab">
@@ -160,7 +160,7 @@
         </div>
     </div>
 </div>
-<!--短链模版弹出end-->
+<!----------------------------短链模版弹出end-------------------------->
 
 <!--修改短信内容弹出begin-->
 <!--<div class="body-form sms-layer" style="display: none">-->
@@ -248,69 +248,69 @@
 <!--</div>-->
 <!--修改短信内容弹出end-->
 
-<!--设置黑名单begin-->
-<div class="body-form black-module-layer auto-height-table" style="display: none">
-    <div class="layui-form">
-        <div class="layui-row">
-            <form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-set-black" lay-filter="form-sms-good-link">
-                <div class="searchbody">
-                    <ul class="nav pull-left">
-                        <li>云信/手机号码：<input type="text" name="uid_name" id="uid_name" placeholder="" autocomplete="off" class="layui-input"></li>
-                        <li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>
-                            <button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>
-                        </li></ul>
-                </div>
-            </form>
-        </div>
-        <div class="layui-row">
-            <table class="layui-hide" id="table_black" lay-filter="table_black" table-reload-id="tableReload"></table>
-        </div>
-    </div>
-</div>
-<!--设置黑名单end-->
+<!-----------------------设置黑名单begin-------------------------->
+<!--<div class="body-form black-module-layer auto-height-table" style="display: none">-->
+    <!--<div class="layui-form">-->
+        <!--<div class="layui-row">-->
+            <!--<form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-set-black" lay-filter="form-sms-good-link">-->
+                <!--<div class="searchbody">-->
+                    <!--<ul class="nav pull-left">-->
+                        <!--<li>云信/手机号码：<input type="text" name="uid_name" id="uid_name" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                        <!--<li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>-->
+                            <!--<button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>-->
+                        <!--</li></ul>-->
+                <!--</div>-->
+            <!--</form>-->
+        <!--</div>-->
+        <!--<div class="layui-row">-->
+            <!--<table class="layui-hide" id="table_black" lay-filter="table_black" table-reload-id="tableReload"></table>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!---------------------设置黑名单end--------------------------->
 
-<!--添加黑名单begin-->
-<div class="body-form add-black-layer auto-height-table" style="display: none">
-    <div class="layui-form">
-        <div class="layui-row">
-            <div class="layui-card main-table">
-                <form class="layui-form" action="" id="rule" lay-filter="rule">
-                    <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
-                        <colgroup>
-                            <col class="yty_tdleft" width="30%">
-                            <col class="yty_tdright">
-                        </colgroup>
-                        <tr>
-                            <td class="yty_tdleft">黑名单类型</td>
-                            <td class="yty_tdright">
-                                <input type="radio" name="sex" value="1" title="云信昵称" checked="">
-                                <input type="radio" name="sex" value="2" title="手机号码">
-                            </td>
-                        </tr>
-                        <tr>
-                            <!--<td class="yty_tdleft"> 短信内容 :</td>-->
-                            <td class="yty_tdright" colspan="2">
-                                <textarea placeholder="请根据选择的类型输入昵称或手机号码(可以批量录入，每行输入一个)" class="layui-textarea" style="width: 100%;height: 80%"></textarea>
-                            </td>
-                        </tr>
-                    </table>
-                    <div class="layui-form-item layer-form-footer">
-                        <div class="footer-inner">
-                            <button type="submit" lay-submit="" lay-filter="form_add_black"
-                                    class="layui-btn layui-btn-normal submit layui-btn-sm add-black-confirm btn-embossed">{:__('OK')}
-                            </button>
-                            <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">
-                                取消
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!--添加黑名单end-->
+<!----------------------添加黑名单begin------------------------->
+<!--<div class="body-form add-black-layer auto-height-table" style="display: none">-->
+    <!--<div class="layui-form">-->
+        <!--<div class="layui-row">-->
+            <!--<div class="layui-card main-table">-->
+                <!--<form class="layui-form" action="" id="rule" lay-filter="rule">-->
+                    <!--<table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">-->
+                        <!--<colgroup>-->
+                            <!--<col class="yty_tdleft" width="30%">-->
+                            <!--<col class="yty_tdright">-->
+                        <!--</colgroup>-->
+                        <!--<tr>-->
+                            <!--<td class="yty_tdleft">黑名单类型</td>-->
+                            <!--<td class="yty_tdright">-->
+                                <!--<input type="radio" name="sex" value="1" title="云信昵称" checked="">-->
+                                <!--<input type="radio" name="sex" value="2" title="手机号码">-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--&lt;!&ndash;<td class="yty_tdleft"> 短信内容 :</td>&ndash;&gt;-->
+                            <!--<td class="yty_tdright" colspan="2">-->
+                                <!--<textarea placeholder="请根据选择的类型输入昵称或手机号码(可以批量录入，每行输入一个)" class="layui-textarea" style="width: 100%;height: 80%"></textarea>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                    <!--<div class="layui-form-item layer-form-footer">-->
+                        <!--<div class="footer-inner">-->
+                            <!--<button type="submit" lay-submit="" lay-filter="form_add_black"-->
+                                    <!--class="layui-btn layui-btn-normal submit layui-btn-sm add-black-confirm btn-embossed">{:__('OK')}-->
+                            <!--</button>-->
+                            <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">-->
+                                <!--取消-->
+                            <!--</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!-----------------------------------添加黑名单end------------------------------------>
 
 
 <body>
@@ -319,6 +319,8 @@
         <div class="layui-col-md12 webody">
             <div class="layui-card main-table">
                 <!--<div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>下单关怀</div>-->
+
+                <!-------------------------------------步骤header begin----------------------------------->
                 <div class="layui-card-header yty-card-header">
                     <!--<span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>-->
                     <span class="step step-number-active step-one">1</span><span class="step-active">第一步：时间设置</span>
@@ -327,15 +329,18 @@
                     <span class="step-line"></span>
                     <span class="step step-left step-three-number">3</span><span class="step-three-msg">第二步：短信编辑</span>
                 </div>
+                <!-------------------------------------步骤header end----------------------------------->
+
                 <div class="layui-card-body main-body">
                     <!--表格查询条件begin-->
-                    <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="rule">
-                        <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
+                    <form class="layui-form" method="post" action="" tableid="tableReload" id="task_form_data" lay-filter="task_form_data">
+                        <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
                             <colgroup>
                                 <col class="yty_tdright" width="110px">
                                 <col class="yty_tdright">
                             </colgroup>
-                            <!----------------------------第一步begin---------------------------->
+
+                            <!-------------------------------------第一步begin----------------------------------->
                             <tbody class="step-first">
                                 <tr>
                                     <td class="yty_tdleft"> 是否开启 :</td>
@@ -398,9 +403,9 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <!----------------------------第一步end---------------------------->
+                            <!--------------------------------------第一步end------------------------------------>
 
-                            <!----------------------------第二步begin---------------------------->
+                            <!--------------------------------------第二步begin---------------------------------->
                             <tbody class="step-second" style="display: none">
                                 <tr>
                                     <td class="yty_tdleft"> 关怀条件 :</td>
@@ -521,9 +526,9 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <!----------------------------第二步end---------------------------->
+                            <!--------------------------------------第二步end------------------------------------>
 
-                            <!----------------------------第三步begin---------------------------->
+                            <!----------------------------------------第三步begin--------------------------------->
                             <tbody  class="step-third" style="display: none">
                                 <tr>
                                     <td class="yty_tdleft"> 赠送礼品 :</td>
@@ -618,7 +623,7 @@
                                     <td colspan="2" class="yty_tdright border-bottom">
                                         <div class="layui-form-item footer-form">
                                             <div class="footer footer-common">
-                                                <button type="button" lay-submit="" lay-filter="" class="layui-btn layui-btn-normal layui-btn-sm  layui-btn-sm">提交</button>
+                                                <button type="submit" lay-submit="" lay-filter="" class="layui-btn layui-btn-normal layui-btn-sm  layui-btn-sm">提交</button>
                                                 <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn pre-step-thrid layui-btn-normal layui-btn-sm">上一步</button>
                                                 <button type="button" class="layui-btn layui-btn-sm layui-btn-normal cancle yty-btn">取消</button>
                                             </div>
@@ -626,7 +631,8 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <!----------------------------第三步end---------------------------->
+                            <!---------------------------------------第三步end------------------------------------->
+
                         </table>
                     </form>
                     <!--表格查询条件end-->
@@ -652,31 +658,20 @@
 <!--</script>-->
 <!--表格头部按钮end-->
 
-<!--头工具栏-->
 
-<!--状态-->
-<script type="text/html" id="switchStatus">
-    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
-</script>
-
-<!--状态-->
-<script type="text/html" id="switchPush">
-    <input type="checkbox" name="is_time_push" value="{{d.is_time_push}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.is_time_push == 1 ? 'checked' : '' }}>
-</script>
-
-<!--短信模板操作begin-->
+<!----------------------------短信模板操作栏begin-------------------------->
 <script type="text/html" id="actionbar">
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_module">使用</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del_sms_module">删除</a>
 </script>
-<!--短信模板操作end-->
+<!------------------------------短信模板操作栏end--------------------------->
 
 
-<!--短链操作begin-->
+<!-------------------------------短链操作栏begin-------------------------------->
 <script type="text/html" id="short_sms_actionbar">
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_short_link">选择链接</a>
 </script>
-<!--短链操作end-->
+<!-------------------------------短链操作栏end--------------------------------->
 
 <!--设置黑名单头部工具栏begin-->
 <script type="text/html" id="set_black_toolbar">
@@ -702,7 +697,7 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch'], function(){
+    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch','formValidator'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,layer = layui.layer
@@ -714,12 +709,10 @@
             ,weTable = layui.weTable
             ,formSearch = layui.formSearch
             ,init_i = init_j = init_m = 0
+            ,formValidator = layui.formValidator
             ,toastr = layui.toastr;
 
-        /**
-         *
-         * 时间初始化
-         * */
+        /******************************时间初始化begin*****************************/
         laydate.render({
             elem: '#day_hour_start' //指定元素
             ,type: 'time'
@@ -756,14 +749,14 @@
             ,type: 'date'
             // ,format:'H'
         });
+        /******************************时间初始化begin*****************************/
+
 
         /**
          *
-         * 发送时间事件切换
+         * 点击指定时间
          * */
         form.on('radio(date_switch)', function(data){
-            // console.log(data.elem);
-            // console.log(data.value)
             if(data.value == 0){
                 $(".task_time").show()
             }else(
@@ -786,7 +779,7 @@
         /**
          * 修改短息内容弹框
          */
-        $("body").on("click",".sms-event",function (){
+        /*$("body").on("click",".sms-event",function (){
             we.api.open_current_page_layer($(".sms-layer"),'修改短息内容',{zIndex:19891015
             },['80%' , '80%']);
             var areaId = [];
@@ -807,7 +800,7 @@
             $("body").on("click",".reset",function (){
                 layer.closeAll();
             });
-        })
+        })*/
 
         /**
          * 选择模板短信
@@ -869,7 +862,7 @@
 
             table.render(tableCommon); //数据表格初始化
             if((form == "form#form-recommend-sms-module" && init_i == 0) || flag == 1) {
-                index_sms = we.api.open_current_page_layer($(".sms-module-layer"),'选择短信模版',{zIndex:19891016
+                index_sms = we.api.open_current_page_layer($(".sms-module-layer"),'选择短信模版',{zIndex:19891018
                 },['80%' , '80%']);//搜索短信模版弹框
 
                 // $.each($("#content .layui-row .layui-tab-item"),function (index, value) {
@@ -1115,7 +1108,6 @@
          */
         $("body").on("mouseenter",".tips-icon",function (){
             var title = $(this).attr('title-icon');
-            // console.log(title)
             index = layer.tips(title,this, {tips:[1,"#506def"],time:0,area: '400px',zIndex:1000000000})
         })
         $("body").on("mouseleave",".tips-icon",function (){
@@ -1162,48 +1154,6 @@
             $('.sms-content-last').val($('.sms-content').val());
         });
 
-        /**
-         * 获取文本域光标并插入内容
-         * @param obj
-         * @param str
-         */
-//        function insertText(obj,str) {
-//            obj.focus();
-//            if (document.selection) {
-//                var sel = document.selection.createRange();
-//                sel.text = str;
-//            } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
-//                var startPos = obj.selectionStart,
-//                    endPos = obj.selectionEnd,
-//                    cursorPos = startPos,
-//                    tmpStr = obj.value;
-//                obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
-//                cursorPos += str.length;
-//                obj.selectionStart = obj.selectionEnd = cursorPos;
-//            } else {
-//                obj.value += str;
-//                // console.log(obj.value)
-//            }
-//            $(".synchronize_sms_content").text(obj.value);
-//            $('.sms-content-length').text(obj.value.length);
-//        }
-
-        /**
-         * 把光标移动文本域末尾
-         * @param obj
-         */
-//        function moveEnd(obj){
-//            obj.focus();
-//            var len = obj.value.length;
-//            if (document.selection) {
-//                var sel = obj.createTextRange();
-//                sel.moveStart('character',len);
-//                sel.collapse();
-//                sel.select();
-//            } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
-//                obj.selectionStart = obj.selectionEnd = len;
-//            }
-//        }
 
         /**
          * 短信标签 输入框输入
@@ -1265,6 +1215,12 @@
             parent.layer.close(index);
         });
         /*****************************执行步骤end************************************/
+
+        /**
+         * 绑定表单事件
+         */
+        formValidator.api.bindevent($("form#task_form_data"));
+
     });
 
 </script>

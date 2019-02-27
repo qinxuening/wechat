@@ -5,7 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/order/index.html" afterPath="$PROJECT_DIR$/application/admin/view/order/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/order/order_care.html" afterPath="$PROJECT_DIR$/application/admin/view/order/order_care.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/static/modules/formSearch.js" afterPath="$PROJECT_DIR$/public/static/modules/formSearch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/order/task_add.html" afterPath="$PROJECT_DIR$/application/admin/view/order/task_add.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -70,21 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="2392" column="15" lean-forward="false" selection-start-line="2392" selection-start-column="15" selection-end-line="2392" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order_care.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order_care.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="72" column="47" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="47" />
+            <state relative-caret-position="-1417">
+              <caret line="70" column="17" lean-forward="true" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -100,27 +90,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/layout/default.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="356" column="33" lean-forward="true" selection-start-line="356" selection-start-column="12" selection-end-line="356" selection-end-column="33" />
+            <state relative-caret-position="216">
+              <caret line="462" column="16" lean-forward="true" selection-start-line="462" selection-start-column="11" selection-end-line="462" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <marker date="1551256366603" expanded="true" signature="27137:27152" ph="..." />
-                <marker date="1551256366603" expanded="true" signature="27314:27329" ph="..." />
+                <marker date="1551257164983" expanded="true" signature="27612:27627" ph="..." />
+                <marker date="1551257164983" expanded="true" signature="27789:27804" ph="..." />
               </folding>
             </state>
           </provider>
@@ -166,6 +147,57 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="task_add.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/order/task_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19558">
+              <caret line="1221" column="62" lean-forward="false" selection-start-line="1221" selection-start-column="62" selection-end-line="1221" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#tbody#1;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#tbody#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <marker date="1551261444333" expanded="false" signature="20971:20994" ph="..." />
+                <marker date="1551261444333" expanded="true" signature="44534:45181" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/user/user/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="170" column="31" lean-forward="false" selection-start-line="170" selection-start-column="31" selection-end-line="170" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formValidator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/static/modules/formValidator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="61" column="81" lean-forward="false" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="94" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -179,7 +211,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>step-third</find>
       <find>next-step-thrid</find>
       <find>pre-step</find>
       <find>.yty-textare</find>
@@ -199,16 +230,17 @@
       <find>order_time_start</find>
       <find>order_status</find>
       <find>location_address_layer</find>
-      <find>switchStatus</find>
       <find>status</find>
       <find>tableid</find>
       <find>order_care_data_list</find>
       <find>tableReload</find>
-      <find>formRule</find>
       <find>order-data</find>
-      <find>formSearch</find>
       <find>rule</find>
+      <find>formSearch</find>
+      <find>switchStatus</find>
+      <find>switchPush</find>
       <find>order_data_list</find>
+      <find>formRule</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -266,11 +298,11 @@
         <option value="$PROJECT_DIR$/application/admin/view/layout/default.html" />
         <option value="$PROJECT_DIR$/application/admin/view/Activity/sms_record.html" />
         <option value="$PROJECT_DIR$/application/admin/view/Activity/member_sms.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/order/task_add.html" />
         <option value="$PROJECT_DIR$/public/static/style/admin.css" />
         <option value="$PROJECT_DIR$/public/static/modules/formSearch.js" />
         <option value="$PROJECT_DIR$/application/admin/view/order/index.html" />
         <option value="$PROJECT_DIR$/application/admin/view/order/order_care.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/order/task_add.html" />
       </list>
     </option>
   </component>
@@ -287,7 +319,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1456" />
@@ -334,6 +366,23 @@
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wechat" type="b2602c69:ProjectViewProjectNode" />
@@ -498,15 +547,15 @@
       <workItem from="1550995752727" duration="9676000" />
       <workItem from="1551013807663" duration="5279000" />
       <workItem from="1551075548004" duration="2417000" />
-      <workItem from="1551238621044" duration="12388000" />
+      <workItem from="1551238621044" duration="17090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="813137000" />
+    <option name="totallyTimeSpent" value="817839000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12170706" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -538,27 +587,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/admin/view/push/import.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/order/import.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/widget/import.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="10" column="79" lean-forward="false" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/widget/importSuning.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -816,173 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/order/task_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10233">
-          <caret line="533" column="94" lean-forward="false" selection-start-line="533" selection-start-column="94" selection-end-line="533" selection-end-column="94" />
-          <folding>
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tbody#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1551228982718" expanded="true" signature="43408:44055" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="43408:44116" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="43502:43997" ph="..." />
-            <marker date="1551228982718" expanded="false" signature="43590:43619" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="44296:44932" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="44368:44881" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="44450:44826" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="44532:44767" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="45097:46022" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="45184:45984" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="45266:45942" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="45345:45895" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="47412:47581" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="47634:47819" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="47880:48068" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="48155:48260" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="48348:48534" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="48626:48728" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="48787:69635" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="48806:48907" ph="{&quot;base&quot;: &quot;__STATIC__/&quot;...}" />
-            <marker date="1551228982718" expanded="true" signature="48916:48958" ph="{&quot;index&quot;: 'lib/index'...}" />
-            <marker date="1551228982718" expanded="true" signature="49068:69623" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="49493:49538" ph="/** 时间初始化 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="49562:49699" ph="{&quot;elem&quot;: '##day_hour_start'...}" />
-            <marker date="1551228982718" expanded="true" signature="49725:49860" ph="{&quot;elem&quot;: '##day_hour_end'...}" />
-            <marker date="1551228982718" expanded="true" signature="49887:50027" ph="{&quot;elem&quot;: '##siesta_hour_start'...}" />
-            <marker date="1551228982718" expanded="true" signature="50053:50191" ph="{&quot;elem&quot;: '##siesta_hour_end'...}" />
-            <marker date="1551228982718" expanded="true" signature="50218:50326" ph="{&quot;elem&quot;: '##task_time_start'...}" />
-            <marker date="1551228982718" expanded="true" signature="50352:50458" ph="{&quot;elem&quot;: '##task_time_end'...}" />
-            <marker date="1551228982718" expanded="true" signature="50470:50518" ph="/** 发送时间事件切换 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="50571:50804" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="50585:50650" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="50682:50736" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="50817:50852" ph="/** 屏蔽标旗点击切换 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="50901:51109" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="50955:51026" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="51032:51099" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="51121:51156" ph="/** 修改短息内容弹框 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="51210:52063" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="51280:51310" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="51461:51929" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="51544:51773" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="51618:51755" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="52002:52051" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="52074:52109" ph="/** 选择模板短信 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="52176:52610" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="52621:52659" ph="/** 短信模板切换初始化 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="52734:52996" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="53008:53105" ph="/** 选择短信模板初始化，sms_type：1推荐场景，sms_type：2模板库，sms_type：3历史发送，sms_type：4近期节日 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="53148:55956" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="53180:54421" ph="{&quot;id&quot;: 'tableReload'...}" />
-            <marker date="1551228982718" expanded="true" signature="53255:53315" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="53622:53911" ph="[...]" />
-            <marker date="1551228982718" expanded="true" signature="53623:53910" ph="[...]" />
-            <marker date="1551228982718" expanded="true" signature="53935:54127" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="54271:54407" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="54321:54389" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="54560:55600" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="54653:54687" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="54733:54900" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="54933:55586" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="55027:55234" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="55256:55568" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="55636:55679" ph="/** 绑定监听事件 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="55692:55946" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="55966:56012" ph="/** 搜索短信模板 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="56021:56172" ph="/*...*/" />
-            <marker date="1551228982718" expanded="true" signature="56246:56885" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="56395:56646" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="56687:56875" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="56830:56861" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="56896:56946" ph="/** 短链接弹框short-href-layer ...*/" />
-            <marker date="1551228982718" expanded="true" signature="57001:57316" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="57258:57288" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="57327:57362" ph="/** 短链切换监听 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="57419:58316" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="57433:57578" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="57666:58305" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="57691:57771" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="57795:57875" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="57899:57979" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="58003:58083" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="58107:58187" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="58211:58291" ph="..." />
-            <marker date="1551228982718" expanded="true" signature="58328:58365" ph="/** 短链接表格初始化 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="58420:60963" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="58446:58725" ph="[...]" />
-            <marker date="1551228982718" expanded="true" signature="58447:58724" ph="[...]" />
-            <marker date="1551228982718" expanded="true" signature="58752:59143" ph="[...]" />
-            <marker date="1551228982718" expanded="true" signature="58753:59142" ph="[...]" />
-            <marker date="1551228982718" expanded="true" signature="59219:59304" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="59366:60368" ph="{&quot;id&quot;: 'tableReload'...}" />
-            <marker date="1551228982718" expanded="true" signature="59452:59512" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="59664:59767" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="59850:60042" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="60218:60354" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="60268:60336" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="60447:60607" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="60643:60686" ph="/** 绑定监听事件 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="60699:60953" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="61043:61424" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="61196:61357" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="61398:61414" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="61435:61471" ph="/** 设置黑名单弹框 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="61525:63303" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="61557:62979" ph="{&quot;id&quot;: 'tableReload'...}" />
-            <marker date="1551228982718" expanded="true" signature="61634:61694" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="62008:62469" ph="[...]" />
-            <marker date="1551228982718" expanded="true" signature="62009:62468" ph="[...]" />
-            <marker date="1551228982718" expanded="true" signature="62493:62685" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="62829:62965" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="62879:62947" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="63131:63161" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="63209:63293" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="63314:63351" ph="/**设置黑名单头部操作 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="63406:63663" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="63484:63653" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="63587:63621" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="63675:63722" ph="/** sms_record短信测试发送记录 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="63777:63886" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="63897:63943" ph="/** tips-icon 弹出信息、销毁信息 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="64002:64203" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="64263:64306" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="64317:64350" ph="/** 短信标签设置 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="64410:65726" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="64610:65617" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="64725:64817" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="64853:65015" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="65078:65131" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="65164:65496" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="65206:65306" ph="{&quot;title&quot;: '温馨提示'...}" />
-            <marker date="1551228982718" expanded="true" signature="65323:65476" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="65502:65603" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="65623:65716" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="65738:65800" ph="/**修改短信内容后点击确定 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="65856:65932" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="65944:66027" ph="/** 获取文本域光标并插入内容 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="66028:67002" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="67012:67071" ph="/** 把光标移动文本域末尾 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="67072:67576" ph="//..." />
-            <marker date="1551228982718" expanded="true" signature="67586:67623" ph="/** 短信标签 输入框输入 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="67766:67952" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="67964:68040" ph="/**...*/" />
-            <marker date="1551228982718" expanded="true" signature="68049:68083" ph="/**点击第一步下一步 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="68137:68345" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="68357:68392" ph="/** 点击第二步上一步 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="68445:68659" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="68671:68706" ph="/** 点击第二步下一步 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="68766:68978" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="68990:69025" ph="/** 点击第三步上一步 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="69084:69302" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="69314:69366" ph="/** 点击取消 ...*/" />
-            <marker date="1551228982718" expanded="true" signature="69417:69532" ph="{...}" />
-            <marker date="1551228982718" expanded="true" signature="69543:69617" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -996,24 +857,6 @@
         <state relative-caret-position="459">
           <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="1561" column="0" lean-forward="false" selection-start-line="1561" selection-start-column="0" selection-end-line="1570" selection-end-column="11" />
-          <folding>
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#form#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#div#4;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1057,25 +900,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1417">
+          <caret line="70" column="17" lean-forward="true" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="356" column="33" lean-forward="true" selection-start-line="356" selection-start-column="12" selection-end-line="356" selection-end-column="33" />
+        <state relative-caret-position="216">
+          <caret line="462" column="16" lean-forward="true" selection-start-line="462" selection-start-column="11" selection-end-line="462" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1551256366603" expanded="true" signature="27137:27152" ph="..." />
-            <marker date="1551256366603" expanded="true" signature="27314:27329" ph="..." />
+            <marker date="1551257164983" expanded="true" signature="27612:27627" ph="..." />
+            <marker date="1551257164983" expanded="true" signature="27789:27804" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/user/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="72" column="47" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="47" />
+        <state relative-caret-position="572">
+          <caret line="170" column="31" lean-forward="false" selection-start-line="170" selection-start-column="31" selection-end-line="170" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/modules/formValidator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="61" column="81" lean-forward="false" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="1561" column="0" lean-forward="false" selection-start-line="1561" selection-start-column="0" selection-end-line="1570" selection-end-column="11" />
+          <folding>
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#form#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#div#4;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/auth/admin/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="94" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/order/task_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19558">
+          <caret line="1221" column="62" lean-forward="false" selection-start-line="1221" selection-start-column="62" selection-end-line="1221" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#tbody#1;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tbody#2;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <marker date="1551261444333" expanded="false" signature="20971:20994" ph="..." />
+            <marker date="1551261444333" expanded="true" signature="44534:45181" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

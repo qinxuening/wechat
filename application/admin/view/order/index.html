@@ -1,6 +1,6 @@
 {extend name="layout/default" /}
 {block name="content"}
-<!--获取省份弹出begin-->
+<!--------------------------获取省份弹出begin-------------------->
 <div class="body-form layer-form" style="display: none">
     <div class="layui-card main-table">
         <div class="layui-card-body main-body">
@@ -181,7 +181,7 @@
         </div>
     </div>
 </div>
-<!--获取省份弹出end-->
+<!--------------------------获取省份弹出end---------------------->
 
 <body>
 <div class="layui-fluid">
@@ -190,7 +190,7 @@
             <div class="layui-card main-table">
                 <!--<div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>订单查询</div>-->
                 <div class="layui-card-body layui-card-body-padding">
-                    <!--表格查询条件begin-->
+                    <!----------------------------------表格查询条件begin------------------------------->
                     <div class="searchbody">
                         <form class="layui-form" method="post" action="" tableid="tableReload" id="search_form" lay-filter="search_form">
                             <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
@@ -290,11 +290,11 @@
                             </table>
                         </form>
                     </div>
-                    <!--表格查询条件end-->
+                    <!-----------------------------------表格查询条件end--------------------------------->
 
-                    <!--订单查询结果begin-->
+                    <!-----------------------------------------------订单查询结果begin----------------------->
                     <table class="layui-hide" id="order_data_list"  lay-filter="order_data_list" table-reload-id="tableReload"></table>
-                    <!--订单查询结果end-->
+                    <!----------------------------------------------订单查询结果end-------------------------->
                 </div>
             </div>
         </div>
@@ -304,7 +304,7 @@
 <!--头工具栏-->
 <!--{:build_toolbar('toolbar',['refresh'])}-->
 
-<!--表格头部按钮begin-->
+<!------------------------表格头工具栏begin------------------------->
 <script type="text/html" id="toolbar">
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="sendSms"><i class="fa fa-envelope-o"></i> 发送短信</a>
@@ -314,18 +314,16 @@
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="exportOrder"><i class="fa fa-file-o"></i> 导出苏宁订单</a>
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="toBlack"><i class="fa fa-hand-o-down"></i> 拉黑</a>
 </script>
-<!--表格头部按钮end-->
+<!-------------------------表格头工具栏end---------------------------->
 
-<!--头工具栏-->
 
-<!--状态-->
+
+<!---------------------------订单状态begin-------------------------->
 <script type="text/html" id="order_status">
-    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="order_status" {{ d.status == 1 ? 'checked' : '' }}>
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="成功|失败" lay-filter="order_status" {{ d.status == 1 ? 'checked' : '' }}>
 </script>
+<!---------------------------订单状态end-------------------------->
 
-
-<!--操作-->
-<!--{:build_actionbar('actionbar',['edit','test', 'del'])}-->
 {/block}
 
 {block name="script"}
