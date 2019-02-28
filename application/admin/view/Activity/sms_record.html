@@ -6,15 +6,19 @@
     <div class="layui-col-md12 webody body-overflow">
         <div class="layui-row yty-bck">
             <div class="layui-col-12">
+                <!----------------------------------表格查询条件begin------------------------------->
                 <div class="searchbody">
 
                 </div>
+                <!-----------------------------------表格查询条件end--------------------------------->
             </div>
         </div>
 
         <div class="layui-card">
             <div class="layui-card-body layui-card-body-padding">
-                <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload" lay-size="sm"></table>
+                <!-----------------------------------------------订单查询结果begin----------------------->
+                <table class="layui-hide" id="sms_record_data_list" lay-filter="sms_record_data_list" table-reload-id="tableReload" lay-size="sm"></table>
+                <!----------------------------------------------订单查询结果end-------------------------->
             </div>
         </div>
     </div>
@@ -70,12 +74,13 @@
             ,form = layui.form
             ,weTable = layui.weTable
             ,formSearch = layui.formSearch
-//            ,laydate = layui.laydate
-            ,toastr = layui.toastr;
+
+        /*********************表格初始化begin**************************/
         layer.load(0, {shade: false});
         var tableCommon = {
-            elem: '#rule'
+            elem: '#sms_record_data_list'
             ,method:'post'
+            ,formId:'search_form'
 //            ,url:"{:url('Admin/auth.admin/index')}"
             ,url:"/sms_data.json" //对接请求后台数据
             ,id : 'tableReload'
@@ -119,99 +124,28 @@
                 }
             }
         }
-
         table.render(tableCommon); //数据表格初始化
         formSearch.api.init(tableCommon); //搜索初始化
-
-//        laydate.render({
-//            elem: '#logintime_start' //指定元素
-//            ,type: 'datetime'
-//        });
-
-        //监听性别操作
-//        form.on('switch(ruleStatus)', function(obj){
-////            console.log(obj);
-//            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
-//        });
+        /*********************表格初始化end**************************/
 
         /**
-         * 表格初始化
+         * 表格事件监听初始化
          */
         weTable.api.init({
-            table : "rule",
+            table : "sms_record_data_list",
             tableid : "tableReload",
-            form:$("form#formRule"),
+            form:$("form#search_form"),
             tableCommon: tableCommon,
             extend : {
-                "add_url": "{:url('admin/auth.admin/add','',false)}",
-                "edit_url": "{:url('admin/auth.admin/edit','',false)}/ids/",
-                "view_url": "{:url('admin/auth.admin/view','',false)}/ids",
-                "del_url": "{:url('admin/auth.admin/del','',false)}",
-                "export_url" : "{:url('admin/auth.admin/index','',false)}"
+                "export_url" : ""
             }
         });
+        weTable.api.bindevent();
 
         /**
-         * 绑定监听事件
+         * 绑定查询监听事件
          * */
-        weTable.api.bindevent();
-        formSearch.api.searchForm($("form#formRule"));
-        //监听行工具事件
-        /* table.on('tool(rule)', function(obj){
-         var data = obj.data;
-         if(obj.event === 'del'){
-         layer.confirm('真的删除行么',{
-         skin: 'layui-layer-we',
-         title:'温馨提示',
-         }, function(index){
-         we.api.ajax({"url":"{:url('admin/auth.rule/del')}","data":{'ids':data.id},'tableid':'tableReload','action':'del'});
-         layer.close(index);
-         });
-         } else if(obj.event === 'view'){
-         var url = "{:url('admin/auth.rule/view','',false)}/id/" + data.id;
-         we.api.open(url,'查看');
-         } else if(obj.event === 'edit') {
-         var url = "{:url('admin/auth.rule/edit','',false)}/id/" + data.id;
-         we.api.open(url,'编辑');
-         }
-         });
-
-         //头工具栏事件
-         table.on('toolbar(rule)', function(obj){
-         var checkStatus = table.checkStatus(obj.config.id);
-         switch(obj.event){
-         case 'add':
-         //                    var data = checkStatus.data;
-         //                    layer.alert(JSON.stringify(data));
-         var url = "{:url('admin/auth.rule/edit','',false)}";
-         we.api.open(url,'添加规则');
-         break;
-         case 'del':
-         var data = checkStatus.data;
-         var idsArr = [];
-         if(data != "") {
-         $.each(data,function (index, value) {
-         idsArr.push(value.id);
-         });
-         layer.confirm('真的删除行么',{
-         skin: 'layui-layer-we',
-         title:'温馨提示',
-         }, function(index){
-         we.api.ajax({"url":"{:url('admin/auth.rule/del')}","data":{'ids':idsArr.join(',')},'tableid':'tableReload','action':'del'});
-         layer.close(index);
-         });
-         } else {
-         toastr.error('没有选择数据');
-         }
-         break;
-         case 'export':
-         toastr.warning('功能正在完善');
-         break;
-         case 'import':
-         toastr.warning('功能正在完善');
-         break;
-         };
-         });*/
+        formSearch.api.searchForm($("form#search_form"));
     });
 </script>
 </body>

@@ -2681,7 +2681,7 @@ input:focus, select:focus{
     border-bottom: none !important;
 }
 
-.layui-table thead tr, .layui-table-header{
+.layui-table thead tr, .layui-table-header,.layui-table-tool{
     background-color: #ffffff !important;
     padding: 0 auto;
 }
