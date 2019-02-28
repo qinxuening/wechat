@@ -35,23 +35,38 @@
                 <!----------------------------------通知关怀流程图标end--------------------------------->
             </div>
 
-            <div class="layui-row yty-bck">
-                <div class="layui-col-12">
-                    <!----------------------------------表格查询条件begin------------------------------->
-                    <div class="searchbody">
+            <div class="layui-form yty-tab">
+                <div class="layui-tab" lay-filter="short-href-tab">
+                    <ul class="layui-tab-title tabpage">
+                        <li class="layui-this" lay-id="common_link"><a href="#">下单提醒设置</a></li>
+                        <li><a href="#">查看发送记录</a></li>
+                    </ul>
+                    <div class="layui-tab-content" >
+                        <div class="layui-tab-item layui-show">
+                            <div class="layui-row yty-bck">
+                                <div class="layui-col-12">
+                                    <!----------------------------------表格查询条件begin------------------------------->
+                                    <div class="searchbody">
 
+                                    </div>
+                                    <!-----------------------------------表格查询条件end--------------------------------->
+                                </div>
+                            </div>
+
+                            <div class="layui-card">
+                                <div class="layui-card-body layui-card-body-padding">
+                                    <!-----------------------------------------------订单查询结果begin----------------------->
+                                    <table class="layui-hide" id="order_care_data_list" lay-filter="order_care_data_list" table-reload-id="tableReload" lay-size="sm"></table>
+                                    <!----------------------------------------------订单查询结果end-------------------------->
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <!-----------------------------------表格查询条件end--------------------------------->
                 </div>
             </div>
 
-            <div class="layui-card">
-                <div class="layui-card-body layui-card-body-padding">
-                    <!-----------------------------------------------订单查询结果begin----------------------->
-                    <table class="layui-hide" id="order_care_data_list" lay-filter="order_care_data_list" table-reload-id="tableReload" lay-size="sm"></table>
-                    <!----------------------------------------------订单查询结果end-------------------------->
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
