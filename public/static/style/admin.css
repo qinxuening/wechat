@@ -713,6 +713,7 @@ html {
 .layui-layout-admin .layui-footer {
     padding: 10px 0;
     text-align: center;
+    z-index: 100;
     box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, .05)
 }
 
@@ -2575,6 +2576,11 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     color: #506def;
     border-radius: 4px;
 }
+
+.btn-primary-border:hover,.btn-primary-border:active{
+    color: #506def;
+}
+
 .search_result{
     border: 1px solid #BFBFBF;
     border-radius: 8px;

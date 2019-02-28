@@ -121,11 +121,11 @@ if (!function_exists('build_toolbar')) {
             $btns[$index] = 'del';
         }
         $btnAttr = [
-            'refresh' => ['layui-btn layui-btn-normal layui-btn-sm', 'layui-icon layui-icon-refresh-3', __('Refresh')],
-            'add'     => ['layui-btn layui-btn-normal layui-btn-sm', 'layui-icon layui-icon-add-1', __('Add')],
-            'del'     => ['layui-btn layui-btn-sm layui-btn-danger', 'layui-icon layui-icon-delete', __('Delete')],//btn-disabled disabled
-            'export'  => ['layui-btn layui-btn-normal layui-btn-sm', 'layui-icon layui-icon-file', __('Export')],
-            'import'  => ['layui-btn layui-btn-normal layui-btn-sm', 'layui-icon layui-icon-upload', __('Import')],
+            'refresh' => ['layui-btn layui-btn-primary btn-primary-border layui-btn-sm', 'layui-icon layui-icon-refresh-3', __('Refresh')],
+            'add'     => ['layui-btn layui-btn-primary btn-primary-border layui-btn-sm', 'layui-icon layui-icon-add-1', __('Add')],
+            'del'     => ['layui-btn layui-btn-primary btn-primary-border layui-btn-danger', 'layui-icon layui-icon-delete', __('Delete')],//btn-disabled disabled
+            'export'  => ['layui-btn layui-btn-primary btn-primary-border layui-btn-sm', 'layui-icon layui-icon-file', __('Export')],
+            'import'  => ['layui-btn layui-btn-primary btn-primary-border layui-btn-sm', 'layui-icon layui-icon-upload', __('Import')],
         ];
         $btnAttr = array_merge($btnAttr, $attr);
 //         print_r($btnAttr);
