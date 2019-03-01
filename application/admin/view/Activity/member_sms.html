@@ -424,7 +424,7 @@
                 <div class="layui-card-body step-first layui-card-body-padding">
                     <!--表格查询条件begin-->
                     <!--<div class="searchbody">-->
-                        <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="member_sms">
+                        <form class="layui-form" method="post" action="" tableid="tableReload" id="searchSmsMember" lay-filter="searchSmsMember">
                             <table  style="margin-bottom: 0px !important;" class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
                                 <colgroup>
                                     <col class="yty_tdright" width="120px">
@@ -557,7 +557,7 @@
                                     <td class="yty_tdright"  style="border-bottom: none !important;">
                                         <!--layui-btn-primary btn-primary-border-->
                                         <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step layui-btn-normal layui-btn-sm">下一步</button>
-                                        <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-normal   layui-btn-sm">查询</button>
+                                        <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-normal search_form_btn layui-btn-sm">查询</button>
                                         <button type="reset" class="layui-btn layui-btn-sm  layui-btn-normal yty-btn">重置</button>
                                     </td>
                                 </tr>
@@ -1613,6 +1613,7 @@
             $('.sms-content-length').text($(this).val().length);
         });
 
+        /***********************************筛选步骤begin**********************************/
         /**
          *点击下一步
          */
@@ -1632,6 +1633,29 @@
             $(".step-two-msg").removeClass('step-active');
             $(".step-tow-number").removeClass('step-number-active');
         });
+        /***********************************筛选步骤end**********************************/
+
+        $("body").on("click",".search_form_btn",function (){
+            var index = layer.load();
+            var formData = {filter:JSON.stringify(formSearch.api.getFormJson("form#searchSmsMember"))};
+            console.log(formData);
+            $.ajax({
+                type:"post",
+                url:"",
+                data:formData,
+                dataType:'json',
+                async:false,
+                success: function(data){
+                    if(data.status == 'success') {
+                        layer.close(index);
+                    }
+                },
+                error:function () {
+
+                }
+            })
+        });
+
     });
 
 </script>
