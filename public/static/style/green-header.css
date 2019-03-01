@@ -51,6 +51,7 @@
 .layui-layout-admin .layui-header .layui-nav .layui-this:after, .layui-layout-admin .layui-header .layui-nav-bar {
     background-color: #fff;
     background-color: rgba(255, 255, 255, .5);
+    height: 3px;
 }
 
 .layadmin-pagetabs .layui-tab-title li:after {

@@ -116,7 +116,6 @@
         layer.load(0, {shade: false});
         var tableCommon = {
             elem: '#order_care_data_list'
-//            ,height:"400px"
             ,formId:'search_form'  //查询form表单id
             ,method:'post'
             ,url:"/sms_data.json" //对接请求后台数据
@@ -187,7 +186,6 @@
             console.log(obj.event);
             if(obj.event == 'add_task') {
                 var url = "{:url('admin/order/task_add')}"
-//                window.location.href = url;
                 we.api.open(url,'下单关怀 > 新建任务',{zIndex:19891017,shade: 0.4},['98%' , '80%']);
             }
         })
@@ -197,7 +195,6 @@
             console.log(obj.event);
             if(obj.event == 'edit') {
                 var url = "{:url('admin/order/task_add')}"; //对接后台编辑url
-//                window.location.href = url;
                 we.api.open(url,'下单关怀 > 编辑任务',{zIndex:19891017,shade: 0.4},['98%' , '80%']);
             } else {
                 layer.confirm('请确定是否删除？',{
