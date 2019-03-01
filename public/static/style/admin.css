@@ -2526,6 +2526,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
     height: auto;;
     border-bottom-width: 0;
     border-bottom-style: none;
+    background-color: #ffffff;
 }
 
 .yty-tab .layui-tab-title li{
@@ -2579,6 +2580,16 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .btn-primary-border:hover,.btn-primary-border:active{
     color: #506def;
+}
+
+.btn-primary-border-red{
+    border: 1px solid #d43f3a;
+    color: #d43f3a;
+    border-radius: 4px;
+}
+
+.btn-primary-border-red:hover,.btn-primary-border-red:active{
+    color: #d43f3a;
 }
 
 .search_result{

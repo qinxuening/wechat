@@ -34,7 +34,5 @@ class Log{
             fclose($fp);
         }
     }
-    
 
-    
 }

@@ -90,7 +90,9 @@ class Index extends baseAdmin {
             if ($result === true)
             {
                 $param = ['data'=>'登陆操作','code'=>1,'message'=> $username.'登陆成功'];
+                $param1 = ['data'=>'登陆操作11111111','code'=>1,'message'=> $username.'登陆成功'];
                 Hook::listen('mark_log', $param);
+                Hook::listen('email', $param1);
                 return json(['code' => 1, 'status' => 'success', 'msg' => __('Login successful'),'url' => $url,'data' => [ 'id' => $this->auth->id, 'username' => $username, 'avatar' => $this->auth->avatar]]);
             }
             else
