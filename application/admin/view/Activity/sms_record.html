@@ -81,6 +81,7 @@
             elem: '#sms_record_data_list'
             ,method:'post'
             ,formId:'search_form'
+            ,searchbody:'searchbody'
 //            ,url:"{:url('Admin/auth.admin/index')}"
             ,url:"/sms_data.json" //对接请求后台数据
             ,id : 'tableReload'
@@ -125,11 +126,11 @@
             }
         }
         table.render(tableCommon); //数据表格初始化
-        formSearch.api.init(tableCommon); //搜索初始化
+        formSearch.api.init(tableCommon); //搜索表单初始化
         /*********************表格初始化end**************************/
 
         /**
-         * 表格事件监听初始化
+         * 表格头工具栏事件监听初始化
          */
         weTable.api.init({
             table : "sms_record_data_list",

@@ -42,6 +42,7 @@
                         <li><a href="#">查看发送记录</a></li>
                     </ul>
                     <div class="layui-tab-content" >
+                        <!------------------------------------下单提醒设置begin---------------------------->
                         <div class="layui-tab-item layui-show">
                             <div class="layui-row yty-bck">
                                 <div class="layui-col-12">
@@ -62,6 +63,30 @@
                             </div>
 
                         </div>
+                        <!------------------------------------下单提醒设置end----------------------------->
+
+                        <!------------------------------------查看发送记录begin---------------------------->
+                        <div class="layui-tab-item">
+                            <div class="layui-row yty-bck">
+                                <div class="layui-col-12">
+                                    <!----------------------------------表格查询条件begin------------------------------->
+                                    <div class="searchbody2 searchBodyCommon">
+
+                                    </div>
+                                    <!-----------------------------------表格查询条件end--------------------------------->
+                                </div>
+                            </div>
+
+                            <div class="layui-card">
+                                <div class="layui-card-body layui-card-body-padding">
+                                    <!-----------------------------------------------订单查询结果begin----------------------->
+                                    <table class="layui-hide" id="sendSmsRecordData" lay-filter="sendSmsRecordData" table-reload-id="tableReload2" lay-size="sm"></table>
+                                    <!----------------------------------------------订单查询结果end-------------------------->
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------查看发送记录begin---------------------------->
+
                     </div>
                 </div>
             </div>
@@ -72,17 +97,24 @@
 </div>
 <!--</div>-->
 
-<!-----------------------------表格头部按钮begin---------------------------->
+<!-----------------------------下单提醒设置表格头部按钮begin---------------------------->
 <script type="text/html" id="toolbar">
     <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border yty-btn" lay-event="add_task"><i class="fa fa-plus"></i> 新建任务</a>
 </script>
-<!-----------------------------表格头部按钮end----------------------------->
+<!-----------------------------下单提醒设置表格头部按钮end----------------------------->
 
-<!------------------------------任务状态begin--------------------------->
+<!------------------------------下单提醒设置任务状态begin--------------------------->
 <script type="text/html" id="task_status">
     <input type="checkbox" name="task_status" value="{{d.ismenu}}" lay-skin="switch" lay-text="开启|关闭" lay-filter="task_status" {{ d.ismenu == 1 ? 'checked' : '' }}>
 </script>
-<!------------------------------任务状态end--------------------------->
+<!------------------------------下单提醒设置任务状态end--------------------------->
+
+
+<!-----------------------------查看发送记录表格头部按钮begin---------------------------->
+<script type="text/html" id="toolbar2">
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border yty-btn" lay-event="export"><i class="fa fa-file-o"></i> 导出</a>
+</script>
+<!-----------------------------查看发送记录表格头部按钮end----------------------------->
 
 <!--操作-->
 {:build_actionbar('actionbar',['edit', 'del'])}
@@ -112,11 +144,12 @@
             ,formSearch = layui.formSearch
             ,toastr = layui.toastr;
 
-        /*********************表格初始化begin**************************/
+        /*********************下单提醒设置表格初始化begin**************************/
         layer.load(0, {shade: false});
         var tableCommon = {
             elem: '#order_care_data_list'
             ,formId:'search_form'  //查询form表单id
+            ,searchbody:'searchbody'
             ,method:'post'
             ,url:"/sms_data.json" //对接请求后台数据
             ,id : 'tableReload'
@@ -160,7 +193,7 @@
         }
         table.render(tableCommon); //数据表格初始化
         formSearch.api.init(tableCommon); //表单查询初始化
-        /*********************表格初始化end**************************/
+        /*********************下单提醒设置表格初始化end**************************/
 
         /**
          * 表格初始化
@@ -207,7 +240,57 @@
             }
         })
 
+        /*********************查看发送记录begin**************************/
+        var tableCommon2 = {
+            elem: '#sendSmsRecordData'
+            ,formId:'search_form_record'  //查询form表单id
+            ,searchbody:'searchbody2'
+            ,method:'post'
+            ,url:"/sms_data.json" //对接请求后台数据
+            ,id : 'tableReload2'
+            ,skin:'line'
+            ,toolbar : '#toolbar2'
+            ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
+            ,loading:true
+            ,limit:10
+            ,defaultToolbar: ['']//'filter', 'print', 'exports'
+            ,search: true
+            ,cols: [[
+                {type:'checkbox', fixed: 'left',hide:true}
+                ,{field:'id', title: 'ID', sort: true, excel_width:15}
+                ,{field:'phone', title: "手机号码", excel_width:15, minWidth: 120, searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'smsContent', title: "短信内容", excel_width:15, minWidth: 120}
+                ,{field:'taskName', title: "任务名称", excel_width:15, minWidth: 120,hide:true, searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'smsChannel', title: "短信通道", excel_width:15, minWidth: 120}
+                ,{field:'buyerName', title:  "买家昵称", excel_width:15, minWidth: 200, searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'sendStatus', title: "发送状态", excel_width:15, searchList:{type:'select',data:{"1":"成功","0":"失败"},'operate':'='}, minWidth: 120}
+                ,{field:'actualDeductionCount', title: "实际扣费（条）", excel_width:15, minWidth: 130}
+                ,{field:'sendTime ', title: "发送时间", excel_width:15, minWidth: 100, searchList:{type:'input',event:'date',operate: 'RANGE'}}
+            ]]
+            ,page: {
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']
+                ,all:"{:__('Total')}"
+                ,item:"{:__('Item')}"
+                ,confirm:"{:__('Confirm')}"
+                ,page:"{:__('Page')}"
+                ,ipage:"{:__('IPage')}"
+                ,to:"{:__('To')}"
+                ,first: "{:__('First')}"
+                ,last: "{:__('Last')}"
+                ,prev: "{:__('Previous')}"
+                ,next: "{:__('Next')}"
+            }
+            ,done: function(res, curr, count){
+                if(res.status == 'success') {
+                    layer.closeAll();
+                }
+            }
+        }
+        table.render(tableCommon2); //数据表格初始化
+        formSearch.api.init(tableCommon2); //表单查询初始化
 
+        formSearch.api.searchForm($("form#search_form_record")); //搜索操作初始化
+        /*********************查看发送记录end****************************/
     });
 </script>
 </body>

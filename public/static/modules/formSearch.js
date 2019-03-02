@@ -14,6 +14,7 @@ layui.define(['jquery','laydate','form'], function(exports){
                 var cols = defaults.cols[0];
                 var data = defaults.data;
                 var formId = defaults.formId? defaults.formId : 'formRule';
+                var searchbody = defaults.searchbody?defaults.searchbody:'searchbody';
                 var html = '';
                 options = defaults;
                 if(search == true) {
@@ -56,7 +57,7 @@ layui.define(['jquery','laydate','form'], function(exports){
                         '<button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>'+data.Reset+'</button>'+
                         '</li>';
                     html += '</ul></form>';
-                    $('.searchbody').html(html);
+                    $('.' + searchbody).html(html);
 
                     /**
                      * html加载完成方可初始化时间插件

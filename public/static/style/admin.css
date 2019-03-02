@@ -1859,15 +1859,17 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     /*background: #ffffff;*/
 }
 
-.searchbody {
+.searchbody,.searchbody2,.searchBodyCommon {
     padding: 10px 15px 1px 15px !important;
     height: auto;
     /*overflow:auto;*/
 }
 
-.searchbody .layui-btn{
+.searchbody .layui-btn,.searchbody2 .layui-btn,.searchBodyCommon .layui-btn{
     padding: 0px 30px;
 }
+
+
 
 .layer_notice {
     float: left;

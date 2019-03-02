@@ -564,7 +564,7 @@
                                 </tbody>
                             </table>
                             <p class="search_result" style="display: block">
-                                筛选结果： 共筛选出<span class="red_color">0位</span>会员，其中有效<span class="red_color">0位</span>会员（有手机号，并已排重，已过滤黑名单）数据不全？去导入历史订单
+                                筛选结果： 共筛选出<span class="red_color memberCount">0位</span>会员，其中有效<span class="red_color effectiveMemberCount">0位</span>会员（有手机号，并已排重，已过滤黑名单）数据不全？去导入历史订单
                             </p>
                             <!--<div class="layui-form-item footer-form">-->
                                 <!--<div class="footer footer-common">-->
@@ -1646,9 +1646,11 @@
                 dataType:'json',
                 async:false,
                 success: function(data){
-                    if(data.status == 'success') {
+                    setTimeout(function () {
                         layer.close(index);
-                    }
+                    },3000)
+                    $(".memberCount").text("20位");
+                    $(".effectiveMemberCount").text("5位");
                 },
                 error:function () {
 
