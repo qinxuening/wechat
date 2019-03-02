@@ -2,9 +2,9 @@
 {block name="content"}
 <body>
 <div class="layui-fluid">
-    <div class="layui-row layui-col-space15">
-        <div class="layui-col-md12 webody body-overflow">
-            <div class="layui-row yty-bck">
+    <!--<div class="layui-row layui-col-space15">-->
+        <div class="layui-col-md12 webody">
+            <div class="layui-row layui-col-space15">
             <div class="layui-col-12">
                 <div class="searchbody">
                 </div>
@@ -13,25 +13,16 @@
 
             <div class="layui-card">
                 <div class="layui-card-body">
-                    <table class="layui-hide" id="memberList" lay-filter="memberList" table-reload-id="tableReload" lay-size="sm"></table>
+                    <table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload" lay-size="sm"></table>
                 </div>
             </div>
         </div>
     </div>
-</div>
+<!--</div>-->
 </div>
 
 <!--头工具栏-->
-<!--{:build_toolbar('toolbar',['refresh', 'add', 'del', 'export'])}-->
-
-<!------------------------表格头工具栏begin------------------------->
-<script type="text/html" id="toolbar">
-    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="addBlack"><i class="fa fa-plus"></i> 加入黑名单</a>
-    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="sendSearchResultSms"><i class="fa fa-envelope-o"></i> 选择会员发送短信</a>
-    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="addMember"><i class="fa fa-plus"></i> 新增联系人</a>
-    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="importMemberInfo"><i class="fa fa-file-text-o"></i> 导入会员信息</a>
-</script>
-<!-------------------------表格头工具栏end---------------------------->
+{:build_toolbar('toolbar',['refresh', 'add', 'del', 'export'])}
 
 <!--状态-->
 <!--<script type="text/html" id="switchStatus">-->
@@ -68,8 +59,7 @@
 
         layer.load(0, {shade: false});
         var tableCommon = {
-            elem: '#memberList'
-            ,formId:'search_form'
+            elem: '#rule'
             ,method:'post'
             ,url:"{:url('Admin/user.user/index')}"
             ,id : 'tableReload'
@@ -83,16 +73,18 @@
             ,search: true
             ,cols: [[
                 {type:'checkbox', fixed: 'left',}
-                ,{field:'id', title: 'ID', sort: true, excel_width:15,hide:false}
-                ,{field:'yxName', title: "云信昵称", sort: true, excel_width:15, searchList:{type:'input',operate:'LIKE'}, minWidth: 120}
-                ,{field:'userName', title: "姓名", excel_width:15, searchList:{type:'input',operate:'LIKE'}, minWidth: 120}
-                ,{field:'tradeAmount', title: "交易金额", excel_width:15, minWidth: 120}
-                ,{field:'tradeCount', title: "交易笔数", excel_width:15, minWidth: 120}
-                ,{field:'memberLevel', title: "会员等级", excel_width:15, minWidth: 120}
-                ,{field:'area', title: "区域", excel_width:15, searchList:{type:'select',data:{"北京":"北京","天津":"天津","上海":"上海"},'operate':'='}, minWidth: 120}
-                ,{field:'phone', title: "手机号", excel_width:15, searchList:{type:'input',operate:'LIKE'}, minWidth: 130}
-                ,{field:'email', title: "邮箱", excel_width:15, minWidth: 120}
-                ,{field:'lastTradingTime', title: "最后交易时间", excel_width:15, minWidth: 140}
+                ,{field:'id', title: 'ID', sort: true, excel_width:15}
+                ,{field:'name', title: "{:__('Group')}", sort: true, excel_width:15}
+                ,{field:'username', title: "{:__('Username')}", excel_width:15, searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'nickname', title: "{:__('Nickname')}", excel_width:15, searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'mobile', title: "{:__('Mobile')}", excel_width:15}
+                ,{field:'level', title: "{:__('Level')}", excel_width:15}
+                ,{field:'gender', title: "{:__('Gender')}", excel_width:15}
+                ,{field:'score', title: "{:__('Score')}", excel_width:15}
+//                ,{field:'successions', title: "{:__('Successions')}", excel_width:15}
+//                ,{field:'maxsuccessions', title: "{:__('maxsuccessions')}", excel_width:15}
+                ,{field:'email', title: "{:__('Email')}", excel_width:15, searchList:{type:'input',operate:'LIKE'}}
+//                ,{field:'status', title: '状态', excel_width:15,templet: '#switchStatus', sort: true, searchList:{type:'select',data:{$statusList},'operate':'='}}
                 ,{fixed: 'right', title:"{:__('Operate')}", toolbar: '#actionbar', width:160}
             ]]
             ,page: {
@@ -125,10 +117,10 @@
          * 表格初始化
          */
         weTable.api.init({
-            table : "memberList",
-            is_display:false,
+            table : "rule",
+            is_display:true,
             tableid : "tableReload",
-            form:$("form#search_form"),
+            form:$("form#formRule"),
             tableCommon: tableCommon,
             extend : {
                 "add_url": "{:url('admin/user.user/edit',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}",
@@ -143,39 +135,7 @@
          * 绑定监听事件
          * */
         weTable.api.bindevent();
-        formSearch.api.searchForm($("form#search_form"));
-
-        //表头工具栏事件
-        table.on('toolbar(memberList)', function(obj){
-            var checkStatus = table.checkStatus(obj.config.id);
-            var data = checkStatus.data;
-            var idsArr = [];
-            console.log(data);
-            if(obj.event == 'addBlack') {
-                if(data != "") {
-                    $.each(data,function (index, value) {
-                        idsArr.push(value.id);
-                    });
-                    layer.confirm('请确定是否加入黑名单？',{
-                        title:'温馨提示',
-                    }, function(index){
-                        //对接后台拉黑接口
-                        we.api.ajax({"url":"","data":{'ids':idsArr.join(',')},'tableid':"tableReload",'action':'del'});
-                        layer.close(index);
-                    });
-                } else {
-                    toastr.error('没有选择数据');
-                }
-            } else if(obj.event == 'sendSearchResultSms') {
-                if(data != "") {
-
-                }else{
-                    toastr.error('没有选择数据');
-                }
-            }
-
-
-        })
+        formSearch.api.searchForm($("form#formRule"));
     });
 </script>
 </body>
