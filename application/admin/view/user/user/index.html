@@ -1,5 +1,15 @@
 {extend name="layout/default" /}
 {block name="content"}
+
+<!--会员发送短信弹框begin-->
+<div class="body-form selectMemberToSendSms auto-height-table" style="display: none">
+    <div class="layui-form">
+        <div class="layui-row">
+            <table class="layui-hide" id="table_black" lay-filter="table_black" table-reload-id="tableReload"></table>
+        </div>
+    </div>
+</div>
+<!--会员发送短信弹框end-->
 <body>
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">
@@ -151,11 +161,11 @@
             var data = checkStatus.data;
             var idsArr = [];
             console.log(data);
+            $.each(data,function (index, value) {
+                idsArr.push(value.id);
+            });
             if(obj.event == 'addBlack') {
                 if(data != "") {
-                    $.each(data,function (index, value) {
-                        idsArr.push(value.id);
-                    });
                     layer.confirm('请确定是否加入黑名单？',{
                         title:'温馨提示',
                     }, function(index){
@@ -168,7 +178,8 @@
                 }
             } else if(obj.event == 'sendSearchResultSms') {
                 if(data != "") {
-
+                    short_sms_layer_index = we.api.open_current_page_layer($(".selectMemberToSendSms"),'选则订单发送',{zIndex:19891016
+                    },['80%' , '80%']);
                 }else{
                     toastr.error('没有选择数据');
                 }
