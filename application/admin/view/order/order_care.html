@@ -210,11 +210,11 @@
         });*/
 
         /**
-         * 表单查询查询操作
+         * 单提醒设置表单查询查询操作
          * */
         formSearch.api.searchForm($("form#search_form"));
 
-        //表头工具栏事件
+        //单提醒设置表头工具栏事件
         table.on('toolbar(order_care_data_list)', function(obj){
             console.log(obj.event);
             if(obj.event == 'add_task') {
@@ -223,7 +223,7 @@
             }
         })
 
-        //表格工具栏事件
+        //单提醒设置表格工具栏事件
         table.on('tool(order_care_data_list)', function(obj){
             console.log(obj.event);
             if(obj.event == 'edit') {
@@ -290,6 +290,21 @@
         formSearch.api.init(tableCommon2); //表单查询初始化
 
         formSearch.api.searchForm($("form#search_form_record")); //搜索操作初始化
+
+        /***
+         * 表头事件（导出）
+         * */
+        weTable.api.init({
+            table : "sendSmsRecordData",
+            is_display:false,
+            tableid : "tableReload2",
+            form:$("form#search_form_record"),
+            tableCommon: tableCommon2,
+            extend : {
+                "export_url" : ""
+            }
+        });
+        weTable.api.bindevent();
         /*********************查看发送记录end****************************/
     });
 </script>
