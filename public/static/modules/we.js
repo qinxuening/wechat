@@ -10,7 +10,7 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
     {
         "closeButton":true,//显示关闭按钮
         "debug":false,//启用debug
-        "positionClass":"toast-top-center",//弹出的位置
+        "positionClass":"toast-center-center",//弹出的位置
         "showDuration":"300",//显示的时间
         "hideDuration":"1000",//消失的时间
         "timeOut":"5000",//停留的时间

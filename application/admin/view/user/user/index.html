@@ -13,11 +13,10 @@
                 </colgroup>
                 <tbody  class="step-third">
                 <tr>
-                    <td class="yty_tdleft"> 赠送礼品 :</td>
+                    <td class="yty_tdleft"> 号码列表 :</td>
                     <td class="yty_tdright">
                         <input type="checkbox" name="gift_switch" lay-skin="primary"  title="" checked="">
                         <div class="layui-inline yty-form">
-                            <span>赠送流量</span>
                             <a href="javascript:void(0);" class="astyle">选择流量卡 </a>
                             <a href="javascript:void(0);" class="astyle">流量充值 </a>
                         </div>
@@ -90,14 +89,13 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2" class="yty_tdright border-bottom">
-                        <div class="layui-form-item footer-form">
-                            <div class="footer footer-common">
-                                <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn pre-step-thrid layui-btn-normal layui-btn-sm">上一步</button>
-                                <button type="submit" lay-submit="" lay-filter="" class="layui-btn layui-btn-normal layui-btn-sm  layui-btn-sm">提交</button>
-                                <button type="button" class="layui-btn layui-btn-sm layui-btn-normal cancle yty-btn">取消</button>
-                            </div>
-                        </div>
+                    <td class="yty_tdleft border-bottom"></td>
+                    <td class="yty_tdright border-bottom">
+                        <!--<div class="footer-form">-->
+                            <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn pre-step-thrid layui-btn-normal layui-btn-sm">立即发送</button>
+                            <!--<button type="submit" lay-submit="" lay-filter="" class="layui-btn layui-btn-normal layui-btn-sm  layui-btn-sm">提交</button>-->
+                            <button type="button" class="layui-btn layui-btn-sm layui-btn-normal cancle yty-btn">取消发送</button>
+                        <!--</div>-->
                     </td>
                 </tr>
                 </tbody>
@@ -271,14 +269,14 @@
                         layer.close(index);
                     });
                 } else {
-                    toastr.error('没有选择数据');
+                    toastr.warning('没有选择数据');
                 }
             } else if(obj.event == 'sendSearchResultSms') {
                 if(data != "") {
                     short_sms_layer_index = we.api.open_current_page_layer($(".selectMemberToSendSms"),'选则订单发送',{zIndex:19891016
                     },['80%' , '80%']);
                 }else{
-                    toastr.error('没有选择数据');
+                    toastr.warning('没有选择数据');
                 }
             }
 

@@ -1869,8 +1869,6 @@ tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-text
     padding: 0px 30px;
 }
 
-
-
 .layer_notice {
     float: left;
     min-height: 75px;
@@ -2784,7 +2782,12 @@ input:focus, select:focus{
     /*overflow-y: auto;*/
 }
 
-
+.toast-center-center {
+    top: 80px;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -150px;
+}
 
 
 
