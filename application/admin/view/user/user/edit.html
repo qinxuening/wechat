@@ -1,24 +1,23 @@
-{extend name="layout/default" /}
+{extend name="layout/default2" /}
 {block name="content"}
 <body>
 <!--<div class="layui-container lay_top">-->
 <!--<div class="layui-row layui-col-space30">-->
 <div class="body-form">
-    <form class="layui-form" action="{:url('admin/user.user/edit','',false)}" tableid="tableReload" method="post" id="formRule" lay-filter="rule">
+    <form class="layui-form" action="{:url('admin/auth.admin/edit','',false)}" tableid="tableReload" method="post" id="formRule" lay-filter="rule">
         <table class="layui-table" lay-skin="line" lay-size="sm">
             <colgroup>
-                <col class="tdleft" width="10%">
-                <col class="tdright" width="40%">
-                <col class="tdleft" width="10%">
-                <col class="tdright" width="40%">
+                <col class="tdleft" width="30%">
+                <col class="tdright">
             </colgroup>
             <tbody>
             <tr>
                 <td class="tdleft">{:__('Group')}<span class="tips">*</span></td>
                 <td class="tdright">
-                    {:build_select('group_id', $groupdata, $list['group_id'], ['class'=>'form-control selectpicker', 'multiple'=>'', 'lay-verify'=>'required', 'xm-select' => 'select'])}
-                    <input type="hidden" name="id" value="{$list['id']}">
+                    {:build_select('group', $groupdata, $groupids, ['class'=>'form-control selectpicker', 'multiple'=>'', 'lay-verify'=>'required', 'xm-select' => 'select'])}
                 </td>
+            </tr>
+            <tr>
                 <td class="tdleft">{:__('Username')}<span class="tips">*</span></td>
                 <td class="tdright">
                     <input type="text" name="username" data-rule="required;username" lay-verify="username" autocomplete="off" value="{$list['username']}" placeholder="" class="layui-input">
@@ -28,8 +27,10 @@
             <tr>
                 <td class="tdleft">{:__('Nickname')}</td>
                 <td class="tdright">
-                    <input id="nickname" data-rule="required" name="nickname" placeholder="" value="{$list['nickname']}" autocomplete="off" class="layui-input">
+                    <input type="nickname" data-rule="required" name="nickname" placeholder="" value="{$list['nickname']}" autocomplete="off" class="layui-input">
                 </td>
+            </tr>
+            <tr>
                 <td class="tdleft">{:__('Email')}</td>
                 <td class="tdright">
                     <input type="email" name="email" data-rule="{required;email}" placeholder="" value="{$list['email']}" autocomplete="off" class="layui-input">
@@ -40,84 +41,25 @@
                 <td class="tdright">
                     <input type="password" data-rule="passwdrule" data-rule-passwdrule="[/{$passwd_complexity_rule[0]}/, '{$passwd_complexity_rule[1]}']" name="password" placeholder="" autocomplete="off" class="layui-input">
                 </td>
+            </tr>
+            <tr>
                 <td class="tdleft">{:__('Confirm password')}</td>
                 <td class="tdright">
                     <input type="password" name="confirm_password" data-rule="{:__('Confirm password')}:match(password);" placeholder=""  autocomplete="off" class="layui-input">
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">{:__('Mobile')}</td>
-                <td class="tdright">
-                    <input id="mobile" name="mobile" data-rule="" placeholder="" value="{$list['mobile']}" autocomplete="off" class="layui-input">
-                </td>
-                <td class="tdleft">{:__('Level')}</td>
-                <td class="tdright">
-                    <input id="level" name="level" data-rule="" placeholder="" value="{$list['level']}" autocomplete="off" class="layui-input">
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">{:__('Gender')}</td>
-                <td class="tdright">
-                    {:build_radios('gender',['1'=>__('Male'), '0'=>__('Female')], $list['gender'])}
-                </td>
-                <td class="tdleft">{:__('Birthday')}</td>
-                <td class="tdright">
-                    <input id="birthday" name="birthday" data-rule="" placeholder="" value="{$list['birthday']}" autocomplete="off" class="layui-input">
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">{:__('Successions')}</td>
-                <td class="tdright">
-                    <input id="successions" name="successions" data-rule="" placeholder="" value="{$list['successions']}" autocomplete="off" class="layui-input">
-                </td>
-                <td class="tdleft">{:__('Maxsuccessions')}</td>
-                <td class="tdright">
-                    <input id="maxsuccessions" name="maxsuccessions" data-rule="" placeholder="" value="{$list['maxsuccessions']}" autocomplete="off" class="layui-input">
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">{:__('Prevtime')}</td>
-                <td class="tdright">
-                    <input id="prevtime" name="prevtime" data-rule="" placeholder="" value="{$list['prevtime']}" autocomplete="off" class="layui-input">
-                </td>
-                <td class="tdleft">{:__('Logintime')}</td>
-                <td class="tdright">
-                    <input id="logintime" name="logintime" data-rule="" placeholder="" value="{$list['logintime']}" autocomplete="off" class="layui-input">
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">{:__('Loginip')}</td>
-                <td class="tdright">
-                    <input id="loginip" name="loginip" data-rule="" placeholder="" value="{$list['loginip']}" autocomplete="off" class="layui-input">
-                </td>
-                <td class="tdleft">{:__('Loginfailure')}</td>
-                <td class="tdright">
-                    <input id="loginfailure" name="loginfailure" data-rule="" placeholder="" value="{$list['loginfailure']}" autocomplete="off" class="layui-input">
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">{:__('Joinip')}</td>
-                <td class="tdright">
-                    <input id="joinip" name="joinip" data-rule="" placeholder="" value="{$list['joinip']}" autocomplete="off" class="layui-input">
-                </td>
-                <td class="tdleft">{:__('Jointime')}</td>
-                <td class="tdright">
-                    <input id="jointime" name="jointime" data-rule="" placeholder="" value="{$list['jointime']}" autocomplete="off" class="layui-input">
-                </td>
-            </tr>
-            <tr>
                 <td class="tdleft">{:__('Status')}</td>
                 <td class="tdright">
-                    <input type="checkbox" name="status" lay-skin="switch" lay-text="{:__('Off')}|{:__('On')}"  {$list['status'] == 1? 'checked' : ''}>
+                    <input type="checkbox" name="status" lay-skin="switch" lay-text="{:__('On')}|{:__('Off')}"  {$list['status'] == 1? 'checked' : ''}>
                 </td>
             </tr>
             </tbody>
         </table>
         <div class="layui-form-item footer-form">
-            <div class="footer footer-common">
-                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+            <div class="footer">
+                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed disabled">{:__('OK')}</button>
                 <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>
-                <a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed go-back">{:__('Back')}</div></a>
             </div>
         </div>
     </form>
@@ -140,35 +82,67 @@
     link(
         " __STATIC__/style/jquery.validator.css?v={$msectime}"
     ).
-    use(['jquery','index','laydate','formSelects','formValidator'], function(){
+    use(['jquery','index','formSelects','formValidator'], function(){
         var admin = layui.admin
             ,$ = layui.$
             ,table = layui.table
-            ,laydate = layui.laydate
             ,formSelects = layui.formSelects
             ,formValidator = layui.formValidator;
         //监听提交
-
-        laydate.render({
-            elem: '#prevtime' //指定元素
-            ,type: 'datetime'
-        });
-        laydate.render({
-            elem: '#birthday' //指定元素
-            ,type: 'datetime'
-        });
-        laydate.render({
-            elem: '#logintime' //指定元素
-            ,type: 'datetime'
-        });
-        laydate.render({
-            elem: '#jointime' //指定元素
-            ,type: 'datetime'
-        });
         /**
          * 绑定表单事件
          */
         formValidator.api.bindevent($("form#formRule"));
+//        form.on('submit(formRule)', function(data){
+//            var formData = JSON.stringify(data.fields);
+//            we.api.ajax({"url":"{:url('admin/auth.admin/edit','',false)}","data":data.fields,'tableid':'tableReload'});
+//        });
+//        formSelects.config('select', {
+//            type: 'get',                //请求方式: post, get, put, delete...
+//            header: {},                 //自定义请求头
+//            data: {},                   //自定义除搜索内容外的其他数据
+//            searchUrl: '',              //搜索地址, 默认使用xm-select-search的值, 此参数优先级高
+//            searchName: 'keyword',      //自定义搜索内容的key值
+//            searchVal: '',              //自定义搜索内容, 搜素一次后失效, 优先级高于搜索框中的值
+//            keyName: 'name',            //自定义返回数据中name的key, 默认 name
+//            keyVal: 'value',            //自定义返回数据中value的key, 默认 value
+//            keySel: 'selected',         //自定义返回数据中selected的key, 默认 selected
+//            keyDis: 'disabled',         //自定义返回数据中disabled的key, 默认 disabled
+//            keyChildren: 'children',    //联动多选自定义children
+//            delay: 500,                 //搜索延迟时间, 默认停止输入500ms后开始搜索
+//            direction: 'auto',          //多选下拉方向, auto|up|down
+//            response: {
+//                statusCode: 0,          //成功状态码
+//                statusName: 'code',     //code key
+//                msgName: 'msg',         //msg key
+//                dataName: 'data'        //data key
+//            },
+//            success: function(id, url, searchVal, result){      //使用远程方式的success回调
+//                console.log(id);        //组件ID xm-select
+//                console.log(url);       //URL
+//                console.log(searchVal); //搜索的value
+//                console.log(result);    //返回的结果
+//            },
+//            error: function(id, url, searchVal, err){           //使用远程方式的error回调
+//                //同上
+//                console.log(err);   //err对象
+//            },
+//            beforeSuccess: function(id, url, searchVal, result){        //success之前的回调, 干嘛呢? 处理数据的, 如果后台不想修改数据, 你也不想修改源码, 那就用这种方式处理下数据结构吧
+//                console.log(id);        //组件ID xm-select
+//                console.log(url);       //URL
+//                console.log(searchVal); //搜索的value
+//                console.log(result);    //返回的结果
+//
+//                return result;  //必须return一个结果, 这个结果要符合对应的数据结构
+//            },
+//            beforeSearch: function(id, url, searchVal){         //搜索前调用此方法, return true将触发搜索, 否则不触发
+//                if(!searchVal){//如果搜索内容为空,就不触发搜索
+//                    return false;
+//                }
+//                return true;
+//            },
+//            clearInput: false,          //当有搜索内容时, 点击选项是否清空搜索内容, 默认不清空
+//        }, true);
     });
 </script>
 </body>

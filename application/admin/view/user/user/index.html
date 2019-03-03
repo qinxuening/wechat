@@ -462,6 +462,9 @@
                 }else{
                     toastr.warning('没有选择数据');
                 }
+            } else if(obj.event == 'addMember') {
+                layer_index = we.api.open("{:url('admin/user.user/edit')}",'新增会员',{zIndex:19891016
+                },['80%' , '80%']);
             }
         })
 
