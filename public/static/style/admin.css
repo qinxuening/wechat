@@ -2789,7 +2789,19 @@ input:focus, select:focus{
     margin-left: -150px;
 }
 
+.phone-list li{
+    float: left;
+    margin-left: 10px;
+    background-color: #eaeaea;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 5px;
+}
 
-
+.paddingleft10{
+    padding-left: 10px;
+    color: #d0d0d0;
+    cursor: pointer;
+}
 
 

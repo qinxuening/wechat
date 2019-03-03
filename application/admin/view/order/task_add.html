@@ -920,7 +920,6 @@
          * 短链接弹框short-href-layer
          * */
         $("body").on("click","#short_href",function (){
-            // console.log(this);
             sms_short_table_init('', {'short_sms_type':0});
             element.tabChange('short-href-tab', 'common_link');
             short_sms_layer_index = we.api.open_current_page_layer($(".short-href-layer"),'添加短链',{zIndex:19891016
