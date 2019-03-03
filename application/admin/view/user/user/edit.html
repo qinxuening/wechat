@@ -12,46 +12,60 @@
             </colgroup>
             <tbody>
             <tr>
-                <td class="tdleft">{:__('Group')}<span class="tips">*</span></td>
+                <td class="tdleft">云信名称<span class="tips">*</span></td>
                 <td class="tdright">
-                    {:build_select('group', $groupdata, $groupids, ['class'=>'form-control selectpicker', 'multiple'=>'', 'lay-verify'=>'required', 'xm-select' => 'select'])}
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">{:__('Username')}<span class="tips">*</span></td>
-                <td class="tdright">
-                    <input type="text" name="username" data-rule="required;username" lay-verify="username" autocomplete="off" value="{$list['username']}" placeholder="" class="layui-input">
+                    <input type="text" name="yxName" data-rule="required" lay-verify="yxName" autocomplete="off" value="{$list['yxName']}" placeholder="" class="layui-input">
                     <input type="hidden" name="id" lay-verify="id" value="{$list['id']}">
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">{:__('Nickname')}</td>
+                <td class="tdleft">姓名</td>
                 <td class="tdright">
-                    <input type="nickname" data-rule="required" name="nickname" placeholder="" value="{$list['nickname']}" autocomplete="off" class="layui-input">
+                    <input type="text" data-rule="required" name="userName" placeholder="" value="{$list['userName']}" autocomplete="off" class="layui-input">
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">{:__('Email')}</td>
+                <td class="tdleft">手机号码</td>
+                <td class="tdright">
+                    <input type="text" name="phone" data-rule="{required;mobile}" placeholder="" value="{$list['mobile']}" autocomplete="off" class="layui-input">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">区域</td>
+                <td class="tdright">
+                    <input type="text" data-rule="required" name="area" placeholder="" autocomplete="off" class="layui-input">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">交易金额</td>
+                <td class="tdright">
+                    <input type="number" name="tradeAcount" data-rule="required" placeholder=""  autocomplete="off" class="layui-input">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">交易笔数</td>
+                <td class="tdright">
+                    <input type="text" name="tradeCount" data-rule="required" placeholder=""  autocomplete="off" class="layui-input">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">邮箱</td>
                 <td class="tdright">
                     <input type="email" name="email" data-rule="{required;email}" placeholder="" value="{$list['email']}" autocomplete="off" class="layui-input">
                 </td>
             </tr>
             <tr>
-                <td class="tdleft">{:__('Password')}</td>
+                <td class="tdleft">会员等级</td>
                 <td class="tdright">
-                    <input type="password" data-rule="passwdrule" data-rule-passwdrule="[/{$passwd_complexity_rule[0]}/, '{$passwd_complexity_rule[1]}']" name="password" placeholder="" autocomplete="off" class="layui-input">
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">{:__('Confirm password')}</td>
-                <td class="tdright">
-                    <input type="password" name="confirm_password" data-rule="{:__('Confirm password')}:match(password);" placeholder=""  autocomplete="off" class="layui-input">
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">{:__('Status')}</td>
-                <td class="tdright">
-                    <input type="checkbox" name="status" lay-skin="switch" lay-text="{:__('On')}|{:__('Off')}"  {$list['status'] == 1? 'checked' : ''}>
+                    <div class="layui-input-inline">
+                        <select name="memberLevel">
+                            <option value="0" selected>店铺会员</option>
+                            <option value="1">普通会员</option>
+                            <option value="2">高级会员</option>
+                            <option value="3">VIP会员</option>
+                            <option value="4">至尊VIP会员</option>
+                        </select>
+                    </div>
                 </td>
             </tr>
             </tbody>

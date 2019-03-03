@@ -1,0 +1,175 @@
+{extend name="layout/default2" /}
+{block name="content"}
+
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12 webody">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-card-header yty-card-header">温馨提示：</div>
+                    <p>注：请先下载模板，按模板格式上传文件，若选择分组，则导入到相应分组。</p>
+                    <!--<p>2.点击选择文件上传，将已下载的订单报表（ExportOrderListxxxxxxxx.csv）文件上传，系统会自动关联。</p>-->
+                    <!--<p>3.最终导入到系统中的数据和文件中的数据可能会存在一些偏差(具体原因有： 1.系统会去掉重复的联系人； 2.系统会过滤掉无效的联系人； 3.苏宁后台导出的数据不完整； 4.其他。)</p>-->
+                    <!--<p>【重要提示】根据淘宝要求，超过7天未登录软件将停止订单数据推送，会导致订单中心不能正常发送催付物流短信，数据查询出现误差等问题，为确保功能正常使用，请务必每个店铺每周至少登录1次软件。</p>-->
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="upload">
+                            <i class="layui-icon">&#xe654;</i>添加文件(允许上传格式：xlsx、xls)
+                        </button>
+                        <button type="button"  class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="testListAction"><i class="layui-icon">&#xe67c;</i>开始上传</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="import">
+                            <i class="layui-icon">&#xe653;</i>导入
+                        </button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="downloadTemplate">
+                            <i class="fa fa-arrow-down"></i>下载模板
+                        </button>
+                        <input type="hidden" name="filepath" id="filepath" value="" class="layui-input">
+
+                        <div class="layui-progress layui-progress-big" style="margin: 10px 0;display: none" id="progressBar" lay-showPercent="yes" lay-filter="progressBar">
+                            <div class="layui-progress-bar" lay-percent="0%"></div>
+                        </div>
+                        <div class="layui-upload-list">
+                            <table class="layui-table" lay-size="sm">
+                                <thead>
+                                <tr><th>文件名</th>
+                                    <th>大小</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr></thead>
+                                <tbody id="demoList"></tbody>
+                            </table>
+                        </div>
+                        <div class="layui-upload-list" id="import_result">
+                            <!--<table class="layui-table" lay-size="sm">-->
+                            <!--<thead>-->
+                            <!--<tr>-->
+                            <!--<th>成功条数</th>-->
+                            <!--<th>失败条数</th>-->
+                            <!--</tr></thead>-->
+                            <!--<tbody>-->
+
+                            <!--</tbody>-->
+                            <!--</table>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index','table','upload','element','we', 'toastr'], function(){
+        var element = layui.element
+            ,$ = layui.$
+            ,upload = layui.upload
+            ,we = layui.we
+            ,toastr = layui.toastr
+//         console.log({$import_url});
+        var demoListView = $('#demoList');
+        var uploadListIns = upload.render({
+            elem: '#upload'
+            ,url: "{$import_url}"
+            ,done: function(res, index, upload){ //上传后的回调
+
+            }
+            ,progress: function(e , percent) {
+                element.progress('progressBar',percent  + '%');
+            }
+            ,accept: 'file' //允许上传的文件类型
+            ,size: 50*1024*1024 //最大允许上传的文件大小
+            ,auto:false
+            ,exts:'xlsx|xls'
+            ,multiple: true
+            ,bindAction: '#testListAction'
+            ,choose: function(obj){
+                var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                //读取本地文件
+                obj.preview(function(index, file, result){
+                    var tr = $(['<tr id="upload-'+ index +'">'
+                        ,'<td>'+ file.name +'</td>'
+                        ,'<td>'+ we.format_bytes(file.size,'') +'</td>'
+                        ,'<td>等待上传</td>'
+                        ,'<td>'
+                        ,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
+                        ,'<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+                        ,'</td>'
+                        ,'</tr>'].join(''));
+
+                    //单个重传
+                    tr.find('.demo-reload').on('click', function(){
+                        obj.upload(index, file);
+                    });
+
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                        uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+                    });
+
+                    demoListView.append(tr);
+                    element.progress('progressBar', '0%');
+                    $("#progressBar").show();
+                    $(".upload-btn").removeClass('layui-btn-disabled');
+                });
+            }
+            ,done: function(res, index, upload){
+                console.log(res);
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+                if(res.status == 'success'){ //上传成功
+                    tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                    $("#import").removeClass('layui-btn-disabled');
+                    $("#filepath").val(res.data.url);
+                    return delete this.files[index]; //删除文件队列已经上传成功的文件
+                } else {
+                    tds.eq(2).html('<span style="color: #FF5722;">'+res.msg+'</span>');
+                }
+                this.error(index, upload);
+            }
+            ,error: function(index, upload){
+                element.progress('progressBar', '0%');
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+//                tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+                tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+            }
+        });
+
+        $("#import").click(function () {
+//            we.api.ajax({"url":"import","data":{'filepath':$("#filepath").val()}});
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "import",
+                data: {'filepath':$("#filepath").val()},
+                async:false,
+                success: function (ret) {
+                    var html = '<table class="layui-table" lay-size="sm"><thead><tr><th>导入成功条数</th> <th>导入失败条数</th></tr></thead>';
+                    if (ret.status == 'success') {
+                        html += '<tr><td>'+ret.data[0]+'</td><td>'+ret.data[1]+'</td></tr></tbody></table>';
+                        $("#import_result").html(html);
+                        parent.layui.table.reload('tableReload');
+                        toastr.success(ret.msg);
+                    } else {
+                        toastr.error(ret.msg)
+                    }
+                },
+                error: function (xhr) {
+                    toastr.error('系统异常，请稍后再试');
+                }
+            });
+        });
+    });
+
+</script>
+</body>
+</html>
+{/block}

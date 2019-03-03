@@ -463,9 +463,13 @@
                     toastr.warning('没有选择数据');
                 }
             } else if(obj.event == 'addMember') {
-                layer_index = we.api.open("{:url('admin/user.user/edit')}",'新增会员',{zIndex:19891016
+                layer_index1 = we.api.open("{:url('admin/user.user/edit')}",'新增会员',{zIndex:19891016
                 },['80%' , '80%']);
+            } else if(obj.event == 'importMemberInfo') {
+                we.api.open("{:url('admin/user.user/import','',false)}",'导入会员信息');
             }
+
+
         })
 
         /**
