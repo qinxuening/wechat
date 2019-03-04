@@ -99,4 +99,9 @@ class User extends baseAdmin
         $this->view->assign('passwd_complexity_rule', $rule_info);
         $this->assign('groupdata',$groupdata);
     }
+
+    public function black_member(){
+        return $this->view->fetch();
+    }
+    
 }

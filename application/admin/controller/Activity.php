@@ -32,9 +32,7 @@ class Activity extends baseAdmin{
     public function sms_record() {
         return $this->view->fetch();
     }
-    
-    
-     
+
     
     
     
