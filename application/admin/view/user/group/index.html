@@ -43,7 +43,9 @@
 <!--操作-->
 <script type="text/html" id="tableTool">
     <!--{{# if(d.rules != '*'){  }}-->
-    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>{:__('Edit')}</a>
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="sendMembersSms">会员群发短信</a>
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
     <!--{{# }  }}-->
 </script>
 <!--操作-->
@@ -90,7 +92,7 @@
                 ,{field:'groupSource', title: "分组类型", searchList:{type:'select',data:{"0":"全部分组","1":"系统分组","2":"标签分组","3":"我的分组"},'operate':'='}, sort: true}
                 ,{field:'remarks', title: "分组备注"}
                 ,{field:'creatime', title: "创建时间", searchList:{type:'input',event:'date',operate: 'RANGE'}}
-                ,{fixed: 'right', title:"{:__('Operate')}", toolbar: '#tableTool', width:200}
+                ,{fixed: 'right', title:"{:__('Operate')}", toolbar: '#tableTool', width:220}
             ]]
             ,done: function(res, curr, count){
                 if(res.status == 'success') {
@@ -135,7 +137,30 @@
             }
         })
 
-
+        /**
+         * 表格工具栏事件
+         * */
+        table.on('tool(groupList)', function(obj){
+            var data = obj.data;
+            switch(obj.event){
+                case 'sendMembersSms':
+                    //设置发送手机号码
+                    window.location.href = "{:url('activity/member_sms',['nav_id'=>226,'nav_pid'=>220],false)}?groupId = " + data.id;
+                    break;
+                case 'edit':
+                    we.api.open("{:url('admin/user.group/edit',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}&ids="+data.id,'编辑');
+                    break;
+                case 'del':
+                    layer.confirm('请确定是否删除？',{
+                        title:'温馨提示',
+                    }, function(index){
+                        var url = weTable.defaults.extend.del_url
+                        we.api.ajax({"url":"{:url('admin/user.group/del',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}","data":{'ids':data.id},'tableid':"tableReload",'action':'del'});
+                        layer.close(index);
+                    });
+                    break;
+            }
+        });
 
     });
 

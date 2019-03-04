@@ -447,39 +447,44 @@
             $.each(data,function (index, value) {
                 idsArr.push(value.id);
             });
-            if(obj.event == 'addBlack') {
-                if(data != "") {
-                    layer.confirm('请确定是否加入黑名单？',{
-                        title:'温馨提示',
-                    }, function(index){
-                        //对接后台拉黑接口
-                        we.api.ajax({"url":"","data":{'ids':idsArr.join(',')},'tableid':"tableReload",'action':'del'});
-                        layer.close(index);
-                    });
-                } else {
-                    toastr.warning('没有选择数据');
-                }
-            } else if(obj.event == 'sendSearchResultSms') {
-                if(data != "") {
-                    $(".phone-list").html('');//每次初始化置0
-                    $.each(data,function (index, value) {
-                        $(".phone-list").append('<li><span>1374654564</span><i class="fa fa-times paddingleft10 iconEvent" aria-hidden="true"></i></li>');
-                    });
-                    layer_index = we.api.open_current_page_layer($(".selectMemberToSendSms"),'选则订单发送',{zIndex:19891016
+            switch(obj.event) {
+                case 'addBlack':
+                    if(data != "") {
+                        layer.confirm('请确定是否加入黑名单？',{
+                            title:'温馨提示',
+                        }, function(index){
+                            //对接后台拉黑接口
+                            we.api.ajax({"url":"","data":{'ids':idsArr.join(',')},'tableid':"tableReload",'action':'del'});
+                            layer.close(index);
+                        });
+                    } else {
+                        toastr.warning('没有选择数据');
+                    }
+                    break;
+                case 'sendSearchResultSms':
+                    if(data != "") {
+                        $(".phone-list").html('');//每次初始化置0
+                        $.each(data,function (index, value) {
+                            $(".phone-list").append('<li><span>1374654564</span><i class="fa fa-times paddingleft10 iconEvent" aria-hidden="true"></i></li>');
+                        });
+                        layer_index = we.api.open_current_page_layer($(".selectMemberToSendSms"),'选则订单发送',{zIndex:19891016
+                        },['80%' , '80%']);
+                    }else{
+                        toastr.warning('没有选择数据');
+                    }
+                    break;
+                case 'addMember':
+                    layer_index1 = we.api.open("{:url('admin/user.user/edit')}",'新增会员',{zIndex:19891016
                     },['80%' , '80%']);
-                }else{
-                    toastr.warning('没有选择数据');
-                }
-            } else if(obj.event == 'addMember') {
-                layer_index1 = we.api.open("{:url('admin/user.user/edit')}",'新增会员',{zIndex:19891016
-                },['80%' , '80%']);
-            } else if(obj.event == 'importMemberInfo') {
-                we.api.open("{:url('admin/user.user/import','',false)}",'导入会员信息');
+                    break;
+                case 'importMemberInfo':
+                    we.api.open("{:url('admin/user.user/import','',false)}",'导入会员信息');
+                    break;
             }
         })
 
         /**
-         * 工具栏事件
+         * 表格工具栏事件
          * */
         table.on('tool(memberList)', function(obj){
             var data = obj.data;
