@@ -309,8 +309,9 @@
 
 <!----------------------------短信模板操作栏begin-------------------------->
 <script type="text/html" id="actionbar">
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="sendSms">发送短信</a>
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
 </script>
 <!------------------------------短信模板操作栏end--------------------------->
 
@@ -332,7 +333,10 @@
 <!--</script>-->
 
 <!--操作-->
-{:build_actionbar('actionbar',['edit', 'del'])}
+<!--{:build_actionbar('actionbar',['edit', 'del'])}-->
+
+
+
 {/block}
 
 {block name="script"}
@@ -382,7 +386,7 @@
                 ,{field:'phone', title: "手机号", excel_width:15, searchList:{type:'input',operate:'LIKE'}, minWidth: 130}
                 ,{field:'email', title: "邮箱", excel_width:15, minWidth: 120}
                 ,{field:'lastTradingTime', title: "最后交易时间", excel_width:15, minWidth: 140}
-                ,{fixed: 'right', title:"{:__('Operate')}", toolbar: '#actionbar', width:160}
+                ,{fixed: 'right', title:"{:__('Operate')}", toolbar: '#actionbar', width:200}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']
@@ -413,7 +417,7 @@
         /**
          * 表格初始化
          */
-        weTable.api.init({
+        /*weTable.api.init({
             table : "memberList",
             is_display:false,
             tableid : "tableReload",
@@ -426,12 +430,12 @@
                 "del_url": "{:url('admin/user.user/del',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}",
                 "export_url" : "{:url('admin/user.user/index',['id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}"
             }
-        });
+        });*/
 
         /**
          * 绑定监听事件
          * */
-        weTable.api.bindevent();
+        //weTable.api.bindevent();
         formSearch.api.searchForm($("form#search_form"));
 
         //表头工具栏事件
@@ -457,6 +461,10 @@
                 }
             } else if(obj.event == 'sendSearchResultSms') {
                 if(data != "") {
+                    $(".phone-list").html('');//每次初始化置0
+                    $.each(data,function (index, value) {
+                        $(".phone-list").append('<li><span>1374654564</span><i class="fa fa-times paddingleft10 iconEvent" aria-hidden="true"></i></li>');
+                    });
                     layer_index = we.api.open_current_page_layer($(".selectMemberToSendSms"),'选则订单发送',{zIndex:19891016
                     },['80%' , '80%']);
                 }else{
@@ -468,9 +476,34 @@
             } else if(obj.event == 'importMemberInfo') {
                 we.api.open("{:url('admin/user.user/import','',false)}",'导入会员信息');
             }
-
-
         })
+
+        /**
+         * 工具栏事件
+         * */
+        table.on('tool(memberList)', function(obj){
+            var data = obj.data;
+            switch(obj.event){
+                case 'sendSms':
+                    //设置发送手机号码
+                    $(".phone-list").html('<li><span>1374654564</span><i class="fa fa-times paddingleft10 iconEvent" aria-hidden="true"></i></li>');
+                    layer_index2 = we.api.open_current_page_layer($(".selectMemberToSendSms"),'选则订单发送',{zIndex:19891016
+                    },['80%' , '80%']);
+                    break;
+                case 'edit':
+                    we.api.open("{:url('admin/user.user/edit',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}&ids="+data.id,'编辑');
+                    break;
+                case 'del':
+                    layer.confirm('请确定是否删除？',{
+                        title:'温馨提示',
+                    }, function(index){
+                        var url = weTable.defaults.extend.del_url
+                        we.api.ajax({"url":"{:url('admin/user.user/del',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}","data":{'ids':data.id},'tableid':"tableReload",'action':'del'});
+                        layer.close(index);
+                    });
+                    break;
+            }
+        });
 
         /**
          * 点击删除号码
