@@ -8,14 +8,16 @@
             <div class="layui-card">
                 <div class="layui-card-body">
                     <div class="layui-upload">
-                        <button type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="upload">
-                            <i class="layui-icon">&#xe654;</i>添加文件(允许上传格式：xlsx、xls)
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="upload">
+                            <i class="fa fa-plus"></i>添加文件(允许上传格式：xlsx、xls)
                         </button>
-                        <button type="button"  class="layui-btn upload-btn layui-btn-normal layui-btn-disabled layui-btn-sm" id="testListAction"><i class="layui-icon">&#xe67c;</i>开始上传</button>
-                        <button type="button" class="layui-btn layui-btn-sm layui-btn-normal layui-btn-disabled" id="import">
-                            <i class="layui-icon">&#xe653;</i>导入
+                        <button type="button"  class="marginlef10 layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="testListAction"><i class="fa fa-cloud-upload" aria-hidden="true"></i>开始上传</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="import">
+                            <i class="fa fa-file-code-o" aria-hidden="true"></i>导入
                         </button>
-
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="downloadTemplate">
+                            <i class="fa fa-cloud-download" aria-hidden="true"></i>下载模板
+                        </button>
                         <input type="hidden" name="filepath" id="filepath" value="" class="layui-input">
 
                         <div class="layui-progress layui-progress-big" style="margin: 10px 0;display: none" id="progressBar" lay-showPercent="yes" lay-filter="progressBar">

@@ -1,0 +1,70 @@
+{extend name="layout/default2" /}
+{block name="content"}
+<body>
+<!--<div class="layui-container lay_top">-->
+<!--<div class="layui-row layui-col-space30">-->
+<div class="body-form">
+    <form class="layui-form" action="{:url('admin/auth.admin/edit','',false)}" tableid="tableReload" method="post" id="formRule" lay-filter="rule">
+        <table class="layui-table " lay-skin="line" lay-size="sm">
+            <colgroup>
+                <col class="tdleft" width="30%">
+                <col class="tdright">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td class="tdleft">云信名称/手机号码<span class="tips">*</span></td>
+                <td class="tdright">
+                    <textarea  name="backMember" data-rule="" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
+                    <span class="red_color">多个号码请使用回车分隔，重复号码会被过滤。</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">备注</td>
+                <td class="tdright">
+                    <textarea  name="remarks" data-rule="" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="layui-form-item footer-form">
+            <div class="footer">
+                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed disabled">{:__('OK')}</button>
+                <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--</div>-->
+<!--</div>-->
+{/block}
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we',
+        version:true,
+    }).extend({
+        index: 'lib/index', //主入口模块
+        formSelects: 'formSelects-v4'
+    }).link(
+        '__STATIC__/style/formSelects-v4.css?v={$msectime}'
+    ).
+    link(
+        " __STATIC__/style/jquery.validator.css?v={$msectime}"
+    ).
+    use(['jquery','index','formSelects','formValidator'], function(){
+        var admin = layui.admin
+            ,$ = layui.$
+            ,table = layui.table
+            ,formSelects = layui.formSelects
+            ,formValidator = layui.formValidator;
+        //监听提交
+        /**
+         * 绑定表单事件
+         */
+        formValidator.api.bindevent($("form#formRule"));
+    });
+</script>
+</body>
+</html>
+{/block}

@@ -123,7 +123,7 @@ if (!function_exists('build_toolbar')) {
         $btnAttr = [
             'refresh' => ['layui-btn layui-btn-primary btn-primary-border layui-btn-sm', 'layui-icon layui-icon-refresh-3', __('Refresh')],
             'add'     => ['layui-btn layui-btn-primary btn-primary-border layui-btn-sm', 'layui-icon layui-icon-add-1', __('Add')],
-            'del'     => ['layui-btn layui-btn-primary btn-primary-border-red layui-btn-sm', 'layui-icon layui-icon-delete', __('Delete')],//btn-disabled disabled
+            'del'     => ['layui-btn layui-btn-primary btn-primary-border-red layui-btn-sm', 'fa fa-trash', __('Delete')],//btn-disabled disabled
             'export'  => ['layui-btn layui-btn-primary btn-primary-border layui-btn-sm', 'layui-icon layui-icon-file', __('Export')],
             'import'  => ['layui-btn layui-btn-primary btn-primary-border layui-btn-sm', 'layui-icon layui-icon-upload', __('Import')],
         ];

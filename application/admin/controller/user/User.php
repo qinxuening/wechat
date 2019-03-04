@@ -104,4 +104,7 @@ class User extends baseAdmin
         return $this->view->fetch();
     }
     
+    public function addBlackMember() {
+       return $this->view->fetch();
+    }
 }
