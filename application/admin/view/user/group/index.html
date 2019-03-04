@@ -3,7 +3,14 @@
 <body>
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">
-        <div class="layui-col-md12 webody">
+        <div class="layui-col-md12 webody body-overflow">
+            <div class="layui-row yty-bck">
+                <div class="layui-col-12">
+                    <div class="searchbody">
+                    </div>
+                </div>
+            </div>
+
             <div class="layui-card">
                 <div class="layui-card-body">
                     <table class="layui-hide" id="groupList"  lay-filter="groupList" table-reload-id="tableReload"></table>
@@ -39,6 +46,8 @@
     <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>{:__('Edit')}</a>
     {{# }  }}
 </script>
+<!--操作-->
+
 {/block}
 
 {block name="script"}
@@ -50,7 +59,7 @@
     }).extend({
         index: 'lib/index' //主入口模块
         ,we: 'we',
-    }).use(['jquery','index','table','element','we','weTable'], function(){
+    }).use(['jquery','index','table','element','we','weTable','formSearch'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,$ = layui.$ //重点处
@@ -58,23 +67,29 @@
             ,weTable = layui.weTable
             ,layer = layui.layer
             ,form = layui.form
+            ,formSearch = layui.formSearch
             ,we = layui.we;
+
         layer.load(0, {shade: false});
-        table.render({
+        var tableCommon = {
             elem: '#groupList'
+            ,formId:'search_form'
             ,skin:'line'
             ,toolbar: '#toolbar'
             ,url:"{:url('Admin/user.group/index')}"
             ,id: 'tableReload'
             ,defaultToolbar: []//'filter', 'print', 'exports'
             ,loading:true
+            ,search: true
+            ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
-                ,{field:'id', title: 'ID', sort: true}
-                ,{field:'name', title: "{:__('Name')}", sort: true}
-                ,{field:'status', title: "{:__('Status')}",templet: '#switchStatus', sort: true}
-                ,{field:'createtime', title: "{:__('Createtime')}", minWidth: 150}
-                ,{field:'updatetime', title: "{:__('Updatetime')}", minWidth: 150}
+                ,{field:'id', title: '序号', sort: true}
+                ,{field:'groupName', title: "分组名称", searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'memberCount', title: "客户数（人）", sort: true}
+                ,{field:'groupSource', title: "分组类型", searchList:{type:'select',data:{"0":"全部分组","1":"系统分组","2":"标签分组","3":"我的分组"},'operate':'='}, sort: true}
+                ,{field:'remarks', title: "分组备注"}
+                ,{field:'creatime', title: "创建时间", searchList:{type:'input',event:'date',operate: 'RANGE'}}
                 ,{fixed: 'right', title:"{:__('Operate')}", toolbar: '#barDemo', width:200}
             ]]
             ,done: function(res, curr, count){
@@ -82,7 +97,11 @@
                     layer.closeAll();
                 }
             }
-        });
+        };
+
+        table.render(tableCommon); //数据表格初始化
+        formSearch.api.init(tableCommon); //搜索初始化
+        formSearch.api.searchForm($("form#search_form"));
 
         /**
          * 表格初始化
@@ -111,7 +130,7 @@
                 idsArr.push(value.id);
             });
             if(obj.event == 'addGroup') {
-                layer_index1 = we.api.open("{:url('admin/user.group/edit')}",'创建分组',{zIndex:19891016
+                layer_index = we.api.open("{:url('admin/user.group/edit')}",'创建分组',{zIndex:19891016
                 },['80%' , '80%']);
             }
         })
