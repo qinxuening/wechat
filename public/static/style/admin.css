@@ -1705,7 +1705,7 @@ tr>td.tdleft .tips{
 
 tr>td.tdright {
     text-align: left;
-    background: #F5F5F5 !important;
+    /*background: #F5F5F5 !important;*/
     vertical-align: middle;
     font-size: 14px !important;
     /*float:left;*/
@@ -1716,13 +1716,18 @@ tr>td.tdright {
     /*display: inline-block;*/
     /*position: relative;*/
 }
-tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright .layui-textarea ,tr>td.tdright>.xm-select{
+tr>td.tdright .layui-input,tr>td.tdright .layui-select,tr>td.tdright>.xm-select{
     width: 320px;
     /*background: #f5f7bb;*/
     display: inline;
     /*background: #ffffff;*/
 }
-.body-form .layui-disabled{
+
+tr>td.tdright .layui-textarea{
+    display: inline;
+    width: 320px;
+}
+ .body-form .layui-disabled{
     background-color: rgb(228, 228, 228) !important;
     color: #808080 !important;
 }
