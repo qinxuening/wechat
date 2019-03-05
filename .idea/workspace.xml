@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd2929a5-94d4-4545-8a59-6480752a55ce" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/lang/zh-cn.php" afterPath="$PROJECT_DIR$/application/admin/lang/zh-cn.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/order/import.html" afterPath="$PROJECT_DIR$/application/admin/view/order/import.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/user/user/add_black_member.html" afterPath="$PROJECT_DIR$/application/admin/view/user/user/add_black_member.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/admin/view/user/user/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/user/user/edit.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/admin/view/job/edit.html" afterPath="$PROJECT_DIR$/application/admin/view/after_sale/edit.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/admin/view/job/index.html" afterPath="$PROJECT_DIR$/application/admin/view/after_sale/med_diff_evalua.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -91,8 +85,8 @@
       <file leaf-file-name="med_diff_evalua.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/med_diff_evalua.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="227" column="114" lean-forward="false" selection-start-line="227" selection-start-column="114" selection-end-line="227" selection-end-column="114" />
+            <state relative-caret-position="405">
+              <caret line="218" column="126" lean-forward="true" selection-start-line="218" selection-start-column="126" selection-end-line="218" selection-end-column="126" />
               <folding>
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <marker date="1551759987005" expanded="true" signature="24083:24098" ph="..." />
@@ -558,13 +552,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="908944000" />
+    <option name="totallyTimeSpent" value="910154000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20916754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15753424" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1035,8 +1029,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/med_diff_evalua.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="227" column="114" lean-forward="false" selection-start-line="227" selection-start-column="114" selection-end-line="227" selection-end-column="114" />
+        <state relative-caret-position="405">
+          <caret line="218" column="126" lean-forward="true" selection-start-line="218" selection-start-column="126" selection-end-line="218" selection-end-column="126" />
           <folding>
             <element signature="n#div#0;n#!!top" expanded="false" />
             <marker date="1551759987005" expanded="true" signature="24083:24098" ph="..." />
