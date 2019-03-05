@@ -243,7 +243,7 @@ return [
     'Order management'        => '订单中心',
     'Member management'       => '会员管理',
     'Marketing management'    => '精准营销',
-    'Scoring management'      => '评分管理',
+    'Scoring management'      => '售后管理',
     'Backstage management'    => '系统管理',
     'On'                      => '启用',
     'Off'                     => '禁用',

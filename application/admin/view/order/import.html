@@ -13,12 +13,15 @@
                     <p>3.最终导入到系统中的数据和文件中的数据可能会存在一些偏差(具体原因有： 1.系统会去掉重复的联系人； 2.系统会过滤掉无效的联系人； 3.苏宁后台导出的数据不完整； 4.其他。)</p>
                     <p>【重要提示】根据淘宝要求，超过7天未登录软件将停止订单数据推送，会导致订单中心不能正常发送催付物流短信，数据查询出现误差等问题，为确保功能正常使用，请务必每个店铺每周至少登录1次软件。</p>
                     <div class="layui-upload">
-                        <button type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="upload">
-                            <i class="layui-icon">&#xe654;</i>添加文件(允许上传格式：xlsx、xls)
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="upload">
+                            <i class="fa fa-plus"></i>添加文件(允许上传格式：xlsx、xls)
                         </button>
-                        <button type="button"  class="layui-btn upload-btn layui-btn-normal layui-btn-disabled layui-btn-sm" id="testListAction"><i class="layui-icon">&#xe67c;</i>开始上传</button>
-                        <button type="button" class="layui-btn layui-btn-sm layui-btn-normal layui-btn-disabled" id="import">
-                            <i class="layui-icon">&#xe653;</i>导入
+                        <button type="button"  class="marginlef10 layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="testListAction"><i class="fa fa-cloud-upload" aria-hidden="true"></i>开始上传</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="import">
+                            <i class="fa fa-file-code-o" aria-hidden="true"></i>导入
+                        </button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" id="downloadTemplate">
+                            <i class="fa fa-cloud-download" aria-hidden="true"></i>下载模板
                         </button>
 
                         <input type="hidden" name="filepath" id="filepath" value="" class="layui-input">

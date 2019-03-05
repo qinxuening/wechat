@@ -1,0 +1,576 @@
+{extend name="layout/default" /}
+{block name="content"}
+<!--------------------------获取省份弹出begin-------------------->
+<div class="body-form layer-form" style="display: none">
+    <div class="layui-card main-table">
+        <div class="layui-card-body main-body">
+            <div class="layui-form location_address_layer">
+                <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm">
+                    <colgroup>
+                        <col class="yty_tdleft" width="30%">
+                        <col class="yty_tdright">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <td class="yty_tdleft"></td>
+                        <td colspan="2" class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="radio" name="check_all" lay-filter="check_all" class="check_all"
+                                       value="all" title="全选">
+                                <input type="radio" name="check_all" lay-filter="check_all" value="none"
+                                       class="check_all_none" title="反选">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">华东地区:</td>
+                        <td class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
+                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="1" lay-skin="primary"
+                                       title="上海" class="">
+                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="2" lay-skin="primary"
+                                       title="浙江" class="">
+                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="3" lay-skin="primary"
+                                       title="江苏" class="">
+                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="4" lay-skin="primary"
+                                       title="安徽" class="">
+                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="5" lay-skin="primary"
+                                       title="江西" class="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">华北地区:</td>
+                        <td class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
+                                <input type="checkbox" name="cityId[]" value="6" lay-filter="cityId" lay-skin="primary"
+                                       title="北京" class="">
+                                <input type="checkbox" name="cityId[]" value="7" lay-filter="cityId" lay-skin="primary"
+                                       title="天津" class="">
+                                <input type="checkbox" name="cityId[]" value="8" lay-filter="cityId" lay-skin="primary"
+                                       title="安徽" class="">
+                                <input type="checkbox" name="cityId[]" value="9" lay-filter="cityId" lay-skin="primary"
+                                       title="山西" class="">
+                                <input type="checkbox" name="cityId[]" value="10" lay-filter="cityId" lay-skin="primary"
+                                       title="山东" class="">
+                                <input type="checkbox" name="cityId[]" value="11" lay-filter="cityId" lay-skin="primary"
+                                       title="内蒙古" class="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">华中地区:</td>
+                        <td class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
+                                <input type="checkbox" name="cityId[]" value="12" lay-filter="cityId" lay-skin="primary"
+                                       title="湖北" class="">
+                                <input type="checkbox" name="cityId[]" value="13" lay-filter="cityId" lay-skin="primary"
+                                       title="湖南" class="">
+                                <input type="checkbox" name="cityId[]" value="14" lay-filter="cityId" lay-skin="primary"
+                                       title="河南" class="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">华南地区:</td>
+                        <td class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
+                                <input type="checkbox" name="cityId[]" value="16" lay-filter="cityId" lay-skin="primary"
+                                       title="广东" class="">
+                                <input type="checkbox" name="cityId[]" value="17" lay-filter="cityId" lay-skin="primary"
+                                       title="广西" class="">
+                                <input type="checkbox" name="cityId[]" value="18" lay-filter="cityId" lay-skin="primary"
+                                       title="福建" class="">
+                                <input type="checkbox" name="cityId[]" value="19" lay-filter="cityId" lay-skin="primary"
+                                       title="海南" class="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">东北地区:</td>
+                        <td class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
+                                <input type="checkbox" name="cityId[]" value="20" lay-filter="cityId" lay-skin="primary"
+                                       title="辽宁" class="">
+                                <input type="checkbox" name="cityId[]" value="21" lay-filter="cityId" lay-skin="primary"
+                                       title="吉林" class="">
+                                <input type="checkbox" name="cityId[]" value="22" lay-filter="cityId" lay-skin="primary"
+                                       title="黑龙江" class="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">西北地区:</td>
+                        <td class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
+                                <input type="checkbox" name="cityId[]" value="23" lay-filter="cityId" lay-skin="primary"
+                                       title="陕西" class="">
+                                <input type="checkbox" name="cityId[]" value="24" lay-filter="cityId" lay-skin="primary"
+                                       title="新疆" class="">
+                                <input type="checkbox" name="cityId[]" value="25" lay-filter="cityId" lay-skin="primary"
+                                       title="青海" class="">
+                                <input type="checkbox" name="cityId[]" value="26" lay-filter="cityId" lay-skin="primary"
+                                       title="宁夏" class="">
+                                <input type="checkbox" name="cityId[]" value="27" lay-filter="cityId" lay-skin="primary"
+                                       title="甘肃" class="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">西南地区:</td>
+                        <td class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
+                                <input type="checkbox" name="cityId[]" value="28" lay-filter="cityId" lay-skin="primary"
+                                       title="四川" class="">
+                                <input type="checkbox" name="cityId[]" value="29" lay-filter="cityId" lay-skin="primary"
+                                       title="云南" class="">
+                                <input type="checkbox" name="cityId[]" value="30" lay-filter="cityId" lay-skin="primary"
+                                       title="贵州" class="">
+                                <input type="checkbox" name="cityId[]" value="31" lay-filter="cityId" lay-skin="primary"
+                                       title="西藏" class="">
+                                <input type="checkbox" name="cityId[]" value="32" lay-filter="cityId" lay-skin="primary"
+                                       title="重庆" class="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">港澳台地区:</td>
+                        <td class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
+                                <input type="checkbox" name="cityId[]" value="33" lay-filter="cityId" lay-skin="primary"
+                                       title="香港" class="">
+                                <input type="checkbox" name="cityId[]" value="34" lay-filter="cityId" lay-skin="primary"
+                                       title="澳门" class="">
+                                <input type="checkbox" name="cityId[]" value="35" lay-filter="cityId" lay-skin="primary"
+                                       title="台湾" class="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yty_tdleft">海外地区:</td>
+                        <td class="yty_tdright">
+                            <div class="layui-form">
+                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
+                                <input type="checkbox" name="cityId[]" value="36" lay-filter="cityId" lay-skin="primary"
+                                       title="海外" class="">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="layui-form-item layer-form-footer">
+                    <div class="footer-inner">
+                        <button type="submit" lay-submit="" lay-filter="formRule"
+                                class="layui-btn layui-btn-normal submit layui-btn-sm btn-embossed">{:__('OK')}
+                        </button>
+                        <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">
+                            {:__('Reset')}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------获取省份弹出end---------------------->
+
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12 webody body-overflow">
+            <div class="layui-card main-table">
+                <!--<div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>订单查询</div>-->
+                <div class="layui-card-body layui-card-body-padding">
+                    <!----------------------------------表格查询条件begin------------------------------->
+                    <div class="searchbody">
+                        <form class="layui-form" method="post" action="" tableid="tableReload" id="search_form" lay-filter="search_form">
+                            <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
+                                <colgroup>
+                                    <col class="yty_tdright" width="100px">
+                                    <col class="yty_tdright">
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td class="yty_tdleft">订单编号 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="text" name="order_number" id="order_number" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        手机号码：
+                                        <input type="mobile" name="mobile" id="mobile" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        买家昵称：
+                                        <input type="text" name="buyerName" id="buyerName" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft">评价类型 :</td>
+                                    <td class="yty_tdright">
+                                        <div class="layui-form yty-checkbox-all">
+                                            <input type="radio" lay-skin="primary" name="appraiseType" checked value="0" class="all" title="全部"  lay-filter="check_all">
+                                            <input type="radio" lay-skin="primary" name="appraiseType" value="1" title="中评">
+                                            <input type="radio" lay-skin="primary" name="appraiseType" value="2" title="差评">
+                                            <input type="radio" lay-skin="primary" name="appraiseType" value="3" title="已改好评">
+                                            <input type="radio" lay-skin="primary" name="appraiseType" value="3" title="已删中差评">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft">快速筛选 :</td>
+                                    <td class="yty_tdright">
+                                        <div class="layui-form yty-checkbox-all">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" checked value="0" title="180天" class="all"  lay-filter="check_all">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="1" title="30天内"  lay-filter="check_all">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="2" title="今天新增"  lay-filter="check_all">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="3" title="近3天新增"  lay-filter="check_all">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="4" title="1天后过期"  lay-filter="check_all">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="5" title="3天后过期"  lay-filter="check_all">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="6" title="已过期"  lay-filter="check_all">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft">评价时间 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="text" name="appraise_time_start" id="appraise_time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="appraise_time_end" id="appraise_time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <!-----------------------------------表格查询条件end--------------------------------->
+
+                    <!-----------------------------------------------订单查询结果begin----------------------->
+                    <table class="layui-hide" id="order_data_list"  lay-filter="order_data_list" table-reload-id="tableReload"></table>
+                    <!----------------------------------------------订单查询结果end-------------------------->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--头工具栏-->
+<!--{:build_toolbar('toolbar',['refresh'])}-->
+
+<!------------------------表格头工具栏begin------------------------->
+<script type="text/html" id="toolbar">
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="sendSms"><i class="fa fa-envelope-o"></i> 发送短信</a>
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="sendSearchResultSms"><i class="fa fa-envelope-o"></i> 按查询结果发送</a>
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="addOrder"><i class="fa fa-plus"></i> 添加订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="importOrder"><i class="fa fa-file-text-o"></i> 导入苏宁订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="exportOrder"><i class="fa fa-file-o"></i> 导出苏宁订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="toBlack"><i class="fa fa-hand-o-down"></i> 拉黑</a>
+</script>
+<!-------------------------表格头工具栏end---------------------------->
+
+
+
+<!---------------------------订单状态begin-------------------------->
+<script type="text/html" id="order_status">
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="成功|失败" lay-filter="order_status" {{ d.status == 1 ? 'checked' : '' }}>
+</script>
+<!---------------------------订单状态end-------------------------->
+
+{/block}
+
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we',
+        version:true,
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch','formEvent'], function(){
+        var admin = layui.admin
+            ,element = layui.element
+            ,table = layui.table
+            ,layer = layui.layer
+            ,we = layui.we
+            ,$  = layui.$
+            ,laydate = layui.laydate
+            ,form = layui.form
+            ,upload = layui.upload
+            ,formSearch = layui.formSearch
+            ,weTable = layui.weTable
+            ,formEvent = layui.formEvent
+            ,toastr = layui.toastr;
+
+        /*********************表格初始化begin**************************/
+        var tableCommon = {
+            elem: '#order_data_list'
+            ,formId:'search_form'
+            ,url:"{:url('Admin/user.user/index')}"    //对接后台读取数据列表方法
+            ,id : 'tableReload'
+            ,skin:'line'
+            ,limit:10
+            ,defaultToolbar: ['']
+            ,toolbar : '#toolbar'
+            ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
+            ,search: false
+            ,cols: [[
+                {type:'checkbox', fixed: 'left',hide:true}
+                ,{field:'buyer_name', title: '买家昵称',minWidth:150,searchList:{type:'input',operate:'LIKE'}}
+                ,{field:'consignee_name', title: '收货人姓名',minWidth:150}
+                ,{field:'order_status', title: '订单状态',templet: '#order_status', sort: true,minWidth:100}
+                ,{field:'order_source', title: '订单来源', sort: true,minWidth:150}
+                ,{field:'consignee_city', title: '收货人所在城市',minWidth:150}
+                ,{field:'mobile', title: '手机号码',minWidth:100}
+                ,{field:'order_number', title: '订单编号',minWidth:150}
+                ,{field:'pay_money', title: '付款金额（元）',minWidth:100}
+                ,{field:'order_time', title: '下单时间',minWidth:100}
+                ,{field:'commodity', title: '购买的宝贝',minWidth:150}
+            ]]
+            ,page: {
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                ,first: false //不显示首页
+                ,last: false //不显示尾页
+
+            }
+            ,done: function(res, curr, count){
+                if(res.status == 'success') {
+                    layer.closeAll();
+                }
+            }
+        };
+        table.render(tableCommon); //数据表格初始化
+        /*********************表格初始化end**************************/
+
+        /*********************导入订单begin**************************/
+        var demoListView = $('#demoList');
+        var uploadListIns = upload.render({
+            elem: '#upload'
+            ,url: "{:url('Admin/Order/upload')}" //对接后台读上传文件方法
+            ,done: function(res, index, upload){ //上传后的回调
+
+            }
+            ,progress: function(e , percent) {
+                element.progress('progressBar',percent  + '%');
+            }
+            ,accept: 'file' //允许上传的文件类型
+            ,size: 50*1024*1024 //最大允许上传的文件大小
+            ,auto:false
+            ,multiple: true
+            ,bindAction: '#testListAction'
+            ,choose: function(obj){
+                var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                //读取本地文件
+                obj.preview(function(index, file, result){
+                    var tr = $(['<tr id="upload-'+ index +'">'
+                        ,'<td>'+ file.name +'</td>'
+                        ,'<td>'+ we.format_bytes(file.size,'') +'</td>'
+                        ,'<td>等待上传</td>'
+                        ,'<td>'
+                        ,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
+                        ,'<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+                        ,'</td>'
+                        ,'</tr>'].join(''));
+
+                    //单个重传
+                    tr.find('.demo-reload').on('click', function(){
+                        obj.upload(index, file);
+                    });
+
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                        uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+                    });
+
+                    demoListView.append(tr);
+                    element.progress('progressBar', '0%');
+                    $("#progressBar").show();
+                    $(".upload-btn").removeClass('layui-btn-disabled');
+                });
+            }
+            ,done: function(res, index, upload){
+                console.log(res);
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+                if(res.status == 'success'){ //上传成功
+                    tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                    return delete this.files[index]; //删除文件队列已经上传成功的文件
+                } else {
+                    tds.eq(2).html('<span style="color: #FF5722;">'+res.msg+'</span>');
+                }
+                this.error(index, upload);
+            }
+            ,error: function(index, upload){
+                element.progress('progressBar', '0%');
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+//                tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+                tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+            }
+        });
+        /*********************导入订单end**************************/
+
+        /**
+         * 时间初始化
+         * */
+        laydate.render({
+            elem: '#appraise_time_start'
+            ,type: 'datetime'
+        });
+        laydate.render({
+            elem: '#appraise_time_end'
+            ,type: 'datetime'
+        });
+
+        /**
+         * 订单状态切换触发事件
+         * */
+        form.on('switch(order_status)', function(obj){
+            console.log(obj);
+//            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+        });
+
+        /**
+         * 绑定监听事件
+         * */
+        formSearch.api.searchForm($("form#search_form"));
+
+        /**
+         * 屏蔽标旗点击切换
+         */
+        $("body").on("click","ul li",function (){
+            if($(this).hasClass('checkbox-active')) {
+                $(this).removeClass('checkbox-active');
+            } else {
+                $(this).addClass('checkbox-active')
+            }
+        });
+
+        /**
+         * 省份点击弹窗
+         */
+        $("body").on("click","#areaId",function (){
+            we.api.open_current_page_layer($(".layer-form"),'选择所在省份',{
+            },['80%' , '*']);
+            var areaId = [];
+            var areaIdCh = []
+            //选中省份
+            $("body").on("click",".submit",function (){
+                $(".body-form input[type=checkbox]").each(function (index,value) {
+                    if($(this).is(':checked') && $(this).val() != 'on') {
+                        areaId.push($(this).val());
+                        areaIdCh.push($(this).attr('title'));
+                    }
+                })
+                $("#areaId").val(areaIdCh.join(','));
+                $("#areaIdH").val(areaId.join(','));
+                layer.closeAll();
+            });
+            /**
+             * 重置
+             * */
+            $("body").on("click",".reset",function (){
+                layer.closeAll();
+            });
+        })
+
+        /**
+         *省份全选、反选
+         */
+        form.on('radio(check_all)', function(data){
+            var value = data.value;
+            if(value == 'all') {
+                $(".location_address_layer").find("input[type=checkbox]").prop('checked', true);
+                $(".location_address_layer").find(".layui-form-checkbox").addClass('layui-form-checked');
+            } else {
+                $(".location_address_layer").find("input[type=checkbox]").prop('checked', false);
+                $(".location_address_layer").find(".layui-form-checkbox").removeClass('layui-form-checked');
+            }
+        });
+
+        /**
+         * 地区点击选中、评价状态、订单类型全选、非全选状态
+         */
+        formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox, .yty-checkbox-all .layui-form-checkbox");
+
+
+        /**
+         * 评价状态、订单类型全选、非全选状态
+         */
+        /*form.on('checkbox(check_all)', function(data){
+            var value = data.value;
+            if(value == 'ALL') {
+                if (data.elem.checked) {
+                    $(this).parent(".layui-form").children('input').prop('checked', true);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').addClass('layui-form-checked');
+                } else {
+                    $(this).parent(".layui-form").children('input').prop('checked', false);
+                    $(this).parent(".layui-form").children('.layui-form-checkbox').removeClass('layui-form-checked');
+                }
+            }
+        });*/
+
+
+        /**
+         * 表格表头工具栏事件
+         */
+        table.on('toolbar(order_data_list)', function(obj){
+            var layEvent = obj.event;
+            var checkStatus = table.checkStatus(obj.config.id);
+            //console.log(checkStatus.data);
+            //获取订单id
+            var order_id = [];
+            $.each(checkStatus.data,function (index, value) {
+                order_id.push(value.id);
+            })
+            //console.log(order_id);
+            switch(layEvent){
+                //点击查询
+                case 'search':
+                    layui.table.reload("tableReload"
+                        ,{
+                            page: {
+                                curr: 1
+                            }
+                            ,where: {filter:JSON.stringify(formSearch.api.getFormJson("form#search_form"))},
+                        }
+                    );
+                    break;
+                //发送短信
+                case 'sendSms':
+                    we.tips("<li><a href='#'>发送短信！！！！！</a></li>");
+                    break;
+                //按查询结果发送
+                case 'sendSearchResultSms':
+                    we.tips("<li><a href='#'>按查询结果发送！！！！！</a></li>");
+                    break;
+                //添加订单
+                case 'addOrder':
+                    we.tips("<li><a href='#'>添加订单！！！！！</a></li>");
+                    break;
+                //导入苏宁订单
+                case 'importOrder':
+                    we.api.open("{:url('admin/order/import','',false)}",'导入苏宁订单');
+                    we.tips("<li><a href='#'>导入苏宁订单！！！！！</a></li>");
+                    break;
+                //导出苏宁订单
+                case 'exportOrder':
+                    we.tips("<li><a href='#'>导出苏宁订单！！！！！</a></li>");
+                    break;
+                //拉黑
+                case 'toBlack':
+                    we.tips("<li><a href='#'>拉黑！！！！！</a></li>");
+                    break;
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>
+{/block}
