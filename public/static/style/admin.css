@@ -1694,7 +1694,7 @@ body .layui-layer-we{
 
 tr>td.tdleft {
     text-align: right;
-    background-color: #EEEEEE;
+    /*background-color: #EEEEEE;*/
     font-size: 14px !important;
     /*display: table-cell;*/
 }
