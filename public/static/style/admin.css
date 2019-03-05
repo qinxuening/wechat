@@ -2812,3 +2812,7 @@ input:focus, select:focus{
 .marginlef10{
     margin-left: 10px;
 }
+
+.layui-form-radioed,.layui-form-checked span{
+    color: #506def !important;
+}

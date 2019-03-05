@@ -449,9 +449,11 @@
             }else if(data == 3) {
                 appraise_time_start = we.addDate(nowDate,-3) + ' 00:00:00';
             }else if(data == 4) {
-                appraise_time_end  = we.addDate(nowDate,1) + ' 00:00:00';
+                appraise_time_start = nowDate + ' 00:00:00';
+                appraise_time_end  = we.addDate(nowDate,1) + ' 23:59:59';
             }else if(data == 5) {
-                appraise_time_end = we.addDate(nowDate,3) + ' 00:00:00';
+                appraise_time_start = nowDate + ' 00:00:00';
+                appraise_time_end  = we.addDate(nowDate,3) + ' 23:59:59';
             }
 
             laydate.render({
