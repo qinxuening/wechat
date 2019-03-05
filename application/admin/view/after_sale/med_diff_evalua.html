@@ -213,9 +213,9 @@
                                     <td class="yty_tdleft">评价类型 :</td>
                                     <td class="yty_tdright">
                                         <div class="layui-form yty-checkbox-all">
-                                            <input type="radio" lay-skin="primary" name="appraiseType" checked value="0" class="all" title="全部"  lay-filter="check_all">
+                                            <input type="radio" lay-skin="primary" name="appraiseType" value="0" class="all" title="全部"  lay-filter="check_all">
                                             <input type="radio" lay-skin="primary" name="appraiseType" value="1" title="中评">
-                                            <input type="radio" lay-skin="primary" name="appraiseType" value="2" title="差评">
+                                            <input type="radio" lay-skin="primary" name="appraiseType" checked value="2" title="差评">
                                             <input type="radio" lay-skin="primary" name="appraiseType" value="3" title="已改好评">
                                             <input type="radio" lay-skin="primary" name="appraiseType" value="3" title="已删中差评">
                                         </div>
@@ -225,13 +225,13 @@
                                     <td class="yty_tdleft">快速筛选 :</td>
                                     <td class="yty_tdright">
                                         <div class="layui-form yty-checkbox-all">
-                                            <input type="radio" lay-skin="primary" name="evaluationStatus" checked value="0" title="180天" class="all"  lay-filter="check_all">
-                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="1" title="30天内"  lay-filter="check_all">
-                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="2" title="今天新增"  lay-filter="check_all">
-                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="3" title="近3天新增"  lay-filter="check_all">
-                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="4" title="1天后过期"  lay-filter="check_all">
-                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="5" title="3天后过期"  lay-filter="check_all">
-                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="6" title="已过期"  lay-filter="check_all">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="0" title="180天" class="all"  lay-filter="evaluationStatus">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="1" checked title="30天内"  lay-filter="evaluationStatus">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="2" title="今天新增"  lay-filter="evaluationStatus">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="3" title="近3天新增"  lay-filter="evaluationStatus">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="4" title="1天后过期"  lay-filter="evaluationStatus">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="5" title="3天后过期"  lay-filter="evaluationStatus">
+                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="6" title="已过期"  lay-filter="evaluationStatus">
                                         </div>
                                     </td>
                                 </tr>
@@ -302,7 +302,10 @@
             ,formSearch = layui.formSearch
             ,weTable = layui.weTable
             ,formEvent = layui.formEvent
-            ,toastr = layui.toastr;
+            ,toastr = layui.toastr
+            , myDate = new Date()
+            ,nowDate = we.addDate(myDate.getFullYear() + '-' + (myDate.getMonth()+1) + '-' +  myDate.getDate())//当前日期
+        ;
 
         /*********************表格初始化begin**************************/
         var tableCommon = {
@@ -420,18 +423,49 @@
         laydate.render({
             elem: '#appraise_time_start'
             ,type: 'datetime'
+            ,value: we.addDate(nowDate,-30) + ' 00:00:00'
         });
         laydate.render({
             elem: '#appraise_time_end'
             ,type: 'datetime'
+            ,value:nowDate + ' 23:59:59'
         });
 
         /**
-         * 订单状态切换触发事件
+         *快速筛选点击选项
+         * 已过期、已备注日期区间未定？？？？？？
          * */
-        form.on('switch(order_status)', function(obj){
-            console.log(obj);
-//            layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+        form.on('radio(evaluationStatus)', function(obj){
+            var appraise_time_start =  we.addDate(nowDate,-30) + ' 00:00:00';
+            var appraise_time_end = nowDate + ' 23:59:59';
+//            console.log(this.value);
+            var data = this.value
+            if(data == 0) {
+                appraise_time_start =  we.addDate(nowDate,-180) + ' 00:00:00';
+            } else if(data == 1) {
+                appraise_time_start =  we.addDate(nowDate,-30) + ' 00:00:00';
+            }else if(data == 2) {
+                appraise_time_start = nowDate + ' 00:00:00';
+            }else if(data == 3) {
+                appraise_time_start = we.addDate(nowDate,-3) + ' 00:00:00';
+            }else if(data == 4) {
+                appraise_time_end  = we.addDate(nowDate,1) + ' 00:00:00';
+            }else if(data == 5) {
+                appraise_time_end = we.addDate(nowDate,3) + ' 00:00:00';
+            }
+
+            laydate.render({
+                elem: '#appraise_time_start'
+                ,type: 'datetime'
+                ,value: appraise_time_start
+                ,isInitValue:true
+            });
+            laydate.render({
+                elem: '#appraise_time_end'
+                ,type: 'datetime'
+                ,value:appraise_time_end
+                ,isInitValue:true
+            });
         });
 
         /**

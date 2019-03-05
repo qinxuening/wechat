@@ -313,6 +313,30 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
             } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
                 obj.selectionStart = obj.selectionEnd = len;
             }
+        },
+
+        addDate:function (date, days) {
+            if (days == undefined || days == '') {
+                days = 1;
+            }
+            var date = new Date(date);
+            date.setDate(date.getDate() + days);
+            var month = date.getMonth() + 1;
+            //要注意的是返回的月份是从0开始计算的，也就是说返回的月份要比实际月份少一个月，因此要相应的加上1。
+            var day = date.getDate();
+            return date.getFullYear() + '-' + we.getFormatDate(month) + '-' + we.getFormatDate(day);
+        },
+
+        // 日期月份/天的显示，如果是1位数，则在前面加上'0'
+        getFormatDate:function (arg) {
+            if (arg == undefined || arg == '') {
+                return '';
+            }
+            var re = arg + '';
+            if (re.length < 2) {
+                re = '0' + re;
+            }
+            return re;
         }
     };
     we.init();
