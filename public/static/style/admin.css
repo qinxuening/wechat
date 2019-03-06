@@ -2820,3 +2820,7 @@ input:focus, select:focus{
 .layui-form-radioed,.layui-form-checked span{
     color: #506def !important;
 }
+
+.width150{
+    width: 150px !important;
+}

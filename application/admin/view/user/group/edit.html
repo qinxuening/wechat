@@ -33,7 +33,7 @@
                     <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近半年" title="近半年">
                     <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="自定义" title="自定义">
                     <span class="customize_trade_time" style="display: none">
-                         <input type="text" name="trade_time_start" id="trade_time_start" placeholder="" autocomplete="off" class="layui-input"> — <input type="text" name="trade_time_end" id="trade_time_end" placeholder="" autocomplete="off" class="layui-input input-margin">
+                         <input type="text" name="trade_time_start" id="trade_time_start" placeholder="" autocomplete="off" class="layui-input width150"> — <input type="text" name="trade_time_end" id="trade_time_end" placeholder="" autocomplete="off" class="layui-input input-margin width150">
                     </span>
                 </td>
             </tr>
@@ -47,7 +47,7 @@
                     <input type="radio" name="trade_counts" lay-filter="trade_counts" value="3次及以上" title="3次及以上">
                     <input type="radio" name="trade_counts" lay-filter="trade_counts" value="自定义" title="自定义">
                     <span class="customize_trade_counts" style="display: none">
-                         <input type="number" name="trade_counts_start" id="trade_counts_start" placeholder="" autocomplete="off" class="layui-input"> — <input type="number" name="trade_counts_end" id="trade_counts_end" placeholder="" autocomplete="off" class="layui-input input-margin">
+                         <input type="number" name="trade_counts_start" id="trade_counts_start" placeholder="" autocomplete="off" class="layui-input width150"> — <input type="number" name="trade_counts_end" id="trade_counts_end" placeholder="" autocomplete="off" class="layui-input input-margin width150">
                     </span>
                 </td>
             </tr>
@@ -61,7 +61,7 @@
                     <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="300元以上" title="300元以上">
                     <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="自定义" title="自定义">
                     <span class="customize_total_money" style="display: none">
-                         <input type="number" name="total_money_start" id="total_money_start" placeholder="" autocomplete="off" class="layui-input"> — <input type="number" name="total_money_end" id="total_money_end" placeholder="" autocomplete="off" class="layui-input input-margin">
+                         <input type="number" name="total_money_start" id="total_money_start" placeholder="" autocomplete="off" class="layui-input width150"> — <input type="number" name="total_money_end" id="total_money_end" placeholder="" autocomplete="off" class="layui-input input-margin width150">
                     </span>
                 </td>
             </tr>
@@ -75,7 +75,7 @@
                     <input type="radio" name="avg_price" lay-filter="avg_price" value="300元以上" title="300元以上">
                     <input type="radio" name="avg_price" lay-filter="avg_price" value="自定义" title="自定义">
                     <span class="customize_avg_price" style="display: none">
-                         <input type="number" name="avg_price_start" id="avg_price_start" placeholder="" autocomplete="off" class="layui-input"> — <input type="number" name="avg_price_end" id="avg_price_end" placeholder="" autocomplete="off" class="layui-input input-margin">
+                         <input type="number" name="avg_price_start" id="avg_price_start" placeholder="" autocomplete="off" class="layui-input width150"> — <input type="number" name="avg_price_end" id="avg_price_end" placeholder="" autocomplete="off" class="layui-input input-margin width150">
                     </span>
                 </td>
             </tr>
@@ -103,7 +103,7 @@
                 <td class="tdleft"> 地区筛选 :</td>
                 <td class="tdright">
                     <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="0"  title="默认全部" checked>
-                    <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="1"  title="自定义">
+                    <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="自定义"  title="自定义">
                     <input type="hidden" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
                     <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
                 </td>
@@ -156,6 +156,26 @@
             ,table = layui.table
             ,layer = layui.layer
             ,we = layui.we;
+
+        /**
+         * 自定义点击
+         */
+        $('input[type=radio]').each(function(index, value){
+            var lay_filter = $(this).attr('lay-filter');
+            form.on('radio('+lay_filter+')', function(data){
+                console.log(data.value);
+                var othis = data.othis;
+                if(data.value == '自定义'){
+                    othis.siblings().last().show();
+                }else(
+                    othis.siblings().last().hide()
+//                    othis.siblings().last().children().find('input').val('')
+                )
+            });
+        });
+
+
+
     });
 </script>
 </body>
