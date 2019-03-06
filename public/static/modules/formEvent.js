@@ -65,6 +65,25 @@ layui.define(['jquery','form'], function(exports){
                 });
             },
 
+            /**
+             * 点击自定义单选框显示隐藏初始化
+             */
+            customize_radio:function (obj) {
+                $('input[type=radio]').each(function(index, value){
+                    var lay_filter = $(this).attr('lay-filter');
+                    form.on('radio('+lay_filter+')', function(data){
+                        console.log(data.value);
+                        var othis = data.othis;
+                        if(data.value == '自定义'){
+                            othis.siblings().last().show();
+                        }else{
+                            othis.siblings().last().hide();
+                            othis.siblings().last().children('input').val('');
+                        }
+                    });
+                });
+            } 
+
         }
     }
     exports('formEvent', formEvent);

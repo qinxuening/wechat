@@ -149,31 +149,19 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['jquery','index','form','element','layer','we'], function(){
+    }).use(['jquery','index','form','element','layer','we','formEvent'], function(){
         var admin = layui.admin
             ,$ = layui.$ //重点处
             ,form = layui.form
             ,table = layui.table
             ,layer = layui.layer
+            ,formEvent = layui.formEvent
             ,we = layui.we;
 
         /**
-         * 自定义点击
+         * 点击自定义单选框显示隐藏
          */
-        $('input[type=radio]').each(function(index, value){
-            var lay_filter = $(this).attr('lay-filter');
-            form.on('radio('+lay_filter+')', function(data){
-                console.log(data.value);
-                var othis = data.othis;
-                if(data.value == '自定义'){
-                    othis.siblings().last().show();
-                }else{
-                    othis.siblings().last().hide();
-                    othis.siblings().last().children('input').val('');
-                }
-            });
-        });
-
+        formEvent.api.customize_radio()
 
 
     });

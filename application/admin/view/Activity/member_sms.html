@@ -546,7 +546,7 @@
                                         <input type="radio" name="fitler_date" lay-filter="fitler_date" value="1" title="近3天">
                                         <input type="radio" name="fitler_date" lay-filter="fitler_date" value="2" title="近7天">
                                         <input type="radio" name="fitler_date" lay-filter="fitler_date" value="3" title="近15天">
-                                        <input type="radio" name="fitler_date" lay-filter="fitler_date" value="4" title="自定义">
+                                        <input type="radio" name="fitler_date" lay-filter="fitler_date" value="自定义" title="自定义">
                                         <span class="customize_fitler_date" style="display: none">
                                             近 <input type="number" name="customize_fitler_date" id="customize_fitler_date" placeholder="" autocomplete="off" class="layui-input"> 天
                                         </span>
@@ -656,7 +656,7 @@
                                         <td class="yty_tdleft"> 发送人数 :</td>
                                         <td class="yty_tdright">
                                             <input type="radio" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="0"  title="全部" checked>
-                                            <input type="radio" class="customize" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="1"  title="部分">
+                                            <input type="radio" class="customize" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="自定义"  title="自定义">
                                             <span class="customize_send_limit_type" style="display: none">
                                         <input type="text" name="part_people" id="part_people" value="0" placeholder="" autocomplete="off" class="layui-input">
                                     </span>
@@ -666,10 +666,10 @@
                                         <td class="yty_tdleft"> 发送时间 :</td>
                                         <td class="yty_tdright">
                                             <input type="radio" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="0"  title="立即发送" checked>
-                                            <input type="radio" class="customize" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="1"  title="定时发送">
+                                            <input type="radio" class="customize" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="自定义 "  title="自定义">
                                             <span class="customize_send_time_type" style="display: none">
-                                        <input type="text" name="timing" id="timing"  placeholder="" autocomplete="off" class="layui-input">
-                                    </span>
+                                                <input type="text" name="timing" id="timing"  placeholder="" autocomplete="off" class="layui-input">
+                                            </span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1427,81 +1427,9 @@
 //        }
 
         /**
-         * 最近交易时间事件监听
-         * */
-        form.on('radio(recent_trading_time)', function(data){
-            if(data.value == '自定义'){
-                $(".customize_trade_time").show()
-            }else(
-                $(".customize_trade_time").hide()
-            )
-        });
-
-        /**
-         * 交易次数事件监听
-         * */
-        form.on('radio(trade_counts)', function(data){
-            if(data.value == '自定义'){
-                $(".customize_trade_counts").show()
-            }else(
-                $(".customize_trade_counts").hide()
-            )
-        });
-
-        /**
-         * 交易次数事件监听
-         * */
-        form.on('radio(buy_total_money)', function(data){
-            if(data.value == '自定义'){
-                $(".customize_total_money").show()
-            }else(
-                $(".customize_total_money").hide()
-            )
-        });
-
-        /**
-         * 平均客单价事件监听
-         * */
-        form.on('radio(avg_price)', function(data){
-            if(data.value == '自定义'){
-                $(".customize_avg_price").show()
-            }else(
-                $(".customize_avg_price").hide()
-            )
-        });
-
-        /**
-         * 发送人数事件监听
-         * */
-        form.on('radio(send_limit_type)', function(data){
-            if(data.value == '1'){
-                $(".customize_send_limit_type").show()
-            }else(
-                $(".customize_send_limit_type").hide()
-            )
-        });
-
-        /**
-         * 发送人数事件监听
-         * */
-        form.on('radio(send_time_type)', function(data){
-            if(data.value == '1'){
-                $(".customize_send_time_type").show()
-            }else(
-                $(".customize_send_time_type").hide()
-            )
-        });
-
-        /**
-         * 已发短信过滤事件监听
-         * */
-        form.on('radio(fitler_date)', function(data){
-            if(data.value == 4){
-                $(".customize_fitler_date").show()
-            }else(
-                $(".customize_fitler_date").hide()
-            )
-        });
+         * 点击自定义单选框显示隐藏
+         */
+        formEvent.api.customize_radio()
 
         /**
          * 会员等级、订单来源
