@@ -241,6 +241,16 @@
                                         <input type="text" name="appraise_time_start" id="appraise_time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="appraise_time_end" id="appraise_time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td class="yty_tdleft">处理结果 :</td>
+                                    <td class="yty_tdright">
+                                        <div class="layui-form yty-checkbox-all">
+                                            <input type="radio" lay-skin="primary" name="processingMethod" value="0" checked title="不限" class="all"  lay-filter="processingMethod">
+                                            <input type="radio" lay-skin="primary" name="processingMethod" value="1" title="短信发送安抚" class="all"  lay-filter="processingMethod">
+                                            <input type="radio" lay-skin="primary" name="processingMethod" value="2" title="拉入黑名单" class="all"  lay-filter="processingMethod">
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </form>
@@ -263,10 +273,8 @@
 <script type="text/html" id="toolbar">
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>
     <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="sendSms"><i class="fa fa-envelope-o"></i> 发送短信</a>
-    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="sendSearchResultSms"><i class="fa fa-envelope-o"></i> 按查询结果发送</a>
-    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="addOrder"><i class="fa fa-plus"></i> 添加订单</a>
-    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="importOrder"><i class="fa fa-file-text-o"></i> 导入苏宁订单</a>
-    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="exportOrder"><i class="fa fa-file-o"></i> 导出苏宁订单</a>
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="update"><i class="fa fa-repeat" aria-hidden="true"></i> 更新数据</a>
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="exportOrder"><i class="fa fa-file-o"></i> 导出数据</a>
     <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="toBlack"><i class="fa fa-hand-o-down"></i> 拉黑</a>
 </script>
 <!-------------------------表格头工具栏end---------------------------->
@@ -320,7 +328,7 @@
             ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
             ,search: false
             ,cols: [[
-                {type:'checkbox', fixed: 'left',hide:true}
+                {type:'checkbox', fixed: 'left'}
                 ,{field:'buyer_name', title: '买家昵称',minWidth:150,searchList:{type:'input',operate:'LIKE'}}
                 ,{field:'consignee_name', title: '收货人姓名',minWidth:150}
                 ,{field:'order_status', title: '订单状态',templet: '#order_status', sort: true,minWidth:100}
