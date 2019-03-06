@@ -167,10 +167,10 @@
                 var othis = data.othis;
                 if(data.value == '自定义'){
                     othis.siblings().last().show();
-                }else(
-                    othis.siblings().last().hide()
-//                    othis.siblings().last().children().find('input').val('')
-                )
+                }else{
+                    othis.siblings().last().hide();
+                    othis.siblings().last().children('input').val('');
+                }
             });
         });
 
