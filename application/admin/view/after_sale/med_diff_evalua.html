@@ -330,15 +330,14 @@
             ,cols: [[
                 {type:'checkbox', fixed: 'left'}
                 ,{field:'buyer_name', title: '买家昵称',minWidth:150,searchList:{type:'input',operate:'LIKE'}}
-                ,{field:'consignee_name', title: '收货人姓名',minWidth:150}
-                ,{field:'order_status', title: '订单状态',templet: '#order_status', sort: true,minWidth:100}
-                ,{field:'order_source', title: '订单来源', sort: true,minWidth:150}
-                ,{field:'consignee_city', title: '收货人所在城市',minWidth:150}
-                ,{field:'mobile', title: '手机号码',minWidth:100}
                 ,{field:'order_number', title: '订单编号',minWidth:150}
-                ,{field:'pay_money', title: '付款金额（元）',minWidth:100}
-                ,{field:'order_time', title: '下单时间',minWidth:100}
-                ,{field:'commodity', title: '购买的宝贝',minWidth:150}
+                ,{field:'score', title: '评分',minWidth:150}
+                ,{field:'evaluator', title: '评价人',minWidth:150}
+                ,{field:'mobile', title: '手机号码',minWidth:100}
+                ,{field:'comment_content', title: '评价内容',minWidth:100}
+                ,{field:'goods_info', title: '宝贝信息',minWidth:100}
+                ,{field:'remarks', title: '备注',minWidth:150}
+                ,{fixed: 'right', title:"操作", toolbar: '#actionbar', width:220}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
@@ -589,21 +588,12 @@
                     we.tips("<li><a href='#'>发送短信！！！！！</a></li>");
                     break;
                 //按查询结果发送
-                case 'sendSearchResultSms':
-                    we.tips("<li><a href='#'>按查询结果发送！！！！！</a></li>");
-                    break;
-                //添加订单
-                case 'addOrder':
-                    we.tips("<li><a href='#'>添加订单！！！！！</a></li>");
-                    break;
-                //导入苏宁订单
-                case 'importOrder':
-                    we.api.open("{:url('admin/order/import','',false)}",'导入苏宁订单');
-                    we.tips("<li><a href='#'>导入苏宁订单！！！！！</a></li>");
+                case 'update':
+                    we.tips("<li><a href='#'>更新数据！！！！！</a></li>");
                     break;
                 //导出苏宁订单
                 case 'exportOrder':
-                    we.tips("<li><a href='#'>导出苏宁订单！！！！！</a></li>");
+                    we.tips("<li><a href='#'>导出数据！！！！！</a></li>");
                     break;
                 //拉黑
                 case 'toBlack':
