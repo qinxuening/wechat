@@ -123,7 +123,7 @@ html {
 }
 
 .layui-layout-admin .layui-header .layui-nav-child dd:hover,.layui-layout-admin .layui-header .layui-nav-child dd a:hover{
-    background-color: #009688 !important;
+    background-color: #506def !important;
     color:#ffffff;
 }
 .layui-layout-admin .layui-header .layui-layout-left li{
@@ -198,7 +198,7 @@ html {
     display: block;
 }
 .layui-layout-admin .layui-header .layui-nav .layui-dropdown ul li:hover,.layui-layout-admin .layui-header .layui-nav .layui-dropdown ul li a:hover{
-    background-color: #009688 !important;
+    background-color: #506def !important;
     color:#ffffff !important;
     border: none;
     border-radius: 4px;
@@ -892,7 +892,7 @@ html {
     font-style: normal;
     font-size: 30px;
     font-weight: 300;
-    color: #009688
+    color: #506def
 }
 
 .layadmin-backlog-body:hover {
@@ -973,7 +973,7 @@ html {
 }
 
 .layadmin-list li a:hover {
-    color: #009688
+    color: #506def
 }
 
 .layadmin-list li:last-child {
@@ -1015,7 +1015,7 @@ html {
 .layuiadmin-card-text .layui-text-top i {
     margin-right: 10px;
     font-size: 24px;
-    color: #009688
+    color: #506def
 }
 
 .layuiadmin-card-text .layui-text-top a {
@@ -1079,7 +1079,7 @@ html {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: #009688;
+    background-color: #506def;
     margin-right: 15px
 }
 
@@ -1122,7 +1122,7 @@ html {
 }
 
 .layuiadmin-card-link button:hover {
-    color: #009688
+    color: #506def
 }
 
 .layuiadmin-card-team li {
@@ -1446,14 +1446,14 @@ html {
     width: 500px;
     margin: 30px auto;
     padding-top: 20px;
-    border-top: 5px solid #009688;
+    border-top: 5px solid #506def;
     font-size: 16px
 }
 
 .layadmin-tips h1 {
     font-size: 100px;
     line-height: 100px;
-    color: #009688
+    color: #506def
 }
 
 .layadmin-tips .layui-text .layui-anim {
@@ -1546,7 +1546,7 @@ body .layui-layer-we .layui-layer-btn .layui-layer-btn1,.layui-layer-btn .layui-
 }
 
 .layui-btn-view {
-    background-color: #18bc9c;
+    background-color: #506def;
 }
 
 .layui-btn-danger {
@@ -1591,13 +1591,13 @@ body .layui-layer-we .layui-layer-setwin {
 }
 
 .layui-form-item.has-succes label {
-    color: #009688;
+    color: #506def;
 }
 
 .layui-form-item.has-succes input,
 .layui-form-item.has-succes select,
 .layui-form-item.has-succes textarea {
-    border-color: #009688;
+    border-color: #506def;
     box-shadow: none;
 }
 
@@ -1946,7 +1946,7 @@ tr>td.tdright .layui-textarea{
     /*font-weight: 600;*/
 }
 .st-blue {
-    background-color: #1faba8;
+    background-color: #506def;
 }
 
 .st-green {

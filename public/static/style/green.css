@@ -3,10 +3,10 @@
 }
 
 .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a {
-    background-color: #5FB878 !important;
+    background-color: #506def !important;
 }
 
 .layui-layout-admin .layui-logo {
-    background-color: #2F9688 !important;
+    background-color: #506def !important;
     z-index: 1002;
 }
