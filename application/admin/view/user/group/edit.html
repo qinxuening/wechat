@@ -149,13 +149,14 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['jquery','index','form','element','layer','we','formEvent'], function(){
+    }).use(['jquery','index','form','element','layer','we','formEvent','laydate'], function(){
         var admin = layui.admin
             ,$ = layui.$ //重点处
             ,form = layui.form
             ,table = layui.table
             ,layer = layui.layer
             ,formEvent = layui.formEvent
+            ,laydate = layui.laydate
             ,we = layui.we;
 
         /**
@@ -163,6 +164,18 @@
          */
         formEvent.api.customize_radio()
 
+        /**
+         *
+         * 时间初始化
+         * */
+        laydate.render({
+            elem: '#trade_time_start' //指定元素
+            ,type: 'datetime'
+        });
+        laydate.render({
+            elem: '#trade_time_end' //指定元素
+            ,type: 'datetime'
+        });
 
     });
 </script>

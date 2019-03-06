@@ -441,7 +441,7 @@
                                         <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近半年" title="近半年">
                                         <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="自定义" title="自定义">
                                         <span class="customize_trade_time" style="display: none">
-                                             <input type="text" name="trade_time_start" id="trade_time_start" placeholder="" autocomplete="off" class="layui-input"> — <input type="text" name="trade_time_end" id="trade_time_end" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                             <input type="text" name="trade_time_start" id="trade_time_start" placeholder="" autocomplete="off" class="layui-input date-init"> — <input type="text" name="trade_time_end" id="trade_time_end" placeholder="" autocomplete="off" class="layui-input input-margin date-init">
                                         </span>
                                     </td>
                                 </tr>
@@ -666,7 +666,7 @@
                                         <td class="yty_tdleft"> 发送时间 :</td>
                                         <td class="yty_tdright">
                                             <input type="radio" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="0"  title="立即发送" checked>
-                                            <input type="radio" class="customize" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="自定义 "  title="自定义">
+                                            <input type="radio" class="customize" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="自定义"  title="自定义">
                                             <span class="customize_send_time_type" style="display: none">
                                                 <input type="text" name="timing" id="timing"  placeholder="" autocomplete="off" class="layui-input">
                                             </span>
@@ -931,69 +931,17 @@
          * 时间初始化
          * */
         laydate.render({
-            elem: '#day_hour_start' //指定元素
-            ,type: 'time'
-            // ,format:'H'
-            ,value:'09:00:00'
-        });
-        laydate.render({
-            elem: '#day_hour_end' //指定元素
-            ,type: 'time'
-            // ,format:'H'
-            ,value:'21:00:00'
-        });
-
-        laydate.render({
-            elem: '#siesta_hour_start' //指定元素
-            ,type: 'time'
-            // ,format:'H'
-            ,value:'12:00:00'
-        });
-        laydate.render({
-            elem: '#siesta_hour_end' //指定元素
-            ,type: 'time'
-            // ,format:'H'
-            ,value:'13:00:00'
-        });
-        laydate.render({
             elem: '#trade_time_start' //指定元素
-            ,type: 'date'
-            // ,format:'H'
+            ,type: 'datetime'
         });
         laydate.render({
             elem: '#trade_time_end' //指定元素
-            ,type: 'date'
-            // ,format:'H'
-        });
-        laydate.render({
-            elem: '#task_time_start' //指定元素
-            ,type: 'date'
-            // ,format:'H'
-        });
-        laydate.render({
-            elem: '#task_time_end' //指定元素
-            ,type: 'date'
-            // ,format:'H'
+            ,type: 'datetime'
         });
         laydate.render({
             elem: '#timing' //指定元素
             ,type: 'datetime'
-            // ,format:'H'
         });
-        /**
-         *
-         * 发送时间事件切换
-         * */
-        form.on('radio(date_switch)', function(data){
-            // console.log(data.elem);
-            // console.log(data.value)
-            if(data.value == 0){
-                $(".task_time").show()
-            }else(
-                $(".task_time").hide()
-            )
-        });
-
 
         /**
          * 屏蔽标旗点击切换
@@ -1563,6 +1511,9 @@
         });
         /***********************************筛选步骤end**********************************/
 
+        /**
+         * 点击查询
+         */
         $("body").on("click",".search_form_btn",function (){
             var index = layer.load();
             var formData = {filter:JSON.stringify(formSearch.api.getFormJson("form#searchSmsMember"))};
