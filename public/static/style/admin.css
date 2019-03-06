@@ -2725,6 +2725,10 @@ input:focus, select:focus{
     margin-bottom: 5px !important;
 }
 
+.margin_buttom0{
+    margin-bottom: 0px !important;
+}
+
 .padding20_10{
     padding: 20px 10px;
 }
