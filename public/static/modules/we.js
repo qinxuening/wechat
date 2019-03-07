@@ -41,7 +41,8 @@ layui.define(['jquery', 'layer','toastr'], function(exports){
                 if(options.searchFlag != 'undefined' && options.searchFlag == true) {
                     layui.table.reload(tablereloadid
                         ,{
-                            where: options.data,
+                            where: options.data
+                            ,method:"post" //post方式传参
                          }
                     );
                     // return console.log(options);
