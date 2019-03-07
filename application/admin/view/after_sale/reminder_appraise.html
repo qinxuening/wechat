@@ -565,6 +565,7 @@
             var layEvent = obj.event;
             var checkStatus = table.checkStatus(obj.config.id);
             //console.log(checkStatus.data);
+            var data = checkStatus.data;
             //获取订单id
             var order_id = [];
             $.each(checkStatus.data,function (index, value) {
@@ -586,11 +587,16 @@
                     break;
                 //发送短信
                 case 'sendSms':
-                    we.tips("<li><a href='#'>发送短信！！！！！</a></li>");
+                    if(data != "") {
+                        we.tips("<li><a href='#'>发送短信！！！！！</a></li>");
+                    }else{
+                        toastr.warning('请先选择操作数据');
+                    }
                     break;
-                //按查询结果发送
+                //更新数据
                 case 'update':
-                    we.tips("<li><a href='#'>更新数据！！！！！</a></li>");
+//                    we.tips("<li><a href='#'>更新数据！！！！！</a></li>");
+                    update_index = layer.load(0, {shade: false});
                     break;
                 //导出苏宁订单
                 case 'exportOrder':
@@ -598,9 +604,18 @@
                     break;
                 //拉黑
                 case 'toBlack':
-                    we.tips("<li><a href='#'>拉黑！！！！！</a></li>");
+                    if(data != "") {
+                        we.tips("<li><a href='#'>拉黑！！！！！</a></li>");
+                    }else{
+                        toastr.warning('请先选择操作数据');
+                    }
                     break;
             }
+
+            setTimeout(function () {
+                layer.close(update_index);
+                toastr.success('更新完成');
+            },3000)
         });
 
     });
