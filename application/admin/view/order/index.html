@@ -1,187 +1,188 @@
 {extend name="layout/default" /}
 {block name="content"}
 <!--------------------------获取省份弹出begin-------------------->
-<div class="body-form layer-form" style="display: none">
-    <div class="layui-card main-table">
-        <div class="layui-card-body main-body">
-            <div class="layui-form location_address_layer">
-                <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm">
-                    <colgroup>
-                        <col class="yty_tdleft" width="30%">
-                        <col class="yty_tdright">
-                    </colgroup>
-                    <tbody>
-                    <tr>
-                        <td class="yty_tdleft"></td>
-                        <td colspan="2" class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="radio" name="check_all" lay-filter="check_all" class="check_all"
-                                       value="all" title="全选">
-                                <input type="radio" name="check_all" lay-filter="check_all" value="none"
-                                       class="check_all_none" title="反选">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="yty_tdleft">华东地区:</td>
-                        <td class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
-                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="1" lay-skin="primary"
-                                       title="上海" class="">
-                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="2" lay-skin="primary"
-                                       title="浙江" class="">
-                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="3" lay-skin="primary"
-                                       title="江苏" class="">
-                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="4" lay-skin="primary"
-                                       title="安徽" class="">
-                                <input type="checkbox" name="cityId[]" lay-filter="cityId" value="5" lay-skin="primary"
-                                       title="江西" class="">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="yty_tdleft">华北地区:</td>
-                        <td class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
-                                <input type="checkbox" name="cityId[]" value="6" lay-filter="cityId" lay-skin="primary"
-                                       title="北京" class="">
-                                <input type="checkbox" name="cityId[]" value="7" lay-filter="cityId" lay-skin="primary"
-                                       title="天津" class="">
-                                <input type="checkbox" name="cityId[]" value="8" lay-filter="cityId" lay-skin="primary"
-                                       title="安徽" class="">
-                                <input type="checkbox" name="cityId[]" value="9" lay-filter="cityId" lay-skin="primary"
-                                       title="山西" class="">
-                                <input type="checkbox" name="cityId[]" value="10" lay-filter="cityId" lay-skin="primary"
-                                       title="山东" class="">
-                                <input type="checkbox" name="cityId[]" value="11" lay-filter="cityId" lay-skin="primary"
-                                       title="内蒙古" class="">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="yty_tdleft">华中地区:</td>
-                        <td class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
-                                <input type="checkbox" name="cityId[]" value="12" lay-filter="cityId" lay-skin="primary"
-                                       title="湖北" class="">
-                                <input type="checkbox" name="cityId[]" value="13" lay-filter="cityId" lay-skin="primary"
-                                       title="湖南" class="">
-                                <input type="checkbox" name="cityId[]" value="14" lay-filter="cityId" lay-skin="primary"
-                                       title="河南" class="">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="yty_tdleft">华南地区:</td>
-                        <td class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
-                                <input type="checkbox" name="cityId[]" value="16" lay-filter="cityId" lay-skin="primary"
-                                       title="广东" class="">
-                                <input type="checkbox" name="cityId[]" value="17" lay-filter="cityId" lay-skin="primary"
-                                       title="广西" class="">
-                                <input type="checkbox" name="cityId[]" value="18" lay-filter="cityId" lay-skin="primary"
-                                       title="福建" class="">
-                                <input type="checkbox" name="cityId[]" value="19" lay-filter="cityId" lay-skin="primary"
-                                       title="海南" class="">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="yty_tdleft">东北地区:</td>
-                        <td class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
-                                <input type="checkbox" name="cityId[]" value="20" lay-filter="cityId" lay-skin="primary"
-                                       title="辽宁" class="">
-                                <input type="checkbox" name="cityId[]" value="21" lay-filter="cityId" lay-skin="primary"
-                                       title="吉林" class="">
-                                <input type="checkbox" name="cityId[]" value="22" lay-filter="cityId" lay-skin="primary"
-                                       title="黑龙江" class="">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="yty_tdleft">西北地区:</td>
-                        <td class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
-                                <input type="checkbox" name="cityId[]" value="23" lay-filter="cityId" lay-skin="primary"
-                                       title="陕西" class="">
-                                <input type="checkbox" name="cityId[]" value="24" lay-filter="cityId" lay-skin="primary"
-                                       title="新疆" class="">
-                                <input type="checkbox" name="cityId[]" value="25" lay-filter="cityId" lay-skin="primary"
-                                       title="青海" class="">
-                                <input type="checkbox" name="cityId[]" value="26" lay-filter="cityId" lay-skin="primary"
-                                       title="宁夏" class="">
-                                <input type="checkbox" name="cityId[]" value="27" lay-filter="cityId" lay-skin="primary"
-                                       title="甘肃" class="">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="yty_tdleft">西南地区:</td>
-                        <td class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
-                                <input type="checkbox" name="cityId[]" value="28" lay-filter="cityId" lay-skin="primary"
-                                       title="四川" class="">
-                                <input type="checkbox" name="cityId[]" value="29" lay-filter="cityId" lay-skin="primary"
-                                       title="云南" class="">
-                                <input type="checkbox" name="cityId[]" value="30" lay-filter="cityId" lay-skin="primary"
-                                       title="贵州" class="">
-                                <input type="checkbox" name="cityId[]" value="31" lay-filter="cityId" lay-skin="primary"
-                                       title="西藏" class="">
-                                <input type="checkbox" name="cityId[]" value="32" lay-filter="cityId" lay-skin="primary"
-                                       title="重庆" class="">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="yty_tdleft">港澳台地区:</td>
-                        <td class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
-                                <input type="checkbox" name="cityId[]" value="33" lay-filter="cityId" lay-skin="primary"
-                                       title="香港" class="">
-                                <input type="checkbox" name="cityId[]" value="34" lay-filter="cityId" lay-skin="primary"
-                                       title="澳门" class="">
-                                <input type="checkbox" name="cityId[]" value="35" lay-filter="cityId" lay-skin="primary"
-                                       title="台湾" class="">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="yty_tdleft">海外地区:</td>
-                        <td class="yty_tdright">
-                            <div class="layui-form">
-                                <input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">
-                                <input type="checkbox" name="cityId[]" value="36" lay-filter="cityId" lay-skin="primary"
-                                       title="海外" class="">
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+<!--<div class="body-form layer-form" style="display: none">-->
+    <!--<div class="layui-card main-table">-->
+        <!--<div class="layui-card-body main-body">-->
+            <!--<div class="layui-form location_address_layer">-->
+                <!--<table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm">-->
+                    <!--<colgroup>-->
+                        <!--<col class="yty_tdleft" width="30%">-->
+                        <!--<col class="yty_tdright">-->
+                    <!--</colgroup>-->
+                    <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft"></td>-->
+                        <!--<td colspan="2" class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="radio" name="check_all" lay-filter="check_all" class="check_all"-->
+                                       <!--value="all" title="全选">-->
+                                <!--<input type="radio" name="check_all" lay-filter="check_all" value="none"-->
+                                       <!--class="check_all_none" title="反选">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft">华东地区:</td>-->
+                        <!--<td class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">-->
+                                <!--<input type="checkbox" name="cityId[]" lay-filter="cityId" value="1" lay-skin="primary"-->
+                                       <!--title="上海" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" lay-filter="cityId" value="2" lay-skin="primary"-->
+                                       <!--title="浙江" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" lay-filter="cityId" value="3" lay-skin="primary"-->
+                                       <!--title="江苏" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" lay-filter="cityId" value="4" lay-skin="primary"-->
+                                       <!--title="安徽" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" lay-filter="cityId" value="5" lay-skin="primary"-->
+                                       <!--title="江西" class="">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft">华北地区:</td>-->
+                        <!--<td class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">-->
+                                <!--<input type="checkbox" name="cityId[]" value="6" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="北京" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="7" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="天津" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="8" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="安徽" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="9" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="山西" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="10" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="山东" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="11" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="内蒙古" class="">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft">华中地区:</td>-->
+                        <!--<td class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">-->
+                                <!--<input type="checkbox" name="cityId[]" value="12" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="湖北" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="13" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="湖南" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="14" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="河南" class="">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft">华南地区:</td>-->
+                        <!--<td class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">-->
+                                <!--<input type="checkbox" name="cityId[]" value="16" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="广东" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="17" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="广西" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="18" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="福建" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="19" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="海南" class="">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft">东北地区:</td>-->
+                        <!--<td class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">-->
+                                <!--<input type="checkbox" name="cityId[]" value="20" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="辽宁" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="21" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="吉林" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="22" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="黑龙江" class="">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft">西北地区:</td>-->
+                        <!--<td class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">-->
+                                <!--<input type="checkbox" name="cityId[]" value="23" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="陕西" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="24" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="新疆" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="25" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="青海" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="26" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="宁夏" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="27" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="甘肃" class="">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft">西南地区:</td>-->
+                        <!--<td class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">-->
+                                <!--<input type="checkbox" name="cityId[]" value="28" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="四川" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="29" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="云南" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="30" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="贵州" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="31" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="西藏" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="32" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="重庆" class="">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft">港澳台地区:</td>-->
+                        <!--<td class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">-->
+                                <!--<input type="checkbox" name="cityId[]" value="33" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="香港" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="34" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="澳门" class="">-->
+                                <!--<input type="checkbox" name="cityId[]" value="35" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="台湾" class="">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="yty_tdleft">海外地区:</td>-->
+                        <!--<td class="yty_tdright">-->
+                            <!--<div class="layui-form">-->
+                                <!--<input type="checkbox" name="cityId[]" title="全部" lay-skin="primary" class="all">-->
+                                <!--<input type="checkbox" name="cityId[]" value="36" lay-filter="cityId" lay-skin="primary"-->
+                                       <!--title="海外" class="">-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
 
-                <div class="layui-form-item layer-form-footer">
-                    <div class="footer-inner">
-                        <button type="submit" lay-submit="" lay-filter="formRule"
-                                class="layui-btn layui-btn-normal submit layui-btn-sm btn-embossed">{:__('OK')}
-                        </button>
-                        <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">
-                            {:__('Reset')}
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                <!--<div class="layui-form-item layer-form-footer">-->
+                    <!--<div class="footer-inner">-->
+                        <!--<button type="submit" lay-submit="" lay-filter="formRule"-->
+                                <!--class="layui-btn layui-btn-normal submit layui-btn-sm btn-embossed">{:__('OK')}-->
+                        <!--</button>-->
+                        <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">-->
+                            <!--{:__('Reset')}-->
+                        <!--</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 <!--------------------------获取省份弹出end---------------------->
+{include file="common/area" /}
 
 <body>
 <div class="layui-fluid">
@@ -334,7 +335,7 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch','formEvent'], function(){
+    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch','formEvent','area'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
@@ -347,6 +348,7 @@
             ,formSearch = layui.formSearch
             ,weTable = layui.weTable
             ,formEvent = layui.formEvent
+            ,area = layui.area
             ,toastr = layui.toastr;
 
         /*********************表格初始化begin**************************/
@@ -498,44 +500,45 @@
         /**
          * 省份点击弹窗
          */
-        $("body").on("click","#areaId",function (){
-            we.api.open_current_page_layer($(".layer-form"),'选择所在省份',{
-            },['80%' , '*']);
-            var areaId = [];
-            var areaIdCh = []
-            //选中省份
-            $("body").on("click",".submit",function (){
-                $(".body-form input[type=checkbox]").each(function (index,value) {
-                    if($(this).is(':checked') && $(this).val() != 'on') {
-                        areaId.push($(this).val());
-                        areaIdCh.push($(this).attr('title'));
-                    }
-                })
-                $("#areaId").val(areaIdCh.join(','));
-                $("#areaIdH").val(areaId.join(','));
-                layer.closeAll();
-            });
-            /**
-             * 重置
-             * */
-            $("body").on("click",".reset",function (){
-                layer.closeAll();
-            });
-        })
+        area.init();  //选择所在省份初始化
+//        $("body").on("click","#areaId",function (){
+//            we.api.open_current_page_layer($(".layer-form"),'选择所在省份',{
+//            },['80%' , '*']);
+//            var areaId = [];
+//            var areaIdCh = []
+//            //选中省份
+//            $("body").on("click",".submit",function (){
+//                $(".body-form input[type=checkbox]").each(function (index,value) {
+//                    if($(this).is(':checked') && $(this).val() != 'on') {
+//                        areaId.push($(this).val());
+//                        areaIdCh.push($(this).attr('title'));
+//                    }
+//                })
+//                $("#areaId").val(areaIdCh.join(','));
+//                $("#areaIdH").val(areaId.join(','));
+//                layer.closeAll();
+//            });
+//            /**
+//             * 重置
+//             * */
+//            $("body").on("click",".reset",function (){
+//                layer.closeAll();
+//            });
+//        })
 
         /**
          *省份全选、反选
          */
-        form.on('radio(check_all)', function(data){
-            var value = data.value;
-            if(value == 'all') {
-                $(".location_address_layer").find("input[type=checkbox]").prop('checked', true);
-                $(".location_address_layer").find(".layui-form-checkbox").addClass('layui-form-checked');
-            } else {
-                $(".location_address_layer").find("input[type=checkbox]").prop('checked', false);
-                $(".location_address_layer").find(".layui-form-checkbox").removeClass('layui-form-checked');
-            }
-        });
+//        form.on('radio(check_all)', function(data){
+//            var value = data.value;
+//            if(value == 'all') {
+//                $(".location_address_layer").find("input[type=checkbox]").prop('checked', true);
+//                $(".location_address_layer").find(".layui-form-checkbox").addClass('layui-form-checked');
+//            } else {
+//                $(".location_address_layer").find("input[type=checkbox]").prop('checked', false);
+//                $(".location_address_layer").find(".layui-form-checkbox").removeClass('layui-form-checked');
+//            }
+//        });
 
         /**
          * 地区点击选中、评价状态、订单类型全选、非全选状态

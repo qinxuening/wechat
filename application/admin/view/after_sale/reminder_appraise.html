@@ -597,10 +597,6 @@
                 case 'update':
 //                    we.tips("<li><a href='#'>更新数据！！！！！</a></li>");
                     update_index = layer.load(0, {shade: false});
-                    setTimeout(function () {
-                        layer.close(update_index);
-                        toastr.success('更新完成');
-                    },3000)
                     break;
                 //导出苏宁订单
                 case 'exportOrder':
@@ -615,6 +611,11 @@
                     }
                     break;
             }
+
+            setTimeout(function () {
+                layer.close(update_index);
+                toastr.success('更新完成');
+            },3000)
         });
 
     });
