@@ -11,14 +11,13 @@ layui.define(['jquery','form','formSearch','we'], function(exports) {
         , we = layui.we;
     var sms_modal_init = {
         init:function() {
-
             /***********************************************短信模板begin************************************/
             /**
              * 选择模板短信
              * */
             $("body").on("click","#sms_module",function (){
                 sms_table_init('', {'sms_type':0}); //sms_type：0推荐场景，sms_type：1模板库，sms_type：2历史发送，sms_type：2近期节日这几个参数传递给后台
-                element.tabChange('sms-href-tab', 'recommended_scene');//默认显示推荐场景
+                // element.tabChange('sms-href-tab', 'recommended_scene');//默认显示推荐场景
                 modal_sms_layer_index = we.api.open_current_page_layer($(".sms-module-layer"),'选择短信模版',{zIndex:19891016
                 },['80%' , '80%']);
             })
@@ -54,6 +53,7 @@ layui.define(['jquery','form','formSearch','we'], function(exports) {
                     ,id : 'tableReload'
                     ,skin:'line'
                     ,limit:10
+                    ,method:'post'
                     ,defaultToolbar: ['filter']
                     // ,toolbar : '#toolbar'
                     ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
@@ -79,6 +79,10 @@ layui.define(['jquery','form','formSearch','we'], function(exports) {
                 };
 
                 table.render(tableCommon); //数据表格初始化
+                if(where.sms_type == 0) {
+                    $('.sms-module-layer .layui-tab-title li').removeClass('layui-this');
+                    $('.sms-module-layer .layui-tab-title li').first().addClass('layui-this');
+                }
                 if(init_i == 0){
                     $.each($(".sms-module-content .layui-tab-item"),function (index, value) {
                         formSearch.api.searchForm($("form#" + $(this).find("form").attr("id"))); //短信模板查询事件初始化
@@ -105,15 +109,14 @@ layui.define(['jquery','form','formSearch','we'], function(exports) {
                     we.api.ajax({"url":url,"data":{'sms_id':sms_id}});   //对接后台删除
                 }
             })
-
-
+            /***********************************************短信模板end************************************/
 
             /**
              * 点击短链接弹出框
              * */
             $("body").on("click","#short_href",function (){
                 sms_short_table_init('', {'short_sms_type':0}); //0店铺常用链接，1宝贝链接，2宝贝分类，3优惠券，4搭配套餐，5金店长活动，这几个参数传递给后台
-                element.tabChange('short-href-tab', 'common_link');//店铺常用链接
+                // element.tabChange('short-href-tab', 'common_link');//店铺常用链接
                 short_sms_layer_index = we.api.open_current_page_layer($(".short-href-layer"),'添加短链',{zIndex:19891016
                 },['80%' , '80%']);
             })
@@ -144,7 +147,6 @@ layui.define(['jquery','form','formSearch','we'], function(exports) {
                         break;
                 }
             });
-            /***********************************************短信模板end************************************/
 
             /***********************************************短链begin************************************/
             /**
@@ -179,6 +181,7 @@ layui.define(['jquery','form','formSearch','we'], function(exports) {
                     ,id : 'tableReload'
                     ,skin:'line'
                     ,limit:10
+                    ,method:'post'
                     ,defaultToolbar: ['filter']
                     ,search: false
                     ,cols: cols
@@ -196,6 +199,12 @@ layui.define(['jquery','form','formSearch','we'], function(exports) {
                     }
                 };
                 table.render(tableCommon); //数据表格初始化
+
+                if(where.short_sms_type == 0) {
+                    $('.short-href-layer .layui-tab-title li').removeClass('layui-this');
+                    $('.short-href-layer .layui-tab-title li').first().addClass('layui-this');
+                }
+
                 if(init_j == 0){
                     formSearch.api.searchForm($("form#form-sms-good-link"));//宝贝链接查询初始化
                     formSearch.api.searchForm($("form#form-sms-jdz-list"));//金店长查询初始化
