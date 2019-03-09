@@ -50,4 +50,8 @@ class Group extends baseAdmin
         $data['rules'] = implode(',', $data['authids']);
     }
     
+    public function member_rank(){
+        return $this->view->fetch();
+    }
+    
 }

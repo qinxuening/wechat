@@ -2824,3 +2824,15 @@ input:focus, select:focus{
 .width150{
     width: 150px !important;
 }
+
+.paddingleft74{
+    padding-left: 74px;
+}
+
+.paddingleft100{
+    padding-left: 100px;
+}
+
+.tdpadding20 tr>td{
+    padding: 20px 5px !important;
+}
