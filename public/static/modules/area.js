@@ -34,8 +34,8 @@ layui.define(['jquery','form','we'], function(exports) {
 
             form.on('radio(location_address)', function(data){
                 if(data.value == 1){
-                    we.api.open_current_page_layer($(".layer-form"),'选择所在省份',{
-                    },['80%' , '*']);
+                   area_index_layer =  we.api.open_current_page_layer($(".layer-form"),'选择所在省份',{
+                    },['80%' , '70%']);
                     var areaId = [];
                     var areaIdCh = []
                     //选中省份
@@ -48,11 +48,11 @@ layui.define(['jquery','form','we'], function(exports) {
                         })
                         $("#areaId").val(areaIdCh.join(','));
                         $("#areaIdH").val(areaId.join(','));
-                        layer.closeAll();
+                        layer.close(area_index_layer);
                     });
                     //重置
                     $("body").on("click",".reset",function (){
-                        layer.closeAll();
+                        layer.close(area_index_layer);
                     });
                 }
             })

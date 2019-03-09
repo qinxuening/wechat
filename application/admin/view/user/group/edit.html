@@ -1,5 +1,6 @@
 {extend name="layout/default2" /}
 {block name="content"}
+{include file="common/area"/}
 <body>
 <div class="body-form main-table">
     <form class="layui-form" action="" id="rule" lay-filter="rule">
@@ -103,7 +104,7 @@
                 <td class="tdleft"> 地区筛选 :</td>
                 <td class="tdright">
                     <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="0"  title="默认全部" checked>
-                    <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="自定义"  title="自定义">
+                    <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="1"  title="自定义">
                     <input type="hidden" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
                     <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
                 </td>
@@ -149,12 +150,13 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['jquery','index','form','element','layer','we','formEvent','laydate'], function(){
+    }).use(['jquery','index','form','element','layer','we','formEvent','laydate','area'], function(){
         var admin = layui.admin
             ,$ = layui.$ //重点处
             ,form = layui.form
             ,table = layui.table
             ,layer = layui.layer
+            ,area = layui.area
             ,formEvent = layui.formEvent
             ,laydate = layui.laydate
             ,we = layui.we;
@@ -177,6 +179,15 @@
             ,type: 'datetime'
         });
 
+        /**
+         * 省份点击
+         */
+        area.init();  //选择所在省份初始化
+
+        /**
+         * 地区点击选中事件、分区全选、反选
+         */
+        formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox");
     });
 </script>
 </body>

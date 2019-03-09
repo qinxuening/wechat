@@ -1,5 +1,147 @@
 {extend name="layout/default" /}
 {block name="content"}
+{include file="common/area"/}
+<!--****************************添加、编辑分组弹框begin***************************-->
+<div class="body-form main-table add-group-layer" style="display: none">
+    <form class="layui-form" action="" id="rule" lay-filter="rule">
+        <input type="hidden" name="ids"  value="{$list['id']}" class="layui-input">
+        <table class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm">
+            <colgroup>
+                <col class="tdleft" width="15%">
+                <col class="tdright">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td class="tdleft">分组类型</td>
+                <td class="tdright">
+                    <div class="layui-input-inline">
+                        <select name="memberLevel">
+                            <option value="0" selected>全部分组</option>
+                            <option value="1">系统分组</option>
+                            <option value="2">标签分组</option>
+                            <option value="3">我的分组</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft"> 最近交易时间 :</td>
+                <td class="tdright">
+                    <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="不限" title="不限" checked>
+                    <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近7天" title="近7天">
+                    <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近1个月" title="近1个月">
+                    <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近3个月" title="近3个月">
+                    <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近半年" title="近半年">
+                    <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="自定义" title="自定义">
+                    <span class="customize_trade_time" style="display: none">
+                         <input type="text" name="trade_time_start" id="trade_time_start" placeholder="" autocomplete="off" class="layui-input width150"> — <input type="text" name="trade_time_end" id="trade_time_end" placeholder="" autocomplete="off" class="layui-input input-margin width150">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft"> 交易次数 :</td>
+                <td class="tdright">
+                    <input type="radio" name="trade_counts" lay-filter="trade_counts" value="不限" title="不限" checked>
+                    <input type="radio" name="trade_counts" lay-filter="trade_counts" value="0次" title="0次">
+                    <input type="radio" name="trade_counts" lay-filter="trade_counts" value="1次" title="1次">
+                    <input type="radio" name="trade_counts" lay-filter="trade_counts" value="2次" title="2次">
+                    <input type="radio" name="trade_counts" lay-filter="trade_counts" value="3次及以上" title="3次及以上">
+                    <input type="radio" name="trade_counts" lay-filter="trade_counts" value="自定义" title="自定义">
+                    <span class="customize_trade_counts" style="display: none">
+                         <input type="number" name="trade_counts_start" id="trade_counts_start" placeholder="" autocomplete="off" class="layui-input width150"> — <input type="number" name="trade_counts_end" id="trade_counts_end" placeholder="" autocomplete="off" class="layui-input input-margin width150">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft"> 累计金额 :</td>
+                <td class="tdright">
+                    <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="不限" title="不限" checked>
+                    <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="1~100元" title="1~100元">
+                    <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="100~200元" title="100~200元">
+                    <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="200~300元" title="200~300元">
+                    <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="300元以上" title="300元以上">
+                    <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="自定义" title="自定义">
+                    <span class="customize_total_money" style="display: none">
+                         <input type="number" name="total_money_start" id="total_money_start" placeholder="" autocomplete="off" class="layui-input width150"> — <input type="number" name="total_money_end" id="total_money_end" placeholder="" autocomplete="off" class="layui-input input-margin width150">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft"> 平均客单价 :</td>
+                <td class="tdright">
+                    <input type="radio" name="avg_price" lay-filter="avg_price" value="不限" title="不限" checked>
+                    <input type="radio" name="avg_price" lay-filter="avg_price" value="1~100元" title="1~100元">
+                    <input type="radio" name="avg_price" lay-filter="avg_price" value="100~200元" title="100~200元">
+                    <input type="radio" name="avg_price" lay-filter="avg_price" value="200~300元" title="200~300元">
+                    <input type="radio" name="avg_price" lay-filter="avg_price" value="300元以上" title="300元以上">
+                    <input type="radio" name="avg_price" lay-filter="avg_price" value="自定义" title="自定义">
+                    <span class="customize_avg_price" style="display: none">
+                         <input type="number" name="avg_price_start" id="avg_price_start" placeholder="" autocomplete="off" class="layui-input width150"> — <input type="number" name="avg_price_end" id="avg_price_end" placeholder="" autocomplete="off" class="layui-input input-margin width150">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft"> 会员等级 :</td>
+                <td class="tdright">
+                    <input type="checkbox" name="membership_level[]" lay-filter="membership_level" lay-skin="primary" value="0"  title="所有会员" checked>
+                    <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="1"  title="店铺会员">
+                    <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="2"  title="普通会员">
+                    <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="3"  title="高级会员">
+                    <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="4"  title="VIP会员">
+                    <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="5"  title="至尊VIP会员">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft"> 订单来源 :</td>
+                <td class="tdright">
+                    <input type="checkbox" name="trade_from[]" lay-filter="trade_from" lay-skin="primary" value="0"  title="所有订单" checked>
+                    <input type="checkbox" name="trade_from[]" lay-filter="trade_from" lay-skin="primary" value="1"  title="移动端">
+                    <input type="checkbox" name="trade_from[]"  lay-filter="trade_from" lay-skin="primary" value="2"  title="PC端">
+                    <input type="checkbox" name="trade_from[]"  lay-filter="trade_from" lay-skin="primary" value="3"  title="历史订单">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft"> 地区筛选 :</td>
+                <td class="tdright">
+                    <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="0"  title="默认全部" checked>
+                    <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="1"  title="自定义">
+                    <input type="hidden" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
+                    <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">分组名称：</td>
+                <td class="tdright">
+                    <input type="text" data-rule="required" name="groupName" placeholder="" value="" autocomplete="off" class="layui-input">
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">分组备注</td>
+                <td class="tdright">
+                    <textarea  name="remarks" data-rule="" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!--<div class="layui-form-item">-->
+        <!--<div class="layui-input-block">-->
+        <!--<button class="layui-btn" lay-submit="" lay-filter="formRule">立即提交</button>-->
+        <!--<button type="reset" class="layui-btn layui-btn-primary">重置</button>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--hidden layer-footer-->
+        <!--<div class="layui-form-item footer-form">-->
+            <!--<div class="footer">-->
+        <div class="layui-form-item layer-form-footer">
+            <div class="footer-inner">
+                <button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>
+                <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--****************************添加、编辑分组弹框end***************************-->
+
 <body>
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">
@@ -61,7 +203,7 @@
     }).extend({
         index: 'lib/index' //主入口模块
         ,we: 'we',
-    }).use(['jquery','index','table','element','we','weTable','formSearch'], function(){
+    }).use(['jquery','index','table','element','we','weTable','formSearch','area','formEvent','laydate'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,$ = layui.$ //重点处
@@ -69,6 +211,9 @@
             ,weTable = layui.weTable
             ,layer = layui.layer
             ,form = layui.form
+            ,laydate = layui.laydate
+            ,area = layui.area
+            ,formEvent = layui.formEvent
             ,formSearch = layui.formSearch
             ,we = layui.we;
 
@@ -132,8 +277,10 @@
                 idsArr.push(value.id);
             });
             if(obj.event == 'addGroup') {
-                layer_index = we.api.open("{:url('admin/user.group/edit')}",'创建分组',{zIndex:19891016
-                },['80%' , '80%']);
+//                layer_index = we.api.open("{:url('admin/user.group/edit')}",'创建分组',{zIndex:19891016
+//                },['80%' , '80%']);
+                layer_index = we.api.open_current_page_layer($(".add-group-layer"),'选择所在省份',{
+                },['90%' , '80%']);
             }
         })
 
@@ -148,7 +295,9 @@
                     window.location.href = "{:url('activity/member_sms',['nav_id'=>226,'nav_pid'=>220],false)}?groupId = " + data.id;
                     break;
                 case 'edit':
-                    we.api.open("{:url('admin/user.group/edit',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}&ids="+data.id,'编辑');
+//                    we.api.open("{:url('admin/user.group/edit',['nav_id'=>input('nav_id'),'nav_pid'=>input('nav_pid')],false)}&ids="+data.id,'编辑');
+                    layer_index = we.api.open_current_page_layer($(".add-group-layer"),'选择所在省份',{
+                    },['90%' , '80%']);
                     break;
                 case 'del':
                     layer.confirm('请确定是否删除？',{
@@ -161,6 +310,37 @@
                     break;
             }
         });
+
+
+        /********************************添加分组begin***********************/
+        /**
+         * 点击自定义单选框显示隐藏
+         */
+        formEvent.api.customize_radio()
+
+        /**
+         *
+         * 时间初始化
+         * */
+        laydate.render({
+            elem: '#trade_time_start' //指定元素
+            ,type: 'datetime'
+        });
+        laydate.render({
+            elem: '#trade_time_end' //指定元素
+            ,type: 'datetime'
+        });
+
+        /**
+         * 省份点击
+         */
+        area.init();  //选择所在省份初始化
+
+        /**
+         * 地区点击选中事件、分区全选、反选
+         */
+        formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox");
+        /********************************添加分组begin***********************/
 
     });
 
