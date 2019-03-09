@@ -1,6 +1,8 @@
 {extend name="layout/default" /}
 {block name="content"}
+<!---------------------------短信公共模块begin----------------------->
 {include file="common/sms_modal"/}
+<!---------------------------短信公共模块begin----------------------->
 <!--设置黑名单begin-->
 <div class="body-form black-module-layer auto-height-table" style="display: none">
     <div class="layui-form">
@@ -701,30 +703,6 @@
 <!--表格头部按钮end-->
 
 <!--头工具栏-->
-
-<!--状态-->
-<script type="text/html" id="switchStatus">
-    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
-</script>
-
-<!--状态-->
-<script type="text/html" id="switchPush">
-    <input type="checkbox" name="is_time_push" value="{{d.is_time_push}}" lay-skin="switch" lay-text="是|否" lay-filter="ruleIsmenu" {{ d.is_time_push == 1 ? 'checked' : '' }}>
-</script>
-
-<!--短信模板操作begin-->
-<script type="text/html" id="actionbar">
-    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_module">使用</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del_sms_module">删除</a>
-</script>
-<!--短信模板操作end-->
-
-
-<!--短链操作begin-->
-<script type="text/html" id="short_sms_actionbar">
-    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_short_link">选择链接</a>
-</script>
-<!--短链操作end-->
 
 <!--设置黑名单头部工具栏begin-->
 <script type="text/html" id="set_black_toolbar">

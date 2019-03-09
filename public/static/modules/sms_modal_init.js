@@ -62,7 +62,7 @@ layui.define(['jquery','form','formSearch','we'], function(exports) {
                         {type:'checkbox', fixed: 'left', hide:true}
                         ,{field:'sms_id', title: 'id', hide:true}
                         ,{field:'sms_content', title: '短信内容'}
-                        ,{fixed: 'right', title:'操作', toolbar: '#actionbar', width:250}
+                        ,{fixed: 'right', title:'操作', toolbar: '#modal_sms_actionbar', width:250}
                     ]]
                     ,page: {
                         layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
@@ -258,8 +258,8 @@ layui.define(['jquery','form','formSearch','we'], function(exports) {
                         layer.confirm(title,{
                             title:'温馨提示',area: ['400px','250px'],zIndex:19891016
                         }, function(index){
-                            we.insertText(document.getElementById("sms-content"),content)
-                            we.layer.close(index);
+                            insertText(document.getElementById("sms-content"),content)
+                            layer.close(index);
                         });
                     } else {
                         we.insertText(document.getElementById("sms-content"),content)

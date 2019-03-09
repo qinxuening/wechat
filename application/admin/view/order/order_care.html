@@ -1,7 +1,7 @@
 {extend name="layout/default" /}
 {block name="content"}
 <body>
-<div class="layui-fluid">
+<div class="layui-fluid main-task">
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12 webody body-overflow">
             <div class="layui-card margin_buttom0 padding20_10 overflow-y">
@@ -95,6 +95,7 @@
         </div>
     </div>
 </div>
+{include file="order/task_add"/}
 <!--</div>-->
 
 <!-----------------------------下单提醒设置表格头部按钮begin---------------------------->
@@ -133,15 +134,18 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','element','form','authtree','we','weTable','formSearch'], function(){
+    }).use(['index','table','element','form','authtree','we','weTable','laydate','formValidator','formSearch','sms_modal_init'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
             ,layer = layui.layer
+            ,laydate = layui.laydate
             ,we = layui.we
+            ,sms_modal_init = layui.sms_modal_init
             ,form = layui.form
             ,weTable = layui.weTable
             ,formSearch = layui.formSearch
+            ,formValidator = layui.formValidator
             ,toastr = layui.toastr;
 
         /*********************下单提醒设置表格初始化begin**************************/
@@ -196,20 +200,6 @@
         /*********************下单提醒设置表格初始化end**************************/
 
         /**
-         * 表格初始化
-         */
-        /*weTable.api.init({
-            table : "order_care_data_list",
-            tableid : "tableReload",
-            form:$("form#order_care_data_list"),
-            tableCommon: tableCommon,
-            extend : {
-                "add_url": "{:url('admin/order/task_add','',false)}",
-                "edit_url": "{:url('admin/order/task_add','',false)}/ids/",
-            }
-        });*/
-
-        /**
          * 单提醒设置表单查询查询操作
          * */
         formSearch.api.searchForm($("form#search_form"));
@@ -218,8 +208,10 @@
         table.on('toolbar(order_care_data_list)', function(obj){
             console.log(obj.event);
             if(obj.event == 'add_task') {
-                var url = "{:url('admin/order/task_add')}"
-                we.api.open(url,'下单关怀 > 新建任务',{zIndex:19891017,shade: 0.4},['98%' , '80%']);
+                $('.main-task').hide();
+                $('.sms-common').slideDown(200);
+//                var url = "{:url('admin/order/task_add')}"
+//                we.api.open(url,'下单关怀 > 新建任务',{zIndex:19891017,shade: 0.4},['98%' , '80%']);
             }
         })
 
@@ -227,8 +219,10 @@
         table.on('tool(order_care_data_list)', function(obj){
             console.log(obj.event);
             if(obj.event == 'edit') {
-                var url = "{:url('admin/order/task_add')}"; //对接后台编辑url
-                we.api.open(url,'下单关怀 > 编辑任务',{zIndex:19891017,shade: 0.4},['98%' , '80%']);
+                $('.main-task').hide();
+                $('.sms-common').slideDown(200);
+//                var url = "{:url('admin/order/task_add')}"; //对接后台编辑url
+//                we.api.open(url,'下单关怀 > 编辑任务',{zIndex:19891017,shade: 0.4},['98%' , '80%']);
             } else {
                 layer.confirm('请确定是否删除？',{
                     title:'温馨提示',
@@ -239,6 +233,8 @@
                 });
             }
         })
+
+
 
         /*********************查看发送记录begin**************************/
         var tableCommon2 = {
@@ -306,6 +302,204 @@
         });
         weTable.api.bindevent();
         /*********************查看发送记录end****************************/
+
+
+        /****************************************3个步奏公共模块begin***********************************/
+
+        /******************************时间初始化begin*****************************/
+        laydate.render({
+            elem: '#day_hour_start' //指定元素
+            ,type: 'time'
+            // ,format:'H'
+            ,value:'09:00:00'
+        });
+        laydate.render({
+            elem: '#day_hour_end' //指定元素
+            ,type: 'time'
+            // ,format:'H'
+            ,value:'21:00:00'
+        });
+
+        laydate.render({
+            elem: '#siesta_hour_start' //指定元素
+            ,type: 'time'
+            // ,format:'H'
+            ,value:'12:00:00'
+        });
+        laydate.render({
+            elem: '#siesta_hour_end' //指定元素
+            ,type: 'time'
+            // ,format:'H'
+            ,value:'13:00:00'
+        });
+
+        laydate.render({
+            elem: '#task_time_start' //指定元素
+            ,type: 'date'
+            // ,format:'H'
+        });
+        laydate.render({
+            elem: '#task_time_end' //指定元素
+            ,type: 'date'
+            // ,format:'H'
+        });
+        /******************************时间初始化begin*****************************/
+
+
+        /**
+         *
+         * 点击指定时间
+         * */
+        form.on('radio(date_switch)', function(data){
+            if(data.value == 0){
+                $(".task_time").show()
+            }else(
+                $(".task_time").hide()
+            )
+        });
+
+
+        /**
+         * 屏蔽标旗点击切换
+         */
+        $("body").on("click","ul li",function (){
+            if($(this).hasClass('checkbox-active')) {
+                $(this).removeClass('checkbox-active');
+            } else {
+                $(this).addClass('checkbox-active')
+            }
+        });
+
+
+        /**
+         * 设置黑名单弹框
+         * */
+        $("body").on("click",".set_black",function (){
+            var tableCommon = {
+                elem: '#table_black'
+                ,url:"/sms_data.json" //对接请求后台数据
+                // ,data:"./sms_data.json" //测试数据
+                ,id : 'tableReload'
+                ,skin:'line'
+                ,limit:10
+                ,defaultToolbar: ['filter']
+                ,toolbar : '#set_black_toolbar'
+                ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
+                ,search: false
+                ,cols: [[
+                    {type:'checkbox', fixed: 'left', hide:true}
+                    ,{field:'id', title: 'id', hide:true}
+                    ,{field:'uid_name', title: '云信/手机号码'}
+                    ,{field:'black_type', title: '黑名单类型'}
+                    ,{field:'add_time', title: '添加时间'}
+                    ,{field:'source', title: '添加来源'}
+                    ,{fixed: 'right', title:'操作', toolbar: '#set_black_actionbar', width:250}
+                ]]
+                ,page: {
+                    layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                    ,first: false //不显示首页
+                    ,last: false //不显示尾页
+
+                }
+                ,where: {filter:JSON.stringify(formSearch.api.getFormJson($(form)))}   //搜索条件
+                ,done: function(res, curr, count){
+                    if(res.status == 'success') {
+                        // layer.closeAll();
+                    }
+                }
+            };
+
+            table.render(tableCommon); //数据表格初始化
+            set_black_layer_index = we.api.open_current_page_layer($(".black-module-layer"),'设置黑名单',{zIndex:19891016
+            },['80%' , '80%']);
+
+            if(init_m == 0) {
+                formSearch.api.searchForm($("form#form-set-black"));
+            }
+        })
+
+        /**
+         *设置黑名单头部操作
+         * */
+        table.on('toolbar(table_black)', function(obj){
+            console.log(obj.event);
+            if(obj.event == 'add_black'){
+                add_black_layer_index = we.api.open_current_page_layer($(".add-black-layer"),'添加黑名单',{zIndex:19891017
+                },['40%' , '60%']);
+            }
+        });
+
+        /**
+         * sms_record短信测试发送记录
+         * */
+        $("body").on("click",".sms_record",function (){
+            var url = "{:url('admin/order/sms_record')}"
+            we.api.open(url,'短信测试发送记录');
+        })
+
+        /**
+         * 短信modal初始化
+         * */
+        sms_modal_init.init();
+
+        /*****************************执行步骤begin************************************/
+        /**
+         *点击第一步下一步
+         */
+        $("body").on("click",".next-step",function (){
+            $(".step-first").hide();
+            $(".step-second").show();
+            $(".step-two-msg").addClass('step-active');
+            $(".step-tow-number").addClass('step-number-active');
+        });
+
+        /**
+         * 点击第二步上一步
+         */
+        $("body").on("click",".pre-step",function (){
+            $(".step-first").show();
+            $(".step-second").hide();
+            $(".step-two-msg").removeClass('step-active');
+            $(".step-tow-number").removeClass('step-number-active');
+        });
+
+        /**
+         * 点击第二步下一步
+         */
+        $("body").on("click",".next-step-thrid",function (){
+            $(".step-second").hide();
+            $(".step-third").show();
+            $(".step-three-msg").addClass('step-active');
+            $(".step-three-number").addClass('step-number-active');
+        });
+
+        /**
+         * 点击第三步上一步
+         */
+        $("body").on("click",".pre-step-thrid",function (){
+            $(".step-second").show();
+            $(".step-third").hide();
+            $(".step-three-msg").removeClass('step-active');
+            $(".step-three-number").removeClass('step-number-active');
+        });
+
+        /**
+         * 点击取消
+         * 关掉layer弹层
+         */
+        $("body").on("click",".cancle",function (){
+//            var index = parent.layer.getFrameIndex(window.name);
+//            parent.layer.close(index);
+            $('.main-task').slideDown(100);
+            $('.sms-common').hide();
+        });
+        /*****************************执行步骤end************************************/
+
+        /**
+         * 绑定表单事件
+         */
+        formValidator.api.bindevent($("form#task_form_data"));
+        /****************************************3个步奏公共模块begin***********************************/
     });
 </script>
 </body>
