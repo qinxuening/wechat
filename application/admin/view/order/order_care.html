@@ -47,7 +47,7 @@
                             <div class="layui-row yty-bck">
                                 <div class="layui-col-12">
                                     <!----------------------------------表格查询条件begin------------------------------->
-                                    <div class="searchbody">
+                                    <div class="searchbody1">
 
                                     </div>
                                     <!-----------------------------------表格查询条件end--------------------------------->
@@ -134,13 +134,14 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','element','form','authtree','we','weTable','laydate','formValidator','formSearch','sms_modal_init'], function(){
+    }).use(['index','table','element','form','authtree','we','weTable','laydate','formValidator','formSearch','sms_modal_init','area'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
             ,layer = layui.layer
             ,laydate = layui.laydate
             ,we = layui.we
+            ,area = layui.area
             ,sms_modal_init = layui.sms_modal_init
             ,form = layui.form
             ,weTable = layui.weTable
@@ -153,7 +154,7 @@
         var tableCommon = {
             elem: '#order_care_data_list'
             ,formId:'search_form'  //查询form表单id
-            ,searchbody:'searchbody'
+            ,searchbody:'searchbody1'
             ,method:'post'
             ,url:"/sms_data.json" //对接请求后台数据
             ,id : 'tableReload'
@@ -441,6 +442,11 @@
          * 短信modal初始化
          * */
         sms_modal_init.init();
+
+        /**
+         * 选择所在省份初始化
+         */
+        area.init();
 
         /*****************************执行步骤begin************************************/
         /**

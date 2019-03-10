@@ -1,6 +1,7 @@
-layui.define(['jquery','form','we'], function(exports) {
+layui.define(['jquery','form','we','formEvent'], function(exports) {
     var $ = layui.$
         ,form = layui.form
+        ,formEvent = layui.formEvent
         , we = layui.we;
     var area = {
             /**
@@ -70,6 +71,10 @@ layui.define(['jquery','form','we'], function(exports) {
                     $(".location_address_layer").find(".layui-form-checkbox").removeClass('layui-form-checked');
                 }
             });
+
+            /* 地区点击选中、评价状态、订单类型全选、非全选状态
+            */
+            formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox, .yty-checkbox-all .layui-form-checkbox");
         }
     }
     exports('area', area);

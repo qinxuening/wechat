@@ -4,6 +4,10 @@
 {include file="common/sms_modal"/}
 <!---------------------------短信公共模块begin----------------------->
 
+<!--------------------------获取省份弹出begin---------------------->
+{include file="common/area" /}
+<!--------------------------获取省份弹出end---------------------->
+
 <!---------------------------短信模版弹出begin----------------------->
 <!--<div class="body-form sms-module-layer auto-height-table" style="display: none">-->
     <!--<div class="layui-form">-->
@@ -487,7 +491,8 @@
                                         <p class="marginbuttom5"></p>
 
                                         <input type="checkbox" name="area_switch" lay-skin="primary"  title="" checked="">当收货地区是
-                                        <input type="text" name="shipping_address" id="shipping_address" placeholder="" autocomplete="off" class="layui-input"> 时,短信不提醒！
+                                        <input type="text" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input"> 时,短信不提醒！
+                                        <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
                                         <br>
                                         <p class="marginbuttom5"></p>
 

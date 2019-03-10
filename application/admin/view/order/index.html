@@ -335,7 +335,7 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch','formEvent','area'], function(){
+    }).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch','area'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
@@ -347,7 +347,7 @@
             ,upload = layui.upload
             ,formSearch = layui.formSearch
             ,weTable = layui.weTable
-            ,formEvent = layui.formEvent
+            //,formEvent = layui.formEvent
             ,area = layui.area
             ,toastr = layui.toastr;
 
@@ -543,7 +543,7 @@
         /**
          * 地区点击选中、评价状态、订单类型全选、非全选状态
          */
-        formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox, .yty-checkbox-all .layui-form-checkbox");
+        //formEvent.api.all_check_none(".location_address_layer .layui-form-checkbox, .yty-checkbox-all .layui-form-checkbox");
 
 
         /**
