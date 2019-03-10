@@ -4,10 +4,6 @@
 {include file="common/sms_modal"/}
 <!---------------------------短信公共模块begin----------------------->
 
-<!--------------------------获取省份弹出begin---------------------->
-{include file="common/area" /}
-<!--------------------------获取省份弹出end---------------------->
-
 <!---------------------------短信模版弹出begin----------------------->
 <!--<div class="body-form sms-module-layer auto-height-table" style="display: none">-->
     <!--<div class="layui-form">-->
@@ -278,46 +274,44 @@
 <!---------------------设置黑名单end--------------------------->
 
 <!----------------------添加黑名单begin------------------------->
-<!--<div class="body-form add-black-layer auto-height-table" style="display: none">-->
-    <!--<div class="layui-form">-->
-        <!--<div class="layui-row">-->
-            <!--<div class="layui-card main-table">-->
-                <!--<form class="layui-form" action="" id="rule" lay-filter="rule">-->
-                    <!--<table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">-->
-                        <!--<colgroup>-->
-                            <!--<col class="yty_tdleft" width="30%">-->
-                            <!--<col class="yty_tdright">-->
-                        <!--</colgroup>-->
-                        <!--<tr>-->
-                            <!--<td class="yty_tdleft">黑名单类型</td>-->
-                            <!--<td class="yty_tdright">-->
-                                <!--<input type="radio" name="sex" value="1" title="云信昵称" checked="">-->
-                                <!--<input type="radio" name="sex" value="2" title="手机号码">-->
-                            <!--</td>-->
-                        <!--</tr>-->
-                        <!--<tr>-->
-                            <!--&lt;!&ndash;<td class="yty_tdleft"> 短信内容 :</td>&ndash;&gt;-->
-                            <!--<td class="yty_tdright" colspan="2">-->
-                                <!--<textarea placeholder="请根据选择的类型输入昵称或手机号码(可以批量录入，每行输入一个)" class="layui-textarea" style="width: 100%;height: 80%"></textarea>-->
-                            <!--</td>-->
-                        <!--</tr>-->
-                    <!--</table>-->
-                    <!--<div class="layui-form-item layer-form-footer">-->
-                        <!--<div class="footer-inner">-->
-                            <!--<button type="submit" lay-submit="" lay-filter="form_add_black"-->
-                                    <!--class="layui-btn layui-btn-normal submit layui-btn-sm add-black-confirm btn-embossed">{:__('OK')}-->
-                            <!--</button>-->
-                            <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">-->
-                                <!--取消-->
-                            <!--</button>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</form>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-<!--</div>-->
+<div class="body-form filter-words-layer auto-height-table" style="display: none">
+    <div class="layui-form">
+        <div class="layui-row">
+            <div class="layui-card main-table">
+                <form class="layui-form" action="" id="rule" lay-filter="rule">
+                    <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
+                        <colgroup>
+                            <col class="yty_tdleft" width="30%">
+                            <col class="yty_tdright">
+                        </colgroup>
+                        <tr>
+                            <td class="yty_tdright red_color" colspan="2">
+                                屏蔽词限制50个，多个屏蔽词以逗号隔开，单个屏蔽词限制6个字符
+                            </td>
+                        </tr>
+                        <tr>
+                            <!--<td class="yty_tdleft"> 短信内容 :</td>-->
+                            <td class="yty_tdright" colspan="2">
+                                <textarea placeholder="" class="layui-textarea textarea_filter_words" style="width: 100%;height: 80%">没用，次品，很破，很烂，垃圾，不喜欢，服务差</textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="layui-form-item layer-form-footer">
+                        <div class="footer-inner">
+                            <button type="button" lay-submit="" lay-filter="form_add_black"
+                                    class="layui-btn layui-btn-normal submit layui-btn-sm filter-words-confirm btn-embossed">{:__('OK')}
+                            </button>
+                            <button type="button" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed filter-words-cancle">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 <!-----------------------------------添加黑名单end------------------------------------>
 
 
@@ -351,12 +345,12 @@
 
                             <!-------------------------------------第一步begin----------------------------------->
                             <tbody class="step-first">
-                            <tr>
-                                <td class="yty_tdleft"> 发送条件 :</td>
-                                <td class="yty_tdright">
-                                    当买家下单时，立即发送感谢短信，到买家手机上。
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="yty_tdleft"> 发送条件 :</td>
+                                    <td class="yty_tdright">
+                                        当买家给予好评时，立即发送感谢短信，到买家手机上
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td class="yty_tdleft"> 是否开启 :</td>
                                     <td class="yty_tdright">
@@ -391,7 +385,7 @@
                                     <td class="yty_tdright">
                                         每天 <input type="text" name="day_hour_start" id="day_hour_start" placeholder="" autocomplete="off" class="layui-input"> 时 至
                                         <input type="text" name="day_hour_end" id="day_hour_end" placeholder="" autocomplete="off" class="layui-input">
-                                        时，发送关怀提醒 (其他时间自动延迟到次日发送)
+                                        发送催评价短信 (21:00至次日8:59自动延迟发送)
                                         <br>
                                         <p class="marginbuttom5"></p>
 
@@ -427,6 +421,12 @@
                                 <tr>
                                     <td class="yty_tdleft"> 关怀条件 :</td>
                                     <td class="yty_tdright">
+                                        <div class="layui-inline yty-form">
+                                            <span>确认收货后</span>
+                                            <input type="text" value="0" name="after_receipt_days" id="after_receipt_days" placeholder="" autocomplete="off" class="layui-input">
+                                            <span>天内给好评</span>
+                                        </div>
+                                        <p class="marginbuttom5"></p>
                                         <input type="checkbox" name="care_swicht" lay-skin="primary"  title="" checked="">
                                         实付金额 <input type="number" value="0.00" min="0" name="actually_paid_start" id="actually_paid_start" placeholder="" autocomplete="off" class="layui-input"> —
                                         <input type="number" min="0" value="0.00" name="actually_paid_end" id="actually_paid_end" placeholder="" autocomplete="off" class="layui-input">元
@@ -438,44 +438,38 @@
                                         <input type="number" min="0" value="" name="number_of_products_end" id="number_of_products_end" placeholder="" autocomplete="off" class="layui-input">件
                                         <br>
                                         <p class="marginbuttom5"></p>
-
-                                        <div class="layui-inline yty-form">
-                                            <span>订单中</span>
-                                            <div class="layui-input-inline">
-                                                <select name="modules" lay-verify="required" lay-search="">
-                                                    <option value="1">包含</option>
-                                                    <option value="0">不包含</option>
-                                                </select>
-                                            </div>
-                                            <span>指定商品</span>
-                                            <button type="button" name="" id="" placeholder="" autocomplete="off" class="layui-btn layui-btn-primary btn-primary-border layui-btn-sm btn-embossed">默认不选择商品</button>
-                                        </div>
-                                        <br>
-                                        <p class="marginbuttom5"></p>
-                                        <input type="checkbox" name="order_type_switch" lay-skin="primary"  title="" checked="">订单类型为<span style="color: #FF5722">货到付款</span>时才发送提醒
+                                        <input type="checkbox" name="good_praise_word_count_switch" lay-skin="primary" value="1" title="" checked="">
+                                        好评字数超过 <input type="text" value="0"  name="good_praise_word_count" id="good_praise_word_count" placeholder="" autocomplete="off" class="layui-input">个字
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="yty_tdleft"> 过滤设置 :</td>
                                     <td class="yty_tdright">
-                                        <input type="checkbox" name="filter_set_switch" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="only_send_time_swicht" lay-skin="primary" value="1" title="" checked="">
+                                        只发送下单时间在 <input type="text" value="" name="only_send_time_start" id="only_send_time_start" placeholder="" autocomplete="off" class="layui-input"> —
+                                        <input type="text" name="only_send_time_end" id="only_send_time_end" placeholder="" autocomplete="off" class="layui-input">元
+                                        <p class="marginbuttom5"></p>
+                                        <input type="checkbox" name="filter_set_switch" lay-skin="primary" value="1" title="" checked="">
                                         <div class="layui-inline yty-form">
                                             <span>不发送</span>
                                             <div class="layui-input-inline">
-                                                <select name="modules" lay-verify="required" lay-search="">
+                                                <select name="filter_days" lay-verify="required" lay-search="">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
-                                                    <option value="3" selected>3</option>
+                                                    <option value="3">3</option>
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
+                                                    <option value="10" selected>10</option>
+                                                    <option value="15">15</option>
+                                                    <option value="20">20</option>
                                                 </select>
                                             </div>
-                                            <span>天内有过付款的客户</span>
+                                            <span> 天内发送过短信或者赠送过优惠券的用户</span>
                                         </div>
                                         <br>
                                         <p class="marginbuttom5"></p>
 
-                                        <input type="checkbox" name="not_flag_switch" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="not_flag_switch" lay-skin="primary" value="1" title="" checked="">
                                         不发送标旗订单
                                         <div class="layui-inline yty-form">
                                             <ul class="yty-checkbox">
@@ -501,8 +495,9 @@
                                         <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
                                         <br>
                                         <p class="marginbuttom5"></p>
-
-                                        <!--不发送黑名单客户 <a href="javascript:void(0);" class="astyle set_black">设置黑名单</a>-->
+                                        <input type="checkbox" name="not_send_order_switch" lay-skin="primary"  title="" checked="">
+                                        评价内容含有屏蔽词 <input type="text" value="没用，次品，很破，很烂，垃圾，不喜欢，服务差" lay-filter="filter_words" name="filter_words" id="filter_words" placeholder="" autocomplete="off" class="layui-input">不发送
+                                        <a href="javascript:void(0);" class="astyle set_filter_words">设置屏蔽词</a>
                                     </td>
                                 </tr>
 
@@ -605,7 +600,7 @@
                                                             </ul>
                                                             <!--<br>-->
                                                             <!--<p class="marginbuttom5"></p>-->
-                                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
+                                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">温馨提示：亲，感谢您给本店铺的好评。我们会再接再厉，提供更好的服务，谢谢！</textarea>
                                                             <p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
 2、一个汉字,数字,字母,空格都算一个字<br>
 3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
@@ -629,7 +624,7 @@
                                                 <div class="sms-phone">
                                                     <div class="phone-container">
                                                         <div class="smg-content">
-                                                            【阿里狗】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>
+                                                            【阿里狗】<span class="synchronize_sms_content">温馨提示：亲，感谢您给本店铺的好评。我们会再接再厉，提供更好的服务，谢谢！</span>
                                                         </div>
                                                     </div>
                                                 </div>

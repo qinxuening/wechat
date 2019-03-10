@@ -38,8 +38,7 @@
             <div class="layui-form yty-tab">
                 <div class="layui-tab" lay-filter="short-href-tab">
                     <ul class="layui-tab-title tabpage">
-                        <li class="layui-this" lay-id="common_link"><a href="#">催评价设置</a></li>
-                        <li><a href="#">催评效果</a></li>
+                        <li class="layui-this" lay-id="common_link"><a href="#">好评感谢设置</a></li>
                         <li><a href="#">查看发送记录</a></li>
                     </ul>
                     <div class="layui-tab-content" >
@@ -65,68 +64,6 @@
 
                         </div>
                         <!------------------------------------下单提醒设置end----------------------------->
-
-                        <!------------------------------------催评效果begin---------------------------->
-                        <div class="layui-tab-item">
-                            <div class="layui-row yty-bck">
-                                <div class="layui-col-12">
-                                    <!----------------------------------表格查询条件begin------------------------------->
-                                    <div class="searchbody3 table_form_search">
-                                        <form class="layui-form" method="post" action="" tableid="tableReload" id="appraiseEffectResultForm" lay-filter="appraiseEffectResultForm">
-                                            <table class="layui-table table-border margin_top0" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
-                                                <colgroup>
-                                                    <col class="yty_tdright" width="100px">
-                                                    <col class="yty_tdright">
-                                                </colgroup>
-                                                <tbody>
-                                                <tr>
-                                                    <td class="yty_tdleft">快速筛选 :</td>
-                                                    <td class="yty_tdright">
-                                                        <div class="layui-form yty-checkbox-all">
-                                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="1" title="最近一天" lay-filter="evaluationStatus">
-                                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="2" title="最近一周" checked lay-filter="evaluationStatus">
-                                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="3" title="最近一个月"  lay-filter="evaluationStatus">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="yty_tdleft">评价时间 :</td>
-                                                    <td class="yty_tdright">
-                                                        <input type="text" name="appraise_time_start" id="appraise_time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="appraise_time_end" id="appraise_time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </form>
-                                    </div>
-                                    <!-----------------------------------表格查询条件end--------------------------------->
-                                </div>
-                            </div>
-                            <div class="layui-card">
-                                <div class="layui-card-body layui-card-body-padding">
-                                    <table class="layui-hide" id="appraiseEffectResult" lay-filter="appraiseEffectResult" table-reload-id="tableReload3" lay-size="sm"></table>
-                                </div>
-                                <div class="layui-card-body">
-                                    <div class="layui-row layui-tab-content">
-                                        <div class="layui-col-sm12">
-                                            <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade"
-                                                 lay-filter="LAY-index-pagetwo">
-                                                <div carousel-item id="LAY-index-pagetwo">
-                                                    <div  style="width: 1024px !important;"><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!------------------------催评效果表格头工具栏begin------------------------->
-                        <script type="text/html" id="toolbar3">
-                            <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>
-                            <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="generateReports"><i class="fa fa-file-o"></i> 生成报表</a>
-                        </script>
-                        <!-------------------------催评效果表格头工具栏end---------------------------->
-                        <!------------------------------------催评效果begin---------------------------->
 
                         <!------------------------------------查看发送记录begin---------------------------->
                         <div class="layui-tab-item">
@@ -158,7 +95,7 @@
         </div>
     </div>
 </div>
-{include file="after_sale/appraise_task_add"/}
+{include file="after_sale/praise_task_add"/}
 
 <!--------------------------获取省份弹出begin---------------------->
 {include file="common/area" /}
@@ -201,7 +138,7 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','element','form','authtree','we','weTable','laydate','formValidator','formSearch','sms_modal_init','area', 'sample','echarts'], function(){
+    }).use(['index','table','element','form','authtree','we','weTable','laydate','formValidator','formSearch','sms_modal_init','area'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,table = layui.table
@@ -215,9 +152,6 @@
             ,formSearch = layui.formSearch
             ,formValidator = layui.formValidator
             ,toastr = layui.toastr
-            , myDate = new Date()
-            ,nowDate = we.addDate(myDate.getFullYear() + '-' + (myDate.getMonth()+1) + '-' +  myDate.getDate())//当前日期
-            , e = layui.$, a = (layui.carousel, layui.echarts), l = []
         ;
 
         /*********************下单提醒设置表格初始化begin**************************/
@@ -306,6 +240,21 @@
             }
         })
 
+        /**
+         * 设置屏蔽词
+         * */
+        $('body').on('click','.set_filter_words',function () {
+            set_filter_words_layer_index = we.api.open_current_page_layer($(".filter-words-layer"),'设置屏蔽词',{zIndex:19891016
+            },['600px' , '400px']);
+        })
+        $('body').on('click','.filter-words-confirm',function () {
+            $('#filter_words').val($('.textarea_filter_words').val());
+            layer.close(set_filter_words_layer_index);
+        })
+        $('body').on('click','.filter-words-cancle',function () {
+            layer.close(set_filter_words_layer_index);
+        })
+
         /*********************查看发送记录begin**************************/
         var tableCommon2 = {
             elem: '#sendSmsRecordData'
@@ -372,184 +321,6 @@
         });
         weTable.api.bindevent();
         /*********************查看发送记录end****************************/
-
-        /***********************************催评效果begin*********************************/
-        /**
-         * 时间初始化
-         * */
-        laydate.render({
-            elem: '#appraise_time_start'
-            ,type: 'datetime'
-            ,value: we.addDate(nowDate,-7) + ' 00:00:00'
-        });
-        laydate.render({
-            elem: '#appraise_time_end'
-            ,type: 'datetime'
-            ,value:we.addDate(nowDate,-1) + ' 23:59:59'
-        });
-
-        /**
-         *快速筛选点击选项
-         * */
-        form.on('radio(evaluationStatus)', function(obj){
-            var appraise_time_start =  we.addDate(nowDate,-30) + ' 00:00:00';
-            var appraise_time_end = we.addDate(nowDate,-1) + ' 23:59:59';
-            var data = this.value
-            console.log(data);
-            //最近一天
-            if(data == 1) {
-                appraise_time_start =  we.addDate(nowDate,-2) + ' 00:00:00';
-            }else if(data == 2) {
-                //最近一周
-                appraise_time_start = we.addDate(nowDate,-7) + ' 00:00:00';
-            }else if(data == 3) {
-                //最近一个月
-                appraise_time_start = we.addDate(nowDate, -30) + ' 00:00:00';
-            }
-
-            laydate.render({
-                elem: '#appraise_time_start'
-                ,type: 'datetime'
-                ,value: appraise_time_start
-                ,isInitValue:true
-            });
-            laydate.render({
-                elem: '#appraise_time_end'
-                ,type: 'datetime'
-                ,value:appraise_time_end
-                ,isInitValue:true
-            });
-        });
-
-        var tableCommon3 = {
-            elem: '#appraiseEffectResult'
-            ,method:'post'
-            ,url:"/sms_data.json" //对接请求后台数据
-            ,id : 'tableReload3'
-            ,skin:'line'
-            ,toolbar : '#toolbar3'
-            ,loading:true
-            ,limit:10
-            ,defaultToolbar: ['']//'filter', 'print', 'exports'
-            ,search: true
-            ,cols: [[
-                {type:'checkbox', fixed: 'left',hide:true}
-                ,{field:'date', title: "日期", excel_width:15, minWidth: 120}
-                ,{field:'appraiseSendCount', title: "催评发送数量", excel_width:15, minWidth: 120}
-                ,{field:'taskName', title: "评价数量", excel_width:15, minWidth: 120}
-                ,{field:'appraisePercent', title: "催评比例", excel_width:15, minWidth: 120}
-            ]]
-            ,page: {
-                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']
-                ,all:"{:__('Total')}"
-                ,item:"{:__('Item')}"
-                ,confirm:"{:__('Confirm')}"
-                ,page:"{:__('Page')}"
-                ,ipage:"{:__('IPage')}"
-                ,to:"{:__('To')}"
-                ,first: "{:__('First')}"
-                ,last: "{:__('Last')}"
-                ,prev: "{:__('Previous')}"
-                ,next: "{:__('Next')}"
-            }
-            ,done: function(res, curr, count){
-                if(res.status == 'success') {
-                    layer.closeAll();
-                }
-            }
-        }
-        table.render(tableCommon3); //数据表格初始化
-
-        /**
-         * 默认显示7天
-         * */
-        chart_switch(7);
-
-        /**
-         *趋势图、7、15天统计函数
-         * @param switch_
-         */
-        function chart_switch(switch_) {
-            $.ajax({
-                type: "post",
-                url: "", //调用后台接口
-                async: true,
-                cache: false,
-                data: {'switch': switch_},
-                success: function (data) {
-                    var t = [{
-                        title: {
-                            text: '催评效果统计图示'
-                        },
-                        tooltip: {
-                            trigger: 'axis',
-                            axisPointer: {
-                                type: 'cross',
-                                label: {
-                                    backgroundColor: '#6a7985'
-                                }
-                            }
-                        },
-                        calculable: !0,
-                        legend: {data: ["催评发送数量", "评价数量"]},
-                        toolbox: {
-                            show: true,
-                            feature: {
-                                mark : {show: true},
-                                magicType : {
-                                    show: true,
-                                    type: [ 'tiled','stack'], //'line', 'bar',
-                                    iconStyle: {
-                                        borderColor: ['#605ca8']
-                                    },
-                                },
-                                restore : {
-                                    show: true,
-                                    iconStyle: {
-                                        borderColor: ['#22bb22']
-                                    },
-
-                                },
-                            }
-                        },
-                        grid: {
-                            left: '0%',
-                        },
-                        xAxis: [{
-                            type: "category",
-                            data: ["2019-03-04", "2019-03-05", "2019-03-06", "2019-03-07", "2019-03-08", "2019-03-09", "2019-03-10"]
-                        }],
-                        yAxis: [{type: "value"}],
-                        series: [{
-                            name: "催评发送数量",
-                            type: "line",
-                            itemStyle: {
-                                normal: {
-                                    color: "#ffaf25"
-                                }
-                            },
-                            data: [1, 2, 5, 5, 10, 11, 20]
-                        }, {
-                            name: "评价数量",
-                            type: "line",
-                            itemStyle: {
-                                normal: {
-                                    color: "#a85ba1"
-                                }
-                            },
-                            data: [5, 4, 0, 1, 3, 3, 3]
-                        }]
-                    }], i = e("#LAY-index-pagetwo").children("div"), n = function (e) {
-                        l[e] = a.init(i[e], layui.echartsTheme), l[e].setOption(t[e]), window.onresize = l[e].resize
-                    };
-                    i[0] && n(0)
-                },
-                error: function () {
-
-                }
-            });
-        }
-        /**********************************催评效果begin************************************************/
 
 
         /****************************************3个步奏公共模块begin***********************************/

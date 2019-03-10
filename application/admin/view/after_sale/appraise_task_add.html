@@ -4,10 +4,6 @@
 {include file="common/sms_modal"/}
 <!---------------------------短信公共模块begin----------------------->
 
-<!--------------------------获取省份弹出begin---------------------->
-{include file="common/area" /}
-<!--------------------------获取省份弹出end---------------------->
-
 <!---------------------------短信模版弹出begin----------------------->
 <!--<div class="body-form sms-module-layer auto-height-table" style="display: none">-->
     <!--<div class="layui-form">-->
@@ -351,12 +347,12 @@
 
                             <!-------------------------------------第一步begin----------------------------------->
                             <tbody class="step-first">
-                            <tr>
-                                <td class="yty_tdleft"> 发送条件 :</td>
-                                <td class="yty_tdright">
-                                    当买家下单时，立即发送感谢短信，到买家手机上。
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="yty_tdleft"> 发送条件 :</td>
+                                    <td class="yty_tdright">
+                                        当买家收到宝贝时，立即发送感谢短信，到买家手机上。
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td class="yty_tdleft"> 是否开启 :</td>
                                     <td class="yty_tdright">
@@ -391,7 +387,7 @@
                                     <td class="yty_tdright">
                                         每天 <input type="text" name="day_hour_start" id="day_hour_start" placeholder="" autocomplete="off" class="layui-input"> 时 至
                                         <input type="text" name="day_hour_end" id="day_hour_end" placeholder="" autocomplete="off" class="layui-input">
-                                        时，发送关怀提醒 (其他时间自动延迟到次日发送)
+                                        发送催评价短信 (21:00至次日8:59自动延迟发送)
                                         <br>
                                         <p class="marginbuttom5"></p>
 
@@ -425,8 +421,42 @@
                             <!--------------------------------------第二步begin---------------------------------->
                             <tbody class="step-second" style="display: none">
                                 <tr>
-                                    <td class="yty_tdleft"> 关怀条件 :</td>
+                                    <td class="yty_tdleft"> 提醒条件 :</td>
                                     <td class="yty_tdright">
+                                        <div class="layui-inline yty-form">
+                                            <span>买家确认收货超过</span>
+                                            <div class="layui-input-inline">
+                                                <select name="overtime" lay-verify="required" lay-search="">
+                                                    <option value="0">0分钟</option>
+                                                    <option value="15">15分钟</option>
+                                                    <option value="30">30分钟</option>
+                                                    <option value="1">1小时</option>
+                                                    <option value="2">2小时</option>
+                                                    <option value="3">3小时</option>
+                                                    <option value="4">4小时</option>
+                                                    <option value="5">5小时</option>
+                                                    <option value="6" selected>6小时</option>
+                                                    <option value="7">7小时</option>
+                                                    <option value="8">8小时</option>
+                                                    <option value="9">9小时</option>
+                                                    <option value="10">10小时</option>
+                                                    <option value="11">11小时</option>
+                                                    <option value="12">12小时</option>
+                                                    <option value="24">24小时</option>
+                                                    <option value="36">36小时</option>
+                                                    <option value="48">2天</option>
+                                                    <option value="72">3天</option>
+                                                    <option value="96">4天</option>
+                                                    <option value="120">5天</option>
+                                                    <option value="144">6天</option>
+                                                    <option value="168">7天</option>
+                                                    <option value="240">10天</option>
+                                                    <option value="288">12天</option>
+                                                </select>
+                                            </div>
+                                            <span>后未评价</span>
+                                        </div>
+                                        <p class="marginbuttom5"></p>
                                         <input type="checkbox" name="care_swicht" lay-skin="primary"  title="" checked="">
                                         实付金额 <input type="number" value="0.00" min="0" name="actually_paid_start" id="actually_paid_start" placeholder="" autocomplete="off" class="layui-input"> —
                                         <input type="number" min="0" value="0.00" name="actually_paid_end" id="actually_paid_end" placeholder="" autocomplete="off" class="layui-input">元
@@ -450,32 +480,32 @@
                                             <span>指定商品</span>
                                             <button type="button" name="" id="" placeholder="" autocomplete="off" class="layui-btn layui-btn-primary btn-primary-border layui-btn-sm btn-embossed">默认不选择商品</button>
                                         </div>
-                                        <br>
-                                        <p class="marginbuttom5"></p>
-                                        <input type="checkbox" name="order_type_switch" lay-skin="primary"  title="" checked="">订单类型为<span style="color: #FF5722">货到付款</span>时才发送提醒
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="yty_tdleft"> 过滤设置 :</td>
                                     <td class="yty_tdright">
-                                        <input type="checkbox" name="filter_set_switch" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="only_send_time_swicht" lay-skin="primary" value="1" title="" checked="">
+                                        只发送下单时间在 <input type="text" value="" name="only_send_time_start" id="only_send_time_start" placeholder="" autocomplete="off" class="layui-input"> —
+                                        <input type="text" name="only_send_time_end" id="only_send_time_end" placeholder="" autocomplete="off" class="layui-input">元
+                                        <p class="marginbuttom5"></p>
+                                        <input type="checkbox" name="filter_set_switch" lay-skin="primary" value="1" title="" checked="">
                                         <div class="layui-inline yty-form">
                                             <span>不发送</span>
                                             <div class="layui-input-inline">
-                                                <select name="modules" lay-verify="required" lay-search="">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3" selected>3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
+                                                <select name="filter_days" lay-verify="required" lay-search="">
+                                                    <option value="10">10</option>
+                                                    <option value="20" selected>20</option>
+                                                    <option value="30">30</option>
+                                                    <option value="40">40</option>
                                                 </select>
                                             </div>
-                                            <span>天内有过付款的客户</span>
+                                            <span>天内发送的客户</span>
                                         </div>
                                         <br>
                                         <p class="marginbuttom5"></p>
 
-                                        <input type="checkbox" name="not_flag_switch" lay-skin="primary"  title="" checked="">
+                                        <input type="checkbox" name="not_flag_switch" lay-skin="primary" value="1" title="" checked="">
                                         不发送标旗订单
                                         <div class="layui-inline yty-form">
                                             <ul class="yty-checkbox">
@@ -549,17 +579,17 @@
 
                             <!----------------------------------------第三步begin--------------------------------->
                             <tbody  class="step-third" style="display: none">
-                                <tr>
-                                    <td class="yty_tdleft"> 赠送礼品 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="checkbox" name="gift_switch" lay-skin="primary"  title="" checked="">
-                                        <div class="layui-inline yty-form">
-                                            <span>赠送流量</span>
-                                            <a href="javascript:void(0);" class="astyle">选择流量卡 </a>
-                                            <a href="javascript:void(0);" class="astyle">流量充值 </a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                <!--<tr>-->
+                                    <!--<td class="yty_tdleft"> 赠送礼品 :</td>-->
+                                    <!--<td class="yty_tdright">-->
+                                        <!--<input type="checkbox" name="gift_switch" lay-skin="primary"  title="" checked="">-->
+                                        <!--<div class="layui-inline yty-form">-->
+                                            <!--<span>赠送流量</span>-->
+                                            <!--<a href="javascript:void(0);" class="astyle">选择流量卡 </a>-->
+                                            <!--<a href="javascript:void(0);" class="astyle">流量充值 </a>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
 
                                 <!--<tr class="yty-form">-->
                                     <!--<td class="yty_tdleft"> 短信内容 :</td>-->
@@ -605,7 +635,7 @@
                                                             </ul>
                                                             <!--<br>-->
                                                             <!--<p class="marginbuttom5"></p>-->
-                                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>
+                                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">温馨提示：亲爱的{买家昵称}，您已经收到宝贝，喜欢的话给个好评哦，祝购物愉快！</textarea>
                                                             <p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
 2、一个汉字,数字,字母,空格都算一个字<br>
 3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
@@ -629,7 +659,7 @@
                                                 <div class="sms-phone">
                                                     <div class="phone-container">
                                                         <div class="smg-content">
-                                                            【阿里狗】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>
+                                                            【阿里狗】<span class="synchronize_sms_content">温馨提示：亲爱的{买家昵称}，您已经收到宝贝，喜欢的话给个好评哦，祝购物愉快！</span>
                                                         </div>
                                                     </div>
                                                 </div>
