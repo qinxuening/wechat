@@ -2836,3 +2836,13 @@ input:focus, select:focus{
 .tdpadding20 tr>td{
     padding: 20px 5px !important;
 }
+
+.float-right{
+    float: right;
+}
+
+.close-icon-right{
+    cursor: pointer;
+    font-size: 18px;
+    color: #506def;
+}

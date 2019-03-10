@@ -490,6 +490,13 @@
         $("body").on("click",".cancle",function (){
 //            var index = parent.layer.getFrameIndex(window.name);
 //            parent.layer.close(index);
+            $(".step-second").hide();
+            $(".step-two-msg").removeClass('step-active');
+            $(".step-tow-number").removeClass('step-number-active');
+            $(".step-third").hide();
+            $(".step-three-msg").removeClass('step-active');
+            $(".step-three-number").removeClass('step-number-active');
+            $(".step-first").show();
             $('.main-task').slideDown(100);
             $('.sms-common').hide();
         });
