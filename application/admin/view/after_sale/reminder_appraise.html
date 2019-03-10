@@ -58,7 +58,7 @@
                             <div class="layui-card">
                                 <div class="layui-card-body layui-card-body-padding">
                                     <!-----------------------------------------------订单查询结果begin----------------------->
-                                    <table class="layui-hide" id="order_care_data_list" lay-filter="order_care_data_list" table-reload-id="tableReload" lay-size="sm"></table>
+                                    <table class="layui-hide" id="order_care_data_list" lay-filter="order_care_data_list" table-reload-id="tableReload1" lay-size="sm"></table>
                                     <!----------------------------------------------订单查询结果end-------------------------->
                                 </div>
                             </div>
@@ -68,11 +68,52 @@
 
                         <!------------------------------------催评效果begin---------------------------->
                         <div class="layui-tab-item">
+                            <div class="layui-row yty-bck">
+                                <div class="layui-col-12">
+                                    <!----------------------------------表格查询条件begin------------------------------->
+                                    <div class="searchbody3 table_form_search">
+                                        <form class="layui-form" method="post" action="" tableid="tableReload" id="appraiseEffectResultForm" lay-filter="appraiseEffectResultForm">
+                                            <table class="layui-table table-border margin_top0" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
+                                                <colgroup>
+                                                    <col class="yty_tdright" width="100px">
+                                                    <col class="yty_tdright">
+                                                </colgroup>
+                                                <tbody>
+                                                <tr>
+                                                    <td class="yty_tdleft">快速筛选 :</td>
+                                                    <td class="yty_tdright">
+                                                        <div class="layui-form yty-checkbox-all">
+                                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="1" title="最近一天" checked lay-filter="evaluationStatus">
+                                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="2" title="最近一周"  lay-filter="evaluationStatus">
+                                                            <input type="radio" lay-skin="primary" name="evaluationStatus" value="3" title="最近一个月"  lay-filter="evaluationStatus">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="yty_tdleft">评价时间 :</td>
+                                                    <td class="yty_tdright">
+                                                        <input type="text" name="appraise_time_start" id="appraise_time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="appraise_time_end" id="appraise_time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </form>
+                                    </div>
+                                    <!-----------------------------------表格查询条件end--------------------------------->
+                                </div>
+                            </div>
                             <div class="layui-card">
                                 <div class="layui-card-body layui-card-body-padding">
+                                    <table class="layui-hide" id="appraiseEffectResult" lay-filter="appraiseEffectResult" table-reload-id="tableReload3" lay-size="sm"></table>
                                 </div>
                             </div>
                         </div>
+                        <!------------------------催评效果表格头工具栏begin------------------------->
+                        <script type="text/html" id="toolbar3">
+                            <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>
+                            <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="generateReports"><i class="fa fa-file-o"></i> 生成报表</a>
+                        </script>
+                        <!-------------------------催评效果表格头工具栏end---------------------------->
                         <!------------------------------------催评效果begin---------------------------->
 
                         <!------------------------------------查看发送记录begin---------------------------->
@@ -161,7 +202,10 @@
             ,weTable = layui.weTable
             ,formSearch = layui.formSearch
             ,formValidator = layui.formValidator
-            ,toastr = layui.toastr;
+            ,toastr = layui.toastr
+            , myDate = new Date()
+            ,nowDate = we.addDate(myDate.getFullYear() + '-' + (myDate.getMonth()+1) + '-' +  myDate.getDate())//当前日期
+        ;
 
         /*********************下单提醒设置表格初始化begin**************************/
         layer.load(0, {shade: false});
@@ -249,8 +293,6 @@
             }
         })
 
-
-
         /*********************查看发送记录begin**************************/
         var tableCommon2 = {
             elem: '#sendSmsRecordData'
@@ -317,6 +359,91 @@
         });
         weTable.api.bindevent();
         /*********************查看发送记录end****************************/
+
+        /***********************************催评效果begin*********************************/
+        /**
+         * 时间初始化
+         * */
+        laydate.render({
+            elem: '#appraise_time_start'
+            ,type: 'datetime'
+            ,value: we.addDate(nowDate,-2) + ' 00:00:00'
+        });
+        laydate.render({
+            elem: '#appraise_time_end'
+            ,type: 'datetime'
+            ,value:we.addDate(nowDate,-1) + ' 23:59:59'
+        });
+
+        /**
+         *快速筛选点击选项
+         * */
+        form.on('radio(evaluationStatus)', function(obj){
+            var appraise_time_start =  we.addDate(nowDate,-30) + ' 00:00:00';
+            var appraise_time_end = we.addDate(nowDate,-1) + ' 23:59:59';
+            var data = this.value
+            console.log(data);
+            if(data == 1) {
+                appraise_time_start =  we.addDate(nowDate,-2) + ' 00:00:00';
+            }else if(data == 2) {
+                appraise_time_start = we.addDate(nowDate,-7) + ' 00:00:00';
+            }else if(data == 3) {
+                appraise_time_start = we.addDate(nowDate, -30) + ' 00:00:00';
+            }
+
+            laydate.render({
+                elem: '#appraise_time_start'
+                ,type: 'datetime'
+                ,value: appraise_time_start
+                ,isInitValue:true
+            });
+            laydate.render({
+                elem: '#appraise_time_end'
+                ,type: 'datetime'
+                ,value:appraise_time_end
+                ,isInitValue:true
+            });
+        });
+
+        var tableCommon3 = {
+            elem: '#appraiseEffectResult'
+            ,method:'post'
+            ,url:"/sms_data.json" //对接请求后台数据
+            ,id : 'tableReload3'
+            ,skin:'line'
+            ,toolbar : '#toolbar3'
+            ,loading:true
+            ,limit:10
+            ,defaultToolbar: ['']//'filter', 'print', 'exports'
+            ,search: true
+            ,cols: [[
+                {type:'checkbox', fixed: 'left',hide:true}
+                ,{field:'date', title: "日期", excel_width:15, minWidth: 120}
+                ,{field:'appraiseSendCount', title: "催评发送数量", excel_width:15, minWidth: 120}
+                ,{field:'taskName', title: "评价数量", excel_width:15, minWidth: 120}
+                ,{field:'appraisePercent', title: "催评比例", excel_width:15, minWidth: 120}
+            ]]
+            ,page: {
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']
+                ,all:"{:__('Total')}"
+                ,item:"{:__('Item')}"
+                ,confirm:"{:__('Confirm')}"
+                ,page:"{:__('Page')}"
+                ,ipage:"{:__('IPage')}"
+                ,to:"{:__('To')}"
+                ,first: "{:__('First')}"
+                ,last: "{:__('Last')}"
+                ,prev: "{:__('Previous')}"
+                ,next: "{:__('Next')}"
+            }
+            ,done: function(res, curr, count){
+                if(res.status == 'success') {
+                    layer.closeAll();
+                }
+            }
+        }
+        table.render(tableCommon3); //数据表格初始化
+        /**********************************催评效果begin************************************************/
 
 
         /****************************************3个步奏公共模块begin***********************************/

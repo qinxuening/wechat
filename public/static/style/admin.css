@@ -1864,16 +1864,22 @@ tr>td.tdright .layui-textarea{
     /*background: #ffffff;*/
 }
 
-.searchbody,.searchbody1,.searchbody2,.searchBodyCommon {
+.searchbody,.searchbody1,.searchbody2,.searchbody3,.searchBodyCommon {
     padding: 10px 15px 1px 15px !important;
     height: auto;
     /*overflow:auto;*/
 }
 
-.searchbody .layui-btn,.searchbody1 .layui-btn,.searchbody2 .layui-btn,.searchBodyCommon .layui-btn{
+.searchbody .layui-btn,.searchbody1 .layui-btn,.searchbody2 .layui-btn,.searchbody3 .layui-btn,.searchBodyCommon .layui-btn{
     padding: 0px 30px;
 }
 
+.table_form_search{
+    padding: 4px 15px 1px 0px !important;
+}
+.margin_top0{
+    margin-top: 0px !important;
+}
 .layer_notice {
     float: left;
     min-height: 75px;

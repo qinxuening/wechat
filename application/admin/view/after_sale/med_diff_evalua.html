@@ -435,7 +435,7 @@
         laydate.render({
             elem: '#appraise_time_end'
             ,type: 'datetime'
-            ,value:nowDate + ' 23:59:59'
+            ,value:we.addDate(nowDate,-1) + ' 23:59:59'
         });
 
         /**
@@ -444,22 +444,21 @@
          * */
         form.on('radio(evaluationStatus)', function(obj){
             var appraise_time_start =  we.addDate(nowDate,-30) + ' 00:00:00';
-            var appraise_time_end = nowDate + ' 23:59:59';
-//            console.log(this.value);
+            var appraise_time_end = we.addDate(nowDate,-1) + ' 23:59:59';
             var data = this.value
             if(data == 0) {
                 appraise_time_start =  we.addDate(nowDate,-180) + ' 00:00:00';
             } else if(data == 1) {
                 appraise_time_start =  we.addDate(nowDate,-30) + ' 00:00:00';
             }else if(data == 2) {
-                appraise_time_start = nowDate + ' 00:00:00';
+                appraise_time_start = we.addDate(nowDate,-1) + ' 00:00:00';
             }else if(data == 3) {
                 appraise_time_start = we.addDate(nowDate,-3) + ' 00:00:00';
             }else if(data == 4) {
-                appraise_time_start = nowDate + ' 00:00:00';
+                appraise_time_start = we.addDate(nowDate,-1) + ' 00:00:00';
                 appraise_time_end  = we.addDate(nowDate,1) + ' 23:59:59';
             }else if(data == 5) {
-                appraise_time_start = nowDate + ' 00:00:00';
+                appraise_time_start = we.addDate(nowDate,-1) + ' 00:00:00';
                 appraise_time_end  = we.addDate(nowDate,3) + ' 23:59:59';
             }
 
