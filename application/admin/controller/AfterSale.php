@@ -36,6 +36,10 @@ class AfterSale extends baseAdmin{
         return $this->view->fetch();
     }
     
+    public function reminder_appease(){
+        return $this->view->fetch();
+    }
+    
     /**
      * 入列测试，发布任务，生产者
      */

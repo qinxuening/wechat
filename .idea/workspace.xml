@@ -76,7 +76,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="praise_task_add.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="praise_task_add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/praise_task_add.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
@@ -91,11 +91,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="reminder_appease.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/reminder_appease.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="97" column="42" lean-forward="false" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appease_task_add.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/appease_task_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="557" column="138" lean-forward="false" selection-start-line="557" selection-start-column="138" selection-end-line="557" selection-end-column="138" />
+              <folding>
+                <element signature="n#div#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="reminder_praise.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/reminder_praise.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
-              <caret line="252" column="10" lean-forward="true" selection-start-line="252" selection-start-column="10" selection-end-line="252" selection-end-column="10" />
+              <caret line="252" column="10" lean-forward="false" selection-start-line="252" selection-start-column="10" selection-end-line="252" selection-end-column="10" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
@@ -126,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="428">
-              <caret line="198" column="44" lean-forward="true" selection-start-line="198" selection-start-column="44" selection-end-line="198" selection-end-column="44" />
+              <caret line="198" column="44" lean-forward="false" selection-start-line="198" selection-start-column="44" selection-end-line="198" selection-end-column="44" />
               <folding>
                 <element signature="e#721#4434#0" expanded="false" />
                 <element signature="e#9258#9899#0" expanded="false" />
@@ -175,9 +200,9 @@
       <find>催付效果统计图示</find>
       <find>task_add</find>
       <find>layer-filter</find>
-      <find>filter</find>
       <find>open_current_page_layer</find>
       <find>赠送礼品</find>
+      <find>filter</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -189,8 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/admin/view/push/import.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/common/header.html" />
         <option value="$PROJECT_DIR$/public/static/modules/weTable.js" />
         <option value="$PROJECT_DIR$/application/admin/view/order/sms_record.html" />
         <option value="$PROJECT_DIR$/public/static/modules/setField.js" />
@@ -240,6 +263,8 @@
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/reminder_praise.html" />
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/appraise_task_add.html" />
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/praise_task_add.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/after_sale/reminder_appease.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/after_sale/appease_task_add.html" />
       </list>
     </option>
   </component>
@@ -587,18 +612,18 @@
       <workItem from="1551238621044" duration="26840000" />
       <workItem from="1551493718484" duration="31604000" />
       <workItem from="1551888677364" duration="560000" />
-      <workItem from="1551964232144" duration="62156000" />
+      <workItem from="1551964232144" duration="63924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1004503000" />
+    <option name="totallyTimeSpent" value="1006271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10366714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11142454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -627,20 +652,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user/rule/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/modules/formValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4077">
-          <caret line="151" column="28" lean-forward="false" selection-start-line="151" selection-start-column="28" selection-end-line="151" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/user2/user/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2916">
@@ -1053,7 +1064,7 @@
     <entry file="file://$PROJECT_DIR$/public/static/modules/we.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
-          <caret line="198" column="44" lean-forward="true" selection-start-line="198" selection-start-column="44" selection-end-line="198" selection-end-column="44" />
+          <caret line="198" column="44" lean-forward="false" selection-start-line="198" selection-start-column="44" selection-end-line="198" selection-end-column="44" />
           <folding>
             <element signature="e#721#4434#0" expanded="false" />
             <element signature="e#9258#9899#0" expanded="false" />
@@ -1064,7 +1075,7 @@
     <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/reminder_praise.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="252" column="10" lean-forward="true" selection-start-line="252" selection-start-column="10" selection-end-line="252" selection-end-column="10" />
+          <caret line="252" column="10" lean-forward="false" selection-start-line="252" selection-start-column="10" selection-end-line="252" selection-end-column="10" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
@@ -1097,6 +1108,27 @@
             <element signature="n#style#0;n#textarea#0;n#td#0;n#tr#1;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#style#0;n#textarea#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#2;n#tbody#1;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/reminder_appease.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="97" column="42" lean-forward="false" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/appease_task_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="557" column="138" lean-forward="false" selection-start-line="557" selection-start-column="138" selection-end-line="557" selection-end-column="138" />
+          <folding>
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
