@@ -1,0 +1,847 @@
+<!--{extend name="layout/default2" /}-->
+<!--{block name="content"}-->
+<!---------------------------短信公共模块begin----------------------->
+{include file="common/sms_modal"/}
+<!---------------------------短信公共模块begin----------------------->
+
+<!---------------------------短信模版弹出begin----------------------->
+<!--<div class="body-form sms-module-layer auto-height-table" style="display: none">-->
+    <!--<div class="layui-form">-->
+        <!--<div class="" lay-filter="component-tabs-brief">-->
+            <!--<ul class="tabpage" id="tabs">-->
+                <!--<li class="" id="li1"><a href="#" class="tab1">推荐场景</a></li>-->
+                <!--<li class="" id="li2"><a href="#" class="tab2">模板库</a></li>-->
+                <!--<li class="" id="li3"><a href="#" class="tab3">历史发送</a></li>-->
+                <!--<li class="" id="li4"><a href="#" class="tab4">近期节日</a></li>-->
+            <!--</ul>-->
+            <!--<div class="contenttab" id="content">-->
+                <!--<div class="layui-row">-->
+                    <!--<div class="layui-tab-item" id="tab1">-->
+                        <!--<form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-recommend-sms-module" lay-filter="form-sms-module">-->
+                            <!--<div class="searchbody">-->
+                                <!--<ul class="nav pull-left">-->
+                                    <!--<input type="hidden" name="sms_type" value="1" placeholder="" autocomplete="off" class="layui-input">-->
+                                    <!--<li>场景类型：-->
+                                        <!--<div class="layui-inline">-->
+                                            <!--<div class="layui-input-inline">-->
+                                                <!--<select name="recommended_scene" lay-verify="required" lay-search="">-->
+                                                    <!--<option value="4" selected>所有场景</option>-->
+                                                    <!--<option value="1">周年庆</option>-->
+                                                    <!--<option value="2">聚划算</option>-->
+                                                    <!--<option value="3">上新</option>-->
+                                                <!--</select>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                    <!--<li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>-->
+                                        <!--<button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>-->
+                                    <!--</li></ul>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                    <!--<div class="layui-tab-item" id="tab2">-->
+                        <!--<form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-sms-module" lay-filter="form-sms-module">-->
+                            <!--<div class="searchbody">-->
+                                <!--<ul class="nav pull-left">-->
+                                    <!--<input type="hidden" name="sms_type" value="2" placeholder="" autocomplete="off" class="layui-input">-->
+                                    <!--<li>模板来源：-->
+                                        <!--<div class="layui-input-inline">-->
+                                            <!--<select name="modeltype" id="modeltype"  lay-verify="required" lay-search="">-->
+                                                <!--<option value="2" selected>所有类型</option>-->
+                                                <!--<option value="1">自定义模板</option>-->
+                                                <!--<option value="0">系统模板</option>-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                    <!--<li>模板类型：-->
+                                        <!--<div class="layui-input-inline">-->
+                                            <!--<select name="selecttemp" id="selecttemp" lay-verify="required" lay-search="">-->
+                                                <!--<option value="0" selected="selected">所有模板</option>-->
+                                                <!--<option value="16">会员短信 </option>-->
+                                                <!--<option value="17">指定号码发送</option>-->
+                                                <!--<option value="18">订单短信群发 </option>-->
+                                                <!--<option value="1">催付提醒</option>-->
+                                                <!--<option value="2">发货提醒</option>-->
+                                                <!--<option value="3">催付关怀</option>-->
+                                                <!--<option value="4">派送提醒</option>-->
+                                                <!--<option value="5">签收提醒</option>-->
+                                                <!--<option value="6">回款关怀 </option>-->
+                                                <!--<option value="7">退款关怀 </option>-->
+                                                <!--<option value="8">评价关怀 </option>-->
+                                                <!--<option value="9">中差评安抚 </option>-->
+                                                <!--<option value="12">催评价 </option>-->
+                                                <!--<option value="13">下单提醒 </option>-->
+                                                <!--<option value="14">宝贝关怀 </option>-->
+                                                <!--<option value="15">智能凑单 </option>-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                    <!--<li>关键词：<input type="text" name="keyword" id="keyword" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                                    <!--<li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>-->
+                                        <!--<button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>-->
+                                    <!--</li></ul>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                    <!--<div class="layui-tab-item" id="tab3">-->
+                        <!--<form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-history-sms-module" lay-filter="form-sms-module">-->
+                            <!--<input type="hidden" name="sms_type" value="3" placeholder="" autocomplete="off" class="layui-input">-->
+                        <!--</form>-->
+                    <!--</div>-->
+                    <!--<div class="layui-tab-item" id="tab4">-->
+                        <!--<form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-latest-sms-module" lay-filter="form-sms-module">-->
+                            <!--<input type="hidden" name="sms_type" value="4" placeholder="" autocomplete="off" class="layui-input">-->
+                        <!--</form>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="layui-row">-->
+                    <!--<table class="layui-hide" id="table-sms" lay-filter="table_sms" table-reload-id="tableReload"></table>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!---------------------------短信模版弹出end-------------------------->
+
+<!----------------------------短链模版弹出begin----------------------->
+<!--<div class="body-form short-href-layer auto-height-table" style="display: none">-->
+    <!--<div class="layui-form yty-tab">-->
+        <!--<div class="layui-tab" lay-filter="short-href-tab">-->
+            <!--<ul class="layui-tab-title tabpage">-->
+                <!--<li class="layui-this" lay-id="common_link"><a href="#">店铺常用链接</a></li>-->
+                <!--<li><a href="#">宝贝链接</a></li>-->
+                <!--<li><a href="#">宝贝分类</a></li>-->
+                <!--<li><a href="#">优惠券</a></li>-->
+                <!--<li><a href="#">搭配套餐</a></li>-->
+                <!--<li><a href="#">金店长活动</a></li>-->
+            <!--</ul>-->
+            <!--<div class="layui-tab-content" style="height: 100px;">-->
+                <!--&lt;!&ndash;<div class="layui-row">&ndash;&gt;-->
+                <!--<div class="layui-tab-item layui-show common_link"></div>-->
+                <!--<div class="layui-tab-item good_link">-->
+                    <!--<form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-sms-good-link" lay-filter="form-sms-good-link">-->
+                        <!--<div class="searchbody">-->
+                            <!--<ul class="nav pull-left">-->
+                                <!--<input type="hidden" name="short_sms_type" value="1" placeholder="" autocomplete="off" class="layui-input">-->
+                                <!--<li>宝贝状态：-->
+                                    <!--<div class="layui-input-inline">-->
+                                        <!--<select name="goods_status" id="goods_status" lay-verify="required" lay-search="">-->
+                                            <!--<option value="1" selected>所有状态</option>-->
+                                            <!--<option value="2">出售中</option>-->
+                                            <!--<option value="3">仓库中</option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</li>-->
+                                <!--<li>宝贝ID：<input type="text" name="goods_id" id="goods_id" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                                <!--<li>宝贝标题：<input type="text" name="goods_title" id="goods_title" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                                <!--<li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>-->
+                                    <!--<button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>-->
+                                <!--</li></ul>-->
+                        <!--</div>-->
+                    <!--</form>-->
+                <!--</div>-->
+                <!--<div class="layui-tab-item gategory_list"></div>-->
+                <!--<div class="layui-tab-item coupon_list"></div>-->
+                <!--<div class="layui-tab-item match_list"></div>-->
+                <!--<div class="layui-tab-item jdz_list">-->
+                    <!--<form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-sms-jdz-list" lay-filter="form-sms-jdz-list">-->
+                        <!--<div class="searchbody">-->
+                            <!--<ul class="nav pull-left">-->
+                                <!--<input type="hidden" name="short_sms_type" value="5" placeholder="" autocomplete="off" class="layui-input">-->
+                                <!--<li>活动名称：<input type="text" name="act_name" id="act_name" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                                <!--<li>页面标题：<input type="text" name="act_title" id="act_title" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                                <!--<li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>-->
+                                    <!--<button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>-->
+                                <!--</li></ul>-->
+                        <!--</div>-->
+                    <!--</form>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--<div class="layui-row">-->
+                    <!--<table class="layui-hide" id="table-short-link-sms" lay-filter="table-short-link-sms" table-reload-id="tableReload"></table>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!----------------------------短链模版弹出end-------------------------->
+
+<!--修改短信内容弹出begin-->
+<!--<div class="body-form sms-layer" style="display: none">-->
+    <!--<div class="layui-form">-->
+        <!--<div class="layui-card main-table">-->
+            <!--<div class="layui-card-body main-body">-->
+                <!--<blockquote class="layui-elem-quote layui-text layui-quote-style">-->
+                    <!--<p>1. 短信中插入标签或链接时，<span class="red_color">标签或链接前后需有空格分隔</span>，请勿删除前后空格，否则可能导致无法正常替换和跳转；</p>-->
+                    <!--<p>2. 短信内容中若含有促销词如:微信、QQ、店庆等,请务必在短信内容末尾添加“退订回N”</p>-->
+                <!--</blockquote>-->
+                <!--<div class="layui-row">-->
+                    <!--<div class="layui-col-md8">-->
+                        <!--<table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">-->
+                            <!--<colgroup>-->
+                                <!--<col class="yty_tdleft" width="30%">-->
+                                <!--<col class="yty_tdright">-->
+                            <!--</colgroup>-->
+                            <!--<tbody>-->
+                            <!--<tr>-->
+                                <!--<td class="yty_tdleft"><span class="red_color">*</span> 短信签名</td>-->
+                                <!--<td colspan="2" class="yty_tdright">-->
+                                    <!--【<input type="text" name="sms_name" id="sms_name" value="阿里狗" placeholder="" autocomplete="off" class="layui-input">】-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td class="yty_tdleft"><span class="red_color">*</span> 短信标签</td>-->
+                                <!--<td class="yty_tdright sms_label">-->
+                                    <!--<ul class="ulstyle0">-->
+                                        <!--<li><a href="javascript:void(0);" id="buyer">收货人</a></li>-->
+                                        <!--<li><a href="javascript:void(0);" id="order_id">订单编号</a></li>-->
+                                        <!--<li><a href="javascript:void(0);" id="seller_nick_name">买家昵称</a></li>-->
+                                        <!--<li><a href="javascript:void(0);" id="product_name">商品简称</a></li>-->
+                                        <!--<li><a href="javascript:void(0);">商品名称</a></li>-->
+                                    <!--</ul>-->
+
+                                    <!--<ul class="ulstyle1">-->
+                                        <!--<li><a href="javascript:void(0);" id="short_href">#短链#</a></li>-->
+                                        <!--<li><a href="javascript:void(0);" id="sms_module">#短信模板#</a></li>-->
+                                    <!--</ul>-->
+                                    <!--&lt;!&ndash;<br>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<p class="marginbuttom5"></p>&ndash;&gt;-->
+                                    <!--<textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>-->
+                                    <!--<p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>-->
+<!--2、一个汉字,数字,字母,空格都算一个字<br>-->
+<!--3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>-->
+                                    <!--&lt;!&ndash;<p class="font12">1、单条70个字,超出70个字将按照67个字每条计算<br></p>-->
+                                    <!--<p class="font12">2、一个汉字,数字,字母,空格都算一个字<br></p>-->
+                                    <!--<p class="font12">3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！</p>&ndash;&gt;-->
+                                    <!--<p class="font12">提示：<span class="red_color">标签和链接前后需有空格分隔，请勿删除前后空格！</span></p>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td class="yty_tdleft">短信测试</td>-->
+                                <!--<td class="yty_tdright">-->
+                                    <!--<input type="text" style="font-size: 12px;width: 300px;" name="test_phone" placeholder="请输入短信测试手机号，多个手机号用逗号(,)隔开" id="test_phone" value="" placeholder="" autocomplete="off" class="layui-input">-->
+                                    <!--<button type="button" name="" id="" autocomplete="off" class="layui-btn layui-btn-sm  layui-btn-primary">短信测试</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--</tbody>-->
+                        <!--</table>-->
+                    <!--</div>-->
+                    <!--<div class="layui-col-md4">-->
+                        <!--<div class="sms-phone">-->
+                            <!--<div class="phone-container">-->
+                                <!--<div class="smg-content">-->
+                                    <!--【覃雪宁88】<span class="synchronize_sms_content">注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="layui-form-item layer-form-footer">-->
+                    <!--<div class="footer-inner">-->
+                        <!--<button type="submit" lay-submit="" lay-filter="formRule"-->
+                                <!--class="layui-btn layui-btn-normal submit layui-btn-sm sms-confirm btn-embossed">{:__('OK')}-->
+                        <!--</button>-->
+                        <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed reset">-->
+                            <!--取消-->
+                        <!--</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--修改短信内容弹出end-->
+
+<!-----------------------设置黑名单begin-------------------------->
+<!--<div class="body-form black-module-layer auto-height-table" style="display: none">-->
+    <!--<div class="layui-form">-->
+        <!--<div class="layui-row">-->
+            <!--<form class="layui-form" method="POST" action="/sms_data.json" tableid="tableReload" id="form-set-black" lay-filter="form-sms-good-link">-->
+                <!--<div class="searchbody">-->
+                    <!--<ul class="nav pull-left">-->
+                        <!--<li>云信/手机号码：<input type="text" name="uid_name" id="uid_name" placeholder="" autocomplete="off" class="layui-input"></li>-->
+                        <!--<li><button class="layui-btn layui-btn-sm layui-btn-normal search-info" type="button" lay-submit="" lay-filter="component-form-element"><i class="layui-icon layui-icon-search"></i>搜索</button>-->
+                            <!--<button type="reset" class="layui-btn layui-btn-normal layui-btn-sm layui-btn-sm"><i class="layui-icon layui-icon-refresh-3"></i>重置</button>-->
+                        <!--</li></ul>-->
+                <!--</div>-->
+            <!--</form>-->
+        <!--</div>-->
+        <!--<div class="layui-row">-->
+            <!--<table class="layui-hide" id="table_black" lay-filter="table_black" table-reload-id="tableReload"></table>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!---------------------设置黑名单end--------------------------->
+
+<!----------------------添加黑名单begin------------------------->
+<div class="body-form filter-words-layer auto-height-table" style="display: none">
+    <div class="layui-form">
+        <div class="layui-row">
+            <div class="layui-card main-table">
+                <form class="layui-form" action="" id="rule" lay-filter="rule">
+                    <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
+                        <colgroup>
+                            <col class="yty_tdleft" width="30%">
+                            <col class="yty_tdright">
+                        </colgroup>
+                        <tr>
+                            <td class="yty_tdright red_color" colspan="2">
+                                屏蔽词限制50个，多个屏蔽词以逗号隔开，单个屏蔽词限制6个字符
+                            </td>
+                        </tr>
+                        <tr>
+                            <!--<td class="yty_tdleft"> 短信内容 :</td>-->
+                            <td class="yty_tdright" colspan="2">
+                                <textarea placeholder="" class="layui-textarea textarea_filter_words" style="width: 100%;height: 80%">没用，次品，很破，很烂，垃圾，不喜欢，服务差</textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="layui-form-item layer-form-footer">
+                        <div class="footer-inner">
+                            <button type="button" lay-submit="" lay-filter="form_add_black"
+                                    class="layui-btn layui-btn-normal submit layui-btn-sm filter-words-confirm btn-embossed">{:__('OK')}
+                            </button>
+                            <button type="button" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed filter-words-cancle">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-----------------------------------添加黑名单end------------------------------------>
+
+
+<!--<body>-->
+<div class="layui-fluid sms-common" style="display: none">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12 webody">
+            <div class="layui-card main-table">
+                <!--<div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>下单关怀</div>-->
+
+                <!-------------------------------------步骤header begin----------------------------------->
+                <div class="layui-card-header yty-card-header">
+                    <!--<span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>-->
+                    <span class="step step-number-active step-one">1</span><span class="step-active">第一步：时间设置</span>
+                    <span class="step-line"></span>
+                    <span class="step step-left step-tow-number">2</span><span class="step-two-msg">第二步：发送过滤</span>
+                    <span class="step-line"></span>
+                    <span class="step step-left step-three-number">3</span><span class="step-three-msg">第二步：短信编辑</span>
+                    <span class="float-right close-icon-right cancle" title="关闭"><i class="fa fa-times" aria-hidden="true"></i></span>
+                </div>
+                <!-------------------------------------步骤header end----------------------------------->
+
+                <div class="layui-card-body main-body">
+                    <!--表格查询条件begin-->
+                    <form class="layui-form" method="post" action="" tableid="tableReload" id="task_form_data" lay-filter="task_form_data">
+                        <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
+                            <colgroup>
+                                <col class="yty_tdright" width="110px">
+                                <col class="yty_tdright">
+                            </colgroup>
+
+                            <!-------------------------------------第一步begin----------------------------------->
+                            <tbody class="step-first">
+                                <tr>
+                                    <td class="yty_tdleft"> 发送条件 :</td>
+                                    <td class="yty_tdright">
+                                        当店铺收到买家中差评时，立即发送告警短信，到您设置的告警手机上。
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft"> 是否开启 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="radio" name="switch" value="1" title="开">
+                                        <input type="radio" name="switch" value="0" title="关" checked="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft"> 任务名称 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="text" name="taskname" id="taskname" placeholder="" autocomplete="off" class="layui-input">
+                                        <span>(仅软件内部使用)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft"> 发送日期 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="radio" name="date_switch" lay-filter="date_switch" value="1" title="不限日期" checked="">
+                                        <input type="radio" name="date_switch" lay-filter="date_switch" value="0" title="指定日期">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft"></td>
+                                    <td class="yty_tdright" colspan="2">
+                                        <input type="checkbox" name="lunch_hour_switch" lay-skin="primary"  title="" checked="">
+                                        午休时间 <input type="text" name="day_hour_start" id="siesta_hour_start" placeholder="" autocomplete="off" class="layui-input"> 时 至
+                                        <input type="text" name="day_hour_end" id="siesta_hour_end" placeholder="" autocomplete="off" class="layui-input">
+                                        不发送
+                                        <i class="fa fa-question-circle tips-icon" title-icon="为避免午休时间内打扰客户休息，可选择午休时间通知短信自动顺延发送，勾选则顺延发送。"></i>
+                                        <!--为避免午休时间内打扰客户休息，可选择午休时间通知短信自动顺延发送，勾选则顺延发送。-->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft border-bottom"></td>
+                                    <td class="yty_tdright border-bottom">
+                                        <!--<div class="layui-form-item footer-form">-->
+                                            <!--<div class="footer footer-common">-->
+                                                <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal layui-btn-sm cancle  layui-btn-sm">上一步</button>
+                                                <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step  layui-btn-normal layui-btn-sm">下一步</button>
+                                                <!--<button type="button" class="layui-btn layui-btn-sm layui-btn-normal cancle yty-btn">取消</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!--------------------------------------第一步end------------------------------------>
+
+                            <!--------------------------------------第二步begin---------------------------------->
+                            <tbody class="step-second" style="display: none">
+                                <tr>
+                                    <td class="yty_tdleft"> 关怀条件 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="checkbox" name="care_swicht" lay-skin="primary"  title="" checked="">
+                                        实付金额 <input type="number" value="0.00" min="0" name="actually_paid_start" id="actually_paid_start" placeholder="" autocomplete="off" class="layui-input"> —
+                                        <input type="number" min="0" value="0.00" name="actually_paid_end" id="actually_paid_end" placeholder="" autocomplete="off" class="layui-input">元
+                                        <br>
+                                        <p class="marginbuttom5"></p>
+
+                                        <input type="checkbox" name="goods_switch" lay-skin="primary"  title="" checked="">
+                                        商品数量 <input type="number" value="0" min="0" name="number_of_products_start" id="number_of_products_start" placeholder="" autocomplete="off" class="layui-input"> —
+                                        <input type="number" min="0" value="" name="number_of_products_end" id="number_of_products_end" placeholder="" autocomplete="off" class="layui-input">件
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="yty_tdleft"> 过滤设置 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="checkbox" name="not_flag_switch" lay-skin="primary" value="1" title="" checked="">
+                                        不发送标旗订单
+                                        <div class="layui-inline yty-form">
+                                            <ul class="yty-checkbox">
+                                                <li class="checkbox-active"><span class="red_flag"></span></li>
+                                                <li><span class="yellow_flag"></span></li>
+                                                <li><span class="cyan_flag"></span></li>
+                                                <li><span class="blue_flag"></span></li>
+                                                <li><span class="purple_flag"></span></li>
+                                            </ul>
+                                        </div>
+                                        <br>
+                                        <p class="marginbuttom5"></p>
+
+                                        <input type="checkbox" name="not_send_order_switch" lay-skin="primary"  title="" checked="">
+                                        不发送订单来源
+                                        <input type="checkbox" name="order_from[pc]" lay-skin="primary"  title="PC端">
+                                        <input type="checkbox" name="order_from[mobile]" lay-skin="primary"  title="移动端">
+                                        <br>
+                                        <p class="marginbuttom5"></p>
+
+                                        <input type="checkbox" name="area_switch" lay-skin="primary"  title="" checked="">当收货地区是
+                                        <input type="text" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input"> 时,短信不提醒！
+                                        <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="yty_tdleft">设置黑名单：</td>
+                                    <td class=""yty_tdright>
+                                        <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
+                                            <colgroup>
+                                                <col class="yty_tdleft" width="110px">
+                                                <col class="yty_tdright">
+                                            </colgroup>
+                                            <tr>
+                                                <td class="yty_tdleft border-bottom">黑名单类型</td>
+                                                <td class="yty_tdright border-bottom">
+                                                    <input type="radio" name="sex" value="1" title="云信昵称" checked="">
+                                                    <input type="radio" name="sex" value="2" title="手机号码">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!--<td class="yty_tdleft"> 短信内容 :</td>-->
+                                                <td class="yty_tdright border-bottom" colspan="2">
+                                                    <textarea placeholder="请根据选择的类型输入昵称或手机号码(可以批量录入，每行输入一个)" class="layui-textarea" style="width: 100%;height: 80%"></textarea>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="yty_tdleft border-bottom"></td>
+                                    <td class="yty_tdright border-bottom">
+                                        <!--<div class="layui-form-item footer-form">-->
+                                            <!--<div class="footer footer-common">-->
+                                                <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal layui-btn-sm pre-step  layui-btn-sm">上一步</button>
+                                                <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step-thrid layui-btn-normal layui-btn-sm">下一步</button>
+                                                <!--<button type="button" class="layui-btn layui-btn-sm layui-btn-normal cancle yty-btn">取消</button>-->
+                                                <!--<button type="reset" class="layui-btn layui-btn-sm btn-primary-border yty-btn btn-embossed">下一步</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!--------------------------------------第二步end------------------------------------>
+
+                            <!----------------------------------------第三步begin--------------------------------->
+                            <tbody  class="step-third" style="display: none">
+                                <!--<tr class="yty-form">-->
+                                    <!--<td class="yty_tdleft"> 短信内容 :</td>-->
+                                    <!--<td class="yty_tdright">-->
+                                        <!--<div class="layui-inline layui-form">-->
+                                            <!--<textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content-last" readonly>注意防骗：如骗子电话短.信骚扰说订单不能发货索取账号信息及银行.卡信息，千万不能相信，有任何问题上线联系客服哦，谨防诈骗！</textarea>-->
+                                            <!--<a href="javascript:void(0);" class="astyle sms-event">修改短信内容</a>-->
+                                            <!--<a href="javascript:void(0);" class="astyle sms_record">短信测试记录</a>-->
+                                        <!--</div>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+
+                                <tr>
+                                    <td  class="yty_tdright border-bottom" colspan="2">
+                                        <div class="layui-row">
+                                            <div class="layui-col-md8">
+                                                <table class="layui-table table-border dashed-td" lay-skin="line" lay-size="sm">
+                                                    <colgroup>
+                                                        <col class="yty_tdleft" width="110px">
+                                                        <col class="yty_tdright">
+                                                    </colgroup>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="yty_tdleft"><span class="red_color">*</span> 短信签名 :</td>
+                                                        <td colspan="2" class="yty_tdright">
+                                                            【<input type="text" name="sms_name" id="sms_name" value="阿里狗" placeholder="" autocomplete="off" class="layui-input">】
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="yty_tdleft"><span class="red_color">*</span> 短信标签 :</td>
+                                                        <td class="yty_tdright label_sms">
+                                                            <ul class="ulstyle0">
+                                                                <li><a href="javascript:void(0);" id="buyer">收货人</a></li>
+                                                                <li><a href="javascript:void(0);" id="order_id">订单编号</a></li>
+                                                                <li><a href="javascript:void(0);" id="seller_nick_name">买家昵称</a></li>
+                                                                <li><a href="javascript:void(0);" id="product_name">商品简称</a></li>
+                                                                <li><a href="javascript:void(0);">商品名称</a></li>
+                                                            </ul>
+
+                                                            <ul class="ulstyle1">
+                                                                <li><a href="javascript:void(0);" id="short_href">#短链#</a></li>
+                                                                <li><a href="javascript:void(0);" id="sms_module">#短信模板#</a></li>
+                                                            </ul>
+                                                            <!--<br>-->
+                                                            <!--<p class="marginbuttom5"></p>-->
+                                                            <textarea placeholder="请输入内容" class="layui-textarea yty-textarea sms-content" id="sms-content">温馨提示：亲，您近期给了本店差评哟。不足之处，请反映给我们的客服 MM！</textarea>
+                                                            <p class="font12">已输入：<span class="red_color sms-content-length">62</span> 字(包含签名) 当前计费：<span class="red_color">1</span>条 <span class="astyle tips-icon font14" title-icon="1、单条70个字,超出70个字将按照67个字每条计算<br>
+2、一个汉字,数字,字母,空格都算一个字<br>
+3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！">计费规则(重要)</span></p>
+                                                            <!--<p class="font12">1、单条70个字,超出70个字将按照67个字每条计算<br></p>
+                                                            <p class="font12">2、一个汉字,数字,字母,空格都算一个字<br></p>
+                                                            <p class="font12">3、带标签的短信按实际发出的长度计算！因部分标签替换后长短不一（如买家昵称,商品名称,商品简称等），请以实际替换后长度为准，已输入字数提示仅供参考！</p>-->
+                                                            <p class="font12">提示：<span class="red_color">标签和链接前后需有空格分隔，请勿删除前后空格！</span></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="yty_tdleft">短信测试 :</td>
+                                                        <td class="yty_tdright">
+                                                            <input type="text" style="font-size: 12px;width: 300px;" name="test_phone" placeholder="请输入短信测试手机号，多个手机号用逗号(,)隔开" id="test_phone" value="" placeholder="" autocomplete="off" class="layui-input">
+                                                            <button type="button" name="" id="" autocomplete="off" class="layui-btn layui-btn-sm  layui-btn-primary">短信测试</button>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="layui-col-md4">
+                                                <div class="sms-phone">
+                                                    <div class="phone-container">
+                                                        <div class="smg-content">
+                                                            【阿里狗】<span class="synchronize_sms_content">温馨提示：亲，您近期给了本店差评哟。不足之处，请反映给我们的客服 MM！</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="yty_tdleft border-bottom"></td>
+                                    <td class="yty_tdright border-bottom">
+                                        <!--<div class="layui-form-item footer-form">-->
+                                            <!--<div class="footer footer-common">-->
+                                                <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn pre-step-thrid layui-btn-normal layui-btn-sm">上一步</button>
+                                                <button type="submit" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal layui-btn-sm  layui-btn-sm">提交</button>
+                                                <!--<button type="button" class="layui-btn layui-btn-sm layui-btn-normal cancle yty-btn">取消</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!---------------------------------------第三步end------------------------------------->
+
+                        </table>
+                    </form>
+                    <!--表格查询条件end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--</div>-->
+
+<!--头工具栏-->
+<!--{:build_toolbar('toolbar',['refresh'])}-->
+
+<!--表格头部按钮begin-->
+<!--<script type="text/html" id="toolbar">-->
+<!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>-->
+<!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="sendSms"><i class="fa fa-envelope-o"></i> 发送短信</a>-->
+<!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="sendSearchResultSms"><i class="fa fa-envelope-o"></i> 按查询结果发送</a>-->
+<!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="addOrder"><i class="fa fa-plus"></i> 添加订单</a>-->
+<!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="importOrder"><i class="fa fa-file-text-o"></i> 导入苏宁订单</a>-->
+<!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="exportOrder"><i class="fa fa-file-o"></i> 导出苏宁订单</a>-->
+<!--<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="toBlack"><i class="fa fa-hand-o-down"></i> 拉黑</a>-->
+<!--</script>-->
+<!--表格头部按钮end-->
+
+
+<!--设置黑名单头部工具栏begin-->
+<script type="text/html" id="set_black_toolbar">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm layui-btn-normal" lay-event="add_black"><i class="fa fa-plus"></i>添加黑名单</button>
+    </div>
+</script>
+<!--设置黑名单头部工具栏end-->
+
+<!--短信模板操作begin-->
+<script type="text/html" id="set_black_actionbar">
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="use_sms_module">取消黑名单</a>
+</script>
+<!--短信模板操作end-->
+
+<!--{/block}-->
+
+<!--{block name="script"}-->
+<!--<script>-->
+    <!--layui.config({-->
+        <!--base: "__STATIC__/", //静态资源所在路径-->
+        <!--skin: 'layui-layer-we',-->
+        <!--version:true,-->
+    <!--}).extend({-->
+        <!--index: 'lib/index' //主入口模块-->
+    <!--}).use(['index','table','upload','laydate','element','form','authtree','we','weTable','formSearch','formValidator','sms_modal_init'], function(){-->
+        <!--var admin = layui.admin-->
+            <!--,element = layui.element-->
+            <!--,layer = layui.layer-->
+            <!--,we = layui.we-->
+            <!--,table = layui.table-->
+            <!--,$  = layui.$-->
+            <!--,laydate = layui.laydate-->
+            <!--,form = layui.form-->
+            <!--,weTable = layui.weTable-->
+            <!--,formSearch = layui.formSearch-->
+            <!--,sms_modal_init = layui.sms_modal_init-->
+            <!--,init_i = init_j = init_m = 0-->
+            <!--,formValidator = layui.formValidator-->
+            <!--,toastr = layui.toastr;-->
+
+        <!--/****************************************3个步奏公共模块begin***********************************/-->
+
+        <!--/******************************时间初始化begin*****************************/-->
+        <!--laydate.render({-->
+            <!--elem: '#day_hour_start' //指定元素-->
+            <!--,type: 'time'-->
+            <!--// ,format:'H'-->
+            <!--,value:'09:00:00'-->
+        <!--});-->
+        <!--laydate.render({-->
+            <!--elem: '#day_hour_end' //指定元素-->
+            <!--,type: 'time'-->
+            <!--// ,format:'H'-->
+            <!--,value:'21:00:00'-->
+        <!--});-->
+
+        <!--laydate.render({-->
+            <!--elem: '#siesta_hour_start' //指定元素-->
+            <!--,type: 'time'-->
+            <!--// ,format:'H'-->
+            <!--,value:'12:00:00'-->
+        <!--});-->
+        <!--laydate.render({-->
+            <!--elem: '#siesta_hour_end' //指定元素-->
+            <!--,type: 'time'-->
+            <!--// ,format:'H'-->
+            <!--,value:'13:00:00'-->
+        <!--});-->
+
+        <!--laydate.render({-->
+            <!--elem: '#task_time_start' //指定元素-->
+            <!--,type: 'date'-->
+            <!--// ,format:'H'-->
+        <!--});-->
+        <!--laydate.render({-->
+            <!--elem: '#task_time_end' //指定元素-->
+            <!--,type: 'date'-->
+            <!--// ,format:'H'-->
+        <!--});-->
+        <!--/******************************时间初始化begin*****************************/-->
+
+
+        <!--/**-->
+         <!--*-->
+         <!--* 点击指定时间-->
+         <!--* */-->
+        <!--form.on('radio(date_switch)', function(data){-->
+            <!--if(data.value == 0){-->
+                <!--$(".task_time").show()-->
+            <!--}else(-->
+                <!--$(".task_time").hide()-->
+            <!--)-->
+        <!--});-->
+
+
+        <!--/**-->
+         <!--* 屏蔽标旗点击切换-->
+         <!--*/-->
+        <!--$("body").on("click","ul li",function (){-->
+            <!--if($(this).hasClass('checkbox-active')) {-->
+                <!--$(this).removeClass('checkbox-active');-->
+            <!--} else {-->
+                <!--$(this).addClass('checkbox-active')-->
+            <!--}-->
+        <!--});-->
+
+
+        <!--/**-->
+         <!--* 设置黑名单弹框-->
+         <!--* */-->
+        <!--$("body").on("click",".set_black",function (){-->
+            <!--var tableCommon = {-->
+                <!--elem: '#table_black'-->
+                <!--,url:"/sms_data.json" //对接请求后台数据-->
+                <!--// ,data:"./sms_data.json" //测试数据-->
+                <!--,id : 'tableReload'-->
+                <!--,skin:'line'-->
+                <!--,limit:10-->
+                <!--,defaultToolbar: ['filter']-->
+                <!--,toolbar : '#set_black_toolbar'-->
+                <!--,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}-->
+                <!--,search: false-->
+                <!--,cols: [[-->
+                    <!--{type:'checkbox', fixed: 'left', hide:true}-->
+                    <!--,{field:'id', title: 'id', hide:true}-->
+                    <!--,{field:'uid_name', title: '云信/手机号码'}-->
+                    <!--,{field:'black_type', title: '黑名单类型'}-->
+                    <!--,{field:'add_time', title: '添加时间'}-->
+                    <!--,{field:'source', title: '添加来源'}-->
+                    <!--,{fixed: 'right', title:'操作', toolbar: '#set_black_actionbar', width:250}-->
+                <!--]]-->
+                <!--,page: {-->
+                    <!--layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局-->
+                    <!--,first: false //不显示首页-->
+                    <!--,last: false //不显示尾页-->
+
+                <!--}-->
+                <!--,where: {filter:JSON.stringify(formSearch.api.getFormJson($(form)))}   //搜索条件-->
+                <!--,done: function(res, curr, count){-->
+                    <!--if(res.status == 'success') {-->
+                        <!--// layer.closeAll();-->
+                    <!--}-->
+                <!--}-->
+            <!--};-->
+
+            <!--table.render(tableCommon); //数据表格初始化-->
+            <!--set_black_layer_index = we.api.open_current_page_layer($(".black-module-layer"),'设置黑名单',{zIndex:19891016-->
+            <!--},['80%' , '80%']);-->
+
+            <!--if(init_m == 0) {-->
+                <!--formSearch.api.searchForm($("form#form-set-black"));-->
+            <!--}-->
+        <!--})-->
+
+        <!--/**-->
+         <!--*设置黑名单头部操作-->
+         <!--* */-->
+        <!--table.on('toolbar(table_black)', function(obj){-->
+            <!--console.log(obj.event);-->
+            <!--if(obj.event == 'add_black'){-->
+                <!--add_black_layer_index = we.api.open_current_page_layer($(".add-black-layer"),'添加黑名单',{zIndex:19891017-->
+                <!--},['40%' , '60%']);-->
+            <!--}-->
+        <!--});-->
+
+        <!--/**-->
+         <!--* sms_record短信测试发送记录-->
+         <!--* */-->
+        <!--$("body").on("click",".sms_record",function (){-->
+            <!--var url = "{:url('admin/order/sms_record')}"-->
+            <!--we.api.open(url,'短信测试发送记录');-->
+        <!--})-->
+
+        <!--/**-->
+         <!--* 短信modal初始化-->
+         <!--* */-->
+        <!--sms_modal_init.init();-->
+
+        <!--/*****************************执行步骤begin************************************/-->
+        <!--/**-->
+         <!--*点击第一步下一步-->
+         <!--*/-->
+        <!--$("body").on("click",".next-step",function (){-->
+            <!--$(".step-first").hide();-->
+            <!--$(".step-second").show();-->
+            <!--$(".step-two-msg").addClass('step-active');-->
+            <!--$(".step-tow-number").addClass('step-number-active');-->
+        <!--});-->
+
+        <!--/**-->
+         <!--* 点击第二步上一步-->
+         <!--*/-->
+        <!--$("body").on("click",".pre-step",function (){-->
+            <!--$(".step-first").show();-->
+            <!--$(".step-second").hide();-->
+            <!--$(".step-two-msg").removeClass('step-active');-->
+            <!--$(".step-tow-number").removeClass('step-number-active');-->
+        <!--});-->
+
+        <!--/**-->
+         <!--* 点击第二步下一步-->
+         <!--*/-->
+        <!--$("body").on("click",".next-step-thrid",function (){-->
+            <!--$(".step-second").hide();-->
+            <!--$(".step-third").show();-->
+            <!--$(".step-three-msg").addClass('step-active');-->
+            <!--$(".step-three-number").addClass('step-number-active');-->
+        <!--});-->
+
+        <!--/**-->
+         <!--* 点击第三步上一步-->
+         <!--*/-->
+        <!--$("body").on("click",".pre-step-thrid",function (){-->
+            <!--$(".step-second").show();-->
+            <!--$(".step-third").hide();-->
+            <!--$(".step-three-msg").removeClass('step-active');-->
+            <!--$(".step-three-number").removeClass('step-number-active');-->
+        <!--});-->
+
+        <!--/**-->
+         <!--* 点击取消-->
+         <!--* 关掉layer弹层-->
+         <!--*/-->
+        <!--$("body").on("click",".cancle",function (){-->
+            <!--var index = parent.layer.getFrameIndex(window.name);-->
+            <!--parent.layer.close(index);-->
+        <!--});-->
+        <!--/*****************************执行步骤end************************************/-->
+
+        <!--/**-->
+         <!--* 绑定表单事件-->
+         <!--*/-->
+        <!--formValidator.api.bindevent($("form#task_form_data"));-->
+        <!--/****************************************3个步奏公共模块begin***********************************/-->
+    <!--});-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<!--{/block}-->

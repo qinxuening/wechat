@@ -103,7 +103,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appease_task_add.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="appease_task_add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/appease_task_add.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
@@ -112,6 +112,28 @@
                 <element signature="n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reminder_warning.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/reminder_warning.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="97" column="33" lean-forward="false" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="warning_task_add.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/warning_task_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="350" column="72" lean-forward="false" selection-start-line="350" selection-start-column="72" selection-end-line="350" selection-end-column="72" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -214,8 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/static/modules/weTable.js" />
-        <option value="$PROJECT_DIR$/application/admin/view/order/sms_record.html" />
         <option value="$PROJECT_DIR$/public/static/modules/setField.js" />
         <option value="$PROJECT_DIR$/application/admin/view/order/data.json" />
         <option value="$PROJECT_DIR$/public/sms_data.json" />
@@ -265,6 +285,8 @@
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/praise_task_add.html" />
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/reminder_appease.html" />
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/appease_task_add.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/after_sale/reminder_warning.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/after_sale/warning_task_add.html" />
       </list>
     </option>
   </component>
@@ -612,18 +634,18 @@
       <workItem from="1551238621044" duration="26840000" />
       <workItem from="1551493718484" duration="31604000" />
       <workItem from="1551888677364" duration="560000" />
-      <workItem from="1551964232144" duration="63924000" />
+      <workItem from="1551964232144" duration="64823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1006271000" />
+    <option name="totallyTimeSpent" value="1007170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11142454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16995768" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -652,20 +674,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user2/user/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2916">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user2/rule/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1296">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/user2/rule/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-432">
@@ -1130,6 +1138,24 @@
             <element signature="n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/reminder_warning.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="97" column="33" lean-forward="false" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/after_sale/warning_task_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="350" column="72" lean-forward="false" selection-start-line="350" selection-start-column="72" selection-end-line="350" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
