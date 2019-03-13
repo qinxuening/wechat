@@ -2852,3 +2852,14 @@ input:focus, select:focus{
     font-size: 18px;
     color: #506def;
 }
+
+.msg-tip{
+    border-left: none;
+    color: #FFB800!important;
+    background-color: #ffffff;
+    /*border-bottom: 1px solid #FFB800;*/
+    border-bottom: 1px dashed #e5e5e5;
+    margin-bottom: 10px;
+    padding: 15px;
+    line-height: 22px;
+}
