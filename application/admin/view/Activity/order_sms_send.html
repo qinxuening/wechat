@@ -13,183 +13,10 @@
             <div class="layui-card main-table">
                 <blockquote class="msg-tip">
                     <span class="float-right close-icon-right cancle" title="关闭"><i class="fa fa-times" aria-hidden="true"></i></span>
-                    1)可以向客户发送打折促销短信、节日关怀短信等。短信常规发送时间为:早9点-晚22点,其他时间发送自动延迟次日9点发送<br/>
-                    2) 根据淘宝规定，禁止发送“好评返现”、“免单”、“全5分返现” 相关内容的短信。<br/>
-                    3) 禁止发送加QQ、加微信、刷单、招聘刷单人员、招聘兼职、招商、代理相关内容的短信。
+                    1）只显示最近3个月的订单。为了不影响买家休息，22点至早晨9点的短信都延迟到9点后发出。
                 </blockquote>
-                <div class="layui-card-header yty-card-header">
-                    <!--<span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>-->
-                    <span class="step step-number-active step-one">1</span><span class="step-active">第一步：筛选条件</span>
-                    <span class="step-line"></span>
-                    <span class="step step-left step-tow-number">2</span><span class="step-two-msg">第二步：编辑短信</span>
-                </div>
-                <!----------------------------第一步begin---------------------------->
-                <div class="layui-card-body step-first layui-card-body-padding">
-                    <!--表格查询条件begin-->
-                    <!--<div class="searchbody">-->
-                        <form class="layui-form" method="post" action="" tableid="tableReload" id="searchSmsMember" lay-filter="searchSmsMember">
-                            <table  style="margin-bottom: 0px !important;" class="layui-table table-border  dashed-td" lay-skin="line" lay-size="sm" style="margin-bottom: 15px">
-                                <colgroup>
-                                    <col class="yty_tdright" width="120px">
-                                    <col class="yty_tdright">
-                                </colgroup>
-                                <tbody>
-                                <tr>
-                                    <td class="yty_tdleft"> 最近交易时间 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="不限" title="不限" checked>
-                                        <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近7天" title="近7天">
-                                        <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近1个月" title="近1个月">
-                                        <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近3个月" title="近3个月">
-                                        <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="近半年" title="近半年">
-                                        <input type="radio" name="recent_trading_time" lay-filter="recent_trading_time" value="自定义" title="自定义">
-                                        <span class="customize_trade_time" style="display: none">
-                                             <input type="text" name="trade_time_start" id="trade_time_start" placeholder="" autocomplete="off" class="layui-input date-init"> — <input type="text" name="trade_time_end" id="trade_time_end" placeholder="" autocomplete="off" class="layui-input input-margin date-init">
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"> 交易次数 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="radio" name="trade_counts" lay-filter="trade_counts" value="不限" title="不限" checked>
-                                        <input type="radio" name="trade_counts" lay-filter="trade_counts" value="0次" title="0次">
-                                        <input type="radio" name="trade_counts" lay-filter="trade_counts" value="1次" title="1次">
-                                        <input type="radio" name="trade_counts" lay-filter="trade_counts" value="2次" title="2次">
-                                        <input type="radio" name="trade_counts" lay-filter="trade_counts" value="3次及以上" title="3次及以上">
-                                        <input type="radio" name="trade_counts" lay-filter="trade_counts" value="自定义" title="自定义">
-                                        <span class="customize_trade_counts" style="display: none">
-                                             <input type="number" name="trade_counts_start" id="trade_counts_start" placeholder="" autocomplete="off" class="layui-input"> — <input type="number" name="trade_counts_end" id="trade_counts_end" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"> 累计金额 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="不限" title="不限" checked>
-                                        <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="1~100元" title="1~100元">
-                                        <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="100~200元" title="100~200元">
-                                        <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="200~300元" title="200~300元">
-                                        <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="300元以上" title="300元以上">
-                                        <input type="radio" name="buy_total_money" lay-filter="buy_total_money" value="自定义" title="自定义">
-                                        <span class="customize_total_money" style="display: none">
-                                             <input type="number" name="total_money_start" id="total_money_start" placeholder="" autocomplete="off" class="layui-input"> — <input type="number" name="total_money_end" id="total_money_end" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"> 平均客单价 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="radio" name="avg_price" lay-filter="avg_price" value="不限" title="不限" checked>
-                                        <input type="radio" name="avg_price" lay-filter="avg_price" value="1~100元" title="1~100元">
-                                        <input type="radio" name="avg_price" lay-filter="avg_price" value="100~200元" title="100~200元">
-                                        <input type="radio" name="avg_price" lay-filter="avg_price" value="200~300元" title="200~300元">
-                                        <input type="radio" name="avg_price" lay-filter="avg_price" value="300元以上" title="300元以上">
-                                        <input type="radio" name="avg_price" lay-filter="avg_price" value="自定义" title="自定义">
-                                        <span class="customize_avg_price" style="display: none">
-                                             <input type="number" name="avg_price_start" id="avg_price_start" placeholder="" autocomplete="off" class="layui-input"> — <input type="number" name="avg_price_end" id="avg_price_end" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"> 会员等级 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="checkbox" name="membership_level[]" lay-filter="membership_level" lay-skin="primary" value="0"  title="所有会员" checked>
-                                        <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="1"  title="店铺会员">
-                                        <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="2"  title="普通会员">
-                                        <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="3"  title="高级会员">
-                                        <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="4"  title="VIP会员">
-                                        <input type="checkbox" name="membership_level[]"  lay-filter="membership_level" lay-skin="primary" value="5"  title="至尊VIP会员">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"> 订单来源 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="checkbox" name="trade_from[]" lay-filter="trade_from" lay-skin="primary" value="0"  title="所有订单" checked>
-                                        <input type="checkbox" name="trade_from[]" lay-filter="trade_from" lay-skin="primary" value="1"  title="移动端">
-                                        <input type="checkbox" name="trade_from[]"  lay-filter="trade_from" lay-skin="primary" value="2"  title="PC端">
-                                        <input type="checkbox" name="trade_from[]"  lay-filter="trade_from" lay-skin="primary" value="3"  title="历史订单">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"> 地区筛选 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="radio" name="location_address" lay-filter="location_address" lay-skin="primary" value="0"  title="不限" checked>
-                                        <input type="radio" name="location_address"  lay-filter="location_address" lay-skin="primary" value="1"  title="自定义">
-                                        <input type="hidden" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                        <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"> 商品选择 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="0"  title="不限" checked>
-                                        <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="1"  title="商品">
-                                        <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="2"  title="类目">
-                                        <input type="radio" name="pro_filter" lay-filter="pro_filter" lay-skin="primary" value="3"  title="关键字">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"> 人群画像 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="checkbox" name="crowd_portrait_type[]" lay-filter="crowd_portrait_type" lay-skin="primary" value="0"  title="不限" checked>
-                                        <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="1"  title="学生">
-                                        <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="2"  title="IT">
-                                        <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="3"  title="金融族">
-                                        <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="4"  title="白领">
-                                        <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="公务员">
-                                        <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="家居族">
-                                        <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="医护人员">
-                                        <input type="checkbox" name="crowd_portrait_type[]"  lay-filter="crowd_portrait_type" lay-skin="primary" value="5"  title="其他">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"> 已发短信过滤 :</td>
-                                    <td class="yty_tdright">
-                                        <input type="radio" name="fitler_date" lay-filter="fitler_date" value="0" title="今天" checked>
-                                        <input type="radio" name="fitler_date" lay-filter="fitler_date" value="1" title="近3天">
-                                        <input type="radio" name="fitler_date" lay-filter="fitler_date" value="2" title="近7天">
-                                        <input type="radio" name="fitler_date" lay-filter="fitler_date" value="3" title="近15天">
-                                        <input type="radio" name="fitler_date" lay-filter="fitler_date" value="自定义" title="自定义">
-                                        <span class="customize_fitler_date" style="display: none">
-                                            近 <input type="number" name="customize_fitler_date" id="customize_fitler_date" placeholder="" autocomplete="off" class="layui-input"> 天
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="yty_tdleft"  style="border-bottom: none !important;"> 筛选操作 :</td>
-                                    <td class="yty_tdright"  style="border-bottom: none !important;">
-                                        <!--layui-btn-primary btn-primary-border-->
-                                        <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal layui-btn-sm cancle  layui-btn-sm">上一步</button>
-                                        <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn next-step layui-btn-normal layui-btn-sm">下一步</button>
-                                        <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn  layui-btn-normal search_form_btn layui-btn-sm">查询</button>
-                                        <button type="reset" class="layui-btn layui-btn-sm  layui-btn-normal yty-btn">重置</button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <p class="search_result" style="display: block">
-                                筛选结果： 共筛选出<span class="red_color memberCount">0位</span>会员，其中有效<span class="red_color effectiveMemberCount">0位</span>会员（有手机号，并已排重，已过滤黑名单）数据不全？去导入历史订单
-                            </p>
-                            <!--<div class="layui-form-item footer-form">-->
-                                <!--<div class="footer footer-common">-->
-                                    <!--<button type="submit" lay-submit="" lay-filter="formRule" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed disabled">{:__('OK')}</button>-->
-                                    <!--<button type="reset" class="layui-btn layui-btn-sm layui-btn-normal btn-embossed">{:__('Reset')}</button>-->
-                                    <!--<a href="{:url($return_url)}"><div type="reset" style="margin-left: 10px" class="layui-btn layui-btn-normal layui-btn-sm btn-embossed go-back">返回</div></a>-->
-                                    <!--&lt;!&ndash;onclick="window.history.go(-1)"&ndash;&gt;-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        </form>
-                    <!--</div>-->
-                    <!--表格查询条件end-->
-
-                    <!--订单查询结果begin-->
-                    <!--<table class="layui-hide" id="rule" lay-filter="rule" table-reload-id="tableReload"></table>-->
-                    <!--订单查询结果end-->
-                </div>
-                <!----------------------------第一步end---------------------------->
-
                 <!----------------------------第二步begin---------------------------->
-                <div class="layui-card-body layui-card-body-padding step-second" style="display: none">
+                <div class="layui-card-body layui-card-body-padding">
                     <!--表格查询条件begin-->
                     <!--<div class="searchbody">-->
                     <form class="layui-form" method="post" action="" tableid="tableReload" id="formRule" lay-filter="member_sms">
@@ -257,16 +84,6 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="yty_tdleft"> 发送人数 :</td>
-                                        <td class="yty_tdright">
-                                            <input type="radio" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="0"  title="全部" checked>
-                                            <input type="radio" class="customize" name="send_limit_type" lay-filter="send_limit_type" lay-skin="primary" value="自定义"  title="自定义">
-                                            <span class="customize_send_limit_type" style="display: none">
-                                        <input type="text" name="part_people" id="part_people" value="0" placeholder="" autocomplete="off" class="layui-input">
-                                    </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <td class="yty_tdleft"> 发送时间 :</td>
                                         <td class="yty_tdright">
                                             <input type="radio" name="send_time_type" lay-filter="send_time_type" lay-skin="primary" value="0"  title="立即发送" checked>
@@ -280,7 +97,8 @@
                                         <td class="yty_tdleft border-bottom"></td>
                                         <td class="yty_tdright border-bottom">
                                             <!--btn-primary-border layui-btn-primary-->
-                                            <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal pre-step layui-btn-sm btn-embossed">上一步</button>
+
+                                            <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal pre-step cancle layui-btn-sm btn-embossed">上一步</button>
                                             <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">保存</button>
                                         </td>
                                     </tr>
@@ -761,28 +579,6 @@
          * 短信modal初始化
          * */
         sms_modal_init.init();
-
-        /***********************************筛选步骤begin**********************************/
-        /**
-         *点击下一步
-         */
-        $("body").on("click",".next-step",function (){
-            $(".step-first").hide();
-            $(".step-second").show();;
-            $(".step-two-msg").addClass('step-active');
-            $(".step-tow-number").addClass('step-number-active');
-        });
-
-        /**
-         * 点击上一步
-         */
-        $("body").on("click",".pre-step",function (){
-            $(".step-first").show();
-            $(".step-second").hide();
-            $(".step-two-msg").removeClass('step-active');
-            $(".step-tow-number").removeClass('step-number-active');
-        });
-        /***********************************筛选步骤end**********************************/
 
         /**
          * 点击查询
