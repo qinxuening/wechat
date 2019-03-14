@@ -1,0 +1,154 @@
+{extend name="layout/default" /}
+{block name="content"}
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12 webody body-overflow">
+        <div class="layui-row yty-bck">
+            <div class="layui-col-12">
+                <!----------------------------------表格查询条件begin------------------------------->
+                <div class="searchbody">
+
+                </div>
+                <!-----------------------------------表格查询条件end--------------------------------->
+            </div>
+        </div>
+
+        <div class="layui-card">
+            <div class="layui-card-body layui-card-body-padding">
+                <!-----------------------------------------------订单查询结果begin----------------------->
+                <table class="layui-hide" id="sms_record_data_list" lay-filter="sms_record_data_list" table-reload-id="tableReload" lay-size="sm"></table>
+                <!----------------------------------------------订单查询结果end-------------------------->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--</div>-->
+
+<!--头工具栏-->
+{:build_toolbar('toolbar',[ 'export'])}
+<!--<script type="text/html" id="toolbar">-->
+<!--<div class="layui-btn-container">-->
+<!--<button class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加</button>-->
+<!--<button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</button>-->
+<!--<button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-file"></i>导出</button>-->
+<!--<button class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon layui-icon-upload"></i>导入</button>-->
+<!--</div>-->
+<!--</script>-->
+<!--头工具栏-->
+
+<!--状态-->
+<script type="text/html" id="switchStatus">
+    <input type="checkbox" name="status" value="{{d.status}}" lay-skin="switch" lay-text="成功|失败" lay-filter="ruleStatus" {{ d.status == 1 ? 'checked' : '' }}>
+</script>
+
+<!--状态-->
+<script type="text/html" id="switchIsmenu">
+    <input type="checkbox" name="ismenu" value="{{d.ismenu}}" lay-skin="switch" lay-text="{:__('Yes')}|{:__('No')}" lay-filter="ruleIsmenu" {{ d.ismenu == 1 ? 'checked' : '' }}>
+</script>
+
+<!--操作-->
+{:build_actionbar('actionbar',['edit', 'del'])}
+<!--<script type="text/html" id="barDemo">-->
+<!--<a class="layui-btn layui-btn-xs layui-btn-view" lay-event="view">查看</a>-->
+<!--<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
+<!--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>-->
+<!--</script>-->
+{/block}
+
+{block name="script"}
+<script>
+    layui.config({
+        base: "__STATIC__/", //静态资源所在路径
+        skin: 'layui-layer-we',
+        version:true,
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index','table','element','form','authtree','we','weTable','formSearch'], function(){
+        var admin = layui.admin
+            ,element = layui.element
+            ,table = layui.table
+            ,layer = layui.layer
+            ,we = layui.we
+            ,form = layui.form
+            ,weTable = layui.weTable
+            ,formSearch = layui.formSearch
+
+        /*********************表格初始化begin**************************/
+        layer.load(0, {shade: false});
+        var tableCommon = {
+            elem: '#sms_record_data_list'
+            ,method:'post'
+            ,formId:'search_form'
+            ,searchbody:'searchbody'
+//            ,url:"{:url('Admin/auth.admin/index')}"
+            ,url:"/sms_data.json" //对接请求后台数据
+            ,id : 'tableReload'
+            ,skin:'line'
+            ,toolbar : '#toolbar'
+            ,data:{'Search':"{:__('Search')}",'Reset':"{:__('Reset')}"}
+            ,loading:true
+            ,limit:10
+            ,defaultToolbar: ['']//'filter', 'print', 'exports'
+            ,search: true
+            ,cols: [[
+                {type:'checkbox', fixed: 'left',hide:true}
+                ,{field:'id', title: 'ID', sort: true, excel_width:15}
+                ,{field:'send_phone', title: "手机号码", excel_width:15, searchList:{type:'input',operate:'LIKE'}, minWidth: 120}
+                ,{field:'sms_title', title: "短信标题", excel_width:15, minWidth: 150}
+                ,{field:'sms_content', title:  "短信内容", excel_width:15, minWidth: 200}
+                ,{field:'sms_content', title:  "营销类型", excel_width:15, searchList:{type:'select',data:{"1":"会员营销","0":"再次营销"},'operate':'='}, minWidth: 100}
+                ,{field:'buyer_nickname', title:  "买家昵称", excel_width:15, searchList:{type:'input',operate:'LIKE'}, minWidth: 120}
+                ,{field:'send_status', title: "发送状态", excel_width:15,templet: '#switchStatus', sort: true, searchList:{type:'select',data:{"1":"成功","0":"失败"},'operate':'='}, minWidth: 120}
+                ,{field:'buyer_nickname', title:  "买家昵称", excel_width:15, minWidth: 150}
+                ,{field:'actual_deduction_count ', title: "实际扣费（条）", excel_width:15, minWidth: 150}
+                ,{field:'send_time', title: "发送时间", excel_width:15, searchList:{type:'input',event:'date',operate: 'RANGE'}, minWidth: 120}
+//                ,{fixed: 'right', title:"{:__('Operate')}", toolbar: '#actionbar', width:220}
+            ]]
+            ,page: {
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip']
+                ,all:"{:__('Total')}"
+                ,item:"{:__('Item')}"
+                ,confirm:"{:__('Confirm')}"
+                ,page:"{:__('Page')}"
+                ,ipage:"{:__('IPage')}"
+                ,to:"{:__('To')}"
+                ,first: "{:__('First')}"
+                ,last: "{:__('Last')}"
+                ,prev: "{:__('Previous')}"
+                ,next: "{:__('Next')}"
+            }
+            ,done: function(res, curr, count){
+                if(res.status == 'success') {
+                    layer.closeAll();
+                }
+            }
+        }
+        table.render(tableCommon); //数据表格初始化
+        formSearch.api.init(tableCommon); //搜索表单初始化
+        /*********************表格初始化end**************************/
+
+        /**
+         * 表格头工具栏事件监听初始化
+         */
+        weTable.api.init({
+            table : "sms_record_data_list",
+            tableid : "tableReload",
+            form:$("form#search_form"),
+            tableCommon: tableCommon,
+            extend : {
+                "export_url" : ""
+            }
+        });
+        weTable.api.bindevent();
+
+        /**
+         * 绑定查询监听事件
+         * */
+        formSearch.api.searchForm($("form#search_form"));
+    });
+</script>
+</body>
+</html>
+{/block}

@@ -33,7 +33,18 @@ class Activity extends baseAdmin{
         return $this->view->fetch();
     }
 
+    /**
+     * 订单短信群发
+     * @return string
+     */
+    public function order_sms_send() {
+        return $this->view->fetch();
+    }
     
+    
+    public function order_sms_send_record() {
+        return $this->view->fetch();
+    }
     
     
     
