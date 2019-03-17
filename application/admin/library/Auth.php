@@ -541,7 +541,7 @@ class Auth extends \we\Auth{
                 } else {
                     $html[$k4] .= "<a href='{$v['lay-href']}' lay-tips='{$v['title']}'>";
                 }
-                $html[$k4] .= "<i class='layui-icon {$v['icon']}'></i><cite>{$v['title']}</cite></a>";
+                $html[$k4] .= "<i class='{$v['icon']}'></i><cite>{$v['title']}</cite></a>";
                 
                 if(isset($v['child'])){
                     $html[$k4] .= '<dl class="layui-nav-child">';
@@ -559,9 +559,9 @@ class Auth extends \we\Auth{
 
                                 if($k2 == 0) {
                                     $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v2['url'];
-                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$active} {$menu_active}'><a href=".url($v2['url'],['nav_id' => $v2['id'],'nav_pid' => $k4])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
+                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$active} {$menu_active}'><a href=".url($v2['url'],['nav_id' => $v2['id'],'nav_pid' => $k4])."><i class='{$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 } else {
-                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$menu_active}'><a href=".url($v2['url'],['nav_id' => $v2['id'],'nav_pid' => $k4])."><i class='layui-icon {$v2['icon']}'></i>{$v2['title']}</a></dd>";
+                                    $html[$k4] .= "<dd data-name='{$v2['pinyin']}' class='{$menu_active}'><a href=".url($v2['url'],['nav_id' => $v2['id'],'nav_pid' => $k4])."><i class='{$v2['icon']}'></i>{$v2['title']}</a></dd>";
                                 }
                                
                             }
@@ -574,9 +574,9 @@ class Auth extends \we\Auth{
                             }
                             if($k1 == 0) {
                                 $nav_url[$k4] = $nav_url[$k4]?$nav_url[$k4]:$v1['url'];
-                                $html[$k4] .= "<dd class='{$menu_active} {$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id'],'nav_pid' => $k4])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd class='{$menu_active} {$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id'],'nav_pid' => $k4])."><i class='{$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             } else {
-                                $html[$k4] .= "<dd class='{$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id'],'nav_pid' => $k4])."><i class='layui-icon {$v1['icon']}'></i>{$v1['title']}</a></dd>";
+                                $html[$k4] .= "<dd class='{$menu_active}' data-name='{$v1['pinyin']}'><a href=".url($v1['url'],['nav_id' => $v1['id'],'nav_pid' => $k4])."><i class='{$v1['icon']}'></i>{$v1['title']}</a></dd>";
                             }
                         }
                     }

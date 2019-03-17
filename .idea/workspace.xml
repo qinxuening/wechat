@@ -66,11 +66,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="2432" column="18" lean-forward="false" selection-start-line="2432" selection-start-column="18" selection-end-line="2432" selection-end-column="18" />
+            <state relative-caret-position="219">
+              <caret line="2871" column="21" lean-forward="false" selection-start-line="2871" selection-start-column="21" selection-end-line="2871" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -124,7 +124,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order_sms_send_record.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order_sms_send_record.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/order_sms_send_record.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="298">
@@ -151,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="78">
-              <caret line="495" column="51" lean-forward="true" selection-start-line="495" selection-start-column="51" selection-end-line="495" selection-end-column="51" />
+              <caret line="495" column="51" lean-forward="false" selection-start-line="495" selection-start-column="51" selection-end-line="495" selection-end-column="51" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
               </folding>
@@ -275,9 +275,9 @@
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/reminder_warning.html" />
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/warning_task_add.html" />
         <option value="$PROJECT_DIR$/application/admin/view/Activity/member_sms.html" />
-        <option value="$PROJECT_DIR$/public/static/style/admin.css" />
         <option value="$PROJECT_DIR$/application/admin/view/Activity/order_sms_send.html" />
         <option value="$PROJECT_DIR$/application/admin/view/Activity/order_sms_send_record.html" />
+        <option value="$PROJECT_DIR$/public/static/style/admin.css" />
       </list>
     </option>
   </component>
@@ -653,12 +653,12 @@
       <workItem from="1551888677364" duration="560000" />
       <workItem from="1551964232144" duration="64823000" />
       <workItem from="1552402918365" duration="8938000" />
-      <workItem from="1552810546409" duration="10410000" />
+      <workItem from="1552810546409" duration="11219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1026518000" />
+    <option name="totallyTimeSpent" value="1027327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1044,7 +1044,7 @@
     <entry file="file://$PROJECT_DIR$/application/admin/view/order/order_care.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
-          <caret line="495" column="51" lean-forward="true" selection-start-line="495" selection-start-column="51" selection-end-line="495" selection-end-column="51" />
+          <caret line="495" column="51" lean-forward="false" selection-start-line="495" selection-start-column="51" selection-end-line="495" selection-end-column="51" />
           <folding>
             <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
           </folding>
@@ -1075,14 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="2432" column="18" lean-forward="false" selection-start-line="2432" selection-start-column="18" selection-end-line="2432" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/order_sms_send.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -1099,6 +1091,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="89" column="35" lean-forward="false" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/style/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="2871" column="21" lean-forward="false" selection-start-line="2871" selection-start-column="21" selection-end-line="2871" selection-end-column="21" />
           <folding />
         </state>
       </provider>
