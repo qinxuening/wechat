@@ -99,7 +99,7 @@
                                             <!--btn-primary-border layui-btn-primary-->
 
                                             <button type="button" lay-submit="" lay-filter="" class="layui-btn yty-btn layui-btn-normal pre-step cancle layui-btn-sm btn-embossed">上一步</button>
-                                            <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">保存</button>
+                                            <button type="reset" class="layui-btn layui-btn-sm layui-btn-normal yty-btn btn-embossed">确认发送</button>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -273,7 +273,7 @@
         <div class="layui-col-md12 webody body-overflow">
             <div class="layui-card main-table">
                 <blockquote class="msg-tip">
-                    <span class="float-right close-icon-right cancle" title="关闭"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    <!--<span class="float-right close-icon-right cancle" title="关闭"><i class="fa fa-times" aria-hidden="true"></i></span>-->
                     1）只显示最近3个月的订单。为了不影响买家休息，22点至早晨9点的短信都延迟到9点后发出。
                 </blockquote>
                 <!--<div class="layui-card-header yty-card-header"><span class="sm-st-icon-left shop-info"><i class="fa  fa-ellipsis-v"></i></span>订单查询</div>-->
@@ -291,22 +291,61 @@
                                     <td class="yty_tdleft">订单编号 :</td>
                                     <td class="yty_tdright">
                                         <input type="text" name="order_number" id="order_number" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                        手机号码：
-                                        <input type="mobile" name="mobile" id="mobile" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                        省份：
-                                        <input type="text" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
-                                        <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
                                         商品ID：
                                         <input type="text" name="itemId" id="itemId" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        商品ID：
+                                        <input type="text" name="buyerNickname" id="buyerNickname" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        <button class="layui-btn float-right layui-btn-sm layui-btn-primary more-btn" type="button">更多<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td class="yty_tdleft">下单时间 :</td>
                                     <td class="yty_tdright">
-                                        <input type="text" name="order_time_start" id="order_time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="order_time_end" id="order_time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
+                                        <input type="text" name="complete_time_start" id="complete_time_start" placeholder="" autocomplete="off" class="layui-input"> — <input type="text" name="complete_time_end" id="complete_time_end" placeholder="" autocomplete="off" class="layui-input input-margin">
                                         订单金额：
                                         <input type="text" name="payment_start" id="payment_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="payment_end" id="payment_end" placeholder="" autocomplete="off" class="layui-input" lay-key="2">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="yty_tdleft">所属地区 :</td>
+                                    <td class="yty_tdright">
+                                        <input type="text" name="areaId" id="areaId" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        <input type="hidden" name="areaIdH" id="areaIdH" placeholder="" autocomplete="off" class="layui-input input-margin">
+                                        <div class="layui-inline yty-form">
+                                            <span>短信过滤（已发送）：</span>
+                                            <div class="layui-input-inline input-margin">
+                                                <select name="smsFilter" lay-verify="required" lay-search="">
+                                                    <option value="0" selected>不过滤</option>
+                                                    <option value="1">1天</option>
+                                                    <option value="2">2天</option>
+                                                    <option value="3">3天</option>
+                                                    <option value="4">4天</option>
+                                                    <option value="5">5天</option>
+                                                    <option value="10">10天</option>
+                                                    <option value="15">15天</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-inline yty-form">
+                                            <span>完成时间：</span>
+                                            <input type="text" name="order_time_start" id="order_time_start" placeholder="" autocomplete="off" class="layui-input" lay-key="1"> — <input type="text" name="order_time_end" id="order_time_end" placeholder="" autocomplete="off" class="layui-input input-margin" lay-key="2">
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tbody class="more-search" style="display: none">
+                                <tr>
+                                    <td class="yty_tdleft">屏蔽标旗 :</td>
+                                    <td class="yty_tdright">
+                                        <ul class="yty-checkbox">
+                                            <li class="checkbox-active"><span class="red_flag"></span></li>
+                                            <li><span class="yellow_flag"></span></li>
+                                            <li><span class="cyan_flag"></span></li>
+                                            <li><span class="blue_flag"></span></li>
+                                            <li><span class="purple_flag"></span></li>
+                                        </ul>
                                     </td>
                                 </tr>
 
@@ -318,19 +357,6 @@
                                             <input type="checkbox" name="tradefrom[wap]" lay-skin="primary" value="2" title="移动端">
                                             <input type="checkbox" name="tradefrom[ht]" lay-skin="primary" value="3" title="历史订单">
                                         </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="yty_tdleft">屏蔽标旗 :</td>
-                                    <td class="yty_tdright">
-                                        <ul class="yty-checkbox">
-                                            <li class="checkbox-active"><span class="red_flag"></span></li>
-                                            <li><span class="yellow_flag"></span></li>
-                                            <li><span class="cyan_flag"></span></li>
-                                            <li><span class="blue_flag"></span></li>
-                                            <li><span class="purple_flag"></span></li>
-                                        </ul>
                                     </td>
                                 </tr>
 
@@ -374,6 +400,21 @@
                                         </div>
                                     </td>
                                 </tr>
+
+                                <tr>
+                                    <td class="yty_tdleft">退款状态 :</td>
+                                    <td class="yty_tdright">
+                                        <div class="layui-form yty-checkbox-all">
+                                            <input type="checkbox" lay-skin="primary" name="refundStatus[0]" value="ALL" class="all" title="全部"  lay-filter="check_all">
+                                            <input type="checkbox" lay-skin="primary" name="refundStatus[1]" value="1" title="买家申请退款,等待卖家同意">
+                                            <input type="checkbox" lay-skin="primary" name="refundStatus[2]" value="2" title="等待买家退货">
+                                            <input type="checkbox" lay-skin="primary" name="refundStatus[3]" value="3" title="买家已经退货，等待卖家确认收货">
+                                            <input type="checkbox" lay-skin="primary" name="refundStatus[4]" value="4" title="卖家拒绝退款">
+                                            <input type="checkbox" lay-skin="primary" name="refundStatus[5]" value="5" title="退款关闭">
+                                            <input type="checkbox" lay-skin="primary" name="refundStatus[6]" value="6" title="退款成功">
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </form>
@@ -395,6 +436,7 @@
 <!------------------------表格头工具栏begin------------------------->
 <script type="text/html" id="toolbar">
     <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="search"><i class="fa fa-search"></i> 查询</a>
+    <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="synchronizeOrder"><i class="fa fa-refresh" aria-hidden="true"></i> 同步订单</a>
     <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="sendSmsToCheckBuyer"><i class="fa fa-envelope-o"></i> 编辑并发送短信给已选的订单</a>
     <a class="layui-btn layui-btn-sm layui-btn-primary btn-primary-border" lay-event="sendSmsToAllBuyer"><i class="fa fa-envelope-o"></i> 编辑并发送短信给列表全部</a>
 </script>
@@ -436,16 +478,16 @@
         version:true,
     }).extend({
         index: 'lib/index' //主入口模块
-    }).use(['index','table','upload','laydate','element','form','authtree','we','formSearch','formEvent','area','sms_modal_init'], function(){
+    }).use(['index','table','upload','laydate','element','form','authtree','we','formSearch','formEvent','sms_modal_init','area'], function(){
         var admin = layui.admin
             ,element = layui.element
             ,layer = layui.layer
             ,we = layui.we
             ,table = layui.table
             ,$  = layui.$
+            ,area = layui.area
             ,laydate = layui.laydate
             ,form = layui.form
-            ,area = layui.area
             ,formSearch = layui.formSearch
             ,sms_modal_init = layui.sms_modal_init
             ,formEvent = layui.formEvent
@@ -467,7 +509,14 @@
             elem: '#timing' //指定元素
             ,type: 'datetime'
         });
-
+        laydate.render({
+            elem: '#order_time_start'
+            ,type: 'datetime'
+        });
+        laydate.render({
+            elem: '#order_time_end'
+            ,type: 'datetime'
+        });
         /*********************表格初始化begin**************************/
         var tableCommon = {
             elem: '#order_data_list'
@@ -533,15 +582,19 @@
                         }
                     );
                     break;
-                //发送短信
+                //编辑并发送短信给已选的订单
                 case 'sendSmsToCheckBuyer':
                     $('.main-search').hide();
                     $('.main-step').slideDown(200);
                     break;
-                //按查询结果发送
+                //编辑并发送短信给列表全部
                 case 'sendSmsToAllBuyer':
                     $('.main-search').hide();
                     $('.main-step').slideDown(200);
+                    break;
+                // 同步订单
+                case 'synchronizeOrder':
+                    toastr.warning('亲！订单已经开始同步，您可以先忙其他事情了！');
                     break;
             }
         });
@@ -574,9 +627,6 @@
         formEvent.api.all_check_not('checkbox(membership_level)');
         formEvent.api.all_check_not('checkbox(trade_from)');
 
-        /**
-         * 省份点击
-         */
         area.init();  //选择所在省份初始化
 
         /**
@@ -609,6 +659,20 @@
                 }
             })
         });
+
+        $("body").on("click",".more-btn",function (){
+            console.log(this);
+            if($(this).find('i').hasClass('fa-chevron-down')) {
+                $(this).find('i').removeClass('fa-chevron-down')
+                $(this).find('i').addClass('fa-chevron-up')
+                $('.more-search').slideDown()
+            } else {
+                $(this).find('i').addClass('fa-chevron-down')
+                $(this).find('i').removeClass('fa-chevron-up')
+                $('.more-search').hide()
+            }
+        });
+
     });
 
 </script>

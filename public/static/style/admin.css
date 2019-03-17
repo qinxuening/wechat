@@ -2430,6 +2430,7 @@ tr>td.yty_tdright .layui-input, tr>td.yty_tdright .layui-select, tr>td.yty_tdrig
 
 .layui-btn-primary:hover,.layui-btn-primary:active{
     border: 1px solid #506def !important;
+    color: #506def;
 }
 
 .astyle,.astyle:hover{
@@ -2859,7 +2860,7 @@ input:focus, select:focus{
     background-color: #ffffff;
     /*border-bottom: 1px solid #FFB800;*/
     border-bottom: 1px dashed #e5e5e5;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     padding: 15px;
-    line-height: 22px;
+    /*line-height: 22px;*/
 }
