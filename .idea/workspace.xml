@@ -124,6 +124,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="order_sms_send_record.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/order_sms_send_record.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="89" column="35" lean-forward="false" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="task_add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/order/task_add.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -149,7 +159,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order_sms_send.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order_sms_send.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/order_sms_send.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="181">
@@ -176,7 +186,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>open_current_page_layer</find>
       <find>赠送礼品</find>
       <find>filter</find>
       <find>发送短信</find>
@@ -206,6 +215,7 @@
       <find>所属地区</find>
       <find>msg-tip</find>
       <find>layui-btn</find>
+      <find>toolbar</find>
     </findStrings>
     <replaceStrings>
       <replace>506def</replace>
@@ -265,9 +275,9 @@
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/reminder_warning.html" />
         <option value="$PROJECT_DIR$/application/admin/view/after_sale/warning_task_add.html" />
         <option value="$PROJECT_DIR$/application/admin/view/Activity/member_sms.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/Activity/order_sms_send_record.html" />
         <option value="$PROJECT_DIR$/public/static/style/admin.css" />
         <option value="$PROJECT_DIR$/application/admin/view/Activity/order_sms_send.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/Activity/order_sms_send_record.html" />
       </list>
     </option>
   </component>
@@ -643,18 +653,18 @@
       <workItem from="1551888677364" duration="560000" />
       <workItem from="1551964232144" duration="64823000" />
       <workItem from="1552402918365" duration="8938000" />
-      <workItem from="1552810546409" duration="9483000" />
+      <workItem from="1552810546409" duration="10410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1025591000" />
+    <option name="totallyTimeSpent" value="1026518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15303244" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14598025" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1000,14 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/order_sms_send_record.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/member_sms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -1090,6 +1092,14 @@
             <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#tbody#1;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/Activity/order_sms_send_record.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="89" column="35" lean-forward="false" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
