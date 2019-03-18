@@ -30,7 +30,9 @@
                     <tr>
                         <td class="tdleft">字段类型<span class="tips">*</span></td>
                         <td class="tdright">
+                            <div class="layui-input-inline">
                             {:build_select('field_type', $field_type, '', ['class'=>'form-control', 'required'=>''])}
+                            </div>
                             <!--<input type="text" name="username" data-rule="required;" lay-verify="username" autocomplete="off" value="" placeholder="" class="layui-input">-->
                         </td>
                         <td class="tdright"></td>
@@ -52,7 +54,9 @@
                     <tr>
                         <td class="tdleft">表单类型<span class="tips">*</span></td>
                         <td class="tdright">
+                            <div class="layui-input-inline">
                             {:build_select('form_type', $form_type, '', ['class'=>'form-control', 'required'=>''])}
+                            </div>
                         </td>
                         <td class="tdright"></td>
                     </tr>
@@ -69,7 +73,9 @@
                             <textarea  name="form_rule" lay-verify="" autocomplete="off" value="" placeholder="" class="layui-textarea"></textarea>
                         </td>
                         <td class="tdright">
+                            <div class="layui-input-inline">
                             {:build_select('select_rule', $select_rule, '', ['class'=>'form-control', 'required'=>''])}
+                            </div>
                         </td>
                     </tr>
                     <tr>

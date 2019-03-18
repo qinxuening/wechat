@@ -15,7 +15,9 @@
                 <tr>
                     <td class="tdleft">{:__('Parent group')}<span class="tips">*</span></td>
                     <td class="tdright">
+                        <div class="layui-input-inline">
                         {:build_select('pid', $groupdata, $row['pid'], ['class'=>'form-control selectpicker', 'data-rule'=>'required', 'data-id'=>$row['id'], 'data-pid'=>$row['pid'],'lay-filter'=>"character"],$row['id'], $groupList)}
+                        </div>
                     </td>
                 </tr>
                 <tr>

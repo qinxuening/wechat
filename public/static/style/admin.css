@@ -1674,7 +1674,7 @@ body .layui-layer-we{
 /**
 ,.layui-unselect
  */
-.layui-input, .layui-select, .layui-textarea,.layui-form-label,.layui-input-inline,.xm-input,.xm-select{
+.layui-input, .layui-select, .layui-textarea,.layui-form-label,.layui-input-inline,.xm-input,.xm-select,.xm-input{
     height: 30px !important;
     line-height: 30px !important;
     border: 1px solid #BFBFBF;
